@@ -22,21 +22,54 @@ namespace HospitalERP
 
         }
 
-        private void patientToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+        private void menuItemStaffOthers_Click(object sender, EventArgs e)
+        {
+            frmStaffs frm = new frmStaffs();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuItemDocs_Click(object sender, EventArgs e)
+        {
+            frmDoctors frm = new frmDoctors();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuItemStaffType_Click(object sender, EventArgs e)
+        {
+            
+            frmStaffTypes frm = new frmStaffTypes();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuItemDept_Click(object sender, EventArgs e)
+        {
+            frmDepartments frm = new frmDepartments();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuItemProc_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void staffToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuItemUserRoles_Click(object sender, EventArgs e)
         {
-
+            frmUserRoles frm = new frmUserRoles();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
-        private void doctorsToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void menuItemProcType_Click(object sender, EventArgs e)
         {
-            frmDoctors doc = new frmDoctors();
-            doc.MdiParent = this;
-            doc.Show();
+            frmProcTypes frm = new frmProcTypes();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

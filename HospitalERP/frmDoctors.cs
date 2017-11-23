@@ -19,6 +19,7 @@ namespace HospitalERP
 
         private void frmDoctors_Load(object sender, EventArgs e)
         {
+            
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -27,14 +28,24 @@ namespace HospitalERP
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
+        
 
+        private void tabDoctors_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            
+            if (e.Index == tabDoctors.SelectedIndex)
+            {
+                e.Graphics.FillRectangle(Brushes.MediumTurquoise, e.Bounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(Brushes.LightCyan, e.Bounds);
+            }
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
