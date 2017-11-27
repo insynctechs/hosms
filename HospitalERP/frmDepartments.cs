@@ -26,5 +26,10 @@ namespace HospitalERP
         {
             this.Close();
         }
+
+        private void tabDoctors_DrawItem(object sender, DrawItemEventArgs e)
+        {
+
+        }
     }
 }

@@ -30,11 +30,13 @@
         {
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.menuItemMain = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemDept = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemProc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemProcType = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemProc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemUserRoles = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemRegFee = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemOpt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemDocs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffOthers = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,10 +51,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblAppName = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lnkLogout = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuItemDept = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemOpt = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -89,6 +89,20 @@
             this.menuItemMain.Size = new System.Drawing.Size(51, 22);
             this.menuItemMain.Text = "Main";
             // 
+            // menuItemDept
+            // 
+            this.menuItemDept.Name = "menuItemDept";
+            this.menuItemDept.Size = new System.Drawing.Size(178, 22);
+            this.menuItemDept.Text = "Departments";
+            this.menuItemDept.Click += new System.EventHandler(this.menuItemDept_Click);
+            // 
+            // menuItemProc
+            // 
+            this.menuItemProc.Name = "menuItemProc";
+            this.menuItemProc.Size = new System.Drawing.Size(178, 22);
+            this.menuItemProc.Text = "Procedures";
+            this.menuItemProc.Click += new System.EventHandler(this.menuItemProc_Click);
+            // 
             // menuItemStaffType
             // 
             this.menuItemStaffType.Name = "menuItemStaffType";
@@ -103,13 +117,6 @@
             this.menuItemProcType.Text = "Procedure Types";
             this.menuItemProcType.Click += new System.EventHandler(this.menuItemProcType_Click);
             // 
-            // menuItemProc
-            // 
-            this.menuItemProc.Name = "menuItemProc";
-            this.menuItemProc.Size = new System.Drawing.Size(178, 22);
-            this.menuItemProc.Text = "Procedures";
-            this.menuItemProc.Click += new System.EventHandler(this.menuItemProc_Click);
-            // 
             // menuItemUserRoles
             // 
             this.menuItemUserRoles.Name = "menuItemUserRoles";
@@ -123,6 +130,12 @@
             this.menuItemRegFee.Size = new System.Drawing.Size(178, 22);
             this.menuItemRegFee.Text = "Registration Fee";
             // 
+            // menuItemOpt
+            // 
+            this.menuItemOpt.Name = "menuItemOpt";
+            this.menuItemOpt.Size = new System.Drawing.Size(178, 22);
+            this.menuItemOpt.Text = "Options";
+            // 
             // menuItemStaffs
             // 
             this.menuItemStaffs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -135,14 +148,14 @@
             // menuItemDocs
             // 
             this.menuItemDocs.Name = "menuItemDocs";
-            this.menuItemDocs.Size = new System.Drawing.Size(152, 22);
+            this.menuItemDocs.Size = new System.Drawing.Size(123, 22);
             this.menuItemDocs.Text = "Doctors";
             this.menuItemDocs.Click += new System.EventHandler(this.menuItemDocs_Click);
             // 
             // menuItemStaffOthers
             // 
             this.menuItemStaffOthers.Name = "menuItemStaffOthers";
-            this.menuItemStaffOthers.Size = new System.Drawing.Size(152, 22);
+            this.menuItemStaffOthers.Size = new System.Drawing.Size(123, 22);
             this.menuItemStaffOthers.Text = "Others";
             this.menuItemStaffOthers.Click += new System.EventHandler(this.menuItemStaffOthers_Click);
             // 
@@ -236,7 +249,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.linkLabel1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lnkLogout, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(647, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -246,17 +259,18 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(268, 94);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // linkLabel1
+            // lnkLogout
             // 
-            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel1.Location = new System.Drawing.Point(137, 64);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(40, 13);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Logout";
+            this.lnkLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lnkLogout.AutoSize = true;
+            this.lnkLogout.LinkColor = System.Drawing.Color.DimGray;
+            this.lnkLogout.Location = new System.Drawing.Point(137, 64);
+            this.lnkLogout.Name = "lnkLogout";
+            this.lnkLogout.Size = new System.Drawing.Size(40, 13);
+            this.lnkLogout.TabIndex = 0;
+            this.lnkLogout.TabStop = true;
+            this.lnkLogout.Text = "Logout";
+            this.lnkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label1
             // 
@@ -268,19 +282,6 @@
             this.label1.Size = new System.Drawing.Size(90, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Logged in as: ";
-            // 
-            // menuItemDept
-            // 
-            this.menuItemDept.Name = "menuItemDept";
-            this.menuItemDept.Size = new System.Drawing.Size(178, 22);
-            this.menuItemDept.Text = "Departments";
-            this.menuItemDept.Click += new System.EventHandler(this.menuItemDept_Click);
-            // 
-            // menuItemOpt
-            // 
-            this.menuItemOpt.Name = "menuItemOpt";
-            this.menuItemOpt.Size = new System.Drawing.Size(178, 22);
-            this.menuItemOpt.Text = "Options";
             // 
             // frmMain
             // 
@@ -328,7 +329,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblAppName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lnkLogout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem menuItemApp;
         private System.Windows.Forms.ToolStripMenuItem menuItemReg;

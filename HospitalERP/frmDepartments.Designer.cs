@@ -42,15 +42,16 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tabPgList = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            this.tabPgList.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSub
             // 
-            this.tabSub.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabSub.Controls.Add(this.tabPgAdd);
             this.tabSub.Controls.Add(this.tabPgList);
             this.tabSub.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -64,15 +65,16 @@
             this.tabSub.ShowToolTips = true;
             this.tabSub.Size = new System.Drawing.Size(1008, 730);
             this.tabSub.TabIndex = 4;
+            this.tabSub.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabDoctors_DrawItem);
             // 
             // tabPgAdd
             // 
             this.tabPgAdd.BackColor = System.Drawing.Color.White;
             this.tabPgAdd.Controls.Add(this.tableLayoutPanel2);
-            this.tabPgAdd.Location = new System.Drawing.Point(4, 45);
+            this.tabPgAdd.Location = new System.Drawing.Point(4, 42);
             this.tabPgAdd.Name = "tabPgAdd";
             this.tabPgAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgAdd.Size = new System.Drawing.Size(1000, 681);
+            this.tabPgAdd.Size = new System.Drawing.Size(1000, 684);
             this.tabPgAdd.TabIndex = 0;
             this.tabPgAdd.Text = "Add";
             this.tabPgAdd.UseVisualStyleBackColor = true;
@@ -120,7 +122,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 675);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 678);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // lbName
@@ -231,18 +233,26 @@
             // tabPgList
             // 
             this.tabPgList.BackColor = System.Drawing.Color.White;
-            this.tabPgList.Location = new System.Drawing.Point(4, 45);
+            this.tabPgList.Controls.Add(this.flowLayoutPanel1);
+            this.tabPgList.Location = new System.Drawing.Point(4, 42);
             this.tabPgList.Name = "tabPgList";
             this.tabPgList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgList.Size = new System.Drawing.Size(1000, 681);
+            this.tabPgList.Size = new System.Drawing.Size(1000, 684);
             this.tabPgList.TabIndex = 1;
             this.tabPgList.Text = "Search/List";
-            this.tabPgList.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(355, 30);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // frmDepartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.tabSub);
             this.Name = "frmDepartments";
@@ -254,6 +264,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
+            this.tabPgList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -274,5 +285,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TabPage tabPgList;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
