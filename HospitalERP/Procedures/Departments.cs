@@ -71,13 +71,12 @@ namespace HospitalERP.Procedures
             int ret = -1;
             try
             {
-                SqlParameter[] sqlParam = new SqlParameter[5];
+                SqlParameter[] sqlParam = new SqlParameter[4];                
                 sqlParam[0] = new SqlParameter("@id", id);
                 sqlParam[1] = new SqlParameter("@name", id);
                 sqlParam[2] = new SqlParameter("@desc", id);
-                sqlParam[3] = new SqlParameter("@active", active);
-                sqlParam[4] = new SqlParameter("@Ret", 0);
-                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspDepartments_Edit", sqlParam).ToString());
+                sqlParam[3] = new SqlParameter("@active", active);                
+                ret = Convert.ToInt32(SqlHelper.ExecuteNonQuery(conn, CommandType.StoredProcedure, "uspDepartments_Edit", sqlParam).ToString());
             }
             catch (Exception ex)
             {

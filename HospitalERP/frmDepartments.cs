@@ -107,7 +107,7 @@ namespace HospitalERP
             txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtName.Text = dgvDept.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtDesc.Text = dgvDept.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //chkActive.Checked = Int32.Parse(dgvDept.Rows[e.RowIndex].Cells[2].Value.ToString());
+            chkActive.Checked = (bool)dgvDept.Rows[e.RowIndex].Cells[3].Value;
 
             tabSub.SelectedIndex = 0;
         }

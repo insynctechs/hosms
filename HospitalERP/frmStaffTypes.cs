@@ -21,6 +21,20 @@ namespace HospitalERP
         private void frmStaffTypes_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            PopulateSearch();
+            ShowRecords();
+        }
+
+        private void PopulateSearch()
+        {
+            cmbSearch.DataSource = st.SearchValues();
+            cmbSearch.ValueMember = "Value";
+            cmbSearch.DisplayMember = "Display";
+        }
+
+        private void ShowRecords()
+        {
+            dgvDept.DataSource = st.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -38,5 +52,18 @@ namespace HospitalERP
                 chkActive.Checked = false;
             }
         }
+
+        private void dgvDept_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtName.Text = dgvDept.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtDesc.Text = dgvDept.Rows[e.RowIndex].Cells[2].Value.ToString();
+            chkActive.Checked = (bool)dgvDept.Rows[e.RowIndex].Cells[3].Value;
+
+            tabSub.SelectedIndex = 0;
+        }
+
+        
     }
 }
