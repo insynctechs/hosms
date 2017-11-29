@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HospitalERP.Procedures;
 namespace HospitalERP
 {
     public partial class frmProcTypes : Form
     {
+        ProcTypes pt = new ProcTypes();
         public frmProcTypes()
         {
             InitializeComponent();
+            
         }
 
         private void frmProcTypes_Load(object sender, EventArgs e)
@@ -25,6 +20,40 @@ namespace HospitalERP
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                int t = pt.addTypes(txtName.Text, txtDesc.Text, chkActive.Checked);
+                if (t == -1)
+                    lblStatus.Text = "Some error occurred... Record cannot be added.";
+                else if (t == 0)
+                    lblStatus.Text = "Type name should be unique";
+                else if (t == 1)
+                {
+                    lblStatus.Text = "Record succesfully added";
+                    txtName.Text = "";
+                    txtDesc.Text = "";
+                    chkActive.Checked = false;
+                }
+            }
+        }
+
+        private void txtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtName.Text))
+            {
+                e.Cancel = true;
+                txtName.Focus();
+                errorProvider.SetError(txtName, "Required");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtName, null);
+            }
         }
     }
 }

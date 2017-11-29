@@ -36,12 +36,13 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblActive = new System.Windows.Forms.Label();
-            this.tabPgList = new System.Windows.Forms.TabPage();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.chkActive = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.tabPgList = new System.Windows.Forms.TabPage();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -85,40 +86,43 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Controls.Add(this.lbName, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lbName, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.lblHead1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtName, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.lblActive, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.txtDesc, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.chkActive, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtName, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lblActive, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtDesc, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.chkActive, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.lblStatus, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(25, 3, 25, 15);
-            this.tableLayoutPanel2.RowCount = 21;
+            this.tableLayoutPanel2.RowCount = 23;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 675);
             this.tableLayoutPanel2.TabIndex = 1;
@@ -126,7 +130,7 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(28, 61);
+            this.lbName.Location = new System.Drawing.Point(28, 81);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(81, 18);
             this.lbName.TabIndex = 0;
@@ -152,7 +156,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(285, 64);
+            this.txtName.Location = new System.Drawing.Point(285, 84);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(250, 25);
             this.txtName.TabIndex = 1;
@@ -160,7 +164,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 92);
+            this.label2.Location = new System.Drawing.Point(28, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 18);
             this.label2.TabIndex = 5;
@@ -169,26 +173,15 @@
             // lblActive
             // 
             this.lblActive.AutoSize = true;
-            this.lblActive.Location = new System.Drawing.Point(28, 185);
+            this.lblActive.Location = new System.Drawing.Point(28, 205);
             this.lblActive.Name = "lblActive";
             this.lblActive.Size = new System.Drawing.Size(50, 18);
             this.lblActive.TabIndex = 4;
             this.lblActive.Text = "Active:";
             // 
-            // tabPgList
-            // 
-            this.tabPgList.BackColor = System.Drawing.Color.White;
-            this.tabPgList.Location = new System.Drawing.Point(4, 45);
-            this.tabPgList.Name = "tabPgList";
-            this.tabPgList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgList.Size = new System.Drawing.Size(1000, 681);
-            this.tabPgList.TabIndex = 1;
-            this.tabPgList.Text = "Search/List Types";
-            this.tabPgList.UseVisualStyleBackColor = true;
-            // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(285, 95);
+            this.txtDesc.Location = new System.Drawing.Point(285, 115);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -198,7 +191,7 @@
             // chkActive
             // 
             this.chkActive.AutoSize = true;
-            this.chkActive.Location = new System.Drawing.Point(285, 188);
+            this.chkActive.Location = new System.Drawing.Point(285, 208);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(15, 14);
             this.chkActive.TabIndex = 55;
@@ -209,7 +202,7 @@
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel3, 2);
             this.flowLayoutPanel3.Controls.Add(this.btnSave);
             this.flowLayoutPanel3.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 208);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 228);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(200, 39);
             this.flowLayoutPanel3.TabIndex = 57;
@@ -225,6 +218,7 @@
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -238,6 +232,26 @@
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // tabPgList
+            // 
+            this.tabPgList.BackColor = System.Drawing.Color.White;
+            this.tabPgList.Location = new System.Drawing.Point(4, 45);
+            this.tabPgList.Name = "tabPgList";
+            this.tabPgList.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPgList.Size = new System.Drawing.Size(1000, 681);
+            this.tabPgList.TabIndex = 1;
+            this.tabPgList.Text = "Search/List Types";
+            this.tabPgList.UseVisualStyleBackColor = true;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblStatus.Location = new System.Drawing.Point(28, 41);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 18);
+            this.lblStatus.TabIndex = 58;
             // 
             // frmStaffTypes
             // 
@@ -274,5 +288,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

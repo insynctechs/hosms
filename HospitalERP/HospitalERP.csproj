@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDepartments.Designer.cs">
+      <DependentUpon>frmDepartments.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDoctors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,13 +70,57 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcTypes.Designer.cs">
+      <DependentUpon>frmProcTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaffs.Designer.cs">
+      <DependentUpon>frmStaffs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaffTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaffTypes.Designer.cs">
+      <DependentUpon>frmStaffTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserRoles.Designer.cs">
+      <DependentUpon>frmUserRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="Procedures\Departments.cs" />
+    <Compile Include="Procedures\ProcTypes.cs" />
+    <Compile Include="Procedures\StaffTypes.cs" />
+    <Compile Include="Procedures\UserRoles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDepartments.resx">
+      <DependentUpon>frmDepartments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDoctors.resx">
       <DependentUpon>frmDoctors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcTypes.resx">
+      <DependentUpon>frmProcTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffs.resx">
+      <DependentUpon>frmStaffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffTypes.resx">
+      <DependentUpon>frmStaffTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserRoles.resx">
+      <DependentUpon>frmUserRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +131,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
