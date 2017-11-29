@@ -13,7 +13,7 @@ namespace HospitalERP.Procedures
             // Create the connection.  
             SqlConnection conn = new SqlConnection(connstr);
 
-            SqlCommand sqlCmd = new SqlCommand("uspAddUserTypes", conn);
+            SqlCommand sqlCmd = new SqlCommand("uspUserTypes_Add", conn);
             sqlCmd.CommandType = CommandType.StoredProcedure;
 
             //sqlCmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));

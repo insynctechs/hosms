@@ -15,7 +15,7 @@ namespace HospitalERP.Procedures
             // Create the connection.  
             SqlConnection conn = new SqlConnection(connstr);
 
-            SqlCommand sqlCmd = new SqlCommand("uspAddProcedureTypes", conn);
+            SqlCommand sqlCmd = new SqlCommand("uspProcedureTypes_Add", conn);
             sqlCmd.CommandType = CommandType.StoredProcedure;
 
             //sqlCmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
