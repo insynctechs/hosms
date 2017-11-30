@@ -71,10 +71,5 @@ namespace HospitalERP
             frm.MdiParent = this;
             frm.Show();
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            
-        }
     }
 }
