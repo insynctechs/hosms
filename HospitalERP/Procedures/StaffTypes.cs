@@ -72,8 +72,8 @@ namespace HospitalERP.Procedures
             try
             {
                 SqlParameter[] sqlParam = new SqlParameter[3];
-                sqlParam[0] = new SqlParameter("@name", type_title);
-                sqlParam[1] = new SqlParameter("@desc", type_description);
+                sqlParam[0] = new SqlParameter("@type_title", type_title);
+                sqlParam[1] = new SqlParameter("@description", type_description);
                 sqlParam[2] = new SqlParameter("@active", active);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspStaffTypes_Add", sqlParam).ToString());
             }

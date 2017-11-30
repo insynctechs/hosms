@@ -14,8 +14,8 @@ namespace HospitalERP.Procedures
             try
             {
                 SqlParameter[] sqlParam = new SqlParameter[3];
-                sqlParam[0] = new SqlParameter("@name", type_title);
-                sqlParam[1] = new SqlParameter("@desc", type_description);
+                sqlParam[0] = new SqlParameter("@type_name", type_title);
+                sqlParam[1] = new SqlParameter("@description", type_description);
                 sqlParam[2] = new SqlParameter("@active", active);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUserTypes_Add", sqlParam).ToString());
             }
@@ -35,9 +35,9 @@ namespace HospitalERP.Procedures
                 SqlParameter[] sqlParam = new SqlParameter[4];
                 sqlParam[0] = new SqlParameter("@id", id);
                 sqlParam[1] = new SqlParameter("@name", name);
-                sqlParam[2] = new SqlParameter("@desc", id);
+                sqlParam[2] = new SqlParameter("@desc", desc);
                 sqlParam[3] = new SqlParameter("@active", active);
-                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUserRoles_Edit", sqlParam).ToString());
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUserTypes_Edit", sqlParam).ToString());
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace HospitalERP.Procedures
                 SqlParameter[] sqlParam = new SqlParameter[2];
                 sqlParam[0] = new SqlParameter("@SearchBy", SearchBy);
                 sqlParam[1] = new SqlParameter("@SearchValue", SearchValue);
-                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspStaffTypes_Get", sqlParam);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspUserTypes_Get", sqlParam);
                 return dt.Tables[0];
             }
             catch (Exception ex)

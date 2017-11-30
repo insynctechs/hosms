@@ -54,17 +54,48 @@ namespace HospitalERP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int t = st.addStaffs(txtName.Text,txtDesc.Text,chkActive.Checked);
-            if (t == -1)
-                lblStatus.Text="Some error occurred... Record cannot be added.";
-            else if (t == 0)
-                lblStatus.Text = "Type name should be unique";
-            else if (t == 1)
+            
+            int rtn = -1;
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                lblStatus.Text = "Record succesfully added";
-                txtName.Text = "";
-                txtDesc.Text = "";
-                chkActive.Checked = false;
+                if (txtID.Text.Trim() == "") //add data
+                {
+                    rtn = st.addStaffs(txtName.Text, txtDesc.Text, chkActive.Checked);
+                    if (rtn == 0)
+                        lblStatus.Text = "Type name should be unique";
+                    else if (rtn == 1)
+                    {
+                        lblStatus.Text = "Record succesfully added";
+                        txtName.Text = "";
+                        txtDesc.Text = "";
+                        chkActive.Checked = false;
+
+                    }
+                    else if (rtn == -1)
+                    {
+                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                    }
+                }
+                else //edit record
+                {
+                    rtn = st.editTypes(Int32.Parse(txtID.Text.Trim()), txtName.Text, txtDesc.Text, chkActive.Checked);
+                    if (rtn == 0)
+                        lblStatus.Text = "This name already exists. Please provide unique name.";
+                    else if (rtn == 1)
+                    {
+                        lblStatus.Text = "Record succesfully updated";
+                        txtName.Text = "";
+                        txtDesc.Text = "";
+                        txtID.Text = "";
+                        chkActive.Checked = false;
+
+                    }
+                    else if (rtn == -1)
+                    {
+                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                    }
+                }
+                ShowRecords();
             }
         }
 
