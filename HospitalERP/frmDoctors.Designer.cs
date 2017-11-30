@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabSub = new System.Windows.Forms.TabControl();
+            this.tabDoctors = new System.Windows.Forms.TabControl();
             this.tabPgAddDocs = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -74,35 +74,33 @@
             this.tabPgListDocs = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.chkActive = new System.Windows.Forms.CheckBox();
-            this.tabSub.SuspendLayout();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.tabDoctors.SuspendLayout();
             this.tabPgAddDocs.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabSub
+            // tabDoctors
             // 
-            this.tabSub.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabSub.Controls.Add(this.tabPgAddDocs);
-            this.tabSub.Controls.Add(this.tabPgListDocs);
-            this.tabSub.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabSub.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabSub.Location = new System.Drawing.Point(0, 0);
-            this.tabSub.Margin = new System.Windows.Forms.Padding(30, 10, 30, 10);
-            this.tabSub.Multiline = true;
-            this.tabSub.Name = "tabSub";
-            this.tabSub.Padding = new System.Drawing.Point(20, 10);
-            this.tabSub.SelectedIndex = 0;
-            this.tabSub.ShowToolTips = true;
-            this.tabSub.Size = new System.Drawing.Size(1008, 627);
-            this.tabSub.TabIndex = 2;
-            this.tabSub.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabDoctors_DrawItem);
+            this.tabDoctors.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabDoctors.Controls.Add(this.tabPgAddDocs);
+            this.tabDoctors.Controls.Add(this.tabPgListDocs);
+            this.tabDoctors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabDoctors.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabDoctors.Location = new System.Drawing.Point(0, 0);
+            this.tabDoctors.Margin = new System.Windows.Forms.Padding(30, 10, 30, 10);
+            this.tabDoctors.Multiline = true;
+            this.tabDoctors.Name = "tabDoctors";
+            this.tabDoctors.Padding = new System.Drawing.Point(20, 10);
+            this.tabDoctors.SelectedIndex = 0;
+            this.tabDoctors.ShowToolTips = true;
+            this.tabDoctors.Size = new System.Drawing.Size(1008, 627);
+            this.tabDoctors.TabIndex = 2;
             // 
             // tabPgAddDocs
             // 
@@ -126,49 +124,48 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox6, 1, 10);
-            this.tableLayoutPanel2.Controls.Add(this.textBox5, 1, 9);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 9);
-            this.tableLayoutPanel2.Controls.Add(this.lblgender, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 3, 4);
-            this.tableLayoutPanel2.Controls.Add(this.lblQualification, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.textBox6, 1, 11);
+            this.tableLayoutPanel2.Controls.Add(this.textBox5, 1, 10);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 10);
+            this.tableLayoutPanel2.Controls.Add(this.lblgender, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.txtID, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblName, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblID, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 2, 4);
-            this.tableLayoutPanel2.Controls.Add(this.lblNationality, 2, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 2, 9);
-            this.tableLayoutPanel2.Controls.Add(this.textBox4, 3, 9);
-            this.tableLayoutPanel2.Controls.Add(this.textBox7, 3, 10);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 10);
-            this.tableLayoutPanel2.Controls.Add(this.label6, 2, 10);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 11);
-            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 11);
-            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.textBox8, 1, 7);
-            this.tableLayoutPanel2.Controls.Add(this.textBox10, 3, 11);
+            this.tableLayoutPanel2.Controls.Add(this.lblNationality, 2, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 2, 10);
+            this.tableLayoutPanel2.Controls.Add(this.textBox4, 3, 10);
+            this.tableLayoutPanel2.Controls.Add(this.textBox7, 3, 11);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 11);
+            this.tableLayoutPanel2.Controls.Add(this.label6, 2, 11);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 12);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 12);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.textBox8, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.textBox10, 3, 12);
             this.tableLayoutPanel2.Controls.Add(this.lblHead1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblHead2, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.textBox11, 1, 11);
+            this.tableLayoutPanel2.Controls.Add(this.lblHead2, 0, 9);
+            this.tableLayoutPanel2.Controls.Add(this.textBox11, 1, 12);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 2, 17);
             this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox9, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label12, 2, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.textBox13, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePicker1, 3, 7);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePicker2, 3, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 12);
-            this.tableLayoutPanel2.Controls.Add(this.label15, 0, 14);
-            this.tableLayoutPanel2.Controls.Add(this.textBox3, 1, 14);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 2, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.textBox13, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.dateTimePicker1, 3, 8);
+            this.tableLayoutPanel2.Controls.Add(this.dateTimePicker2, 3, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 13);
+            this.tableLayoutPanel2.Controls.Add(this.label15, 0, 15);
+            this.tableLayoutPanel2.Controls.Add(this.textBox3, 1, 15);
             this.tableLayoutPanel2.Controls.Add(this.label16, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.textBox15, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label9, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label10, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.textBox12, 3, 3);
-            this.tableLayoutPanel2.Controls.Add(this.chkActive, 1, 17);
+            this.tableLayoutPanel2.Controls.Add(this.lblQualification, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.textBox9, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 2, 5);
+            this.tableLayoutPanel2.Controls.Add(this.textBox2, 3, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label17, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label18, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.textBox16, 3, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -581,9 +578,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(28, 41);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 18);
+            this.label16.Size = new System.Drawing.Size(48, 18);
             this.label16.TabIndex = 48;
-            this.label16.Text = "Employee ID";
+            this.label16.Text = "EMPID";
             // 
             // textBox15
             // 
@@ -592,23 +589,23 @@
             this.textBox15.Size = new System.Drawing.Size(250, 25);
             this.textBox15.TabIndex = 49;
             // 
-            // label9
+            // label17
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(499, 103);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 18);
-            this.label9.TabIndex = 50;
-            this.label9.Text = "Designation";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(28, 103);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(83, 18);
+            this.label17.TabIndex = 50;
+            this.label17.Text = "Department";
             // 
-            // label10
+            // label18
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(28, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 18);
-            this.label10.TabIndex = 51;
-            this.label10.Text = "Department";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(499, 103);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 18);
+            this.label18.TabIndex = 51;
+            this.label18.Text = "Designation";
             // 
             // comboBox1
             // 
@@ -618,24 +615,12 @@
             this.comboBox1.Size = new System.Drawing.Size(250, 26);
             this.comboBox1.TabIndex = 52;
             // 
-            // textBox12
+            // textBox16
             // 
-            this.textBox12.Location = new System.Drawing.Point(640, 106);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(250, 25);
-            this.textBox12.TabIndex = 53;
-            // 
-            // chkActive
-            // 
-            this.chkActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkActive.AutoSize = true;
-            this.chkActive.Location = new System.Drawing.Point(428, 475);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(65, 39);
-            this.chkActive.TabIndex = 54;
-            this.chkActive.Text = "Active";
-            this.chkActive.UseVisualStyleBackColor = true;
+            this.textBox16.Location = new System.Drawing.Point(640, 106);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(250, 25);
+            this.textBox16.TabIndex = 53;
             // 
             // frmDoctors
             // 
@@ -645,15 +630,12 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 627);
-            this.ControlBox = false;
-            this.Controls.Add(this.tabSub);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Controls.Add(this.tabDoctors);
             this.Name = "frmDoctors";
             this.Text = "Manage Doctors";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDoctors_Load);
-            this.tabSub.ResumeLayout(false);
+            this.tabDoctors.ResumeLayout(false);
             this.tabPgAddDocs.ResumeLayout(false);
             this.tabPgAddDocs.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -666,7 +648,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TabControl tabSub;
+        private System.Windows.Forms.TabControl tabDoctors;
         private System.Windows.Forms.TabPage tabPgAddDocs;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox textBox6;
@@ -712,10 +694,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.CheckBox chkActive;
+        private System.Windows.Forms.TextBox textBox16;
     }
 }
