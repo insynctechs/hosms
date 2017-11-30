@@ -30,11 +30,13 @@
         {
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.menuItemMain = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemDept = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemProc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemProcType = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemProc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemUserRoles = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemRegFee = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemOpt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemDocs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffOthers = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +53,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuItemDept = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemOpt = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -89,6 +89,20 @@
             this.menuItemMain.Size = new System.Drawing.Size(51, 22);
             this.menuItemMain.Text = "Main";
             // 
+            // menuItemDept
+            // 
+            this.menuItemDept.Name = "menuItemDept";
+            this.menuItemDept.Size = new System.Drawing.Size(178, 22);
+            this.menuItemDept.Text = "Departments";
+            this.menuItemDept.Click += new System.EventHandler(this.menuItemDept_Click);
+            // 
+            // menuItemProc
+            // 
+            this.menuItemProc.Name = "menuItemProc";
+            this.menuItemProc.Size = new System.Drawing.Size(178, 22);
+            this.menuItemProc.Text = "Procedures";
+            this.menuItemProc.Click += new System.EventHandler(this.menuItemProc_Click);
+            // 
             // menuItemStaffType
             // 
             this.menuItemStaffType.Name = "menuItemStaffType";
@@ -103,13 +117,6 @@
             this.menuItemProcType.Text = "Procedure Types";
             this.menuItemProcType.Click += new System.EventHandler(this.menuItemProcType_Click);
             // 
-            // menuItemProc
-            // 
-            this.menuItemProc.Name = "menuItemProc";
-            this.menuItemProc.Size = new System.Drawing.Size(178, 22);
-            this.menuItemProc.Text = "Procedures";
-            this.menuItemProc.Click += new System.EventHandler(this.menuItemProc_Click);
-            // 
             // menuItemUserRoles
             // 
             this.menuItemUserRoles.Name = "menuItemUserRoles";
@@ -123,6 +130,12 @@
             this.menuItemRegFee.Size = new System.Drawing.Size(178, 22);
             this.menuItemRegFee.Text = "Registration Fee";
             // 
+            // menuItemOpt
+            // 
+            this.menuItemOpt.Name = "menuItemOpt";
+            this.menuItemOpt.Size = new System.Drawing.Size(178, 22);
+            this.menuItemOpt.Text = "Options";
+            // 
             // menuItemStaffs
             // 
             this.menuItemStaffs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -135,14 +148,14 @@
             // menuItemDocs
             // 
             this.menuItemDocs.Name = "menuItemDocs";
-            this.menuItemDocs.Size = new System.Drawing.Size(152, 22);
+            this.menuItemDocs.Size = new System.Drawing.Size(123, 22);
             this.menuItemDocs.Text = "Doctors";
             this.menuItemDocs.Click += new System.EventHandler(this.menuItemDocs_Click);
             // 
             // menuItemStaffOthers
             // 
             this.menuItemStaffOthers.Name = "menuItemStaffOthers";
-            this.menuItemStaffOthers.Size = new System.Drawing.Size(152, 22);
+            this.menuItemStaffOthers.Size = new System.Drawing.Size(123, 22);
             this.menuItemStaffOthers.Text = "Others";
             this.menuItemStaffOthers.Click += new System.EventHandler(this.menuItemStaffOthers_Click);
             // 
@@ -203,7 +216,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.SkyBlue;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -268,19 +281,6 @@
             this.label1.Size = new System.Drawing.Size(90, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Logged in as: ";
-            // 
-            // menuItemDept
-            // 
-            this.menuItemDept.Name = "menuItemDept";
-            this.menuItemDept.Size = new System.Drawing.Size(178, 22);
-            this.menuItemDept.Text = "Departments";
-            this.menuItemDept.Click += new System.EventHandler(this.menuItemDept_Click);
-            // 
-            // menuItemOpt
-            // 
-            this.menuItemOpt.Name = "menuItemOpt";
-            this.menuItemOpt.Size = new System.Drawing.Size(178, 22);
-            this.menuItemOpt.Text = "Options";
             // 
             // frmMain
             // 
