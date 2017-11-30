@@ -37,6 +37,21 @@ namespace HospitalERP
             dgvDept.DataSource = st.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
         }
 
+        private void txtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                e.Cancel = true;
+                txtName.Focus();
+                errorProvider.SetError(txtName, "Required");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtName, null);
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             int t = st.addStaffs(txtName.Text,txtDesc.Text,chkActive.Checked);

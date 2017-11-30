@@ -2,68 +2,39 @@
 using System.Data.SqlClient;
 using System.Data;
 using Microsoft.ApplicationBlocks.Data;
+using System.Data.Common;
 
 namespace HospitalERP.Procedures
 {
     class Departments
     {
-        string connstr = HospitalERP.Helpers.DBHelper.GetConnectionString();
+        
         string conn = HospitalERP.Helpers.DBHelper.Constr;
         log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
 
         public void Departments_init()
         {
-            //log4net.Config.XmlConfigurator.Configure();
-            //log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            log4net.Config.XmlConfigurator.Configure();
+            log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         }
 
         public int addTypes(string type_title,string type_description,  bool active)
         {
-            //Departments_init();
             int ret = -1;
-            // Create the connection.  
-            SqlConnection conn = new SqlConnection(connstr);
-
-            SqlCommand sqlCmd = new SqlCommand("uspDepartments_Add", conn);
-            sqlCmd.CommandType = CommandType.StoredProcedure;
-
-            //sqlCmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
-            //sqlCmd.Parameters["@id"].Value = this.parsedCustomerID;
-
-            sqlCmd.Parameters.Add(new SqlParameter("@name", SqlDbType.VarChar));
-            sqlCmd.Parameters["@name"].Value = type_title;
-
-            sqlCmd.Parameters.Add(new SqlParameter("@description", SqlDbType.Text));
-            sqlCmd.Parameters["@description"].Value = type_description;
-
-            sqlCmd.Parameters.Add(new SqlParameter("@active", SqlDbType.Bit));
-            sqlCmd.Parameters["@active"].Value = active;
-
-            sqlCmd.Parameters.Add(new SqlParameter("@Ret", SqlDbType.Int));
-            sqlCmd.Parameters["@Ret"].Value = 0;
-            sqlCmd.Parameters["@Ret"].Direction = ParameterDirection.Output;
-
-            //try-catch-finally  
             try
             {
-                conn.Open();
-                sqlCmd.ExecuteNonQuery();
-                ret = (int)sqlCmd.Parameters["@Ret"].Value;
-                //log.Info("Department added succesfully");
-
+                SqlParameter[] sqlParam = new SqlParameter[3];
+                sqlParam[0] = new SqlParameter("@name", type_title);
+                sqlParam[1] = new SqlParameter("@description", type_description);
+                sqlParam[2] = new SqlParameter("@active", active);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspDepartments_Add", sqlParam).ToString());
             }
-            catch (Exception ex)
+            catch (DbException ex)
             {
-               ret = -1;
-               log.Error(ex.Message, ex);
-            }
-            finally
-            {
-                //Close connection.  
-                conn.Close();
+                ret = -1;
+                log.Error(ex.Message, ex);
             }
             return ret;
-
         }
 
         public int editTypes(int id,string name, string desc, bool active)
@@ -73,12 +44,12 @@ namespace HospitalERP.Procedures
             {
                 SqlParameter[] sqlParam = new SqlParameter[4];                
                 sqlParam[0] = new SqlParameter("@id", id);
-                sqlParam[1] = new SqlParameter("@name", id);
-                sqlParam[2] = new SqlParameter("@desc", id);
+                sqlParam[1] = new SqlParameter("@name", name);
+                sqlParam[2] = new SqlParameter("@desc", desc);
                 sqlParam[3] = new SqlParameter("@active", active);                
-                ret = Convert.ToInt32(SqlHelper.ExecuteNonQuery(conn, CommandType.StoredProcedure, "uspDepartments_Edit", sqlParam).ToString());
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspDepartments_Edit", sqlParam).ToString());
             }
-            catch (Exception ex)
+            catch (DbException ex)
             {
                 ret = -1;
                 log.Error(ex.Message, ex);

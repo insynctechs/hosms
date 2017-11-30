@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabSub = new System.Windows.Forms.TabControl();
             this.tabPgAdd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,22 +43,25 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.tabPgList = new System.Windows.Forms.TabPage();
+            this.dgvDept = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
-            this.dgvDept = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.tabPgList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSub
@@ -171,6 +175,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(250, 25);
             this.txtName.TabIndex = 1;
+            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
             // label2
             // 
@@ -253,6 +258,14 @@
             this.lblStatus.Size = new System.Drawing.Size(0, 18);
             this.lblStatus.TabIndex = 58;
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(285, 273);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(46, 25);
+            this.txtID.TabIndex = 59;
+            this.txtID.Visible = false;
+            // 
             // tabPgList
             // 
             this.tabPgList.BackColor = System.Drawing.Color.White;
@@ -268,6 +281,54 @@
             this.tabPgList.TabIndex = 1;
             this.tabPgList.Text = "Search/List";
             this.tabPgList.UseVisualStyleBackColor = true;
+            // 
+            // dgvDept
+            // 
+            this.dgvDept.AllowUserToAddRows = false;
+            this.dgvDept.AllowUserToDeleteRows = false;
+            this.dgvDept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDept.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colName,
+            this.colDesc,
+            this.colActive});
+            this.dgvDept.Location = new System.Drawing.Point(24, 61);
+            this.dgvDept.Name = "dgvDept";
+            this.dgvDept.ReadOnly = true;
+            this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDept.Size = new System.Drawing.Size(469, 189);
+            this.dgvDept.TabIndex = 9;
+            this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
+            // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colDesc
+            // 
+            this.colDesc.DataPropertyName = "description";
+            this.colDesc.HeaderText = "Description";
+            this.colDesc.Name = "colDesc";
+            this.colDesc.ReadOnly = true;
+            // 
+            // colActive
+            // 
+            this.colActive.DataPropertyName = "active";
+            this.colActive.HeaderText = "Active";
+            this.colActive.Name = "colActive";
+            this.colActive.ReadOnly = true;
+            this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // btnSearch
             // 
@@ -303,53 +364,9 @@
             this.cmbSearch.Size = new System.Drawing.Size(121, 27);
             this.cmbSearch.TabIndex = 5;
             // 
-            // dgvDept
+            // errorProvider
             // 
-            this.dgvDept.AllowUserToAddRows = false;
-            this.dgvDept.AllowUserToDeleteRows = false;
-            this.dgvDept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDept.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colName,
-            this.colActive});
-            this.dgvDept.Location = new System.Drawing.Point(24, 61);
-            this.dgvDept.Name = "dgvDept";
-            this.dgvDept.ReadOnly = true;
-            this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDept.Size = new System.Drawing.Size(469, 189);
-            this.dgvDept.TabIndex = 9;
-            this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
-            // 
-            // colID
-            // 
-            this.colID.DataPropertyName = "id";
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colActive
-            // 
-            this.colActive.DataPropertyName = "active";
-            this.colActive.HeaderText = "Active";
-            this.colActive.Name = "colActive";
-            this.colActive.ReadOnly = true;
-            this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(285, 273);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(46, 25);
-            this.txtID.TabIndex = 59;
-            this.txtID.Visible = false;
+            this.errorProvider.ContainerControl = this;
             // 
             // frmDepartments
             // 
@@ -369,6 +386,7 @@
             this.tabPgList.ResumeLayout(false);
             this.tabPgList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,9 +413,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSearch;
         private System.Windows.Forms.DataGridView dgvDept;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDesc;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

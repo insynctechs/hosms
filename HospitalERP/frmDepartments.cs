@@ -13,11 +13,14 @@ namespace HospitalERP
     
     public partial class frmDepartments : Form
     {
-        //log4net.ILog log;
+        log4net.ILog ilog;
         Departments dt = new Departments();
         public frmDepartments()
         {
             InitializeComponent();
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         }
 
         private void frmDepartments_Load(object sender, EventArgs e)
@@ -42,6 +45,21 @@ namespace HospitalERP
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                e.Cancel = true;
+                txtName.Focus();
+                errorProvider.SetError(txtName, "Required");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtName, null);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -75,6 +93,7 @@ namespace HospitalERP
                     lblStatus.Text = "Record succesfully updated";
                     txtName.Text = "";
                     txtDesc.Text = "";
+                    txtID.Text = "";
                     chkActive.Checked = false;
 
                 }
@@ -83,6 +102,7 @@ namespace HospitalERP
                     lblStatus.Text = "Some error occurred... Record cannot be added.";
                 }
             }
+            ShowDepartments();
         }
         private void tabSub_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -104,12 +124,19 @@ namespace HospitalERP
 
         private void dgvDept_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtName.Text = dgvDept.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtDesc.Text = dgvDept.Rows[e.RowIndex].Cells[2].Value.ToString();
-            chkActive.Checked = (bool)dgvDept.Rows[e.RowIndex].Cells[3].Value;
+            try
+            {
+                txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtName.Text = dgvDept.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtDesc.Text = dgvDept.Rows[e.RowIndex].Cells[2].Value.ToString();
+                chkActive.Checked = (bool)dgvDept.Rows[e.RowIndex].Cells[3].Value;
 
-            tabSub.SelectedIndex = 0;
+                tabSub.SelectedIndex = 0;
+            }
+            catch(Exception ex)
+            {
+                ilog.Error(ex.Message, ex);
+            }
         }
     }
 }

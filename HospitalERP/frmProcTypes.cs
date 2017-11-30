@@ -6,7 +6,7 @@ namespace HospitalERP
     public partial class frmProcTypes : Form
     {
         ProcTypes pt = new ProcTypes();
-        log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
+        log4net.ILog ilog;
         public frmProcTypes()
         {
             InitializeComponent();
@@ -18,6 +18,9 @@ namespace HospitalERP
             this.WindowState = FormWindowState.Maximized;
             PopulateSearch();
             ShowRecords();
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         }
 
         private void PopulateSearch()
@@ -43,23 +46,41 @@ namespace HospitalERP
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                int t = pt.InsertProc(txtName.Text, txtDesc.Text, chkActive.Checked);
-                if (t > 0)
-                    lblStatus.Text = "Record added succesfully";
-                /*
-                int t = pt.addTypes(txtName.Text, txtDesc.Text, chkActive.Checked);
-                if (t == -1)
-                    lblStatus.Text = "Some error occurred... Record cannot be added.";
-                else if (t == 0)
-                    lblStatus.Text = "Type name should be unique";
-                else if (t == 1)
+                int rtn = -1;
+                if (txtID.Text.Trim() == "") //add data
                 {
-                    lblStatus.Text = "Record succesfully added";
-                    txtName.Text = "";
-                    txtDesc.Text = "";
-                    chkActive.Checked = false;
+                    rtn = pt.InsertProc(txtName.Text, txtDesc.Text, chkActive.Checked);
+                    if (rtn == -1)
+                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                    else if (rtn == 0)
+                        lblStatus.Text = "Type name should be unique";
+                    else if (rtn == 1)
+                    {
+                        lblStatus.Text = "Record succesfully added";
+                        txtName.Text = "";
+                        txtDesc.Text = "";
+                        chkActive.Checked = false;
+                    }
                 }
-                */
+                else //edit record
+                {
+                    rtn = pt.editTypes(Int32.Parse(txtID.Text.Trim()), txtName.Text, txtDesc.Text, chkActive.Checked);
+                    if (rtn == 0)
+                        lblStatus.Text = "This name already exists. Please provide unique name.";
+                    else if (rtn == 1)
+                    {
+                        lblStatus.Text = "Record succesfully updated";
+                        txtName.Text = "";
+                        txtDesc.Text = "";
+                        chkActive.Checked = false;
+
+                    }
+                    else if (rtn == -1)
+                    {
+                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                    }
+                }
+
             }
         }
 

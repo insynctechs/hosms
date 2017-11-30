@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabSub = new System.Windows.Forms.TabControl();
             this.tabPgAdd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,12 +54,14 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.tabPgList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSub
@@ -173,6 +176,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(250, 25);
             this.txtName.TabIndex = 1;
+            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
             // label2
             // 
@@ -361,6 +365,10 @@
             this.cmbSearch.Size = new System.Drawing.Size(121, 27);
             this.cmbSearch.TabIndex = 15;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmStaffTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +387,7 @@
             this.tabPgList.ResumeLayout(false);
             this.tabPgList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,5 +419,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSearch;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -45,11 +45,23 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.tabPgList = new System.Windows.Forms.TabPage();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvDept = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            this.tabPgList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSub
@@ -98,6 +110,7 @@
             this.tableLayoutPanel2.Controls.Add(this.chkActive, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.lblStatus, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtID, 1, 21);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -248,6 +261,11 @@
             // tabPgList
             // 
             this.tabPgList.BackColor = System.Drawing.Color.White;
+            this.tabPgList.Controls.Add(this.dgvDept);
+            this.tabPgList.Controls.Add(this.btnSearch);
+            this.tabPgList.Controls.Add(this.txtSearch);
+            this.tabPgList.Controls.Add(this.label1);
+            this.tabPgList.Controls.Add(this.cmbSearch);
             this.tabPgList.Location = new System.Drawing.Point(4, 45);
             this.tabPgList.Name = "tabPgList";
             this.tabPgList.Padding = new System.Windows.Forms.Padding(3);
@@ -259,6 +277,95 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // dgvDept
+            // 
+            this.dgvDept.AllowUserToAddRows = false;
+            this.dgvDept.AllowUserToDeleteRows = false;
+            this.dgvDept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDept.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colName,
+            this.description,
+            this.colActive});
+            this.dgvDept.Location = new System.Drawing.Point(17, 59);
+            this.dgvDept.Name = "dgvDept";
+            this.dgvDept.ReadOnly = true;
+            this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDept.Size = new System.Drawing.Size(469, 189);
+            this.dgvDept.TabIndex = 24;
+            this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
+            // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "type_title";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "type_description";
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // colActive
+            // 
+            this.colActive.DataPropertyName = "active";
+            this.colActive.HeaderText = "Active";
+            this.colActive.Name = "colActive";
+            this.colActive.ReadOnly = true;
+            this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(349, 13);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(59, 29);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.Text = "GO";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(234, 14);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 27);
+            this.txtSearch.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 19);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Search";
+            // 
+            // cmbSearch
+            // 
+            this.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSearch.FormattingEnabled = true;
+            this.cmbSearch.Location = new System.Drawing.Point(92, 13);
+            this.cmbSearch.Name = "cmbSearch";
+            this.cmbSearch.Size = new System.Drawing.Size(121, 27);
+            this.cmbSearch.TabIndex = 20;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(285, 273);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 25);
+            this.txtID.TabIndex = 59;
             // 
             // frmUserRoles
             // 
@@ -275,7 +382,10 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
+            this.tabPgList.ResumeLayout(false);
+            this.tabPgList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,5 +408,15 @@
         private System.Windows.Forms.TabPage tabPgList;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.DataGridView dgvDept;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbSearch;
+        private System.Windows.Forms.TextBox txtID;
     }
 }
