@@ -16,7 +16,7 @@ namespace HospitalERP.Procedures
             sqlParam[0] = new SqlParameter("@type_name", DepartmentName);
             sqlParam[1] = new SqlParameter("@description", description);
             sqlParam[2] = new SqlParameter("@active", Active);
-            Int32 Id = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspInsertProcedureTypes", sqlParam).ToString());
+            Int32 Id = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspProcedureTypes_Add", sqlParam).ToString());
             return Id;
         }
 
@@ -46,7 +46,7 @@ namespace HospitalERP.Procedures
                 SqlParameter[] sqlParam = new SqlParameter[4];
                 sqlParam[0] = new SqlParameter("@id", id);
                 sqlParam[1] = new SqlParameter("@name", name);
-                sqlParam[2] = new SqlParameter("@desc", id);
+                sqlParam[2] = new SqlParameter("@desc", desc);
                 sqlParam[3] = new SqlParameter("@active", active);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspProcedureTypes_Edit", sqlParam).ToString());
             }

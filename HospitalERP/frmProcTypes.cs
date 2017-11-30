@@ -73,14 +73,14 @@ namespace HospitalERP
                         txtName.Text = "";
                         txtDesc.Text = "";
                         chkActive.Checked = false;
-
+                        txtID.Text = "";
                     }
                     else if (rtn == -1)
                     {
                         lblStatus.Text = "Some error occurred... Record cannot be added.";
                     }
                 }
-
+                ShowRecords();
             }
         }
 
