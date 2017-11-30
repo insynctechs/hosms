@@ -19,9 +19,20 @@ namespace HospitalERP
 
         private void Hospital_Load(object sender, EventArgs e)
         {
+            foreach (Control ctl in this.Controls)
+            {
+                try
+                {
+                    System.Windows.Forms.Control Mdi = (MdiClient)ctl;
 
+                    Mdi.BackColor = System.Drawing.Color.White;
+                }
+                catch (Exception a)
+                {
+
+                }
+            }
         }
-
         
 
         private void menuItemStaffOthers_Click(object sender, EventArgs e)
