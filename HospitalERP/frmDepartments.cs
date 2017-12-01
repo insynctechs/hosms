@@ -26,7 +26,10 @@ namespace HospitalERP
 
         private void frmDepartments_Load(object sender, EventArgs e)
         {
+            
             this.WindowState = FormWindowState.Maximized;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             PopulateSearch();
             ShowDepartments();
         }

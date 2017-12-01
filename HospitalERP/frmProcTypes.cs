@@ -1,5 +1,7 @@
 ﻿using System;
+
 using System.Windows.Forms;
+using System.Drawing;
 using HospitalERP.Procedures;
 namespace HospitalERP
 {
@@ -16,8 +18,7 @@ namespace HospitalERP
         private void frmProcTypes_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            PopulateSearch();
-            ShowRecords();
+            PopulateSearch();            
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -51,36 +52,31 @@ namespace HospitalERP
                 {
                     rtn = pt.InsertProc(txtName.Text, txtDesc.Text, chkActive.Checked);
                     if (rtn == -1)
-                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                        ShowStatus(0,"Some error occurred... Record cannot be added.");
                     else if (rtn == 0)
-                        lblStatus.Text = "Type name should be unique";
+                        ShowStatus(0, "Type name should be unique");
                     else if (rtn == 1)
                     {
-                        lblStatus.Text = "Record succesfully added";
-                        txtName.Text = "";
-                        txtDesc.Text = "";
-                        chkActive.Checked = false;
+                        ShowStatus(1, "Record succesfully added");
+                        clearFormFields();
                     }
                 }
                 else //edit record
                 {
                     rtn = pt.editTypes(Int32.Parse(txtID.Text.Trim()), txtName.Text, txtDesc.Text, chkActive.Checked);
                     if (rtn == 0)
-                        lblStatus.Text = "This name already exists. Please provide unique name.";
+                        ShowStatus(0, "This name already exists. Please provide unique name.");
                     else if (rtn == 1)
                     {
-                        lblStatus.Text = "Record succesfully updated";
-                        txtName.Text = "";
-                        txtDesc.Text = "";
-                        chkActive.Checked = false;
-                        txtID.Text = "";
+                        ShowStatus(1, "Record succesfully updated");
+                        clearFormFields();
                     }
                     else if (rtn == -1)
                     {
-                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                        ShowStatus(0, "Some error occurred... Record cannot be added.");
                     }
                 }
-                ShowRecords();
+                
             }
         }
 
@@ -103,11 +99,61 @@ namespace HospitalERP
         {
 
             txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
+            
             txtName.Text = dgvDept.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtDesc.Text = dgvDept.Rows[e.RowIndex].Cells[2].Value.ToString();
             chkActive.Checked = (bool)dgvDept.Rows[e.RowIndex].Cells[3].Value;
-
             tabSub.SelectedIndex = 0;
         }
+
+        private void tabSub_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabSub.SelectedIndex)
+            {
+                case 0:
+                   
+                    break;
+                case 1:
+                    ShowRecords();
+                    break;
+            }
+            
+        }
+
+        private void ShowStatus(int success, string msg)
+        {
+            lblStatus.Visible = true;
+            if (success == 1)
+            {
+                lblStatus.BackColor = Color.YellowGreen;
+                lblStatus.ForeColor = Color.DarkGreen;
+            }
+            else
+            {
+                lblStatus.BackColor = Color.Salmon;
+                lblStatus.ForeColor = Color.DarkRed;
+            }
+            lblStatus.Text = msg;
+            var t = new Timer();
+            t.Interval = 5000; // it will Tick in 3 seconds
+            t.Tick += (s, e) =>
+            {
+                lblStatus.Hide();
+                t.Stop();
+            };
+            t.Start();
+        }
+
+        private void clearFormFields()
+        {
+            
+            txtName.Text = "";
+            txtDesc.Text = "";            
+            chkActive.Checked = false;
+            txtID.Text = "";
+            //PopulateProcTypeCombo(0);
+        }
+
+
     }
 }
