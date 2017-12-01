@@ -83,7 +83,7 @@ namespace HospitalERP.Procedures
                 dt.Columns.Add("Display");
                 dt.Rows.Add(new object[] { "All", "All" });
                 //dt.Rows.Add(new object[] { "id", "ID" });
-                dt.Rows.Add(new object[] { "name", "Name" });
+                dt.Rows.Add(new object[] { "type_name", "Name" });
                 dt.Rows.Add(new object[] { "active", "Active" });
                 return dt;
             }

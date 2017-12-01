@@ -1,6 +1,6 @@
 ﻿namespace HospitalERP
 {
-    partial class frmStaffTypes
+    partial class frmOptions
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabSub = new System.Windows.Forms.TabControl();
             this.tabPgAdd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbName = new System.Windows.Forms.Label();
             this.lblHead1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblActive = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.TextBox();
-            this.chkActive = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -50,19 +47,24 @@
             this.tabPgList = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvDept = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtVal = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -71,8 +73,9 @@
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSub
@@ -90,7 +93,7 @@
             this.tabSub.SelectedIndex = 0;
             this.tabSub.ShowToolTips = true;
             this.tabSub.Size = new System.Drawing.Size(1008, 512);
-            this.tabSub.TabIndex = 3;
+            this.tabSub.TabIndex = 4;
             this.tabSub.SelectedIndexChanged += new System.EventHandler(this.tabSub_SelectedIndexChanged);
             // 
             // tabPgAdd
@@ -102,7 +105,7 @@
             this.tabPgAdd.Padding = new System.Windows.Forms.Padding(3);
             this.tabPgAdd.Size = new System.Drawing.Size(1000, 463);
             this.tabPgAdd.TabIndex = 0;
-            this.tabPgAdd.Text = "Add Types";
+            this.tabPgAdd.Text = "Add";
             this.tabPgAdd.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
@@ -116,12 +119,12 @@
             this.tableLayoutPanel2.Controls.Add(this.lblHead1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtName, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.lblActive, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtDesc, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.chkActive, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.lblStatus, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel6, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel5, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtVal, 1, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -154,15 +157,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 457);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(24, 0);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(81, 18);
-            this.lbName.TabIndex = 0;
-            this.lbName.Text = "Type Name:";
-            // 
             // lblHead1
             // 
             this.lblHead1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -178,7 +172,7 @@
             this.lblHead1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.lblHead1.Size = new System.Drawing.Size(938, 28);
             this.lblHead1.TabIndex = 29;
-            this.lblHead1.Text = "STAFF TYPE";
+            this.lblHead1.Text = "OPTIONS";
             this.lblHead1.UseWaitCursor = true;
             // 
             // txtName
@@ -187,7 +181,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(250, 25);
             this.txtName.TabIndex = 1;
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
             // label2
             // 
@@ -198,15 +191,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Description:";
             // 
-            // lblActive
-            // 
-            this.lblActive.AutoSize = true;
-            this.lblActive.Location = new System.Drawing.Point(28, 250);
-            this.lblActive.Name = "lblActive";
-            this.lblActive.Size = new System.Drawing.Size(50, 18);
-            this.lblActive.TabIndex = 4;
-            this.lblActive.Text = "Active:";
-            // 
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(285, 160);
@@ -216,22 +200,13 @@
             this.txtDesc.Size = new System.Drawing.Size(250, 87);
             this.txtDesc.TabIndex = 54;
             // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Location = new System.Drawing.Point(285, 253);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(15, 14);
-            this.chkActive.TabIndex = 55;
-            this.chkActive.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel3
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel3, 2);
             this.flowLayoutPanel3.Controls.Add(this.btnSave);
             this.flowLayoutPanel3.Controls.Add(this.btnCancel);
             this.flowLayoutPanel3.Controls.Add(this.txtID);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 273);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 285);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(297, 39);
             this.flowLayoutPanel3.TabIndex = 57;
@@ -297,7 +272,7 @@
             this.tabPgList.Padding = new System.Windows.Forms.Padding(3);
             this.tabPgList.Size = new System.Drawing.Size(1000, 463);
             this.tabPgList.TabIndex = 1;
-            this.tabPgList.Text = "Search/List Types";
+            this.tabPgList.Text = "Search/List";
             this.tabPgList.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel4
@@ -313,10 +288,10 @@
             // 
             this.dgvDept.AllowUserToAddRows = false;
             this.dgvDept.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvDept.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvDept.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvDept.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDept.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -325,28 +300,28 @@
             this.dgvDept.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDept.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvDept.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDept.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDept.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvDept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDept.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colName,
             this.description,
-            this.colActive});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDept.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colVal});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDept.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvDept.GridColor = System.Drawing.Color.LightCyan;
             this.dgvDept.Location = new System.Drawing.Point(20, 3);
             this.dgvDept.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -355,37 +330,6 @@
             this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDept.Size = new System.Drawing.Size(980, 250);
             this.dgvDept.TabIndex = 10;
-            this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
-            // 
-            // colID
-            // 
-            this.colID.DataPropertyName = "id";
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "type_title";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "type_description";
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // colActive
-            // 
-            this.colActive.DataPropertyName = "active";
-            this.colActive.HeaderText = "Active";
-            this.colActive.Name = "colActive";
-            this.colActive.ReadOnly = true;
-            this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // flowLayoutPanel2
             // 
@@ -450,14 +394,10 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.Controls.Add(this.label6);
-            this.flowLayoutPanel6.Controls.Add(this.lbName);
+            this.flowLayoutPanel6.Controls.Add(this.label3);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(28, 128);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(200, 26);
@@ -473,15 +413,94 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "*";
             // 
-            // frmStaffTypes
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 18);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "Option Name:";
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.label4);
+            this.flowLayoutPanel5.Controls.Add(this.label5);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(28, 253);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 26);
+            this.flowLayoutPanel5.TabIndex = 69;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 18);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 18);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Option Value:";
+            // 
+            // txtVal
+            // 
+            this.txtVal.Location = new System.Drawing.Point(285, 253);
+            this.txtVal.Name = "txtVal";
+            this.txtVal.Size = new System.Drawing.Size(250, 25);
+            this.txtVal.TabIndex = 70;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "op_name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "op_description";
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // colVal
+            // 
+            this.colVal.DataPropertyName = "op_value";
+            this.colVal.HeaderText = "Value";
+            this.colVal.Name = "colVal";
+            this.colVal.ReadOnly = true;
+            // 
+            // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 512);
             this.Controls.Add(this.tabSub);
-            this.Name = "frmStaffTypes";
-            this.Text = "Staff Types";
-            this.Load += new System.EventHandler(this.frmStaffTypes_Load);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmOptions";
+            this.Text = "Options";
+            this.Load += new System.EventHandler(this.frmOptions_Load);
             this.tabSub.ResumeLayout(false);
             this.tabPgAdd.ResumeLayout(false);
             this.tabPgAdd.PerformLayout();
@@ -494,9 +513,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,33 +527,35 @@
         private System.Windows.Forms.TabControl tabSub;
         private System.Windows.Forms.TabPage tabPgAdd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lblHead1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblActive;
-        private System.Windows.Forms.TabPage tabPgList;
         private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.CheckBox chkActive;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.TabPage tabPgList;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.DataGridView dgvDept;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtVal;
+        private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbSearch;
-        private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVal;
     }
 }
