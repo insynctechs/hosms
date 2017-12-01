@@ -66,7 +66,9 @@ namespace HospitalERP
 
         private void menuItemProc_Click(object sender, EventArgs e)
         {
-
+            frmProcedures frm = new frmProcedures();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void menuItemUserRoles_Click(object sender, EventArgs e)
