@@ -153,6 +153,9 @@ namespace HospitalERP
             //PopulateProcTypeCombo(0);
         }
 
-
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            ShowRecords();
+        }
     }
 }

@@ -46,6 +46,9 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.tabPgList = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvDept = new System.Windows.Forms.DataGridView();
@@ -60,19 +63,16 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
             this.tabPgList.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.flowLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSub
@@ -89,7 +89,7 @@
             this.tabSub.Padding = new System.Drawing.Point(20, 10);
             this.tabSub.SelectedIndex = 0;
             this.tabSub.ShowToolTips = true;
-            this.tabSub.Size = new System.Drawing.Size(1008, 730);
+            this.tabSub.Size = new System.Drawing.Size(1008, 516);
             this.tabSub.TabIndex = 4;
             this.tabSub.SelectedIndexChanged += new System.EventHandler(this.tabSub_SelectedIndexChanged);
             // 
@@ -100,7 +100,7 @@
             this.tabPgAdd.Location = new System.Drawing.Point(4, 45);
             this.tabPgAdd.Name = "tabPgAdd";
             this.tabPgAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgAdd.Size = new System.Drawing.Size(1000, 681);
+            this.tabPgAdd.Size = new System.Drawing.Size(1000, 467);
             this.tabPgAdd.TabIndex = 0;
             this.tabPgAdd.Text = "Add";
             this.tabPgAdd.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 675);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 461);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // lblHead1
@@ -277,6 +277,34 @@
             this.lblStatus.Size = new System.Drawing.Size(42, 31);
             this.lblStatus.TabIndex = 58;
             this.lblStatus.Visible = false;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.label6);
+            this.flowLayoutPanel6.Controls.Add(this.lbName);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(28, 135);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(200, 26);
+            this.flowLayoutPanel6.TabIndex = 67;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "*";
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(24, 0);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(49, 18);
+            this.lbName.TabIndex = 62;
+            this.lbName.Text = "Name:";
             // 
             // tabPgList
             // 
@@ -447,39 +475,11 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.Controls.Add(this.label6);
-            this.flowLayoutPanel6.Controls.Add(this.lbName);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(28, 135);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(200, 26);
-            this.flowLayoutPanel6.TabIndex = 67;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "*";
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(24, 0);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(49, 18);
-            this.lbName.TabIndex = 62;
-            this.lbName.Text = "Name:";
-            // 
             // frmDepartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.ClientSize = new System.Drawing.Size(1008, 516);
             this.Controls.Add(this.tabSub);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
@@ -495,14 +495,14 @@
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
             this.tabPgList.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -524,7 +524,6 @@
         private System.Windows.Forms.TabPage tabPgList;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSearch;
         private System.Windows.Forms.TextBox txtID;
@@ -540,5 +539,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

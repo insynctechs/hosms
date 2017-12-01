@@ -88,10 +88,10 @@ namespace HospitalERP
                     }
                     else if (rtn == -1)
                     {
-                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                        ShowStatus(0, "Some error occurred... Record cannot be added.");
                     }
                 }
-                ShowRecords();
+                
             }
         }
 
@@ -151,6 +151,11 @@ namespace HospitalERP
                     ShowRecords();
                     break;
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            ShowRecords();
         }
     }
 }
