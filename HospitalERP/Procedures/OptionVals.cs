@@ -36,7 +36,7 @@ namespace HospitalERP.Procedures
             SqlParameter[] sqlParam = new SqlParameter[3];
             sqlParam[0] = new SqlParameter("@name", name);
             sqlParam[1] = new SqlParameter("@description", description);
-            sqlParam[2] = new SqlParameter("@aval", val);
+            sqlParam[2] = new SqlParameter("@val", val);
             Int32 Id = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspOptions_Add", sqlParam).ToString());
             return Id;
         }
@@ -49,6 +49,60 @@ namespace HospitalERP.Procedures
                 sqlParam[0] = new SqlParameter("@SearchBy", SearchBy);
                 sqlParam[1] = new SqlParameter("@SearchValue", SearchValue);
                 DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspOptions_Get", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public DataTable GetOptionFromName(string name)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@name", name);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspOptions_Single", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public int editOptions(int id, string name, string desc, string val)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[4];
+                sqlParam[0] = new SqlParameter("@id", id);
+                sqlParam[1] = new SqlParameter("@name", name);
+                sqlParam[2] = new SqlParameter("@desc", desc);
+                sqlParam[3] = new SqlParameter("@val", val);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspOptions_Edit", sqlParam).ToString());
+            }
+            catch (Exception ex)
+            {
+                ret = -1;
+                log.Error(ex.Message, ex);
+            }
+            return ret;
+        }
+
+        public DataTable GetOptionFromNameList(string name)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@name", name);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspOptions_Many", sqlParam);
                 return dt.Tables[0];
             }
             catch (Exception ex)

@@ -84,5 +84,12 @@ namespace HospitalERP
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void menuItemOpt_Click(object sender, EventArgs e)
+        {
+            frmOptions frm = new frmOptions();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

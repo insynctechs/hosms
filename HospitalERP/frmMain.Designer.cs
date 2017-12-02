@@ -35,7 +35,6 @@
             this.menuItemStaffType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemProcType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemUserRoles = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemRegFee = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemOpt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemDocs = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +82,6 @@
             this.menuItemStaffType,
             this.menuItemProcType,
             this.menuItemUserRoles,
-            this.menuItemRegFee,
             this.menuItemOpt});
             this.menuItemMain.Name = "menuItemMain";
             this.menuItemMain.Size = new System.Drawing.Size(51, 22);
@@ -124,17 +122,12 @@
             this.menuItemUserRoles.Text = "User Roles";
             this.menuItemUserRoles.Click += new System.EventHandler(this.menuItemUserRoles_Click);
             // 
-            // menuItemRegFee
-            // 
-            this.menuItemRegFee.Name = "menuItemRegFee";
-            this.menuItemRegFee.Size = new System.Drawing.Size(178, 22);
-            this.menuItemRegFee.Text = "Registration Fee";
-            // 
             // menuItemOpt
             // 
             this.menuItemOpt.Name = "menuItemOpt";
             this.menuItemOpt.Size = new System.Drawing.Size(178, 22);
             this.menuItemOpt.Text = "Options";
+            this.menuItemOpt.Click += new System.EventHandler(this.menuItemOpt_Click);
             // 
             // menuItemStaffs
             // 
@@ -319,7 +312,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemPatients;
         private System.Windows.Forms.ToolStripMenuItem menuItemStaffType;
         private System.Windows.Forms.ToolStripMenuItem menuItemProcType;
-        private System.Windows.Forms.ToolStripMenuItem menuItemRegFee;
         private System.Windows.Forms.ToolStripMenuItem menuItemDocs;
         private System.Windows.Forms.ToolStripMenuItem menuItemStaffOthers;
         private System.Windows.Forms.ToolStripMenuItem menuItemBill;

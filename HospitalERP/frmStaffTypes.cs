@@ -8,7 +8,7 @@ namespace HospitalERP
     public partial class frmStaffTypes : Form
     {
         StaffTypes st = new StaffTypes();
-        
+        log4net.ILog ilog;
         public frmStaffTypes()
         {
             InitializeComponent();
@@ -23,7 +23,10 @@ namespace HospitalERP
         {
             this.WindowState = FormWindowState.Maximized;
             PopulateSearch();
-           
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+
         }
 
         private void PopulateSearch()
@@ -135,7 +138,7 @@ namespace HospitalERP
 
             txtName.Text = "";
             txtDesc.Text = "";
-            chkActive.Checked = false;
+            chkActive.Checked = true;
             txtID.Text = "";
             //PopulateProcTypeCombo(0);
         }
