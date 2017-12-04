@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Drawing;
 using HospitalERP.Procedures;
+using System.Data;
 
 namespace HospitalERP
 {
@@ -161,6 +162,53 @@ namespace HospitalERP
                     ShowRecords();
                     break;
             }
+        }
+
+        public void BuildTree(DataTable dt, TreeView trv, Boolean expandAll)
+        {
+            // Clear the TreeView if there are another datas in this TreeView
+            trv.Nodes.Clear();
+            TreeNode node = default(TreeNode);
+            TreeNode subNode = default(TreeNode);
+            foreach (DataRow row in dt.Rows)
+            {
+                //search in the treeview if any country is already present
+                node = SearchNode(row[0].ToString(), trv);
+                if (node != null)
+                {
+                    //Country is already present
+                    subNode = new TreeNode(row[1].ToString());
+                    //Add cities to country
+                    node.Nodes.Add(subNode);
+                }
+                else
+                {
+                    node = new TreeNode(row[0].ToString());
+                    subNode = new TreeNode(row[1].ToString());
+                    //Add cities to country
+                    node.Nodes.Add(subNode);
+                    trv.Nodes.Add(node);
+                }
+            }
+            if (expandAll)
+            {
+                // Expand the TreeView
+                trv.ExpandAll();
+            }
+        }
+
+        private TreeNode SearchNode(string nodetext, TreeView trv)
+        {
+            foreach (TreeNode node in trv.Nodes)
+            {
+                if (node.Text == nodetext)
+                {
+                    return node;
+                }
+               
+            }
+            return null;
+            
         }
     }
 }

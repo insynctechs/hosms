@@ -24,7 +24,6 @@ namespace HospitalERP
                 try
                 {
                     System.Windows.Forms.Control Mdi = (MdiClient)ctl;
-
                     Mdi.BackColor = System.Drawing.Color.White;
                 }
                 catch (Exception a)
@@ -32,6 +31,8 @@ namespace HospitalERP
 
                 }
             }
+
+            //MainMenu.Items.RemoveByKey("menuItemMain");
         }
         
 

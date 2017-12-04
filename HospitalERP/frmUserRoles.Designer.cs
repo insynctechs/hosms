@@ -32,6 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node5");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.tabSub = new System.Windows.Forms.TabControl();
             this.tabPgAdd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,9 +67,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.trvMenu = new System.Windows.Forms.TreeView();
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -119,20 +127,23 @@
             this.tableLayoutPanel2.Controls.Add(this.lblActive, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtDesc, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.chkActive, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.lblStatus, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel6, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.trvMenu, 1, 7);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(25, 3, 25, 15);
-            this.tableLayoutPanel2.RowCount = 22;
+            this.tableLayoutPanel2.RowCount = 24;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -166,14 +177,14 @@
             this.lblHead1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.lblHead1.Name = "lblHead1";
             this.lblHead1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.lblHead1.Size = new System.Drawing.Size(938, 28);
+            this.lblHead1.Size = new System.Drawing.Size(921, 28);
             this.lblHead1.TabIndex = 29;
             this.lblHead1.Text = "USER ROLES";
             this.lblHead1.UseWaitCursor = true;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(285, 135);
+            this.txtName.Location = new System.Drawing.Point(280, 135);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(250, 25);
             this.txtName.TabIndex = 1;
@@ -199,7 +210,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(285, 167);
+            this.txtDesc.Location = new System.Drawing.Point(280, 167);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -211,7 +222,7 @@
             this.chkActive.AutoSize = true;
             this.chkActive.Checked = true;
             this.chkActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkActive.Location = new System.Drawing.Point(285, 260);
+            this.chkActive.Location = new System.Drawing.Point(280, 260);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(15, 14);
             this.chkActive.TabIndex = 55;
@@ -223,7 +234,7 @@
             this.flowLayoutPanel3.Controls.Add(this.btnSave);
             this.flowLayoutPanel3.Controls.Add(this.btnCancel);
             this.flowLayoutPanel3.Controls.Add(this.txtID);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 280);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(280, 403);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(362, 39);
             this.flowLayoutPanel3.TabIndex = 57;
@@ -450,6 +461,14 @@
             this.cmbSearch.Size = new System.Drawing.Size(150, 27);
             this.cmbSearch.TabIndex = 20;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(261, 23);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(200, 27);
+            this.txtSearch.TabIndex = 24;
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -466,13 +485,25 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // txtSearch
+            // trvMenu
             // 
-            this.txtSearch.Location = new System.Drawing.Point(261, 23);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(200, 27);
-            this.txtSearch.TabIndex = 24;
+            this.trvMenu.AllowDrop = true;
+            this.trvMenu.CheckBoxes = true;
+            this.trvMenu.Location = new System.Drawing.Point(280, 300);
+            this.trvMenu.Name = "trvMenu";
+            treeNode1.Name = "Node3";
+            treeNode1.Text = "Node3";
+            treeNode2.Name = "Node4";
+            treeNode2.Text = "Node4";
+            treeNode3.Name = "Node5";
+            treeNode3.Text = "Node5";
+            treeNode4.Checked = true;
+            treeNode4.Name = "Node0";
+            treeNode4.Text = "Node0";
+            this.trvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            this.trvMenu.Size = new System.Drawing.Size(121, 97);
+            this.trvMenu.TabIndex = 69;
             // 
             // frmUserRoles
             // 
@@ -535,5 +566,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TreeView trvMenu;
     }
 }
