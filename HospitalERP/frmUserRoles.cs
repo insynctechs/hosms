@@ -71,6 +71,7 @@ namespace HospitalERP
                 else //edit record
                 {
                     rtn = UR.editTypes(Int32.Parse(txtID.Text.Trim()), txtName.Text, txtDesc.Text, chkActive.Checked);
+                    int ret = UpdateMenuAccess();
                     if (rtn == 0)
                         ShowStatus(0, "This name already exists. Please provide unique name.");
                     else if (rtn == 1)
@@ -86,6 +87,30 @@ namespace HospitalERP
                 }
                 
             }
+            
+            
+        }
+
+        private int UpdateMenuAccess()
+        {
+            DataTable dtChkMenu = new DataTable();
+            dtChkMenu.Columns.Add("id");
+            foreach (TreeNode node in trvMenu.Nodes)
+            {
+                if (node.Checked == true)
+                {
+                    //dtChkMenu.Rows.Add("id");
+                    dtChkMenu.Rows.Add(new object[] { node.Name.Replace("trvn", "") });
+                }
+
+            }
+            if(dtChkMenu.Rows.Count > 0)
+            {
+                int ret = mn.UpdateUserTypeMenus(dtChkMenu, Int32.Parse(txtID.Text));
+                return ret;
+            }
+            else
+                return 0;
         }
 
         
@@ -176,22 +201,32 @@ namespace HospitalERP
             foreach (DataRow row in dt.Rows)
             {
                 //search in the treeview if any country is already present
-                node = SearchNode(row["menu_text"].ToString(), trv);
-                if (node != null)
-                {
-                    //Country is already present
-                    subNode = new TreeNode(row["menu_text"].ToString());
-                    //Add cities to country
-                    node.Nodes.Add(subNode);
-                }
-                else
+                if(Int32.Parse(row["parent_id"].ToString()) == 0)
                 {
                     node = new TreeNode(row["menu_text"].ToString());
-                    subNode = new TreeNode(row["menu_name"].ToString());
-                    //Add cities to country
-                    node.Nodes.Add(subNode);
+                    node.Name = "trvn" + row["id"].ToString();
                     trv.Nodes.Add(node);
                 }
+                else {
+                    node = SearchNode("trvn" + row["parent_id"].ToString(), trv);
+                    if (node != null)
+                    {
+                        //Country is already present
+                        subNode = new TreeNode(row["menu_text"].ToString());
+                        subNode.Name = "trvn" + row["id"].ToString();
+                        //Add cities to country
+                        node.Nodes.Add(subNode);
+                        //trv.Nodes.Add(node);
+                    }
+                    else
+                    {
+                        node = new TreeNode(row["menu_text"].ToString());
+                        node.Name = "trvn" + row["id"].ToString();
+                        trv.Nodes.Add(node);
+                    }
+                }
+                
+                
             }
             if (expandAll)
             {
@@ -200,11 +235,11 @@ namespace HospitalERP
             }
         }
 
-        private TreeNode SearchNode(string nodetext, TreeView trv)
+        private TreeNode SearchNode(string nodeparent, TreeView trv)
         {
             foreach (TreeNode node in trv.Nodes)
             {
-                if (node.Text == nodetext)
+                if (node.Name == nodeparent)
                 {
                     return node;
                     

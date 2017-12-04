@@ -44,5 +44,24 @@ namespace HospitalERP.Procedures
             }
 
         }
+
+        public int UpdateUserTypeMenus(DataTable dtMenu, int utype)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[2];
+                sqlParam[0] = new SqlParameter("@List", dtMenu);
+                sqlParam[1] = new SqlParameter("@utype", utype);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspMenuUserTypes_Add", sqlParam).ToString());
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return ret;
+            }
+
+        }
     }
 }
