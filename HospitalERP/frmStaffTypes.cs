@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 using HospitalERP.Procedures;
 
 namespace HospitalERP
@@ -7,7 +8,7 @@ namespace HospitalERP
     public partial class frmStaffTypes : Form
     {
         StaffTypes st = new StaffTypes();
-        
+        log4net.ILog ilog;
         public frmStaffTypes()
         {
             InitializeComponent();
@@ -22,7 +23,10 @@ namespace HospitalERP
         {
             this.WindowState = FormWindowState.Maximized;
             PopulateSearch();
-            ShowRecords();
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+
         }
 
         private void PopulateSearch()
@@ -62,40 +66,35 @@ namespace HospitalERP
                 {
                     rtn = st.addStaffs(txtName.Text, txtDesc.Text, chkActive.Checked);
                     if (rtn == 0)
-                        lblStatus.Text = "Type name should be unique";
+                        ShowStatus(0,"Type name should be unique!");
                     else if (rtn == 1)
                     {
-                        lblStatus.Text = "Record succesfully added";
-                        txtName.Text = "";
-                        txtDesc.Text = "";
-                        chkActive.Checked = false;
+                        ShowStatus(1, "Record succesfully added");
+                        clearFormFields();
 
                     }
                     else if (rtn == -1)
                     {
-                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                        ShowStatus(0, "Some error occurred... Record cannot be added.");
                     }
                 }
                 else //edit record
                 {
                     rtn = st.editTypes(Int32.Parse(txtID.Text.Trim()), txtName.Text, txtDesc.Text, chkActive.Checked);
                     if (rtn == 0)
-                        lblStatus.Text = "This name already exists. Please provide unique name.";
+                        ShowStatus(0, "This name already exists. Please provide unique name.");
                     else if (rtn == 1)
                     {
-                        lblStatus.Text = "Record succesfully updated";
-                        txtName.Text = "";
-                        txtDesc.Text = "";
-                        txtID.Text = "";
-                        chkActive.Checked = false;
+                        ShowStatus(1, "Record succesfully updated!");
+                        clearFormFields();
 
                     }
                     else if (rtn == -1)
                     {
-                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                        ShowStatus(0, "Some error occurred... Record cannot be added.");
                     }
                 }
-                ShowRecords();
+                
             }
         }
 
@@ -110,6 +109,56 @@ namespace HospitalERP
             tabSub.SelectedIndex = 0;
         }
 
-        
+        private void ShowStatus(int success, string msg)
+        {
+            lblStatus.Visible = true;
+            if (success == 1)
+            {
+                lblStatus.BackColor = Color.YellowGreen;
+                lblStatus.ForeColor = Color.DarkGreen;
+            }
+            else
+            {
+                lblStatus.BackColor = Color.Salmon;
+                lblStatus.ForeColor = Color.DarkRed;
+            }
+            lblStatus.Text = msg;
+            var t = new Timer();
+            t.Interval = 5000; // it will Tick in 3 seconds
+            t.Tick += (s, e) =>
+            {
+                lblStatus.Hide();
+                t.Stop();
+            };
+            t.Start();
+        }
+
+        private void clearFormFields()
+        {
+
+            txtName.Text = "";
+            txtDesc.Text = "";
+            chkActive.Checked = true;
+            txtID.Text = "";
+            //PopulateProcTypeCombo(0);
+        }
+
+        private void tabSub_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabSub.SelectedIndex)
+            {
+                case 0:
+
+                    break;
+                case 1:
+                    ShowRecords();
+                    break;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            ShowRecords();
+        }
     }
 }

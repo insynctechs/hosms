@@ -38,6 +38,23 @@ namespace HospitalERP.Procedures
 
         }
 
+        public DataTable GetProcTypesIDName(int id)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspProcedureTypes_Combo", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
         public int editTypes(int id, string name, string desc, bool active)
         {
             int ret = -1;
@@ -66,8 +83,32 @@ namespace HospitalERP.Procedures
                 dt.Columns.Add("Display");
                 dt.Rows.Add(new object[] { "All", "All" });
                 //dt.Rows.Add(new object[] { "id", "ID" });
-                dt.Rows.Add(new object[] { "name", "Name" });
+                dt.Rows.Add(new object[] { "type_name", "Name" });
                 dt.Rows.Add(new object[] { "active", "Active" });
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public DataTable ProcTypesCombo(int id)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Value");
+                dt.Columns.Add("Display");
+                dt.Rows.Add(new object[] { "0", "Select Type" });
+                DataTable dt1 = new DataTable();
+                dt1 = GetProcTypesIDName(id);
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    dt.Rows.Add(dr.ItemArray);
+                }
                 return dt;
             }
             catch (Exception ex)

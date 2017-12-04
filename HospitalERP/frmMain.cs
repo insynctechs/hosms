@@ -24,7 +24,6 @@ namespace HospitalERP
                 try
                 {
                     System.Windows.Forms.Control Mdi = (MdiClient)ctl;
-
                     Mdi.BackColor = System.Drawing.Color.White;
                 }
                 catch (Exception a)
@@ -32,6 +31,8 @@ namespace HospitalERP
 
                 }
             }
+
+            //MainMenu.Items.RemoveByKey("menuItemMain");
         }
         
 
@@ -66,7 +67,9 @@ namespace HospitalERP
 
         private void menuItemProc_Click(object sender, EventArgs e)
         {
-
+            frmProcedures frm = new frmProcedures();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void menuItemUserRoles_Click(object sender, EventArgs e)
@@ -79,6 +82,13 @@ namespace HospitalERP
         private void menuItemProcType_Click(object sender, EventArgs e)
         {
             frmProcTypes frm = new frmProcTypes();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuItemOpt_Click(object sender, EventArgs e)
+        {
+            frmOptions frm = new frmOptions();
             frm.MdiParent = this;
             frm.Show();
         }
