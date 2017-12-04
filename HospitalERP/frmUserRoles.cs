@@ -9,6 +9,7 @@ namespace HospitalERP
     public partial class frmUserRoles : Form
     {
         UserRoles UR = new UserRoles();
+        Menus mn = new Menus();
         log4net.ILog ilog;
         public frmUserRoles()
         {
@@ -22,6 +23,8 @@ namespace HospitalERP
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            DataTable dtMenu = mn.GetMenuActive(true);
+            BuildTree(dtMenu, trvMenu, true);
 
         }
         private void PopulateSearch()
@@ -173,18 +176,18 @@ namespace HospitalERP
             foreach (DataRow row in dt.Rows)
             {
                 //search in the treeview if any country is already present
-                node = SearchNode(row[0].ToString(), trv);
+                node = SearchNode(row["menu_text"].ToString(), trv);
                 if (node != null)
                 {
                     //Country is already present
-                    subNode = new TreeNode(row[1].ToString());
+                    subNode = new TreeNode(row["menu_text"].ToString());
                     //Add cities to country
                     node.Nodes.Add(subNode);
                 }
                 else
                 {
-                    node = new TreeNode(row[0].ToString());
-                    subNode = new TreeNode(row[1].ToString());
+                    node = new TreeNode(row["menu_text"].ToString());
+                    subNode = new TreeNode(row["menu_name"].ToString());
                     //Add cities to country
                     node.Nodes.Add(subNode);
                     trv.Nodes.Add(node);
@@ -204,6 +207,7 @@ namespace HospitalERP
                 if (node.Text == nodetext)
                 {
                     return node;
+                    
                 }
                
             }

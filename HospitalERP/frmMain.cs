@@ -6,15 +6,48 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HospitalERP.Procedures;
 using System.Windows.Forms;
 
 namespace HospitalERP
 {
+    
     public partial class frmMain : Form
     {
+
+        Users usr = new Users();
+        
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        public frmMain(string empid)
+        {
+            InitializeComponent();
+            try
+            { 
+                DataTable dtUser = usr.GetLoggedUser(empid);
+                lblEmpID.Text = empid;
+                if (dtUser.Rows.Count > 0)
+                {
+                    LoggedUser.id = Int32.Parse(dtUser.Rows[0]["id"].ToString());
+                    LoggedUser.emp_id = dtUser.Rows[0]["emp_id"].ToString();
+                    LoggedUser.type_id = dtUser.Rows[0]["user_type_id"].ToString();
+                    LoggedUser.type_name = dtUser.Rows[0]["type_name"].ToString();
+                    LoggedUser.phone = dtUser.Rows[0]["staff_phone"].ToString();
+                    LoggedUser.last_log_date = Convert.ToDateTime(dtUser.Rows[0]["log_date"].ToString());
+                    usr.SetLoginDate(empid);
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void Hospital_Load(object sender, EventArgs e)
@@ -91,6 +124,26 @@ namespace HospitalERP
             frmOptions frm = new frmOptions();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            closeChildren(this);
+            
+            
+        }
+        static void closeChildren(Form parent)
+        {
+            foreach (var child in parent.MdiChildren)
+            {
+                closeChildren(child);
+                child.Close();
+            }
         }
     }
 }

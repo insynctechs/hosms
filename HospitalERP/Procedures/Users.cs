@@ -17,13 +17,13 @@ namespace HospitalERP.Procedures
             log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         }
 
-        public int Users_Valid(string empid, string pwd)
+        public int ValidateLogin(string empid, string pwd)
         {
             try
             {
                 SqlParameter[] sqlParam = new SqlParameter[2];
                 sqlParam[0] = new SqlParameter("@empid", empid);
-                sqlParam[1] = new SqlParameter("@pwd", pwd);
+                sqlParam[1] = new SqlParameter("@pass", pwd);
                 int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUsers_ValidateLogin", sqlParam));
                 return ret;
             }
@@ -40,7 +40,7 @@ namespace HospitalERP.Procedures
             {
                 SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@empid", empid);                
-                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspDepartments_Get", sqlParam);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspUsers_LoggedUser", sqlParam);
                 return dt.Tables[0];
             }
             catch (Exception ex)
@@ -50,13 +50,13 @@ namespace HospitalERP.Procedures
             }
         }
 
-        public int SetLoginDetails(string empid)
+        public int SetLoginDate(string empid )
         {
             try
             {
                 SqlParameter[] sqlParam = new SqlParameter[2];
                 sqlParam[0] = new SqlParameter("@empid", empid);
-                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspDepartments_Get", sqlParam));
+                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUsers_SetLogDate", sqlParam));
                 return ret;
             }
             catch (Exception ex)
@@ -68,4 +68,6 @@ namespace HospitalERP.Procedures
 
 
     }
+
+    
 }
