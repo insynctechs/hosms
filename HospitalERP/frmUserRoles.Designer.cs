@@ -50,6 +50,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.trvMenu = new System.Windows.Forms.TreeView();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPgList = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvDept = new System.Windows.Forms.DataGridView();
@@ -64,7 +65,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -267,6 +267,7 @@
             this.txtID.Size = new System.Drawing.Size(100, 25);
             this.txtID.TabIndex = 59;
             this.txtID.Visible = false;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // lblStatus
             // 
@@ -322,6 +323,16 @@
             this.trvMenu.Name = "trvMenu";
             this.trvMenu.Size = new System.Drawing.Size(583, 220);
             this.trvMenu.TabIndex = 69;
+            this.trvMenu.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterCheck);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 297);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 18);
+            this.label3.TabIndex = 70;
+            this.label3.Text = "Accessible Menu Items: ";
             // 
             // tabPgList
             // 
@@ -490,15 +501,6 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 297);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 18);
-            this.label3.TabIndex = 70;
-            this.label3.Text = "Accessible Menu Items: ";
             // 
             // frmUserRoles
             // 

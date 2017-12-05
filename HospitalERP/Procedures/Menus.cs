@@ -53,13 +53,68 @@ namespace HospitalERP.Procedures
                 SqlParameter[] sqlParam = new SqlParameter[2];
                 sqlParam[0] = new SqlParameter("@List", dtMenu);
                 sqlParam[1] = new SqlParameter("@utype", utype);
+                sqlParam[0].SqlDbType = SqlDbType.Structured;
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspMenuUserTypes_Add", sqlParam).ToString());
                 return ret;
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                log.Error(ex.Message+";"+ex.StackTrace+";"+ex.InnerException, ex);
                 return ret;
+            }
+
+        }
+
+        public DataTable GetUserTypeMenus(int utype)
+        {
+            
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@utype", utype);                
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspMenuUserTypes_Get", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public DataTable GetUserTypeMenusDetailed(int utype)
+        {
+
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@utype", utype);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspMenuUserTypes_GetDetailed", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public DataTable GetUserTypeMenusRemoveList(int utype)
+        {
+
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@utype", utype);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspMenuUserTypes_GetRemoveList", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
             }
 
         }

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using HospitalERP.Procedures;
 using System.Data;
+using System.Linq;
 
 namespace HospitalERP
 {
@@ -10,7 +11,10 @@ namespace HospitalERP
     {
         UserRoles UR = new UserRoles();
         Menus mn = new Menus();
-        log4net.ILog ilog;
+        log4net.ILog ilog;     
+
+        private bool updatingTreeView;
+
         public frmUserRoles()
         {
             InitializeComponent();
@@ -24,7 +28,7 @@ namespace HospitalERP
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             DataTable dtMenu = mn.GetMenuActive(true);
-            BuildTree(dtMenu, trvMenu, true);
+            BuildTree(dtMenu, trvMenu, true);            
 
         }
         private void PopulateSearch()
@@ -101,7 +105,9 @@ namespace HospitalERP
                 {
                     //dtChkMenu.Rows.Add("id");
                     dtChkMenu.Rows.Add(new object[] { node.Name.Replace("trvn", "") });
+
                 }
+                dtChkMenu = TraverseRecursiveToGetChecked(node, dtChkMenu);
 
             }
             if(dtChkMenu.Rows.Count > 0)
@@ -113,7 +119,56 @@ namespace HospitalERP
                 return 0;
         }
 
-        
+        private DataTable TraverseRecursiveToGetChecked(TreeNode treeNode, DataTable dtChkMenu)
+        {
+            
+            foreach (TreeNode tn in treeNode.Nodes)
+            {
+                if (tn.Checked == true)
+                {
+                    //dtChkMenu.Rows.Add("id");
+                    dtChkMenu.Rows.Add(new object[] { tn.Name.Replace("trvn", "") });
+                   
+                }
+                dtChkMenu = TraverseRecursiveToGetChecked(tn, dtChkMenu);
+            }
+            return dtChkMenu;
+        }
+
+        private void SetMenuChecksOnEdit()
+        {
+
+            DataTable dtCheckMenu = mn.GetUserTypeMenus(Int32.Parse(txtID.Text));
+            if (dtCheckMenu.Rows.Count > 0)
+            {
+                foreach (TreeNode node in trvMenu.Nodes)
+                {
+                    TraverseRecursiveToSetChecked(node, dtCheckMenu);
+
+                }                
+            }
+            
+            
+        }
+
+        private void TraverseRecursiveToSetChecked(TreeNode treeNode, DataTable dtChkMenu)
+        {
+
+            foreach (TreeNode tn in treeNode.Nodes)
+            {
+                int id = Int32.Parse(tn.Name.Replace("trvn", ""));
+                bool contains = dtChkMenu.AsEnumerable().Any(row => id == row.Field<int>("menu_id"));
+                if (contains)
+                {
+                    tn.Checked = true;
+
+                }
+                TraverseRecursiveToSetChecked(tn, dtChkMenu);
+            }
+            
+        }
+
+
         private void txtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
@@ -176,7 +231,7 @@ namespace HospitalERP
             txtDesc.Text = "";
             chkActive.Checked = true;
             txtID.Text = "";
-            //PopulateProcTypeCombo(0);
+            UncheckAllNodes(trvMenu.Nodes);
         }
 
         private void tabSub_SelectedIndexChanged(object sender, EventArgs e)
@@ -187,6 +242,7 @@ namespace HospitalERP
 
                     break;
                 case 1:
+                    clearFormFields();
                     ShowRecords();
                     break;
             }
@@ -194,13 +250,13 @@ namespace HospitalERP
 
         public void BuildTree(DataTable dt, TreeView trv, Boolean expandAll)
         {
-            // Clear the TreeView if there are another datas in this TreeView
+            
             trv.Nodes.Clear();
             TreeNode node = default(TreeNode);
             TreeNode subNode = default(TreeNode);
             foreach (DataRow row in dt.Rows)
             {
-                //search in the treeview if any country is already present
+                
                 if(Int32.Parse(row["parent_id"].ToString()) == 0)
                 {
                     node = new TreeNode(row["menu_text"].ToString());
@@ -208,15 +264,14 @@ namespace HospitalERP
                     trv.Nodes.Add(node);
                 }
                 else {
+                    //node = trv.Nodes.("trvn" + row["parent_id"].ToString(), true);
                     node = SearchNode("trvn" + row["parent_id"].ToString(), trv);
                     if (node != null)
                     {
-                        //Country is already present
+                        
                         subNode = new TreeNode(row["menu_text"].ToString());
-                        subNode.Name = "trvn" + row["id"].ToString();
-                        //Add cities to country
-                        node.Nodes.Add(subNode);
-                        //trv.Nodes.Add(node);
+                        subNode.Name = "trvn" + row["id"].ToString();                       
+                        node.Nodes.Add(subNode);                        
                     }
                     else
                     {
@@ -230,7 +285,6 @@ namespace HospitalERP
             }
             if (expandAll)
             {
-                // Expand the TreeView
                 trv.ExpandAll();
             }
         }
@@ -248,6 +302,107 @@ namespace HospitalERP
             }
             return null;
             
+        }
+
+        public void CheckAllNodes(TreeNodeCollection nodes)
+        {
+            foreach (TreeNode node in nodes)
+            {
+                node.Checked = true;
+                CheckChildren(node, true);
+            }
+        }
+
+        public void UncheckAllNodes(TreeNodeCollection nodes)
+        {
+            foreach (TreeNode node in nodes)
+            {
+                node.Checked = false;
+                CheckChildren(node, false);
+            }
+        }
+
+        private void CheckChildren(TreeNode rootNode, bool isChecked)
+        {
+            foreach (TreeNode node in rootNode.Nodes)
+            {
+                CheckChildren(node, isChecked);
+                node.Checked = isChecked;
+            }
+        }
+
+        private void trvMenu_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (updatingTreeView)
+                return;
+            updatingTreeView = true;
+            SelectChildrenOnParentSelect(e.Node, e.Node.Checked);
+            SelectParentOnChildSelect(e.Node, e.Node.Checked);
+
+            updatingTreeView = false;
+        }
+
+        private void SelectParentOnChildSelect(TreeNode node, Boolean isChecked)
+        {
+            var parent = node.Parent;
+
+            if (parent == null)
+                return;
+
+            if (isChecked)
+            {
+                parent.Checked = true; // we should always check parent
+                SelectParentOnChildSelect(parent, true);
+            }
+            else
+            {
+                if (parent.Nodes.Cast<TreeNode>().All(n => n.Checked))
+                {
+                    parent.Checked = true;
+                    return; // do not uncheck parent if there other checked nodes
+                }
+                else if (parent.Nodes.Cast<TreeNode>().Any(n => n.Checked))
+                {
+                    parent.Checked = true;
+                    return; // do not uncheck parent if there other checked nodes
+                }
+                else
+                {
+                    parent.Checked = false;
+                    return; // do not uncheck parent if there other checked nodes
+                }               
+               
+            }
+        }
+
+        
+        private void SelectChildrenOnParentSelect(TreeNode node, Boolean isChecked)
+        {
+            bool checkChildren = (node.Checked);
+            if (node.Nodes.Count == 0)
+            {
+                return;
+            }
+            if (checkChildren == true)
+            {
+                foreach (TreeNode childNode in node.Nodes)
+                {
+                    childNode.Checked = true; // !childNode.Checked;
+                }
+            }
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            if(txtID.Text.Trim()!="")
+            {
+                SetMenuChecksOnEdit();
+                if (Int32.Parse(txtID.Text.Trim()) < 4)
+                    txtName.ReadOnly = true;
+                
+            }
+            else
+                txtName.ReadOnly = false;
         }
     }
 }
