@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabDoctors = new System.Windows.Forms.TabControl();
             this.tabPgAddDocs = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -61,7 +61,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.rbGender1 = new System.Windows.Forms.RadioButton();
             this.rbGender2 = new System.Windows.Forms.RadioButton();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.dtpPathakaExpiry = new System.Windows.Forms.DateTimePicker();
@@ -82,8 +81,9 @@
             this.lblActive = new System.Windows.Forms.Label();
             this.chkActive = new System.Windows.Forms.CheckBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtUSERID = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabPgListDocs = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@
             this.consultation_fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtUSERID = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.tabDoctors.SuspendLayout();
             this.tabPgAddDocs.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -130,6 +130,7 @@
             this.tabDoctors.ShowToolTips = true;
             this.tabDoctors.Size = new System.Drawing.Size(1008, 627);
             this.tabDoctors.TabIndex = 2;
+            this.tabDoctors.SelectedIndexChanged += new System.EventHandler(this.tabDoctors_SelectedIndexChanged);
             // 
             // tabPgAddDocs
             // 
@@ -153,59 +154,60 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Controls.Add(this.txtDistrict, 1, 12);
-            this.tableLayoutPanel2.Controls.Add(this.txtAddress, 1, 11);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 11);
-            this.tableLayoutPanel2.Controls.Add(this.lblgender, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.txtLastName, 3, 3);
-            this.tableLayoutPanel2.Controls.Add(this.lblName, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.lblID, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.lblNationality, 2, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 2, 11);
-            this.tableLayoutPanel2.Controls.Add(this.txtCity, 3, 11);
-            this.tableLayoutPanel2.Controls.Add(this.txtZip, 3, 12);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 12);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 13);
-            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 13);
-            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 9);
-            this.tableLayoutPanel2.Controls.Add(this.txtPathaka, 1, 9);
-            this.tableLayoutPanel2.Controls.Add(this.txtEmail, 3, 13);
-            this.tableLayoutPanel2.Controls.Add(this.lblHead1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblHead2, 0, 10);
-            this.tableLayoutPanel2.Controls.Add(this.txtPhone, 1, 13);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 2, 18);
-            this.tableLayoutPanel2.Controls.Add(this.txtFirstName, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.txtNationality, 1, 8);
-            this.tableLayoutPanel2.Controls.Add(this.dtpPathakaExpiry, 3, 9);
-            this.tableLayoutPanel2.Controls.Add(this.dtpDob, 3, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 14);
-            this.tableLayoutPanel2.Controls.Add(this.label15, 0, 16);
-            this.tableLayoutPanel2.Controls.Add(this.txtFee, 1, 16);
-            this.tableLayoutPanel2.Controls.Add(this.lblempid, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtempid, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lblQualification, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.txtQualification, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 2, 6);
-            this.tableLayoutPanel2.Controls.Add(this.txtSpecialization, 3, 6);
-            this.tableLayoutPanel2.Controls.Add(this.label17, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label18, 2, 5);
-            this.tableLayoutPanel2.Controls.Add(this.cmbDept, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.txtDesignation, 3, 5);
-            this.tableLayoutPanel2.Controls.Add(this.lblActive, 2, 16);
-            this.tableLayoutPanel2.Controls.Add(this.chkActive, 3, 16);
-            this.tableLayoutPanel2.Controls.Add(this.txtID, 0, 19);
-            this.tableLayoutPanel2.Controls.Add(this.label10, 2, 12);
-            this.tableLayoutPanel2.Controls.Add(this.txtUSERID, 1, 19);
-            this.tableLayoutPanel2.Controls.Add(this.label12, 2, 19);
-            this.tableLayoutPanel2.Controls.Add(this.lblStatus, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtDistrict, 1, 13);
+            this.tableLayoutPanel2.Controls.Add(this.txtAddress, 1, 12);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 12);
+            this.tableLayoutPanel2.Controls.Add(this.lblgender, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.txtLastName, 3, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lblName, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lblID, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lblNationality, 2, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 2, 12);
+            this.tableLayoutPanel2.Controls.Add(this.txtCity, 3, 12);
+            this.tableLayoutPanel2.Controls.Add(this.txtZip, 3, 13);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 13);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 14);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 14);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 10);
+            this.tableLayoutPanel2.Controls.Add(this.txtPathaka, 1, 10);
+            this.tableLayoutPanel2.Controls.Add(this.txtEmail, 3, 14);
+            this.tableLayoutPanel2.Controls.Add(this.lblHead1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblHead2, 0, 11);
+            this.tableLayoutPanel2.Controls.Add(this.txtPhone, 1, 14);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 2, 19);
+            this.tableLayoutPanel2.Controls.Add(this.txtFirstName, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 9);
+            this.tableLayoutPanel2.Controls.Add(this.txtNationality, 1, 9);
+            this.tableLayoutPanel2.Controls.Add(this.dtpPathakaExpiry, 3, 10);
+            this.tableLayoutPanel2.Controls.Add(this.dtpDob, 3, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 15);
+            this.tableLayoutPanel2.Controls.Add(this.label15, 0, 17);
+            this.tableLayoutPanel2.Controls.Add(this.txtFee, 1, 17);
+            this.tableLayoutPanel2.Controls.Add(this.lblempid, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txtempid, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblQualification, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.txtQualification, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 2, 7);
+            this.tableLayoutPanel2.Controls.Add(this.txtSpecialization, 3, 7);
+            this.tableLayoutPanel2.Controls.Add(this.label17, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label18, 2, 6);
+            this.tableLayoutPanel2.Controls.Add(this.cmbDept, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.txtDesignation, 3, 6);
+            this.tableLayoutPanel2.Controls.Add(this.lblActive, 2, 17);
+            this.tableLayoutPanel2.Controls.Add(this.chkActive, 3, 17);
+            this.tableLayoutPanel2.Controls.Add(this.txtID, 0, 20);
+            this.tableLayoutPanel2.Controls.Add(this.label10, 2, 13);
+            this.tableLayoutPanel2.Controls.Add(this.txtUSERID, 1, 20);
+            this.tableLayoutPanel2.Controls.Add(this.lblStatus, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 2, 10);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(25, 3, 25, 15);
-            this.tableLayoutPanel2.RowCount = 20;
+            this.tableLayoutPanel2.RowCount = 21;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -231,14 +233,14 @@
             // 
             // txtDistrict
             // 
-            this.txtDistrict.Location = new System.Drawing.Point(169, 363);
+            this.txtDistrict.Location = new System.Drawing.Point(167, 428);
             this.txtDistrict.Name = "txtDistrict";
             this.txtDistrict.Size = new System.Drawing.Size(250, 25);
             this.txtDistrict.TabIndex = 13;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(169, 332);
+            this.txtAddress.Location = new System.Drawing.Point(167, 397);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(250, 25);
             this.txtAddress.TabIndex = 11;
@@ -246,7 +248,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 329);
+            this.label1.Location = new System.Drawing.Point(28, 394);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 14;
@@ -255,7 +257,7 @@
             // lblgender
             // 
             this.lblgender.AutoSize = true;
-            this.lblgender.Location = new System.Drawing.Point(28, 186);
+            this.lblgender.Location = new System.Drawing.Point(28, 257);
             this.lblgender.Name = "lblgender";
             this.lblgender.Size = new System.Drawing.Size(58, 18);
             this.lblgender.TabIndex = 8;
@@ -263,7 +265,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(640, 95);
+            this.txtLastName.Location = new System.Drawing.Point(630, 166);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(250, 25);
             this.txtLastName.TabIndex = 2;
@@ -271,7 +273,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(499, 92);
+            this.lblName.Location = new System.Drawing.Point(491, 163);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(79, 18);
             this.lblName.TabIndex = 2;
@@ -280,7 +282,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(28, 92);
+            this.lblID.Location = new System.Drawing.Point(28, 163);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(79, 18);
             this.lblID.TabIndex = 0;
@@ -289,7 +291,7 @@
             // lblNationality
             // 
             this.lblNationality.AutoSize = true;
-            this.lblNationality.Location = new System.Drawing.Point(499, 186);
+            this.lblNationality.Location = new System.Drawing.Point(491, 257);
             this.lblNationality.Name = "lblNationality";
             this.lblNationality.Size = new System.Drawing.Size(93, 18);
             this.lblNationality.TabIndex = 9;
@@ -298,7 +300,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(499, 329);
+            this.label3.Location = new System.Drawing.Point(491, 394);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 18);
             this.label3.TabIndex = 15;
@@ -306,14 +308,14 @@
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(640, 332);
+            this.txtCity.Location = new System.Drawing.Point(630, 397);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(250, 25);
             this.txtCity.TabIndex = 12;
             // 
             // txtZip
             // 
-            this.txtZip.Location = new System.Drawing.Point(640, 363);
+            this.txtZip.Location = new System.Drawing.Point(630, 428);
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(250, 25);
             this.txtZip.TabIndex = 14;
@@ -321,7 +323,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 360);
+            this.label4.Location = new System.Drawing.Point(28, 425);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 18);
             this.label4.TabIndex = 18;
@@ -330,7 +332,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 391);
+            this.label5.Location = new System.Drawing.Point(28, 456);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 18);
             this.label5.TabIndex = 21;
@@ -339,7 +341,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(499, 391);
+            this.label7.Location = new System.Drawing.Point(491, 456);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 18);
             this.label7.TabIndex = 24;
@@ -348,7 +350,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 259);
+            this.label8.Location = new System.Drawing.Point(28, 319);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 18);
             this.label8.TabIndex = 25;
@@ -356,14 +358,14 @@
             // 
             // txtPathaka
             // 
-            this.txtPathaka.Location = new System.Drawing.Point(169, 262);
+            this.txtPathaka.Location = new System.Drawing.Point(167, 322);
             this.txtPathaka.Name = "txtPathaka";
             this.txtPathaka.Size = new System.Drawing.Size(250, 25);
             this.txtPathaka.TabIndex = 9;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(640, 394);
+            this.txtEmail.Location = new System.Drawing.Point(630, 459);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(250, 25);
             this.txtEmail.TabIndex = 16;
@@ -377,11 +379,11 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblHead1, 5);
             this.lblHead1.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHead1.Location = new System.Drawing.Point(28, 13);
+            this.lblHead1.Location = new System.Drawing.Point(28, 84);
             this.lblHead1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.lblHead1.Name = "lblHead1";
             this.lblHead1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.lblHead1.Size = new System.Drawing.Size(938, 28);
+            this.lblHead1.Size = new System.Drawing.Size(921, 28);
             this.lblHead1.TabIndex = 29;
             this.lblHead1.Text = "PERSONAL DETAILS";
             this.lblHead1.UseWaitCursor = true;
@@ -395,18 +397,18 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblHead2, 5);
             this.lblHead2.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHead2.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHead2.Location = new System.Drawing.Point(28, 300);
+            this.lblHead2.Location = new System.Drawing.Point(28, 365);
             this.lblHead2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.lblHead2.Name = "lblHead2";
             this.lblHead2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.lblHead2.Size = new System.Drawing.Size(938, 29);
+            this.lblHead2.Size = new System.Drawing.Size(921, 29);
             this.lblHead2.TabIndex = 30;
             this.lblHead2.Text = "CONTACT DETAILS";
             this.lblHead2.UseWaitCursor = true;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(169, 394);
+            this.txtPhone.Location = new System.Drawing.Point(167, 459);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(250, 25);
             this.txtPhone.TabIndex = 15;
@@ -416,7 +418,7 @@
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel1, 2);
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(499, 495);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(491, 560);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 39);
             this.flowLayoutPanel1.TabIndex = 37;
@@ -449,7 +451,7 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(169, 95);
+            this.txtFirstName.Location = new System.Drawing.Point(167, 166);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(250, 25);
             this.txtFirstName.TabIndex = 1;
@@ -459,9 +461,9 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.rbGender1);
             this.flowLayoutPanel2.Controls.Add(this.rbGender2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(169, 189);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(167, 260);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(173, 36);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(173, 25);
             this.flowLayoutPanel2.TabIndex = 40;
             // 
             // rbGender1
@@ -486,19 +488,10 @@
             this.rbGender2.Text = "Female";
             this.rbGender2.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(499, 537);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(134, 18);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "Pathaka Expiry Date: ";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(28, 228);
+            this.label13.Location = new System.Drawing.Point(28, 288);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 18);
             this.label13.TabIndex = 42;
@@ -506,21 +499,21 @@
             // 
             // txtNationality
             // 
-            this.txtNationality.Location = new System.Drawing.Point(169, 231);
+            this.txtNationality.Location = new System.Drawing.Point(167, 291);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(250, 25);
             this.txtNationality.TabIndex = 8;
             // 
             // dtpPathakaExpiry
             // 
-            this.dtpPathakaExpiry.Location = new System.Drawing.Point(640, 262);
+            this.dtpPathakaExpiry.Location = new System.Drawing.Point(630, 322);
             this.dtpPathakaExpiry.Name = "dtpPathakaExpiry";
             this.dtpPathakaExpiry.Size = new System.Drawing.Size(250, 25);
             this.dtpPathakaExpiry.TabIndex = 10;
             // 
             // dtpDob
             // 
-            this.dtpDob.Location = new System.Drawing.Point(640, 189);
+            this.dtpDob.Location = new System.Drawing.Point(630, 260);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(250, 25);
             this.dtpDob.TabIndex = 7;
@@ -534,18 +527,18 @@
             this.tableLayoutPanel2.SetColumnSpan(this.label14, 5);
             this.label14.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(28, 432);
+            this.label14.Location = new System.Drawing.Point(28, 497);
             this.label14.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label14.Name = "label14";
             this.label14.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.label14.Size = new System.Drawing.Size(938, 29);
+            this.label14.Size = new System.Drawing.Size(921, 29);
             this.label14.TabIndex = 46;
             this.label14.Text = "FEE DETAILS";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(28, 461);
+            this.label15.Location = new System.Drawing.Point(28, 526);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(119, 18);
             this.label15.TabIndex = 47;
@@ -553,7 +546,7 @@
             // 
             // txtFee
             // 
-            this.txtFee.Location = new System.Drawing.Point(169, 464);
+            this.txtFee.Location = new System.Drawing.Point(167, 529);
             this.txtFee.Name = "txtFee";
             this.txtFee.Size = new System.Drawing.Size(100, 25);
             this.txtFee.TabIndex = 17;
@@ -562,7 +555,7 @@
             // lblempid
             // 
             this.lblempid.AutoSize = true;
-            this.lblempid.Location = new System.Drawing.Point(28, 61);
+            this.lblempid.Location = new System.Drawing.Point(28, 132);
             this.lblempid.Name = "lblempid";
             this.lblempid.Size = new System.Drawing.Size(48, 18);
             this.lblempid.TabIndex = 48;
@@ -570,7 +563,7 @@
             // 
             // txtempid
             // 
-            this.txtempid.Location = new System.Drawing.Point(169, 64);
+            this.txtempid.Location = new System.Drawing.Point(167, 135);
             this.txtempid.Name = "txtempid";
             this.txtempid.ReadOnly = true;
             this.txtempid.Size = new System.Drawing.Size(250, 25);
@@ -579,7 +572,7 @@
             // lblQualification
             // 
             this.lblQualification.AutoSize = true;
-            this.lblQualification.Location = new System.Drawing.Point(28, 155);
+            this.lblQualification.Location = new System.Drawing.Point(28, 226);
             this.lblQualification.Name = "lblQualification";
             this.lblQualification.Size = new System.Drawing.Size(90, 18);
             this.lblQualification.TabIndex = 4;
@@ -587,7 +580,7 @@
             // 
             // txtQualification
             // 
-            this.txtQualification.Location = new System.Drawing.Point(169, 158);
+            this.txtQualification.Location = new System.Drawing.Point(167, 229);
             this.txtQualification.Name = "txtQualification";
             this.txtQualification.Size = new System.Drawing.Size(250, 25);
             this.txtQualification.TabIndex = 3;
@@ -595,7 +588,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(499, 155);
+            this.label2.Location = new System.Drawing.Point(491, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 18);
             this.label2.TabIndex = 5;
@@ -603,7 +596,7 @@
             // 
             // txtSpecialization
             // 
-            this.txtSpecialization.Location = new System.Drawing.Point(640, 158);
+            this.txtSpecialization.Location = new System.Drawing.Point(630, 229);
             this.txtSpecialization.Name = "txtSpecialization";
             this.txtSpecialization.Size = new System.Drawing.Size(250, 25);
             this.txtSpecialization.TabIndex = 4;
@@ -611,7 +604,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(28, 123);
+            this.label17.Location = new System.Drawing.Point(28, 194);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(83, 18);
             this.label17.TabIndex = 50;
@@ -620,7 +613,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(499, 123);
+            this.label18.Location = new System.Drawing.Point(491, 194);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(81, 18);
             this.label18.TabIndex = 51;
@@ -629,7 +622,7 @@
             // cmbDept
             // 
             this.cmbDept.FormattingEnabled = true;
-            this.cmbDept.Location = new System.Drawing.Point(169, 126);
+            this.cmbDept.Location = new System.Drawing.Point(167, 197);
             this.cmbDept.Name = "cmbDept";
             this.cmbDept.Size = new System.Drawing.Size(250, 26);
             this.cmbDept.TabIndex = 52;
@@ -637,7 +630,7 @@
             // 
             // txtDesignation
             // 
-            this.txtDesignation.Location = new System.Drawing.Point(640, 126);
+            this.txtDesignation.Location = new System.Drawing.Point(630, 197);
             this.txtDesignation.Name = "txtDesignation";
             this.txtDesignation.Size = new System.Drawing.Size(250, 25);
             this.txtDesignation.TabIndex = 53;
@@ -646,7 +639,7 @@
             // lblActive
             // 
             this.lblActive.AutoSize = true;
-            this.lblActive.Location = new System.Drawing.Point(499, 461);
+            this.lblActive.Location = new System.Drawing.Point(491, 526);
             this.lblActive.Name = "lblActive";
             this.lblActive.Size = new System.Drawing.Size(50, 18);
             this.lblActive.TabIndex = 56;
@@ -655,7 +648,9 @@
             // chkActive
             // 
             this.chkActive.AutoSize = true;
-            this.chkActive.Location = new System.Drawing.Point(640, 464);
+            this.chkActive.Checked = true;
+            this.chkActive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkActive.Location = new System.Drawing.Point(630, 529);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(15, 14);
             this.chkActive.TabIndex = 57;
@@ -663,29 +658,36 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(28, 540);
+            this.txtID.Location = new System.Drawing.Point(28, 605);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 25);
             this.txtID.TabIndex = 60;
             this.txtID.Visible = false;
             // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(28, 41);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(46, 18);
-            this.lblStatus.TabIndex = 61;
-            this.lblStatus.Text = "Status";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(499, 360);
+            this.label10.Location = new System.Drawing.Point(491, 425);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 18);
             this.label10.TabIndex = 62;
             this.label10.Text = "Zip";
+            // 
+            // txtUSERID
+            // 
+            this.txtUSERID.Location = new System.Drawing.Point(167, 605);
+            this.txtUSERID.Name = "txtUSERID";
+            this.txtUSERID.Size = new System.Drawing.Size(100, 25);
+            this.txtUSERID.TabIndex = 63;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(491, 319);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(101, 36);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Pathaka Expiry Date: ";
             // 
             // tabPgListDocs
             // 
@@ -767,14 +769,14 @@
             this.dgvDept.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDept.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvDept.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDept.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDept.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDept.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
@@ -787,14 +789,14 @@
             this.pathaka,
             this.consultation_fee,
             this.colActive});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDept.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDept.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDept.GridColor = System.Drawing.Color.LightCyan;
             this.dgvDept.Location = new System.Drawing.Point(3, 89);
             this.dgvDept.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -881,12 +883,21 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // txtUSERID
+            // lblStatus
             // 
-            this.txtUSERID.Location = new System.Drawing.Point(169, 540);
-            this.txtUSERID.Name = "txtUSERID";
-            this.txtUSERID.Size = new System.Drawing.Size(100, 25);
-            this.txtUSERID.TabIndex = 63;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Salmon;
+            this.lblStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblStatus, 2);
+            this.lblStatus.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblStatus.Location = new System.Drawing.Point(28, 23);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Padding = new System.Windows.Forms.Padding(20, 5, 20, 5);
+            this.lblStatus.Size = new System.Drawing.Size(42, 31);
+            this.lblStatus.TabIndex = 64;
+            this.lblStatus.Visible = false;
             // 
             // frmDoctors
             // 
@@ -978,7 +989,6 @@
         private System.Windows.Forms.CheckBox chkActive;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmpID;
@@ -991,5 +1001,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn consultation_fee;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
         private System.Windows.Forms.TextBox txtUSERID;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

@@ -30,7 +30,7 @@ namespace HospitalERP
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             PopulateSearch();
             GetDepartmentsCombo(0);
-            ShowDoctors();
+            
         }
 
         private void PopulateSearch()
@@ -83,13 +83,38 @@ namespace HospitalERP
             txtZip.Text = "";
             txtPhone.Text = "";
             txtEmail.Text = "";
-            chkActive.Checked = false;
+            chkActive.Checked = true;
             txtFee.Text = "";
             cmbDept.SelectedIndex = 0;
             txtUSERID.Text = "";
 
 
         }
+
+        private void ShowStatus(int success, string msg)
+        {
+            lblStatus.Visible = true;
+            if (success == 1)
+            {
+                lblStatus.BackColor = Color.YellowGreen;
+                lblStatus.ForeColor = Color.DarkGreen;
+            }
+            else
+            {
+                lblStatus.BackColor = Color.Salmon;
+                lblStatus.ForeColor = Color.DarkRed;
+            }
+            lblStatus.Text = msg;
+            var t = new Timer();
+            t.Interval = 5000; // it will Tick in 3 seconds
+            t.Tick += (s, e) =>
+            {
+                lblStatus.Hide();
+                t.Stop();
+            };
+            t.Start();
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -108,17 +133,16 @@ namespace HospitalERP
                     rtn = doc.addDoctors(txtFirstName.Text, txtLastName.Text, 1, txtDesignation.Text, txtQualification.Text, txtSpecialization.Text, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Convert.ToDouble(txtFee.Text));
 
                     if (rtn == 0)
-                        lblStatus.Text = "Type name should be unique";
+                        ShowStatus(0,"Type name should be unique");
                     else if (rtn == 1)
                     {
-                        lblStatus.Text = "Record succesfully added";
-
-                        chkActive.Checked = false;
+                        ShowStatus(1,"Record succesfully added");
+                        clearControls();
 
                     }
                     else if (rtn == -1)
                     {
-                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                        ShowStatus(0,"Some error occurred... Record cannot be added.");
                     }
                 }
                 else //edit record
@@ -129,17 +153,16 @@ namespace HospitalERP
                     //else
                     if (rtn == 1)
                     {
-                        lblStatus.Text = "Record succesfully updated";
-                        chkActive.Checked = false;
+                        ShowStatus(1, "Record succesfully updated");
                         clearControls();
                        
                     }
                     else if (rtn == -1)
                     {
-                        lblStatus.Text = "Some error occurred... Record cannot be added.";
+                        ShowStatus(0, "Some error occurred... Record cannot be added.");
                     }
                 }
-                ShowDoctors();
+                
             }
         }
 
@@ -254,6 +277,20 @@ namespace HospitalERP
                 errorProvider.SetError(txtDesignation, null);
             }
 
+        }
+
+        private void tabDoctors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabDoctors.SelectedIndex)
+            {
+                case 0:
+
+                    break;
+                case 1:
+                    clearControls();
+                    ShowDoctors();
+                    break;
+            }
         }
     }
 }
