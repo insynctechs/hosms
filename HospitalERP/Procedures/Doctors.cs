@@ -25,7 +25,7 @@ namespace HospitalERP.Procedures
             int ret = -1;
             try
             {
-                SqlParameter[] sqlParam = new SqlParameter[18];
+                SqlParameter[] sqlParam = new SqlParameter[20];
                 sqlParam[0] = new SqlParameter("@first_name",first_name);
                 sqlParam[1] = new SqlParameter("@last_name", last_name);
                 sqlParam[2] = new SqlParameter("@department_id", department_id);
@@ -44,6 +44,8 @@ namespace HospitalERP.Procedures
                 sqlParam[15] = new SqlParameter("@phone", phone);
                 sqlParam[16] = new SqlParameter("@email", email);
                 sqlParam[17] = new SqlParameter("@consultation_fee", consultation_fee);
+                sqlParam[18] = new SqlParameter("@added_id", 1);
+                sqlParam[19] = new SqlParameter("@active", active);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspDoctors_Add", sqlParam).ToString());
             }
             catch (DbException ex)
@@ -54,33 +56,37 @@ namespace HospitalERP.Procedures
             return ret;
         }
 
-        public int editDoctors(int id, string first_name, string last_name, int department_id, string designation,
+        public int editDoctors(int id, int user_id, string first_name, string last_name, int department_id, string designation,
             string qualification, string specialization, char gender, DateTime dob, string nationality, string legal_id,
             DateTime legal_id_expiry, string address, string city, string state, string zip,
-            string phone, string email, bool active, Double consultation_fee)
+            string phone, string email, bool active, Double consultation_fee, int modified_id)
         {
             int ret = -1;
             try
             {
-                SqlParameter[] sqlParam = new SqlParameter[18];
-                sqlParam[0] = new SqlParameter("@first_name", first_name);
-                sqlParam[1] = new SqlParameter("@last_name", last_name);
-                sqlParam[2] = new SqlParameter("@department_id", department_id);
-                sqlParam[3] = new SqlParameter("@designation", designation);
-                sqlParam[4] = new SqlParameter("@qualification", qualification);
-                sqlParam[5] = new SqlParameter("@specialization", specialization);
-                sqlParam[6] = new SqlParameter("@gender", gender);
-                sqlParam[7] = new SqlParameter("@dob", dob);
-                sqlParam[8] = new SqlParameter("@nationality", nationality);
-                sqlParam[9] = new SqlParameter("@legal_id", legal_id);
-                sqlParam[10] = new SqlParameter("@legal_id_expiry", legal_id_expiry);
-                sqlParam[11] = new SqlParameter("@address", address);
-                sqlParam[12] = new SqlParameter("@city", city);
-                sqlParam[13] = new SqlParameter("@state", state);
-                sqlParam[14] = new SqlParameter("@zip", zip);
-                sqlParam[15] = new SqlParameter("@phone", phone);
-                sqlParam[16] = new SqlParameter("@email", email);
-                sqlParam[17] = new SqlParameter("@consultation_fee", consultation_fee);
+                SqlParameter[] sqlParam = new SqlParameter[22];
+                sqlParam[0] = new SqlParameter("@id", id);
+                sqlParam[1] = new SqlParameter("@user_id", user_id);
+               sqlParam[2] = new SqlParameter("@first_name", first_name);
+                sqlParam[3] = new SqlParameter("@last_name", last_name);
+                sqlParam[4] = new SqlParameter("@department_id", department_id);
+                sqlParam[5] = new SqlParameter("@designation", designation);
+                sqlParam[6] = new SqlParameter("@qualification", qualification);
+                sqlParam[7] = new SqlParameter("@specialization", specialization);
+                sqlParam[8] = new SqlParameter("@gender", gender);
+                sqlParam[9] = new SqlParameter("@dob", dob);
+                sqlParam[10] = new SqlParameter("@nationality", nationality);
+                sqlParam[11] = new SqlParameter("@legal_id", legal_id);
+                sqlParam[12] = new SqlParameter("@legal_id_expiry", legal_id_expiry);
+                sqlParam[13] = new SqlParameter("@address", address);
+                sqlParam[14] = new SqlParameter("@city", city);
+                sqlParam[15] = new SqlParameter("@state", state);
+                sqlParam[16] = new SqlParameter("@zip", zip);
+                sqlParam[17] = new SqlParameter("@phone", phone);
+                sqlParam[18] = new SqlParameter("@email", email);
+                sqlParam[19] = new SqlParameter("@active", active);
+                sqlParam[20] = new SqlParameter("@consultation_fee", consultation_fee);
+                sqlParam[21] = new SqlParameter("@modified_id", modified_id);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspDoctors_Edit", sqlParam).ToString());
             }
             catch (DbException ex)
@@ -129,6 +135,65 @@ namespace HospitalERP.Procedures
             }
 
         }
+
+        public DataTable GetDepartmentsCombo(int id)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Value");
+                dt.Columns.Add("Display");
+                dt.Rows.Add(new object[] { "0", "Select Type" });
+                DataTable dt1 = new DataTable();
+                dt1 = GetDepartmentsIDName(id);
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    dt.Rows.Add(dr.ItemArray);
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public DataTable GetDepartmentsIDName(int id)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspDepartments_Combo", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public DataTable getRecordFromID(int id)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspDoctors_GetSingle", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
 
     }
 }
