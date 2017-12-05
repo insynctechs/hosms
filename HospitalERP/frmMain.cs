@@ -16,7 +16,8 @@ namespace HospitalERP
     {
 
         Users usr = new Users();
-        
+        Menus mn = new Menus();
+
         public frmMain()
         {
             InitializeComponent();
@@ -33,11 +34,14 @@ namespace HospitalERP
                 {
                     LoggedUser.id = Int32.Parse(dtUser.Rows[0]["id"].ToString());
                     LoggedUser.emp_id = dtUser.Rows[0]["emp_id"].ToString();
-                    LoggedUser.type_id = dtUser.Rows[0]["user_type_id"].ToString();
+                    LoggedUser.type_id = Int32.Parse(dtUser.Rows[0]["user_type_id"].ToString());
                     LoggedUser.type_name = dtUser.Rows[0]["type_name"].ToString();
                     LoggedUser.phone = dtUser.Rows[0]["staff_phone"].ToString();
                     LoggedUser.last_log_date = Convert.ToDateTime(dtUser.Rows[0]["log_date"].ToString());
+                    LoggedUser.name = dtUser.Rows[0]["name"].ToString();
                     usr.SetLoginDate(empid);
+                    
+
                 }
                 else
                 {
@@ -64,8 +68,12 @@ namespace HospitalERP
 
                 }
             }
+            if(LoggedUser.id > 0)
+            {
+                SetMenuItems();
+            }
 
-            //MainMenu.Items.RemoveByKey("menuItemMain");
+            
         }
         
 
@@ -143,6 +151,16 @@ namespace HospitalERP
             {
                 closeChildren(child);
                 child.Close();
+            }
+        }
+
+        private void SetMenuItems()
+        {
+            DataTable dtMenu = mn.GetUserTypeMenusRemoveList(LoggedUser.type_id);
+            foreach(DataRow dr in dtMenu.Rows)
+            {
+                string menu_name = dr["menu_name"].ToString();
+                MainMenu.Items.RemoveByKey(menu_name);
             }
         }
     }
