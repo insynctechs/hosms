@@ -180,5 +180,12 @@ namespace HospitalERP
         {
             this.Close();
         }
+
+        private void menuItemApp_Click(object sender, EventArgs e)
+        {
+            frmAppointments frm = new frmAppointments();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

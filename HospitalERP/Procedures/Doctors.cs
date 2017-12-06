@@ -197,6 +197,23 @@ namespace HospitalERP.Procedures
 
         }
 
+        public DataTable getDoctorsCombo(int id)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspDoctors_Combo", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
 
     }
 }

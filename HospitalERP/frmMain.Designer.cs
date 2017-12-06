@@ -171,6 +171,7 @@
             this.menuItemApp.Name = "menuItemApp";
             this.menuItemApp.Size = new System.Drawing.Size(182, 22);
             this.menuItemApp.Text = "Appointments";
+            this.menuItemApp.Click += new System.EventHandler(this.menuItemApp_Click);
             // 
             // menuItemReg
             // 
@@ -218,7 +219,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.47288F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.52712F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 256F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 257F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
@@ -239,7 +240,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblEmpID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lnkLogout, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(664, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(663, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.3617F));
@@ -309,14 +310,14 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(388, 94);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(387, 94);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(382, 41);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 41);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // frmMain
