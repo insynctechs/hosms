@@ -30,7 +30,17 @@ namespace HospitalERP
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             PopulateSearch();
             GetDepartmentsCombo(0);
-            
+            if (txtID.Text == "")
+            {
+                lblempid.Visible = false;
+                txtempid.Visible = false;
+            }
+            else
+            {
+                lblempid.Visible = false;
+                txtempid.Visible = false;
+            }
+
         }
 
         private void PopulateSearch()
@@ -44,20 +54,7 @@ namespace HospitalERP
         {
             dgvDept.DataSource = doc.GetDoctors(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
         }
-
-
-        private void tabDoctors_DrawItem(object sender, DrawItemEventArgs e)
-        {            
-            if (e.Index == tabDoctors.SelectedIndex)
-            {
-                e.Graphics.FillRectangle(Brushes.MediumTurquoise, e.Bounds);
-            }
-            else
-            {
-                e.Graphics.FillRectangle(Brushes.LightCyan, e.Bounds);
-            }
-        }
-
+             
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -130,7 +127,7 @@ namespace HospitalERP
                 if (txtID.Text.Trim() == "") //add data
                 {
                     
-                    rtn = doc.addDoctors(txtFirstName.Text, txtLastName.Text, 1, txtDesignation.Text, txtQualification.Text, txtSpecialization.Text, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Convert.ToDouble(txtFee.Text));
+                    rtn = doc.addDoctors(txtFirstName.Text, txtLastName.Text, Convert.ToInt32(cmbDept.SelectedValue.ToString()), txtDesignation.Text, txtQualification.Text, txtSpecialization.Text, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Convert.ToDouble(txtFee.Text));
 
                     if (rtn == 0)
                         ShowStatus(0,"Type name should be unique");
@@ -147,7 +144,7 @@ namespace HospitalERP
                 }
                 else //edit record
                 {
-                    rtn = doc.editDoctors(Int32.Parse(txtID.Text.Trim()), Int32.Parse(txtUSERID.Text.Trim()), txtFirstName.Text, txtLastName.Text, cmbDept.SelectedIndex, txtDesignation.Text, txtQualification.Text, txtSpecialization.Text, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Convert.ToDouble(txtFee.Text),logged_in_user);
+                    rtn = doc.editDoctors(Int32.Parse(txtID.Text.Trim()), Int32.Parse(txtUSERID.Text.Trim()), txtFirstName.Text, txtLastName.Text, Convert.ToInt32(cmbDept.SelectedValue.ToString()), txtDesignation.Text, txtQualification.Text, txtSpecialization.Text, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Convert.ToDouble(txtFee.Text),logged_in_user);
                     //if (rtn == 0)
                     //  lblStatus.Text = "This name already exists. Please provide unique name.";
                     //else
@@ -284,13 +281,27 @@ namespace HospitalERP
             switch (tabDoctors.SelectedIndex)
             {
                 case 0:
-
+                    if(txtID.Text=="")
+                    {
+                        lblempid.Visible = false;
+                        txtempid.Visible = false;
+                    }
+                    else
+                    {
+                        lblempid.Visible = false;
+                        txtempid.Visible = false;
+                    }
                     break;
                 case 1:
                     clearControls();
                     ShowDoctors();
                     break;
             }
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

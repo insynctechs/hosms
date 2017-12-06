@@ -70,9 +70,11 @@ namespace HospitalERP.Procedures
                 dt.Columns.Add("Display");
                 dt.Rows.Add(new object[] { "All", "All" });
                 //dt.Rows.Add(new object[] { "id", "ID" });
-                dt.Rows.Add(new object[] { "p.name", "Name" });
-                dt.Rows.Add(new object[] { "t.type_name", "Type" });
-                dt.Rows.Add(new object[] { "p.active", "Active" });
+                dt.Rows.Add(new object[] { "D.first_name", "First Name" });
+                dt.Rows.Add(new object[] { "D.last_name", "Last Name" });
+                dt.Rows.Add(new object[] { "De.name", "Department" });
+                dt.Rows.Add(new object[] { "D.phone", "Phone" });
+                dt.Rows.Add(new object[] { "D.active", "Active" });
                 return dt;
             }
             catch (Exception ex)
