@@ -172,7 +172,7 @@ namespace HospitalERP
         private void txtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtName.Text.Trim()))
+            if (string.IsNullOrEmpty(txtName.Text.Trim()) && txtID.Text=="")
             {
                 e.Cancel = true;
                 txtName.Focus();
