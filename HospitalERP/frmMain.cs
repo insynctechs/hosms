@@ -71,6 +71,11 @@ namespace HospitalERP
             if(LoggedUser.id > 0)
             {
                 SetMenuItems();
+                lnkLogout.Visible = true;
+            }
+            else
+            {
+                lnkLogout.Visible = false;
             }
 
             
@@ -162,6 +167,18 @@ namespace HospitalERP
                 string menu_name = dr["menu_name"].ToString();
                 MainMenu.Items.RemoveByKey(menu_name);
             }
+        }
+
+        private void menuItemReg_Click(object sender, EventArgs e)
+        {
+            frmPatient frm = new frmPatient();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void lnkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -82,7 +82,7 @@
             this.chkActive = new System.Windows.Forms.CheckBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtUSERID = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPgListDocs = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -102,7 +102,7 @@
             this.consultation_fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.txtUSERID = new System.Windows.Forms.TextBox();
             this.tabDoctors.SuspendLayout();
             this.tabPgAddDocs.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -196,9 +196,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtDesignation, 3, 6);
             this.tableLayoutPanel2.Controls.Add(this.lblActive, 2, 17);
             this.tableLayoutPanel2.Controls.Add(this.chkActive, 3, 17);
-            this.tableLayoutPanel2.Controls.Add(this.txtID, 0, 20);
             this.tableLayoutPanel2.Controls.Add(this.label10, 2, 13);
-            this.tableLayoutPanel2.Controls.Add(this.txtUSERID, 1, 20);
             this.tableLayoutPanel2.Controls.Add(this.lblStatus, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label12, 2, 10);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -418,9 +416,11 @@
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel1, 2);
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
+            this.flowLayoutPanel1.Controls.Add(this.txtUSERID);
+            this.flowLayoutPanel1.Controls.Add(this.txtID);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(491, 560);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 39);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(406, 39);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
             // btnSave
@@ -658,7 +658,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(28, 605);
+            this.txtID.Location = new System.Drawing.Point(271, 3);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 25);
             this.txtID.TabIndex = 60;
@@ -673,12 +673,21 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "Zip";
             // 
-            // txtUSERID
+            // lblStatus
             // 
-            this.txtUSERID.Location = new System.Drawing.Point(167, 605);
-            this.txtUSERID.Name = "txtUSERID";
-            this.txtUSERID.Size = new System.Drawing.Size(100, 25);
-            this.txtUSERID.TabIndex = 63;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Salmon;
+            this.lblStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblStatus, 2);
+            this.lblStatus.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblStatus.Location = new System.Drawing.Point(28, 23);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Padding = new System.Windows.Forms.Padding(20, 5, 20, 5);
+            this.lblStatus.Size = new System.Drawing.Size(42, 31);
+            this.lblStatus.TabIndex = 64;
+            this.lblStatus.Visible = false;
             // 
             // label12
             // 
@@ -883,21 +892,13 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // lblStatus
+            // txtUSERID
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.BackColor = System.Drawing.Color.Salmon;
-            this.lblStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblStatus, 2);
-            this.lblStatus.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblStatus.Location = new System.Drawing.Point(28, 23);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Padding = new System.Windows.Forms.Padding(20, 5, 20, 5);
-            this.lblStatus.Size = new System.Drawing.Size(42, 31);
-            this.lblStatus.TabIndex = 64;
-            this.lblStatus.Visible = false;
+            this.txtUSERID.Location = new System.Drawing.Point(165, 3);
+            this.txtUSERID.Name = "txtUSERID";
+            this.txtUSERID.Size = new System.Drawing.Size(100, 25);
+            this.txtUSERID.TabIndex = 63;
+            this.txtUSERID.Visible = false;
             // 
             // frmDoctors
             // 
@@ -918,6 +919,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.tabPgListDocs.ResumeLayout(false);
@@ -1000,7 +1002,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pathaka;
         private System.Windows.Forms.DataGridViewTextBoxColumn consultation_fee;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
-        private System.Windows.Forms.TextBox txtUSERID;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.TextBox txtUSERID;
     }
 }

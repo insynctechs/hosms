@@ -138,7 +138,6 @@ namespace HospitalERP
                     {
                         ShowStatus(1,"Record succesfully added");
                         clearControls();
-
                     }
                     else if (rtn == -1)
                     {
