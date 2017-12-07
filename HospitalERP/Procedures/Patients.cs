@@ -106,18 +106,20 @@ namespace HospitalERP.Procedures
             }
         }
 
-        public DataTable SearchValues()
+        public DataTable SearchValues(int hasall=1)
         {
             try
             {
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Value");
                 dt.Columns.Add("Display");
-                dt.Rows.Add(new object[] { "All", "All" });
+                if(hasall ==1)
+                    dt.Rows.Add(new object[] { "All", "All" });
+                dt.Rows.Add(new object[] { "phone", "Phone Number" });
                 dt.Rows.Add(new object[] { "patient_number", "Patient Number" });
                 dt.Rows.Add(new object[] { "first_name", "First Name" });
                 dt.Rows.Add(new object[] { "last_name", "Last Name" });
-                dt.Rows.Add(new object[] { "phone", "Phone" });
+                
                 return dt;
             }
             catch (Exception ex)

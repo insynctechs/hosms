@@ -10,25 +10,25 @@ namespace HospitalERP.Helpers
 {
     class Utils
     {
-        NameValueCollection AppointmentStatus = new NameValueCollection()
+        public static NameValueCollection AppointmentStatus = new NameValueCollection()
         {
-            { "1", "Scheduled" },
-            { "2", "Completed" },
-            {"3","On-Hold" }
+            { "Scheduled","1" },
+            { "Completed", "2" },
+            { "On-Hold","3" }
         };
 
-        NameValueCollection ProcedureStatus = new NameValueCollection()
+        public static NameValueCollection ProcedureStatus = new NameValueCollection()
         {
-            { "1", "Scheduled" },
-            { "2", "Completed" },
-            {"3","On-Hold" }
+            { "Scheduled","1" },
+            { "Completed", "2" },
+            { "On-Hold","3" }
         };
 
-        NameValueCollection BillStatus = new NameValueCollection()
+        public static NameValueCollection BillStatus = new NameValueCollection()
         {
-            { "1", "Paid" },
-            { "2", "Pending" },
-            {"3","Partial Paid" }
+            { "Paid", "1" },
+            { "Pending", "2"  },
+            {"Partial Paid", "3" }
         };
     }
 }

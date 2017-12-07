@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 namespace HospitalERP
 {
     
@@ -36,6 +37,7 @@ namespace HospitalERP
             this.WindowState = FormWindowState.Maximized;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             GetDoctorsCombo(0);
+            PopulateSearch();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -51,16 +53,26 @@ namespace HospitalERP
             cmbDoc.DataSource = doc.getDoctorsCombo(tid);
             
         }
+        private void PopulateSearch()
+        {
+            cmbSearch.DataSource = pat.SearchValues(0);
+            cmbSearch.ValueMember = "Value";
+            cmbSearch.DisplayMember = "Display";
+        }
+        private void ShowSearchedRecords()
+        {
+            dgvPatient.DataSource = pat.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+        }
 
         private void txtPatNum_TextChanged(object sender, EventArgs e)
         {
-            if(txtPatNum.Text.Trim() == "")
+            if(txtPatNum.Text.Trim() != "" && cmbDoc.SelectedValue.ToString() != Convert.ToString(0))
             {
-                btnSave.Enabled = false;
+                btnSave.Enabled = true;
             }
             else
             {
-                btnSave.Enabled = true;
+                btnSave.Enabled = false;
             }
         }
 
@@ -76,12 +88,53 @@ namespace HospitalERP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            int ret = app.addAppointment(Int32.Parse(txtPatientID.Text), Int32.Parse(cmbDoc.SelectedValue.ToString()), Convert.ToDateTime(dtpAppDate.Text), Int32.Parse(Utils.ProcedureStatus["Scheduled"]));
+            if(ret >= 1)
+            {
+                MessageBox.Show("Added");
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void btnList_Click(object sender, EventArgs e)
         {
 
+        }
+
+        
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Trim() == "")
+                btnSearch.Enabled = false;
+            else
+                btnSearch.Enabled = true;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            ShowSearchedRecords();
+        }
+
+        private void dgvPatient_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtPatientID.Text = dgvPatient.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtPatNum.Text = dgvPatient.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void cmbDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtPatNum.Text.Trim() != "" && cmbDoc.SelectedValue.ToString() != Convert.ToString(0))
+            {
+                btnSave.Enabled = true;
+            }
+            else
+            {
+                btnSave.Enabled = false;
+            }
         }
     }
 }
