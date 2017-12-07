@@ -68,13 +68,16 @@
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrevApp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDocId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColbtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -131,13 +134,16 @@
             this.dgvApp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvApp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
-            this.description,
-            this.colName,
-            this.colVal,
-            this.Column1,
-            this.Column2,
-            this.PrevApp,
-            this.Status});
+            this.ColPatID,
+            this.ColDocId,
+            this.colPatNum,
+            this.colPatName,
+            this.colDocName,
+            this.ColToken,
+            this.ColPrevDate,
+            this.ColDues,
+            this.colStatus,
+            this.ColbtnStatus});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 11.25F);
@@ -188,6 +194,7 @@
             this.dtpAppDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             resources.ApplyResources(this.dtpAppDate, "dtpAppDate");
             this.dtpAppDate.Name = "dtpAppDate";
+            this.dtpAppDate.ValueChanged += new System.EventHandler(this.dtpAppDate_ValueChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -415,49 +422,77 @@
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
             // 
-            // description
+            // ColPatID
             // 
-            this.description.DataPropertyName = "op_description";
-            resources.ApplyResources(this.description, "description");
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
+            this.ColPatID.DataPropertyName = "patient_id";
+            resources.ApplyResources(this.ColPatID, "ColPatID");
+            this.ColPatID.Name = "ColPatID";
+            this.ColPatID.ReadOnly = true;
             // 
-            // colName
+            // ColDocId
             // 
-            resources.ApplyResources(this.colName, "colName");
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
+            this.ColDocId.DataPropertyName = "doctor_id";
+            resources.ApplyResources(this.ColDocId, "ColDocId");
+            this.ColDocId.Name = "ColDocId";
+            this.ColDocId.ReadOnly = true;
             // 
-            // colVal
+            // colPatNum
             // 
-            this.colVal.DataPropertyName = "op_value";
-            resources.ApplyResources(this.colVal, "colVal");
-            this.colVal.Name = "colVal";
-            this.colVal.ReadOnly = true;
+            this.colPatNum.DataPropertyName = "patient_number";
+            resources.ApplyResources(this.colPatNum, "colPatNum");
+            this.colPatNum.Name = "colPatNum";
+            this.colPatNum.ReadOnly = true;
             // 
-            // Column1
+            // colPatName
             // 
-            resources.ApplyResources(this.Column1, "Column1");
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.colPatName.DataPropertyName = "patient_name";
+            resources.ApplyResources(this.colPatName, "colPatName");
+            this.colPatName.Name = "colPatName";
+            this.colPatName.ReadOnly = true;
             // 
-            // Column2
+            // colDocName
             // 
-            resources.ApplyResources(this.Column2, "Column2");
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.colDocName.DataPropertyName = "doctor_name";
+            resources.ApplyResources(this.colDocName, "colDocName");
+            this.colDocName.Name = "colDocName";
+            this.colDocName.ReadOnly = true;
             // 
-            // PrevApp
+            // ColToken
             // 
-            resources.ApplyResources(this.PrevApp, "PrevApp");
-            this.PrevApp.Name = "PrevApp";
-            this.PrevApp.ReadOnly = true;
+            this.ColToken.DataPropertyName = "token";
+            resources.ApplyResources(this.ColToken, "ColToken");
+            this.ColToken.Name = "ColToken";
+            this.ColToken.ReadOnly = true;
             // 
-            // Status
+            // ColPrevDate
             // 
-            resources.ApplyResources(this.Status, "Status");
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+            this.ColPrevDate.DataPropertyName = "prev_date";
+            resources.ApplyResources(this.ColPrevDate, "ColPrevDate");
+            this.ColPrevDate.Name = "ColPrevDate";
+            this.ColPrevDate.ReadOnly = true;
+            // 
+            // ColDues
+            // 
+            this.ColDues.DataPropertyName = "dues";
+            resources.ApplyResources(this.ColDues, "ColDues");
+            this.ColDues.Name = "ColDues";
+            this.ColDues.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.DataPropertyName = "status";
+            resources.ApplyResources(this.colStatus, "colStatus");
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColbtnStatus
+            // 
+            resources.ApplyResources(this.ColbtnStatus, "ColbtnStatus");
+            this.ColbtnStatus.Name = "ColbtnStatus";
+            this.ColbtnStatus.ReadOnly = true;
+            this.ColbtnStatus.Text = "Change";
+            this.ColbtnStatus.UseColumnTextForButtonValue = true;
             // 
             // frmAppointments
             // 
@@ -526,12 +561,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrevApp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPatID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDocId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPatNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPatName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDocName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColToken;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrevDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDues;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn ColbtnStatus;
     }
 }

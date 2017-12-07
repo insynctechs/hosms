@@ -11,7 +11,7 @@ using HospitalERP.Procedures;
 using HospitalERP.Helpers;
 namespace HospitalERP
 {
-    
+
     public partial class frmAppointments : Form
     {
         log4net.ILog ilog;
@@ -38,6 +38,7 @@ namespace HospitalERP
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             GetDoctorsCombo(0);
             PopulateSearch();
+            getAppointmentList();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace HospitalERP
             cmbDoc.ValueMember = "id";
             cmbDoc.DisplayMember = "name";
             cmbDoc.DataSource = doc.getDoctorsCombo(tid);
-            
+
         }
         private void PopulateSearch()
         {
@@ -66,7 +67,7 @@ namespace HospitalERP
 
         private void txtPatNum_TextChanged(object sender, EventArgs e)
         {
-            if(txtPatNum.Text.Trim() != "" && cmbDoc.SelectedValue.ToString() != Convert.ToString(0))
+            if (txtPatNum.Text.Trim() != "" && cmbDoc.SelectedValue.ToString() != Convert.ToString(0))
             {
                 btnSave.Enabled = true;
             }
@@ -78,7 +79,7 @@ namespace HospitalERP
 
         private void txtPatientID_TextChanged(object sender, EventArgs e)
         {
-            if(txtPatientID.Text.Trim()!="")
+            if (txtPatientID.Text.Trim() != "")
             {
                 DataTable dtPat = pat.getRecordFromID(Int32.Parse(txtPatientID.Text));
                 if (dtPat.Rows.Count > 0)
@@ -89,9 +90,10 @@ namespace HospitalERP
         private void btnSave_Click(object sender, EventArgs e)
         {
             int ret = app.addAppointment(Int32.Parse(txtPatientID.Text), Int32.Parse(cmbDoc.SelectedValue.ToString()), Convert.ToDateTime(dtpAppDate.Text), Int32.Parse(Utils.ProcedureStatus["Scheduled"]));
-            if(ret >= 1)
+            if (ret >= 1)
             {
-                MessageBox.Show("Added");
+                MessageBox.Show("Appointment Added");
+                getAppointmentList();
             }
             else
             {
@@ -101,9 +103,19 @@ namespace HospitalERP
 
         private void btnList_Click(object sender, EventArgs e)
         {
-
+            getAppointmentList();
         }
 
+        private void getAppointmentList()
+        {
+            /*DataGridViewComboBoxColumn dcombo;
+            dcombo= (DataGridViewComboBoxColumn) dgvApp.Columns["colStatus"];
+            dcombo.DataSource = app.getAppointmentStatus();
+            dcombo.DisplayMember = "name";
+            dcombo.ValueMember = "id";*/
+
+            dgvApp.DataSource = app.getAllAppointmentsForDate(Convert.ToDateTime(dtpAppDate.Text), Int32.Parse(cmbDoc.SelectedValue.ToString()));
+        }
         
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -135,6 +147,13 @@ namespace HospitalERP
             {
                 btnSave.Enabled = false;
             }
+            getAppointmentList();
+            
+        }
+
+        private void dtpAppDate_ValueChanged(object sender, EventArgs e)
+        {
+            getAppointmentList();
         }
     }
 }
