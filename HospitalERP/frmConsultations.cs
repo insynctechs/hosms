@@ -16,5 +16,10 @@ namespace HospitalERP
         {
             InitializeComponent();
         }
+
+        private void frmConsultations_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

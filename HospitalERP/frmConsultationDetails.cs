@@ -21,5 +21,10 @@ namespace HospitalERP
         {
 
         }
+
+        private void frmConsultationDetails_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
