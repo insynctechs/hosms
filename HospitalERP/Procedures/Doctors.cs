@@ -204,7 +204,12 @@ namespace HospitalERP.Procedures
                 SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@id", id);
                 DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspDoctors_Combo", sqlParam);
+                DataRow dr = dt.Tables[0].NewRow();
+                dr["id"] = 0;
+                dr["name"] = "Select Doctor";
+                dt.Tables[0].Rows.InsertAt(dr, 0);
                 return dt.Tables[0];
+               
             }
             catch (Exception ex)
             {

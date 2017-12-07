@@ -55,6 +55,7 @@
             this.lblAppName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.consultationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -161,6 +162,7 @@
             this.menuItemPatients.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemApp,
             this.menuItemReg,
+            this.consultationsToolStripMenuItem,
             this.menuItemPatSearch});
             this.menuItemPatients.Name = "menuItemPatients";
             this.menuItemPatients.Size = new System.Drawing.Size(70, 22);
@@ -219,7 +221,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.47288F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.52712F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 257F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 258F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
@@ -240,7 +242,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblEmpID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lnkLogout, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(663, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(662, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.3617F));
@@ -310,15 +312,21 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(387, 94);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(386, 94);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 41);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(380, 41);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // consultationsToolStripMenuItem
+            // 
+            this.consultationsToolStripMenuItem.Name = "consultationsToolStripMenuItem";
+            this.consultationsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.consultationsToolStripMenuItem.Text = "Consultations";
             // 
             // frmMain
             // 
@@ -381,6 +389,7 @@
         private System.Windows.Forms.Label lblEmpID;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.LinkLabel lnkLogout;
+        private System.Windows.Forms.ToolStripMenuItem consultationsToolStripMenuItem;
     }
 }
 

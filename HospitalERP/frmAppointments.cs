@@ -46,8 +46,8 @@ namespace HospitalERP
         }
         private void GetDoctorsCombo(int tid)
         {
-            cmbDoc.ValueMember = "Value";
-            cmbDoc.DisplayMember = "Display";
+            cmbDoc.ValueMember = "id";
+            cmbDoc.DisplayMember = "name";
             cmbDoc.DataSource = doc.getDoctorsCombo(tid);
             
         }
