@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabDoctors = new System.Windows.Forms.TabControl();
             this.tabPgAddDocs = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -90,6 +90,9 @@
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.tabPgListDocs = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -97,7 +100,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvDept = new System.Windows.Forms.DataGridView();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,9 +110,7 @@
             this.pathaka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.consultation_fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabDoctors.SuspendLayout();
             this.tabPgAddDocs.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -119,11 +119,11 @@
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
             this.tabPgListDocs.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.flowLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabDoctors
@@ -241,21 +241,21 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 572);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanel2.TabIndex = 18;
             // 
             // txtDistrict
             // 
             this.txtDistrict.Location = new System.Drawing.Point(181, 428);
             this.txtDistrict.Name = "txtDistrict";
             this.txtDistrict.Size = new System.Drawing.Size(250, 25);
-            this.txtDistrict.TabIndex = 13;
+            this.txtDistrict.TabIndex = 15;
             // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(181, 397);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(250, 25);
-            this.txtAddress.TabIndex = 11;
+            this.txtAddress.TabIndex = 13;
             // 
             // label1
             // 
@@ -280,7 +280,7 @@
             this.txtLastName.Location = new System.Drawing.Point(630, 166);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(250, 25);
-            this.txtLastName.TabIndex = 2;
+            this.txtLastName.TabIndex = 3;
             // 
             // lblName
             // 
@@ -314,14 +314,14 @@
             this.txtCity.Location = new System.Drawing.Point(630, 397);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(250, 25);
-            this.txtCity.TabIndex = 12;
+            this.txtCity.TabIndex = 14;
             // 
             // txtZip
             // 
             this.txtZip.Location = new System.Drawing.Point(630, 428);
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(250, 25);
-            this.txtZip.TabIndex = 14;
+            this.txtZip.TabIndex = 16;
             // 
             // label4
             // 
@@ -364,7 +364,7 @@
             this.txtPathaka.Location = new System.Drawing.Point(181, 322);
             this.txtPathaka.Name = "txtPathaka";
             this.txtPathaka.Size = new System.Drawing.Size(250, 25);
-            this.txtPathaka.TabIndex = 9;
+            this.txtPathaka.TabIndex = 11;
             // 
             // txtEmail
             // 
@@ -457,7 +457,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(181, 166);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(250, 25);
-            this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.TabIndex = 2;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
             // flowLayoutPanel2
@@ -476,7 +476,7 @@
             this.rbGender1.Location = new System.Drawing.Point(3, 3);
             this.rbGender1.Name = "rbGender1";
             this.rbGender1.Size = new System.Drawing.Size(57, 22);
-            this.rbGender1.TabIndex = 5;
+            this.rbGender1.TabIndex = 8;
             this.rbGender1.TabStop = true;
             this.rbGender1.Text = "Male";
             this.rbGender1.UseVisualStyleBackColor = true;
@@ -506,21 +506,21 @@
             this.txtNationality.Location = new System.Drawing.Point(181, 291);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(250, 25);
-            this.txtNationality.TabIndex = 8;
+            this.txtNationality.TabIndex = 10;
             // 
             // dtpPathakaExpiry
             // 
             this.dtpPathakaExpiry.Location = new System.Drawing.Point(630, 322);
             this.dtpPathakaExpiry.Name = "dtpPathakaExpiry";
             this.dtpPathakaExpiry.Size = new System.Drawing.Size(250, 25);
-            this.dtpPathakaExpiry.TabIndex = 10;
+            this.dtpPathakaExpiry.TabIndex = 12;
             // 
             // dtpDob
             // 
             this.dtpDob.Location = new System.Drawing.Point(630, 260);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(250, 25);
-            this.dtpDob.TabIndex = 7;
+            this.dtpDob.TabIndex = 9;
             // 
             // label14
             // 
@@ -553,7 +553,7 @@
             this.txtempid.Name = "txtempid";
             this.txtempid.ReadOnly = true;
             this.txtempid.Size = new System.Drawing.Size(250, 25);
-            this.txtempid.TabIndex = 49;
+            this.txtempid.TabIndex = 1;
             // 
             // lblQualification
             // 
@@ -569,7 +569,7 @@
             this.txtQualification.Location = new System.Drawing.Point(181, 229);
             this.txtQualification.Name = "txtQualification";
             this.txtQualification.Size = new System.Drawing.Size(250, 25);
-            this.txtQualification.TabIndex = 3;
+            this.txtQualification.TabIndex = 6;
             // 
             // label2
             // 
@@ -585,7 +585,7 @@
             this.txtSpecialization.Location = new System.Drawing.Point(630, 229);
             this.txtSpecialization.Name = "txtSpecialization";
             this.txtSpecialization.Size = new System.Drawing.Size(250, 25);
-            this.txtSpecialization.TabIndex = 4;
+            this.txtSpecialization.TabIndex = 7;
             // 
             // cmbDept
             // 
@@ -593,7 +593,7 @@
             this.cmbDept.Location = new System.Drawing.Point(181, 197);
             this.cmbDept.Name = "cmbDept";
             this.cmbDept.Size = new System.Drawing.Size(250, 26);
-            this.cmbDept.TabIndex = 52;
+            this.cmbDept.TabIndex = 4;
             this.cmbDept.Validating += new System.ComponentModel.CancelEventHandler(this.cmbDept_Validating);
             // 
             // txtDesignation
@@ -601,7 +601,7 @@
             this.txtDesignation.Location = new System.Drawing.Point(630, 197);
             this.txtDesignation.Name = "txtDesignation";
             this.txtDesignation.Size = new System.Drawing.Size(250, 25);
-            this.txtDesignation.TabIndex = 53;
+            this.txtDesignation.TabIndex = 5;
             this.txtDesignation.Validating += new System.ComponentModel.CancelEventHandler(this.txtDesignation_Validating);
             // 
             // lblActive
@@ -767,6 +767,35 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Department:";
             // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Controls.Add(this.label15);
+            this.flowLayoutPanel7.Controls.Add(this.label20);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(28, 529);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(147, 25);
+            this.flowLayoutPanel7.TabIndex = 66;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(3, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 18);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "*";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(24, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(116, 18);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Consultation Fee:";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
             // tabPgListDocs
             // 
             this.tabPgListDocs.BackColor = System.Drawing.Color.White;
@@ -847,14 +876,14 @@
             this.dgvDept.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDept.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvDept.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDept.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDept.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDept.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
@@ -867,14 +896,14 @@
             this.pathaka,
             this.consultation_fee,
             this.colActive});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDept.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDept.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDept.GridColor = System.Drawing.Color.LightCyan;
             this.dgvDept.Location = new System.Drawing.Point(3, 89);
             this.dgvDept.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -884,10 +913,6 @@
             this.dgvDept.Size = new System.Drawing.Size(980, 250);
             this.dgvDept.TabIndex = 12;
             this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
             // 
             // colID
             // 
@@ -962,34 +987,9 @@
             this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // flowLayoutPanel7
+            // errorProvider
             // 
-            this.flowLayoutPanel7.Controls.Add(this.label15);
-            this.flowLayoutPanel7.Controls.Add(this.label20);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(28, 529);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(147, 25);
-            this.flowLayoutPanel7.TabIndex = 66;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(3, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 18);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "*";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(24, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(116, 18);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Consultation Fee:";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
+            this.errorProvider.ContainerControl = this;
             // 
             // frmDoctors
             // 
@@ -1018,13 +1018,13 @@
             this.flowLayoutPanel5.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
             this.tabPgListDocs.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.flowLayoutPanel7.ResumeLayout(false);
-            this.flowLayoutPanel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
