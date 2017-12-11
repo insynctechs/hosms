@@ -17,16 +17,17 @@ namespace HospitalERP.Procedures
             log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         }
 
-        public int AddBill(int aid, int pid, decimal amount, int type)
+        public int AddBill(int aid, int pid, decimal amount, int type, int userid)
         {
             int ret = -1;
             try
             {
-                SqlParameter[] sqlParam = new SqlParameter[4];
+                SqlParameter[] sqlParam = new SqlParameter[5];
                 sqlParam[0] = new SqlParameter("@appointment_id", aid);
                 sqlParam[1] = new SqlParameter("@patient_id", pid);               
                 sqlParam[2] = new SqlParameter("@bill_amount", amount);
                 sqlParam[3] = new SqlParameter("@bill_type", type);
+                sqlParam[4] = new SqlParameter("@user_id", userid);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspBill_Add", sqlParam).ToString());
             }
             catch (DbException ex)
@@ -47,6 +48,40 @@ namespace HospitalERP.Procedures
                 sqlParam[1] = new SqlParameter("@patient_id", pid);
                 sqlParam[2] = new SqlParameter("@bill_type", type);              
                 DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspBill_Get", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (DbException ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+        }
+
+        public DataTable GetBill(int id)
+        {
+
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);                
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspBill_GetSingle", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (DbException ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+        }
+
+        public DataTable GetBillCreatedUser(int id)
+        {
+
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspUsers_GetDetails", sqlParam);
                 return dt.Tables[0];
             }
             catch (DbException ex)
@@ -91,6 +126,13 @@ namespace HospitalERP.Procedures
                     DataRow dr = dt.Tables[0].NewRow();
                     dr["id"] = 0;
                     dr["name"] = "All";
+                    dt.Tables[0].Rows.InsertAt(dr, 0);
+                }
+                else if (hasall == 11)
+                {
+                    DataRow dr = dt.Tables[0].NewRow();
+                    dr["id"] = 0;
+                    dr["name"] = "Choose One";
                     dt.Tables[0].Rows.InsertAt(dr, 0);
                 }
                 return dt.Tables[0];

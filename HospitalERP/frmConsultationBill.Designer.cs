@@ -38,6 +38,9 @@
             this.chkLetterHead = new System.Windows.Forms.CheckBox();
             this.btnPrint = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cmbBillStatus = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,28 +55,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dgvInv = new System.Windows.Forms.DataGridView();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.panelContent = new System.Windows.Forms.Panel();
-            this.tblPanelFinal = new System.Windows.Forms.TableLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.txtPaid = new System.Windows.Forms.TextBox();
-            this.txtBalance = new System.Windows.Forms.TextBox();
-            this.flpBillHR = new System.Windows.Forms.FlowLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtLoggedUser = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.cmbBillStatus = new System.Windows.Forms.ComboBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
             this.txtPatNum = new System.Windows.Forms.TextBox();
             this.txtPatName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -83,19 +64,38 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.txtToken = new System.Windows.Forms.TextBox();
             this.txtGender = new System.Windows.Forms.TextBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.txtInvNum = new System.Windows.Forms.TextBox();
+            this.dgvInv = new System.Windows.Forms.DataGridView();
             this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.tblPanelFinal = new System.Windows.Forms.TableLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtPaid = new System.Windows.Forms.TextBox();
+            this.txtBalance = new System.Windows.Forms.TextBox();
+            this.flpBillHR = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtLoggedUser = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.PanelBottom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInv)).BeginInit();
             this.panelContent.SuspendLayout();
             this.tblPanelFinal.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBottom
@@ -161,6 +161,33 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(351, 98);
             this.panel2.TabIndex = 2;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label18);
+            this.flowLayoutPanel3.Controls.Add(this.cmbBillStatus);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(10, 9);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(316, 30);
+            this.flowLayoutPanel3.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(118, 18);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Choose Bill Status";
+            // 
+            // cmbBillStatus
+            // 
+            this.cmbBillStatus.FormattingEnabled = true;
+            this.cmbBillStatus.Location = new System.Drawing.Point(127, 3);
+            this.cmbBillStatus.Name = "cmbBillStatus";
+            this.cmbBillStatus.Size = new System.Drawing.Size(170, 21);
+            this.cmbBillStatus.TabIndex = 1;
             // 
             // button1
             // 
@@ -337,268 +364,6 @@
             this.label12.Text = "REGISTRATION INVOICE";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvInv
-            // 
-            this.dgvInv.AllowUserToResizeRows = false;
-            this.dgvInv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvInv.BackgroundColor = System.Drawing.Color.White;
-            this.dgvInv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvInv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvInv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Num,
-            this.Description,
-            this.Amount});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInv.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvInv.EnableHeadersVisualStyles = false;
-            this.dgvInv.GridColor = System.Drawing.Color.White;
-            this.dgvInv.Location = new System.Drawing.Point(52, 279);
-            this.dgvInv.Name = "dgvInv";
-            this.dgvInv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvInv.RowHeadersVisible = false;
-            this.dgvInv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvInv.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dgvInv.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvInv.RowTemplate.DefaultCellStyle.NullValue = null;
-            this.dgvInv.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvInv.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvInv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInv.Size = new System.Drawing.Size(908, 130);
-            this.dgvInv.TabIndex = 3;
-            this.dgvInv.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInv_CellEnter);
-            this.dgvInv.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvInv_CellPainting);
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // panelContent
-            // 
-            this.panelContent.Controls.Add(this.tblPanelFinal);
-            this.panelContent.Controls.Add(this.label13);
-            this.panelContent.Controls.Add(this.dgvInv);
-            this.panelContent.Controls.Add(this.tableLayoutPanel1);
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 0);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1008, 532);
-            this.panelContent.TabIndex = 4;
-            // 
-            // tblPanelFinal
-            // 
-            this.tblPanelFinal.ColumnCount = 4;
-            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
-            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
-            this.tblPanelFinal.Controls.Add(this.label17, 2, 4);
-            this.tblPanelFinal.Controls.Add(this.lblTime, 0, 4);
-            this.tblPanelFinal.Controls.Add(this.label16, 2, 3);
-            this.tblPanelFinal.Controls.Add(this.label14, 2, 1);
-            this.tblPanelFinal.Controls.Add(this.txtTotal, 3, 1);
-            this.tblPanelFinal.Controls.Add(this.txtPaid, 3, 3);
-            this.tblPanelFinal.Controls.Add(this.txtBalance, 3, 4);
-            this.tblPanelFinal.Controls.Add(this.flpBillHR, 2, 2);
-            this.tblPanelFinal.Controls.Add(this.flowLayoutPanel2, 0, 3);
-            this.tblPanelFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblPanelFinal.Location = new System.Drawing.Point(52, 412);
-            this.tblPanelFinal.Name = "tblPanelFinal";
-            this.tblPanelFinal.RowCount = 5;
-            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPanelFinal.Size = new System.Drawing.Size(908, 114);
-            this.tblPanelFinal.TabIndex = 5;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(687, 87);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 15);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Balance: ";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(710, 60);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 15);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Paid: ";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(681, 22);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 15);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Net Total: ";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(760, 25);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 21);
-            this.txtTotal.TabIndex = 1;
-            // 
-            // txtPaid
-            // 
-            this.txtPaid.Location = new System.Drawing.Point(760, 63);
-            this.txtPaid.Name = "txtPaid";
-            this.txtPaid.Size = new System.Drawing.Size(100, 21);
-            this.txtPaid.TabIndex = 1;
-            // 
-            // txtBalance
-            // 
-            this.txtBalance.Location = new System.Drawing.Point(760, 90);
-            this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(100, 21);
-            this.txtBalance.TabIndex = 1;
-            // 
-            // flpBillHR
-            // 
-            this.flpBillHR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpBillHR.BackColor = System.Drawing.Color.Black;
-            this.tblPanelFinal.SetColumnSpan(this.flpBillHR, 2);
-            this.flpBillHR.Location = new System.Drawing.Point(599, 53);
-            this.flpBillHR.Name = "flpBillHR";
-            this.flpBillHR.Size = new System.Drawing.Size(306, 1);
-            this.flpBillHR.TabIndex = 2;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(320, 17);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(356, 29);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "EXCELLENCE DENTAL CLINIC";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.tblPanelFinal.SetColumnSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Controls.Add(this.label15);
-            this.flowLayoutPanel2.Controls.Add(this.txtLoggedUser);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 63);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(284, 21);
-            this.flowLayoutPanel2.TabIndex = 3;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 16);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Done By: ";
-            // 
-            // txtLoggedUser
-            // 
-            this.txtLoggedUser.AutoSize = true;
-            this.txtLoggedUser.Location = new System.Drawing.Point(75, 0);
-            this.txtLoggedUser.Name = "txtLoggedUser";
-            this.txtLoggedUser.Size = new System.Drawing.Size(66, 16);
-            this.txtLoggedUser.TabIndex = 0;
-            this.txtLoggedUser.Text = "Done By: ";
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(3, 87);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(126, 16);
-            this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "Current Time Stamp";
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label18);
-            this.flowLayoutPanel3.Controls.Add(this.cmbBillStatus);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(10, 9);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(316, 30);
-            this.flowLayoutPanel3.TabIndex = 1;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(118, 18);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Choose Bill Status";
-            // 
-            // cmbBillStatus
-            // 
-            this.cmbBillStatus.FormattingEnabled = true;
-            this.cmbBillStatus.Location = new System.Drawing.Point(127, 3);
-            this.cmbBillStatus.Name = "cmbBillStatus";
-            this.cmbBillStatus.Size = new System.Drawing.Size(170, 21);
-            this.cmbBillStatus.TabIndex = 1;
-            // 
-            // txtDate
-            // 
-            this.txtDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDate.Location = new System.Drawing.Point(123, 57);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(217, 14);
-            this.txtDate.TabIndex = 2;
-            // 
             // txtPatNum
             // 
             this.txtPatNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -672,6 +437,14 @@
             this.txtGender.Size = new System.Drawing.Size(86, 14);
             this.txtGender.TabIndex = 4;
             // 
+            // txtDate
+            // 
+            this.txtDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDate.Location = new System.Drawing.Point(123, 57);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(217, 14);
+            this.txtDate.TabIndex = 2;
+            // 
             // txtInvNum
             // 
             this.txtInvNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -679,6 +452,62 @@
             this.txtInvNum.Name = "txtInvNum";
             this.txtInvNum.Size = new System.Drawing.Size(217, 14);
             this.txtInvNum.TabIndex = 2;
+            // 
+            // dgvInv
+            // 
+            this.dgvInv.AllowUserToResizeRows = false;
+            this.dgvInv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvInv.BackgroundColor = System.Drawing.Color.White;
+            this.dgvInv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvInv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Num,
+            this.Description,
+            this.Amount});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInv.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvInv.EnableHeadersVisualStyles = false;
+            this.dgvInv.GridColor = System.Drawing.Color.White;
+            this.dgvInv.Location = new System.Drawing.Point(52, 279);
+            this.dgvInv.Name = "dgvInv";
+            this.dgvInv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvInv.RowHeadersVisible = false;
+            this.dgvInv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvInv.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgvInv.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvInv.RowTemplate.DefaultCellStyle.NullValue = null;
+            this.dgvInv.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvInv.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvInv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInv.Size = new System.Drawing.Size(908, 130);
+            this.dgvInv.TabIndex = 3;
+            this.dgvInv.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInv_CellEnter);
+            this.dgvInv.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvInv_CellPainting);
+            this.dgvInv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInv_CellValueChanged);
             // 
             // Num
             // 
@@ -699,6 +528,180 @@
             this.Amount.Name = "Amount";
             this.Amount.Width = 200;
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // panelContent
+            // 
+            this.panelContent.Controls.Add(this.tblPanelFinal);
+            this.panelContent.Controls.Add(this.label13);
+            this.panelContent.Controls.Add(this.dgvInv);
+            this.panelContent.Controls.Add(this.tableLayoutPanel1);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 0);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1008, 532);
+            this.panelContent.TabIndex = 4;
+            // 
+            // tblPanelFinal
+            // 
+            this.tblPanelFinal.ColumnCount = 4;
+            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
+            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
+            this.tblPanelFinal.Controls.Add(this.label17, 2, 4);
+            this.tblPanelFinal.Controls.Add(this.lblTime, 0, 4);
+            this.tblPanelFinal.Controls.Add(this.label16, 2, 3);
+            this.tblPanelFinal.Controls.Add(this.label14, 2, 1);
+            this.tblPanelFinal.Controls.Add(this.txtTotal, 3, 1);
+            this.tblPanelFinal.Controls.Add(this.txtPaid, 3, 3);
+            this.tblPanelFinal.Controls.Add(this.txtBalance, 3, 4);
+            this.tblPanelFinal.Controls.Add(this.flpBillHR, 2, 2);
+            this.tblPanelFinal.Controls.Add(this.flowLayoutPanel2, 0, 3);
+            this.tblPanelFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tblPanelFinal.Location = new System.Drawing.Point(52, 412);
+            this.tblPanelFinal.Name = "tblPanelFinal";
+            this.tblPanelFinal.RowCount = 5;
+            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblPanelFinal.Size = new System.Drawing.Size(908, 114);
+            this.tblPanelFinal.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(687, 87);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 15);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Balance: ";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(3, 87);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(126, 16);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "Current Time Stamp";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(710, 60);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(44, 15);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Paid: ";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(681, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(73, 15);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Net Total: ";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(760, 25);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(100, 21);
+            this.txtTotal.TabIndex = 1;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
+            // 
+            // txtPaid
+            // 
+            this.txtPaid.Location = new System.Drawing.Point(760, 63);
+            this.txtPaid.Name = "txtPaid";
+            this.txtPaid.Size = new System.Drawing.Size(100, 21);
+            this.txtPaid.TabIndex = 1;
+            this.txtPaid.TextChanged += new System.EventHandler(this.txtPaid_TextChanged);
+            // 
+            // txtBalance
+            // 
+            this.txtBalance.Location = new System.Drawing.Point(760, 90);
+            this.txtBalance.Name = "txtBalance";
+            this.txtBalance.Size = new System.Drawing.Size(100, 21);
+            this.txtBalance.TabIndex = 1;
+            // 
+            // flpBillHR
+            // 
+            this.flpBillHR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpBillHR.BackColor = System.Drawing.Color.Black;
+            this.tblPanelFinal.SetColumnSpan(this.flpBillHR, 2);
+            this.flpBillHR.Location = new System.Drawing.Point(599, 53);
+            this.flpBillHR.Name = "flpBillHR";
+            this.flpBillHR.Size = new System.Drawing.Size(306, 1);
+            this.flpBillHR.TabIndex = 2;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.tblPanelFinal.SetColumnSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Controls.Add(this.label15);
+            this.flowLayoutPanel2.Controls.Add(this.txtLoggedUser);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 63);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(284, 21);
+            this.flowLayoutPanel2.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 16);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Done By: ";
+            // 
+            // txtLoggedUser
+            // 
+            this.txtLoggedUser.AutoSize = true;
+            this.txtLoggedUser.Location = new System.Drawing.Point(75, 0);
+            this.txtLoggedUser.Name = "txtLoggedUser";
+            this.txtLoggedUser.Size = new System.Drawing.Size(66, 16);
+            this.txtLoggedUser.TabIndex = 0;
+            this.txtLoggedUser.Text = "Done By: ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(320, 17);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(356, 29);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "EXCELLENCE DENTAL CLINIC";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmConsultationBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -715,6 +718,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInv)).EndInit();
@@ -724,8 +729,6 @@
             this.tblPanelFinal.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
