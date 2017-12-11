@@ -18,6 +18,7 @@ namespace HospitalERP
         Doctors doc = new Doctors();
         Appointments app = new Appointments();
         Patients pat = new Patients();
+        int startload = 0;
         public frmAppointments()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace HospitalERP
             GetDoctorsCombo(0);
             PopulateSearch();
             getAppointmentList();
+            startload = 1;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -162,13 +164,15 @@ namespace HospitalERP
             {
                 btnSave.Enabled = false;
             }
-            getAppointmentList();
+            if (startload == 1)
+                getAppointmentList();
             
         }
 
         private void dtpAppDate_ValueChanged(object sender, EventArgs e)
         {
-            getAppointmentList();
+            if (startload == 1)
+                getAppointmentList();
         }
 
         private void dgvApp_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -194,7 +198,8 @@ namespace HospitalERP
 
         private void frmAppointments_Activated(object sender, EventArgs e)
         {
-            getAppointmentList();
+            if (startload == 1)
+                getAppointmentList();
         }
 
         private void ViewDetails(int app_id, int pat_id)
