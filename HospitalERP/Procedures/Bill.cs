@@ -38,6 +38,28 @@ namespace HospitalERP.Procedures
             return ret;
         }
 
+        public int editBill(int id, decimal amount, decimal paid, decimal balance, int status, int userid)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[6];
+                sqlParam[0] = new SqlParameter("@id", id);               
+                sqlParam[1] = new SqlParameter("@amount", amount);
+                sqlParam[2] = new SqlParameter("@paid", paid);
+                sqlParam[3] = new SqlParameter("@balance", balance);
+                sqlParam[4] = new SqlParameter("@status", status);
+                sqlParam[5] = new SqlParameter("@user", userid);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspBill_Edit", sqlParam).ToString());
+            }
+            catch (DbException ex)
+            {
+                ret = -1;
+                log.Error(ex.Message, ex);
+            }
+            return ret;
+        }
+
         public DataTable GetAppointmentBill(int aid, int pid, int type)
         {
             
@@ -48,6 +70,24 @@ namespace HospitalERP.Procedures
                 sqlParam[1] = new SqlParameter("@patient_id", pid);
                 sqlParam[2] = new SqlParameter("@bill_type", type);              
                 DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspBill_Get", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (DbException ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+        }
+
+        public DataTable GetAppointmentAllBills(int aid, int pid)
+        {
+
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[2];
+                sqlParam[0] = new SqlParameter("@appointment_id", aid);
+                sqlParam[1] = new SqlParameter("@patient_id", pid);                
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspBill_GetAllForApp", sqlParam);
                 return dt.Tables[0];
             }
             catch (DbException ex)

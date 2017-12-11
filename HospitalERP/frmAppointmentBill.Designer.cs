@@ -77,19 +77,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtDoctor = new System.Windows.Forms.TextBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bAppID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bBillNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bPatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bCreatorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bBtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -444,6 +446,7 @@
             this.btnListBills.TabIndex = 56;
             this.btnListBills.Text = "LIST";
             this.btnListBills.UseVisualStyleBackColor = false;
+            this.btnListBills.Click += new System.EventHandler(this.btnListBills_Click);
             // 
             // txtAppID
             // 
@@ -600,19 +603,21 @@
             this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AID,
-            this.APatID,
-            this.ADocID,
-            this.APatNum,
-            this.APatName,
-            this.ADocName,
-            this.AToken,
-            this.APrevDate,
-            this.ADues,
-            this.AStatus,
-            this.ABtnStatus,
-            this.ABtnBill,
-            this.ABtnDetails});
+            this.bID,
+            this.bAppID,
+            this.bBillNum,
+            this.bDate,
+            this.bPatID,
+            this.bAmount,
+            this.bPaid,
+            this.bBalance,
+            this.bNotes,
+            this.bStatusID,
+            this.bTypeID,
+            this.bCreatorID,
+            this.bType,
+            this.bStatus,
+            this.bBtnBill});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -628,109 +633,124 @@
             this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
+            this.dgvList.RowHeadersVisible = false;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(1008, 476);
             this.dgvList.TabIndex = 12;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
-            // AID
+            // bID
             // 
-            this.AID.DataPropertyName = "id";
-            this.AID.HeaderText = "ID";
-            this.AID.Name = "AID";
-            this.AID.ReadOnly = true;
-            this.AID.Visible = false;
+            this.bID.DataPropertyName = "id";
+            this.bID.HeaderText = "ID";
+            this.bID.Name = "bID";
+            this.bID.ReadOnly = true;
+            this.bID.Visible = false;
             // 
-            // APatID
+            // bAppID
             // 
-            this.APatID.DataPropertyName = "patient_id";
-            this.APatID.HeaderText = "Patient ID";
-            this.APatID.Name = "APatID";
-            this.APatID.ReadOnly = true;
-            this.APatID.Visible = false;
+            this.bAppID.DataPropertyName = "appointment_id";
+            this.bAppID.HeaderText = "Appointment ID";
+            this.bAppID.Name = "bAppID";
+            this.bAppID.ReadOnly = true;
+            this.bAppID.Visible = false;
             // 
-            // ADocID
+            // bBillNum
             // 
-            this.ADocID.DataPropertyName = "doctor_id";
-            this.ADocID.HeaderText = "Doctor ID";
-            this.ADocID.Name = "ADocID";
-            this.ADocID.ReadOnly = true;
-            this.ADocID.Visible = false;
+            this.bBillNum.DataPropertyName = "bill_number";
+            this.bBillNum.HeaderText = "Bill Number";
+            this.bBillNum.Name = "bBillNum";
+            this.bBillNum.ReadOnly = true;
             // 
-            // APatNum
+            // bDate
             // 
-            this.APatNum.DataPropertyName = "patient_number";
-            this.APatNum.HeaderText = "Patient Number";
-            this.APatNum.Name = "APatNum";
-            this.APatNum.ReadOnly = true;
+            this.bDate.DataPropertyName = "bill_date";
+            this.bDate.HeaderText = "Date";
+            this.bDate.Name = "bDate";
+            this.bDate.ReadOnly = true;
             // 
-            // APatName
+            // bPatID
             // 
-            this.APatName.DataPropertyName = "patient_name";
-            this.APatName.HeaderText = "Patient Name";
-            this.APatName.Name = "APatName";
-            this.APatName.ReadOnly = true;
+            this.bPatID.DataPropertyName = "patient_id";
+            this.bPatID.HeaderText = "Patient ID";
+            this.bPatID.Name = "bPatID";
+            this.bPatID.ReadOnly = true;
+            this.bPatID.Visible = false;
             // 
-            // ADocName
+            // bAmount
             // 
-            this.ADocName.DataPropertyName = "doctor_name";
-            this.ADocName.HeaderText = "Doctor";
-            this.ADocName.Name = "ADocName";
-            this.ADocName.ReadOnly = true;
+            this.bAmount.DataPropertyName = "bill_amount";
+            this.bAmount.HeaderText = "Bill Amount";
+            this.bAmount.Name = "bAmount";
+            this.bAmount.ReadOnly = true;
             // 
-            // AToken
+            // bPaid
             // 
-            this.AToken.DataPropertyName = "token";
-            this.AToken.HeaderText = "Token#";
-            this.AToken.Name = "AToken";
-            this.AToken.ReadOnly = true;
+            this.bPaid.DataPropertyName = "bill_paid";
+            this.bPaid.HeaderText = "Bill Paid";
+            this.bPaid.Name = "bPaid";
+            this.bPaid.ReadOnly = true;
             // 
-            // APrevDate
+            // bBalance
             // 
-            this.APrevDate.DataPropertyName = "prev_date";
-            this.APrevDate.HeaderText = "Prev. Appointment";
-            this.APrevDate.Name = "APrevDate";
-            this.APrevDate.ReadOnly = true;
+            this.bBalance.DataPropertyName = "bill_balance";
+            this.bBalance.HeaderText = "Balance";
+            this.bBalance.Name = "bBalance";
+            this.bBalance.ReadOnly = true;
             // 
-            // ADues
+            // bNotes
             // 
-            this.ADues.DataPropertyName = "dues";
-            this.ADues.HeaderText = "Dues";
-            this.ADues.Name = "ADues";
-            this.ADues.ReadOnly = true;
+            this.bNotes.DataPropertyName = "notes";
+            this.bNotes.HeaderText = "Notes";
+            this.bNotes.Name = "bNotes";
+            this.bNotes.ReadOnly = true;
+            this.bNotes.Visible = false;
             // 
-            // AStatus
+            // bStatusID
             // 
-            this.AStatus.DataPropertyName = "status";
-            this.AStatus.HeaderText = "Status";
-            this.AStatus.Name = "AStatus";
-            this.AStatus.ReadOnly = true;
-            this.AStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bStatusID.DataPropertyName = "bill_status";
+            this.bStatusID.HeaderText = "Status ID";
+            this.bStatusID.Name = "bStatusID";
+            this.bStatusID.ReadOnly = true;
+            this.bStatusID.Visible = false;
             // 
-            // ABtnStatus
+            // bTypeID
             // 
-            this.ABtnStatus.HeaderText = "";
-            this.ABtnStatus.Name = "ABtnStatus";
-            this.ABtnStatus.ReadOnly = true;
-            this.ABtnStatus.Text = "Change Status";
-            this.ABtnStatus.ToolTipText = "Change Status";
-            this.ABtnStatus.UseColumnTextForButtonValue = true;
-            this.ABtnStatus.Visible = false;
+            this.bTypeID.DataPropertyName = "bill_type";
+            this.bTypeID.HeaderText = "Type ID";
+            this.bTypeID.Name = "bTypeID";
+            this.bTypeID.ReadOnly = true;
+            this.bTypeID.Visible = false;
             // 
-            // ABtnBill
+            // bCreatorID
             // 
-            this.ABtnBill.HeaderText = "";
-            this.ABtnBill.Name = "ABtnBill";
-            this.ABtnBill.ReadOnly = true;
-            this.ABtnBill.Text = "Generate/View Bill";
-            this.ABtnBill.UseColumnTextForButtonValue = true;
+            this.bCreatorID.DataPropertyName = "bill_created_userid";
+            this.bCreatorID.HeaderText = "Done By";
+            this.bCreatorID.Name = "bCreatorID";
+            this.bCreatorID.ReadOnly = true;
+            this.bCreatorID.Visible = false;
             // 
-            // ABtnDetails
+            // bType
             // 
-            this.ABtnDetails.HeaderText = "";
-            this.ABtnDetails.Name = "ABtnDetails";
-            this.ABtnDetails.ReadOnly = true;
-            this.ABtnDetails.Text = "View Details";
-            this.ABtnDetails.UseColumnTextForButtonValue = true;
+            this.bType.DataPropertyName = "bill_type_name";
+            this.bType.HeaderText = "Type";
+            this.bType.Name = "bType";
+            this.bType.ReadOnly = true;
+            // 
+            // bStatus
+            // 
+            this.bStatus.DataPropertyName = "bill_status_name";
+            this.bStatus.HeaderText = "Status";
+            this.bStatus.Name = "bStatus";
+            this.bStatus.ReadOnly = true;
+            // 
+            // bBtnBill
+            // 
+            this.bBtnBill.HeaderText = "";
+            this.bBtnBill.Name = "bBtnBill";
+            this.bBtnBill.ReadOnly = true;
+            this.bBtnBill.Text = "Open";
+            this.bBtnBill.UseColumnTextForButtonValue = true;
             // 
             // frmAppointmentBill
             // 
@@ -831,18 +851,20 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtMeetDate;
         private System.Windows.Forms.DataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn APatID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ADocID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn APatNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn APatName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ADocName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AToken;
-        private System.Windows.Forms.DataGridViewTextBoxColumn APrevDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ADues;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AStatus;
-        private System.Windows.Forms.DataGridViewButtonColumn ABtnStatus;
-        private System.Windows.Forms.DataGridViewButtonColumn ABtnBill;
-        private System.Windows.Forms.DataGridViewButtonColumn ABtnDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bAppID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bBillNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bPatID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bPaid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bBalance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bNotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bStatusID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bTypeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bCreatorID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn bBtnBill;
     }
 }

@@ -109,7 +109,31 @@ namespace HospitalERP
 
         private void ListBills()
         {
+            dgvList.DataSource = bill.GetAppointmentAllBills(appointment_id, patient_id);
+        }
 
+        private void btnListBills_Click(object sender, EventArgs e)
+        {
+            ListBills();
+        }
+
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "bBtnBill":
+                    if(dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "1")
+                    {
+                        frmConsultationBill frm = new frmConsultationBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                        frm.ShowDialog();
+                    }
+                    else if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "2")
+                    {
+                        frmConsultationBill frm = new frmConsultationBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                        frm.ShowDialog();
+                    }
+                    break;
+            }
         }
     }
 }
