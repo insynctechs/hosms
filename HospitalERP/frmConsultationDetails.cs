@@ -177,6 +177,8 @@ namespace HospitalERP
 
         private void ShowStatus(int success, string msg)
         {
+            MessageBox.Show(msg, "Information", MessageBoxButtons.OK);
+            /*
             lblStatus.Visible = true;
             if (success == 1)
             {
@@ -197,6 +199,7 @@ namespace HospitalERP
                 t.Stop();
             };
             t.Start();
+            */
         }
 
         private void dgvApptHistory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
