@@ -17,12 +17,16 @@ namespace HospitalERP
     {
         public int appointment_id = 0;
         public int patient_id = 0;
+        public int bill_id = 0;
+        public double bill_total = 0;
+        public double bill_paid = 0;
+        public double bill_balance = 0;
 
         log4net.ILog ilog;
-        Bill bill = new Bill();
-        Appointments app = new Appointments();
+        Bill bill = new Bill();        
         Patients pat = new Patients();
-
+        DataTable dtPat;
+        DataTable dtBill;
         public frmConsultationBill()
         {
             InitializeComponent();
@@ -37,6 +41,22 @@ namespace HospitalERP
             patient_id = pat_id;
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            loadPatientAppInfo();
+            PopulateStatusCombo();
+        }
+
+        public frmConsultationBill(int b_id)
+        {
+            InitializeComponent();
+            bill_id = b_id;
+            
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            dtBill = bill.GetBill(bill_id);
+            appointment_id = Int32.Parse(dtBill.Rows[0]["appointment_id"].ToString());
+            patient_id = Int32.Parse(dtBill.Rows[0]["patient_id"].ToString());
+            loadPatientAppInfo();
+            PopulateStatusCombo();
         }
 
 
@@ -60,12 +80,16 @@ namespace HospitalERP
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-          
+
+            if (chkLetterHead.Checked == true)
+                lblClinic.Visible = false;
             Bitmap bmp = new Bitmap(panelContent.Width, panelContent.Height, panelContent.CreateGraphics());
             panelContent.DrawToBitmap(bmp, new Rectangle(0, 0, panelContent.Width, panelContent.Height));
             RectangleF bounds = e.PageSettings.PrintableArea;
             float factor = ((float)bmp.Height / (float)bmp.Width);
             e.Graphics.DrawImage(bmp, bounds.Left, bounds.Top, bounds.Width, factor * bounds.Width);
+            if (chkLetterHead.Checked == true)
+                lblClinic.Visible = true;
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
@@ -83,13 +107,66 @@ namespace HospitalERP
         private void frmConsultationBill_Load(object sender, EventArgs e)
         {
             dgvInv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvInv.Rows.Add(new object[] { "1", "Consulation Fees and Charges", "150.00" });
-            
+            dgvInv.Rows.Add(new object[] { "1", "Consulation Fees and Charges", Utils.FormatAmount(Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString()))});
+            if (bill_id == 0)
+            {
+                dtBill = bill.GetAppointmentBill(appointment_id, patient_id, 1);
+                if (dtBill.Rows.Count == 0)
+                {
+                    bill_id = bill.AddBill(appointment_id, patient_id, Convert.ToDecimal(dtPat.Rows[0]["doctor_fee"].ToString()), 1, LoggedUser.id);
+                    if (bill_id > 0)
+                    {
+                        dtBill = bill.GetBill(bill_id);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error in Creating Bill");
+                    }
+                }
+                else
+                {
+                    bill_id = Int32.Parse(dtBill.Rows[0]["id"].ToString());
+                }
+            }
+            if(bill_id > 0)
+            {
+                txtInvNum.Text = dtBill.Rows[0]["bill_number"].ToString();
+                txtDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
+                bill_total = Convert.ToDouble(dtBill.Rows[0]["bill_amount"].ToString());
+                txtTotal.Text = Utils.FormatAmount(bill_total);
+                bill_paid = Convert.ToDouble(dtBill.Rows[0]["bill_paid"].ToString());
+                txtPaid.Text = Utils.FormatAmount(bill_paid);
+                bill_balance = Convert.ToDouble(dtBill.Rows[0]["bill_balance"].ToString());
+                txtBalance.Text = Utils.FormatAmount(bill_balance);
+                lblTime.Text = dtBill.Rows[0]["bill_date"].ToString();
+                int creator = Int32.Parse(dtBill.Rows[0]["bill_created_userid"].ToString());
+                DataTable dtUser = bill.GetBillCreatedUser(creator);
+                txtLoggedUser.Text = dtUser.Rows[0]["staff_name"].ToString();
+                cmbBillStatus.SelectedValue = dtBill.Rows[0]["bill_status"].ToString();
+                if(dtBill.Rows[0]["bill_status"].ToString() == "4")
+                {
+                    txtPaid.ReadOnly = true;
+                    dgvInv.ReadOnly = true;
+                    btnSave.Enabled = false;
+                }
+
+
+            }
+           
+
+
         }
 
         private void dgvInv_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void PopulateStatusCombo()
+        {
+            cmbBillStatus.DataSource = bill.GetBillStatus();
+            cmbBillStatus.DisplayMember = "name";
+            cmbBillStatus.ValueMember = "id";
         }
 
         private void dgvInv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -114,6 +191,92 @@ namespace HospitalERP
                                
                 // }
             }
+        }
+
+        private void loadPatientAppInfo()
+        {
+            dtPat = pat.getDetailedPatientRecordFromID(patient_id, appointment_id);
+            txtPatNum.Text = dtPat.Rows[0]["patient_number"].ToString();
+            txtPatName.Text = dtPat.Rows[0]["patient_name"].ToString();
+            string gender = dtPat.Rows[0]["gender"].ToString();
+            txtGender.Text = Utils.Gender[gender].ToString();
+            txtAge.Text = dtPat.Rows[0]["age"].ToString();
+            txtNationality.Text = dtPat.Rows[0]["nationality"].ToString();
+            txtAddress.Text = dtPat.Rows[0]["address"].ToString() + "\r\n" + dtPat.Rows[0]["city"].ToString() + ", " + dtPat.Rows[0]["state"].ToString() + " " + dtPat.Rows[0]["zip"].ToString();
+            //txtMeetDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
+            txtDoctor.Text = dtPat.Rows[0]["doctor_name"].ToString();
+            txtToken.Text = dtPat.Rows[0]["token"].ToString().PadLeft(0,'3');
+            txtAppId.Text = dtPat.Rows[0]["appointment_id"].ToString().PadLeft(6,'0');
+            return;
+        }
+
+        private double CellSum()
+        {
+            double sum = 0;
+            for (int i = 0; i < dgvInv.Rows.Count-1; ++i)
+            {
+                double d = 0;
+                Double.TryParse(dgvInv.Rows[i].Cells[2].Value.ToString(), out d);
+                sum += d;
+            }
+            return sum;
+        }
+
+        private void dgvInv_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 2)
+            {
+                bill_total = CellSum();
+                txtTotal.Text = Utils.FormatAmount(bill_total); 
+            }
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            bill_total = Convert.ToDouble(txtTotal.Text);
+            bill_balance = bill_total - bill_paid;
+            txtBalance.Text = Utils.FormatAmount(bill_balance);
+           
+        }
+
+        private void txtPaid_TextChanged(object sender, EventArgs e)
+        {
+            bill_paid = Convert.ToDouble(txtPaid.Text);
+            bill_balance = bill_total - bill_paid;
+            txtBalance.Text = Utils.FormatAmount(bill_balance);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) == 4 && bill_balance != 0)
+            {
+                MessageBox.Show("The entire bill needs to be paid fully for 'Paid' Status");
+            }
+            else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 4 && bill_balance == 0)
+            {
+                MessageBox.Show("Please change the status to 'Paid'");
+            }
+            else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 4 && bill_paid != 0 && bill_balance != 0)
+            {
+                MessageBox.Show("Please change the status to 'Partial-Paid' or 'Pending'");
+            }
+            else
+            {
+                if (!(LoggedUser.id > 0))
+                    LoggedUser.id = 1;
+                int res = bill.editBill(bill_id, Convert.ToDecimal(bill_total), Convert.ToDecimal(bill_paid), Convert.ToDecimal(bill_balance), Int32.Parse(cmbBillStatus.SelectedValue.ToString()), LoggedUser.id);
+                if (cmbBillStatus.SelectedValue.ToString() == "4")
+                {
+                    txtPaid.ReadOnly = true;
+                    dgvInv.ReadOnly = true;
+                    btnSave.Enabled = false;
+                }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

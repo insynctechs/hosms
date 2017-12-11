@@ -39,5 +39,11 @@ namespace HospitalERP.Helpers
             { "F", "Female"  }
             
         };
+
+        public static string FormatAmount(double d, int decimalPlaces=3)
+        {
+            string format = String.Format("{{0:0.{0}}}", new string('0', decimalPlaces));
+            return String.Format(format, d);
+        }
     }
 }
