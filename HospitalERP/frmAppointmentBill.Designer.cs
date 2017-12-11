@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHead1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -73,6 +76,20 @@
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDoctor = new System.Windows.Forms.TextBox();
+            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -89,6 +106,7 @@
             this.flowLayoutPanel13.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -558,12 +576,169 @@
             this.txtDoctor.TabIndex = 1;
             this.txtDoctor.TabStop = false;
             // 
+            // dgvList
+            // 
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AID,
+            this.APatID,
+            this.ADocID,
+            this.APatNum,
+            this.APatName,
+            this.ADocName,
+            this.AToken,
+            this.APrevDate,
+            this.ADues,
+            this.AStatus,
+            this.ABtnStatus,
+            this.ABtnBill,
+            this.ABtnDetails});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvList.Location = new System.Drawing.Point(0, 274);
+            this.dgvList.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.dgvList.MultiSelect = false;
+            this.dgvList.Name = "dgvList";
+            this.dgvList.ReadOnly = true;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvList.Size = new System.Drawing.Size(1008, 476);
+            this.dgvList.TabIndex = 12;
+            // 
+            // AID
+            // 
+            this.AID.DataPropertyName = "id";
+            this.AID.HeaderText = "ID";
+            this.AID.Name = "AID";
+            this.AID.ReadOnly = true;
+            this.AID.Visible = false;
+            // 
+            // APatID
+            // 
+            this.APatID.DataPropertyName = "patient_id";
+            this.APatID.HeaderText = "Patient ID";
+            this.APatID.Name = "APatID";
+            this.APatID.ReadOnly = true;
+            this.APatID.Visible = false;
+            // 
+            // ADocID
+            // 
+            this.ADocID.DataPropertyName = "doctor_id";
+            this.ADocID.HeaderText = "Doctor ID";
+            this.ADocID.Name = "ADocID";
+            this.ADocID.ReadOnly = true;
+            this.ADocID.Visible = false;
+            // 
+            // APatNum
+            // 
+            this.APatNum.DataPropertyName = "patient_number";
+            this.APatNum.HeaderText = "Patient Number";
+            this.APatNum.Name = "APatNum";
+            this.APatNum.ReadOnly = true;
+            // 
+            // APatName
+            // 
+            this.APatName.DataPropertyName = "patient_name";
+            this.APatName.HeaderText = "Patient Name";
+            this.APatName.Name = "APatName";
+            this.APatName.ReadOnly = true;
+            // 
+            // ADocName
+            // 
+            this.ADocName.DataPropertyName = "doctor_name";
+            this.ADocName.HeaderText = "Doctor";
+            this.ADocName.Name = "ADocName";
+            this.ADocName.ReadOnly = true;
+            // 
+            // AToken
+            // 
+            this.AToken.DataPropertyName = "token";
+            this.AToken.HeaderText = "Token#";
+            this.AToken.Name = "AToken";
+            this.AToken.ReadOnly = true;
+            // 
+            // APrevDate
+            // 
+            this.APrevDate.DataPropertyName = "prev_date";
+            this.APrevDate.HeaderText = "Prev. Appointment";
+            this.APrevDate.Name = "APrevDate";
+            this.APrevDate.ReadOnly = true;
+            // 
+            // ADues
+            // 
+            this.ADues.DataPropertyName = "dues";
+            this.ADues.HeaderText = "Dues";
+            this.ADues.Name = "ADues";
+            this.ADues.ReadOnly = true;
+            // 
+            // AStatus
+            // 
+            this.AStatus.DataPropertyName = "status";
+            this.AStatus.HeaderText = "Status";
+            this.AStatus.Name = "AStatus";
+            this.AStatus.ReadOnly = true;
+            this.AStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ABtnStatus
+            // 
+            this.ABtnStatus.HeaderText = "";
+            this.ABtnStatus.Name = "ABtnStatus";
+            this.ABtnStatus.ReadOnly = true;
+            this.ABtnStatus.Text = "Change Status";
+            this.ABtnStatus.ToolTipText = "Change Status";
+            this.ABtnStatus.UseColumnTextForButtonValue = true;
+            this.ABtnStatus.Visible = false;
+            // 
+            // ABtnBill
+            // 
+            this.ABtnBill.HeaderText = "";
+            this.ABtnBill.Name = "ABtnBill";
+            this.ABtnBill.ReadOnly = true;
+            this.ABtnBill.Text = "Generate/View Bill";
+            this.ABtnBill.UseColumnTextForButtonValue = true;
+            // 
+            // ABtnDetails
+            // 
+            this.ABtnDetails.HeaderText = "";
+            this.ABtnDetails.Name = "ABtnDetails";
+            this.ABtnDetails.ReadOnly = true;
+            this.ABtnDetails.Text = "View Details";
+            this.ABtnDetails.UseColumnTextForButtonValue = true;
+            // 
             // frmAppointmentBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 750);
+            this.Controls.Add(this.dgvList);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -603,6 +778,7 @@
             this.flowLayoutPanel14.PerformLayout();
             this.flowLayoutPanel9.ResumeLayout(false);
             this.flowLayoutPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -654,5 +830,19 @@
         private System.Windows.Forms.TextBox txtDob;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtMeetDate;
+        private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APatID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADocID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APatNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APatName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADocName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AToken;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APrevDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADues;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn ABtnStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn ABtnBill;
+        private System.Windows.Forms.DataGridViewButtonColumn ABtnDetails;
     }
 }

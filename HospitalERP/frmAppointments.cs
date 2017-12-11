@@ -131,7 +131,7 @@ namespace HospitalERP
             dcombo.DataSource = app.getAppointmentStatus();
             dcombo.DisplayMember = "name";
             dcombo.ValueMember = "id";*/
-         
+
             dgvApp.DataSource = app.getAllAppointmentsForDate(Convert.ToDateTime(dtpAppDate.Text), Int32.Parse(cmbDoc.SelectedValue.ToString()));
         }
         
@@ -164,8 +164,7 @@ namespace HospitalERP
             {
                 btnSave.Enabled = false;
             }
-            //if (startload == 1)
-                getAppointmentList();
+            getAppointmentList();
             
         }
 

@@ -25,7 +25,7 @@ namespace HospitalERP
 
         public frmAppointmentBill()
         {
-            InitializeComponent();
+            
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -60,11 +60,11 @@ namespace HospitalERP
                 case "0": MessageBox.Show("Please choose a bill type!");
                     break;
                 case "1":
-                    frmConsultationBill frm = new frmConsultationBill();
+                    frmConsultationBill frm = new frmConsultationBill(appointment_id, patient_id);
                     frm.ShowDialog();
                     break;
                 case "2":
-                    frmProceduresBill frm1 = new frmProceduresBill();
+                    frmProceduresBill frm1 = new frmProceduresBill(appointment_id, patient_id);
                     frm1.ShowDialog();
                     break;
             }
