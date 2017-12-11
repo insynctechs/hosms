@@ -164,8 +164,7 @@ namespace HospitalERP
             {
                 btnSave.Enabled = false;
             }
-            if (startload == 1)
-                getAppointmentList();
+            getAppointmentList();
             
         }
 
