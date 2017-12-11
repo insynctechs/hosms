@@ -306,50 +306,56 @@
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="flowLayoutPanel2" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,15,Percent,70,Percent,15" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
+  <data name="PID.HeaderText" xml:space="preserve">
     <value>ID</value>
   </data>
-  <data name="dataGridViewTextBoxColumn1.Visible" type="System.Boolean, mscorlib">
+  <data name="PID.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <metadata name="PatNum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PNum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="PatNum.HeaderText" xml:space="preserve">
+  <data name="PNum.HeaderText" xml:space="preserve">
     <value>Patient Number</value>
   </data>
-  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Pname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
+  <data name="Pname.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
-  <metadata name="gender.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PGender.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="gender.HeaderText" xml:space="preserve">
+  <data name="PGender.HeaderText" xml:space="preserve">
     <value>Gender</value>
   </data>
-  <metadata name="age.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PAge.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="age.HeaderText" xml:space="preserve">
+  <data name="PAge.HeaderText" xml:space="preserve">
     <value>Age</value>
   </data>
-  <metadata name="Address.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Address.HeaderText" xml:space="preserve">
+  <data name="PAddress.HeaderText" xml:space="preserve">
     <value>Address</value>
   </data>
-  <metadata name="Phone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PPhone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Phone.HeaderText" xml:space="preserve">
+  <data name="PPhone.HeaderText" xml:space="preserve">
     <value>Phone</value>
+  </data>
+  <metadata name="PBtnSelect.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PBtnSelect.HeaderText" xml:space="preserve">
+    <value />
   </data>
   <data name="dgvPatient.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -393,83 +399,98 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="colID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="AID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="colID.HeaderText" xml:space="preserve">
+  <data name="AID.HeaderText" xml:space="preserve">
     <value>ID</value>
   </data>
-  <data name="colID.Visible" type="System.Boolean, mscorlib">
+  <data name="AID.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <metadata name="ColPatID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="APatID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColPatID.HeaderText" xml:space="preserve">
+  <data name="APatID.HeaderText" xml:space="preserve">
     <value>Patient ID</value>
   </data>
-  <data name="ColPatID.Visible" type="System.Boolean, mscorlib">
+  <data name="APatID.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <metadata name="ColDocId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ADocID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColDocId.HeaderText" xml:space="preserve">
+  <data name="ADocID.HeaderText" xml:space="preserve">
     <value>Doctor ID</value>
   </data>
-  <data name="ColDocId.Visible" type="System.Boolean, mscorlib">
+  <data name="ADocID.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <metadata name="colPatNum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="APatNum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="colPatNum.HeaderText" xml:space="preserve">
+  <data name="APatNum.HeaderText" xml:space="preserve">
     <value>Patient Number</value>
   </data>
-  <metadata name="colPatName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="APatName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="colPatName.HeaderText" xml:space="preserve">
+  <data name="APatName.HeaderText" xml:space="preserve">
     <value>Patient Name</value>
   </data>
-  <metadata name="colDocName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ADocName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="colDocName.HeaderText" xml:space="preserve">
+  <data name="ADocName.HeaderText" xml:space="preserve">
     <value>Doctor</value>
   </data>
-  <metadata name="ColToken.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="AToken.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColToken.HeaderText" xml:space="preserve">
+  <data name="AToken.HeaderText" xml:space="preserve">
     <value>Token#</value>
   </data>
-  <metadata name="ColPrevDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="APrevDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColPrevDate.HeaderText" xml:space="preserve">
+  <data name="APrevDate.HeaderText" xml:space="preserve">
     <value>Prev. Appointment</value>
   </data>
-  <metadata name="ColDues.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ADues.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColDues.HeaderText" xml:space="preserve">
+  <data name="ADues.HeaderText" xml:space="preserve">
     <value>Dues</value>
   </data>
-  <metadata name="colStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="AStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="colStatus.HeaderText" xml:space="preserve">
+  <data name="AStatus.HeaderText" xml:space="preserve">
     <value>Status</value>
   </data>
-  <metadata name="ColbtnStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ABtnStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColbtnStatus.HeaderText" xml:space="preserve">
+  <data name="ABtnStatus.HeaderText" xml:space="preserve">
     <value />
   </data>
-  <data name="ColbtnStatus.ToolTipText" xml:space="preserve">
+  <data name="ABtnStatus.ToolTipText" xml:space="preserve">
     <value>Change Status</value>
+  </data>
+  <data name="ABtnStatus.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="ABtnBill.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ABtnBill.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <metadata name="ABtnDetails.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ABtnDetails.HeaderText" xml:space="preserve">
+    <value />
   </data>
   <data name="dgvApp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -961,7 +982,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="flowLayoutPanel3" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel4" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel5" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="lblHead1" Row="0" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,144,AutoSize,0,AutoSize,250,Absolute,178,Absolute,229" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="flowLayoutPanel3" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel4" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel5" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="lblHead1" Row="0" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,144,AutoSize,0,AutoSize,250,Absolute,178,Absolute,310" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -1008,112 +1029,130 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Appointments</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn1</value>
+  <data name="&gt;&gt;PID.Name" xml:space="preserve">
+    <value>PID</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
+  <data name="&gt;&gt;PID.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PatNum.Name" xml:space="preserve">
-    <value>PatNum</value>
+  <data name="&gt;&gt;PNum.Name" xml:space="preserve">
+    <value>PNum</value>
   </data>
-  <data name="&gt;&gt;PatNum.Type" xml:space="preserve">
+  <data name="&gt;&gt;PNum.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn2</value>
+  <data name="&gt;&gt;Pname.Name" xml:space="preserve">
+    <value>Pname</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
+  <data name="&gt;&gt;Pname.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gender.Name" xml:space="preserve">
-    <value>gender</value>
+  <data name="&gt;&gt;PGender.Name" xml:space="preserve">
+    <value>PGender</value>
   </data>
-  <data name="&gt;&gt;gender.Type" xml:space="preserve">
+  <data name="&gt;&gt;PGender.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;age.Name" xml:space="preserve">
-    <value>age</value>
+  <data name="&gt;&gt;PAge.Name" xml:space="preserve">
+    <value>PAge</value>
   </data>
-  <data name="&gt;&gt;age.Type" xml:space="preserve">
+  <data name="&gt;&gt;PAge.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Address.Name" xml:space="preserve">
-    <value>Address</value>
+  <data name="&gt;&gt;PAddress.Name" xml:space="preserve">
+    <value>PAddress</value>
   </data>
-  <data name="&gt;&gt;Address.Type" xml:space="preserve">
+  <data name="&gt;&gt;PAddress.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Phone.Name" xml:space="preserve">
-    <value>Phone</value>
+  <data name="&gt;&gt;PPhone.Name" xml:space="preserve">
+    <value>PPhone</value>
   </data>
-  <data name="&gt;&gt;Phone.Type" xml:space="preserve">
+  <data name="&gt;&gt;PPhone.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colID.Name" xml:space="preserve">
-    <value>colID</value>
+  <data name="&gt;&gt;PBtnSelect.Name" xml:space="preserve">
+    <value>PBtnSelect</value>
   </data>
-  <data name="&gt;&gt;colID.Type" xml:space="preserve">
+  <data name="&gt;&gt;PBtnSelect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AID.Name" xml:space="preserve">
+    <value>AID</value>
+  </data>
+  <data name="&gt;&gt;AID.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColPatID.Name" xml:space="preserve">
-    <value>ColPatID</value>
+  <data name="&gt;&gt;APatID.Name" xml:space="preserve">
+    <value>APatID</value>
   </data>
-  <data name="&gt;&gt;ColPatID.Type" xml:space="preserve">
+  <data name="&gt;&gt;APatID.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColDocId.Name" xml:space="preserve">
-    <value>ColDocId</value>
+  <data name="&gt;&gt;ADocID.Name" xml:space="preserve">
+    <value>ADocID</value>
   </data>
-  <data name="&gt;&gt;ColDocId.Type" xml:space="preserve">
+  <data name="&gt;&gt;ADocID.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colPatNum.Name" xml:space="preserve">
-    <value>colPatNum</value>
+  <data name="&gt;&gt;APatNum.Name" xml:space="preserve">
+    <value>APatNum</value>
   </data>
-  <data name="&gt;&gt;colPatNum.Type" xml:space="preserve">
+  <data name="&gt;&gt;APatNum.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colPatName.Name" xml:space="preserve">
-    <value>colPatName</value>
+  <data name="&gt;&gt;APatName.Name" xml:space="preserve">
+    <value>APatName</value>
   </data>
-  <data name="&gt;&gt;colPatName.Type" xml:space="preserve">
+  <data name="&gt;&gt;APatName.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colDocName.Name" xml:space="preserve">
-    <value>colDocName</value>
+  <data name="&gt;&gt;ADocName.Name" xml:space="preserve">
+    <value>ADocName</value>
   </data>
-  <data name="&gt;&gt;colDocName.Type" xml:space="preserve">
+  <data name="&gt;&gt;ADocName.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColToken.Name" xml:space="preserve">
-    <value>ColToken</value>
+  <data name="&gt;&gt;AToken.Name" xml:space="preserve">
+    <value>AToken</value>
   </data>
-  <data name="&gt;&gt;ColToken.Type" xml:space="preserve">
+  <data name="&gt;&gt;AToken.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColPrevDate.Name" xml:space="preserve">
-    <value>ColPrevDate</value>
+  <data name="&gt;&gt;APrevDate.Name" xml:space="preserve">
+    <value>APrevDate</value>
   </data>
-  <data name="&gt;&gt;ColPrevDate.Type" xml:space="preserve">
+  <data name="&gt;&gt;APrevDate.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColDues.Name" xml:space="preserve">
-    <value>ColDues</value>
+  <data name="&gt;&gt;ADues.Name" xml:space="preserve">
+    <value>ADues</value>
   </data>
-  <data name="&gt;&gt;ColDues.Type" xml:space="preserve">
+  <data name="&gt;&gt;ADues.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colStatus.Name" xml:space="preserve">
-    <value>colStatus</value>
+  <data name="&gt;&gt;AStatus.Name" xml:space="preserve">
+    <value>AStatus</value>
   </data>
-  <data name="&gt;&gt;colStatus.Type" xml:space="preserve">
+  <data name="&gt;&gt;AStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColbtnStatus.Name" xml:space="preserve">
-    <value>ColbtnStatus</value>
+  <data name="&gt;&gt;ABtnStatus.Name" xml:space="preserve">
+    <value>ABtnStatus</value>
   </data>
-  <data name="&gt;&gt;ColbtnStatus.Type" xml:space="preserve">
+  <data name="&gt;&gt;ABtnStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ABtnBill.Name" xml:space="preserve">
+    <value>ABtnBill</value>
+  </data>
+  <data name="&gt;&gt;ABtnBill.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ABtnDetails.Name" xml:space="preserve">
+    <value>ABtnDetails</value>
+  </data>
+  <data name="&gt;&gt;ABtnDetails.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

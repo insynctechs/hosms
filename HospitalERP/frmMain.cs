@@ -187,5 +187,12 @@ namespace HospitalERP
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void consultationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultations frm = new frmConsultations();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

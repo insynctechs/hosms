@@ -29,15 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAppointments));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.dgvApp = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblHead1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpAppDate = new System.Windows.Forms.DateTimePicker();
@@ -47,50 +53,47 @@
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPatNum = new System.Windows.Forms.TextBox();
-            this.txtPatientID = new System.Windows.Forms.TextBox();
-            this.txtAppID = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.dgvPatient = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbSearch = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDocId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDues = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColbtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtAppID = new System.Windows.Forms.TextBox();
+            this.txtPatientID = new System.Windows.Forms.TextBox();
+            this.lblHead1 = new System.Windows.Forms.Label();
+            this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PBtnSelect = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApp)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -108,6 +111,93 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvApp);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // flowLayoutPanel2
+            // 
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Controls.Add(this.label3);
+            this.flowLayoutPanel2.Controls.Add(this.cmbSearch);
+            this.flowLayoutPanel2.Controls.Add(this.txtSearch);
+            this.flowLayoutPanel2.Controls.Add(this.btnSearch);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // cmbSearch
+            // 
+            this.cmbSearch.BackColor = System.Drawing.Color.LightCyan;
+            this.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSearch.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbSearch, "cmbSearch");
+            this.cmbSearch.Name = "cmbSearch";
+            // 
+            // txtSearch
+            // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // dgvPatient
+            // 
+            this.dgvPatient.AllowUserToAddRows = false;
+            this.dgvPatient.AllowUserToDeleteRows = false;
+            this.dgvPatient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPatient.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvPatient.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPatient.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvPatient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvPatient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PID,
+            this.PNum,
+            this.Pname,
+            this.PGender,
+            this.PAge,
+            this.PAddress,
+            this.PPhone,
+            this.PBtnSelect});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.dgvPatient, "dgvPatient");
+            this.dgvPatient.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvPatient.Name = "dgvPatient";
+            this.dgvPatient.ReadOnly = true;
+            this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPatient_CellContentClick);
+            this.dgvPatient.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPatient_RowHeaderMouseClick);
             // 
             // dgvApp
             // 
@@ -133,17 +223,19 @@
             this.dgvApp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvApp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvApp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.ColPatID,
-            this.ColDocId,
-            this.colPatNum,
-            this.colPatName,
-            this.colDocName,
-            this.ColToken,
-            this.ColPrevDate,
-            this.ColDues,
-            this.colStatus,
-            this.ColbtnStatus});
+            this.AID,
+            this.APatID,
+            this.ADocID,
+            this.APatNum,
+            this.APatName,
+            this.ADocName,
+            this.AToken,
+            this.APrevDate,
+            this.ADues,
+            this.AStatus,
+            this.ABtnStatus,
+            this.ABtnBill,
+            this.ABtnDetails});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 11.25F);
@@ -154,9 +246,12 @@
             this.dgvApp.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(this.dgvApp, "dgvApp");
             this.dgvApp.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvApp.MultiSelect = false;
             this.dgvApp.Name = "dgvApp";
             this.dgvApp.ReadOnly = true;
             this.dgvApp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvApp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApp_CellContentClick);
+            this.dgvApp.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApp_RowHeaderMouseClick);
             // 
             // tableLayoutPanel1
             // 
@@ -167,15 +262,6 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblHead1, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
-            // lblHead1
-            // 
-            resources.ApplyResources(this.lblHead1, "lblHead1");
-            this.lblHead1.BackColor = System.Drawing.Color.LightCyan;
-            this.tableLayoutPanel1.SetColumnSpan(this.lblHead1, 5);
-            this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHead1.Name = "lblHead1";
-            this.lblHead1.UseWaitCursor = true;
             // 
             // flowLayoutPanel3
             // 
@@ -233,17 +319,6 @@
             this.txtPatNum.Name = "txtPatNum";
             this.txtPatNum.TextChanged += new System.EventHandler(this.txtPatNum_TextChanged);
             // 
-            // txtPatientID
-            // 
-            resources.ApplyResources(this.txtPatientID, "txtPatientID");
-            this.txtPatientID.Name = "txtPatientID";
-            this.txtPatientID.TextChanged += new System.EventHandler(this.txtPatientID_TextChanged);
-            // 
-            // txtAppID
-            // 
-            resources.ApplyResources(this.txtAppID, "txtAppID");
-            this.txtAppID.Name = "txtAppID";
-            // 
             // flowLayoutPanel5
             // 
             resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
@@ -281,218 +356,177 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // dgvPatient
+            // txtAppID
             // 
-            this.dgvPatient.AllowUserToAddRows = false;
-            this.dgvPatient.AllowUserToDeleteRows = false;
-            this.dgvPatient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPatient.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvPatient.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPatient.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvPatient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvPatient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.PatNum,
-            this.dataGridViewTextBoxColumn2,
-            this.gender,
-            this.age,
-            this.Address,
-            this.Phone});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.dgvPatient, "dgvPatient");
-            this.dgvPatient.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvPatient.Name = "dgvPatient";
-            this.dgvPatient.ReadOnly = true;
-            this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatient.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPatient_RowHeaderMouseClick);
+            resources.ApplyResources(this.txtAppID, "txtAppID");
+            this.txtAppID.Name = "txtAppID";
             // 
-            // flowLayoutPanel2
+            // txtPatientID
             // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
-            this.flowLayoutPanel2.Controls.Add(this.label3);
-            this.flowLayoutPanel2.Controls.Add(this.cmbSearch);
-            this.flowLayoutPanel2.Controls.Add(this.txtSearch);
-            this.flowLayoutPanel2.Controls.Add(this.btnSearch);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            resources.ApplyResources(this.txtPatientID, "txtPatientID");
+            this.txtPatientID.Name = "txtPatientID";
+            this.txtPatientID.TextChanged += new System.EventHandler(this.txtPatientID_TextChanged);
             // 
-            // btnSearch
+            // lblHead1
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.MediumTurquoise;
-            resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            resources.ApplyResources(this.lblHead1, "lblHead1");
+            this.lblHead1.BackColor = System.Drawing.Color.LightCyan;
+            this.tableLayoutPanel1.SetColumnSpan(this.lblHead1, 5);
+            this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHead1.Name = "lblHead1";
+            this.lblHead1.UseWaitCursor = true;
             // 
-            // label3
+            // PID
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            this.PID.DataPropertyName = "id";
+            resources.ApplyResources(this.PID, "PID");
+            this.PID.Name = "PID";
+            this.PID.ReadOnly = true;
             // 
-            // tableLayoutPanel2
+            // PNum
             // 
-            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 1);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.PNum.DataPropertyName = "patient_number";
+            resources.ApplyResources(this.PNum, "PNum");
+            this.PNum.Name = "PNum";
+            this.PNum.ReadOnly = true;
             // 
-            // cmbSearch
+            // Pname
             // 
-            this.cmbSearch.BackColor = System.Drawing.Color.LightCyan;
-            this.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSearch.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbSearch, "cmbSearch");
-            this.cmbSearch.Name = "cmbSearch";
+            this.Pname.DataPropertyName = "name";
+            resources.ApplyResources(this.Pname, "Pname");
+            this.Pname.Name = "Pname";
+            this.Pname.ReadOnly = true;
             // 
-            // txtSearch
+            // PGender
             // 
-            resources.ApplyResources(this.txtSearch, "txtSearch");
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.PGender.DataPropertyName = "gender";
+            resources.ApplyResources(this.PGender, "PGender");
+            this.PGender.Name = "PGender";
+            this.PGender.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // PAge
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.PAge.DataPropertyName = "age";
+            resources.ApplyResources(this.PAge, "PAge");
+            this.PAge.Name = "PAge";
+            this.PAge.ReadOnly = true;
             // 
-            // PatNum
+            // PAddress
             // 
-            this.PatNum.DataPropertyName = "patient_number";
-            resources.ApplyResources(this.PatNum, "PatNum");
-            this.PatNum.Name = "PatNum";
-            this.PatNum.ReadOnly = true;
+            this.PAddress.DataPropertyName = "address1";
+            resources.ApplyResources(this.PAddress, "PAddress");
+            this.PAddress.Name = "PAddress";
+            this.PAddress.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // PPhone
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "name";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.PPhone.DataPropertyName = "phone";
+            resources.ApplyResources(this.PPhone, "PPhone");
+            this.PPhone.Name = "PPhone";
+            this.PPhone.ReadOnly = true;
             // 
-            // gender
+            // PBtnSelect
             // 
-            this.gender.DataPropertyName = "gender";
-            resources.ApplyResources(this.gender, "gender");
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
+            resources.ApplyResources(this.PBtnSelect, "PBtnSelect");
+            this.PBtnSelect.Name = "PBtnSelect";
+            this.PBtnSelect.ReadOnly = true;
+            this.PBtnSelect.Text = "Select";
+            this.PBtnSelect.UseColumnTextForButtonValue = true;
             // 
-            // age
+            // AID
             // 
-            this.age.DataPropertyName = "age";
-            resources.ApplyResources(this.age, "age");
-            this.age.Name = "age";
-            this.age.ReadOnly = true;
+            this.AID.DataPropertyName = "id";
+            resources.ApplyResources(this.AID, "AID");
+            this.AID.Name = "AID";
+            this.AID.ReadOnly = true;
             // 
-            // Address
+            // APatID
             // 
-            this.Address.DataPropertyName = "address1";
-            resources.ApplyResources(this.Address, "Address");
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
+            this.APatID.DataPropertyName = "patient_id";
+            resources.ApplyResources(this.APatID, "APatID");
+            this.APatID.Name = "APatID";
+            this.APatID.ReadOnly = true;
             // 
-            // Phone
+            // ADocID
             // 
-            this.Phone.DataPropertyName = "phone";
-            resources.ApplyResources(this.Phone, "Phone");
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
+            this.ADocID.DataPropertyName = "doctor_id";
+            resources.ApplyResources(this.ADocID, "ADocID");
+            this.ADocID.Name = "ADocID";
+            this.ADocID.ReadOnly = true;
             // 
-            // colID
+            // APatNum
             // 
-            this.colID.DataPropertyName = "id";
-            resources.ApplyResources(this.colID, "colID");
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
+            this.APatNum.DataPropertyName = "patient_number";
+            resources.ApplyResources(this.APatNum, "APatNum");
+            this.APatNum.Name = "APatNum";
+            this.APatNum.ReadOnly = true;
             // 
-            // ColPatID
+            // APatName
             // 
-            this.ColPatID.DataPropertyName = "patient_id";
-            resources.ApplyResources(this.ColPatID, "ColPatID");
-            this.ColPatID.Name = "ColPatID";
-            this.ColPatID.ReadOnly = true;
+            this.APatName.DataPropertyName = "patient_name";
+            resources.ApplyResources(this.APatName, "APatName");
+            this.APatName.Name = "APatName";
+            this.APatName.ReadOnly = true;
             // 
-            // ColDocId
+            // ADocName
             // 
-            this.ColDocId.DataPropertyName = "doctor_id";
-            resources.ApplyResources(this.ColDocId, "ColDocId");
-            this.ColDocId.Name = "ColDocId";
-            this.ColDocId.ReadOnly = true;
+            this.ADocName.DataPropertyName = "doctor_name";
+            resources.ApplyResources(this.ADocName, "ADocName");
+            this.ADocName.Name = "ADocName";
+            this.ADocName.ReadOnly = true;
             // 
-            // colPatNum
+            // AToken
             // 
-            this.colPatNum.DataPropertyName = "patient_number";
-            resources.ApplyResources(this.colPatNum, "colPatNum");
-            this.colPatNum.Name = "colPatNum";
-            this.colPatNum.ReadOnly = true;
+            this.AToken.DataPropertyName = "token";
+            resources.ApplyResources(this.AToken, "AToken");
+            this.AToken.Name = "AToken";
+            this.AToken.ReadOnly = true;
             // 
-            // colPatName
+            // APrevDate
             // 
-            this.colPatName.DataPropertyName = "patient_name";
-            resources.ApplyResources(this.colPatName, "colPatName");
-            this.colPatName.Name = "colPatName";
-            this.colPatName.ReadOnly = true;
+            this.APrevDate.DataPropertyName = "prev_date";
+            resources.ApplyResources(this.APrevDate, "APrevDate");
+            this.APrevDate.Name = "APrevDate";
+            this.APrevDate.ReadOnly = true;
             // 
-            // colDocName
+            // ADues
             // 
-            this.colDocName.DataPropertyName = "doctor_name";
-            resources.ApplyResources(this.colDocName, "colDocName");
-            this.colDocName.Name = "colDocName";
-            this.colDocName.ReadOnly = true;
+            this.ADues.DataPropertyName = "dues";
+            resources.ApplyResources(this.ADues, "ADues");
+            this.ADues.Name = "ADues";
+            this.ADues.ReadOnly = true;
             // 
-            // ColToken
+            // AStatus
             // 
-            this.ColToken.DataPropertyName = "token";
-            resources.ApplyResources(this.ColToken, "ColToken");
-            this.ColToken.Name = "ColToken";
-            this.ColToken.ReadOnly = true;
+            this.AStatus.DataPropertyName = "status";
+            resources.ApplyResources(this.AStatus, "AStatus");
+            this.AStatus.Name = "AStatus";
+            this.AStatus.ReadOnly = true;
+            this.AStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // ColPrevDate
+            // ABtnStatus
             // 
-            this.ColPrevDate.DataPropertyName = "prev_date";
-            resources.ApplyResources(this.ColPrevDate, "ColPrevDate");
-            this.ColPrevDate.Name = "ColPrevDate";
-            this.ColPrevDate.ReadOnly = true;
+            resources.ApplyResources(this.ABtnStatus, "ABtnStatus");
+            this.ABtnStatus.Name = "ABtnStatus";
+            this.ABtnStatus.ReadOnly = true;
+            this.ABtnStatus.Text = "Change Status";
+            this.ABtnStatus.UseColumnTextForButtonValue = true;
             // 
-            // ColDues
+            // ABtnBill
             // 
-            this.ColDues.DataPropertyName = "dues";
-            resources.ApplyResources(this.ColDues, "ColDues");
-            this.ColDues.Name = "ColDues";
-            this.ColDues.ReadOnly = true;
+            resources.ApplyResources(this.ABtnBill, "ABtnBill");
+            this.ABtnBill.Name = "ABtnBill";
+            this.ABtnBill.ReadOnly = true;
+            this.ABtnBill.Text = "Generate/View Bill";
+            this.ABtnBill.UseColumnTextForButtonValue = true;
             // 
-            // colStatus
+            // ABtnDetails
             // 
-            this.colStatus.DataPropertyName = "status";
-            resources.ApplyResources(this.colStatus, "colStatus");
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColbtnStatus
-            // 
-            resources.ApplyResources(this.ColbtnStatus, "ColbtnStatus");
-            this.ColbtnStatus.Name = "ColbtnStatus";
-            this.ColbtnStatus.ReadOnly = true;
-            this.ColbtnStatus.Text = "Change";
-            this.ColbtnStatus.UseColumnTextForButtonValue = true;
+            resources.ApplyResources(this.ABtnDetails, "ABtnDetails");
+            this.ABtnDetails.Name = "ABtnDetails";
+            this.ABtnDetails.ReadOnly = true;
+            this.ABtnDetails.Text = "View Details";
+            this.ABtnDetails.UseColumnTextForButtonValue = true;
             // 
             // frmAppointments
             // 
@@ -501,11 +535,16 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmAppointments";
+            this.Activated += new System.EventHandler(this.frmAppointments_Activated);
             this.Load += new System.EventHandler(this.frmAppointments_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApp)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -517,10 +556,6 @@
             this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -553,23 +588,26 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cmbSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PatNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPatID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColDocId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPatNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPatName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDocName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColToken;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrevDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColDues;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.DataGridViewButtonColumn ColbtnStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PPhone;
+        private System.Windows.Forms.DataGridViewButtonColumn PBtnSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APatID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADocID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APatNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APatName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADocName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AToken;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APrevDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADues;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn ABtnStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn ABtnBill;
+        private System.Windows.Forms.DataGridViewButtonColumn ABtnDetails;
     }
 }

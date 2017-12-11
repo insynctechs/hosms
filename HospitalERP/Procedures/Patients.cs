@@ -149,5 +149,24 @@ namespace HospitalERP.Procedures
 
         }
 
+        public DataTable getDetailedPatientRecordFromID(int id, int aid=0)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[2];
+                sqlParam[0] = new SqlParameter("@id", id);
+                sqlParam[1] = new SqlParameter("@aid", aid);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspPatients_GetDetailed", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+
     }
 }

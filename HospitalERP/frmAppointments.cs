@@ -89,15 +89,31 @@ namespace HospitalERP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int ret = app.addAppointment(Int32.Parse(txtPatientID.Text), Int32.Parse(cmbDoc.SelectedValue.ToString()), Convert.ToDateTime(dtpAppDate.Text), Int32.Parse(Utils.ProcedureStatus["Scheduled"]));
-            if (ret >= 1)
+
+            DataTable dtPatient = pat.GetRecords("patient_number", txtPatNum.Text);
+            if (dtPatient.Rows.Count > 0)
             {
-                MessageBox.Show("Appointment Added");
-                getAppointmentList();
+                if(txtPatientID.Text != dtPatient.Rows[0]["id"].ToString())
+                {
+                    txtPatientID.Text = dtPatient.Rows[0]["id"].ToString();
+                }
+                int ret = app.addAppointment(Int32.Parse(txtPatientID.Text), Int32.Parse(cmbDoc.SelectedValue.ToString()), Convert.ToDateTime(dtpAppDate.Text), Int32.Parse(Utils.ProcedureStatus["Scheduled"]));
+                if (ret >= 1)
+                {
+                    getAppointmentList();
+                }
+                else if (ret == 0)
+                {
+                    MessageBox.Show("Appointment already scheduled!");
+                }
+                else
+                {
+                    MessageBox.Show("Error in scheduling appointment!");
+                }
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("No such patient exists!");
             }
         }
 
@@ -133,8 +149,7 @@ namespace HospitalERP
 
         private void dgvPatient_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtPatientID.Text = dgvPatient.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtPatNum.Text = dgvPatient.Rows[e.RowIndex].Cells[1].Value.ToString();
+            SelectPatient(dgvPatient.Rows[e.RowIndex].Cells["PID"].Value.ToString(), dgvPatient.Rows[e.RowIndex].Cells["PNum"].Value.ToString());
         }
 
         private void cmbDoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,6 +169,63 @@ namespace HospitalERP
         private void dtpAppDate_ValueChanged(object sender, EventArgs e)
         {
             getAppointmentList();
+        }
+
+        private void dgvApp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           // MessageBox.Show(e.ColumnIndex.ToString());
+           switch (dgvApp.Columns[e.ColumnIndex].Name)
+            {
+                case "ABtnBill":
+                    ViewBill(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
+                    break;
+                case "ABtnDetails":
+                    ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
+                    break;
+            }
+            
+        }
+
+        private void dgvApp_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
+
+        }
+
+        private void frmAppointments_Activated(object sender, EventArgs e)
+        {
+            getAppointmentList();
+        }
+
+        private void ViewDetails(int app_id, int pat_id)
+        {
+            frmConsultationDetails frm = new frmConsultationDetails();
+            frm.MdiParent = this.ParentForm;
+            frm.Show();
+        }
+
+        private void ViewBill(int app_id, int pat_id)
+        {
+            frmAppointmentBill frm = new frmAppointmentBill(app_id, pat_id);
+            frm.MdiParent = this.ParentForm;
+            frm.Show();
+        }
+
+        private void SelectPatient(string pid, string pnum)
+        {
+            txtPatientID.Text = pid;
+            txtPatNum.Text = pnum;
+        }
+
+        private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvPatient.Columns[e.ColumnIndex].Name)
+            {
+                case "PBtnSelect":
+                    SelectPatient(dgvPatient.Rows[e.RowIndex].Cells["PID"].Value.ToString(), dgvPatient.Rows[e.RowIndex].Cells["PNum"].Value.ToString());
+
+                    break;
+            }
         }
     }
 }

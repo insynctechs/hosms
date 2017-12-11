@@ -14,7 +14,8 @@ namespace HospitalERP.Helpers
         {
             { "Scheduled","1" },
             { "Completed", "2" },
-            { "On-Hold","3" }
+            { "On-Hold","3" },
+            { "Billed","4" }
         };
 
         public static NameValueCollection ProcedureStatus = new NameValueCollection()
@@ -26,9 +27,17 @@ namespace HospitalERP.Helpers
 
         public static NameValueCollection BillStatus = new NameValueCollection()
         {
-            { "Paid", "1" },
+            { "Generated", "1" },
             { "Pending", "2"  },
-            {"Partial Paid", "3" }
+            {"Partial Paid", "3" },
+            { "Paid", "4" }
+        };
+
+        public static NameValueCollection Gender = new NameValueCollection()
+        {
+            { "M", "Male" },
+            { "F", "Female"  }
+            
         };
     }
 }

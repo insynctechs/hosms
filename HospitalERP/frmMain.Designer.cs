@@ -42,6 +42,7 @@
             this.menuItemPatients = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemApp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemReg = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemPatSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemBill = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemReports = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,6 @@
             this.lblAppName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.consultationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -182,6 +182,13 @@
             this.menuItemReg.Text = "New Registration";
             this.menuItemReg.Click += new System.EventHandler(this.menuItemReg_Click);
             // 
+            // consultationsToolStripMenuItem
+            // 
+            this.consultationsToolStripMenuItem.Name = "consultationsToolStripMenuItem";
+            this.consultationsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.consultationsToolStripMenuItem.Text = "Consultations";
+            this.consultationsToolStripMenuItem.Click += new System.EventHandler(this.consultationsToolStripMenuItem_Click);
+            // 
             // menuItemPatSearch
             // 
             this.menuItemPatSearch.Name = "menuItemPatSearch";
@@ -221,7 +228,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.47288F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.52712F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 258F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 260F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
@@ -242,7 +249,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblEmpID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lnkLogout, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(662, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(660, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.3617F));
@@ -307,26 +314,20 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(270, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(269, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(386, 94);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(385, 94);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(380, 41);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(379, 41);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // consultationsToolStripMenuItem
-            // 
-            this.consultationsToolStripMenuItem.Name = "consultationsToolStripMenuItem";
-            this.consultationsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.consultationsToolStripMenuItem.Text = "Consultations";
             // 
             // frmMain
             // 
