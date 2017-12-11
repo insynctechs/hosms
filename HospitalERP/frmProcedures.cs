@@ -54,8 +54,7 @@ namespace HospitalERP
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
-           
+        {           
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 int rtn = -1;

@@ -26,6 +26,15 @@ namespace HospitalERP
 
         }
 
+        public frmConsultationDetails(int aptid, int patid)
+        {
+            InitializeComponent();
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            txtAppID.Text = aptid.ToString();
+            txtPatientID.Text = patid.ToString();
+        }
+
         private void frmConsultationDetails_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -62,8 +71,7 @@ namespace HospitalERP
 
 
         private void getConsultationDetails()
-        {
-            txtAppID.Text = "2";
+        {            
             DataTable dt = objCD.getRecordFromID(Convert.ToInt32(txtAppID.Text));
             txtPatientID.Text = dt.Rows[0]["patient_id"].ToString();
             txtPatientNo.Text = dt.Rows[0]["patient_number"].ToString();
@@ -83,8 +91,7 @@ namespace HospitalERP
             txtMedicalNotes.Text = dt.Rows[0]["history"].ToString();
             txtAllergies.Text   = dt.Rows[0]["allergies"].ToString();
             txtApptNotes.Text = dt.Rows[0]["notes"].ToString();
-            txtDoctor.Text = dt.Rows[0]["doctor_name"].ToString();
-            txtBillDue.Text = dt.Rows[0]["dues"].ToString();
+            txtDoctor.Text = dt.Rows[0]["doctor_name"].ToString();            
             txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
         }
 
