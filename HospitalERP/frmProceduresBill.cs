@@ -20,6 +20,7 @@ namespace HospitalERP
         Bill bill = new Bill();
         Appointments app = new Appointments();
         Patients pat = new Patients();
+        ConsultationDetails objCD = new ConsultationDetails();
 
         public frmProceduresBill()
         {
@@ -64,6 +65,16 @@ namespace HospitalERP
         private void frmProceduresBill_Load(object sender, EventArgs e)
         {
             dgvInv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DataTable dtProc = objCD.getProceduresInvoiceFromApptID(appointment_id);
+            int k = 1;
+            decimal fee_total = 0;
+            foreach (DataRow row in dtProc.Rows)
+            {                
+                dgvInv.Rows.Add(new object[] { k, row["name"].ToString(), row["fee"].ToString() });
+                fee_total += Convert.ToInt32(row["fee"].ToString());
+                k++;
+            }
+            txtTotal.Text = fee_total.ToString();
         }
     }
 }

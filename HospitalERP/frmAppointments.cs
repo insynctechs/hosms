@@ -209,7 +209,7 @@ namespace HospitalERP
 
         private void ViewDetails(int app_id, int pat_id)
         {
-            frmConsultationDetails frm = new frmConsultationDetails();
+            frmConsultationDetails frm = new frmConsultationDetails(app_id, pat_id);
             frm.MdiParent = this.ParentForm;
             frm.Show();
         }

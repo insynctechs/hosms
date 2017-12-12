@@ -146,6 +146,23 @@ namespace HospitalERP.Procedures
 
         }
 
+        public DataTable getProceduresInvoiceFromApptID(int id)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet ds = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspConsultationDet_Procedures_Get", sqlParam);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
         public DataTable getApptHistory(int appt_id, int patient_id)
         {
             try
