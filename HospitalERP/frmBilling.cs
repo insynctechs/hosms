@@ -68,7 +68,21 @@ namespace HospitalERP
 
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "bBtnBill":
+                    if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "1")
+                    {
+                        frmConsultationBill frm = new frmConsultationBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                        frm.ShowDialog();
+                    }
+                    else if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "2")
+                    {
+                        frmProceduresBill frm = new frmProceduresBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                        frm.ShowDialog();
+                    }
+                    break;
+            }
         }
     }
 }

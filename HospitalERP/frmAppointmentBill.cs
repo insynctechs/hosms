@@ -129,7 +129,7 @@ namespace HospitalERP
                     }
                     else if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "2")
                     {
-                        frmConsultationBill frm = new frmConsultationBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                        frmProceduresBill frm = new frmProceduresBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
                         frm.ShowDialog();
                     }
                     break;
