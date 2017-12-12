@@ -65,5 +65,10 @@ namespace HospitalERP
         {
             GetBills();
         }
+
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

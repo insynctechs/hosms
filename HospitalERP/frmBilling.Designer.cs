@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,27 +41,27 @@
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.chkDate = new System.Windows.Forms.CheckBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtAppID = new System.Windows.Forms.TextBox();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.lblHead1 = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.bID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bPatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bAppID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bBillNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bPatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bPatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bPatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bCreatorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bBtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.chkDate = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -183,6 +183,18 @@
             this.flowLayoutPanel5.Size = new System.Drawing.Size(225, 65);
             this.flowLayoutPanel5.TabIndex = 2;
             // 
+            // chkDate
+            // 
+            this.chkDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkDate.AutoSize = true;
+            this.chkDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDate.Location = new System.Drawing.Point(3, 3);
+            this.chkDate.Name = "chkDate";
+            this.chkDate.Size = new System.Drawing.Size(155, 19);
+            this.chkDate.TabIndex = 8;
+            this.chkDate.Text = "Use Bill Date for Search";
+            this.chkDate.UseVisualStyleBackColor = true;
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -237,49 +249,49 @@
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bID,
+            this.bPatID,
             this.bAppID,
             this.bBillNum,
             this.bDate,
-            this.bPatID,
+            this.bPatNum,
+            this.bPatName,
             this.bAmount,
             this.bPaid,
             this.bBalance,
-            this.bNotes,
-            this.bStatusID,
             this.bTypeID,
-            this.bCreatorID,
+            this.bStatusID,
             this.bType,
             this.bStatus,
             this.bBtnBill});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.GridColor = System.Drawing.Color.LightCyan;
             this.dgvList.Location = new System.Drawing.Point(0, 123);
@@ -291,6 +303,7 @@
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(1008, 607);
             this.dgvList.TabIndex = 13;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
             // bID
             // 
@@ -299,6 +312,14 @@
             this.bID.Name = "bID";
             this.bID.ReadOnly = true;
             this.bID.Visible = false;
+            // 
+            // bPatID
+            // 
+            this.bPatID.DataPropertyName = "patient_id";
+            this.bPatID.HeaderText = "Patient ID";
+            this.bPatID.Name = "bPatID";
+            this.bPatID.ReadOnly = true;
+            this.bPatID.Visible = false;
             // 
             // bAppID
             // 
@@ -322,13 +343,19 @@
             this.bDate.Name = "bDate";
             this.bDate.ReadOnly = true;
             // 
-            // bPatID
+            // bPatNum
             // 
-            this.bPatID.DataPropertyName = "patient_id";
-            this.bPatID.HeaderText = "Patient ID";
-            this.bPatID.Name = "bPatID";
-            this.bPatID.ReadOnly = true;
-            this.bPatID.Visible = false;
+            this.bPatNum.DataPropertyName = "patient_number";
+            this.bPatNum.HeaderText = "Patient Number";
+            this.bPatNum.Name = "bPatNum";
+            this.bPatNum.ReadOnly = true;
+            // 
+            // bPatName
+            // 
+            this.bPatName.DataPropertyName = "patient_name";
+            this.bPatName.HeaderText = "Patient Name";
+            this.bPatName.Name = "bPatName";
+            this.bPatName.ReadOnly = true;
             // 
             // bAmount
             // 
@@ -351,22 +378,6 @@
             this.bBalance.Name = "bBalance";
             this.bBalance.ReadOnly = true;
             // 
-            // bNotes
-            // 
-            this.bNotes.DataPropertyName = "notes";
-            this.bNotes.HeaderText = "Notes";
-            this.bNotes.Name = "bNotes";
-            this.bNotes.ReadOnly = true;
-            this.bNotes.Visible = false;
-            // 
-            // bStatusID
-            // 
-            this.bStatusID.DataPropertyName = "bill_status";
-            this.bStatusID.HeaderText = "Status ID";
-            this.bStatusID.Name = "bStatusID";
-            this.bStatusID.ReadOnly = true;
-            this.bStatusID.Visible = false;
-            // 
             // bTypeID
             // 
             this.bTypeID.DataPropertyName = "bill_type";
@@ -375,13 +386,13 @@
             this.bTypeID.ReadOnly = true;
             this.bTypeID.Visible = false;
             // 
-            // bCreatorID
+            // bStatusID
             // 
-            this.bCreatorID.DataPropertyName = "bill_created_userid";
-            this.bCreatorID.HeaderText = "Done By";
-            this.bCreatorID.Name = "bCreatorID";
-            this.bCreatorID.ReadOnly = true;
-            this.bCreatorID.Visible = false;
+            this.bStatusID.DataPropertyName = "bill_status";
+            this.bStatusID.HeaderText = "Status ID";
+            this.bStatusID.Name = "bStatusID";
+            this.bStatusID.ReadOnly = true;
+            this.bStatusID.Visible = false;
             // 
             // bType
             // 
@@ -404,18 +415,6 @@
             this.bBtnBill.ReadOnly = true;
             this.bBtnBill.Text = "Open";
             this.bBtnBill.UseColumnTextForButtonValue = true;
-            // 
-            // chkDate
-            // 
-            this.chkDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkDate.AutoSize = true;
-            this.chkDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDate.Location = new System.Drawing.Point(3, 3);
-            this.chkDate.Name = "chkDate";
-            this.chkDate.Size = new System.Drawing.Size(155, 19);
-            this.chkDate.TabIndex = 8;
-            this.chkDate.Text = "Use Bill Date for Search";
-            this.chkDate.UseVisualStyleBackColor = true;
             // 
             // frmBilling
             // 
@@ -460,21 +459,21 @@
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.Label lblHead1;
         private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.CheckBox chkDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn bID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bPatID;
         private System.Windows.Forms.DataGridViewTextBoxColumn bAppID;
         private System.Windows.Forms.DataGridViewTextBoxColumn bBillNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn bDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bPatID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bPatNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bPatName;
         private System.Windows.Forms.DataGridViewTextBoxColumn bAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn bPaid;
         private System.Windows.Forms.DataGridViewTextBoxColumn bBalance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bNotes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bStatusID;
         private System.Windows.Forms.DataGridViewTextBoxColumn bTypeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bCreatorID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bStatusID;
         private System.Windows.Forms.DataGridViewTextBoxColumn bType;
         private System.Windows.Forms.DataGridViewTextBoxColumn bStatus;
         private System.Windows.Forms.DataGridViewButtonColumn bBtnBill;
-        private System.Windows.Forms.CheckBox chkDate;
     }
 }
