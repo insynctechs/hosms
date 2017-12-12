@@ -885,7 +885,7 @@
             this.dgvDept.Name = "dgvDept";
             this.dgvDept.ReadOnly = true;
             this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDept.Size = new System.Drawing.Size(980, 250);
+            this.dgvDept.Size = new System.Drawing.Size(980, 456);
             this.dgvDept.TabIndex = 12;
             this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
             // 

@@ -42,25 +42,28 @@
             this.menuItemPatients = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemApp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemReg = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemConsultations = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemPatSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemBillSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemReports = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblLoginPanel = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmpID = new System.Windows.Forms.Label();
-            this.lnkLogout = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lnkChangePwd = new System.Windows.Forms.LinkLabel();
+            this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.lblAppName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.menuItemBillSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tblLoginPanel.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,7 +166,7 @@
             this.menuItemPatients.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemApp,
             this.menuItemReg,
-            this.consultationsToolStripMenuItem,
+            this.menuItemConsultations,
             this.menuItemPatSearch});
             this.menuItemPatients.Name = "menuItemPatients";
             this.menuItemPatients.Size = new System.Drawing.Size(70, 22);
@@ -183,18 +186,20 @@
             this.menuItemReg.Text = "New Registration";
             this.menuItemReg.Click += new System.EventHandler(this.menuItemReg_Click);
             // 
-            // consultationsToolStripMenuItem
+            // menuItemConsultations
             // 
-            this.consultationsToolStripMenuItem.Name = "consultationsToolStripMenuItem";
-            this.consultationsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.consultationsToolStripMenuItem.Text = "Consultations";
-            this.consultationsToolStripMenuItem.Click += new System.EventHandler(this.consultationsToolStripMenuItem_Click);
+            this.menuItemConsultations.Name = "menuItemConsultations";
+            this.menuItemConsultations.Size = new System.Drawing.Size(182, 22);
+            this.menuItemConsultations.Text = "Consultations";
+            this.menuItemConsultations.Visible = false;
+            this.menuItemConsultations.Click += new System.EventHandler(this.menuItemConsultations_Click);
             // 
             // menuItemPatSearch
             // 
             this.menuItemPatSearch.Name = "menuItemPatSearch";
             this.menuItemPatSearch.Size = new System.Drawing.Size(182, 22);
             this.menuItemPatSearch.Text = "Search";
+            this.menuItemPatSearch.Click += new System.EventHandler(this.menuItemPatSearch_Click);
             // 
             // menuItemBill
             // 
@@ -204,17 +209,26 @@
             this.menuItemBill.Size = new System.Drawing.Size(59, 22);
             this.menuItemBill.Text = "Billing";
             // 
+            // menuItemBillSearch
+            // 
+            this.menuItemBillSearch.Name = "menuItemBillSearch";
+            this.menuItemBillSearch.Size = new System.Drawing.Size(117, 22);
+            this.menuItemBillSearch.Text = "Search";
+            this.menuItemBillSearch.Click += new System.EventHandler(this.menuItemBillSearch_Click);
+            // 
             // menuItemReports
             // 
             this.menuItemReports.Name = "menuItemReports";
             this.menuItemReports.Size = new System.Drawing.Size(68, 22);
             this.menuItemReports.Text = "Reports";
+            this.menuItemReports.Visible = false;
             // 
             // menuItemAbout
             // 
             this.menuItemAbout.Name = "menuItemAbout";
             this.menuItemAbout.Size = new System.Drawing.Size(58, 22);
             this.menuItemAbout.Text = "About";
+            this.menuItemAbout.Visible = false;
             // 
             // panel1
             // 
@@ -222,43 +236,46 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(918, 100);
+            this.panel1.Size = new System.Drawing.Size(918, 70);
             this.panel1.TabIndex = 3;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.47288F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.52712F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.47401F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.52599F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 355F));
+            this.tableLayoutPanel1.Controls.Add(this.tblLoginPanel, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(918, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(918, 70);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // tableLayoutPanel2
+            // tblLoginPanel
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.4F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.6F));
-            this.tableLayoutPanel2.Controls.Add(this.lblEmpID, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lnkLogout, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(659, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.3617F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.6383F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(250, 94);
-            this.tableLayoutPanel2.TabIndex = 5;
+            this.tblLoginPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tblLoginPanel.ColumnCount = 2;
+            this.tblLoginPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.76136F));
+            this.tblLoginPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.23864F));
+            this.tblLoginPanel.Controls.Add(this.lblEmpID, 1, 0);
+            this.tblLoginPanel.Controls.Add(this.label1, 0, 0);
+            this.tblLoginPanel.Controls.Add(this.flowLayoutPanel2, 0, 1);
+            this.tblLoginPanel.Location = new System.Drawing.Point(566, 3);
+            this.tblLoginPanel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.tblLoginPanel.Name = "tblLoginPanel";
+            this.tblLoginPanel.RowCount = 2;
+            this.tblLoginPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.125F));
+            this.tblLoginPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.875F));
+            this.tblLoginPanel.Size = new System.Drawing.Size(352, 64);
+            this.tblLoginPanel.TabIndex = 5;
+            this.tblLoginPanel.Visible = false;
             // 
             // lblEmpID
             // 
@@ -266,27 +283,11 @@
             this.lblEmpID.AutoSize = true;
             this.lblEmpID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpID.ForeColor = System.Drawing.Color.Aqua;
-            this.lblEmpID.Location = new System.Drawing.Point(89, 15);
+            this.lblEmpID.Location = new System.Drawing.Point(150, 13);
             this.lblEmpID.Name = "lblEmpID";
             this.lblEmpID.Size = new System.Drawing.Size(101, 21);
             this.lblEmpID.TabIndex = 2;
             this.lblEmpID.Text = "Super Admin";
-            // 
-            // lnkLogout
-            // 
-            this.lnkLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lnkLogout.AutoSize = true;
-            this.lnkLogout.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkLogout.ForeColor = System.Drawing.Color.White;
-            this.lnkLogout.LinkColor = System.Drawing.Color.Snow;
-            this.lnkLogout.Location = new System.Drawing.Point(89, 56);
-            this.lnkLogout.Name = "lnkLogout";
-            this.lnkLogout.Size = new System.Drawing.Size(52, 17);
-            this.lnkLogout.TabIndex = 0;
-            this.lnkLogout.TabStop = true;
-            this.lnkLogout.Text = "Logout";
-            this.lnkLogout.VisitedLinkColor = System.Drawing.Color.Orange;
-            this.lnkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogout_LinkClicked);
             // 
             // label1
             // 
@@ -294,11 +295,58 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Aqua;
-            this.label1.Location = new System.Drawing.Point(5, 15);
+            this.label1.Location = new System.Drawing.Point(72, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 21);
+            this.label1.Size = new System.Drawing.Size(75, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Welcome: ";
+            this.label1.Text = "Welcome";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tblLoginPanel.SetColumnSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Controls.Add(this.lnkChangePwd);
+            this.flowLayoutPanel2.Controls.Add(this.linkLogout);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(76, 37);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(273, 24);
+            this.flowLayoutPanel2.TabIndex = 3;
+            // 
+            // lnkChangePwd
+            // 
+            this.lnkChangePwd.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lnkChangePwd.AutoSize = true;
+            this.lnkChangePwd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkChangePwd.ForeColor = System.Drawing.Color.White;
+            this.lnkChangePwd.LinkColor = System.Drawing.Color.Snow;
+            this.lnkChangePwd.Location = new System.Drawing.Point(3, 0);
+            this.lnkChangePwd.Name = "lnkChangePwd";
+            this.lnkChangePwd.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.lnkChangePwd.Size = new System.Drawing.Size(126, 17);
+            this.lnkChangePwd.TabIndex = 0;
+            this.lnkChangePwd.TabStop = true;
+            this.lnkChangePwd.Text = "Change Password";
+            this.lnkChangePwd.VisitedLinkColor = System.Drawing.Color.Orange;
+            this.lnkChangePwd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkChangePwd_LinkClicked);
+            // 
+            // linkLogout
+            // 
+            this.linkLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.linkLogout.AutoSize = true;
+            this.linkLogout.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLogout.ForeColor = System.Drawing.Color.White;
+            this.linkLogout.LinkColor = System.Drawing.Color.Snow;
+            this.linkLogout.Location = new System.Drawing.Point(135, 0);
+            this.linkLogout.Name = "linkLogout";
+            this.linkLogout.Size = new System.Drawing.Size(52, 17);
+            this.linkLogout.TabIndex = 0;
+            this.linkLogout.TabStop = true;
+            this.linkLogout.Text = "Logout";
+            this.linkLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLogout.VisitedLinkColor = System.Drawing.Color.Orange;
+            this.linkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogout_LinkClicked);
             // 
             // lblAppName
             // 
@@ -307,8 +355,8 @@
             this.lblAppName.ForeColor = System.Drawing.Color.AliceBlue;
             this.lblAppName.Location = new System.Drawing.Point(3, 0);
             this.lblAppName.Name = "lblAppName";
-            this.lblAppName.Padding = new System.Windows.Forms.Padding(20, 20, 0, 0);
-            this.lblAppName.Size = new System.Drawing.Size(222, 64);
+            this.lblAppName.Padding = new System.Windows.Forms.Padding(20, 15, 0, 0);
+            this.lblAppName.Size = new System.Drawing.Size(187, 70);
             this.lblAppName.TabIndex = 0;
             this.lblAppName.Text = "EEZCLINIC";
             // 
@@ -316,28 +364,20 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(268, 3);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(202, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(385, 94);
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.14893F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(218, 64);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 50);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(379, 41);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(212, 58);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // menuItemBillSearch
-            // 
-            this.menuItemBillSearch.Name = "menuItemBillSearch";
-            this.menuItemBillSearch.Size = new System.Drawing.Size(152, 22);
-            this.menuItemBillSearch.Text = "Search";
-            this.menuItemBillSearch.Click += new System.EventHandler(this.menuItemBillSearch_Click);
             // 
             // frmMain
             // 
@@ -363,8 +403,10 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tblLoginPanel.ResumeLayout(false);
+            this.tblLoginPanel.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -398,10 +440,12 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblEmpID;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.LinkLabel lnkLogout;
-        private System.Windows.Forms.ToolStripMenuItem consultationsToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tblLoginPanel;
+        private System.Windows.Forms.LinkLabel lnkChangePwd;
+        private System.Windows.Forms.ToolStripMenuItem menuItemConsultations;
         private System.Windows.Forms.ToolStripMenuItem menuItemBillSearch;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.LinkLabel linkLogout;
     }
 }
 

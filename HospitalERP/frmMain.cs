@@ -38,7 +38,9 @@ namespace HospitalERP
                     LoggedUser.type_name = dtUser.Rows[0]["type_name"].ToString();
                     LoggedUser.phone = dtUser.Rows[0]["staff_phone"].ToString();
                     LoggedUser.last_log_date = Convert.ToDateTime(dtUser.Rows[0]["log_date"].ToString());
-                    LoggedUser.name = dtUser.Rows[0]["name"].ToString();
+                    LoggedUser.name = dtUser.Rows[0]["staff_name"].ToString();
+                    LoggedUser.staff_id = Int32.Parse(dtUser.Rows[0]["staff_id"].ToString());
+                    LoggedUser.phone = dtUser.Rows[0]["staff_phone"].ToString();
                     usr.SetLoginDate(empid);
                     
 
@@ -71,11 +73,13 @@ namespace HospitalERP
             if(LoggedUser.id > 0)
             {
                 SetMenuItems();
-                lnkLogout.Visible = true;
+                lnkChangePwd.Visible = true;
+                tblLoginPanel.Visible = true;
             }
             else
             {
-                lnkLogout.Visible = false;
+                lnkChangePwd.Visible = false;
+                tblLoginPanel.Visible = false;
             }
 
             
@@ -183,17 +187,21 @@ namespace HospitalERP
 
         private void menuItemApp_Click(object sender, EventArgs e)
         {
-            frmAppointments frm = new frmAppointments();
-            frm.MdiParent = this;
-            frm.Show();
-        }
+            if (LoggedUser.type_name.ToUpper() == "DOCTOR")
+            {
+                frmConsultations frm = new frmConsultations();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
 
-        private void consultationsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmConsultations frm = new frmConsultations();
-            frm.MdiParent = this;
-            frm.Show();
+                frmAppointments frm = new frmAppointments();
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
+        
 
         private void menuItemBillSearch_Click(object sender, EventArgs e)
         {
@@ -201,6 +209,23 @@ namespace HospitalERP
             frm.MdiParent = this;
             frm.Show();
         }
-    
+
+        private void menuItemPatSearch_Click(object sender, EventArgs e)
+        {
+            frmPatient frm = new frmPatient(1);
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuItemConsultations_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lnkChangePwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword();
+            frm.ShowDialog();
+        }
     }
 }
