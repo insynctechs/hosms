@@ -283,5 +283,30 @@ namespace HospitalERP.Procedures
             return ret;
         }
 
+        public int editProceduresFees(DataTable dtProc)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[2];
+                
+                foreach (DataRow row in dtProc.Rows)
+                {
+                    sqlParam[0] = new SqlParameter("@id", row["id"].ToString());
+                    sqlParam[1] = new SqlParameter("@fee", row["fee"].ToString());
+                    ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspConsultationDet_EditProcedureFees", sqlParam).ToString());
+                    
+                }
+
+               
+            }
+            catch (Exception ex)
+            {
+                ret = -1;
+                log.Error(ex.Message, ex);
+            }
+            return ret;
+        }
+
     }
 }

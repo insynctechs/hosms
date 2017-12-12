@@ -15,13 +15,21 @@ namespace HospitalERP
     {
         public int appointment_id = 0;
         public int patient_id = 0;
+        public int bill_id = 0;
+        public double bill_total = 0;
+        public double bill_paid = 0;
+        public double bill_balance = 0;
+        public DataTable dtProc;
 
         log4net.ILog ilog;
         Bill bill = new Bill();
         Appointments app = new Appointments();
         Patients pat = new Patients();
         ConsultationDetails objCD = new ConsultationDetails();
+        DataTable dtPat;
+        DataTable dtBill;
 
+        public int cell_modified = 0;
         public frmProceduresBill()
         {
             InitializeComponent();
@@ -36,8 +44,47 @@ namespace HospitalERP
             patient_id = pat_id;
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            loadPatientAppInfo();
+            PopulateStatusCombo();
+
         }
 
+        public frmProceduresBill(int b_id)
+        {
+            InitializeComponent();
+            bill_id = b_id;
+
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            dtBill = bill.GetBill(bill_id);
+            appointment_id = Int32.Parse(dtBill.Rows[0]["appointment_id"].ToString());
+            patient_id = Int32.Parse(dtBill.Rows[0]["patient_id"].ToString());
+            loadPatientAppInfo();
+            PopulateStatusCombo();
+        }
+        private void PopulateStatusCombo()
+        {
+            cmbBillStatus.DataSource = bill.GetBillStatus();
+            cmbBillStatus.DisplayMember = "name";
+            cmbBillStatus.ValueMember = "id";
+        }
+
+        private void loadPatientAppInfo()
+        {
+            dtPat = pat.getDetailedPatientRecordFromID(patient_id, appointment_id);
+            txtPatNum.Text = dtPat.Rows[0]["patient_number"].ToString();
+            txtPatName.Text = dtPat.Rows[0]["patient_name"].ToString();
+            string gender = dtPat.Rows[0]["gender"].ToString();
+            txtGender.Text = Utils.Gender[gender].ToString();
+            txtAge.Text = dtPat.Rows[0]["age"].ToString();
+            txtNationality.Text = dtPat.Rows[0]["nationality"].ToString();
+            txtAddress.Text = dtPat.Rows[0]["address"].ToString() + "\r\n" + dtPat.Rows[0]["city"].ToString() + ", " + dtPat.Rows[0]["state"].ToString() + " " + dtPat.Rows[0]["zip"].ToString();
+            //txtMeetDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
+            txtDoctor.Text = dtPat.Rows[0]["doctor_name"].ToString();
+            //sj txtToken.Text = dtPat.Rows[0]["token"].ToString().PadLeft(0,'3');
+            txtAppId.Text = dtPat.Rows[0]["appointment_id"].ToString().PadLeft(6, '0');
+            return;
+        }
         private void dgvInv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if ((e.RowIndex == -1 || e.RowIndex == dgvInv.RowCount - 1) && e.ColumnIndex >= 0)
@@ -64,17 +111,124 @@ namespace HospitalERP
 
         private void frmProceduresBill_Load(object sender, EventArgs e)
         {
+            //displaying data to grid view
             dgvInv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            DataTable dtProc = objCD.getProceduresInvoiceFromApptID(appointment_id);
+           dtProc = objCD.getProceduresInvoiceFromApptID(appointment_id);
             int k = 1;
-            decimal fee_total = 0;
+           
             foreach (DataRow row in dtProc.Rows)
             {                
                 dgvInv.Rows.Add(new object[] { k, row["name"].ToString(), row["fee"].ToString() });
-                fee_total += Convert.ToInt32(row["fee"].ToString());
+                bill_total += Convert.ToDouble(row["fee"].ToString());
                 k++;
             }
-            txtTotal.Text = fee_total.ToString();
+            txtTotal.Text = Utils.FormatAmount(bill_total);
+
+            if (bill_id == 0)
+            {
+                dtBill = bill.GetAppointmentBill(appointment_id, patient_id, 2);
+                if (dtBill.Rows.Count == 0)
+                {
+                    if (!(LoggedUser.id > 0))
+                        LoggedUser.id = 1;
+                    //sj bill_id = bill.AddBill(appointment_id, patient_id, Convert.ToDecimal(dtPat.Rows[0]["doctor_fee"].ToString()), 1, LoggedUser.id);
+                    bill_id = bill.AddBill(appointment_id, patient_id, Convert.ToDecimal(bill_total), 2, LoggedUser.id);
+                    if (bill_id > 0)
+                    {
+                        dtBill = bill.GetBill(bill_id);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error in Creating Bill");
+                    }
+                }
+                else
+                {
+                    bill_id = Int32.Parse(dtBill.Rows[0]["id"].ToString());
+                }
+            }
+            if (bill_id > 0)
+            {
+                txtInvNum.Text = dtBill.Rows[0]["bill_number"].ToString();
+                txtDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
+                bill_total = Convert.ToDouble(dtBill.Rows[0]["bill_amount"].ToString());                
+                bill_paid = Convert.ToDouble(dtBill.Rows[0]["bill_paid"].ToString());
+                txtPaid.Text = Utils.FormatAmount(bill_paid);
+                bill_balance = Convert.ToDouble(dtBill.Rows[0]["bill_balance"].ToString());
+                txtBalance.Text = Utils.FormatAmount(bill_balance);
+                lblTime.Text = dtBill.Rows[0]["bill_date"].ToString();
+                int creator = Int32.Parse(dtBill.Rows[0]["bill_created_userid"].ToString());
+                txtPrevDues.Text= dtPat.Rows[0]["dues"].ToString();
+                txtTotal.Text = Utils.FormatAmount(bill_total+Convert.ToDouble(txtPrevDues.Text));
+                DataTable dtUser = bill.GetBillCreatedUser(creator);
+                if(dtUser!=null)
+                    txtLoggedUser.Text = dtUser.Rows[0]["staff_name"].ToString();
+                cmbBillStatus.SelectedValue = dtBill.Rows[0]["bill_status"].ToString();
+                if (dtBill.Rows[0]["bill_status"].ToString() == "4")
+                {
+                    txtPaid.ReadOnly = true;
+                    dgvInv.ReadOnly = true;
+                    btnSave.Enabled = false;
+                }
+            }
+        }
+
+        private void dgvInv_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            decimal fee_total = 0;
+            if (e.ColumnIndex == 2)
+            {
+                for (int m = 0; m < dgvInv.RowCount - 1; m++)
+                    fee_total += Convert.ToDecimal(dgvInv.Rows[m].Cells["Amount"].Value.ToString());
+                txtTotal.Text = fee_total.ToString()+txtPrevDues.Text.ToString();
+                cell_modified = 1;
+            }
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            bill_total = Convert.ToDouble(txtTotal.Text);
+            bill_balance = bill_total - bill_paid;
+            txtBalance.Text = Utils.FormatAmount(bill_balance);
+
+        }
+
+        private void txtPaid_TextChanged(object sender, EventArgs e)
+        {
+            bill_paid = Convert.ToDouble(txtPaid.Text);
+            bill_balance = bill_total - bill_paid;
+            txtBalance.Text = Utils.FormatAmount(bill_balance);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) == 4 && bill_balance != 0)
+            {
+                MessageBox.Show("The entire bill needs to be paid fully for 'Paid' Status");
+            }
+            else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 4 && bill_balance == 0)
+            {
+                MessageBox.Show("Please change the status to 'Paid'");
+            }
+            else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) == 4 && bill_paid != 0 && bill_balance != 0)
+            {
+                MessageBox.Show("Please change the status to 'Partial-Paid' or 'Pending'");
+            }
+            else
+            {
+                if (!(LoggedUser.id > 0))
+                    LoggedUser.id = 1;
+                int res = bill.editBill(bill_id, Convert.ToDecimal(bill_total), Convert.ToDecimal(bill_paid), Convert.ToDecimal(bill_balance), Int32.Parse(cmbBillStatus.SelectedValue.ToString()), LoggedUser.id);
+                if (cmbBillStatus.SelectedValue.ToString() == "4")
+                {
+                    txtPaid.ReadOnly = true;
+                    dgvInv.ReadOnly = true;
+                    btnSave.Enabled = false;
+                }
+
+                if (cell_modified == 1) //edit in patient_procedures table
+                    res = objCD.editProceduresFees(dtProc);
+            }
         }
     }
 }
