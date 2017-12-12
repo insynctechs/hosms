@@ -267,5 +267,11 @@ namespace HospitalERP
                 errorProvider.SetError(cmbStatus, null);
             }
         }
+
+        private void btnAddNewProcedure_Click(object sender, EventArgs e)
+        {
+            frmProcedures fp = new frmProcedures();
+            fp.ShowDialog(this);
+        }
     }
 }
