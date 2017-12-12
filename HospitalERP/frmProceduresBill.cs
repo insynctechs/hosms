@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,7 @@ namespace HospitalERP
         Appointments app = new Appointments();
         Patients pat = new Patients();
         ConsultationDetails objCD = new ConsultationDetails();
+        OptionVals opt = new OptionVals();
         DataTable dtPat;
         DataTable dtBill;
 
@@ -81,7 +83,7 @@ namespace HospitalERP
             txtAddress.Text = dtPat.Rows[0]["address"].ToString() + "\r\n" + dtPat.Rows[0]["city"].ToString() + ", " + dtPat.Rows[0]["state"].ToString() + " " + dtPat.Rows[0]["zip"].ToString();
             //txtMeetDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
             txtDoctor.Text = dtPat.Rows[0]["doctor_name"].ToString();
-            //sj txtToken.Text = dtPat.Rows[0]["token"].ToString().PadLeft(0,'3');
+            txtToken.Text = dtPat.Rows[0]["token"].ToString().PadLeft(3,'0');
             txtAppId.Text = dtPat.Rows[0]["appointment_id"].ToString().PadLeft(6, '0');
             return;
         }
@@ -111,6 +113,10 @@ namespace HospitalERP
 
         private void frmProceduresBill_Load(object sender, EventArgs e)
         {
+            DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
+            if (dtOpt.Rows.Count > 0)
+                lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();
+
             //displaying data to grid view
             dgvInv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
            dtProc = objCD.getProceduresInvoiceFromApptID(appointment_id);
@@ -229,6 +235,26 @@ namespace HospitalERP
                 if (cell_modified == 1) //edit in patient_procedures table
                     res = objCD.editProceduresFees(dtProc);
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
+            printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
+
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                PrinterSettings values = new PrinterSettings();
+                printDialog1.Document = printDocument1;
+                printDocument1.Print();
+            }
+            printDocument1.Dispose();
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
