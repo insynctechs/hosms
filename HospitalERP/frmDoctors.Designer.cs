@@ -510,16 +510,18 @@
             // 
             // dtpPathakaExpiry
             // 
+            this.dtpPathakaExpiry.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPathakaExpiry.Location = new System.Drawing.Point(630, 322);
             this.dtpPathakaExpiry.Name = "dtpPathakaExpiry";
-            this.dtpPathakaExpiry.Size = new System.Drawing.Size(250, 25);
+            this.dtpPathakaExpiry.Size = new System.Drawing.Size(99, 25);
             this.dtpPathakaExpiry.TabIndex = 12;
             // 
             // dtpDob
             // 
+            this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDob.Location = new System.Drawing.Point(630, 260);
             this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(250, 25);
+            this.dtpDob.Size = new System.Drawing.Size(99, 25);
             this.dtpDob.TabIndex = 9;
             // 
             // label14

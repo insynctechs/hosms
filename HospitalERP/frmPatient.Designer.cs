@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabSub = new System.Windows.Forms.TabControl();
             this.tabPgAdd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,9 +54,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.rbGender1 = new System.Windows.Forms.RadioButton();
-            this.rbGender2 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.dtpPathakaExpiry = new System.Windows.Forms.DateTimePicker();
@@ -87,6 +84,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtPatNum = new System.Windows.Forms.TextBox();
             this.chkAppointment = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.rbGender1 = new System.Windows.Forms.RadioButton();
+            this.rbGender2 = new System.Windows.Forms.RadioButton();
             this.tabPgList = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -106,12 +106,12 @@
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.tabPgList.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -406,37 +406,6 @@
             this.txtFirstName.TabIndex = 2;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.rbGender1);
-            this.flowLayoutPanel2.Controls.Add(this.rbGender2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(191, 175);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(173, 27);
-            this.flowLayoutPanel2.TabIndex = 40;
-            // 
-            // rbGender1
-            // 
-            this.rbGender1.AutoSize = true;
-            this.rbGender1.Location = new System.Drawing.Point(3, 3);
-            this.rbGender1.Name = "rbGender1";
-            this.rbGender1.Size = new System.Drawing.Size(57, 22);
-            this.rbGender1.TabIndex = 4;
-            this.rbGender1.TabStop = true;
-            this.rbGender1.Text = "Male";
-            this.rbGender1.UseVisualStyleBackColor = true;
-            // 
-            // rbGender2
-            // 
-            this.rbGender2.AutoSize = true;
-            this.rbGender2.Location = new System.Drawing.Point(66, 3);
-            this.rbGender2.Name = "rbGender2";
-            this.rbGender2.Size = new System.Drawing.Size(72, 22);
-            this.rbGender2.TabIndex = 5;
-            this.rbGender2.TabStop = true;
-            this.rbGender2.Text = "Female";
-            this.rbGender2.UseVisualStyleBackColor = true;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -456,16 +425,18 @@
             // 
             // dtpPathakaExpiry
             // 
+            this.dtpPathakaExpiry.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPathakaExpiry.Location = new System.Drawing.Point(640, 239);
             this.dtpPathakaExpiry.Name = "dtpPathakaExpiry";
-            this.dtpPathakaExpiry.Size = new System.Drawing.Size(250, 25);
+            this.dtpPathakaExpiry.Size = new System.Drawing.Size(124, 25);
             this.dtpPathakaExpiry.TabIndex = 9;
             // 
             // dtpDob
             // 
+            this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDob.Location = new System.Drawing.Point(640, 175);
             this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(250, 25);
+            this.dtpDob.Size = new System.Drawing.Size(124, 25);
             this.dtpDob.TabIndex = 6;
             this.dtpDob.Validating += new System.ComponentModel.CancelEventHandler(this.dtpDob_Validating);
             // 
@@ -736,6 +707,37 @@
             this.chkAppointment.Text = "Set Patient Appointment";
             this.chkAppointment.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.rbGender1);
+            this.flowLayoutPanel2.Controls.Add(this.rbGender2);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(191, 175);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(173, 27);
+            this.flowLayoutPanel2.TabIndex = 40;
+            // 
+            // rbGender1
+            // 
+            this.rbGender1.AutoSize = true;
+            this.rbGender1.Location = new System.Drawing.Point(3, 3);
+            this.rbGender1.Name = "rbGender1";
+            this.rbGender1.Size = new System.Drawing.Size(57, 22);
+            this.rbGender1.TabIndex = 4;
+            this.rbGender1.TabStop = true;
+            this.rbGender1.Text = "Male";
+            this.rbGender1.UseVisualStyleBackColor = true;
+            // 
+            // rbGender2
+            // 
+            this.rbGender2.AutoSize = true;
+            this.rbGender2.Location = new System.Drawing.Point(66, 3);
+            this.rbGender2.Name = "rbGender2";
+            this.rbGender2.Size = new System.Drawing.Size(72, 22);
+            this.rbGender2.TabIndex = 5;
+            this.rbGender2.TabStop = true;
+            this.rbGender2.Text = "Female";
+            this.rbGender2.UseVisualStyleBackColor = true;
+            // 
             // tabPgList
             // 
             this.tabPgList.BackColor = System.Drawing.Color.White;
@@ -816,14 +818,14 @@
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
@@ -833,14 +835,14 @@
             this.age,
             this.Address,
             this.Phone});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvList.GridColor = System.Drawing.Color.LightCyan;
             this.dgvList.Location = new System.Drawing.Point(3, 89);
             this.dgvList.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -922,8 +924,6 @@
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
@@ -934,6 +934,8 @@
             this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel8.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.tabPgList.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();

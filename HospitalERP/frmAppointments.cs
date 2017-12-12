@@ -19,6 +19,7 @@ namespace HospitalERP
         Appointments app = new Appointments();
         Patients pat = new Patients();
         int startload = 0;
+        int patient_id = 0;
         public frmAppointments()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace HospitalERP
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            txtPatientID.Text = patientid.ToString();
+            patient_id = patientid;
         }
 
         private void frmAppointments_Load(object sender, EventArgs e)
@@ -39,8 +40,13 @@ namespace HospitalERP
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             GetDoctorsCombo(0);
             PopulateSearch();
-            getAppointmentList();
-            startload = 1;
+            if (patient_id > 0)
+            {
+                txtPatientID.Text = patient_id.ToString();
+                
+            }
+            getAppointmentList();            
+           startload = 1;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

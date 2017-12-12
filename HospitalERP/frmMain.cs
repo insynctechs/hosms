@@ -194,5 +194,13 @@ namespace HospitalERP
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void menuItemBillSearch_Click(object sender, EventArgs e)
+        {
+            frmBilling frm = new frmBilling();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+    
     }
 }

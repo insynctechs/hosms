@@ -17,9 +17,10 @@ namespace HospitalERP
         public int patient_id=0;
 
         log4net.ILog ilog;
-        Doctors doc = new Doctors();
+       
         Appointments app = new Appointments();
         Patients pat = new Patients();
+        Bill bill = new Bill();
 
         public frmBilling()
         {
@@ -41,19 +42,28 @@ namespace HospitalERP
         {
             this.WindowState = FormWindowState.Maximized;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-           // MessageBox.Show(appointment_id.ToString() + '-' + patient_id.ToString());
+            PopulateSearchCombo();
+            GetBills();
 
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void PopulateSearchCombo()
         {
-            frmConsultationBill frm = new frmConsultationBill();
-           frm.ShowDialog();
+            cmbSearch.DataSource = bill.BillSearchValues();
+            cmbSearch.ValueMember = "Value";
+            cmbSearch.DisplayMember = "Display";
+        }   
+        
+        private void GetBills()
+        {
+
+            dgvList.DataSource = bill.SearchBills(cmbSearch.SelectedValue.ToString(), txtSearch.Text, Convert.ToDateTime(dtpDate.Value), chkDate.Checked);
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            GetBills();
         }
     }
 }
