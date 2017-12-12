@@ -17,9 +17,10 @@ namespace HospitalERP
         public int patient_id=0;
 
         log4net.ILog ilog;
-        Doctors doc = new Doctors();
+       
         Appointments app = new Appointments();
         Patients pat = new Patients();
+        Bill bill = new Bill();
 
         public frmBilling()
         {
@@ -41,19 +42,47 @@ namespace HospitalERP
         {
             this.WindowState = FormWindowState.Maximized;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-           // MessageBox.Show(appointment_id.ToString() + '-' + patient_id.ToString());
+            PopulateSearchCombo();
+            GetBills();
 
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void PopulateSearchCombo()
         {
-            frmConsultationBill frm = new frmConsultationBill();
-           frm.ShowDialog();
+            cmbSearch.DataSource = bill.BillSearchValues();
+            cmbSearch.ValueMember = "Value";
+            cmbSearch.DisplayMember = "Display";
+        }   
+        
+        private void GetBills()
+        {
+
+            dgvList.DataSource = bill.SearchBills(cmbSearch.SelectedValue.ToString(), txtSearch.Text, Convert.ToDateTime(dtpDate.Value), chkDate.Checked);
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            GetBills();
+        }
+
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "bBtnBill":
+                    if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "1")
+                    {
+                        frmConsultationBill frm = new frmConsultationBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                        frm.ShowDialog();
+                    }
+                    else if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "2")
+                    {
+                        frmProceduresBill frm = new frmProceduresBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                        frm.ShowDialog();
+                    }
+                    break;
+            }
         }
     }
 }

@@ -25,6 +25,7 @@ namespace HospitalERP
         log4net.ILog ilog;
         Bill bill = new Bill();        
         Patients pat = new Patients();
+        OptionVals opt = new OptionVals();
         DataTable dtPat;
         DataTable dtBill;
         public frmConsultationBill()
@@ -107,6 +108,9 @@ namespace HospitalERP
         private void frmConsultationBill_Load(object sender, EventArgs e)
         {
             dgvInv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
+            if (dtOpt.Rows.Count > 0)
+                lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();
             dgvInv.Rows.Add(new object[] { "1", "Consulation Fees and Charges", Utils.FormatAmount(Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString()))});
             if (bill_id == 0)
             {
@@ -205,7 +209,7 @@ namespace HospitalERP
             txtAddress.Text = dtPat.Rows[0]["address"].ToString() + "\r\n" + dtPat.Rows[0]["city"].ToString() + ", " + dtPat.Rows[0]["state"].ToString() + " " + dtPat.Rows[0]["zip"].ToString();
             //txtMeetDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
             txtDoctor.Text = dtPat.Rows[0]["doctor_name"].ToString();
-            txtToken.Text = dtPat.Rows[0]["token"].ToString().PadLeft(0,'3');
+            txtToken.Text = dtPat.Rows[0]["token"].ToString().PadLeft(3,'0');
             txtAppId.Text = dtPat.Rows[0]["appointment_id"].ToString().PadLeft(6,'0');
             return;
         }

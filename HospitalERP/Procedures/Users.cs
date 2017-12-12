@@ -54,9 +54,27 @@ namespace HospitalERP.Procedures
         {
             try
             {
-                SqlParameter[] sqlParam = new SqlParameter[2];
+                SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@empid", empid);
                 int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUsers_SetLogDate", sqlParam));
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return 0;
+            }
+        }
+
+        public int SetPassword(string empid, string pass, int utype)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[3];
+                sqlParam[0] = new SqlParameter("@empid", empid);
+                sqlParam[1] = new SqlParameter("@pass", pass);
+                sqlParam[2] = new SqlParameter("@utype", utype);
+                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUsers_SetPwdHash", sqlParam));
                 return ret;
             }
             catch (Exception ex)

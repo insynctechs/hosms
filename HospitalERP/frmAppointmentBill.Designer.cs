@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHead1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -190,6 +190,7 @@
             // 
             this.txtPatNum.Location = new System.Drawing.Point(3, 21);
             this.txtPatNum.Name = "txtPatNum";
+            this.txtPatNum.ReadOnly = true;
             this.txtPatNum.Size = new System.Drawing.Size(110, 25);
             this.txtPatNum.TabIndex = 1;
             this.txtPatNum.TabStop = false;
@@ -218,6 +219,7 @@
             // 
             this.txtPatName.Location = new System.Drawing.Point(3, 21);
             this.txtPatName.Name = "txtPatName";
+            this.txtPatName.ReadOnly = true;
             this.txtPatName.Size = new System.Drawing.Size(213, 25);
             this.txtPatName.TabIndex = 1;
             this.txtPatName.TabStop = false;
@@ -254,6 +256,7 @@
             // rbGender1
             // 
             this.rbGender1.AutoSize = true;
+            this.rbGender1.Enabled = false;
             this.rbGender1.Location = new System.Drawing.Point(3, 3);
             this.rbGender1.Name = "rbGender1";
             this.rbGender1.Size = new System.Drawing.Size(57, 22);
@@ -264,6 +267,7 @@
             // rbGender2
             // 
             this.rbGender2.AutoSize = true;
+            this.rbGender2.Enabled = false;
             this.rbGender2.Location = new System.Drawing.Point(66, 3);
             this.rbGender2.Name = "rbGender2";
             this.rbGender2.Size = new System.Drawing.Size(72, 22);
@@ -305,6 +309,7 @@
             // 
             this.txtDob.Location = new System.Drawing.Point(3, 3);
             this.txtDob.Name = "txtDob";
+            this.txtDob.ReadOnly = true;
             this.txtDob.Size = new System.Drawing.Size(81, 25);
             this.txtDob.TabIndex = 1;
             this.txtDob.TabStop = false;
@@ -313,6 +318,7 @@
             // 
             this.txtAge.Location = new System.Drawing.Point(90, 3);
             this.txtAge.Name = "txtAge";
+            this.txtAge.ReadOnly = true;
             this.txtAge.Size = new System.Drawing.Size(40, 25);
             this.txtAge.TabIndex = 1;
             this.txtAge.TabStop = false;
@@ -348,6 +354,7 @@
             // 
             this.txtPhone.Location = new System.Drawing.Point(3, 21);
             this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
             this.txtPhone.Size = new System.Drawing.Size(150, 25);
             this.txtPhone.TabIndex = 1;
             this.txtPhone.TabStop = false;
@@ -376,6 +383,7 @@
             // 
             this.txtNationality.Location = new System.Drawing.Point(3, 21);
             this.txtNationality.Name = "txtNationality";
+            this.txtNationality.ReadOnly = true;
             this.txtNationality.Size = new System.Drawing.Size(160, 25);
             this.txtNationality.TabIndex = 1;
             this.txtNationality.TabStop = false;
@@ -480,6 +488,7 @@
             // 
             this.txtDues.Location = new System.Drawing.Point(3, 21);
             this.txtDues.Name = "txtDues";
+            this.txtDues.ReadOnly = true;
             this.txtDues.Size = new System.Drawing.Size(100, 25);
             this.txtDues.TabIndex = 1;
             this.txtDues.TabStop = false;
@@ -516,6 +525,7 @@
             // 
             this.txtMeetDate.Location = new System.Drawing.Point(3, 3);
             this.txtMeetDate.Name = "txtMeetDate";
+            this.txtMeetDate.ReadOnly = true;
             this.txtMeetDate.Size = new System.Drawing.Size(100, 25);
             this.txtMeetDate.TabIndex = 1;
             this.txtMeetDate.TabStop = false;
@@ -546,6 +556,7 @@
             this.txtAddress.Location = new System.Drawing.Point(3, 21);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(266, 50);
             this.txtAddress.TabIndex = 1;
             this.txtAddress.TabStop = false;
@@ -575,6 +586,7 @@
             // 
             this.txtDoctor.Location = new System.Drawing.Point(3, 21);
             this.txtDoctor.Name = "txtDoctor";
+            this.txtDoctor.ReadOnly = true;
             this.txtDoctor.Size = new System.Drawing.Size(245, 25);
             this.txtDoctor.TabIndex = 1;
             this.txtDoctor.TabStop = false;
@@ -583,24 +595,24 @@
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bID,
@@ -618,14 +630,14 @@
             this.bType,
             this.bStatus,
             this.bBtnBill});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.GridColor = System.Drawing.Color.LightCyan;
             this.dgvList.Location = new System.Drawing.Point(0, 274);

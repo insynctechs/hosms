@@ -17,11 +17,20 @@ namespace HospitalERP
         log4net.ILog ilog;
         Patients pat = new Patients();
         private bool errorfocus = false;
+        private int default_tab = 0;
         public frmPatient()
         {
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+
+        public frmPatient(int selecttab)
+        {
+            InitializeComponent();
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            default_tab = selecttab;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -136,6 +145,8 @@ namespace HospitalERP
             this.WindowState = FormWindowState.Maximized;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             PopulateSearch();
+            if (default_tab > 0)
+                tabSub.SelectedIndex = default_tab;
             
         }
 

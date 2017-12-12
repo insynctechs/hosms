@@ -347,7 +347,7 @@
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 83);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(994, 304);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(994, 327);
             this.flowLayoutPanel4.TabIndex = 22;
             // 
             // dgvList
@@ -394,7 +394,7 @@
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(980, 250);
+            this.dgvList.Size = new System.Drawing.Size(980, 318);
             this.dgvList.TabIndex = 10;
             this.dgvList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_RowHeaderMouseClick);
             // 
@@ -429,9 +429,9 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 387);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 410);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(994, 73);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(994, 50);
             this.flowLayoutPanel2.TabIndex = 21;
             // 
             // flowLayoutPanel1

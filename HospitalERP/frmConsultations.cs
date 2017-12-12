@@ -55,7 +55,7 @@ namespace HospitalERP
             cmbDoc.DataSource = doc.getDoctorsCombo(tid);
             //LoggedUser.type_name = "DOCTOR";
             //LoggedUser.staff_id = 1;
-            if (LoggedUser.type_name == "DOCTOR" && LoggedUser.staff_id > 0 )
+            if (LoggedUser.type_name.ToUpper() == "DOCTOR" && LoggedUser.staff_id > 0 )
             {
                 cmbDoc.SelectedValue = LoggedUser.staff_id;
                 cmbDoc.Enabled = false;

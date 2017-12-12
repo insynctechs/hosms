@@ -34,6 +34,7 @@
             this.tabStaffs = new System.Windows.Forms.TabControl();
             this.tabPgAddStaffs = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtDistrict = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,8 +70,6 @@
             this.txtQualification = new System.Windows.Forms.TextBox();
             this.cmbDept = new System.Windows.Forms.ComboBox();
             this.txtDesignation = new System.Windows.Forms.TextBox();
-            this.lblActive = new System.Windows.Forms.Label();
-            this.chkActive = new System.Windows.Forms.CheckBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtUSERID = new System.Windows.Forms.TextBox();
@@ -86,6 +85,12 @@
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cmbStaffType = new System.Windows.Forms.ComboBox();
+            this.lblActive = new System.Windows.Forms.Label();
+            this.chkActive = new System.Windows.Forms.CheckBox();
             this.tabPgListStaffs = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -93,12 +98,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvDept = new System.Windows.Forms.DataGridView();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cmbStaffType = new System.Windows.Forms.ComboBox();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,6 +108,7 @@
             this.pathaka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staff_type_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabStaffs.SuspendLayout();
             this.tabPgAddStaffs.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -117,11 +117,11 @@
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
             this.tabPgListStaffs.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.flowLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabStaffs
@@ -238,6 +238,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 572);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(491, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "*";
             // 
             // txtDistrict
             // 
@@ -506,16 +516,18 @@
             // 
             // dtpPathakaExpiry
             // 
+            this.dtpPathakaExpiry.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPathakaExpiry.Location = new System.Drawing.Point(630, 323);
             this.dtpPathakaExpiry.Name = "dtpPathakaExpiry";
-            this.dtpPathakaExpiry.Size = new System.Drawing.Size(250, 25);
+            this.dtpPathakaExpiry.Size = new System.Drawing.Size(112, 25);
             this.dtpPathakaExpiry.TabIndex = 10;
             // 
             // dtpDob
             // 
+            this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDob.Location = new System.Drawing.Point(630, 261);
             this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(250, 25);
+            this.dtpDob.Size = new System.Drawing.Size(112, 25);
             this.dtpDob.TabIndex = 7;
             // 
             // txtempid
@@ -558,26 +570,6 @@
             this.txtDesignation.Size = new System.Drawing.Size(250, 25);
             this.txtDesignation.TabIndex = 53;
             this.txtDesignation.Validating += new System.ComponentModel.CancelEventHandler(this.txtDesignation_Validating);
-            // 
-            // lblActive
-            // 
-            this.lblActive.AutoSize = true;
-            this.lblActive.Location = new System.Drawing.Point(28, 488);
-            this.lblActive.Name = "lblActive";
-            this.lblActive.Size = new System.Drawing.Size(50, 18);
-            this.lblActive.TabIndex = 56;
-            this.lblActive.Text = "Active:";
-            // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Checked = true;
-            this.chkActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkActive.Location = new System.Drawing.Point(167, 491);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(15, 14);
-            this.chkActive.TabIndex = 57;
-            this.chkActive.UseVisualStyleBackColor = true;
             // 
             // txtID
             // 
@@ -722,6 +714,63 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Department:";
             // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Controls.Add(this.label2);
+            this.flowLayoutPanel7.Controls.Add(this.label20);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(491, 229);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(133, 25);
+            this.flowLayoutPanel7.TabIndex = 66;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "*";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(24, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(72, 18);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Staff Type:";
+            // 
+            // cmbStaffType
+            // 
+            this.cmbStaffType.FormattingEnabled = true;
+            this.cmbStaffType.Location = new System.Drawing.Point(630, 229);
+            this.cmbStaffType.Name = "cmbStaffType";
+            this.cmbStaffType.Size = new System.Drawing.Size(250, 26);
+            this.cmbStaffType.TabIndex = 52;
+            this.cmbStaffType.Validating += new System.ComponentModel.CancelEventHandler(this.cmbStaffType_Validating);
+            // 
+            // lblActive
+            // 
+            this.lblActive.AutoSize = true;
+            this.lblActive.Location = new System.Drawing.Point(28, 488);
+            this.lblActive.Name = "lblActive";
+            this.lblActive.Size = new System.Drawing.Size(50, 18);
+            this.lblActive.TabIndex = 56;
+            this.lblActive.Text = "Active:";
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Checked = true;
+            this.chkActive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkActive.Location = new System.Drawing.Point(167, 491);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(15, 14);
+            this.chkActive.TabIndex = 57;
+            this.chkActive.UseVisualStyleBackColor = true;
+            // 
             // tabPgListStaffs
             // 
             this.tabPgListStaffs.BackColor = System.Drawing.Color.White;
@@ -836,60 +885,9 @@
             this.dgvDept.Name = "dgvDept";
             this.dgvDept.ReadOnly = true;
             this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDept.Size = new System.Drawing.Size(980, 250);
+            this.dgvDept.Size = new System.Drawing.Size(980, 456);
             this.dgvDept.TabIndex = 12;
             this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(491, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "*";
-            // 
-            // flowLayoutPanel7
-            // 
-            this.flowLayoutPanel7.Controls.Add(this.label2);
-            this.flowLayoutPanel7.Controls.Add(this.label20);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(491, 229);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(133, 25);
-            this.flowLayoutPanel7.TabIndex = 66;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "*";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(24, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(72, 18);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Staff Type:";
-            // 
-            // cmbStaffType
-            // 
-            this.cmbStaffType.FormattingEnabled = true;
-            this.cmbStaffType.Location = new System.Drawing.Point(630, 229);
-            this.cmbStaffType.Name = "cmbStaffType";
-            this.cmbStaffType.Size = new System.Drawing.Size(250, 26);
-            this.cmbStaffType.TabIndex = 52;
-            this.cmbStaffType.Validating += new System.ComponentModel.CancelEventHandler(this.cmbStaffType_Validating);
             // 
             // colID
             // 
@@ -963,6 +961,10 @@
             this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmStaffs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -990,13 +992,13 @@
             this.flowLayoutPanel5.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
             this.tabPgListStaffs.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.flowLayoutPanel7.ResumeLayout(false);
-            this.flowLayoutPanel7.PerformLayout();
             this.ResumeLayout(false);
 
         }

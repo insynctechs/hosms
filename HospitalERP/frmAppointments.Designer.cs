@@ -42,7 +42,28 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
+            this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PBtnSelect = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgvApp = new System.Windows.Forms.DataGridView();
+            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,27 +81,6 @@
             this.txtAppID = new System.Windows.Forms.TextBox();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.lblHead1 = new System.Windows.Forms.Label();
-            this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PBtnSelect = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -199,183 +199,6 @@
             this.dgvPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPatient_CellContentClick);
             this.dgvPatient.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPatient_RowHeaderMouseClick);
             // 
-            // dgvApp
-            // 
-            this.dgvApp.AllowUserToAddRows = false;
-            this.dgvApp.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvApp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvApp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvApp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvApp.BackgroundColor = System.Drawing.Color.White;
-            this.dgvApp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvApp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgvApp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvApp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvApp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AID,
-            this.APatID,
-            this.ADocID,
-            this.APatNum,
-            this.APatName,
-            this.ADocName,
-            this.AToken,
-            this.APrevDate,
-            this.ADues,
-            this.AStatus,
-            this.ABtnStatus,
-            this.ABtnBill,
-            this.ABtnDetails});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 11.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApp.DefaultCellStyle = dataGridViewCellStyle5;
-            resources.ApplyResources(this.dgvApp, "dgvApp");
-            this.dgvApp.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvApp.MultiSelect = false;
-            this.dgvApp.Name = "dgvApp";
-            this.dgvApp.ReadOnly = true;
-            this.dgvApp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvApp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApp_CellContentClick);
-            this.dgvApp.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApp_RowHeaderMouseClick);
-            // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblHead1, 0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
-            // flowLayoutPanel3
-            // 
-            resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
-            this.flowLayoutPanel3.Controls.Add(this.label6);
-            this.flowLayoutPanel3.Controls.Add(this.dtpAppDate);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
-            // dtpAppDate
-            // 
-            this.dtpAppDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            resources.ApplyResources(this.dtpAppDate, "dtpAppDate");
-            this.dtpAppDate.Name = "dtpAppDate";
-            this.dtpAppDate.ValueChanged += new System.EventHandler(this.dtpAppDate_ValueChanged);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.cmbDoc);
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // cmbDoc
-            // 
-            this.cmbDoc.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbDoc, "cmbDoc");
-            this.cmbDoc.Name = "cmbDoc";
-            this.cmbDoc.SelectedIndexChanged += new System.EventHandler(this.cmbDoc_SelectedIndexChanged);
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.label1);
-            this.flowLayoutPanel4.Controls.Add(this.txtPatNum);
-            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // txtPatNum
-            // 
-            resources.ApplyResources(this.txtPatNum, "txtPatNum");
-            this.txtPatNum.Name = "txtPatNum";
-            this.txtPatNum.TextChanged += new System.EventHandler(this.txtPatNum_TextChanged);
-            // 
-            // flowLayoutPanel5
-            // 
-            resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
-            this.flowLayoutPanel5.Controls.Add(this.btnSave);
-            this.flowLayoutPanel5.Controls.Add(this.btnList);
-            this.flowLayoutPanel5.Controls.Add(this.btnRegister);
-            this.flowLayoutPanel5.Controls.Add(this.txtAppID);
-            this.flowLayoutPanel5.Controls.Add(this.txtPatientID);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.MediumTurquoise;
-            resources.ApplyResources(this.btnSave, "btnSave");
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnList.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.btnList, "btnList");
-            this.btnList.Name = "btnList";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.btnRegister, "btnRegister");
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // txtAppID
-            // 
-            resources.ApplyResources(this.txtAppID, "txtAppID");
-            this.txtAppID.Name = "txtAppID";
-            // 
-            // txtPatientID
-            // 
-            resources.ApplyResources(this.txtPatientID, "txtPatientID");
-            this.txtPatientID.Name = "txtPatientID";
-            this.txtPatientID.TextChanged += new System.EventHandler(this.txtPatientID_TextChanged);
-            // 
-            // lblHead1
-            // 
-            resources.ApplyResources(this.lblHead1, "lblHead1");
-            this.lblHead1.BackColor = System.Drawing.Color.LightCyan;
-            this.tableLayoutPanel1.SetColumnSpan(this.lblHead1, 5);
-            this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHead1.Name = "lblHead1";
-            this.lblHead1.UseWaitCursor = true;
-            // 
             // PID
             // 
             this.PID.DataPropertyName = "id";
@@ -432,6 +255,60 @@
             this.PBtnSelect.ReadOnly = true;
             this.PBtnSelect.Text = "Select";
             this.PBtnSelect.UseColumnTextForButtonValue = true;
+            // 
+            // dgvApp
+            // 
+            this.dgvApp.AllowUserToAddRows = false;
+            this.dgvApp.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvApp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvApp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvApp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvApp.BackgroundColor = System.Drawing.Color.White;
+            this.dgvApp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvApp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvApp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvApp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvApp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AID,
+            this.APatID,
+            this.ADocID,
+            this.APatNum,
+            this.APatName,
+            this.ADocName,
+            this.AToken,
+            this.APrevDate,
+            this.ADues,
+            this.AStatus,
+            this.ABtnStatus,
+            this.ABtnBill,
+            this.ABtnDetails});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 11.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApp.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(this.dgvApp, "dgvApp");
+            this.dgvApp.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvApp.MultiSelect = false;
+            this.dgvApp.Name = "dgvApp";
+            this.dgvApp.ReadOnly = true;
+            this.dgvApp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvApp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApp_CellContentClick);
+            this.dgvApp.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApp_RowHeaderMouseClick);
             // 
             // AID
             // 
@@ -527,6 +404,129 @@
             this.ABtnDetails.ReadOnly = true;
             this.ABtnDetails.Text = "View Details";
             this.ABtnDetails.UseColumnTextForButtonValue = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblHead1, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // flowLayoutPanel3
+            // 
+            resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
+            this.flowLayoutPanel3.Controls.Add(this.label6);
+            this.flowLayoutPanel3.Controls.Add(this.dtpAppDate);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // dtpAppDate
+            // 
+            this.dtpAppDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.dtpAppDate, "dtpAppDate");
+            this.dtpAppDate.Name = "dtpAppDate";
+            this.dtpAppDate.ValueChanged += new System.EventHandler(this.dtpAppDate_ValueChanged);
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.cmbDoc);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // cmbDoc
+            // 
+            this.cmbDoc.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbDoc, "cmbDoc");
+            this.cmbDoc.Name = "cmbDoc";
+            this.cmbDoc.SelectedIndexChanged += new System.EventHandler(this.cmbDoc_SelectedIndexChanged);
+            // 
+            // flowLayoutPanel4
+            // 
+            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
+            this.flowLayoutPanel4.Controls.Add(this.label1);
+            this.flowLayoutPanel4.Controls.Add(this.txtPatNum);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // txtPatNum
+            // 
+            resources.ApplyResources(this.txtPatNum, "txtPatNum");
+            this.txtPatNum.Name = "txtPatNum";
+            this.txtPatNum.TextChanged += new System.EventHandler(this.txtPatNum_TextChanged);
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.btnRegister);
+            this.flowLayoutPanel5.Controls.Add(this.btnSave);
+            this.flowLayoutPanel5.Controls.Add(this.btnList);
+            this.flowLayoutPanel5.Controls.Add(this.txtAppID);
+            this.flowLayoutPanel5.Controls.Add(this.txtPatientID);
+            resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnList
+            // 
+            this.btnList.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnList.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btnList, "btnList");
+            this.btnList.Name = "btnList";
+            this.btnList.UseVisualStyleBackColor = false;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btnRegister, "btnRegister");
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // txtAppID
+            // 
+            resources.ApplyResources(this.txtAppID, "txtAppID");
+            this.txtAppID.Name = "txtAppID";
+            // 
+            // txtPatientID
+            // 
+            resources.ApplyResources(this.txtPatientID, "txtPatientID");
+            this.txtPatientID.Name = "txtPatientID";
+            this.txtPatientID.TextChanged += new System.EventHandler(this.txtPatientID_TextChanged);
+            // 
+            // lblHead1
+            // 
+            resources.ApplyResources(this.lblHead1, "lblHead1");
+            this.lblHead1.BackColor = System.Drawing.Color.LightCyan;
+            this.tableLayoutPanel1.SetColumnSpan(this.lblHead1, 5);
+            this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHead1.Name = "lblHead1";
+            this.lblHead1.UseWaitCursor = true;
             // 
             // frmAppointments
             // 
