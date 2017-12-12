@@ -21,6 +21,14 @@ namespace HospitalERP
         public frmMain()
         {
             InitializeComponent();
+            LoggedUser.id = 1;
+            LoggedUser.emp_id = "ADMIN";
+            LoggedUser.type_id = 1;
+            LoggedUser.type_name = "SUPER ADMIN";
+            LoggedUser.phone = "";
+            LoggedUser.last_log_date = Convert.ToDateTime("12-12-2017");
+            LoggedUser.name = "ADMIN";
+            LoggedUser.staff_id = 0;
         }
 
         public frmMain(string empid)
@@ -40,14 +48,13 @@ namespace HospitalERP
                     LoggedUser.last_log_date = Convert.ToDateTime(dtUser.Rows[0]["log_date"].ToString());
                     LoggedUser.name = dtUser.Rows[0]["staff_name"].ToString();
                     LoggedUser.staff_id = Int32.Parse(dtUser.Rows[0]["staff_id"].ToString());
-                    LoggedUser.phone = dtUser.Rows[0]["staff_phone"].ToString();
                     usr.SetLoginDate(empid);
                     
 
                 }
                 else
                 {
-
+                    
                 }
             }
             catch (Exception ex)

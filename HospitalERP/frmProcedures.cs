@@ -16,16 +16,33 @@ namespace HospitalERP
         log4net.ILog ilog;
         ProcTypes procType = new ProcTypes();
         ProcTests procTest = new ProcTests();
+        public bool modal = false;
         public frmProcedures()
         {
             InitializeComponent();
         }
 
+        public frmProcedures(int width, int height)
+        {
+            InitializeComponent();
+            this.Size = new Size(width, height);
+            modal = true;
+        }
+
         private void frmProcedures_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            if (modal == false)
+            {
+                this.WindowState = FormWindowState.Maximized;                
+            }
+            else
+            {
+                //tabPgList.Hide();
+                tabSub.TabPages.Remove(tabPgList);
+            }
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+
             PopulateSearch();
             //ShowProcedureTests();
             PopulateProcTypeCombo(0);
@@ -73,6 +90,11 @@ namespace HospitalERP
 
                         ShowStatus(1,"Record succesfully added!");
                         clearFormFields();
+
+                        if (modal == true)
+                        {                            
+                            this.Close();
+                        }
                     }
                 }
                 else //edit record
