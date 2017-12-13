@@ -49,6 +49,9 @@ namespace HospitalERP
                     LoggedUser.name = dtUser.Rows[0]["staff_name"].ToString();
                     LoggedUser.staff_id = Int32.Parse(dtUser.Rows[0]["staff_id"].ToString());
                     usr.SetLoginDate(empid);
+                    lblEmpID.Text = LoggedUser.name;
+                    if (LoggedUser.type_id == 1)
+                        lblEmpID.Text = "SUPER ADMIN";
                     
 
                 }

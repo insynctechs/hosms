@@ -99,7 +99,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnSaveProcedure = new System.Windows.Forms.Button();
             this.txtApptProcID = new System.Windows.Forms.TextBox();
             this.cmbProcedure = new System.Windows.Forms.ComboBox();
             this.txtFee = new System.Windows.Forms.TextBox();
@@ -115,6 +114,9 @@
             this.flowLayoutPanel22 = new System.Windows.Forms.FlowLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel23 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSaveProcedure = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
             this.dgvProc = new System.Windows.Forms.DataGridView();
             this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,8 +142,6 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAddNew = new System.Windows.Forms.Button();
-            this.flowLayoutPanel23 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -171,6 +171,7 @@
             this.flowLayoutPanel21.SuspendLayout();
             this.flowLayoutPanel20.SuspendLayout();
             this.flowLayoutPanel22.SuspendLayout();
+            this.flowLayoutPanel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).BeginInit();
             this.tbPgHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -180,7 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.flowLayoutPanel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHead1
@@ -738,7 +738,7 @@
             this.txtAllergies.Location = new System.Drawing.Point(3, 21);
             this.txtAllergies.Multiline = true;
             this.txtAllergies.Name = "txtAllergies";
-            this.txtAllergies.Size = new System.Drawing.Size(458, 185);
+            this.txtAllergies.Size = new System.Drawing.Size(458, 122);
             this.txtAllergies.TabIndex = 1;
             // 
             // flowLayoutPanel15
@@ -766,7 +766,7 @@
             this.txtApptNotes.Location = new System.Drawing.Point(3, 21);
             this.txtApptNotes.Multiline = true;
             this.txtApptNotes.Name = "txtApptNotes";
-            this.txtApptNotes.Size = new System.Drawing.Size(476, 315);
+            this.txtApptNotes.Size = new System.Drawing.Size(476, 252);
             this.txtApptNotes.TabIndex = 1;
             // 
             // tbPgProc
@@ -792,8 +792,8 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.42785F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.57215F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.66599F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.33401F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.dgvProc, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -807,8 +807,8 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.97421F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.02579F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.88889F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.11111F));
             this.tableLayoutPanel4.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtApptProcID, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.cmbProcedure, 1, 1);
@@ -831,7 +831,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(349, 252);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(396, 252);
             this.tableLayoutPanel4.TabIndex = 12;
             // 
             // label12
@@ -847,23 +847,10 @@
             this.label12.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.label12.Size = new System.Drawing.Size(343, 28);
+            this.label12.Size = new System.Drawing.Size(390, 28);
             this.label12.TabIndex = 30;
             this.label12.Text = "PROCEDURE DETAILS";
             this.label12.UseWaitCursor = true;
-            // 
-            // btnSaveProcedure
-            // 
-            this.btnSaveProcedure.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSaveProcedure.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveProcedure.ForeColor = System.Drawing.Color.White;
-            this.btnSaveProcedure.Location = new System.Drawing.Point(3, 3);
-            this.btnSaveProcedure.Name = "btnSaveProcedure";
-            this.btnSaveProcedure.Size = new System.Drawing.Size(75, 33);
-            this.btnSaveProcedure.TabIndex = 72;
-            this.btnSaveProcedure.Text = "SAVE";
-            this.btnSaveProcedure.UseVisualStyleBackColor = false;
-            this.btnSaveProcedure.Click += new System.EventHandler(this.btnSaveProcedure_Click);
             // 
             // txtApptProcID
             // 
@@ -877,7 +864,7 @@
             // 
             this.cmbProcedure.DisplayMember = "name";
             this.cmbProcedure.FormattingEnabled = true;
-            this.cmbProcedure.Location = new System.Drawing.Point(145, 43);
+            this.cmbProcedure.Location = new System.Drawing.Point(157, 43);
             this.cmbProcedure.Name = "cmbProcedure";
             this.cmbProcedure.Size = new System.Drawing.Size(201, 28);
             this.cmbProcedure.TabIndex = 75;
@@ -887,7 +874,7 @@
             // 
             // txtFee
             // 
-            this.txtFee.Location = new System.Drawing.Point(145, 80);
+            this.txtFee.Location = new System.Drawing.Point(157, 80);
             this.txtFee.Name = "txtFee";
             this.txtFee.Size = new System.Drawing.Size(100, 27);
             this.txtFee.TabIndex = 69;
@@ -897,7 +884,7 @@
             // 
             this.cmbStatus.DisplayMember = "name";
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(145, 114);
+            this.cmbStatus.Location = new System.Drawing.Point(157, 114);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(200, 28);
             this.cmbStatus.TabIndex = 74;
@@ -915,7 +902,7 @@
             // 
             // txtProcNotes
             // 
-            this.txtProcNotes.Location = new System.Drawing.Point(145, 148);
+            this.txtProcNotes.Location = new System.Drawing.Point(157, 148);
             this.txtProcNotes.Multiline = true;
             this.txtProcNotes.Name = "txtProcNotes";
             this.txtProcNotes.Size = new System.Drawing.Size(201, 58);
@@ -1005,6 +992,41 @@
             this.label21.TabIndex = 66;
             this.label21.Text = "Status";
             // 
+            // flowLayoutPanel23
+            // 
+            this.flowLayoutPanel23.Controls.Add(this.btnSaveProcedure);
+            this.flowLayoutPanel23.Controls.Add(this.btnAddNew);
+            this.flowLayoutPanel23.Location = new System.Drawing.Point(157, 212);
+            this.flowLayoutPanel23.Name = "flowLayoutPanel23";
+            this.flowLayoutPanel23.Size = new System.Drawing.Size(200, 37);
+            this.flowLayoutPanel23.TabIndex = 78;
+            // 
+            // btnSaveProcedure
+            // 
+            this.btnSaveProcedure.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSaveProcedure.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProcedure.ForeColor = System.Drawing.Color.White;
+            this.btnSaveProcedure.Location = new System.Drawing.Point(3, 3);
+            this.btnSaveProcedure.Name = "btnSaveProcedure";
+            this.btnSaveProcedure.Size = new System.Drawing.Size(75, 33);
+            this.btnSaveProcedure.TabIndex = 72;
+            this.btnSaveProcedure.Text = "SAVE";
+            this.btnSaveProcedure.UseVisualStyleBackColor = false;
+            this.btnSaveProcedure.Click += new System.EventHandler(this.btnSaveProcedure_Click);
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAddNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.ForeColor = System.Drawing.Color.White;
+            this.btnAddNew.Location = new System.Drawing.Point(84, 3);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(103, 33);
+            this.btnAddNew.TabIndex = 72;
+            this.btnAddNew.Text = "ADD NEW";
+            this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNewProcedure_Click);
+            // 
             // dgvProc
             // 
             this.dgvProc.AllowUserToAddRows = false;
@@ -1048,12 +1070,12 @@
             this.dgvProc.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProc.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvProc.Location = new System.Drawing.Point(380, 3);
+            this.dgvProc.Location = new System.Drawing.Point(422, 3);
             this.dgvProc.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.dgvProc.Name = "dgvProc";
             this.dgvProc.ReadOnly = true;
             this.dgvProc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProc.Size = new System.Drawing.Size(591, 252);
+            this.dgvProc.Size = new System.Drawing.Size(549, 252);
             this.dgvProc.TabIndex = 11;
             this.dgvProc.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProc_RowHeaderMouseClick);
             // 
@@ -1339,28 +1361,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // btnAddNew
-            // 
-            this.btnAddNew.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAddNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.Location = new System.Drawing.Point(84, 3);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(103, 33);
-            this.btnAddNew.TabIndex = 72;
-            this.btnAddNew.Text = "ADD NEW";
-            this.btnAddNew.UseVisualStyleBackColor = false;
-            this.btnAddNew.Click += new System.EventHandler(this.btnAddNewProcedure_Click);
-            // 
-            // flowLayoutPanel23
-            // 
-            this.flowLayoutPanel23.Controls.Add(this.btnSaveProcedure);
-            this.flowLayoutPanel23.Controls.Add(this.btnAddNew);
-            this.flowLayoutPanel23.Location = new System.Drawing.Point(145, 212);
-            this.flowLayoutPanel23.Name = "flowLayoutPanel23";
-            this.flowLayoutPanel23.Size = new System.Drawing.Size(200, 37);
-            this.flowLayoutPanel23.TabIndex = 78;
-            // 
             // frmConsultationDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1427,6 +1427,7 @@
             this.flowLayoutPanel20.PerformLayout();
             this.flowLayoutPanel22.ResumeLayout(false);
             this.flowLayoutPanel22.PerformLayout();
+            this.flowLayoutPanel23.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).EndInit();
             this.tbPgHistory.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -1436,7 +1437,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.flowLayoutPanel23.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -95,7 +95,7 @@ namespace HospitalERP.Procedures
                 DataTable dt = new DataTable();
                 dt.Columns.Add("id");
                 dt.Columns.Add("name");
-                dt.Rows.Add(new object[] { "0", "Select Type" });
+                dt.Rows.Add(new object[] { "0", "Select Status" });
                 DataTable dt1 = new DataTable();
                 dt1 = GetStatusIDName(id);
                 foreach (DataRow dr in dt1.Rows)

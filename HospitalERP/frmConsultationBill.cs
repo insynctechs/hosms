@@ -66,7 +66,20 @@ namespace HospitalERP
 
             printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;            
             printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
-            
+            //MessageBox.Show(printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom.ToString());
+            if (chkLetterHead.Checked == true)
+            {
+                int top = 100; int bottom = 100;
+                DataTable dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_TOP");
+                if (dtOpt.Rows.Count > 0)
+                    top = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
+                dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_BOTTOM");
+                if (dtOpt.Rows.Count > 0)
+                    bottom = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
+                printDialog1.PrinterSettings.DefaultPageSettings.Margins.Top = top;
+                printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom = bottom;
+
+            }
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
                 PrinterSettings values = new PrinterSettings();                            
