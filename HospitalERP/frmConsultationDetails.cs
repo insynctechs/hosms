@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
-using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
@@ -77,18 +76,22 @@ namespace HospitalERP
             txtPatientID.Text = dt.Rows[0]["patient_id"].ToString();
             txtPatientNo.Text = dt.Rows[0]["patient_number"].ToString();
             txtPatientName.Text = dt.Rows[0]["patient_name"].ToString();
-            txtGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
-            txtDob.Text = dt.Rows[0]["dob"].ToString().Substring(0, dt.Rows[0]["dob"].ToString().IndexOf(' '));
+            if (dt.Rows[0]["gender"].ToString() == "M")
+                rbGender1.Checked = true;
+            else
+                rbGender2.Checked = true;
+
+            dtpDob.Text = dt.Rows[0]["dob"].ToString();
             txtAge.Text =  dt.Rows[0]["age"].ToString();
             txtPhone.Text  = dt.Rows[0]["phone"].ToString();
             txtNationality.Text = dt.Rows[0]["nationality"].ToString();
-            txtLastVisitDate.Text= dt.Rows[0]["prev_date"].ToString().Substring(0, dt.Rows[0]["prev_date"].ToString().IndexOf(' '));
-            txtApptDate.Text = dt.Rows[0]["appointment_date"].ToString().Substring(0, dt.Rows[0]["appointment_date"].ToString().IndexOf(' '));
+            txtLastVisitDate.Text= dt.Rows[0]["prev_date"].ToString();
+            txtApptDate.Text = dt.Rows[0]["appointment_date"].ToString();
             txtBillDue.Text = dt.Rows[0]["dues"].ToString();
             txtMedicalNotes.Text = dt.Rows[0]["history"].ToString();
             txtAllergies.Text   = dt.Rows[0]["allergies"].ToString();
             txtApptNotes.Text = dt.Rows[0]["notes"].ToString();
-            txtDoctor.Text = "Dr. " + dt.Rows[0]["doctor_name"].ToString();            
+            txtDoctor.Text = dt.Rows[0]["doctor_name"].ToString();            
             txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
         }
 

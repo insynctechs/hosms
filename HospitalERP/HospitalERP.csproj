@@ -11,22 +11,6 @@
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Projects_Linda\Hospital Management System\HospitalERP Setup1\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,26 +31,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>E862001D0B5C31402C0C98911E3106606FD328E4</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>HospitalERP_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -82,54 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAppointmentBill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAppointmentBill.Designer.cs">
-      <DependentUpon>frmAppointmentBill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmBilling.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBilling.Designer.cs">
-      <DependentUpon>frmBilling.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmChangePassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChangePassword.Designer.cs">
-      <DependentUpon>frmChangePassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmConsultationBill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConsultationBill.Designer.cs">
-      <DependentUpon>frmConsultationBill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmConsultationDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConsultationDetails.Designer.cs">
-      <DependentUpon>frmConsultationDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmConsultations.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConsultations.Designer.cs">
-      <DependentUpon>frmConsultations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAppointments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAppointments.Designer.cs">
-      <DependentUpon>frmAppointments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDashboard.Designer.cs">
-      <DependentUpon>frmDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDepartments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,35 +64,11 @@
     <Compile Include="frmDoctors.Designer.cs">
       <DependentUpon>frmDoctors.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmOptions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOptions.Designer.cs">
-      <DependentUpon>frmOptions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProcedures.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProcedures.Designer.cs">
-      <DependentUpon>frmProcedures.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProceduresBill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProceduresBill.Designer.cs">
-      <DependentUpon>frmProceduresBill.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProcTypes.cs">
       <SubType>Form</SubType>
@@ -197,74 +95,20 @@
       <DependentUpon>frmUserRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DBHelper.cs" />
-    <Compile Include="Helpers\Utils.cs" />
-    <Compile Include="frmPatient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPatient.Designer.cs">
-      <DependentUpon>frmPatient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Procedures\Appointments.cs" />
-    <Compile Include="Procedures\Bill.cs" />
-    <Compile Include="Procedures\ConsultationDetails.cs" />
     <Compile Include="Procedures\Departments.cs" />
-    <Compile Include="Procedures\Doctors.cs" />
-    <Compile Include="Procedures\LoggedUser.cs" />
-    <Compile Include="Procedures\Menus.cs" />
-    <Compile Include="Procedures\OptionVals.cs" />
-    <Compile Include="Procedures\Patients.cs" />
-    <Compile Include="Procedures\ProcTests.cs" />
     <Compile Include="Procedures\ProcTypes.cs" />
-    <Compile Include="Procedures\Staffs.cs" />
     <Compile Include="Procedures\StaffTypes.cs" />
     <Compile Include="Procedures\UserRoles.cs" />
-    <Compile Include="Procedures\Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAppointmentBill.resx">
-      <DependentUpon>frmAppointmentBill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBilling.resx">
-      <DependentUpon>frmBilling.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChangePassword.resx">
-      <DependentUpon>frmChangePassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultationBill.resx">
-      <DependentUpon>frmConsultationBill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultationDetails.resx">
-      <DependentUpon>frmConsultationDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultations.resx">
-      <DependentUpon>frmConsultations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAppointments.resx">
-      <DependentUpon>frmAppointments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDashboard.resx">
-      <DependentUpon>frmDashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDepartments.resx">
       <DependentUpon>frmDepartments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDoctors.resx">
       <DependentUpon>frmDoctors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmOptions.resx">
-      <DependentUpon>frmOptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProcedures.resx">
-      <DependentUpon>frmProcedures.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProceduresBill.resx">
-      <DependentUpon>frmProceduresBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcTypes.resx">
       <DependentUpon>frmProcTypes.cs</DependentUpon>
@@ -278,9 +122,6 @@
     <EmbeddedResource Include="frmUserRoles.resx">
       <DependentUpon>frmUserRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPatient.resx">
-      <DependentUpon>frmPatient.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -289,12 +130,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="HospitalERP_TemporaryKey.pfx" />
     <None Include="packages.config" />
-    <None Include="packages\log4net.2.0.8\log4net.2.0.8.nupkg" />
-    <None Include="packages\Microsoft.ApplicationBlocks.Data.2.0.0\Microsoft.ApplicationBlocks.Data.2.0.0.nupkg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -307,51 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="images\client-logo.jpg" />
-    <None Include="images\calendar.png" />
-    <None Include="images\bill.png" />
-    <None Include="images\registration.png" />
-    <None Include="images\dashboard-icon.png" />
-    <None Include="images\patients.png" />
-    <None Include="images\registration2.png" />
-    <None Include="images\billing.png" />
-    <None Include="images\doctors.png" />
-    <None Include="images\staffs.png" />
-    <None Include="images\staff_types.png" />
-    <None Include="images\department.png" />
-    <None Include="images\procedure.png" />
-    <None Include="images\procedure_types.png" />
-    <None Include="images\user_roles.png" />
-    <None Include="images\options.png" />
-    <None Include="images\reports.png" />
-    <None Include="images\close.png" />
-    <Content Include="packages\log4net.2.0.8\lib\net20-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.8\lib\net20-full\log4net.xml" />
-    <Content Include="packages\log4net.2.0.8\lib\net35-client\log4net.dll" />
-    <Content Include="packages\log4net.2.0.8\lib\net35-client\log4net.xml" />
-    <Content Include="packages\log4net.2.0.8\lib\net35-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.8\lib\net35-full\log4net.xml" />
-    <Content Include="packages\log4net.2.0.8\lib\net40-client\log4net.dll" />
-    <Content Include="packages\log4net.2.0.8\lib\net40-client\log4net.xml" />
-    <Content Include="packages\log4net.2.0.8\lib\net40-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.8\lib\net40-full\log4net.xml" />
-    <Content Include="packages\log4net.2.0.8\lib\net45-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.8\lib\net45-full\log4net.xml" />
-    <Content Include="packages\log4net.2.0.8\lib\netstandard1.3\log4net.dll" />
-    <Content Include="packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net20\Microsoft.ApplicationBlocks.Data.dll" />
-    <Content Include="packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net30\Microsoft.ApplicationBlocks.Data.dll" />
-    <Content Include="packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net35\Microsoft.ApplicationBlocks.Data.dll" />
-    <Content Include="packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net40\Microsoft.ApplicationBlocks.Data.dll" />
-    <Content Include="packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net45\Microsoft.ApplicationBlocks.Data.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

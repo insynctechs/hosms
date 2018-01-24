@@ -36,13 +36,13 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpAppDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbDoc = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblStatusCombo = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.btnList = new System.Windows.Forms.Button();
             this.dgvApp = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbDoc = new System.Windows.Forms.ComboBox();
+            this.btnList = new System.Windows.Forms.Button();
             this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,26 +130,6 @@
             this.dtpAppDate.TabIndex = 1;
             this.dtpAppDate.ValueChanged += new System.EventHandler(this.dtpAppDate_ValueChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(158, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Doctor: ";
-            // 
-            // cmbDoc
-            // 
-            this.cmbDoc.FormattingEnabled = true;
-            this.cmbDoc.Location = new System.Drawing.Point(228, 3);
-            this.cmbDoc.Name = "cmbDoc";
-            this.cmbDoc.Size = new System.Drawing.Size(200, 21);
-            this.cmbDoc.TabIndex = 53;
-            this.cmbDoc.SelectedIndexChanged += new System.EventHandler(this.cmbDoc_SelectedIndexChanged);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.lblStatusCombo);
@@ -179,19 +159,6 @@
             this.cmbStatus.Size = new System.Drawing.Size(200, 21);
             this.cmbStatus.TabIndex = 53;
             this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
-            // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnList.ForeColor = System.Drawing.Color.White;
-            this.btnList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnList.Location = new System.Drawing.Point(275, 3);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(140, 29);
-            this.btnList.TabIndex = 54;
-            this.btnList.Text = "REFRESH";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // dgvApp
             // 
@@ -249,6 +216,39 @@
             this.dgvApp.TabIndex = 12;
             this.dgvApp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApp_CellContentClick);
             this.dgvApp.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApp_RowHeaderMouseClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(158, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Doctor: ";
+            // 
+            // cmbDoc
+            // 
+            this.cmbDoc.FormattingEnabled = true;
+            this.cmbDoc.Location = new System.Drawing.Point(228, 3);
+            this.cmbDoc.Name = "cmbDoc";
+            this.cmbDoc.Size = new System.Drawing.Size(200, 21);
+            this.cmbDoc.TabIndex = 53;
+            this.cmbDoc.SelectedIndexChanged += new System.EventHandler(this.cmbDoc_SelectedIndexChanged);
+            // 
+            // btnList
+            // 
+            this.btnList.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnList.ForeColor = System.Drawing.Color.White;
+            this.btnList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnList.Location = new System.Drawing.Point(275, 3);
+            this.btnList.Name = "btnList";
+            this.btnList.Size = new System.Drawing.Size(140, 29);
+            this.btnList.TabIndex = 54;
+            this.btnList.Text = "REFRESH";
+            this.btnList.UseVisualStyleBackColor = false;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // AID
             // 
@@ -347,7 +347,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 730);
-            this.ControlBox = false;
             this.Controls.Add(this.dgvApp);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmConsultations";

@@ -973,7 +973,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 627);
-            this.ControlBox = false;
             this.Controls.Add(this.tabStaffs);
             this.Name = "frmStaffs";
             this.Text = "Manage Staffs";

@@ -123,16 +123,15 @@
             this.label3.ForeColor = System.Drawing.Color.Bisque;
             this.label3.Location = new System.Drawing.Point(162, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(318, 65);
+            this.label3.Size = new System.Drawing.Size(248, 65);
             this.label3.TabIndex = 60;
-            this.label3.Text = "HEALTHSYNC";
+            this.label3.Text = "EEZCLINIC";
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(102)))));
+            this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(585, 307);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblStatus);
@@ -142,12 +141,7 @@
             this.Controls.Add(this.txtEmpId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmLogin";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);

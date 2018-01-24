@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHead1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -48,9 +48,13 @@
             this.txtPatientName = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.rbGender1 = new System.Windows.Forms.RadioButton();
+            this.rbGender2 = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dtpDob = new System.Windows.Forms.DateTimePicker();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -138,12 +142,11 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtGender = new System.Windows.Forms.TextBox();
-            this.txtDob = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel11.SuspendLayout();
             this.flowLayoutPanel12.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -194,7 +197,7 @@
             this.lblHead1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.lblHead1.Name = "lblHead1";
             this.lblHead1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.lblHead1.Size = new System.Drawing.Size(1031, 28);
+            this.lblHead1.Size = new System.Drawing.Size(1063, 28);
             this.lblHead1.TabIndex = 32;
             this.lblHead1.Text = "PATIENT DETAILS";
             this.lblHead1.UseWaitCursor = true;
@@ -208,7 +211,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel8, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblHead1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 1);
@@ -217,9 +219,10 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel9, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel8, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel14, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel6, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel19, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel6, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -255,13 +258,10 @@
             // 
             // txtPatientNo
             // 
-            this.txtPatientNo.BackColor = System.Drawing.Color.White;
-            this.txtPatientNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPatientNo.ForeColor = System.Drawing.Color.Gray;
             this.txtPatientNo.Location = new System.Drawing.Point(3, 21);
             this.txtPatientNo.Name = "txtPatientNo";
             this.txtPatientNo.ReadOnly = true;
-            this.txtPatientNo.Size = new System.Drawing.Size(110, 18);
+            this.txtPatientNo.Size = new System.Drawing.Size(110, 25);
             this.txtPatientNo.TabIndex = 1;
             this.txtPatientNo.TabStop = false;
             // 
@@ -287,25 +287,22 @@
             // 
             // txtPatientName
             // 
-            this.txtPatientName.BackColor = System.Drawing.Color.White;
-            this.txtPatientName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPatientName.ForeColor = System.Drawing.Color.Gray;
             this.txtPatientName.Location = new System.Drawing.Point(3, 21);
             this.txtPatientName.Name = "txtPatientName";
             this.txtPatientName.ReadOnly = true;
-            this.txtPatientName.Size = new System.Drawing.Size(170, 18);
+            this.txtPatientName.Size = new System.Drawing.Size(170, 25);
             this.txtPatientName.TabIndex = 1;
             this.txtPatientName.TabStop = false;
             // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Controls.Add(this.label4);
-            this.flowLayoutPanel4.Controls.Add(this.txtGender);
+            this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel7);
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(328, 43);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(130, 59);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(162, 59);
             this.flowLayoutPanel4.TabIndex = 33;
             // 
             // label4
@@ -317,12 +314,41 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Gender";
             // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Controls.Add(this.rbGender1);
+            this.flowLayoutPanel7.Controls.Add(this.rbGender2);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 21);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(173, 27);
+            this.flowLayoutPanel7.TabIndex = 41;
+            // 
+            // rbGender1
+            // 
+            this.rbGender1.AutoSize = true;
+            this.rbGender1.Location = new System.Drawing.Point(3, 3);
+            this.rbGender1.Name = "rbGender1";
+            this.rbGender1.Size = new System.Drawing.Size(57, 22);
+            this.rbGender1.TabIndex = 4;
+            this.rbGender1.Text = "Male";
+            this.rbGender1.UseVisualStyleBackColor = true;
+            // 
+            // rbGender2
+            // 
+            this.rbGender2.AutoSize = true;
+            this.rbGender2.Location = new System.Drawing.Point(66, 3);
+            this.rbGender2.Name = "rbGender2";
+            this.rbGender2.Size = new System.Drawing.Size(72, 22);
+            this.rbGender2.TabIndex = 5;
+            this.rbGender2.Text = "Female";
+            this.rbGender2.UseVisualStyleBackColor = true;
+            // 
             // flowLayoutPanel11
             // 
             this.flowLayoutPanel11.Controls.Add(this.label8);
             this.flowLayoutPanel11.Controls.Add(this.flowLayoutPanel12);
             this.flowLayoutPanel11.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(464, 43);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(496, 43);
             this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
             this.flowLayoutPanel11.Size = new System.Drawing.Size(162, 59);
@@ -339,22 +365,28 @@
             // 
             // flowLayoutPanel12
             // 
-            this.flowLayoutPanel12.Controls.Add(this.txtDob);
+            this.flowLayoutPanel12.Controls.Add(this.dtpDob);
             this.flowLayoutPanel12.Controls.Add(this.txtAge);
             this.flowLayoutPanel12.Location = new System.Drawing.Point(3, 21);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Size = new System.Drawing.Size(173, 29);
             this.flowLayoutPanel12.TabIndex = 41;
             // 
+            // dtpDob
+            // 
+            this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDob.Location = new System.Drawing.Point(3, 3);
+            this.dtpDob.Name = "dtpDob";
+            this.dtpDob.Size = new System.Drawing.Size(100, 25);
+            this.dtpDob.TabIndex = 0;
+            this.dtpDob.TabStop = false;
+            // 
             // txtAge
             // 
-            this.txtAge.BackColor = System.Drawing.Color.White;
-            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAge.Enabled = false;
             this.txtAge.Location = new System.Drawing.Point(109, 3);
             this.txtAge.Name = "txtAge";
             this.txtAge.ReadOnly = true;
-            this.txtAge.Size = new System.Drawing.Size(40, 18);
+            this.txtAge.Size = new System.Drawing.Size(40, 25);
             this.txtAge.TabIndex = 1;
             this.txtAge.TabStop = false;
             // 
@@ -363,7 +395,7 @@
             this.flowLayoutPanel3.Controls.Add(this.label3);
             this.flowLayoutPanel3.Controls.Add(this.txtPhone);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(632, 43);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(664, 43);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(156, 59);
@@ -380,14 +412,10 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.BackColor = System.Drawing.Color.White;
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPhone.Enabled = false;
-            this.txtPhone.ForeColor = System.Drawing.Color.Gray;
             this.txtPhone.Location = new System.Drawing.Point(3, 21);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.ReadOnly = true;
-            this.txtPhone.Size = new System.Drawing.Size(150, 18);
+            this.txtPhone.Size = new System.Drawing.Size(150, 25);
             this.txtPhone.TabIndex = 1;
             this.txtPhone.TabStop = false;
             // 
@@ -396,7 +424,7 @@
             this.flowLayoutPanel5.Controls.Add(this.label5);
             this.flowLayoutPanel5.Controls.Add(this.txtNationality);
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(794, 43);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(826, 43);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(170, 53);
@@ -413,14 +441,10 @@
             // 
             // txtNationality
             // 
-            this.txtNationality.BackColor = System.Drawing.Color.White;
-            this.txtNationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNationality.Enabled = false;
-            this.txtNationality.ForeColor = System.Drawing.Color.Gray;
             this.txtNationality.Location = new System.Drawing.Point(3, 21);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.ReadOnly = true;
-            this.txtNationality.Size = new System.Drawing.Size(160, 18);
+            this.txtNationality.Size = new System.Drawing.Size(160, 25);
             this.txtNationality.TabIndex = 1;
             // 
             // flowLayoutPanel9
@@ -429,7 +453,7 @@
             this.flowLayoutPanel9.Controls.Add(this.txtPatientID);
             this.flowLayoutPanel9.Controls.Add(this.txtAppID);
             this.flowLayoutPanel9.Controls.Add(this.txtDoctorID);
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(632, 108);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(664, 108);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
             this.flowLayoutPanel9.Size = new System.Drawing.Size(332, 58);
             this.flowLayoutPanel9.TabIndex = 35;
@@ -463,7 +487,7 @@
             this.flowLayoutPanel8.Controls.Add(this.label6);
             this.flowLayoutPanel8.Controls.Add(this.txtBillDue);
             this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(464, 110);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(328, 110);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Size = new System.Drawing.Size(120, 56);
@@ -480,14 +504,10 @@
             // 
             // txtBillDue
             // 
-            this.txtBillDue.BackColor = System.Drawing.Color.White;
-            this.txtBillDue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBillDue.Enabled = false;
-            this.txtBillDue.ForeColor = System.Drawing.Color.Red;
             this.txtBillDue.Location = new System.Drawing.Point(3, 21);
             this.txtBillDue.Name = "txtBillDue";
             this.txtBillDue.ReadOnly = true;
-            this.txtBillDue.Size = new System.Drawing.Size(100, 18);
+            this.txtBillDue.Size = new System.Drawing.Size(100, 25);
             this.txtBillDue.TabIndex = 1;
             // 
             // flowLayoutPanel14
@@ -512,14 +532,10 @@
             // 
             // txtDoctor
             // 
-            this.txtDoctor.BackColor = System.Drawing.Color.White;
-            this.txtDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDoctor.Enabled = false;
-            this.txtDoctor.ForeColor = System.Drawing.Color.Gray;
             this.txtDoctor.Location = new System.Drawing.Point(3, 21);
             this.txtDoctor.Name = "txtDoctor";
             this.txtDoctor.ReadOnly = true;
-            this.txtDoctor.Size = new System.Drawing.Size(170, 18);
+            this.txtDoctor.Size = new System.Drawing.Size(170, 25);
             this.txtDoctor.TabIndex = 1;
             // 
             // flowLayoutPanel6
@@ -527,7 +543,7 @@
             this.flowLayoutPanel6.Controls.Add(this.label9);
             this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel13);
             this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(328, 110);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(496, 110);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(122, 53);
@@ -548,7 +564,7 @@
             this.flowLayoutPanel13.Controls.Add(this.txtLastVisitDate);
             this.flowLayoutPanel13.Location = new System.Drawing.Point(3, 21);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(127, 29);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(173, 29);
             this.flowLayoutPanel13.TabIndex = 41;
             // 
             // lblLastVisitDate
@@ -561,14 +577,10 @@
             // 
             // txtLastVisitDate
             // 
-            this.txtLastVisitDate.BackColor = System.Drawing.Color.White;
-            this.txtLastVisitDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastVisitDate.Enabled = false;
-            this.txtLastVisitDate.ForeColor = System.Drawing.Color.Gray;
             this.txtLastVisitDate.Location = new System.Drawing.Point(9, 3);
             this.txtLastVisitDate.Name = "txtLastVisitDate";
             this.txtLastVisitDate.ReadOnly = true;
-            this.txtLastVisitDate.Size = new System.Drawing.Size(100, 18);
+            this.txtLastVisitDate.Size = new System.Drawing.Size(100, 25);
             this.txtLastVisitDate.TabIndex = 1;
             // 
             // flowLayoutPanel19
@@ -593,14 +605,10 @@
             // 
             // txtApptDate
             // 
-            this.txtApptDate.BackColor = System.Drawing.Color.White;
-            this.txtApptDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApptDate.Enabled = false;
-            this.txtApptDate.ForeColor = System.Drawing.Color.Gray;
             this.txtApptDate.Location = new System.Drawing.Point(3, 21);
             this.txtApptDate.Name = "txtApptDate";
             this.txtApptDate.ReadOnly = true;
-            this.txtApptDate.Size = new System.Drawing.Size(100, 18);
+            this.txtApptDate.Size = new System.Drawing.Size(100, 25);
             this.txtApptDate.TabIndex = 1;
             // 
             // tabConsult
@@ -1023,24 +1031,24 @@
             // 
             this.dgvProc.AllowUserToAddRows = false;
             this.dgvProc.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvProc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvProc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvProc.BackgroundColor = System.Drawing.Color.White;
             this.dgvProc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvProc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cid,
@@ -1052,14 +1060,14 @@
             this.cstatus_id,
             this.notes,
             this.Status});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProc.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProc.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProc.GridColor = System.Drawing.Color.LightCyan;
             this.dgvProc.Location = new System.Drawing.Point(422, 3);
@@ -1171,24 +1179,24 @@
             // 
             this.dgvApptHistory.AllowUserToAddRows = false;
             this.dgvApptHistory.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvApptHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvApptHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvApptHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvApptHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvApptHistory.BackgroundColor = System.Drawing.Color.White;
             this.dgvApptHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvApptHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvApptHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApptHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApptHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvApptHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvApptHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colid,
@@ -1196,14 +1204,14 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApptHistory.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApptHistory.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvApptHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvApptHistory.GridColor = System.Drawing.Color.LightCyan;
             this.dgvApptHistory.Location = new System.Drawing.Point(0, 0);
@@ -1272,24 +1280,24 @@
             // 
             this.dgvHistoryProcedures.AllowUserToAddRows = false;
             this.dgvHistoryProcedures.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvHistoryProcedures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvHistoryProcedures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvHistoryProcedures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistoryProcedures.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHistoryProcedures.BackgroundColor = System.Drawing.Color.White;
             this.dgvHistoryProcedures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvHistoryProcedures.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvHistoryProcedures.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryProcedures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryProcedures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvHistoryProcedures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistoryProcedures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
@@ -1297,14 +1305,14 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryProcedures.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryProcedures.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvHistoryProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHistoryProcedures.GridColor = System.Drawing.Color.LightCyan;
             this.dgvHistoryProcedures.Location = new System.Drawing.Point(0, 0);
@@ -1353,37 +1361,12 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // txtGender
-            // 
-            this.txtGender.BackColor = System.Drawing.Color.White;
-            this.txtGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtGender.ForeColor = System.Drawing.Color.Gray;
-            this.txtGender.Location = new System.Drawing.Point(3, 21);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.ReadOnly = true;
-            this.txtGender.Size = new System.Drawing.Size(117, 18);
-            this.txtGender.TabIndex = 1;
-            this.txtGender.TabStop = false;
-            // 
-            // txtDob
-            // 
-            this.txtDob.BackColor = System.Drawing.Color.White;
-            this.txtDob.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDob.ForeColor = System.Drawing.Color.Gray;
-            this.txtDob.Location = new System.Drawing.Point(3, 3);
-            this.txtDob.Name = "txtDob";
-            this.txtDob.ReadOnly = true;
-            this.txtDob.Size = new System.Drawing.Size(100, 18);
-            this.txtDob.TabIndex = 1;
-            this.txtDob.TabStop = false;
-            // 
             // frmConsultationDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 693);
-            this.ControlBox = false;
             this.Controls.Add(this.tabConsult);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
@@ -1400,6 +1383,8 @@
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel11.ResumeLayout(false);
             this.flowLayoutPanel11.PerformLayout();
             this.flowLayoutPanel12.ResumeLayout(false);
@@ -1471,9 +1456,13 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
+        private System.Windows.Forms.RadioButton rbGender1;
+        private System.Windows.Forms.RadioButton rbGender2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
+        private System.Windows.Forms.DateTimePicker dtpDob;
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Label label5;
@@ -1558,7 +1547,5 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel23;
         private System.Windows.Forms.Button btnAddNew;
-        private System.Windows.Forms.TextBox txtGender;
-        private System.Windows.Forms.TextBox txtDob;
     }
 }
