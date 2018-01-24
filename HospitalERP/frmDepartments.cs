@@ -19,16 +19,16 @@ namespace HospitalERP
         public frmDepartments()
         {
             InitializeComponent();
-            
+            //this.WindowState = FormWindowState.Maximized;
+
+
 
         }
 
         private void frmDepartments_Load(object sender, EventArgs e)
         {
             
-            this.WindowState = FormWindowState.Maximized;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.WindowState = FormWindowState.Maximized;            
             PopulateSearch();
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);

@@ -91,13 +91,23 @@ namespace HospitalERP
                 lnkChangePwd.Visible = false;
                 tblLoginPanel.Visible = false;
             }
+            frmDashboard frm = new frmDashboard();
+            frm.MdiParent = this;
+            frm.Show();
 
-            
         }
         
 
         private void menuItemStaffOthers_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmStaffs))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmStaffs frm = new frmStaffs();
             frm.MdiParent = this;
             frm.Show();
@@ -105,6 +115,14 @@ namespace HospitalERP
 
         private void menuItemDocs_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmDoctors))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmDoctors frm = new frmDoctors();
             frm.MdiParent = this;
             frm.Show();
@@ -112,7 +130,15 @@ namespace HospitalERP
 
         private void menuItemStaffType_Click(object sender, EventArgs e)
         {
-            
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmStaffTypes))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmStaffTypes frm = new frmStaffTypes();
             frm.MdiParent = this;
             frm.Show();
@@ -120,6 +146,14 @@ namespace HospitalERP
 
         private void menuItemDept_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmDepartments))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmDepartments frm = new frmDepartments();
             frm.MdiParent = this;
             frm.Show();
@@ -127,6 +161,14 @@ namespace HospitalERP
 
         private void menuItemProc_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmProcedures))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmProcedures frm = new frmProcedures();
             frm.MdiParent = this;
             frm.Show();
@@ -134,6 +176,14 @@ namespace HospitalERP
 
         private void menuItemUserRoles_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmUserRoles))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmUserRoles frm = new frmUserRoles();
             frm.MdiParent = this;
             frm.Show();
@@ -141,6 +191,14 @@ namespace HospitalERP
 
         private void menuItemProcType_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmProcTypes))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmProcTypes frm = new frmProcTypes();
             frm.MdiParent = this;
             frm.Show();
@@ -148,6 +206,14 @@ namespace HospitalERP
 
         private void menuItemOpt_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmOptions))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmOptions frm = new frmOptions();
             frm.MdiParent = this;
             frm.Show();
@@ -169,6 +235,7 @@ namespace HospitalERP
             foreach (var child in parent.MdiChildren)
             {
                 closeChildren(child);
+                child.Dispose();
                 child.Close();
             }
         }
@@ -185,6 +252,14 @@ namespace HospitalERP
 
         private void menuItemReg_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmPatient))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmPatient frm = new frmPatient();
             frm.MdiParent = this;
             frm.Show();
@@ -199,6 +274,14 @@ namespace HospitalERP
         {
             if (LoggedUser.type_name.ToUpper() == "DOCTOR")
             {
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(frmConsultations))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
                 frmConsultations frm = new frmConsultations();
                 frm.MdiParent = this;
                 frm.Show();
@@ -206,6 +289,14 @@ namespace HospitalERP
             else
             {
 
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(frmAppointments))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
                 frmAppointments frm = new frmAppointments();
                 frm.MdiParent = this;
                 frm.Show();
@@ -215,6 +306,14 @@ namespace HospitalERP
 
         private void menuItemBillSearch_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmBilling))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmBilling frm = new frmBilling();
             frm.MdiParent = this;
             frm.Show();
@@ -222,6 +321,14 @@ namespace HospitalERP
 
         private void menuItemPatSearch_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmPatient))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
             frmPatient frm = new frmPatient(1);
             frm.MdiParent = this;
             frm.Show();
@@ -236,6 +343,115 @@ namespace HospitalERP
         {
             frmChangePassword frm = new frmChangePassword();
             frm.ShowDialog();
+        }
+
+        
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmDashboard))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            frmDashboard frm = new frmDashboard();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnChildClose_Click(object sender, EventArgs e)
+        {
+            //this.ActiveMdiChild.Dispose();
+            this.ActiveMdiChild.Close();
+            int childCount = getChildCount();
+            if(childCount == 0)
+                btnChildClose.Visible = false;
+            else
+                btnChildClose.Visible = true;
+        }
+
+        private void MainMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
+        }
+
+        private void frmMain_MdiChildActivate(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() != typeof(frmDashboard) && form.GetType() != typeof(frmMain) && form.GetType() != typeof(frmLogin))
+                {
+                    btnChildClose.Visible = true;
+                    //MessageBox.Show(form.GetType().Name);
+                    return;
+                }
+            }
+            
+            
+        }
+
+        public void DisposeAllButThis(Form form)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.GetType() == form.GetType()
+                    && frm != form)
+                {
+                    frm.Dispose();
+                    frm.Close();
+                }
+            }
+        }
+
+        
+
+        public int getChildCount()
+        {
+            int childCount = 0;
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.GetType() != typeof(frmDashboard) && frm.GetType() != typeof(frmMain) && frm.GetType() != typeof(frmLogin))
+                {
+                    childCount++;
+                }
+            }
+            return childCount;
+        }
+
+        private void btnApp_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmAppointments))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            frmAppointments frm = new frmAppointments();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmPatient))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            frmPatient frm = new frmPatient();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }
