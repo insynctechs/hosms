@@ -422,6 +422,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.ControlBox = false;
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmBilling";
