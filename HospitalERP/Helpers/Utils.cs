@@ -45,5 +45,27 @@ namespace HospitalERP.Helpers
             string format = String.Format("{{0:0.{0}}}", new string('0', decimalPlaces));
             return String.Format(format, d);
         }
+
+        public static string FormatDoctorName(string name, bool caps=false)
+        {
+            if(name.StartsWith("Dr."))
+                return caps ? name.ToUpper() : name;
+            else 
+                return caps? ("Dr. " + name).ToUpper() : "Dr. " + name;            
+        }
+
+        public static string FormatDateShort(string strDate)
+        {
+            return DateTime.Parse(strDate).ToShortDateString(); 
+        }
+
+        public static string FormatAddress(string address, string city, string state, string zip)
+        {
+            string address1 = !string.IsNullOrEmpty(address) ? (address + ",\r\n") : address;
+            string city1 = !string.IsNullOrEmpty(city) ? (city + ", ") : city;
+            string zip1 = !string.IsNullOrEmpty(zip) ? (" - " + zip) : zip;
+            return string.Format("{0}{1}{2}{3}", address1, city1, state, zip1);
+
+        }
     }
 }

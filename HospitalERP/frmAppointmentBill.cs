@@ -76,16 +76,12 @@ namespace HospitalERP
             DataTable dtPat = pat.getDetailedPatientRecordFromID(patient_id, appointment_id);
             txtPatNum.Text = dtPat.Rows[0]["patient_number"].ToString();
             txtPatName.Text = dtPat.Rows[0]["patient_name"].ToString();
-            string gender = dtPat.Rows[0]["gender"].ToString();
-            if (gender == "M")
-                rbGender1.Checked = true;
-            else
-                rbGender2.Checked = true;
+            txtGender.Text = Utils.Gender[dtPat.Rows[0]["gender"].ToString()];
             txtDob.Text = Convert.ToDateTime(dtPat.Rows[0]["dob"].ToString()).ToShortDateString();
             txtAge.Text = dtPat.Rows[0]["age"].ToString();
             txtNationality.Text = dtPat.Rows[0]["nationality"].ToString();
             txtPhone.Text = dtPat.Rows[0]["phone"].ToString();
-            txtAddress.Text = dtPat.Rows[0]["address"].ToString() + "\r\n" + dtPat.Rows[0]["city"].ToString() + ", " + dtPat.Rows[0]["state"].ToString() + " " + dtPat.Rows[0]["zip"].ToString();
+            txtAddress.Text = Utils.FormatAddress(dtPat.Rows[0]["address"].ToString() , dtPat.Rows[0]["city"].ToString() , dtPat.Rows[0]["state"].ToString() , dtPat.Rows[0]["zip"].ToString());
             if(dtPat.Rows[0]["meet_date"].ToString()!= "" && dtPat.Rows[0]["meet_date"].ToString() != null)
                 txtMeetDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
             txtDoctor.Text = dtPat.Rows[0]["doctor_name"].ToString();

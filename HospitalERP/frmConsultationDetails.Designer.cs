@@ -29,53 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblHead1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPatientNo = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtPatientName = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtAge = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNationality = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.txtAppID = new System.Windows.Forms.TextBox();
             this.txtDoctorID = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBillDue = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtDoctor = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblLastVisitDate = new System.Windows.Forms.Label();
-            this.txtLastVisitDate = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtApptDate = new System.Windows.Forms.TextBox();
             this.tabConsult = new System.Windows.Forms.TabControl();
             this.tbPgDiag = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -138,22 +106,35 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblHead1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPatientNo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPatientName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtGender = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtDob = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNationality = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDoctor = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtMeetDate = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtDues = new System.Windows.Forms.TextBox();
+            this.txtLastVisitDate = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel11.SuspendLayout();
-            this.flowLayoutPanel12.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
-            this.flowLayoutPanel8.SuspendLayout();
-            this.flowLayoutPanel14.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
-            this.flowLayoutPanel13.SuspendLayout();
-            this.flowLayoutPanel19.SuspendLayout();
             this.tabConsult.SuspendLayout();
             this.tbPgDiag.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -178,48 +159,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblHead1
-            // 
-            this.lblHead1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHead1.AutoSize = true;
-            this.lblHead1.BackColor = System.Drawing.Color.LightCyan;
-            this.tableLayoutPanel1.SetColumnSpan(this.lblHead1, 6);
-            this.lblHead1.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
-            this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHead1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHead1.Location = new System.Drawing.Point(18, 10);
-            this.lblHead1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.lblHead1.Name = "lblHead1";
-            this.lblHead1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.lblHead1.Size = new System.Drawing.Size(1031, 28);
-            this.lblHead1.TabIndex = 32;
-            this.lblHead1.Text = "PATIENT DETAILS";
-            this.lblHead1.UseWaitCursor = true;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel8, 3, 2);
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblHead1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel11, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel9, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel14, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel19, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel6, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel9, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -233,375 +187,52 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 180);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.txtPatientNo);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 43);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(120, 59);
-            this.flowLayoutPanel1.TabIndex = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Patient Number";
-            // 
-            // txtPatientNo
-            // 
-            this.txtPatientNo.BackColor = System.Drawing.Color.White;
-            this.txtPatientNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPatientNo.ForeColor = System.Drawing.Color.Gray;
-            this.txtPatientNo.Location = new System.Drawing.Point(3, 21);
-            this.txtPatientNo.Name = "txtPatientNo";
-            this.txtPatientNo.ReadOnly = true;
-            this.txtPatientNo.Size = new System.Drawing.Size(110, 18);
-            this.txtPatientNo.TabIndex = 1;
-            this.txtPatientNo.TabStop = false;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Controls.Add(this.txtPatientName);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(146, 43);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(176, 59);
-            this.flowLayoutPanel2.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Patient Name";
-            // 
-            // txtPatientName
-            // 
-            this.txtPatientName.BackColor = System.Drawing.Color.White;
-            this.txtPatientName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPatientName.ForeColor = System.Drawing.Color.Gray;
-            this.txtPatientName.Location = new System.Drawing.Point(3, 21);
-            this.txtPatientName.Name = "txtPatientName";
-            this.txtPatientName.ReadOnly = true;
-            this.txtPatientName.Size = new System.Drawing.Size(170, 18);
-            this.txtPatientName.TabIndex = 1;
-            this.txtPatientName.TabStop = false;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.label4);
-            this.flowLayoutPanel4.Controls.Add(this.txtGender);
-            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(328, 43);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(130, 59);
-            this.flowLayoutPanel4.TabIndex = 33;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 18);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Gender";
-            // 
-            // flowLayoutPanel11
-            // 
-            this.flowLayoutPanel11.Controls.Add(this.label8);
-            this.flowLayoutPanel11.Controls.Add(this.flowLayoutPanel12);
-            this.flowLayoutPanel11.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(464, 43);
-            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(162, 59);
-            this.flowLayoutPanel11.TabIndex = 33;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(139, 18);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Date of Birth and Age";
-            // 
-            // flowLayoutPanel12
-            // 
-            this.flowLayoutPanel12.Controls.Add(this.txtDob);
-            this.flowLayoutPanel12.Controls.Add(this.txtAge);
-            this.flowLayoutPanel12.Location = new System.Drawing.Point(3, 21);
-            this.flowLayoutPanel12.Name = "flowLayoutPanel12";
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(173, 29);
-            this.flowLayoutPanel12.TabIndex = 41;
-            // 
-            // txtAge
-            // 
-            this.txtAge.BackColor = System.Drawing.Color.White;
-            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAge.Enabled = false;
-            this.txtAge.Location = new System.Drawing.Point(109, 3);
-            this.txtAge.Name = "txtAge";
-            this.txtAge.ReadOnly = true;
-            this.txtAge.Size = new System.Drawing.Size(40, 18);
-            this.txtAge.TabIndex = 1;
-            this.txtAge.TabStop = false;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label3);
-            this.flowLayoutPanel3.Controls.Add(this.txtPhone);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(632, 43);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(156, 59);
-            this.flowLayoutPanel3.TabIndex = 33;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Contact Phone No.";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BackColor = System.Drawing.Color.White;
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPhone.Enabled = false;
-            this.txtPhone.ForeColor = System.Drawing.Color.Gray;
-            this.txtPhone.Location = new System.Drawing.Point(3, 21);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.ReadOnly = true;
-            this.txtPhone.Size = new System.Drawing.Size(150, 18);
-            this.txtPhone.TabIndex = 1;
-            this.txtPhone.TabStop = false;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.label5);
-            this.flowLayoutPanel5.Controls.Add(this.txtNationality);
-            this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(794, 43);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(170, 53);
-            this.flowLayoutPanel5.TabIndex = 33;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 18);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Nationality";
-            // 
-            // txtNationality
-            // 
-            this.txtNationality.BackColor = System.Drawing.Color.White;
-            this.txtNationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNationality.Enabled = false;
-            this.txtNationality.ForeColor = System.Drawing.Color.Gray;
-            this.txtNationality.Location = new System.Drawing.Point(3, 21);
-            this.txtNationality.Name = "txtNationality";
-            this.txtNationality.ReadOnly = true;
-            this.txtNationality.Size = new System.Drawing.Size(160, 18);
-            this.txtNationality.TabIndex = 1;
-            // 
             // flowLayoutPanel9
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel9, 2);
+            this.flowLayoutPanel9.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel9.Controls.Add(this.txtPatientID);
             this.flowLayoutPanel9.Controls.Add(this.txtAppID);
             this.flowLayoutPanel9.Controls.Add(this.txtDoctorID);
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(632, 108);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(653, 41);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(332, 58);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(332, 133);
             this.flowLayoutPanel9.TabIndex = 35;
             // 
             // txtPatientID
             // 
-            this.txtPatientID.Location = new System.Drawing.Point(3, 3);
+            this.txtPatientID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatientID.Location = new System.Drawing.Point(3, 115);
             this.txtPatientID.Name = "txtPatientID";
-            this.txtPatientID.Size = new System.Drawing.Size(100, 25);
+            this.txtPatientID.Size = new System.Drawing.Size(100, 22);
             this.txtPatientID.TabIndex = 0;
             this.txtPatientID.Visible = false;
             // 
             // txtAppID
             // 
-            this.txtAppID.Location = new System.Drawing.Point(109, 3);
+            this.txtAppID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAppID.Location = new System.Drawing.Point(109, 115);
             this.txtAppID.Name = "txtAppID";
-            this.txtAppID.Size = new System.Drawing.Size(100, 25);
+            this.txtAppID.Size = new System.Drawing.Size(100, 22);
             this.txtAppID.TabIndex = 36;
             this.txtAppID.Visible = false;
             // 
             // txtDoctorID
             // 
-            this.txtDoctorID.Location = new System.Drawing.Point(215, 3);
+            this.txtDoctorID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDoctorID.Location = new System.Drawing.Point(215, 115);
             this.txtDoctorID.Name = "txtDoctorID";
-            this.txtDoctorID.Size = new System.Drawing.Size(100, 25);
+            this.txtDoctorID.Size = new System.Drawing.Size(100, 22);
             this.txtDoctorID.TabIndex = 37;
             this.txtDoctorID.Visible = false;
-            // 
-            // flowLayoutPanel8
-            // 
-            this.flowLayoutPanel8.Controls.Add(this.label6);
-            this.flowLayoutPanel8.Controls.Add(this.txtBillDue);
-            this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(464, 110);
-            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(120, 56);
-            this.flowLayoutPanel8.TabIndex = 33;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Billed Dues";
-            // 
-            // txtBillDue
-            // 
-            this.txtBillDue.BackColor = System.Drawing.Color.White;
-            this.txtBillDue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBillDue.Enabled = false;
-            this.txtBillDue.ForeColor = System.Drawing.Color.Red;
-            this.txtBillDue.Location = new System.Drawing.Point(3, 21);
-            this.txtBillDue.Name = "txtBillDue";
-            this.txtBillDue.ReadOnly = true;
-            this.txtBillDue.Size = new System.Drawing.Size(100, 18);
-            this.txtBillDue.TabIndex = 1;
-            // 
-            // flowLayoutPanel14
-            // 
-            this.flowLayoutPanel14.Controls.Add(this.label10);
-            this.flowLayoutPanel14.Controls.Add(this.txtDoctor);
-            this.flowLayoutPanel14.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(146, 110);
-            this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel14.Name = "flowLayoutPanel14";
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(176, 56);
-            this.flowLayoutPanel14.TabIndex = 33;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 18);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Consulted Doctor";
-            // 
-            // txtDoctor
-            // 
-            this.txtDoctor.BackColor = System.Drawing.Color.White;
-            this.txtDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDoctor.Enabled = false;
-            this.txtDoctor.ForeColor = System.Drawing.Color.Gray;
-            this.txtDoctor.Location = new System.Drawing.Point(3, 21);
-            this.txtDoctor.Name = "txtDoctor";
-            this.txtDoctor.ReadOnly = true;
-            this.txtDoctor.Size = new System.Drawing.Size(170, 18);
-            this.txtDoctor.TabIndex = 1;
-            // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.Controls.Add(this.label9);
-            this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel13);
-            this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(328, 110);
-            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(122, 53);
-            this.flowLayoutPanel6.TabIndex = 34;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Location = new System.Drawing.Point(3, 72);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 18);
+            this.label9.Size = new System.Drawing.Size(102, 18);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Last Visit Date";
-            // 
-            // flowLayoutPanel13
-            // 
-            this.flowLayoutPanel13.Controls.Add(this.lblLastVisitDate);
-            this.flowLayoutPanel13.Controls.Add(this.txtLastVisitDate);
-            this.flowLayoutPanel13.Location = new System.Drawing.Point(3, 21);
-            this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(127, 29);
-            this.flowLayoutPanel13.TabIndex = 41;
-            // 
-            // lblLastVisitDate
-            // 
-            this.lblLastVisitDate.AutoSize = true;
-            this.lblLastVisitDate.Location = new System.Drawing.Point(3, 0);
-            this.lblLastVisitDate.Name = "lblLastVisitDate";
-            this.lblLastVisitDate.Size = new System.Drawing.Size(0, 18);
-            this.lblLastVisitDate.TabIndex = 0;
-            // 
-            // txtLastVisitDate
-            // 
-            this.txtLastVisitDate.BackColor = System.Drawing.Color.White;
-            this.txtLastVisitDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastVisitDate.Enabled = false;
-            this.txtLastVisitDate.ForeColor = System.Drawing.Color.Gray;
-            this.txtLastVisitDate.Location = new System.Drawing.Point(9, 3);
-            this.txtLastVisitDate.Name = "txtLastVisitDate";
-            this.txtLastVisitDate.ReadOnly = true;
-            this.txtLastVisitDate.Size = new System.Drawing.Size(100, 18);
-            this.txtLastVisitDate.TabIndex = 1;
-            // 
-            // flowLayoutPanel19
-            // 
-            this.flowLayoutPanel19.Controls.Add(this.label18);
-            this.flowLayoutPanel19.Controls.Add(this.txtApptDate);
-            this.flowLayoutPanel19.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel19.Location = new System.Drawing.Point(18, 110);
-            this.flowLayoutPanel19.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.flowLayoutPanel19.Name = "flowLayoutPanel19";
-            this.flowLayoutPanel19.Size = new System.Drawing.Size(122, 53);
-            this.flowLayoutPanel19.TabIndex = 34;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(74, 18);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Appt. Date";
-            // 
-            // txtApptDate
-            // 
-            this.txtApptDate.BackColor = System.Drawing.Color.White;
-            this.txtApptDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApptDate.Enabled = false;
-            this.txtApptDate.ForeColor = System.Drawing.Color.Gray;
-            this.txtApptDate.Location = new System.Drawing.Point(3, 21);
-            this.txtApptDate.Name = "txtApptDate";
-            this.txtApptDate.ReadOnly = true;
-            this.txtApptDate.Size = new System.Drawing.Size(100, 18);
-            this.txtApptDate.TabIndex = 1;
+            this.label9.Text = "Last Visit Date :";
             // 
             // tabConsult
             // 
@@ -749,9 +380,9 @@
             this.label11.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(218, 18);
+            this.label11.Size = new System.Drawing.Size(133, 18);
             this.label11.TabIndex = 0;
-            this.label11.Text = "Appointment Disgnosis and Notes";
+            this.label11.Text = "Diagnosis and Notes";
             // 
             // txtApptNotes
             // 
@@ -1023,24 +654,24 @@
             // 
             this.dgvProc.AllowUserToAddRows = false;
             this.dgvProc.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvProc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvProc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
             this.dgvProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvProc.BackgroundColor = System.Drawing.Color.White;
             this.dgvProc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvProc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
             this.dgvProc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cid,
@@ -1052,14 +683,14 @@
             this.cstatus_id,
             this.notes,
             this.Status});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProc.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProc.DefaultCellStyle = dataGridViewCellStyle39;
             this.dgvProc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProc.GridColor = System.Drawing.Color.LightCyan;
             this.dgvProc.Location = new System.Drawing.Point(422, 3);
@@ -1171,24 +802,24 @@
             // 
             this.dgvApptHistory.AllowUserToAddRows = false;
             this.dgvApptHistory.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvApptHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvApptHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dgvApptHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvApptHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvApptHistory.BackgroundColor = System.Drawing.Color.White;
             this.dgvApptHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvApptHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvApptHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApptHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApptHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.dgvApptHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvApptHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colid,
@@ -1196,14 +827,14 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApptHistory.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApptHistory.DefaultCellStyle = dataGridViewCellStyle42;
             this.dgvApptHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvApptHistory.GridColor = System.Drawing.Color.LightCyan;
             this.dgvApptHistory.Location = new System.Drawing.Point(0, 0);
@@ -1272,24 +903,24 @@
             // 
             this.dgvHistoryProcedures.AllowUserToAddRows = false;
             this.dgvHistoryProcedures.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvHistoryProcedures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvHistoryProcedures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.dgvHistoryProcedures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistoryProcedures.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHistoryProcedures.BackgroundColor = System.Drawing.Color.White;
             this.dgvHistoryProcedures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvHistoryProcedures.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvHistoryProcedures.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryProcedures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryProcedures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dgvHistoryProcedures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistoryProcedures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
@@ -1297,14 +928,14 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryProcedures.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryProcedures.DefaultCellStyle = dataGridViewCellStyle45;
             this.dgvHistoryProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHistoryProcedures.GridColor = System.Drawing.Color.LightCyan;
             this.dgvHistoryProcedures.Location = new System.Drawing.Point(0, 0);
@@ -1353,29 +984,315 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // lblHead1
+            // 
+            this.lblHead1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHead1.AutoSize = true;
+            this.lblHead1.BackColor = System.Drawing.Color.LightCyan;
+            this.tableLayoutPanel1.SetColumnSpan(this.lblHead1, 3);
+            this.lblHead1.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
+            this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHead1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHead1.Location = new System.Drawing.Point(18, 10);
+            this.lblHead1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lblHead1.Name = "lblHead1";
+            this.lblHead1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblHead1.Size = new System.Drawing.Size(972, 28);
+            this.lblHead1.TabIndex = 32;
+            this.lblHead1.Text = "PATIENT DETAILS";
+            this.lblHead1.UseWaitCursor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.txtPatientNo);
+            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.txtPatientName);
+            this.flowLayoutPanel1.Controls.Add(this.label10);
+            this.flowLayoutPanel1.Controls.Add(this.txtPhone);
+            this.flowLayoutPanel1.Controls.Add(this.label18);
+            this.flowLayoutPanel1.Controls.Add(this.txtAddress);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 43);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(336, 131);
+            this.flowLayoutPanel1.TabIndex = 36;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Patient Number : ";
+            // 
+            // txtPatientNo
+            // 
+            this.txtPatientNo.BackColor = System.Drawing.Color.White;
+            this.txtPatientNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.flowLayoutPanel1.SetFlowBreak(this.txtPatientNo, true);
+            this.txtPatientNo.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatientNo.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtPatientNo.Location = new System.Drawing.Point(129, 3);
+            this.txtPatientNo.Name = "txtPatientNo";
+            this.txtPatientNo.ReadOnly = true;
+            this.txtPatientNo.Size = new System.Drawing.Size(110, 18);
+            this.txtPatientNo.TabIndex = 1;
+            this.txtPatientNo.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(3, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Patient Name      : ";
+            // 
+            // txtPatientName
+            // 
+            this.txtPatientName.BackColor = System.Drawing.Color.White;
+            this.txtPatientName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.flowLayoutPanel1.SetFlowBreak(this.txtPatientName, true);
+            this.txtPatientName.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatientName.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtPatientName.Location = new System.Drawing.Point(129, 27);
+            this.txtPatientName.Name = "txtPatientName";
+            this.txtPatientName.ReadOnly = true;
+            this.txtPatientName.Size = new System.Drawing.Size(201, 18);
+            this.txtPatientName.TabIndex = 1;
+            this.txtPatientName.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(3, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 18);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Contact Phone    :";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtPhone.Location = new System.Drawing.Point(129, 51);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
+            this.txtPhone.Size = new System.Drawing.Size(150, 18);
+            this.txtPhone.TabIndex = 1;
+            this.txtPhone.TabStop = false;
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(3, 72);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(120, 18);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Address                 : ";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.BackColor = System.Drawing.Color.White;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddress.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtAddress.Location = new System.Drawing.Point(129, 75);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(203, 50);
+            this.txtAddress.TabIndex = 1;
+            this.txtAddress.TabStop = false;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.label4);
+            this.flowLayoutPanel4.Controls.Add(this.txtGender);
+            this.flowLayoutPanel4.Controls.Add(this.label8);
+            this.flowLayoutPanel4.Controls.Add(this.txtDob);
+            this.flowLayoutPanel4.Controls.Add(this.label3);
+            this.flowLayoutPanel4.Controls.Add(this.txtAge);
+            this.flowLayoutPanel4.Controls.Add(this.label5);
+            this.flowLayoutPanel4.Controls.Add(this.txtNationality);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(360, 43);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(263, 122);
+            this.flowLayoutPanel4.TabIndex = 37;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 18);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Gender           : ";
+            // 
             // txtGender
             // 
-            this.txtGender.BackColor = System.Drawing.Color.White;
             this.txtGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtGender.ForeColor = System.Drawing.Color.Gray;
-            this.txtGender.Location = new System.Drawing.Point(3, 21);
+            this.flowLayoutPanel4.SetFlowBreak(this.txtGender, true);
+            this.txtGender.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtGender.Location = new System.Drawing.Point(102, 3);
             this.txtGender.Name = "txtGender";
-            this.txtGender.ReadOnly = true;
-            this.txtGender.Size = new System.Drawing.Size(117, 18);
+            this.txtGender.Size = new System.Drawing.Size(119, 18);
             this.txtGender.TabIndex = 1;
             this.txtGender.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 18);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Date of Birth : ";
+            // 
             // txtDob
             // 
-            this.txtDob.BackColor = System.Drawing.Color.White;
+            this.txtDob.BackColor = System.Drawing.SystemColors.Window;
             this.txtDob.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDob.ForeColor = System.Drawing.Color.Gray;
-            this.txtDob.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel4.SetFlowBreak(this.txtDob, true);
+            this.txtDob.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtDob.Location = new System.Drawing.Point(105, 27);
             this.txtDob.Name = "txtDob";
             this.txtDob.ReadOnly = true;
-            this.txtDob.Size = new System.Drawing.Size(100, 18);
+            this.txtDob.Size = new System.Drawing.Size(81, 18);
             this.txtDob.TabIndex = 1;
             this.txtDob.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(3, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Age                   : ";
+            // 
+            // txtAge
+            // 
+            this.txtAge.BackColor = System.Drawing.SystemColors.Window;
+            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.flowLayoutPanel4.SetFlowBreak(this.txtAge, true);
+            this.txtAge.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtAge.Location = new System.Drawing.Point(102, 51);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.ReadOnly = true;
+            this.txtAge.Size = new System.Drawing.Size(40, 18);
+            this.txtAge.TabIndex = 1;
+            this.txtAge.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(3, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 18);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Nationality    : ";
+            // 
+            // txtNationality
+            // 
+            this.txtNationality.BackColor = System.Drawing.Color.White;
+            this.txtNationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNationality.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtNationality.Location = new System.Drawing.Point(102, 75);
+            this.txtNationality.Name = "txtNationality";
+            this.txtNationality.ReadOnly = true;
+            this.txtNationality.Size = new System.Drawing.Size(152, 18);
+            this.txtNationality.TabIndex = 1;
+            this.txtNationality.TabStop = false;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.label6);
+            this.flowLayoutPanel2.Controls.Add(this.txtDoctor);
+            this.flowLayoutPanel2.Controls.Add(this.label22);
+            this.flowLayoutPanel2.Controls.Add(this.txtMeetDate);
+            this.flowLayoutPanel2.Controls.Add(this.label23);
+            this.flowLayoutPanel2.Controls.Add(this.txtDues);
+            this.flowLayoutPanel2.Controls.Add(this.label9);
+            this.flowLayoutPanel2.Controls.Add(this.txtLastVisitDate);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 5);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(310, 104);
+            this.flowLayoutPanel2.TabIndex = 42;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Doctor               : ";
+            // 
+            // txtDoctor
+            // 
+            this.txtDoctor.BackColor = System.Drawing.Color.White;
+            this.txtDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.flowLayoutPanel2.SetFlowBreak(this.txtDoctor, true);
+            this.txtDoctor.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtDoctor.Location = new System.Drawing.Point(111, 3);
+            this.txtDoctor.Name = "txtDoctor";
+            this.txtDoctor.ReadOnly = true;
+            this.txtDoctor.Size = new System.Drawing.Size(188, 18);
+            this.txtDoctor.TabIndex = 1;
+            this.txtDoctor.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.Location = new System.Drawing.Point(3, 24);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(102, 18);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Visit Date         : ";
+            // 
+            // txtMeetDate
+            // 
+            this.txtMeetDate.BackColor = System.Drawing.Color.White;
+            this.txtMeetDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.flowLayoutPanel2.SetFlowBreak(this.txtMeetDate, true);
+            this.txtMeetDate.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtMeetDate.Location = new System.Drawing.Point(111, 27);
+            this.txtMeetDate.Name = "txtMeetDate";
+            this.txtMeetDate.ReadOnly = true;
+            this.txtMeetDate.Size = new System.Drawing.Size(100, 18);
+            this.txtMeetDate.TabIndex = 1;
+            this.txtMeetDate.TabStop = false;
+            // 
+            // label23
+            // 
+            this.label23.Location = new System.Drawing.Point(3, 48);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(102, 18);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Billed Dues      : ";
+            // 
+            // txtDues
+            // 
+            this.txtDues.BackColor = System.Drawing.Color.White;
+            this.txtDues.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.flowLayoutPanel2.SetFlowBreak(this.txtDues, true);
+            this.txtDues.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDues.ForeColor = System.Drawing.Color.Red;
+            this.txtDues.Location = new System.Drawing.Point(111, 51);
+            this.txtDues.Name = "txtDues";
+            this.txtDues.ReadOnly = true;
+            this.txtDues.Size = new System.Drawing.Size(100, 18);
+            this.txtDues.TabIndex = 1;
+            this.txtDues.TabStop = false;
+            // 
+            // txtLastVisitDate
+            // 
+            this.txtLastVisitDate.BackColor = System.Drawing.Color.White;
+            this.txtLastVisitDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastVisitDate.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtLastVisitDate.Location = new System.Drawing.Point(111, 75);
+            this.txtLastVisitDate.Name = "txtLastVisitDate";
+            this.txtLastVisitDate.ReadOnly = true;
+            this.txtLastVisitDate.Size = new System.Drawing.Size(100, 18);
+            this.txtLastVisitDate.TabIndex = 1;
+            this.txtLastVisitDate.TabStop = false;
             // 
             // frmConsultationDetails
             // 
@@ -1394,32 +1311,8 @@
             this.Load += new System.EventHandler(this.frmConsultationDetails_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel11.ResumeLayout(false);
-            this.flowLayoutPanel11.PerformLayout();
-            this.flowLayoutPanel12.ResumeLayout(false);
-            this.flowLayoutPanel12.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
             this.flowLayoutPanel9.ResumeLayout(false);
             this.flowLayoutPanel9.PerformLayout();
-            this.flowLayoutPanel8.ResumeLayout(false);
-            this.flowLayoutPanel8.PerformLayout();
-            this.flowLayoutPanel14.ResumeLayout(false);
-            this.flowLayoutPanel14.PerformLayout();
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
-            this.flowLayoutPanel13.ResumeLayout(false);
-            this.flowLayoutPanel13.PerformLayout();
-            this.flowLayoutPanel19.ResumeLayout(false);
-            this.flowLayoutPanel19.PerformLayout();
             this.tabConsult.ResumeLayout(false);
             this.tbPgDiag.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1452,41 +1345,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblHead1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPatientNo;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPatientName;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
-        private System.Windows.Forms.TextBox txtAge;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNationality;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel13;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel14;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtDoctor;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBillDue;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.TabControl tabConsult;
         private System.Windows.Forms.TabPage tbPgDiag;
@@ -1526,11 +1397,6 @@
         private System.Windows.Forms.TextBox txtApptProcID;
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.Label lblLastVisitDate;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtLastVisitDate;
-        private System.Windows.Forms.TextBox txtApptDate;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtProcNotes;
         private System.Windows.Forms.TextBox txtDoctorID;
@@ -1558,7 +1424,32 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel23;
         private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.Label lblHead1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPatientNo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPatientName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtGender;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDob;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNationality;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDoctor;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtMeetDate;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtDues;
+        private System.Windows.Forms.TextBox txtLastVisitDate;
     }
 }

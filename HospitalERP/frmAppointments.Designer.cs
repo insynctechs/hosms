@@ -75,12 +75,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPatNum = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
             this.txtAppID = new System.Windows.Forms.TextBox();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.lblHead1 = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -481,15 +481,6 @@
             resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.btnRegister, "btnRegister");
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -527,6 +518,15 @@
             this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
             this.lblHead1.Name = "lblHead1";
             this.lblHead1.UseWaitCursor = true;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.MidnightBlue;
+            resources.ApplyResources(this.btnRegister, "btnRegister");
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // frmAppointments
             // 
@@ -579,7 +579,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnList;
-        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.TextBox txtAppID;
         private System.Windows.Forms.ComboBox cmbDoc;
@@ -610,5 +609,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn ABtnStatus;
         private System.Windows.Forms.DataGridViewButtonColumn ABtnBill;
         private System.Windows.Forms.DataGridViewButtonColumn ABtnDetails;
+        private System.Windows.Forms.Button btnRegister;
     }
 }

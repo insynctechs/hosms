@@ -424,18 +424,35 @@ namespace HospitalERP
 
         private void btnApp_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (LoggedUser.type_name.ToUpper() == "DOCTOR")
             {
-                if (form.GetType() == typeof(frmAppointments))
+                foreach (Form form in Application.OpenForms)
                 {
-                    form.Activate();
-                    return;
+                    if (form.GetType() == typeof(frmConsultations))
+                    {
+                        form.Activate();
+                        return;
+                    }
                 }
+                frmConsultations frm = new frmConsultations();
+                frm.MdiParent = this;
+                frm.Show();
             }
+            else
+            {
 
-            frmAppointments frm = new frmAppointments();
-            frm.MdiParent = this;
-            frm.Show();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(frmAppointments))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                frmAppointments frm = new frmAppointments();
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void btnReg_Click(object sender, EventArgs e)

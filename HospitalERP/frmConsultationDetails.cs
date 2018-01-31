@@ -78,17 +78,21 @@ namespace HospitalERP
             txtPatientNo.Text = dt.Rows[0]["patient_number"].ToString();
             txtPatientName.Text = dt.Rows[0]["patient_name"].ToString();
             txtGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
-            txtDob.Text = dt.Rows[0]["dob"].ToString().Substring(0, dt.Rows[0]["dob"].ToString().IndexOf(' '));
+            txtDob.Text = Utils.FormatDateShort(dt.Rows[0]["dob"].ToString());
             txtAge.Text =  dt.Rows[0]["age"].ToString();
             txtPhone.Text  = dt.Rows[0]["phone"].ToString();
             txtNationality.Text = dt.Rows[0]["nationality"].ToString();
-            txtLastVisitDate.Text= dt.Rows[0]["prev_date"].ToString().Substring(0, dt.Rows[0]["prev_date"].ToString().IndexOf(' '));
-            txtApptDate.Text = dt.Rows[0]["appointment_date"].ToString().Substring(0, dt.Rows[0]["appointment_date"].ToString().IndexOf(' '));
-            txtBillDue.Text = dt.Rows[0]["dues"].ToString();
+            
+            if (dt.Rows[0]["prev_date"].ToString() != "")
+            {
+                txtLastVisitDate.Text = Utils.FormatDateShort(dt.Rows[0]["prev_date"].ToString());
+            }
+            txtMeetDate.Text = Utils.FormatDateShort(dt.Rows[0]["appointment_date"].ToString());
+            txtDues.Text = dt.Rows[0]["dues"].ToString();
             txtMedicalNotes.Text = dt.Rows[0]["history"].ToString();
             txtAllergies.Text   = dt.Rows[0]["allergies"].ToString();
             txtApptNotes.Text = dt.Rows[0]["notes"].ToString();
-            txtDoctor.Text = "Dr. " + dt.Rows[0]["doctor_name"].ToString();            
+            txtDoctor.Text = Utils.FormatDoctorName(dt.Rows[0]["doctor_name"].ToString());            
             txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
         }
 

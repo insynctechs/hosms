@@ -88,6 +88,7 @@
             this.rbGender1 = new System.Windows.Forms.RadioButton();
             this.rbGender2 = new System.Windows.Forms.RadioButton();
             this.tabPgList = new System.Windows.Forms.TabPage();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
@@ -101,7 +102,6 @@
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -113,9 +113,9 @@
             this.flowLayoutPanel8.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tabPgList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSub
@@ -741,8 +741,8 @@
             // tabPgList
             // 
             this.tabPgList.BackColor = System.Drawing.Color.White;
-            this.tabPgList.Controls.Add(this.flowLayoutPanel3);
             this.tabPgList.Controls.Add(this.dgvList);
+            this.tabPgList.Controls.Add(this.flowLayoutPanel3);
             this.tabPgList.Location = new System.Drawing.Point(4, 45);
             this.tabPgList.Name = "tabPgList";
             this.tabPgList.Padding = new System.Windows.Forms.Padding(3);
@@ -750,6 +750,11 @@
             this.tabPgList.TabIndex = 1;
             this.tabPgList.Text = "Search/List Patients";
             this.tabPgList.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // flowLayoutPanel3
             // 
@@ -762,7 +767,7 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
             this.flowLayoutPanel3.Size = new System.Drawing.Size(994, 80);
-            this.flowLayoutPanel3.TabIndex = 11;
+            this.flowLayoutPanel3.TabIndex = 13;
             // 
             // label9
             // 
@@ -804,7 +809,6 @@
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "GO";
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvList
             // 
@@ -841,15 +845,15 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvList.Location = new System.Drawing.Point(3, 89);
+            this.dgvList.Location = new System.Drawing.Point(3, 83);
             this.dgvList.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(980, 518);
-            this.dgvList.TabIndex = 12;
-            this.dgvList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_RowHeaderMouseClick);
+            this.dgvList.Size = new System.Drawing.Size(994, 529);
+            this.dgvList.TabIndex = 14;
             // 
             // colID
             // 
@@ -901,11 +905,6 @@
             this.Phone.Name = "Phone";
             this.Phone.ReadOnly = true;
             // 
-            // errorProvider
-            // 
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
-            // 
             // frmPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -937,10 +936,10 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.tabPgList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -980,12 +979,6 @@
         private System.Windows.Forms.Label label6;
         
         private System.Windows.Forms.TabPage tabPgList;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cmbSearch;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblActive;
         private System.Windows.Forms.Label label14;
@@ -1012,6 +1005,12 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtPatNum;
         private System.Windows.Forms.CheckBox chkAppointment;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PatNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
