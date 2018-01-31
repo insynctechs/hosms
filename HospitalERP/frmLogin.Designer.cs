@@ -56,6 +56,7 @@
             this.txtEmpId.Name = "txtEmpId";
             this.txtEmpId.Size = new System.Drawing.Size(180, 27);
             this.txtEmpId.TabIndex = 1;
+            this.txtEmpId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmpId_KeyPress);
             // 
             // txtPwd
             // 
@@ -65,6 +66,7 @@
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(180, 27);
             this.txtPwd.TabIndex = 2;
+            this.txtPwd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPwd_KeyPress);
             // 
             // label2
             // 

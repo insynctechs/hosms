@@ -28,10 +28,15 @@ namespace HospitalERP
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            submitLogin();
+        }
+
+        private void submitLogin()
+        {
             int err = 0;
             lblStatus.Visible = false;
             string msg = "";
-            if(txtEmpId.Text.Trim() == "")
+            if (txtEmpId.Text.Trim() == "")
             {
                 err = 1;
                 msg = "Please enter Employee ID";
@@ -47,24 +52,24 @@ namespace HospitalERP
                 }
                 else
                     msg += " and Password";
-                
+
             }
             if (err == 0)
             {
-                int ret = usr.ValidateLogin(txtEmpId.Text, txtPwd.Text);                
+                int ret = usr.ValidateLogin(txtEmpId.Text, txtPwd.Text);
                 if (ret != 1)
                 {
                     txtEmpId.Focus();
                     err = 1;
-                    if(ret == -1)
+                    if (ret == -1)
                         msg = "Invalid Password";
                     else
                         msg = "Invalid User";
                 }
-                
-                
+
+
             }
-            if(err == 1 )
+            if (err == 1)
             {
                 lblStatus.Visible = true;
                 lblStatus.Text = msg + "!";
@@ -80,6 +85,24 @@ namespace HospitalERP
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtEmpId.Focus();
+        }
+
+        
+
+        private void txtEmpId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                submitLogin();
+            }
+        }
+
+        private void txtPwd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+               submitLogin();
+            }
         }
     }
 }

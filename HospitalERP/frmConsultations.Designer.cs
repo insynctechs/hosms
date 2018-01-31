@@ -65,7 +65,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 483F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.lblHead1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
@@ -75,7 +75,6 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 118);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -105,7 +104,7 @@
             this.flowLayoutPanel3.Controls.Add(this.dtpAppDate);
             this.flowLayoutPanel3.Controls.Add(this.label1);
             this.flowLayoutPanel3.Controls.Add(this.cmbDoc);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(81, 41);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(60, 41);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(441, 37);
             this.flowLayoutPanel3.TabIndex = 2;
@@ -155,7 +154,7 @@
             this.flowLayoutPanel1.Controls.Add(this.lblStatusCombo);
             this.flowLayoutPanel1.Controls.Add(this.cmbStatus);
             this.flowLayoutPanel1.Controls.Add(this.btnList);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(528, 41);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(507, 41);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(477, 37);
             this.flowLayoutPanel1.TabIndex = 2;
