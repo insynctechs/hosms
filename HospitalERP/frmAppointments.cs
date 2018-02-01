@@ -209,6 +209,8 @@ namespace HospitalERP
 
         private void ViewDetails(int app_id, int pat_id)
         {
+            if (Application.OpenForms.OfType<frmConsultationDetails>().Count() == 1)
+                Application.OpenForms.OfType<frmConsultationDetails>().First().Close();
             frmConsultationDetails frm = new frmConsultationDetails(app_id, pat_id);
             frm.MdiParent = this.ParentForm;
             frm.Show();
@@ -216,6 +218,9 @@ namespace HospitalERP
 
         private void ViewBill(int app_id, int pat_id)
         {
+            
+            if (Application.OpenForms.OfType<frmAppointmentBill>().Count() == 1)
+                Application.OpenForms.OfType<frmAppointmentBill>().First().Close();
             frmAppointmentBill frm = new frmAppointmentBill(app_id, pat_id);
             frm.MdiParent = this.ParentForm;
             frm.Show();

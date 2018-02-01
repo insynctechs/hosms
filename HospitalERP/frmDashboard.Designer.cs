@@ -33,23 +33,6 @@
             this.lblHead1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panelDashMain = new System.Windows.Forms.Panel();
             this.flowPanelDashMain = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,15 +50,42 @@
             this.btnDashUserRoles = new System.Windows.Forms.Button();
             this.btnDashOpt = new System.Windows.Forms.Button();
             this.btnDashReports = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblUEmpID = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.lblUName = new System.Windows.Forms.Label();
+            this.lblUType = new System.Windows.Forms.Label();
+            this.lblUDesig = new System.Windows.Forms.Label();
+            this.lblUDob = new System.Windows.Forms.Label();
+            this.lblUGender = new System.Windows.Forms.Label();
+            this.lblUNationality = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblURole = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelDashMain.SuspendLayout();
+            this.flowPanelDashMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.panelDashMain.SuspendLayout();
-            this.flowPanelDashMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -128,213 +138,18 @@
             // 
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(755, 38);
+            this.panel2.Location = new System.Drawing.Point(702, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(253, 496);
+            this.panel2.Size = new System.Drawing.Size(306, 496);
             this.panel2.TabIndex = 4;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(214, 496);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel2.Controls.Add(this.label4);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(214, 128);
-            this.flowLayoutPanel2.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HospitalERP.Properties.Resources.bill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 106);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(3, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "EXCELLENCE DENTAL CLINIC";
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label6);
-            this.flowLayoutPanel3.Controls.Add(this.label5);
-            this.flowLayoutPanel3.Controls.Add(this.label7);
-            this.flowLayoutPanel3.Controls.Add(this.label8);
-            this.flowLayoutPanel3.Controls.Add(this.label9);
-            this.flowLayoutPanel3.Controls.Add(this.label10);
-            this.flowLayoutPanel3.Controls.Add(this.label11);
-            this.flowLayoutPanel3.Controls.Add(this.label12);
-            this.flowLayoutPanel3.Controls.Add(this.linkLabel1);
-            this.flowLayoutPanel3.Controls.Add(this.linkLabel2);
-            this.flowLayoutPanel3.Controls.Add(this.linkLabel3);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 184);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(200, 306);
-            this.flowLayoutPanel3.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "EMP ID#: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 25);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Name: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 50);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 15);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Staff Type: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 75);
-            this.label8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 15);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Designation: ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 100);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 15);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "DOB: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 125);
-            this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 15);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Gender: ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 150);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 15);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Nationality: ";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 175);
-            this.label12.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 15);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "User Role: ";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(3, 200);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(42, 15);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Profile";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(3, 225);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(107, 15);
-            this.linkLabel2.TabIndex = 1;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Change Password";
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(3, 250);
-            this.linkLabel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(45, 15);
-            this.linkLabel3.TabIndex = 1;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Logout";
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 38);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(99, 496);
-            this.panel4.TabIndex = 5;
             // 
             // panelDashMain
             // 
             this.panelDashMain.Controls.Add(this.flowPanelDashMain);
             this.panelDashMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDashMain.Location = new System.Drawing.Point(99, 38);
+            this.panelDashMain.Location = new System.Drawing.Point(0, 38);
             this.panelDashMain.Name = "panelDashMain";
-            this.panelDashMain.Size = new System.Drawing.Size(656, 496);
+            this.panelDashMain.Size = new System.Drawing.Size(702, 496);
             this.panelDashMain.TabIndex = 6;
             // 
             // flowPanelDashMain
@@ -354,7 +169,7 @@
             this.flowPanelDashMain.Controls.Add(this.btnDashUserRoles);
             this.flowPanelDashMain.Controls.Add(this.btnDashOpt);
             this.flowPanelDashMain.Controls.Add(this.btnDashReports);
-            this.flowPanelDashMain.Location = new System.Drawing.Point(36, 17);
+            this.flowPanelDashMain.Location = new System.Drawing.Point(61, 6);
             this.flowPanelDashMain.Name = "flowPanelDashMain";
             this.flowPanelDashMain.Size = new System.Drawing.Size(614, 453);
             this.flowPanelDashMain.TabIndex = 0;
@@ -653,6 +468,339 @@
             this.btnDashReports.UseVisualStyleBackColor = true;
             this.btnDashReports.Click += new System.EventHandler(this.btnDashReports_Click);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowLayoutPanel1.Controls.Add(this.label13);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(306, 496);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(280, 74);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "EXCELLENCE DENTAL CLINIC";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 77);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(203, 75);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::HospitalERP.Properties.Resources.license;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(197, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.lblUEmpID, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.lblUName, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblUType, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblUDesig, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lblUDob, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblUGender, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.lblUNationality, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblURole, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label16, 1, 9);
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 158);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 12;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(252, 332);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // lblUEmpID
+            // 
+            this.lblUEmpID.AutoSize = true;
+            this.lblUEmpID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUEmpID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUEmpID.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUEmpID.Location = new System.Drawing.Point(103, 0);
+            this.lblUEmpID.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUEmpID.Name = "lblUEmpID";
+            this.lblUEmpID.Size = new System.Drawing.Size(146, 17);
+            this.lblUEmpID.TabIndex = 2;
+            this.lblUEmpID.Text = "Name: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "EMP ID#: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 159);
+            this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Gender: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 105);
+            this.label8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Designation: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 51);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Staff Type: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 132);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "DOB: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 27);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 14);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Name: ";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel3, 2);
+            this.flowLayoutPanel3.Controls.Add(this.linkLabel2);
+            this.flowLayoutPanel3.Controls.Add(this.linkLabel3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 250);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(152, 44);
+            this.flowLayoutPanel3.TabIndex = 2;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.flowLayoutPanel3.SetFlowBreak(this.linkLabel2, true);
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(3, 0);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(107, 15);
+            this.linkLabel2.TabIndex = 1;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Change Password";
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.flowLayoutPanel3.SetFlowBreak(this.linkLabel3, true);
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.Location = new System.Drawing.Point(3, 25);
+            this.linkLabel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(45, 15);
+            this.linkLabel3.TabIndex = 1;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Logout";
+            // 
+            // lblUName
+            // 
+            this.lblUName.AutoSize = true;
+            this.lblUName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUName.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUName.Location = new System.Drawing.Point(103, 27);
+            this.lblUName.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUName.Name = "lblUName";
+            this.lblUName.Size = new System.Drawing.Size(50, 14);
+            this.lblUName.TabIndex = 0;
+            this.lblUName.Text = "Name: ";
+            // 
+            // lblUType
+            // 
+            this.lblUType.AutoSize = true;
+            this.lblUType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUType.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUType.Location = new System.Drawing.Point(103, 51);
+            this.lblUType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUType.Name = "lblUType";
+            this.lblUType.Size = new System.Drawing.Size(50, 17);
+            this.lblUType.TabIndex = 0;
+            this.lblUType.Text = "Name: ";
+            // 
+            // lblUDesig
+            // 
+            this.lblUDesig.AutoSize = true;
+            this.lblUDesig.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUDesig.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUDesig.Location = new System.Drawing.Point(103, 105);
+            this.lblUDesig.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUDesig.Name = "lblUDesig";
+            this.lblUDesig.Size = new System.Drawing.Size(50, 17);
+            this.lblUDesig.TabIndex = 0;
+            this.lblUDesig.Text = "Name: ";
+            // 
+            // lblUDob
+            // 
+            this.lblUDob.AutoSize = true;
+            this.lblUDob.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUDob.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUDob.Location = new System.Drawing.Point(103, 132);
+            this.lblUDob.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUDob.Name = "lblUDob";
+            this.lblUDob.Size = new System.Drawing.Size(50, 17);
+            this.lblUDob.TabIndex = 0;
+            this.lblUDob.Text = "Name: ";
+            // 
+            // lblUGender
+            // 
+            this.lblUGender.AutoSize = true;
+            this.lblUGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUGender.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUGender.Location = new System.Drawing.Point(103, 159);
+            this.lblUGender.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUGender.Name = "lblUGender";
+            this.lblUGender.Size = new System.Drawing.Size(50, 17);
+            this.lblUGender.TabIndex = 0;
+            this.lblUGender.Text = "Name: ";
+            // 
+            // lblUNationality
+            // 
+            this.lblUNationality.AutoSize = true;
+            this.lblUNationality.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUNationality.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUNationality.Location = new System.Drawing.Point(103, 186);
+            this.lblUNationality.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUNationality.Name = "lblUNationality";
+            this.lblUNationality.Size = new System.Drawing.Size(50, 17);
+            this.lblUNationality.TabIndex = 0;
+            this.lblUNationality.Text = "Name: ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 78);
+            this.label12.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "User Role: ";
+            // 
+            // lblURole
+            // 
+            this.lblURole.AutoSize = true;
+            this.lblURole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblURole.ForeColor = System.Drawing.Color.DimGray;
+            this.lblURole.Location = new System.Drawing.Point(103, 78);
+            this.lblURole.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblURole.Name = "lblURole";
+            this.lblURole.Size = new System.Drawing.Size(50, 17);
+            this.lblURole.TabIndex = 0;
+            this.lblURole.Text = "Name: ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 186);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 17);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Nationality: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 213);
+            this.label14.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 17);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Phone: ";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.DimGray;
+            this.label16.Location = new System.Drawing.Point(103, 213);
+            this.label16.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(50, 17);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Name: ";
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,7 +809,6 @@
             this.ClientSize = new System.Drawing.Size(1008, 562);
             this.ControlBox = false;
             this.Controls.Add(this.panelDashMain);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -671,19 +818,21 @@
             this.Text = "Dashboard";
             this.Activated += new System.EventHandler(this.frmDashboard_Activated);
             this.Load += new System.EventHandler(this.frmDashboard_Load);
+            this.Shown += new System.EventHandler(this.frmDashboard_Shown);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelDashMain.ResumeLayout(false);
+            this.flowPanelDashMain.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.panelDashMain.ResumeLayout(false);
-            this.flowPanelDashMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -692,26 +841,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panelDashMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lblHead1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.FlowLayoutPanel flowPanelDashMain;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDashReg;
@@ -728,5 +860,31 @@
         private System.Windows.Forms.Button btnDashUserRoles;
         private System.Windows.Forms.Button btnDashOpt;
         private System.Windows.Forms.Button btnDashReports;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblUEmpID;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.Label lblUName;
+        private System.Windows.Forms.Label lblUType;
+        private System.Windows.Forms.Label lblUDesig;
+        private System.Windows.Forms.Label lblUDob;
+        private System.Windows.Forms.Label lblUGender;
+        private System.Windows.Forms.Label lblUNationality;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblURole;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
     }
 }

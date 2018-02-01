@@ -215,17 +215,18 @@ namespace HospitalERP.Procedures
 
         }
 
-        public int saveDiagnosis(int appid, int patientid, string history, string allergy, string app_notes)
+        public int saveDiagnosis(int appid, int patientid, string history, string allergy, string app_notes, int status)
         {
             int ret = -1;
             try
             {
-                SqlParameter[] sqlParam = new SqlParameter[5];
+                SqlParameter[] sqlParam = new SqlParameter[6];
                 sqlParam[0] = new SqlParameter("@appointment_id", appid);
                 sqlParam[1] = new SqlParameter("@patient_id", patientid);
                 sqlParam[2] = new SqlParameter("@history", history);
                 sqlParam[3] = new SqlParameter("@allergies", allergy);
-                sqlParam[4] = new SqlParameter("@notes", app_notes);                
+                sqlParam[4] = new SqlParameter("@notes", app_notes);
+                sqlParam[5] = new SqlParameter("@status", status);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspConsultationDet_SaveDiagnosis", sqlParam).ToString());
             }
             catch (Exception ex)

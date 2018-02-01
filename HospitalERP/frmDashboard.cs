@@ -55,49 +55,40 @@ namespace HospitalERP
 
         private void btnDashBillSearch_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmBilling>().Count() == 1)
+                Application.OpenForms.OfType<frmBilling>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmBilling))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmBilling frm = new frmBilling();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmBilling frm = new frmBilling();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
         }
 
         private void btnDashApp_Click(object sender, EventArgs e)
         {
             if (LoggedUser.type_name.ToUpper() == "DOCTOR")
             {
-                foreach (Form form in Application.OpenForms)
+                if (Application.OpenForms.OfType<frmConsultations>().Count() == 1)
+                    Application.OpenForms.OfType<frmConsultations>().First().Activate();
+                else
                 {
-                    if (form.GetType() == typeof(frmConsultations))
-                    {
-                        form.Activate();
-                        return;
-                    }
+                    frmConsultations frm = new frmConsultations();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
                 }
-                frmConsultations frm = new frmConsultations();
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
             }
             else
             {
 
-                foreach (Form form in Application.OpenForms)
+                if (Application.OpenForms.OfType<frmAppointments>().Count() == 1)
+                    Application.OpenForms.OfType<frmAppointments>().First().Activate();
+                else
                 {
-                    if (form.GetType() == typeof(frmAppointments))
-                    {
-                        form.Activate();
-                        return;
-                    }
+                    frmAppointments frm = new frmAppointments();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
                 }
-                frmAppointments frm = new frmAppointments();
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
             }
             
             
@@ -105,153 +96,137 @@ namespace HospitalERP
 
         private void btnDashReg_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmPatient>().Count() == 1)
+                Application.OpenForms.OfType<frmPatient>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmPatient))
-                {
-                    form.Activate();                    
-                    return;
-                }
+                frmPatient frm = new frmPatient(1);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmPatient frm = new frmPatient(1);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
         }
 
         private void btnDashDocs_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmDoctors>().Count() == 1)
+                Application.OpenForms.OfType<frmDoctors>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmDoctors))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmDoctors frm = new frmDoctors();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmDoctors frm = new frmDoctors();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
         }
 
         private void btnDashStffGen_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmStaffs>().Count() == 1)
+                Application.OpenForms.OfType<frmStaffs>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmStaffs))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmStaffs frm = new frmStaffs();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmStaffs frm = new frmStaffs();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
         }
 
         private void btnDashStaffType_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmStaffTypes>().Count() == 1)
+                Application.OpenForms.OfType<frmStaffTypes>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmStaffTypes))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmStaffTypes frm = new frmStaffTypes();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmStaffTypes frm = new frmStaffTypes();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
         }
 
         private void btnDashDept_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmDepartments>().Count() == 1)
+                Application.OpenForms.OfType<frmDepartments>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmDepartments))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmDepartments frm = new frmDepartments();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmDepartments frm = new frmDepartments();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
         }
 
         private void btnDashProc_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmProcedures>().Count() == 1)
+                Application.OpenForms.OfType<frmProcedures>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmProcedures))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmProcedures frm = new frmProcedures();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmProcedures frm = new frmProcedures();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
             
         }
 
         private void btnDashUserRoles_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmUserRoles>().Count() == 1)
+                Application.OpenForms.OfType<frmUserRoles>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmUserRoles))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmUserRoles frm = new frmUserRoles();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmUserRoles frm = new frmUserRoles();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
         }
 
         private void btnDashOpt_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmOptions>().Count() == 1)
+                Application.OpenForms.OfType<frmOptions>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmOptions))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmOptions frm = new frmOptions();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmOptions frm = new frmOptions();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
         }
 
         private void btnDashReports_Click(object sender, EventArgs e)
         {
-            /*foreach (Form form in Application.OpenForms)
-            {
-                if (form.GetType() == typeof(frmReports))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
+            /*if (Application.OpenForms.OfType<frmOptions>().Count() == 1)
+                Application.OpenForms.OfType<frmOptions>().First().Activate();
+                else {
             frmOptions frm = new frmOptions();
             frm.MdiParent = this.MdiParent;
-            frm.Show();*/
+            frm.Show();}*/
         }
 
         private void btnDashProcType_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmProcTypes>().Count() == 1)
+                Application.OpenForms.OfType<frmProcTypes>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmProcTypes ))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmProcTypes frm = new frmProcTypes();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
-            frmProcTypes frm = new frmProcTypes();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmDashboard_Shown(object sender, EventArgs e)
+        {
+            if(LoggedUser.id > 0)
+            {
+                lblUEmpID.Text = LoggedUser.emp_id;
+                lblUName.Text = LoggedUser.name;
+                lblUType.Text = LoggedUser.type_name;
+              
+            }
         }
     }
 }
