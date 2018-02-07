@@ -40,14 +40,8 @@ namespace HospitalERP
                 lblEmpID.Text = empid;
                 if (dtUser.Rows.Count > 0)
                 {
-                    LoggedUser.id = Int32.Parse(dtUser.Rows[0]["id"].ToString());
-                    LoggedUser.emp_id = dtUser.Rows[0]["emp_id"].ToString();
-                    LoggedUser.type_id = Int32.Parse(dtUser.Rows[0]["user_type_id"].ToString());
-                    LoggedUser.type_name = dtUser.Rows[0]["type_name"].ToString();
-                    LoggedUser.phone = dtUser.Rows[0]["staff_phone"].ToString();
-                    LoggedUser.last_log_date = Convert.ToDateTime(dtUser.Rows[0]["log_date"].ToString());
-                    LoggedUser.name = dtUser.Rows[0]["staff_name"].ToString();
-                    LoggedUser.staff_id = Int32.Parse(dtUser.Rows[0]["staff_id"].ToString());
+                    
+                    LoggedUser.setLoggedUser(dtUser);
                     usr.SetLoginDate(empid);
                     lblEmpID.Text = LoggedUser.name;
                     if (LoggedUser.type_id == 1)

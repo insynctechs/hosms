@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 using System.Windows.Forms;
 
 namespace HospitalERP
@@ -224,9 +225,39 @@ namespace HospitalERP
             {
                 lblUEmpID.Text = LoggedUser.emp_id;
                 lblUName.Text = LoggedUser.name;
-                lblUType.Text = LoggedUser.type_name;
+                lblURole.Text = LoggedUser.type_name;
+                lblUDesig.Text = LoggedUser.designation;
+                lblUDept.Text = LoggedUser.department;
+                lblUNationality.Text = LoggedUser.nationality;
+                if(LoggedUser.gender!="" && LoggedUser.gender!= null)
+                lblUGender.Text = Utils.Gender[LoggedUser.gender].ToString();
+                else
+                    lblUGender.Text = "";
+                lblUType.Text = LoggedUser.staff_type;
+                lblULastLog.Text = LoggedUser.last_log_date.ToString();
+                if (LoggedUser.dob != null)
+                    lblUDob.Text = LoggedUser.dob.ToString();
+                else
+                    lblUDob.Text = "";
+                lblUPhone.Text = LoggedUser.phone;               
+                
               
             }
+            OptionVals opt = new OptionVals();
+            DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
+            if (dtOpt.Rows.Count > 0)
+                lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();
+        }
+
+        private void lnkChangePwd2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword();
+            frm.ShowDialog();
+        }
+
+        private void lnkLogout2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.MdiParent.Close();
         }
     }
 }

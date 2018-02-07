@@ -33,6 +33,31 @@
             this.lblHead1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblClinic = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblUEmpID = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lnkChangePwd2 = new System.Windows.Forms.LinkLabel();
+            this.lnkLogout2 = new System.Windows.Forms.LinkLabel();
+            this.lblUName = new System.Windows.Forms.Label();
+            this.lblUType = new System.Windows.Forms.Label();
+            this.lblUDesig = new System.Windows.Forms.Label();
+            this.lblUDob = new System.Windows.Forms.Label();
+            this.lblUGender = new System.Windows.Forms.Label();
+            this.lblUNationality = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblURole = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblUPhone = new System.Windows.Forms.Label();
             this.panelDashMain = new System.Windows.Forms.Panel();
             this.flowPanelDashMain = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,42 +75,18 @@
             this.btnDashUserRoles = new System.Windows.Forms.Button();
             this.btnDashOpt = new System.Windows.Forms.Button();
             this.btnDashReports = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblUEmpID = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.lblUName = new System.Windows.Forms.Label();
-            this.lblUType = new System.Windows.Forms.Label();
-            this.lblUDesig = new System.Windows.Forms.Label();
-            this.lblUDob = new System.Windows.Forms.Label();
-            this.lblUGender = new System.Windows.Forms.Label();
-            this.lblUNationality = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblURole = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblUDept = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblULastLog = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelDashMain.SuspendLayout();
-            this.flowPanelDashMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            this.panelDashMain.SuspendLayout();
+            this.flowPanelDashMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,6 +144,336 @@
             this.panel2.Size = new System.Drawing.Size(306, 496);
             this.panel2.TabIndex = 4;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowLayoutPanel1.Controls.Add(this.lblClinic);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(306, 496);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // lblClinic
+            // 
+            this.lblClinic.AutoSize = true;
+            this.lblClinic.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClinic.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblClinic.Location = new System.Drawing.Point(3, 0);
+            this.lblClinic.Name = "lblClinic";
+            this.lblClinic.Size = new System.Drawing.Size(280, 74);
+            this.lblClinic.TabIndex = 1;
+            this.lblClinic.Text = "EXCELLENCE DENTAL CLINIC";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(289, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.lblUEmpID, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 14);
+            this.tableLayoutPanel1.Controls.Add(this.lblUName, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblUType, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblUDesig, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lblUDob, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.lblUGender, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.lblUNationality, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lblUPhone, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblUDept, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.lblURole, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.lblULastLog, 1, 12);
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 94);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 15;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(252, 373);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // lblUEmpID
+            // 
+            this.lblUEmpID.AutoSize = true;
+            this.lblUEmpID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUEmpID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUEmpID.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUEmpID.Location = new System.Drawing.Point(103, 0);
+            this.lblUEmpID.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUEmpID.Name = "lblUEmpID";
+            this.lblUEmpID.Size = new System.Drawing.Size(146, 17);
+            this.lblUEmpID.TabIndex = 2;
+            this.lblUEmpID.Text = "Name: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "EMP ID#: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 159);
+            this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Gender: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 78);
+            this.label8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Designation: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 51);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Staff Type: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 132);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Date Of Birth: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 27);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 14);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Name: ";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel3, 2);
+            this.flowLayoutPanel3.Controls.Add(this.lnkChangePwd2);
+            this.flowLayoutPanel3.Controls.Add(this.lnkLogout2);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 304);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(218, 49);
+            this.flowLayoutPanel3.TabIndex = 2;
+            // 
+            // lnkChangePwd2
+            // 
+            this.lnkChangePwd2.AutoSize = true;
+            this.flowLayoutPanel3.SetFlowBreak(this.lnkChangePwd2, true);
+            this.lnkChangePwd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkChangePwd2.Location = new System.Drawing.Point(3, 0);
+            this.lnkChangePwd2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lnkChangePwd2.Name = "lnkChangePwd2";
+            this.lnkChangePwd2.Size = new System.Drawing.Size(107, 15);
+            this.lnkChangePwd2.TabIndex = 1;
+            this.lnkChangePwd2.TabStop = true;
+            this.lnkChangePwd2.Text = "Change Password";
+            this.lnkChangePwd2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkChangePwd2_LinkClicked);
+            // 
+            // lnkLogout2
+            // 
+            this.lnkLogout2.AutoSize = true;
+            this.flowLayoutPanel3.SetFlowBreak(this.lnkLogout2, true);
+            this.lnkLogout2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkLogout2.Location = new System.Drawing.Point(3, 25);
+            this.lnkLogout2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lnkLogout2.Name = "lnkLogout2";
+            this.lnkLogout2.Size = new System.Drawing.Size(45, 15);
+            this.lnkLogout2.TabIndex = 1;
+            this.lnkLogout2.TabStop = true;
+            this.lnkLogout2.Text = "Logout";
+            this.lnkLogout2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogout2_LinkClicked);
+            // 
+            // lblUName
+            // 
+            this.lblUName.AutoSize = true;
+            this.lblUName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUName.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUName.Location = new System.Drawing.Point(103, 27);
+            this.lblUName.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUName.Name = "lblUName";
+            this.lblUName.Size = new System.Drawing.Size(50, 14);
+            this.lblUName.TabIndex = 0;
+            this.lblUName.Text = "Name: ";
+            // 
+            // lblUType
+            // 
+            this.lblUType.AutoSize = true;
+            this.lblUType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUType.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUType.Location = new System.Drawing.Point(103, 51);
+            this.lblUType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUType.Name = "lblUType";
+            this.lblUType.Size = new System.Drawing.Size(50, 17);
+            this.lblUType.TabIndex = 0;
+            this.lblUType.Text = "Name: ";
+            // 
+            // lblUDesig
+            // 
+            this.lblUDesig.AutoSize = true;
+            this.lblUDesig.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUDesig.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUDesig.Location = new System.Drawing.Point(103, 78);
+            this.lblUDesig.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUDesig.Name = "lblUDesig";
+            this.lblUDesig.Size = new System.Drawing.Size(50, 17);
+            this.lblUDesig.TabIndex = 0;
+            this.lblUDesig.Text = "Name: ";
+            // 
+            // lblUDob
+            // 
+            this.lblUDob.AutoSize = true;
+            this.lblUDob.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUDob.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUDob.Location = new System.Drawing.Point(103, 132);
+            this.lblUDob.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUDob.Name = "lblUDob";
+            this.lblUDob.Size = new System.Drawing.Size(50, 17);
+            this.lblUDob.TabIndex = 0;
+            this.lblUDob.Text = "Name: ";
+            // 
+            // lblUGender
+            // 
+            this.lblUGender.AutoSize = true;
+            this.lblUGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUGender.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUGender.Location = new System.Drawing.Point(103, 159);
+            this.lblUGender.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUGender.Name = "lblUGender";
+            this.lblUGender.Size = new System.Drawing.Size(50, 17);
+            this.lblUGender.TabIndex = 0;
+            this.lblUGender.Text = "Name: ";
+            // 
+            // lblUNationality
+            // 
+            this.lblUNationality.AutoSize = true;
+            this.lblUNationality.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUNationality.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUNationality.Location = new System.Drawing.Point(103, 186);
+            this.lblUNationality.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUNationality.Name = "lblUNationality";
+            this.lblUNationality.Size = new System.Drawing.Size(50, 17);
+            this.lblUNationality.TabIndex = 0;
+            this.lblUNationality.Text = "Name: ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 240);
+            this.label12.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "User Role: ";
+            // 
+            // lblURole
+            // 
+            this.lblURole.AutoSize = true;
+            this.lblURole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblURole.ForeColor = System.Drawing.Color.DimGray;
+            this.lblURole.Location = new System.Drawing.Point(103, 240);
+            this.lblURole.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblURole.Name = "lblURole";
+            this.lblURole.Size = new System.Drawing.Size(50, 17);
+            this.lblURole.TabIndex = 0;
+            this.lblURole.Text = "Name: ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 186);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 17);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Nationality: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 213);
+            this.label14.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 17);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Phone: ";
+            // 
+            // lblUPhone
+            // 
+            this.lblUPhone.AutoSize = true;
+            this.lblUPhone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUPhone.Location = new System.Drawing.Point(103, 213);
+            this.lblUPhone.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUPhone.Name = "lblUPhone";
+            this.lblUPhone.Size = new System.Drawing.Size(50, 17);
+            this.lblUPhone.TabIndex = 0;
+            this.lblUPhone.Text = "Name: ";
+            // 
             // panelDashMain
             // 
             this.panelDashMain.Controls.Add(this.flowPanelDashMain);
@@ -154,6 +485,7 @@
             // 
             // flowPanelDashMain
             // 
+            this.flowPanelDashMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowPanelDashMain.Controls.Add(this.label1);
             this.flowPanelDashMain.Controls.Add(this.btnDashReg);
             this.flowPanelDashMain.Controls.Add(this.btnDashApp);
@@ -169,7 +501,7 @@
             this.flowPanelDashMain.Controls.Add(this.btnDashUserRoles);
             this.flowPanelDashMain.Controls.Add(this.btnDashOpt);
             this.flowPanelDashMain.Controls.Add(this.btnDashReports);
-            this.flowPanelDashMain.Location = new System.Drawing.Point(61, 6);
+            this.flowPanelDashMain.Location = new System.Drawing.Point(10, 6);
             this.flowPanelDashMain.Name = "flowPanelDashMain";
             this.flowPanelDashMain.Size = new System.Drawing.Size(614, 453);
             this.flowPanelDashMain.TabIndex = 0;
@@ -468,338 +800,51 @@
             this.btnDashReports.UseVisualStyleBackColor = true;
             this.btnDashReports.Click += new System.EventHandler(this.btnDashReports_Click);
             // 
-            // flowLayoutPanel1
+            // label5
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.flowLayoutPanel1.Controls.Add(this.label13);
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(306, 496);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 105);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Department: ";
             // 
-            // label13
+            // lblUDept
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label13.Location = new System.Drawing.Point(3, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(280, 74);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "EXCELLENCE DENTAL CLINIC";
+            this.lblUDept.AutoSize = true;
+            this.lblUDept.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUDept.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUDept.Location = new System.Drawing.Point(103, 105);
+            this.lblUDept.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUDept.Name = "lblUDept";
+            this.lblUDept.Size = new System.Drawing.Size(50, 17);
+            this.lblUDept.TabIndex = 0;
+            this.lblUDept.Text = "Name: ";
             // 
-            // flowLayoutPanel2
+            // label15
             // 
-            this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 77);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(203, 75);
-            this.flowLayoutPanel2.TabIndex = 0;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 267);
+            this.label15.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 17);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Last Logged: ";
             // 
-            // pictureBox1
+            // lblULastLog
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::HospitalERP.Properties.Resources.license;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.Controls.Add(this.lblUEmpID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.lblUName, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblUType, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblUDesig, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblUDob, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.lblUGender, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lblUNationality, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblURole, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label16, 1, 9);
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 158);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 12;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(252, 332);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // lblUEmpID
-            // 
-            this.lblUEmpID.AutoSize = true;
-            this.lblUEmpID.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblUEmpID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUEmpID.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUEmpID.Location = new System.Drawing.Point(103, 0);
-            this.lblUEmpID.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUEmpID.Name = "lblUEmpID";
-            this.lblUEmpID.Size = new System.Drawing.Size(146, 17);
-            this.lblUEmpID.TabIndex = 2;
-            this.lblUEmpID.Text = "Name: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "EMP ID#: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 159);
-            this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 17);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Gender: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 105);
-            this.label8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Designation: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 51);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Staff Type: ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 132);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "DOB: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 27);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 14);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Name: ";
-            // 
-            // flowLayoutPanel3
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel3, 2);
-            this.flowLayoutPanel3.Controls.Add(this.linkLabel2);
-            this.flowLayoutPanel3.Controls.Add(this.linkLabel3);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 250);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(152, 44);
-            this.flowLayoutPanel3.TabIndex = 2;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.flowLayoutPanel3.SetFlowBreak(this.linkLabel2, true);
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(3, 0);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(107, 15);
-            this.linkLabel2.TabIndex = 1;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Change Password";
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.flowLayoutPanel3.SetFlowBreak(this.linkLabel3, true);
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(3, 25);
-            this.linkLabel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(45, 15);
-            this.linkLabel3.TabIndex = 1;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Logout";
-            // 
-            // lblUName
-            // 
-            this.lblUName.AutoSize = true;
-            this.lblUName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUName.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUName.Location = new System.Drawing.Point(103, 27);
-            this.lblUName.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUName.Name = "lblUName";
-            this.lblUName.Size = new System.Drawing.Size(50, 14);
-            this.lblUName.TabIndex = 0;
-            this.lblUName.Text = "Name: ";
-            // 
-            // lblUType
-            // 
-            this.lblUType.AutoSize = true;
-            this.lblUType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUType.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUType.Location = new System.Drawing.Point(103, 51);
-            this.lblUType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUType.Name = "lblUType";
-            this.lblUType.Size = new System.Drawing.Size(50, 17);
-            this.lblUType.TabIndex = 0;
-            this.lblUType.Text = "Name: ";
-            // 
-            // lblUDesig
-            // 
-            this.lblUDesig.AutoSize = true;
-            this.lblUDesig.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUDesig.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUDesig.Location = new System.Drawing.Point(103, 105);
-            this.lblUDesig.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUDesig.Name = "lblUDesig";
-            this.lblUDesig.Size = new System.Drawing.Size(50, 17);
-            this.lblUDesig.TabIndex = 0;
-            this.lblUDesig.Text = "Name: ";
-            // 
-            // lblUDob
-            // 
-            this.lblUDob.AutoSize = true;
-            this.lblUDob.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUDob.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUDob.Location = new System.Drawing.Point(103, 132);
-            this.lblUDob.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUDob.Name = "lblUDob";
-            this.lblUDob.Size = new System.Drawing.Size(50, 17);
-            this.lblUDob.TabIndex = 0;
-            this.lblUDob.Text = "Name: ";
-            // 
-            // lblUGender
-            // 
-            this.lblUGender.AutoSize = true;
-            this.lblUGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUGender.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUGender.Location = new System.Drawing.Point(103, 159);
-            this.lblUGender.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUGender.Name = "lblUGender";
-            this.lblUGender.Size = new System.Drawing.Size(50, 17);
-            this.lblUGender.TabIndex = 0;
-            this.lblUGender.Text = "Name: ";
-            // 
-            // lblUNationality
-            // 
-            this.lblUNationality.AutoSize = true;
-            this.lblUNationality.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUNationality.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUNationality.Location = new System.Drawing.Point(103, 186);
-            this.lblUNationality.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUNationality.Name = "lblUNationality";
-            this.lblUNationality.Size = new System.Drawing.Size(50, 17);
-            this.lblUNationality.TabIndex = 0;
-            this.lblUNationality.Text = "Name: ";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 78);
-            this.label12.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 17);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "User Role: ";
-            // 
-            // lblURole
-            // 
-            this.lblURole.AutoSize = true;
-            this.lblURole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblURole.ForeColor = System.Drawing.Color.DimGray;
-            this.lblURole.Location = new System.Drawing.Point(103, 78);
-            this.lblURole.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblURole.Name = "lblURole";
-            this.lblURole.Size = new System.Drawing.Size(50, 17);
-            this.lblURole.TabIndex = 0;
-            this.lblURole.Text = "Name: ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 186);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Nationality: ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 213);
-            this.label14.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 17);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Phone: ";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DimGray;
-            this.label16.Location = new System.Drawing.Point(103, 213);
-            this.label16.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(50, 17);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Name: ";
+            this.lblULastLog.AutoSize = true;
+            this.lblULastLog.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblULastLog.ForeColor = System.Drawing.Color.DimGray;
+            this.lblULastLog.Location = new System.Drawing.Point(103, 267);
+            this.lblULastLog.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblULastLog.Name = "lblULastLog";
+            this.lblULastLog.Size = new System.Drawing.Size(50, 17);
+            this.lblULastLog.TabIndex = 0;
+            this.lblULastLog.Text = "Name: ";
             // 
             // frmDashboard
             // 
@@ -823,16 +868,14 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panelDashMain.ResumeLayout(false);
-            this.flowPanelDashMain.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            this.panelDashMain.ResumeLayout(false);
+            this.flowPanelDashMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -861,9 +904,8 @@
         private System.Windows.Forms.Button btnDashOpt;
         private System.Windows.Forms.Button btnDashReports;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblClinic;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblUEmpID;
         private System.Windows.Forms.Label label6;
@@ -873,8 +915,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel lnkChangePwd2;
+        private System.Windows.Forms.LinkLabel lnkLogout2;
         private System.Windows.Forms.Label lblUName;
         private System.Windows.Forms.Label lblUType;
         private System.Windows.Forms.Label lblUDesig;
@@ -885,6 +927,10 @@
         private System.Windows.Forms.Label lblURole;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblUPhone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUDept;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblULastLog;
     }
 }
