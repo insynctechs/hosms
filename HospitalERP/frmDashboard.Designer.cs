@@ -501,7 +501,7 @@
             this.flowPanelDashMain.Controls.Add(this.btnDashUserRoles);
             this.flowPanelDashMain.Controls.Add(this.btnDashOpt);
             this.flowPanelDashMain.Controls.Add(this.btnDashReports);
-            this.flowPanelDashMain.Location = new System.Drawing.Point(10, 6);
+            this.flowPanelDashMain.Location = new System.Drawing.Point(0, 6);
             this.flowPanelDashMain.Name = "flowPanelDashMain";
             this.flowPanelDashMain.Size = new System.Drawing.Size(614, 453);
             this.flowPanelDashMain.TabIndex = 0;

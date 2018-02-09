@@ -28,19 +28,8 @@ namespace HospitalERP
         {
             this.WindowState = FormWindowState.Maximized;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            PopulateSearch();
-            GetDepartmentsCombo(0);
-            GetStaffTypeCombo(0);
-            if (txtID.Text == "")
-            {
-                lblempid.Visible = false;
-                txtempid.Visible = false;
-            }
-            else
-            {
-                lblempid.Visible = false;
-                txtempid.Visible = false;
-            }
+            
+            
         }
 
         private void PopulateSearch()
@@ -52,12 +41,13 @@ namespace HospitalERP
 
         private void ShowStaffs()
         {
-            dgvDept.DataSource = objStaffs.GetStaffs(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvList.DataSource = objStaffs.GetStaffs(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
         }
              
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
+            clearControls();
         }
 
         private void clearControls()
@@ -82,6 +72,7 @@ namespace HospitalERP
             chkActive.Checked = true;
             cmbStaffType.SelectedIndex = 0;
             cmbDept.SelectedIndex = 0;
+            cmbUserRole.SelectedIndex = 0;
             txtUSERID.Text = "";
 
 
@@ -126,7 +117,7 @@ namespace HospitalERP
                 if (txtID.Text.Trim() == "") //add data
                 {
                     
-                    rtn = objStaffs.addStaffs(txtFirstName.Text, txtLastName.Text, Convert.ToInt32(cmbStaffType.SelectedValue.ToString()), txtDesignation.Text, txtQualification.Text, cmbStaffType.SelectedIndex, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked);
+                    rtn = objStaffs.addStaffs(txtFirstName.Text, txtLastName.Text, Convert.ToInt32(cmbStaffType.SelectedValue.ToString()), txtDesignation.Text, txtQualification.Text, cmbStaffType.SelectedIndex, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Int32.Parse(cmbUserRole.SelectedValue.ToString()));
 
                     if (rtn == 0)
                         ShowStatus(0,"Type name should be unique");
@@ -143,7 +134,7 @@ namespace HospitalERP
                 }
                 else //edit record
                 {
-                    rtn = objStaffs.editStaffs(Int32.Parse(txtID.Text.Trim()), Int32.Parse(txtUSERID.Text.Trim()), txtFirstName.Text, txtLastName.Text, cmbDept.SelectedIndex, txtDesignation.Text, txtQualification.Text, Convert.ToInt32(cmbStaffType.SelectedValue.ToString()), gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked,logged_in_user);
+                    rtn = objStaffs.editStaffs(Int32.Parse(txtID.Text.Trim()), Int32.Parse(txtUSERID.Text.Trim()), txtFirstName.Text, txtLastName.Text, cmbDept.SelectedIndex, txtDesignation.Text, txtQualification.Text, Convert.ToInt32(cmbStaffType.SelectedValue.ToString()), gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Int32.Parse(cmbUserRole.SelectedValue.ToString()));
                     //if (rtn == 0)
                     //  lblStatus.Text = "This name already exists. Please provide unique name.";
                     //else
@@ -205,39 +196,55 @@ namespace HospitalERP
             cmbDept.DisplayMember = "Display";
         }
 
-        private void dgvDept_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void GetUserRolesCombo(int tid)
+        {
+            cmbUserRole.DataSource = objStaffs.GetUserRolesCombo(tid);
+            cmbUserRole.ValueMember = "Value";
+            cmbUserRole.DisplayMember = "Display";
+        }
+
+        private void setFormValues(int id)
+        {
+            DataTable dt = objStaffs.getRecordFromID(id);
+            txtempid.Text = dt.Rows[0]["emp_id"].ToString();
+            txtFirstName.Text = dt.Rows[0]["first_name"].ToString();
+            txtLastName.Text = dt.Rows[0]["last_name"].ToString();
+            txtDesignation.Text = dt.Rows[0]["designation"].ToString();
+            txtQualification.Text = dt.Rows[0]["qualification"].ToString();
+
+            if (dt.Rows[0]["gender"].ToString() == "M")
+                rbGender1.Checked = true;
+            else
+                rbGender2.Checked = true;
+            dtpDob.Text = dt.Rows[0]["dob"].ToString();
+            txtNationality.Text = dt.Rows[0]["nationality"].ToString();
+            txtPathaka.Text = dt.Rows[0]["legal_id"].ToString();
+            dtpPathakaExpiry.Text = dt.Rows[0]["legal_id_expiry"].ToString();
+            txtAddress.Text = dt.Rows[0]["address"].ToString();
+            txtCity.Text = dt.Rows[0]["city"].ToString();
+            txtDistrict.Text = dt.Rows[0]["state"].ToString();
+            txtZip.Text = dt.Rows[0]["zip"].ToString();
+            txtPhone.Text = dt.Rows[0]["phone"].ToString();
+            txtEmail.Text = dt.Rows[0]["email"].ToString();
+            chkActive.Checked = Convert.ToBoolean(dt.Rows[0]["active"].ToString());
+            GetStaffTypeCombo(Convert.ToInt32(dt.Rows[0]["staff_type_id"].ToString()));
+            GetDepartmentsCombo(Convert.ToInt32(dt.Rows[0]["department_id"].ToString()));
+            GetUserRolesCombo(Convert.ToInt32(dt.Rows[0]["user_type_id"].ToString()));
+            cmbDept.SelectedValue = dt.Rows[0]["department_id"].ToString();
+            cmbStaffType.SelectedValue = dt.Rows[0]["staff_type_id"].ToString();
+            cmbUserRole.SelectedValue = dt.Rows[0]["user_type_id"].ToString();
+            txtUSERID.Text = dt.Rows[0]["user_id"].ToString();
+           
+        }
+
+        private void dgvList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
-                txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
-                DataTable dt = objStaffs.getRecordFromID(Convert.ToInt32(txtID.Text));
-                txtempid.Text = dt.Rows[0]["emp_id"].ToString();
-                txtFirstName.Text = dt.Rows[0]["first_name"].ToString();
-                txtLastName.Text = dt.Rows[0]["last_name"].ToString();
-                txtDesignation.Text = dt.Rows[0]["designation"].ToString();
-                txtQualification.Text = dt.Rows[0]["qualification"].ToString();
-
-                if (dt.Rows[0]["gender"].ToString() == "M")
-                    rbGender1.Checked = true;
-                else
-                    rbGender2.Checked = true;
-                dtpDob.Text = dt.Rows[0]["dob"].ToString();
-                txtNationality.Text = dt.Rows[0]["nationality"].ToString();
-                txtPathaka.Text = dt.Rows[0]["legal_id"].ToString();
-                dtpPathakaExpiry.Text = dt.Rows[0]["legal_id_expiry"].ToString();
-                txtAddress.Text = dt.Rows[0]["address"].ToString();
-                txtCity.Text = dt.Rows[0]["city"].ToString();
-                txtDistrict.Text = dt.Rows[0]["state"].ToString();
-                txtZip.Text = dt.Rows[0]["zip"].ToString();
-                txtPhone.Text = dt.Rows[0]["phone"].ToString();
-                txtEmail.Text = dt.Rows[0]["email"].ToString();
-                chkActive.Checked = Convert.ToBoolean(dt.Rows[0]["active"].ToString());
-                GetStaffTypeCombo(Convert.ToInt32(dt.Rows[0]["staff_type_id"].ToString()));
-                GetDepartmentsCombo(Convert.ToInt32(dt.Rows[0]["department_id"].ToString()));
-                cmbDept.SelectedValue = dt.Rows[0]["department_id"].ToString();
-                cmbStaffType.SelectedValue = dt.Rows[0]["staff_type_id"].ToString();
-                txtUSERID.Text = dt.Rows[0]["user_id"].ToString();
+                txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
                 tabStaffs.SelectedIndex = 0;
+
+
             }
             catch(Exception ex)
             {
@@ -269,13 +276,13 @@ namespace HospitalERP
                 case 0:
                     if(txtID.Text=="")
                     {
-                        lblempid.Visible = false;
+                        panelEmpID.Visible = false;
                         txtempid.Visible = false;
                     }
                     else
                     {
-                        lblempid.Visible = false;
-                        txtempid.Visible = false;
+                        panelEmpID.Visible = true;
+                        txtempid.Visible = true;
                     }
                     break;
                 case 1:
@@ -308,6 +315,63 @@ namespace HospitalERP
             cmbStaffType.DisplayMember = "Display";
         }
 
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "colBtnEdit":
+                    txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+                    tabStaffs.SelectedIndex = 0;
+                    break;
 
+                case "colBtnResetPwd":
+                    txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();                    
+                    DialogResult m = MessageBox.Show("Are you sure you want to reset the password for this Staff", "Reset Password", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (m == DialogResult.Yes)
+                    {
+                        // Do something
+                        MessageBox.Show(txtID.Text);
+                    }
+                    else if (m == DialogResult.No)
+                    {
+                        // Do something else
+                    }
+                    break;
+            }
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            if(Int32.Parse(txtID.Text)>0)
+                setFormValues(Convert.ToInt32(txtID.Text));
+            if (txtID.Text == "")
+            {
+                panelEmpID.Visible = false;
+                txtempid.Visible = false;
+            }
+            else
+            {
+                panelEmpID.Visible = true;
+                txtempid.Visible = true;
+            }
+        }
+
+        private void frmStaffs_Shown(object sender, EventArgs e)
+        {
+            PopulateSearch();
+            GetDepartmentsCombo(0);
+            GetStaffTypeCombo(0);
+            GetUserRolesCombo(0);
+            if (txtID.Text == "")
+            {
+                panelEmpID.Visible = false;
+                txtempid.Visible = false;
+            }
+            else
+            {
+                panelEmpID.Visible = true;
+                txtempid.Visible = true;
+            }
+        }
     }
 }

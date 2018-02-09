@@ -16,7 +16,7 @@ namespace HospitalERP.Procedures
         public static string name;
         public static int type_id;
         public static string type_name;
-        public static DateTime last_log_date;
+        public static string last_log_date;
         public static string phone;
         public static string tbl_name;
         public static string gender;
@@ -34,15 +34,15 @@ namespace HospitalERP.Procedures
             type_id = Int32.Parse(dtUser.Rows[0]["user_type_id"].ToString());
             type_name = dtUser.Rows[0]["type_name"].ToString();
             phone = dtUser.Rows[0]["staff_phone"].ToString();
-            last_log_date = Convert.ToDateTime(dtUser.Rows[0]["log_date"].ToString());
-            dob = DateTime.Parse(dtUser.Rows[0]["dob"].ToString()).ToShortDateString();
+            last_log_date = String.IsNullOrEmpty(dtUser.Rows[0]["log_date"].ToString()) ? "": DateTime.Parse(dtUser.Rows[0]["log_date"].ToString()).ToString();
+            dob = String.IsNullOrEmpty(dtUser.Rows[0]["dob"].ToString()) ? "" : DateTime.Parse(dtUser.Rows[0]["dob"].ToString()).ToShortDateString();
             name = dtUser.Rows[0]["staff_name"].ToString();
-            staff_id = Int32.Parse(dtUser.Rows[0]["staff_id"].ToString());
+            staff_id = String.IsNullOrEmpty(dtUser.Rows[0]["staff_id"].ToString()) ? 0 : Int32.Parse(dtUser.Rows[0]["staff_id"].ToString());
             staff_type = dtUser.Rows[0]["staff_type"].ToString();
             tbl_name = dtUser.Rows[0]["staff_tbl"].ToString();
             designation = dtUser.Rows[0]["designation"].ToString();
             department = dtUser.Rows[0]["department"].ToString();
-            age = Int32.Parse(dtUser.Rows[0]["age"].ToString());
+            age = String.IsNullOrEmpty(dtUser.Rows[0]["age"].ToString()) ? 0 : Int32.Parse(dtUser.Rows[0]["age"].ToString());
             designation = dtUser.Rows[0]["designation"].ToString();
             gender = dtUser.Rows[0]["gender"].ToString().Trim();
             nationality = dtUser.Rows[0]["nationality"].ToString();

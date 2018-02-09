@@ -26,7 +26,7 @@ namespace HospitalERP
             LoggedUser.type_id = 1;
             LoggedUser.type_name = "SUPER ADMIN";
             LoggedUser.phone = "";
-            LoggedUser.last_log_date = Convert.ToDateTime("12-12-2017");
+            LoggedUser.last_log_date = "";
             LoggedUser.name = "ADMIN";
             LoggedUser.staff_id = 0;
         }

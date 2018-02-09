@@ -88,12 +88,6 @@
             this.rbGender1 = new System.Windows.Forms.RadioButton();
             this.rbGender2 = new System.Windows.Forms.RadioButton();
             this.tabPgList = new System.Windows.Forms.TabPage();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbSearch = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +96,12 @@
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -113,9 +113,9 @@
             this.flowLayoutPanel8.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tabPgList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSub
@@ -751,10 +751,101 @@
             this.tabPgList.Text = "Search/List Patients";
             this.tabPgList.UseVisualStyleBackColor = true;
             // 
-            // errorProvider
+            // dgvList
             // 
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.PatNum,
+            this.colName,
+            this.gender,
+            this.age,
+            this.Address,
+            this.Phone});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvList.Location = new System.Drawing.Point(3, 83);
+            this.dgvList.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.ReadOnly = true;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvList.Size = new System.Drawing.Size(994, 529);
+            this.dgvList.TabIndex = 14;
+            this.dgvList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_RowHeaderMouseClick);
+            // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Visible = false;
+            // 
+            // PatNum
+            // 
+            this.PatNum.DataPropertyName = "patient_number";
+            this.PatNum.HeaderText = "Patient Number";
+            this.PatNum.Name = "PatNum";
+            this.PatNum.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // age
+            // 
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "address1";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "phone";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
             // 
             // flowLayoutPanel3
             // 
@@ -809,101 +900,12 @@
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "GO";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // dgvList
+            // errorProvider
             // 
-            this.dgvList.AllowUserToAddRows = false;
-            this.dgvList.AllowUserToDeleteRows = false;
-            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.PatNum,
-            this.colName,
-            this.gender,
-            this.age,
-            this.Address,
-            this.Phone});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvList.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvList.Location = new System.Drawing.Point(3, 83);
-            this.dgvList.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.ReadOnly = true;
-            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(994, 529);
-            this.dgvList.TabIndex = 14;
-            // 
-            // colID
-            // 
-            this.colID.DataPropertyName = "id";
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            this.colID.Visible = false;
-            // 
-            // PatNum
-            // 
-            this.PatNum.DataPropertyName = "patient_number";
-            this.PatNum.HeaderText = "Patient Number";
-            this.PatNum.Name = "PatNum";
-            this.PatNum.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            // 
-            // age
-            // 
-            this.age.DataPropertyName = "age";
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
-            this.age.ReadOnly = true;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "address1";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            // 
-            // Phone
-            // 
-            this.Phone.DataPropertyName = "phone";
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // frmPatient
             // 
@@ -936,10 +938,10 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.tabPgList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
