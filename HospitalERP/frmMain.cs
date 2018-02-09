@@ -470,5 +470,26 @@ namespace HospitalERP
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void menuitemBillingReport_Click(object sender, EventArgs e)
+        {
+            frmRptBilling rep = new frmRptBilling();
+            rep.MdiParent = this;
+            rep.Show();
+            
+        }
+
+        private void miPatientRpt_Click(object sender, EventArgs e)
+        {
+            frmRptPatient fmPat = new frmRptPatient();
+            fmPat.MdiParent = this;
+            fmPat.Show();
+        }
+
+        private void miSickLeaveRpt_Click(object sender, EventArgs e)
+        {
+            frmRptSickLeave rsl = new frmRptSickLeave();
+            rsl.ShowDialog(this);
+        }
     }
 }

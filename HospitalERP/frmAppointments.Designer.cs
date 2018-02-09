@@ -41,6 +41,7 @@
             this.cmbSearch = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +81,6 @@
             this.txtAppID = new System.Windows.Forms.TextBox();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.lblHead1 = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -155,6 +155,15 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.MidnightBlue;
+            resources.ApplyResources(this.btnRegister, "btnRegister");
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // dgvPatient
             // 
@@ -518,15 +527,6 @@
             this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
             this.lblHead1.Name = "lblHead1";
             this.lblHead1.UseWaitCursor = true;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.MidnightBlue;
-            resources.ApplyResources(this.btnRegister, "btnRegister");
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // frmAppointments
             // 

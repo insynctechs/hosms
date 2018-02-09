@@ -130,7 +130,31 @@ namespace HospitalERP.Procedures
 
         }
 
-        
+        public DataTable RptSearchValues(int hasall = 1)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Value");
+                dt.Columns.Add("Display");
+                if (hasall == 1)
+                    dt.Rows.Add(new object[] { "All", "All" });
+                dt.Rows.Add(new object[] { "p.phone", "Phone Number" });
+                dt.Rows.Add(new object[] { "p.patient_number", "Patient Number" });
+                dt.Rows.Add(new object[] { "p.first_name", "First Name" });
+                dt.Rows.Add(new object[] { "p.last_name", "Last Name" });
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+
 
         public DataTable getRecordFromID(int id)
         {
