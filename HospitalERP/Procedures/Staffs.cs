@@ -20,12 +20,12 @@ namespace HospitalERP.Procedures
         public int addStaffs(string first_name, string last_name,int department_id, string designation,
             string qualification, int staff_type_id,char gender, DateTime dob,  string nationality, string legal_id, 
             DateTime legal_id_expiry, string address, string city, string state, string zip,
-            string phone, string email, bool active)
+            string phone, string email, bool active, int user_type_id)
         {
             int ret = -1;
             try
             {
-                SqlParameter[] sqlParam = new SqlParameter[19];
+                SqlParameter[] sqlParam = new SqlParameter[20];
                 sqlParam[0] = new SqlParameter("@first_name",first_name);
                 sqlParam[1] = new SqlParameter("@last_name", last_name);
                 sqlParam[2] = new SqlParameter("@department_id", department_id);
@@ -45,6 +45,7 @@ namespace HospitalERP.Procedures
                 sqlParam[16] = new SqlParameter("@email", email);                
                 sqlParam[17] = new SqlParameter("@added_id", LoggedUser.id);
                 sqlParam[18] = new SqlParameter("@active", active);
+                sqlParam[19] = new SqlParameter("@user_type_id", user_type_id);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspStaffs_Add", sqlParam).ToString());
             }
             catch (DbException ex)
@@ -58,12 +59,12 @@ namespace HospitalERP.Procedures
         public int editStaffs(int id, int user_id, string first_name, string last_name, int department_id, string designation,
             string qualification, int staff_type_id, char gender, DateTime dob, string nationality, string legal_id,
             DateTime legal_id_expiry, string address, string city, string state, string zip,
-            string phone, string email, bool active, int modified_id)
+            string phone, string email, bool active, int user_type_id)
         {
             int ret = -1;
             try
             {
-                SqlParameter[] sqlParam = new SqlParameter[21];
+                SqlParameter[] sqlParam = new SqlParameter[22];
                 sqlParam[0] = new SqlParameter("@id", id);
                 sqlParam[1] = new SqlParameter("@user_id", user_id);
                sqlParam[2] = new SqlParameter("@first_name", first_name);
@@ -84,7 +85,8 @@ namespace HospitalERP.Procedures
                 sqlParam[17] = new SqlParameter("@phone", phone);
                 sqlParam[18] = new SqlParameter("@email", email);
                 sqlParam[19] = new SqlParameter("@active", active);                
-                sqlParam[20] = new SqlParameter("@modified_id", modified_id);
+                sqlParam[20] = new SqlParameter("@modified_id", LoggedUser.id);
+                sqlParam[21] = new SqlParameter("@user_type_id", user_type_id);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspStaffs_Edit", sqlParam).ToString());
             }
             catch (DbException ex)
@@ -226,6 +228,48 @@ namespace HospitalERP.Procedures
                 SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@id", id);
                 DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspStaffs_GetSingle", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+
+        public DataTable GetUserRolesCombo(int id)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Value");
+                dt.Columns.Add("Display");
+                dt.Rows.Add(new object[] { "0", "Select Type" });
+                DataTable dt1 = new DataTable();
+                dt1 = GetUserRolesIDName(id);
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    dt.Rows.Add(dr.ItemArray);
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public DataTable GetUserRolesIDName(int id)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspUserTypes_Combo", sqlParam);
                 return dt.Tables[0];
             }
             catch (Exception ex)

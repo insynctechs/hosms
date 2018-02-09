@@ -50,7 +50,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.tabPgList = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvDept = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +68,6 @@
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.tabPgList.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -310,7 +308,7 @@
             // tabPgList
             // 
             this.tabPgList.BackColor = System.Drawing.Color.White;
-            this.tabPgList.Controls.Add(this.flowLayoutPanel4);
+            this.tabPgList.Controls.Add(this.dgvDept);
             this.tabPgList.Controls.Add(this.flowLayoutPanel2);
             this.tabPgList.Controls.Add(this.flowLayoutPanel1);
             this.tabPgList.Location = new System.Drawing.Point(4, 45);
@@ -321,15 +319,6 @@
             this.tabPgList.Text = "Search/List Types";
             this.tabPgList.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.dgvDept);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 83);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(994, 326);
-            this.flowLayoutPanel4.TabIndex = 22;
-            // 
             // dgvDept
             // 
             this.dgvDept.AllowUserToAddRows = false;
@@ -338,8 +327,6 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
             this.dgvDept.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDept.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDept.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDept.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvDept.BackgroundColor = System.Drawing.Color.White;
@@ -368,13 +355,14 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDept.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDept.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDept.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvDept.Location = new System.Drawing.Point(20, 3);
+            this.dgvDept.Location = new System.Drawing.Point(3, 83);
             this.dgvDept.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.dgvDept.Name = "dgvDept";
             this.dgvDept.ReadOnly = true;
             this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDept.Size = new System.Drawing.Size(980, 317);
+            this.dgvDept.Size = new System.Drawing.Size(994, 326);
             this.dgvDept.TabIndex = 10;
             this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
             // 
@@ -495,7 +483,6 @@
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
             this.tabPgList.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -533,7 +520,7 @@
         private System.Windows.Forms.ComboBox cmbSearch;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Label label6;

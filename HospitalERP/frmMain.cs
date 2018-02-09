@@ -26,7 +26,7 @@ namespace HospitalERP
             LoggedUser.type_id = 1;
             LoggedUser.type_name = "SUPER ADMIN";
             LoggedUser.phone = "";
-            LoggedUser.last_log_date = Convert.ToDateTime("12-12-2017");
+            LoggedUser.last_log_date = "";
             LoggedUser.name = "ADMIN";
             LoggedUser.staff_id = 0;
         }
@@ -40,14 +40,8 @@ namespace HospitalERP
                 lblEmpID.Text = empid;
                 if (dtUser.Rows.Count > 0)
                 {
-                    LoggedUser.id = Int32.Parse(dtUser.Rows[0]["id"].ToString());
-                    LoggedUser.emp_id = dtUser.Rows[0]["emp_id"].ToString();
-                    LoggedUser.type_id = Int32.Parse(dtUser.Rows[0]["user_type_id"].ToString());
-                    LoggedUser.type_name = dtUser.Rows[0]["type_name"].ToString();
-                    LoggedUser.phone = dtUser.Rows[0]["staff_phone"].ToString();
-                    LoggedUser.last_log_date = Convert.ToDateTime(dtUser.Rows[0]["log_date"].ToString());
-                    LoggedUser.name = dtUser.Rows[0]["staff_name"].ToString();
-                    LoggedUser.staff_id = Int32.Parse(dtUser.Rows[0]["staff_id"].ToString());
+                    
+                    LoggedUser.setLoggedUser(dtUser);
                     usr.SetLoginDate(empid);
                     lblEmpID.Text = LoggedUser.name;
                     if (LoggedUser.type_id == 1)
@@ -100,123 +94,99 @@ namespace HospitalERP
 
         private void menuItemStaffOthers_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmStaffs>().Count() == 1)
+                Application.OpenForms.OfType<frmStaffs>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmStaffs))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmStaffs frm = new frmStaffs();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmStaffs frm = new frmStaffs();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemDocs_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmDoctors>().Count() == 1)
+                Application.OpenForms.OfType<frmDoctors>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmDoctors))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmDoctors frm = new frmDoctors();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmDoctors frm = new frmDoctors();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemStaffType_Click(object sender, EventArgs e)
         {
 
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmStaffTypes>().Count() == 1)
+                Application.OpenForms.OfType<frmStaffTypes>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmStaffTypes))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmStaffTypes frm = new frmStaffTypes();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmStaffTypes frm = new frmStaffTypes();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemDept_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmDepartments>().Count() == 1)
+                Application.OpenForms.OfType<frmDepartments>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmDepartments))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmDepartments frm = new frmDepartments();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmDepartments frm = new frmDepartments();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemProc_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmProcedures>().Count() == 1)
+                Application.OpenForms.OfType<frmProcedures>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmProcedures))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmProcedures frm = new frmProcedures();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmProcedures frm = new frmProcedures();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemUserRoles_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmUserRoles>().Count() == 1)
+                Application.OpenForms.OfType<frmUserRoles>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmUserRoles))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmUserRoles frm = new frmUserRoles();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmUserRoles frm = new frmUserRoles();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemProcType_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmProcTypes>().Count() == 1)
+                Application.OpenForms.OfType<frmProcTypes>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmProcTypes))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmProcTypes frm = new frmProcTypes();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmProcTypes frm = new frmProcTypes();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemOpt_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmOptions>().Count() == 1)
+                Application.OpenForms.OfType<frmOptions>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmOptions))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmOptions frm = new frmOptions();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmOptions frm = new frmOptions();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -252,17 +222,14 @@ namespace HospitalERP
 
         private void menuItemReg_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmPatient>().Count() == 1)
+                Application.OpenForms.OfType<frmPatient>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmPatient))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmPatient frm = new frmPatient();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmPatient frm = new frmPatient();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void lnkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -274,64 +241,52 @@ namespace HospitalERP
         {
             if (LoggedUser.type_name.ToUpper() == "DOCTOR")
             {
-                foreach (Form form in Application.OpenForms)
+                if (Application.OpenForms.OfType<frmConsultations>().Count() == 1)
+                    Application.OpenForms.OfType<frmConsultations>().First().Activate();
+                else
                 {
-                    if (form.GetType() == typeof(frmConsultations))
-                    {
-                        form.Activate();
-                        return;
-                    }
+                    frmConsultations frm = new frmConsultations();
+                    frm.MdiParent = this;
+                    frm.Show();
                 }
-                frmConsultations frm = new frmConsultations();
-                frm.MdiParent = this;
-                frm.Show();
             }
             else
             {
 
-                foreach (Form form in Application.OpenForms)
+                if (Application.OpenForms.OfType<frmAppointments>().Count() == 1)
+                    Application.OpenForms.OfType<frmAppointments>().First().Activate();
+                else
                 {
-                    if (form.GetType() == typeof(frmAppointments))
-                    {
-                        form.Activate();
-                        return;
-                    }
+                    frmAppointments frm = new frmAppointments();
+                    frm.MdiParent = this;
+                    frm.Show();
                 }
-                frmAppointments frm = new frmAppointments();
-                frm.MdiParent = this;
-                frm.Show();
             }
         }
         
 
         private void menuItemBillSearch_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmBilling>().Count() == 1)
+                Application.OpenForms.OfType<frmBilling>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmBilling))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmBilling frm = new frmBilling();
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmBilling frm = new frmBilling();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemPatSearch_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmPatient>().Count() == 1)
+                Application.OpenForms.OfType<frmPatient>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmPatient))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmPatient frm = new frmPatient(1);
+                frm.MdiParent = this;
+                frm.Show();
             }
-            frmPatient frm = new frmPatient(1);
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuItemConsultations_Click(object sender, EventArgs e)
@@ -349,18 +304,14 @@ namespace HospitalERP
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmDashboard>().Count() == 1)
+                Application.OpenForms.OfType<frmDashboard>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmDashboard))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmDashboard frm = new frmDashboard();
+                frm.MdiParent = this;
+                frm.Show();
             }
-
-            frmDashboard frm = new frmDashboard();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void btnChildClose_Click(object sender, EventArgs e)
@@ -426,49 +377,39 @@ namespace HospitalERP
         {
             if (LoggedUser.type_name.ToUpper() == "DOCTOR")
             {
-                foreach (Form form in Application.OpenForms)
+                if (Application.OpenForms.OfType<frmConsultations>().Count() == 1)
+                    Application.OpenForms.OfType<frmConsultations>().First().Activate();
+                else
                 {
-                    if (form.GetType() == typeof(frmConsultations))
-                    {
-                        form.Activate();
-                        return;
-                    }
+                    frmConsultations frm = new frmConsultations();
+                    frm.MdiParent = this;
+                    frm.Show();
                 }
-                frmConsultations frm = new frmConsultations();
-                frm.MdiParent = this;
-                frm.Show();
             }
             else
             {
 
-                foreach (Form form in Application.OpenForms)
+                if (Application.OpenForms.OfType<frmAppointments>().Count() == 1)
+                    Application.OpenForms.OfType<frmAppointments>().First().Activate();
+                else
                 {
-                    if (form.GetType() == typeof(frmAppointments))
-                    {
-                        form.Activate();
-                        return;
-                    }
+                    frmAppointments frm = new frmAppointments();
+                    frm.MdiParent = this;
+                    frm.Show();
                 }
-                frmAppointments frm = new frmAppointments();
-                frm.MdiParent = this;
-                frm.Show();
             }
         }
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Application.OpenForms.OfType<frmPatient>().Count() == 1)
+                Application.OpenForms.OfType<frmPatient>().First().Activate();
+            else
             {
-                if (form.GetType() == typeof(frmPatient))
-                {
-                    form.Activate();
-                    return;
-                }
+                frmPatient frm = new frmPatient();
+                frm.MdiParent = this;
+                frm.Show();
             }
-
-            frmPatient frm = new frmPatient();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void menuitemBillingReport_Click(object sender, EventArgs e)

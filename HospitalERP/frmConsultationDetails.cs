@@ -16,6 +16,7 @@ namespace HospitalERP
     {
         log4net.ILog ilog;
         ConsultationDetails objCD = new ConsultationDetails();
+        Appointments objApp = new Appointments();
         //DataSet ds;
         //SqlDataAdapter adap;
         //SqlCommandBuilder scb;
@@ -39,13 +40,7 @@ namespace HospitalERP
         private void frmConsultationDetails_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            
-            cmbProcedure.DataSource = objCD.ProceduresCombo(0);
-            cmbStatus.DataSource = objCD.StatusCombo(0);
-            getConsultationDetails();
-            getProcedureList();
-            setGridViews();
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;                      
 
         }
 
@@ -58,16 +53,22 @@ namespace HospitalERP
         {
             try
             {                
-                dgvApptHistory.DataSource = objCD.getApptHistory(Convert.ToInt32(txtAppID.Text),Convert.ToInt32(txtPatientID.Text));
-                dgvApptHistory.Rows[0].Selected = true;        
-                int app_id = Convert.ToInt32(dgvApptHistory.Rows[0].Cells[0].Value);
-                dgvHistoryProcedures.DataSource = objCD.getProceduresFromApptID(app_id);
+                dgvApptHistory.DataSource = objCD.getApptHistory(Convert.ToInt32(txtAppID.Text),Convert.ToInt32(txtPatientID.Text));                
+                ShowProceduresHistory(0);
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ShowProceduresHistory(int index)
+        {
+            dgvApptHistory.Rows[index].Selected = true;
+            int app_id = Convert.ToInt32(dgvApptHistory.Rows[index].Cells["colHistID"].Value);
+            lblHeadProcHist.Text = "PROCEDURES DONE ON APPT. DATE " + Utils.FormatDateShort(dgvApptHistory.Rows[index].Cells["colHistDate"].Value.ToString());
+            dgvHistoryProcedures.DataSource = objCD.getProceduresFromApptID(app_id);
         }
 
 
@@ -94,6 +95,18 @@ namespace HospitalERP
             txtApptNotes.Text = dt.Rows[0]["notes"].ToString();
             txtDoctor.Text = Utils.FormatDoctorName(dt.Rows[0]["doctor_name"].ToString());            
             txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
+            cmbAppStatus.SelectedValue = dt.Rows[0]["status"];
+            if (Convert.ToInt16(dt.Rows[0]["status_edit_lock"].ToString()) == 1)
+                EnableEditableButtons(false);
+            else
+                EnableEditableButtons(true);
+        }
+
+        private void EnableEditableButtons(bool val)
+        {
+            btnSave.Enabled = val;
+            btnSaveProcedure.Enabled = val;
+            btnAddNew.Enabled = val;
         }
 
         private void btnSaveProcedure_Click(object sender, EventArgs e)
@@ -168,10 +181,8 @@ namespace HospitalERP
         {
             //to save medical notes and known allergies in patient table and
             //to save appointment notes in appointment table
-            int rtn = objCD.saveDiagnosis(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()),txtMedicalNotes.Text.Trim(),txtAllergies.Text.Trim(),txtApptNotes.Text.Trim());
-            //if (rtn == 0)
-            //  lblStatus.Text = "This name already exists. Please provide unique name.";
-            //else
+            int rtn = objCD.saveDiagnosis(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()),txtMedicalNotes.Text.Trim(),txtAllergies.Text.Trim(),txtApptNotes.Text.Trim(), Convert.ToInt16(cmbAppStatus.SelectedValue));
+            
             if (rtn == 1)
             {
                 ShowStatus(1, "Record succesfully updated");
@@ -181,39 +192,18 @@ namespace HospitalERP
             {
                 ShowStatus(0, "Some error occurred... Record cannot be added.");
             }
+            getConsultationDetails();
         }
 
         private void ShowStatus(int success, string msg)
         {
             MessageBox.Show(msg, "Information", MessageBoxButtons.OK);
-            /*
-            lblStatus.Visible = true;
-            if (success == 1)
-            {
-                lblStatus.BackColor = Color.YellowGreen;
-                lblStatus.ForeColor = Color.DarkGreen;
-            }
-            else
-            {
-                lblStatus.BackColor = Color.Salmon;
-                lblStatus.ForeColor = Color.DarkRed;
-            }
-            lblStatus.Text = msg;
-            var t = new Timer();
-            t.Interval = 5000; // it will Tick in 3 seconds
-            t.Tick += (s, e) =>
-            {
-                lblStatus.Hide();
-                t.Stop();
-            };
-            t.Start();
-            */
+           
         }
 
         private void dgvApptHistory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int app_id = Convert.ToInt32(dgvApptHistory.Rows[e.RowIndex].Cells["colid"].Value.ToString());
-            dgvHistoryProcedures.DataSource = objCD.getProceduresFromApptID(app_id);
+            ShowProceduresHistory(e.RowIndex);       
 
         }
 
@@ -280,6 +270,52 @@ namespace HospitalERP
 
         private void frmConsultationDetails_Activated(object sender, EventArgs e)
         {
+            
+        }
+
+        private void frmConsultationDetails_Shown(object sender, EventArgs e)
+        {
+            //cmbProcedure.DataSource = objCD.ProceduresCombo(0);
+            //cmbStatus.DataSource = objCD.StatusCombo(0);
+            PopulateAppointmentStatusCombo();
+            getConsultationDetails();           
+           
+        }
+
+        private void tabConsult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabConsult.SelectedIndex)
+            {
+                case 0:
+
+                    break;
+                case 1:
+                    cmbProcedure.DataSource = objCD.ProceduresCombo(0);
+                    cmbStatus.DataSource = objCD.StatusCombo(0);
+                    getProcedureList();
+                    break;
+                case 2:
+                    dgvHistoryProcedures.AutoGenerateColumns = false;
+                    setGridViews();
+                    break;
+            }
+        }
+
+        private void dgvApptHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvApptHistory.Columns[e.ColumnIndex].Name)
+            {
+                case "btnHistSelect":
+                    ShowProceduresHistory(e.RowIndex);
+                    break;
+            }
+        }
+
+        private void PopulateAppointmentStatusCombo()
+        {
+            cmbAppStatus.DataSource = objApp.getAppointmentStatus();
+            cmbAppStatus.DisplayMember = "name";
+            cmbAppStatus.ValueMember = "id";
             
         }
     }
