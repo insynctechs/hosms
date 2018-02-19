@@ -26,8 +26,8 @@ namespace HospitalERP.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=USER-PC\\SQLEXPRESS;Initial Catalog=hospitalERP_db;Persist Security In" +
-            "fo=True;User ID=sa;Password=Jesus+2017")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-RKNU53S\\SQLEXPRESS01;Initial Catalog=hospitalERP_db;Persist S" +
+            "ecurity Info=True;User ID=sumi;Password=jesus123")]
         public string connstr {
             get {
                 return ((string)(this["connstr"]));

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle124 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle125 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle126 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle118 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle119 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle120 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle121 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle122 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle123 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,6 +78,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtMedicalNotes = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cmbAppStatus = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
@@ -85,13 +86,19 @@
             this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.txtApptNotes = new System.Windows.Forms.TextBox();
-            this.tbPgProc = new System.Windows.Forms.TabPage();
-            this.tbPgHistory = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label24 = new System.Windows.Forms.Label();
-            this.cmbAppStatus = new System.Windows.Forms.ComboBox();
+            this.tbPgProc = new System.Windows.Forms.TabPage();
+            this.dgvProc = new System.Windows.Forms.DataGridView();
+            this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ctypename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cfee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cstatus_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.txtApptProcID = new System.Windows.Forms.TextBox();
@@ -112,31 +119,25 @@
             this.flowLayoutPanel23 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSaveProcedure = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
-            this.dgvProc = new System.Windows.Forms.DataGridView();
-            this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ctypename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cfee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cstatus_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbPgHistory = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvApptHistory = new System.Windows.Forms.DataGridView();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lblHeadProcHist = new System.Windows.Forms.Label();
-            this.dgvHistoryProcedures = new System.Windows.Forms.DataGridView();
-            this.colHistProcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistProcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistProcType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistProcFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistProcStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHistID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHistDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHistDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHistNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHistStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHistSelect = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvHistoryProcedures = new System.Windows.Forms.DataGridView();
+            this.colHistProcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistProcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistProcType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistProcFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistProcStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHeadProcHist = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnGenerateBill = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -149,22 +150,22 @@
             this.flowLayoutPanel17.SuspendLayout();
             this.flowLayoutPanel16.SuspendLayout();
             this.flowLayoutPanel15.SuspendLayout();
-            this.tbPgProc.SuspendLayout();
-            this.tbPgHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
+            this.tbPgProc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel21.SuspendLayout();
             this.flowLayoutPanel20.SuspendLayout();
             this.flowLayoutPanel22.SuspendLayout();
             this.flowLayoutPanel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).BeginInit();
+            this.tbPgHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -203,7 +204,7 @@
             this.flowLayoutPanel4.Location = new System.Drawing.Point(360, 43);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(263, 122);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(263, 131);
             this.flowLayoutPanel4.TabIndex = 37;
             // 
             // label4
@@ -635,10 +636,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel17.Controls.Add(this.cmbAppStatus);
             this.flowLayoutPanel17.Controls.Add(this.btnSave);
+            this.flowLayoutPanel17.Controls.Add(this.btnGenerateBill);
             this.flowLayoutPanel17.Location = new System.Drawing.Point(490, 255);
             this.flowLayoutPanel17.Name = "flowLayoutPanel17";
             this.flowLayoutPanel17.Size = new System.Drawing.Size(491, 60);
             this.flowLayoutPanel17.TabIndex = 3;
+            // 
+            // cmbAppStatus
+            // 
+            this.cmbAppStatus.FormattingEnabled = true;
+            this.cmbAppStatus.Location = new System.Drawing.Point(3, 8);
+            this.cmbAppStatus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.cmbAppStatus.Name = "cmbAppStatus";
+            this.cmbAppStatus.Size = new System.Drawing.Size(121, 28);
+            this.cmbAppStatus.TabIndex = 8;
             // 
             // btnSave
             // 
@@ -710,52 +721,6 @@
             this.txtApptNotes.Size = new System.Drawing.Size(476, 202);
             this.txtApptNotes.TabIndex = 1;
             // 
-            // tbPgProc
-            // 
-            this.tbPgProc.BackColor = System.Drawing.Color.White;
-            this.tbPgProc.Controls.Add(this.dgvProc);
-            this.tbPgProc.Controls.Add(this.tableLayoutPanel4);
-            this.tbPgProc.Location = new System.Drawing.Point(4, 32);
-            this.tbPgProc.Name = "tbPgProc";
-            this.tbPgProc.Padding = new System.Windows.Forms.Padding(3);
-            this.tbPgProc.Size = new System.Drawing.Size(1000, 477);
-            this.tbPgProc.TabIndex = 1;
-            this.tbPgProc.Text = "Procedures";
-            // 
-            // tbPgHistory
-            // 
-            this.tbPgHistory.BackColor = System.Drawing.Color.White;
-            this.tbPgHistory.Controls.Add(this.splitContainer1);
-            this.tbPgHistory.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPgHistory.Location = new System.Drawing.Point(4, 32);
-            this.tbPgHistory.Name = "tbPgHistory";
-            this.tbPgHistory.Size = new System.Drawing.Size(1000, 477);
-            this.tbPgHistory.TabIndex = 2;
-            this.tbPgHistory.Text = "Appointment History";
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.dgvApptHistory);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvHistoryProcedures);
-            this.splitContainer1.Panel2.Controls.Add(this.lblHeadProcHist);
-            this.splitContainer1.Panel2.Controls.Add(this.label25);
-            this.splitContainer1.Size = new System.Drawing.Size(1000, 477);
-            this.splitContainer1.SplitterDistance = 655;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -777,14 +742,135 @@
             this.label24.TabIndex = 7;
             this.label24.Text = "Choose Appointment Status : ";
             // 
-            // cmbAppStatus
+            // tbPgProc
             // 
-            this.cmbAppStatus.FormattingEnabled = true;
-            this.cmbAppStatus.Location = new System.Drawing.Point(3, 8);
-            this.cmbAppStatus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.cmbAppStatus.Name = "cmbAppStatus";
-            this.cmbAppStatus.Size = new System.Drawing.Size(121, 28);
-            this.cmbAppStatus.TabIndex = 8;
+            this.tbPgProc.BackColor = System.Drawing.Color.White;
+            this.tbPgProc.Controls.Add(this.dgvProc);
+            this.tbPgProc.Controls.Add(this.tableLayoutPanel4);
+            this.tbPgProc.Location = new System.Drawing.Point(4, 32);
+            this.tbPgProc.Name = "tbPgProc";
+            this.tbPgProc.Padding = new System.Windows.Forms.Padding(3);
+            this.tbPgProc.Size = new System.Drawing.Size(1000, 477);
+            this.tbPgProc.TabIndex = 1;
+            this.tbPgProc.Text = "Procedures";
+            // 
+            // dgvProc
+            // 
+            this.dgvProc.AllowUserToAddRows = false;
+            this.dgvProc.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvProc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvProc.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvProc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvProc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvProc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cid,
+            this.cname,
+            this.cdesc,
+            this.ctypename,
+            this.cnotes,
+            this.cfee,
+            this.cstatus_id,
+            this.notes,
+            this.Status});
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProc.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvProc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProc.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvProc.Location = new System.Drawing.Point(399, 3);
+            this.dgvProc.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.dgvProc.Name = "dgvProc";
+            this.dgvProc.ReadOnly = true;
+            this.dgvProc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProc.Size = new System.Drawing.Size(598, 471);
+            this.dgvProc.TabIndex = 15;
+            // 
+            // cid
+            // 
+            this.cid.DataPropertyName = "id";
+            this.cid.HeaderText = "ID";
+            this.cid.Name = "cid";
+            this.cid.ReadOnly = true;
+            this.cid.Visible = false;
+            // 
+            // cname
+            // 
+            this.cname.DataPropertyName = "name";
+            this.cname.HeaderText = "Name";
+            this.cname.Name = "cname";
+            this.cname.ReadOnly = true;
+            // 
+            // cdesc
+            // 
+            this.cdesc.DataPropertyName = "description";
+            this.cdesc.HeaderText = "Description";
+            this.cdesc.Name = "cdesc";
+            this.cdesc.ReadOnly = true;
+            this.cdesc.Visible = false;
+            // 
+            // ctypename
+            // 
+            this.ctypename.DataPropertyName = "type_name";
+            this.ctypename.HeaderText = "Type Name";
+            this.ctypename.Name = "ctypename";
+            this.ctypename.ReadOnly = true;
+            // 
+            // cnotes
+            // 
+            this.cnotes.DataPropertyName = "notes";
+            this.cnotes.HeaderText = "Notes";
+            this.cnotes.Name = "cnotes";
+            this.cnotes.ReadOnly = true;
+            this.cnotes.Visible = false;
+            // 
+            // cfee
+            // 
+            this.cfee.DataPropertyName = "fee";
+            this.cfee.HeaderText = "Fee";
+            this.cfee.Name = "cfee";
+            this.cfee.ReadOnly = true;
+            // 
+            // cstatus_id
+            // 
+            this.cstatus_id.DataPropertyName = "status";
+            this.cstatus_id.HeaderText = "status_id";
+            this.cstatus_id.Name = "cstatus_id";
+            this.cstatus_id.ReadOnly = true;
+            this.cstatus_id.Visible = false;
+            // 
+            // notes
+            // 
+            this.notes.DataPropertyName = "notes";
+            this.notes.HeaderText = "Notes";
+            this.notes.Name = "notes";
+            this.notes.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "status_name";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // tableLayoutPanel4
             // 
@@ -1004,145 +1090,57 @@
             this.btnAddNew.Text = "ADD NEW";
             this.btnAddNew.UseVisualStyleBackColor = false;
             // 
-            // dgvProc
+            // tbPgHistory
             // 
-            this.dgvProc.AllowUserToAddRows = false;
-            this.dgvProc.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle124.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle124.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle124.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvProc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle124;
-            this.dgvProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvProc.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvProc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgvProc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle125.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle125.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle125.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle125.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle125.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle125.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle125.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle125;
-            this.dgvProc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cid,
-            this.cname,
-            this.cdesc,
-            this.ctypename,
-            this.cnotes,
-            this.cfee,
-            this.cstatus_id,
-            this.notes,
-            this.Status});
-            dataGridViewCellStyle126.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle126.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle126.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle126.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle126.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle126.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle126.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProc.DefaultCellStyle = dataGridViewCellStyle126;
-            this.dgvProc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProc.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvProc.Location = new System.Drawing.Point(399, 3);
-            this.dgvProc.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.dgvProc.Name = "dgvProc";
-            this.dgvProc.ReadOnly = true;
-            this.dgvProc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProc.Size = new System.Drawing.Size(598, 471);
-            this.dgvProc.TabIndex = 15;
+            this.tbPgHistory.BackColor = System.Drawing.Color.White;
+            this.tbPgHistory.Controls.Add(this.splitContainer1);
+            this.tbPgHistory.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPgHistory.Location = new System.Drawing.Point(4, 32);
+            this.tbPgHistory.Name = "tbPgHistory";
+            this.tbPgHistory.Size = new System.Drawing.Size(1000, 477);
+            this.tbPgHistory.TabIndex = 2;
+            this.tbPgHistory.Text = "Appointment History";
             // 
-            // cid
+            // splitContainer1
             // 
-            this.cid.DataPropertyName = "id";
-            this.cid.HeaderText = "ID";
-            this.cid.Name = "cid";
-            this.cid.ReadOnly = true;
-            this.cid.Visible = false;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // cname
+            // splitContainer1.Panel1
             // 
-            this.cname.DataPropertyName = "name";
-            this.cname.HeaderText = "Name";
-            this.cname.Name = "cname";
-            this.cname.ReadOnly = true;
+            this.splitContainer1.Panel1.Controls.Add(this.dgvApptHistory);
             // 
-            // cdesc
+            // splitContainer1.Panel2
             // 
-            this.cdesc.DataPropertyName = "description";
-            this.cdesc.HeaderText = "Description";
-            this.cdesc.Name = "cdesc";
-            this.cdesc.ReadOnly = true;
-            this.cdesc.Visible = false;
-            // 
-            // ctypename
-            // 
-            this.ctypename.DataPropertyName = "type_name";
-            this.ctypename.HeaderText = "Type Name";
-            this.ctypename.Name = "ctypename";
-            this.ctypename.ReadOnly = true;
-            // 
-            // cnotes
-            // 
-            this.cnotes.DataPropertyName = "notes";
-            this.cnotes.HeaderText = "Notes";
-            this.cnotes.Name = "cnotes";
-            this.cnotes.ReadOnly = true;
-            this.cnotes.Visible = false;
-            // 
-            // cfee
-            // 
-            this.cfee.DataPropertyName = "fee";
-            this.cfee.HeaderText = "Fee";
-            this.cfee.Name = "cfee";
-            this.cfee.ReadOnly = true;
-            // 
-            // cstatus_id
-            // 
-            this.cstatus_id.DataPropertyName = "status";
-            this.cstatus_id.HeaderText = "status_id";
-            this.cstatus_id.Name = "cstatus_id";
-            this.cstatus_id.ReadOnly = true;
-            this.cstatus_id.Visible = false;
-            // 
-            // notes
-            // 
-            this.notes.DataPropertyName = "notes";
-            this.notes.HeaderText = "Notes";
-            this.notes.Name = "notes";
-            this.notes.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "status_name";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+            this.splitContainer1.Panel2.Controls.Add(this.dgvHistoryProcedures);
+            this.splitContainer1.Panel2.Controls.Add(this.lblHeadProcHist);
+            this.splitContainer1.Panel2.Controls.Add(this.label25);
+            this.splitContainer1.Size = new System.Drawing.Size(1000, 477);
+            this.splitContainer1.SplitterDistance = 655;
+            this.splitContainer1.TabIndex = 0;
             // 
             // dgvApptHistory
             // 
             this.dgvApptHistory.AllowUserToAddRows = false;
             this.dgvApptHistory.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle118.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle118.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle118.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvApptHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle118;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvApptHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvApptHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvApptHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvApptHistory.BackgroundColor = System.Drawing.Color.White;
             this.dgvApptHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvApptHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle119.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle119.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle119.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle119.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle119.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle119.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle119.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApptHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle119;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApptHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvApptHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvApptHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colHistID,
@@ -1151,14 +1149,14 @@
             this.colHistNotes,
             this.colHistStatus,
             this.btnHistSelect});
-            dataGridViewCellStyle120.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle120.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle120.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle120.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle120.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle120.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle120.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApptHistory.DefaultCellStyle = dataGridViewCellStyle120;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApptHistory.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgvApptHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvApptHistory.GridColor = System.Drawing.Color.LightCyan;
             this.dgvApptHistory.Location = new System.Drawing.Point(0, 0);
@@ -1170,123 +1168,6 @@
             this.dgvApptHistory.TabIndex = 13;
             this.dgvApptHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApptHistory_CellContentClick);
             this.dgvApptHistory.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApptHistory_RowHeaderMouseClick);
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.LightCyan;
-            this.label25.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.Color.DimGray;
-            this.label25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label25.Location = new System.Drawing.Point(101, 224);
-            this.label25.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label25.Name = "label25";
-            this.label25.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.label25.Size = new System.Drawing.Size(138, 28);
-            this.label25.TabIndex = 33;
-            this.label25.Text = "PATIENT DETAILS";
-            this.label25.UseWaitCursor = true;
-            // 
-            // lblHeadProcHist
-            // 
-            this.lblHeadProcHist.BackColor = System.Drawing.Color.LightCyan;
-            this.lblHeadProcHist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeadProcHist.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
-            this.lblHeadProcHist.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHeadProcHist.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeadProcHist.Location = new System.Drawing.Point(0, 0);
-            this.lblHeadProcHist.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.lblHeadProcHist.Name = "lblHeadProcHist";
-            this.lblHeadProcHist.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.lblHeadProcHist.Size = new System.Drawing.Size(341, 28);
-            this.lblHeadProcHist.TabIndex = 34;
-            this.lblHeadProcHist.Text = "PROCEDURES DONE ON APPT. DATE ";
-            this.lblHeadProcHist.UseWaitCursor = true;
-            // 
-            // dgvHistoryProcedures
-            // 
-            this.dgvHistoryProcedures.AllowUserToAddRows = false;
-            this.dgvHistoryProcedures.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle121.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle121.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle121.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvHistoryProcedures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle121;
-            this.dgvHistoryProcedures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHistoryProcedures.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvHistoryProcedures.BackgroundColor = System.Drawing.Color.White;
-            this.dgvHistoryProcedures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvHistoryProcedures.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle122.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle122.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle122.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle122.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle122.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle122.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle122.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryProcedures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle122;
-            this.dgvHistoryProcedures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistoryProcedures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colHistProcID,
-            this.colHistProcName,
-            this.colHistProcType,
-            this.colHistProcFee,
-            this.colHistProcStatus});
-            dataGridViewCellStyle123.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle123.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle123.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle123.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle123.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle123.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle123.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryProcedures.DefaultCellStyle = dataGridViewCellStyle123;
-            this.dgvHistoryProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHistoryProcedures.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvHistoryProcedures.Location = new System.Drawing.Point(0, 28);
-            this.dgvHistoryProcedures.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.dgvHistoryProcedures.Name = "dgvHistoryProcedures";
-            this.dgvHistoryProcedures.ReadOnly = true;
-            this.dgvHistoryProcedures.RowHeadersVisible = false;
-            this.dgvHistoryProcedures.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistoryProcedures.Size = new System.Drawing.Size(341, 449);
-            this.dgvHistoryProcedures.TabIndex = 35;
-            // 
-            // colHistProcID
-            // 
-            this.colHistProcID.DataPropertyName = "id";
-            this.colHistProcID.HeaderText = "ID";
-            this.colHistProcID.Name = "colHistProcID";
-            this.colHistProcID.ReadOnly = true;
-            this.colHistProcID.Visible = false;
-            // 
-            // colHistProcName
-            // 
-            this.colHistProcName.DataPropertyName = "name";
-            this.colHistProcName.HeaderText = "Name";
-            this.colHistProcName.Name = "colHistProcName";
-            this.colHistProcName.ReadOnly = true;
-            // 
-            // colHistProcType
-            // 
-            this.colHistProcType.DataPropertyName = "type_name";
-            this.colHistProcType.HeaderText = "Type";
-            this.colHistProcType.Name = "colHistProcType";
-            this.colHistProcType.ReadOnly = true;
-            // 
-            // colHistProcFee
-            // 
-            this.colHistProcFee.DataPropertyName = "fee";
-            this.colHistProcFee.HeaderText = "Fee";
-            this.colHistProcFee.Name = "colHistProcFee";
-            this.colHistProcFee.ReadOnly = true;
-            // 
-            // colHistProcStatus
-            // 
-            this.colHistProcStatus.DataPropertyName = "status_name";
-            this.colHistProcStatus.HeaderText = "Status";
-            this.colHistProcStatus.Name = "colHistProcStatus";
-            this.colHistProcStatus.ReadOnly = true;
             // 
             // colHistID
             // 
@@ -1337,6 +1218,140 @@
             this.btnHistSelect.Text = "Select";
             this.btnHistSelect.UseColumnTextForButtonValue = true;
             // 
+            // dgvHistoryProcedures
+            // 
+            this.dgvHistoryProcedures.AllowUserToAddRows = false;
+            this.dgvHistoryProcedures.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvHistoryProcedures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.dgvHistoryProcedures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistoryProcedures.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvHistoryProcedures.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHistoryProcedures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvHistoryProcedures.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryProcedures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.dgvHistoryProcedures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistoryProcedures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colHistProcID,
+            this.colHistProcName,
+            this.colHistProcType,
+            this.colHistProcFee,
+            this.colHistProcStatus});
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryProcedures.DefaultCellStyle = dataGridViewCellStyle27;
+            this.dgvHistoryProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHistoryProcedures.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvHistoryProcedures.Location = new System.Drawing.Point(0, 28);
+            this.dgvHistoryProcedures.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.dgvHistoryProcedures.Name = "dgvHistoryProcedures";
+            this.dgvHistoryProcedures.ReadOnly = true;
+            this.dgvHistoryProcedures.RowHeadersVisible = false;
+            this.dgvHistoryProcedures.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistoryProcedures.Size = new System.Drawing.Size(341, 449);
+            this.dgvHistoryProcedures.TabIndex = 35;
+            // 
+            // colHistProcID
+            // 
+            this.colHistProcID.DataPropertyName = "id";
+            this.colHistProcID.HeaderText = "ID";
+            this.colHistProcID.Name = "colHistProcID";
+            this.colHistProcID.ReadOnly = true;
+            this.colHistProcID.Visible = false;
+            // 
+            // colHistProcName
+            // 
+            this.colHistProcName.DataPropertyName = "name";
+            this.colHistProcName.HeaderText = "Name";
+            this.colHistProcName.Name = "colHistProcName";
+            this.colHistProcName.ReadOnly = true;
+            // 
+            // colHistProcType
+            // 
+            this.colHistProcType.DataPropertyName = "type_name";
+            this.colHistProcType.HeaderText = "Type";
+            this.colHistProcType.Name = "colHistProcType";
+            this.colHistProcType.ReadOnly = true;
+            // 
+            // colHistProcFee
+            // 
+            this.colHistProcFee.DataPropertyName = "fee";
+            this.colHistProcFee.HeaderText = "Fee";
+            this.colHistProcFee.Name = "colHistProcFee";
+            this.colHistProcFee.ReadOnly = true;
+            // 
+            // colHistProcStatus
+            // 
+            this.colHistProcStatus.DataPropertyName = "status_name";
+            this.colHistProcStatus.HeaderText = "Status";
+            this.colHistProcStatus.Name = "colHistProcStatus";
+            this.colHistProcStatus.ReadOnly = true;
+            // 
+            // lblHeadProcHist
+            // 
+            this.lblHeadProcHist.BackColor = System.Drawing.Color.LightCyan;
+            this.lblHeadProcHist.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHeadProcHist.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
+            this.lblHeadProcHist.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHeadProcHist.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHeadProcHist.Location = new System.Drawing.Point(0, 0);
+            this.lblHeadProcHist.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lblHeadProcHist.Name = "lblHeadProcHist";
+            this.lblHeadProcHist.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblHeadProcHist.Size = new System.Drawing.Size(341, 28);
+            this.lblHeadProcHist.TabIndex = 34;
+            this.lblHeadProcHist.Text = "PROCEDURES DONE ON APPT. DATE ";
+            this.lblHeadProcHist.UseWaitCursor = true;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.LightCyan;
+            this.label25.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.Color.DimGray;
+            this.label25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label25.Location = new System.Drawing.Point(101, 224);
+            this.label25.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label25.Name = "label25";
+            this.label25.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.label25.Size = new System.Drawing.Size(138, 28);
+            this.label25.TabIndex = 33;
+            this.label25.Text = "PATIENT DETAILS";
+            this.label25.UseWaitCursor = true;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // btnGenerateBill
+            // 
+            this.btnGenerateBill.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnGenerateBill.ForeColor = System.Drawing.Color.White;
+            this.btnGenerateBill.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGenerateBill.Location = new System.Drawing.Point(262, 3);
+            this.btnGenerateBill.Name = "btnGenerateBill";
+            this.btnGenerateBill.Size = new System.Drawing.Size(200, 36);
+            this.btnGenerateBill.TabIndex = 20;
+            this.btnGenerateBill.Text = "SICK LEAVE REPORT";
+            this.btnGenerateBill.UseVisualStyleBackColor = false;
+            this.btnGenerateBill.Click += new System.EventHandler(this.btnGenerateBill_Click);
+            // 
             // frmConsultationDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1374,16 +1389,10 @@
             this.flowLayoutPanel16.PerformLayout();
             this.flowLayoutPanel15.ResumeLayout(false);
             this.flowLayoutPanel15.PerformLayout();
-            this.tbPgProc.ResumeLayout(false);
-            this.tbPgHistory.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            this.tbPgProc.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.flowLayoutPanel21.ResumeLayout(false);
@@ -1393,9 +1402,15 @@
             this.flowLayoutPanel22.ResumeLayout(false);
             this.flowLayoutPanel22.PerformLayout();
             this.flowLayoutPanel23.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).EndInit();
+            this.tbPgHistory.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1500,5 +1515,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colHistNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHistStatus;
         private System.Windows.Forms.DataGridViewButtonColumn btnHistSelect;
+        private System.Windows.Forms.Button btnGenerateBill;
     }
 }

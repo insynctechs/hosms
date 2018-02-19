@@ -1,0 +1,21 @@
+Date range
+bill status
+bill type
+
+
+bill Date, Patient Name, Doctor name, Ammount, bill status
+
+
+final total
+
+
+outstanding billing report --- bill due more than 0,
+bill#, patient name, doctor
+
+
+patient report
+https://www.youtube.com/watch?v=WGKzFKgeoo8
+https://www.codeproject.com/KB/webforms/ReportViewer.aspx?msg=1700981
+
+
+portfolio-commercial
