@@ -41,7 +41,7 @@ namespace HospitalERP
             txtGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
             //txtDob.Text = Utils.FormatDateShort(dt.Rows[0]["dob"].ToString());
             txtAge.Text = dt.Rows[0]["age"].ToString();
-            txtAppDate.Text = dt.Rows[0]["appointment_date"].ToString();
+            txtAppDate.Text = Utils.FormatDateShort(dt.Rows[0]["appointment_date"].ToString());
             txtDoctorName.Text = dt.Rows[0]["doctor_name"].ToString();
             //txtNationality.Text = dt.Rows[0]["nationality"].ToString();
             //this.reportViewer1.RefreshReport();
@@ -95,16 +95,62 @@ namespace HospitalERP
                 printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom = bottom;
                 if (printDialog1.ShowDialog() == DialogResult.OK)
                 {
+                    HideControls();
                     PrinterSettings values = new PrinterSettings();
                     printDialog1.Document = printDocument1;
                     printDocument1.Print();
+                    ShowControls();
                 }
                 printDocument1.Dispose();
             }
         }
 
+        private void HideControls()
+        {
+            lblSickDetails.Text = txtSickDetails.Text;
+            txtSickDetails.Hide();
+            lblSickDetails.Show();
+
+            lblFrom.Text = dtFrom.Value.ToString("dd MMMM yyyy");
+            lblTo.Text = dtTo.Value.ToString("dd MMMM yyyy");
+            dtFrom.Hide();
+            lblFrom.Show();
+            dtTo.Hide();
+            lblTo.Show();
+
+            lblFromTime.Text = txtFromTime.Text;
+            lblToTime.Text = txtToTime.Text;
+            lblFromTime.Show();
+            txtFromTime.Hide();
+            lblToTime.Show();
+            txtToTime.Hide();
+        }
+
+        private void ShowControls()
+        {
+            lblSickDetails.Text = "";
+            txtSickDetails.Show();
+            lblSickDetails.Hide();
+
+            lblFrom.Text ="";
+            lblTo.Text = "";
+            dtFrom.Show();
+            lblFrom.Hide();
+            dtTo.Show();
+            lblTo.Hide();
+
+            lblFromTime.Text = "";
+            lblToTime.Text = "";
+            lblFromTime.Hide();
+            txtFromTime.Show();
+            lblToTime.Hide();
+            txtToTime.Show();
+
+        }
+
         private void ShowStatus(int success, string msg)
         {
+            /*
             lblStatus.Visible = true;
             if (success == 1)
             {
@@ -125,6 +171,7 @@ namespace HospitalERP
                 t.Stop();
             };
             t.Start();
+            */
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -199,6 +246,25 @@ namespace HospitalERP
                 e.Cancel = false;
                 errorProvider.SetError(txtToTime, null);
             }
+        }
+
+        private void dtFrom_ValueChanged(object sender, EventArgs e)
+        {
+            findDateDiff();
+        }
+
+        private void dtTo_ValueChanged(object sender, EventArgs e)
+        {
+            findDateDiff();
+        }
+
+        private void findDateDiff()
+        {
+            DateTime tDate1 = dtFrom.Value;
+            DateTime tDate2 = dtTo.Value;
+            TimeSpan tspan = tDate2 - tDate1;
+            txtDays.Text = tspan.Days.ToString();
+            
         }
     }
 }

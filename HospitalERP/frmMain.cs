@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HospitalERP.Procedures;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace HospitalERP
-{
-    
+{    
     public partial class frmMain : Form
     {
-
         Users usr = new Users();
         Menus mn = new Menus();
+        log4net.ILog ilog;
 
         public frmMain()
         {
             InitializeComponent();
+            log4net.Config.XmlConfigurator.Configure();
+            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
             LoggedUser.id = 1;
             LoggedUser.emp_id = "ADMIN";
             LoggedUser.type_id = 1;
@@ -29,6 +27,24 @@ namespace HospitalERP
             LoggedUser.last_log_date = "";
             LoggedUser.name = "ADMIN";
             LoggedUser.staff_id = 0;
+
+
+            //opening the subkey  
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP");
+
+            //if it does exist, retrieve the stored values  
+            if (key != null)
+            {
+                var frun = key.GetValue("first_run");
+                //MessageBox.Show(frun.ToString());
+                key.Close();
+                if(frun.ToString()=="true")
+                {
+                    //show frmDbConfig
+                    frmDbConfig fdc = new frmDbConfig();
+                    fdc.ShowDialog();
+                }
+            }
         }
 
         public frmMain(string empid)
@@ -56,7 +72,7 @@ namespace HospitalERP
             }
             catch (Exception ex)
             {
-
+                ilog.Error(ex.Message, ex);
             }
         }
 
@@ -69,9 +85,9 @@ namespace HospitalERP
                     System.Windows.Forms.Control Mdi = (MdiClient)ctl;
                     Mdi.BackColor = System.Drawing.Color.White;
                 }
-                catch (Exception a)
+                catch (Exception ex)
                 {
-
+                    ilog.Error(ex.Message, ex);
                 }
             }
             if(LoggedUser.id > 0)
@@ -212,11 +228,20 @@ namespace HospitalERP
 
         private void SetMenuItems()
         {
-            DataTable dtMenu = mn.GetUserTypeMenusRemoveList(LoggedUser.type_id);
-            foreach(DataRow dr in dtMenu.Rows)
+            try
             {
-                string menu_name = dr["menu_name"].ToString();
-                MainMenu.Items.RemoveByKey(menu_name);
+                DataTable dtMenu = mn.GetUserTypeMenusRemoveList(LoggedUser.type_id);
+                foreach (DataRow dr in dtMenu.Rows)
+                {
+                    string menu_name = dr["menu_name"].ToString();
+                    MainMenu.Items.RemoveByKey(menu_name);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error in establishing a connection. Please input valid values."+ex.ToString());
+                frmDbConfig fd = new frmDbConfig();
+                fd.ShowDialog();
             }
         }
 
@@ -363,40 +388,54 @@ namespace HospitalERP
         public int getChildCount()
         {
             int childCount = 0;
-            foreach (Form frm in this.MdiChildren)
+            try
             {
-                if (frm.GetType() != typeof(frmDashboard) && frm.GetType() != typeof(frmMain) && frm.GetType() != typeof(frmLogin))
+                foreach (Form frm in this.MdiChildren)
                 {
-                    childCount++;
+                    if (frm.GetType() != typeof(frmDashboard) && frm.GetType() != typeof(frmMain) && frm.GetType() != typeof(frmLogin))
+                    {
+                        childCount++;
+                    }
                 }
-            }
+            }            
+            catch (Exception ex)
+            {
+                ilog.Error(ex.Message, ex);
+            }        
             return childCount;
         }
 
         private void btnApp_Click(object sender, EventArgs e)
         {
-            if (LoggedUser.type_name.ToUpper() == "DOCTOR")
+            try
             {
-                if (Application.OpenForms.OfType<frmConsultations>().Count() == 1)
-                    Application.OpenForms.OfType<frmConsultations>().First().Activate();
+                if (LoggedUser.type_name.ToUpper() == "DOCTOR")
+                {
+                    if (Application.OpenForms.OfType<frmConsultations>().Count() == 1)
+                        Application.OpenForms.OfType<frmConsultations>().First().Activate();
+                    else
+                    {
+                        frmConsultations frm = new frmConsultations();
+                        frm.MdiParent = this;
+                        frm.Show();
+                    }
+                }
                 else
                 {
-                    frmConsultations frm = new frmConsultations();
-                    frm.MdiParent = this;
-                    frm.Show();
+
+                    if (Application.OpenForms.OfType<frmAppointments>().Count() == 1)
+                        Application.OpenForms.OfType<frmAppointments>().First().Activate();
+                    else
+                    {
+                        frmAppointments frm = new frmAppointments();
+                        frm.MdiParent = this;
+                        frm.Show();
+                    }
                 }
             }
-            else
+            catch(Exception ex)
             {
-
-                if (Application.OpenForms.OfType<frmAppointments>().Count() == 1)
-                    Application.OpenForms.OfType<frmAppointments>().First().Activate();
-                else
-                {
-                    frmAppointments frm = new frmAppointments();
-                    frm.MdiParent = this;
-                    frm.Show();
-                }
+                ilog.Error(ex.Message, ex);
             }
         }
 
@@ -414,23 +453,40 @@ namespace HospitalERP
 
         private void menuitemBillingReport_Click(object sender, EventArgs e)
         {
-            frmRptBilling rep = new frmRptBilling();
-            rep.MdiParent = this;
-            rep.Show();
+            if (Application.OpenForms.OfType<frmRptBilling>().Count() == 1)
+                Application.OpenForms.OfType<frmRptBilling>().First().Activate();
+            else
+            {
+                frmRptBilling rep = new frmRptBilling();
+                rep.MdiParent = this;
+                rep.Show();
+            }
             
         }
 
         private void miPatientRpt_Click(object sender, EventArgs e)
         {
-            frmRptPatient fmPat = new frmRptPatient();
-            fmPat.MdiParent = this;
-            fmPat.Show();
+            if (Application.OpenForms.OfType<frmRptPatient>().Count() == 1)
+                Application.OpenForms.OfType<frmRptPatient>().First().Activate();
+            else
+            {
+                frmRptPatient fmPat = new frmRptPatient();
+                fmPat.MdiParent = this;
+                fmPat.Show();
+            }
         }
 
         private void miSickLeaveRpt_Click(object sender, EventArgs e)
         {
             frmRptSickLeave rsl = new frmRptSickLeave();
             rsl.ShowDialog(this);
+        }
+
+        private void miAbout_Click(object sender, EventArgs e)
+        {
+            frmAbout fab = new frmAbout();
+            fab.ShowDialog(this);
+
         }
     }
 }

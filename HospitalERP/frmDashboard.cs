@@ -39,13 +39,22 @@ namespace HospitalERP
 
         private void SetMenuItems()
         {
-            DataTable dtMenu = mn.GetUserTypeMenusRemoveList(LoggedUser.type_id);
-            foreach (DataRow dr in dtMenu.Rows)
+            try
             {
-                string menu_name = dr["menu_name"].ToString();
-                string btn_name = menu_name.Replace("menuItem", "btnDash");
-                if (flowPanelDashMain.Controls.ContainsKey(btn_name))
-                    flowPanelDashMain.Controls.RemoveByKey(btn_name);
+                DataTable dtMenu = mn.GetUserTypeMenusRemoveList(LoggedUser.type_id);
+                foreach (DataRow dr in dtMenu.Rows)
+                {
+                    string menu_name = dr["menu_name"].ToString();
+                    string btn_name = menu_name.Replace("menuItem", "btnDash");
+                    if (flowPanelDashMain.Controls.ContainsKey(btn_name))
+                        flowPanelDashMain.Controls.RemoveByKey(btn_name);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in establishing a connection. Please input valid values." + ex.ToString());
+                frmDbConfig fd = new frmDbConfig();
+                fd.ShowDialog();
             }
         }
 
