@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabStaffs = new System.Windows.Forms.TabControl();
             this.tabPgAddStaffs = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -93,8 +93,24 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbUserRole = new System.Windows.Forms.ComboBox();
+            this.panelEmpID = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabPgListStaffs = new System.Windows.Forms.TabPage();
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDept = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDesignation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStaffType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserRoleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBtnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colBtnResetPwd = new System.Windows.Forms.DataGridViewButtonColumn();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -102,22 +118,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panelEmpID = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staff_type_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pathaka = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colBtnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colBtnResetPwd = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnClear = new System.Windows.Forms.Button();
             this.tabStaffs.SuspendLayout();
             this.tabPgAddStaffs.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -128,11 +129,11 @@
             this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
+            this.panelEmpID.SuspendLayout();
             this.tabPgListStaffs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.panelEmpID.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabStaffs
@@ -408,12 +409,13 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel1, 2);
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
+            this.flowLayoutPanel1.Controls.Add(this.btnClear);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
             this.flowLayoutPanel1.Controls.Add(this.txtID);
             this.flowLayoutPanel1.Controls.Add(this.txtUSERID);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(499, 507);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(372, 39);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(414, 39);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
             // btnSave
@@ -431,20 +433,21 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCancel.BackColor = System.Drawing.Color.LightCoral;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(84, 3);
+            this.btnCancel.Location = new System.Drawing.Point(182, 3);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Text = "CLOSE";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(165, 3);
+            this.txtID.Location = new System.Drawing.Point(263, 3);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(60, 25);
             this.txtID.TabIndex = 60;
@@ -453,7 +456,7 @@
             // 
             // txtUSERID
             // 
-            this.txtUSERID.Location = new System.Drawing.Point(231, 3);
+            this.txtUSERID.Location = new System.Drawing.Point(329, 3);
             this.txtUSERID.Name = "txtUSERID";
             this.txtUSERID.Size = new System.Drawing.Size(60, 25);
             this.txtUSERID.TabIndex = 63;
@@ -802,6 +805,34 @@
             this.cmbUserRole.TabIndex = 52;
             this.cmbUserRole.Validating += new System.ComponentModel.CancelEventHandler(this.cmbStaffType_Validating);
             // 
+            // panelEmpID
+            // 
+            this.panelEmpID.Controls.Add(this.label6);
+            this.panelEmpID.Controls.Add(this.label21);
+            this.panelEmpID.Location = new System.Drawing.Point(28, 135);
+            this.panelEmpID.Name = "panelEmpID";
+            this.panelEmpID.Size = new System.Drawing.Size(133, 25);
+            this.panelEmpID.TabIndex = 66;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "*";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(24, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(90, 18);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Employee ID:";
+            // 
             // tabPgListStaffs
             // 
             this.tabPgListStaffs.BackColor = System.Drawing.Color.White;
@@ -826,37 +857,37 @@
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
-            this.EmpID,
+            this.colEmpID,
             this.colName,
-            this.dept,
-            this.designation,
-            this.staff_type_title,
+            this.colDept,
+            this.colDesignation,
+            this.colStaffType,
+            this.colUserRoleID,
             this.colUserRole,
-            this.gender,
-            this.phone,
-            this.pathaka,
+            this.colGender,
+            this.colPhone,
             this.colActive,
             this.colBtnEdit,
             this.colBtnResetPwd});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.GridColor = System.Drawing.Color.LightCyan;
             this.dgvList.Location = new System.Drawing.Point(3, 83);
@@ -868,6 +899,107 @@
             this.dgvList.TabIndex = 12;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             this.dgvList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_RowHeaderMouseClick);
+            // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Visible = false;
+            // 
+            // colEmpID
+            // 
+            this.colEmpID.DataPropertyName = "emp_id";
+            this.colEmpID.HeaderText = "Employee ID";
+            this.colEmpID.Name = "colEmpID";
+            this.colEmpID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colDept
+            // 
+            this.colDept.DataPropertyName = "department";
+            this.colDept.HeaderText = "Department";
+            this.colDept.Name = "colDept";
+            this.colDept.ReadOnly = true;
+            // 
+            // colDesignation
+            // 
+            this.colDesignation.DataPropertyName = "designation";
+            this.colDesignation.HeaderText = "Designation";
+            this.colDesignation.Name = "colDesignation";
+            this.colDesignation.ReadOnly = true;
+            // 
+            // colStaffType
+            // 
+            this.colStaffType.DataPropertyName = "type_title";
+            this.colStaffType.HeaderText = "Staff Type";
+            this.colStaffType.Name = "colStaffType";
+            this.colStaffType.ReadOnly = true;
+            // 
+            // colUserRoleID
+            // 
+            this.colUserRoleID.DataPropertyName = "user_role_id";
+            this.colUserRoleID.HeaderText = "User Role ID";
+            this.colUserRoleID.Name = "colUserRoleID";
+            this.colUserRoleID.ReadOnly = true;
+            this.colUserRoleID.Visible = false;
+            // 
+            // colUserRole
+            // 
+            this.colUserRole.DataPropertyName = "user_role";
+            this.colUserRole.HeaderText = "User Role";
+            this.colUserRole.Name = "colUserRole";
+            this.colUserRole.ReadOnly = true;
+            // 
+            // colGender
+            // 
+            this.colGender.DataPropertyName = "gender";
+            this.colGender.HeaderText = "Gender";
+            this.colGender.Name = "colGender";
+            this.colGender.ReadOnly = true;
+            // 
+            // colPhone
+            // 
+            this.colPhone.DataPropertyName = "phone";
+            this.colPhone.HeaderText = "Phone";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            // 
+            // colActive
+            // 
+            this.colActive.DataPropertyName = "active";
+            this.colActive.HeaderText = "Active";
+            this.colActive.Name = "colActive";
+            this.colActive.ReadOnly = true;
+            this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colBtnEdit
+            // 
+            this.colBtnEdit.HeaderText = "";
+            this.colBtnEdit.Name = "colBtnEdit";
+            this.colBtnEdit.ReadOnly = true;
+            this.colBtnEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colBtnEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colBtnEdit.Text = "Edit";
+            this.colBtnEdit.ToolTipText = "Edit";
+            this.colBtnEdit.UseColumnTextForButtonValue = true;
+            // 
+            // colBtnResetPwd
+            // 
+            this.colBtnResetPwd.HeaderText = "";
+            this.colBtnResetPwd.Name = "colBtnResetPwd";
+            this.colBtnResetPwd.ReadOnly = true;
+            this.colBtnResetPwd.Text = "Reset Password";
+            this.colBtnResetPwd.ToolTipText = "Reset Password";
+            this.colBtnResetPwd.UseColumnTextForButtonValue = true;
             // 
             // flowLayoutPanel8
             // 
@@ -936,133 +1068,18 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // panelEmpID
+            // btnClear
             // 
-            this.panelEmpID.Controls.Add(this.label6);
-            this.panelEmpID.Controls.Add(this.label21);
-            this.panelEmpID.Location = new System.Drawing.Point(28, 135);
-            this.panelEmpID.Name = "panelEmpID";
-            this.panelEmpID.Size = new System.Drawing.Size(133, 25);
-            this.panelEmpID.TabIndex = 66;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "*";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(24, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(90, 18);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Employee ID:";
-            // 
-            // colID
-            // 
-            this.colID.DataPropertyName = "id";
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            this.colID.Visible = false;
-            // 
-            // EmpID
-            // 
-            this.EmpID.DataPropertyName = "emp_id";
-            this.EmpID.HeaderText = "Employee ID";
-            this.EmpID.Name = "EmpID";
-            this.EmpID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // dept
-            // 
-            this.dept.DataPropertyName = "department";
-            this.dept.HeaderText = "Department";
-            this.dept.Name = "dept";
-            this.dept.ReadOnly = true;
-            // 
-            // designation
-            // 
-            this.designation.DataPropertyName = "designation";
-            this.designation.HeaderText = "Designation";
-            this.designation.Name = "designation";
-            this.designation.ReadOnly = true;
-            // 
-            // staff_type_title
-            // 
-            this.staff_type_title.DataPropertyName = "type_title";
-            this.staff_type_title.HeaderText = "Staff Type";
-            this.staff_type_title.Name = "staff_type_title";
-            this.staff_type_title.ReadOnly = true;
-            // 
-            // colUserRole
-            // 
-            this.colUserRole.DataPropertyName = "user_role";
-            this.colUserRole.HeaderText = "User Role";
-            this.colUserRole.Name = "colUserRole";
-            this.colUserRole.ReadOnly = true;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.DataPropertyName = "phone";
-            this.phone.HeaderText = "Phone";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
-            // pathaka
-            // 
-            this.pathaka.DataPropertyName = "pathaka";
-            this.pathaka.HeaderText = "Pathaka";
-            this.pathaka.Name = "pathaka";
-            this.pathaka.ReadOnly = true;
-            // 
-            // colActive
-            // 
-            this.colActive.DataPropertyName = "active";
-            this.colActive.HeaderText = "Active";
-            this.colActive.Name = "colActive";
-            this.colActive.ReadOnly = true;
-            this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colBtnEdit
-            // 
-            this.colBtnEdit.HeaderText = "";
-            this.colBtnEdit.Name = "colBtnEdit";
-            this.colBtnEdit.ReadOnly = true;
-            this.colBtnEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colBtnEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colBtnEdit.Text = "Edit";
-            this.colBtnEdit.ToolTipText = "Edit";
-            this.colBtnEdit.UseColumnTextForButtonValue = true;
-            // 
-            // colBtnResetPwd
-            // 
-            this.colBtnResetPwd.HeaderText = "";
-            this.colBtnResetPwd.Name = "colBtnResetPwd";
-            this.colBtnResetPwd.ReadOnly = true;
-            this.colBtnResetPwd.Text = "Reset Password";
-            this.colBtnResetPwd.ToolTipText = "Reset Password";
-            this.colBtnResetPwd.UseColumnTextForButtonValue = true;
+            this.btnClear.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(84, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 33);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmStaffs
             // 
@@ -1077,6 +1094,7 @@
             this.Name = "frmStaffs";
             this.Text = "Manage Staffs";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmStaffs_FormClosed);
             this.Load += new System.EventHandler(this.frmStaffs_Load);
             this.Shown += new System.EventHandler(this.frmStaffs_Shown);
             this.tabStaffs.ResumeLayout(false);
@@ -1098,13 +1116,13 @@
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel9.ResumeLayout(false);
             this.flowLayoutPanel9.PerformLayout();
+            this.panelEmpID.ResumeLayout(false);
+            this.panelEmpID.PerformLayout();
             this.tabPgListStaffs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.panelEmpID.ResumeLayout(false);
-            this.panelEmpID.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1185,17 +1203,18 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmpID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dept;
-        private System.Windows.Forms.DataGridViewTextBoxColumn designation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn staff_type_title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDept;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDesignation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStaffType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUserRoleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserRole;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pathaka;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
         private System.Windows.Forms.DataGridViewButtonColumn colBtnEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colBtnResetPwd;
+        private System.Windows.Forms.Button btnClear;
     }
 }

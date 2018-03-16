@@ -6,7 +6,7 @@ using System.Data.Common;
 
 namespace HospitalERP.Procedures
 {
-    class Departments
+    class Departments : IDisposable 
     {
         
         string conn = HospitalERP.Helpers.DBHelper.Constr;
@@ -96,6 +96,14 @@ namespace HospitalERP.Procedures
             }
 
         }
+
+        public void Dispose()
+        {
+            conn = null;
+            log = null;
+
+        }
+
 
     }
 }

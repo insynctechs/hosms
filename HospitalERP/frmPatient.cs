@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
@@ -159,7 +160,12 @@ namespace HospitalERP
 
         private void ShowRecords()
         {
-            dgvList.DataSource = pat.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            DataTable dtRecords = pat.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvList.DataSource = dtRecords;
+            if (dtRecords.Rows.Count == 0)
+            {
+                MessageBox.Show(Utils.FormatZeroSearch());
+            }
         }
 
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
@@ -270,8 +276,14 @@ namespace HospitalERP
 
         private void dgvList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtID.Text = dgvList.Rows[e.RowIndex].Cells[0].Value.ToString();
-            DataTable dt = pat.getRecordFromID(Convert.ToInt32(txtID.Text));
+            txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+            setFormFields(Convert.ToInt32(txtID.Text));
+            tabSub.SelectedIndex = 0;
+        }
+
+        private void setFormFields(int id)
+        {
+            DataTable dt = pat.getRecordFromID(id);
             txtPatNum.Text = dt.Rows[0]["patient_number"].ToString();
             txtFirstName.Text = dt.Rows[0]["first_name"].ToString();
             txtLastName.Text = dt.Rows[0]["last_name"].ToString();
@@ -291,8 +303,36 @@ namespace HospitalERP
             txtZip.Text = dt.Rows[0]["zip"].ToString();
             txtPhone.Text = dt.Rows[0]["phone"].ToString();
             txtEmail.Text = dt.Rows[0]["email"].ToString();
-            
-            tabSub.SelectedIndex = 0;
+        }
+
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "colBtnEdit":
+                    txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+                    setFormFields(Convert.ToInt32(txtID.Text));
+                    tabSub.SelectedIndex = 0;
+                    break;
+            }
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFormFields();
+        }
+
+        private void frmPatient_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            ilog = null;
+            pat.Dispose();
+        }
+
+        private void frmPatient_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

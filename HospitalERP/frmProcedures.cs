@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
     public partial class frmProcedures : Form
     {
         log4net.ILog ilog;
-        ProcTypes procType = new ProcTypes();
+        
         ProcTests procTest = new ProcTests();
         public bool modal = false;
         public frmProcedures()
@@ -37,15 +38,12 @@ namespace HospitalERP
             }
             else
             {
-                //tabPgList.Hide();
-                tabSub.TabPages.Remove(tabPgList);
+               tabSub.TabPages.Remove(tabPgList);
             }
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
-            PopulateSearch();
-            //ShowProcedureTests();
-            PopulateProcTypeCombo(0);
+            
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
@@ -60,14 +58,22 @@ namespace HospitalERP
 
         private void PopulateProcTypeCombo(int tid)
         {
-            cmbProcType.DataSource =procType.ProcTypesCombo(tid);
-            cmbProcType.ValueMember = "Value";
-            cmbProcType.DisplayMember = "Display";
+            using (ProcTypes procType = new ProcTypes())
+            {
+                cmbProcType.DataSource = procType.ProcTypesCombo(tid);
+                cmbProcType.ValueMember = "Value";
+                cmbProcType.DisplayMember = "Display";
+            }
         }
 
         private void ShowProcedureTests()
         {
-            dgvProc.DataSource = procTest.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            DataTable dtRecords = procTest.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvList.DataSource = dtRecords;
+            if (dtRecords.Rows.Count == 0)
+            {
+                MessageBox.Show(Utils.FormatZeroSearch());
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -229,19 +235,54 @@ namespace HospitalERP
             }
         }
 
-        private void dgvProc_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+       
+        private void setFormFields(int index)
         {
-            txtID.Text = dgvProc.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtID.Text = dgvList.Rows[index].Cells["colID"].Value.ToString();
             DataTable dt = procTest.getRecordFromID(Convert.ToInt32(txtID.Text));
             txtName.Text = dt.Rows[0]["name"].ToString();
-            txtDesc.Text = dt.Rows[0]["description"].ToString(); 
+            txtDesc.Text = dt.Rows[0]["description"].ToString();
             txtFee.Text = dt.Rows[0]["fee"].ToString();
             PopulateProcTypeCombo(Convert.ToInt32(dt.Rows[0]["type"].ToString()));
             cmbProcType.SelectedValue = dt.Rows[0]["type"].ToString();
             //cmbProcType.SelectedItem = cmbProcType.FindStringExact(cmbText);
 
             chkActive.Checked = Convert.ToBoolean(dt.Rows[0]["active"].ToString());
+        }
+
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "colBtnEdit":
+                    setFormFields(e.RowIndex);
+                    tabSub.SelectedIndex = 0;
+                    break;
+            }
+        }
+
+        private void dgvList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            setFormFields(e.RowIndex);
             tabSub.SelectedIndex = 0;
+        }
+
+        private void frmProcedures_Shown(object sender, EventArgs e)
+        {
+            PopulateSearch();
+            PopulateProcTypeCombo(0);
+        }
+
+        private void frmProcedures_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            ilog = null;
+            procTest.Dispose();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFormFields();
         }
     }
 }

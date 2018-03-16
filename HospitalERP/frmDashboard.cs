@@ -39,22 +39,13 @@ namespace HospitalERP
 
         private void SetMenuItems()
         {
-            try
+            DataTable dtMenu = mn.GetUserTypeMenusRemoveList(LoggedUser.type_id);
+            foreach (DataRow dr in dtMenu.Rows)
             {
-                DataTable dtMenu = mn.GetUserTypeMenusRemoveList(LoggedUser.type_id);
-                foreach (DataRow dr in dtMenu.Rows)
-                {
-                    string menu_name = dr["menu_name"].ToString();
-                    string btn_name = menu_name.Replace("menuItem", "btnDash");
-                    if (flowPanelDashMain.Controls.ContainsKey(btn_name))
-                        flowPanelDashMain.Controls.RemoveByKey(btn_name);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in establishing a connection. Please input valid values." + ex.ToString());
-                frmDbConfig fd = new frmDbConfig();
-                fd.ShowDialog();
+                string menu_name = dr["menu_name"].ToString();
+                string btn_name = menu_name.Replace("menuItem", "btnDash");
+                if (flowPanelDashMain.Controls.ContainsKey(btn_name))
+                    flowPanelDashMain.Controls.RemoveByKey(btn_name);
             }
         }
 
@@ -66,7 +57,7 @@ namespace HospitalERP
         private void btnDashBillSearch_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmBilling>().Count() == 1)
-                Application.OpenForms.OfType<frmBilling>().First().Activate();
+                Application.OpenForms.OfType<frmBilling>().First().BringToFront();
             else
             {
                 frmBilling frm = new frmBilling();
@@ -80,7 +71,7 @@ namespace HospitalERP
             if (LoggedUser.type_name.ToUpper() == "DOCTOR")
             {
                 if (Application.OpenForms.OfType<frmConsultations>().Count() == 1)
-                    Application.OpenForms.OfType<frmConsultations>().First().Activate();
+                    Application.OpenForms.OfType<frmConsultations>().First().BringToFront();
                 else
                 {
                     frmConsultations frm = new frmConsultations();
@@ -92,7 +83,7 @@ namespace HospitalERP
             {
 
                 if (Application.OpenForms.OfType<frmAppointments>().Count() == 1)
-                    Application.OpenForms.OfType<frmAppointments>().First().Activate();
+                    Application.OpenForms.OfType<frmAppointments>().First().BringToFront();
                 else
                 {
                     frmAppointments frm = new frmAppointments();
@@ -107,7 +98,7 @@ namespace HospitalERP
         private void btnDashReg_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmPatient>().Count() == 1)
-                Application.OpenForms.OfType<frmPatient>().First().Activate();
+                Application.OpenForms.OfType<frmPatient>().First().BringToFront();
             else
             {
                 frmPatient frm = new frmPatient(1);
@@ -119,7 +110,7 @@ namespace HospitalERP
         private void btnDashDocs_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmDoctors>().Count() == 1)
-                Application.OpenForms.OfType<frmDoctors>().First().Activate();
+                Application.OpenForms.OfType<frmDoctors>().First().BringToFront();
             else
             {
                 frmDoctors frm = new frmDoctors();
@@ -131,7 +122,7 @@ namespace HospitalERP
         private void btnDashStffGen_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmStaffs>().Count() == 1)
-                Application.OpenForms.OfType<frmStaffs>().First().Activate();
+                Application.OpenForms.OfType<frmStaffs>().First().BringToFront();
             else
             {
                 frmStaffs frm = new frmStaffs();
@@ -143,7 +134,7 @@ namespace HospitalERP
         private void btnDashStaffType_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmStaffTypes>().Count() == 1)
-                Application.OpenForms.OfType<frmStaffTypes>().First().Activate();
+                Application.OpenForms.OfType<frmStaffTypes>().First().BringToFront();
             else
             {
                 frmStaffTypes frm = new frmStaffTypes();
@@ -155,7 +146,7 @@ namespace HospitalERP
         private void btnDashDept_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmDepartments>().Count() == 1)
-                Application.OpenForms.OfType<frmDepartments>().First().Activate();
+                Application.OpenForms.OfType<frmDepartments>().First().BringToFront();
             else
             {
                 frmDepartments frm = new frmDepartments();
@@ -167,7 +158,7 @@ namespace HospitalERP
         private void btnDashProc_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmProcedures>().Count() == 1)
-                Application.OpenForms.OfType<frmProcedures>().First().Activate();
+                Application.OpenForms.OfType<frmProcedures>().First().BringToFront();
             else
             {
                 frmProcedures frm = new frmProcedures();
@@ -180,7 +171,7 @@ namespace HospitalERP
         private void btnDashUserRoles_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmUserRoles>().Count() == 1)
-                Application.OpenForms.OfType<frmUserRoles>().First().Activate();
+                Application.OpenForms.OfType<frmUserRoles>().First().BringToFront();
             else
             {
                 frmUserRoles frm = new frmUserRoles();
@@ -192,7 +183,7 @@ namespace HospitalERP
         private void btnDashOpt_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmOptions>().Count() == 1)
-                Application.OpenForms.OfType<frmOptions>().First().Activate();
+                Application.OpenForms.OfType<frmOptions>().First().BringToFront();
             else
             {
                 frmOptions frm = new frmOptions();
@@ -204,7 +195,7 @@ namespace HospitalERP
         private void btnDashReports_Click(object sender, EventArgs e)
         {
             /*if (Application.OpenForms.OfType<frmOptions>().Count() == 1)
-                Application.OpenForms.OfType<frmOptions>().First().Activate();
+                Application.OpenForms.OfType<frmOptions>().First().BringToFront();
                 else {
             frmOptions frm = new frmOptions();
             frm.MdiParent = this.MdiParent;
@@ -214,7 +205,7 @@ namespace HospitalERP
         private void btnDashProcType_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frmProcTypes>().Count() == 1)
-                Application.OpenForms.OfType<frmProcTypes>().First().Activate();
+                Application.OpenForms.OfType<frmProcTypes>().First().BringToFront();
             else
             {
                 frmProcTypes frm = new frmProcTypes();

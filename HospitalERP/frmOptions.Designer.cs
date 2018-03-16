@@ -41,6 +41,7 @@
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -55,8 +56,9 @@
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBtnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -203,11 +205,12 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel3, 2);
             this.flowLayoutPanel3.Controls.Add(this.btnSave);
+            this.flowLayoutPanel3.Controls.Add(this.btnClear);
             this.flowLayoutPanel3.Controls.Add(this.btnCancel);
             this.flowLayoutPanel3.Controls.Add(this.txtID);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 285);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(297, 39);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(470, 39);
             this.flowLayoutPanel3.TabIndex = 57;
             // 
             // btnSave
@@ -223,22 +226,36 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(84, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 33);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCancel.BackColor = System.Drawing.Color.LightCoral;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(84, 3);
+            this.btnCancel.Location = new System.Drawing.Point(182, 3);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Text = "CLOSE";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(165, 3);
+            this.txtID.Location = new System.Drawing.Point(263, 3);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 25);
             this.txtID.TabIndex = 59;
@@ -365,8 +382,9 @@
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colName,
-            this.description,
-            this.colVal});
+            this.colDesc,
+            this.colVal,
+            this.colBtnEdit});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,6 +402,7 @@
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(994, 327);
             this.dgvList.TabIndex = 10;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             this.dgvList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_RowHeaderMouseClick);
             // 
             // colID
@@ -392,27 +411,42 @@
             this.colID.HeaderText = "ID";
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
+            this.colID.Visible = false;
             // 
             // colName
             // 
             this.colName.DataPropertyName = "op_name";
             this.colName.HeaderText = "Name";
+            this.colName.MinimumWidth = 238;
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
             // 
-            // description
+            // colDesc
             // 
-            this.description.DataPropertyName = "op_description";
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
+            this.colDesc.DataPropertyName = "op_description";
+            this.colDesc.HeaderText = "Description";
+            this.colDesc.MinimumWidth = 400;
+            this.colDesc.Name = "colDesc";
+            this.colDesc.ReadOnly = true;
             // 
             // colVal
             // 
             this.colVal.DataPropertyName = "op_value";
             this.colVal.HeaderText = "Value";
+            this.colVal.MinimumWidth = 200;
             this.colVal.Name = "colVal";
             this.colVal.ReadOnly = true;
+            // 
+            // colBtnEdit
+            // 
+            this.colBtnEdit.HeaderText = "";
+            this.colBtnEdit.MinimumWidth = 70;
+            this.colBtnEdit.Name = "colBtnEdit";
+            this.colBtnEdit.ReadOnly = true;
+            this.colBtnEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colBtnEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colBtnEdit.Text = "Edit";
+            this.colBtnEdit.UseColumnTextForButtonValue = true;
             // 
             // flowLayoutPanel2
             // 
@@ -493,7 +527,9 @@
             this.MinimizeBox = false;
             this.Name = "frmOptions";
             this.Text = "Options";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOptions_FormClosed);
             this.Load += new System.EventHandler(this.frmOptions_Load);
+            this.Shown += new System.EventHandler(this.frmOptions_Shown);
             this.tabSub.ResumeLayout(false);
             this.tabPgAdd.ResumeLayout(false);
             this.tabPgAdd.PerformLayout();
@@ -545,9 +581,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtVal;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVal;
+        private System.Windows.Forms.DataGridViewButtonColumn colBtnEdit;
     }
 }

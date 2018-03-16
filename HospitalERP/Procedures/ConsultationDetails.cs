@@ -146,22 +146,6 @@ namespace HospitalERP.Procedures
 
         }
 
-        public DataTable getMedicalReportFromID(int id)
-        {
-            try
-            {
-                SqlParameter[] sqlParam = new SqlParameter[1];
-                sqlParam[0] = new SqlParameter("@id", id);
-                DataSet ds = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspReport_Medical", sqlParam);
-                return ds.Tables[0];
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message, ex);
-                return null;
-            }
-
-        }
         public DataTable getProceduresInvoiceFromApptID(int id)
         {
             try

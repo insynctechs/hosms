@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
@@ -29,7 +30,7 @@ namespace HospitalERP
         {
             
             this.WindowState = FormWindowState.Maximized;            
-            PopulateSearch();
+           
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
@@ -44,7 +45,10 @@ namespace HospitalERP
 
         private void ShowDepartments()
         {
-            dgvDept.DataSource = dt.GetDepartments(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            DataTable dtDept = dt.GetDepartments(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvDept.DataSource = dtDept;
+            if (dtDept.Rows.Count == 0)
+                MessageBox.Show(Utils.FormatZeroSearch());
         }
 
 
@@ -124,15 +128,19 @@ namespace HospitalERP
             ShowDepartments();
         }
 
+        private void setFormFields(int index)
+        {
+            txtID.Text = dgvDept.Rows[index].Cells["colID"].Value.ToString();
+            txtName.Text = dgvDept.Rows[index].Cells["colName"].Value.ToString();
+            txtDesc.Text = dgvDept.Rows[index].Cells["colDesc"].Value.ToString();
+            chkActive.Checked = (bool)dgvDept.Rows[index].Cells["colActive"].Value;
+        }
+
         private void dgvDept_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
-                txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtName.Text = dgvDept.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtDesc.Text = dgvDept.Rows[e.RowIndex].Cells[2].Value.ToString();
-                chkActive.Checked = (bool)dgvDept.Rows[e.RowIndex].Cells[3].Value;
-
+                setFormFields(e.RowIndex);
                 tabSub.SelectedIndex = 0;
             }
             catch(Exception ex)
@@ -173,6 +181,34 @@ namespace HospitalERP
             chkActive.Checked = true;
             txtID.Text = "";
             //PopulateProcTypeCombo(0);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFormFields();
+        }
+
+        private void frmDepartments_Shown(object sender, EventArgs e)
+        {
+            PopulateSearch();
+        }
+
+        private void frmDepartments_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            ilog = null;
+            dt.Dispose();
+        }
+
+        private void dgvDept_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvDept.Columns[e.ColumnIndex].Name)
+            {
+                case "colBtnEdit":
+                    setFormFields(e.RowIndex);
+                    tabSub.SelectedIndex = 0;
+                    break;
+            }
         }
     }
 
