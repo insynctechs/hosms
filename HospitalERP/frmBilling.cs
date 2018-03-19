@@ -54,16 +54,21 @@ namespace HospitalERP
             cmbSearch.DisplayMember = "Display";
         }   
         
-        private void GetBills()
+        private void GetBills(int click=0)
         {
 
-            dgvList.DataSource = bill.SearchBills(cmbSearch.SelectedValue.ToString(), txtSearch.Text, Convert.ToDateTime(dtpDate.Value), chkDate.Checked);
+            DataTable dtRecords = bill.SearchBills(cmbSearch.SelectedValue.ToString(), txtSearch.Text, Convert.ToDateTime(dtpDate.Value), chkDate.Checked);
+            dgvList.DataSource = dtRecords;
+            if (dtRecords.Rows.Count == 0 && click == 1)
+            {
+                MessageBox.Show(Utils.FormatZeroSearch());
+            }
         }
 
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            GetBills();
+            GetBills(1);
         }
 
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
@@ -15,7 +16,7 @@ namespace HospitalERP
     {
         log4net.ILog ilog;
         Staffs objStaffs = new Staffs();
-
+        
         public frmStaffs()
         {
             InitializeComponent();
@@ -41,13 +42,18 @@ namespace HospitalERP
 
         private void ShowStaffs()
         {
-            dgvList.DataSource = objStaffs.GetStaffs(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            DataTable dtRecords = objStaffs.GetStaffs(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvList.DataSource = dtRecords;
+            if (dtRecords.Rows.Count == 0)
+            {
+                MessageBox.Show(Utils.FormatZeroSearch());
+            }
+
         }
              
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            clearControls();
+            this.Close();
         }
 
         private void clearControls()
@@ -242,6 +248,7 @@ namespace HospitalERP
             try
             {
                 txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+                setFormValues(Int32.Parse(txtID.Text));
                 tabStaffs.SelectedIndex = 0;
 
 
@@ -321,29 +328,63 @@ namespace HospitalERP
             {
                 case "colBtnEdit":
                     txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+                    setFormValues(Int32.Parse(txtID.Text));
                     tabStaffs.SelectedIndex = 0;
                     break;
 
                 case "colBtnResetPwd":
+                    
                     txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();                    
                     DialogResult m = MessageBox.Show("Are you sure you want to reset the password for this Staff", "Reset Password", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (m == DialogResult.Yes)
                     {
-                        // Do something
-                        MessageBox.Show(txtID.Text);
+                        
+                        try
+                        {
+                            string def_pwd = "12345";
+                            int rtn = 0;
+                            using (OptionVals objOpt = new OptionVals())
+                            {
+                                DataTable dtOpt = objOpt.GetOptionFromName("DEFAULT_PWD");
+                                if (dtOpt.Rows.Count > 0)
+                                    def_pwd = dtOpt.Rows[0]["op_value"].ToString();
+                                dtOpt = null;
+                            }
+                            using (Users objUsers = new Users())
+                            {
+
+                                rtn = objUsers.SetPassword(dgvList.Rows[e.RowIndex].Cells["colEmpID"].Value.ToString(), def_pwd, Int32.Parse(dgvList.Rows[e.RowIndex].Cells["colUserRoleID"].Value.ToString()));
+                                if (rtn == 0)
+                                    MessageBox.Show("Error in changing password", "Reset Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                else if (rtn == 1)
+                                {
+                                    MessageBox.Show("Password succesfully reset to default value - "+def_pwd, "Reset Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            ilog.Error(ex.Message, ex);                            
+                        }
+                        finally
+                        {
+
+                        }
                     }
                     else if (m == DialogResult.No)
                     {
                         // Do something else
                     }
+
                     break;
             }
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            if(Int32.Parse(txtID.Text)>0)
-                setFormValues(Convert.ToInt32(txtID.Text));
+            
             if (txtID.Text == "")
             {
                 panelEmpID.Visible = false;
@@ -353,6 +394,7 @@ namespace HospitalERP
             {
                 panelEmpID.Visible = true;
                 txtempid.Visible = true;
+               
             }
         }
 
@@ -372,6 +414,18 @@ namespace HospitalERP
                 panelEmpID.Visible = true;
                 txtempid.Visible = true;
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearControls();
+        }
+
+        private void frmStaffs_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            ilog = null;
+            objStaffs.Dispose();
         }
     }
 }

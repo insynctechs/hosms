@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
@@ -52,7 +53,12 @@ namespace HospitalERP
 
         private void ShowDoctors()
         {
-            dgvDept.DataSource = doc.GetDoctors(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            DataTable dtRecords = doc.GetDoctors(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvList.DataSource = dtRecords;
+            if (dtRecords.Rows.Count == 0)
+            {
+                MessageBox.Show(Utils.FormatZeroSearch());
+            }
         }
              
         private void btnCancel_Click(object sender, EventArgs e)
@@ -229,8 +235,15 @@ namespace HospitalERP
 
         private void dgvDept_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
-            DataTable dt = doc.getRecordFromID(Convert.ToInt32(txtID.Text));
+            txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+            setFormFields(Int32.Parse(txtID.Text));
+            tabDoctors.SelectedIndex = 0;
+        }
+
+        private void setFormFields(int id)
+        {
+           
+            DataTable dt = doc.getRecordFromID(id);
             txtempid.Text = dt.Rows[0]["emp_id"].ToString();
             txtFirstName.Text = dt.Rows[0]["first_name"].ToString();
             txtLastName.Text = dt.Rows[0]["last_name"].ToString();
@@ -244,11 +257,11 @@ namespace HospitalERP
             dtpDob.Text = dt.Rows[0]["dob"].ToString();
             txtNationality.Text = dt.Rows[0]["nationality"].ToString();
             txtPathaka.Text = dt.Rows[0]["legal_id"].ToString();
-            dtpPathakaExpiry.Text= dt.Rows[0]["legal_id_expiry"].ToString();
+            dtpPathakaExpiry.Text = dt.Rows[0]["legal_id_expiry"].ToString();
             txtAddress.Text = dt.Rows[0]["address"].ToString();
             txtCity.Text = dt.Rows[0]["city"].ToString();
             txtDistrict.Text = dt.Rows[0]["state"].ToString();
-            txtZip.Text  = dt.Rows[0]["zip"].ToString();
+            txtZip.Text = dt.Rows[0]["zip"].ToString();
             txtPhone.Text = dt.Rows[0]["phone"].ToString();
             txtEmail.Text = dt.Rows[0]["email"].ToString();
             chkActive.Checked = Convert.ToBoolean(dt.Rows[0]["active"].ToString());
@@ -256,7 +269,6 @@ namespace HospitalERP
             GetDepartmentsCombo(Convert.ToInt32(dt.Rows[0]["department_id"].ToString()));
             cmbDept.SelectedValue = dt.Rows[0]["department_id"].ToString();
             txtUSERID.Text = dt.Rows[0]["user_id"].ToString();
-            tabDoctors.SelectedIndex = 0;
         }
 
         private void txtDesignation_Validating(object sender, CancelEventArgs e)
@@ -287,8 +299,8 @@ namespace HospitalERP
                     }
                     else
                     {
-                        lblempid.Visible = false;
-                        txtempid.Visible = false;
+                        lblempid.Visible = true;
+                        txtempid.Visible = true;
                     }
                     break;
                 case 1:
@@ -301,6 +313,78 @@ namespace HospitalERP
         private void label20_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "colBtnEdit":
+                    txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+                    setFormFields(Int32.Parse(txtID.Text));
+                    tabDoctors.SelectedIndex = 0;
+                    break;
+
+                case "colBtnResetPwd":
+
+                    txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+                    DialogResult m = MessageBox.Show("Are you sure you want to reset the password for this Doctor", "Reset Password", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (m == DialogResult.Yes)
+                    {
+
+                        try
+                        {
+                            string def_pwd = "12345";
+                            int rtn = 0;
+                            using (OptionVals objOpt = new OptionVals())
+                            {
+                                DataTable dtOpt = objOpt.GetOptionFromName("DEFAULT_PWD");
+                                if (dtOpt.Rows.Count > 0)
+                                    def_pwd = dtOpt.Rows[0]["op_value"].ToString();
+                                dtOpt = null;
+                            }
+                            using (Users objUsers = new Users())
+                            {
+
+                                rtn = objUsers.SetPassword(dgvList.Rows[e.RowIndex].Cells["colEmpID"].Value.ToString(), def_pwd, 3);
+                                if (rtn == 0)
+                                    MessageBox.Show("Error in changing password", "Reset Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                else if (rtn == 1)
+                                {
+                                    MessageBox.Show("Password succesfully reset to default value - " + def_pwd, "Reset Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            ilog.Error(ex.Message, ex);
+                        }
+                        finally
+                        {
+
+                        }
+                    }
+                    else if (m == DialogResult.No)
+                    {
+                        // Do something else
+                    }
+
+                    break;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearControls();
+        }
+
+        private void frmDoctors_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            ilog = null;
+            doc.Dispose();
         }
     }
 }

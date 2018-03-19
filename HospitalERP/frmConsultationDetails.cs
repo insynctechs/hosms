@@ -318,17 +318,5 @@ namespace HospitalERP
             cmbAppStatus.ValueMember = "id";
             
         }
-
-        private void btnGenerateBill_Click(object sender, EventArgs e)
-        {
-            frmRptSickLeave rsl = new frmRptSickLeave(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()));
-            rsl.ShowDialog(this);
-        }
-
-        private void btnMedicalReport_Click(object sender, EventArgs e)
-        {
-            frmRptMedical fm = new frmRptMedical(Int32.Parse(txtAppID.Text.Trim()));
-            fm.ShowDialog(this);
-        }
     }
 }

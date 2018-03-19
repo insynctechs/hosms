@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Microsoft.ApplicationBlocks.Data;
 namespace HospitalERP.Procedures
 {
-    class ProcTests
+    class ProcTests : IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
         log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
@@ -70,11 +70,10 @@ namespace HospitalERP.Procedures
                 dt.Columns.Add("Display");
                 dt.Rows.Add(new object[] { "All", "All" });
                 //dt.Rows.Add(new object[] { "id", "ID" });
-                dt.Rows.Add(new object[] { "D.first_name", "First Name" });
-                dt.Rows.Add(new object[] { "D.last_name", "Last Name" });
-                dt.Rows.Add(new object[] { "De.name", "Department" });
-                dt.Rows.Add(new object[] { "D.phone", "Phone" });
-                dt.Rows.Add(new object[] { "D.active", "Active" });
+                dt.Rows.Add(new object[] { "p.name", "Name" });
+                dt.Rows.Add(new object[] { "t.type_name", "Type" });
+                dt.Rows.Add(new object[] { "p.fee", "Fee" });                
+                dt.Rows.Add(new object[] { "p.active", "Active" });
                 return dt;
             }
             catch (Exception ex)
@@ -101,6 +100,14 @@ namespace HospitalERP.Procedures
             }
 
         }
+
+        public void Dispose()
+        {
+            conn = null;
+            log = null;
+
+        }
+
 
     }
 }

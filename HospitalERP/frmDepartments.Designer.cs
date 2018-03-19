@@ -43,6 +43,7 @@
             this.chkActive = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -51,10 +52,6 @@
             this.lbName = new System.Windows.Forms.Label();
             this.tabPgList = new System.Windows.Forms.TabPage();
             this.dgvDept = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +59,11 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBtnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabSub.SuspendLayout();
             this.tabPgAdd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -219,6 +221,7 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel3, 2);
             this.flowLayoutPanel3.Controls.Add(this.btnSave);
+            this.flowLayoutPanel3.Controls.Add(this.btnClear);
             this.flowLayoutPanel3.Controls.Add(this.btnCancel);
             this.flowLayoutPanel3.Controls.Add(this.txtID);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 280);
@@ -240,23 +243,38 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(84, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 33);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(68)))), ((int)(((byte)(83)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(84, 3);
+            this.btnCancel.Location = new System.Drawing.Point(182, 3);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "x CLOSE";
+            this.btnCancel.Text = "CLOSE";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(165, 3);
+            this.txtID.Location = new System.Drawing.Point(263, 3);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(46, 25);
             this.txtID.TabIndex = 59;
@@ -347,7 +365,8 @@
             this.colID,
             this.colName,
             this.colDesc,
-            this.colActive});
+            this.colActive,
+            this.colBtnEdit});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,36 +384,7 @@
             this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDept.Size = new System.Drawing.Size(994, 281);
             this.dgvDept.TabIndex = 11;
-            // 
-            // colID
-            // 
-            this.colID.DataPropertyName = "id";
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colDesc
-            // 
-            this.colDesc.DataPropertyName = "description";
-            this.colDesc.HeaderText = "Description";
-            this.colDesc.Name = "colDesc";
-            this.colDesc.ReadOnly = true;
-            // 
-            // colActive
-            // 
-            this.colActive.DataPropertyName = "active";
-            this.colActive.HeaderText = "Active";
-            this.colActive.Name = "colActive";
-            this.colActive.ReadOnly = true;
-            this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvDept.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDept_CellContentClick);
             // 
             // flowLayoutPanel2
             // 
@@ -463,6 +453,49 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Visible = false;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "Name";
+            this.colName.MinimumWidth = 280;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colDesc
+            // 
+            this.colDesc.DataPropertyName = "description";
+            this.colDesc.HeaderText = "Description";
+            this.colDesc.MinimumWidth = 500;
+            this.colDesc.Name = "colDesc";
+            this.colDesc.ReadOnly = true;
+            // 
+            // colActive
+            // 
+            this.colActive.DataPropertyName = "active";
+            this.colActive.HeaderText = "Active";
+            this.colActive.MinimumWidth = 50;
+            this.colActive.Name = "colActive";
+            this.colActive.ReadOnly = true;
+            this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colBtnEdit
+            // 
+            this.colBtnEdit.HeaderText = "";
+            this.colBtnEdit.MinimumWidth = 50;
+            this.colBtnEdit.Name = "colBtnEdit";
+            this.colBtnEdit.ReadOnly = true;
+            this.colBtnEdit.Text = "Edit";
+            this.colBtnEdit.UseColumnTextForButtonValue = true;
+            // 
             // frmDepartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,7 +509,9 @@
             this.Name = "frmDepartments";
             this.Text = "Departments";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDepartments_FormClosed);
             this.Load += new System.EventHandler(this.frmDepartments_Load);
+            this.Shown += new System.EventHandler(this.frmDepartments_Shown);
             this.tabSub.ResumeLayout(false);
             this.tabPgAdd.ResumeLayout(false);
             this.tabPgAdd.PerformLayout();
@@ -524,9 +559,11 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvDept;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDesc;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
+        private System.Windows.Forms.DataGridViewButtonColumn colBtnEdit;
     }
 }

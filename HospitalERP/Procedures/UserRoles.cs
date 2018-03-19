@@ -4,7 +4,7 @@ using System.Data;
 using Microsoft.ApplicationBlocks.Data;
 namespace HospitalERP.Procedures
 {
-    class UserRoles
+    class UserRoles: IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
         log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
@@ -84,7 +84,12 @@ namespace HospitalERP.Procedures
             }
 
         }
+        public void Dispose()
+        {
+            conn = null;
+            log = null;
 
+        }
 
 
     }

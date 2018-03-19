@@ -4,6 +4,7 @@ using System.Drawing;
 using HospitalERP.Procedures;
 using System.Data;
 using System.Linq;
+using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
@@ -23,12 +24,11 @@ namespace HospitalERP
         private void frmUserRoles_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            PopulateSearch();
+            
             log4net.Config.XmlConfigurator.Configure();
             ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            DataTable dtMenu = mn.GetMenuActive(true);
-            BuildTree(dtMenu, trvMenu, true);            
+                        
 
         }
         private void PopulateSearch()
@@ -40,7 +40,13 @@ namespace HospitalERP
 
         private void ShowRecords()
         {
-            dgvDept.DataSource = UR.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            DataTable dtRecords = UR.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvList.DataSource = dtRecords;
+            if (dtRecords.Rows.Count == 0)
+            {
+                MessageBox.Show(Utils.FormatZeroSearch());
+            }
+
         }
 
 
@@ -185,14 +191,21 @@ namespace HospitalERP
             }
         }
 
-        private void dgvDept_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgvList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtID.Text = dgvDept.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtName.Text = dgvDept.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtDesc.Text = dgvDept.Rows[e.RowIndex].Cells[2].Value.ToString();
-            chkActive.Checked = (bool)dgvDept.Rows[e.RowIndex].Cells[3].Value;
-
+            setFormFields(e.RowIndex);
             tabSub.SelectedIndex = 0;
+        }
+
+
+        private void setFormFields(int index)
+        {
+            txtID.Text = dgvList.Rows[index].Cells["colID"].Value.ToString();
+            txtName.Text = dgvList.Rows[index].Cells["colName"].Value.ToString();
+            txtDesc.Text = dgvList.Rows[index].Cells["colDescription"].Value.ToString();
+            chkActive.Checked = (bool)dgvList.Rows[index].Cells["colActive"].Value;
+
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -404,5 +417,40 @@ namespace HospitalERP
             else
                 txtName.ReadOnly = false;
         }
+
+        private void frmUserRoles_Shown(object sender, EventArgs e)
+        {
+            PopulateSearch();
+            DataTable dtMenu = mn.GetMenuActive(true);
+            BuildTree(dtMenu, trvMenu, true);
+        }
+
+        private void frmUserRoles_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            ilog = null;
+            mn.Dispose();
+            UR.Dispose();
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFormFields();
+        }
+
+       
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "colBtnEdit":
+                    setFormFields(e.RowIndex);
+                    tabSub.SelectedIndex = 0;
+                    break;
+            }
+        }
+
+        
     }
 }

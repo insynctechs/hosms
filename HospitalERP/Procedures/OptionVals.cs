@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Microsoft.ApplicationBlocks.Data;
 namespace HospitalERP.Procedures
 {
-    class OptionVals
+    class OptionVals : IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
         log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
@@ -111,6 +111,12 @@ namespace HospitalERP.Procedures
                 return null;
             }
 
+        }
+
+        public void Dispose()
+        {
+            conn = null;
+            log = null;
         }
     }
 }

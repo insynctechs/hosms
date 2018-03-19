@@ -70,7 +70,12 @@ namespace HospitalERP
         }
         private void ShowSearchedRecords()
         {
-            dgvPatient.DataSource = pat.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            DataTable dtRecords  = pat.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvPatient.DataSource = dtRecords;
+            if (dtRecords.Rows.Count == 0)
+            {
+                MessageBox.Show(Utils.FormatZeroSearch());
+            }
         }
 
         private void txtPatNum_TextChanged(object sender, EventArgs e)
@@ -109,6 +114,7 @@ namespace HospitalERP
                 if (ret >= 1)
                 {
                     getAppointmentList();
+                    MessageBox.Show("Appointment scheduled successfully!");
                 }
                 else if (ret == 0)
                 {
@@ -127,18 +133,22 @@ namespace HospitalERP
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            getAppointmentList();
+            getAppointmentList(1);
         }
 
-        private void getAppointmentList()
+        private void getAppointmentList(int click=0)
         {
             /*DataGridViewComboBoxColumn dcombo;
             dcombo= (DataGridViewComboBoxColumn) dgvApp.Columns["colStatus"];
             dcombo.DataSource = app.getAppointmentStatus();
             dcombo.DisplayMember = "name";
             dcombo.ValueMember = "id";*/
-
-            dgvApp.DataSource = app.getAllAppointmentsForDate(Convert.ToDateTime(dtpAppDate.Text), Int32.Parse(cmbDoc.SelectedValue.ToString()));
+            DataTable dtApps = app.getAllAppointmentsForDate(Convert.ToDateTime(dtpAppDate.Text), Int32.Parse(cmbDoc.SelectedValue.ToString()));
+            dgvApp.DataSource = dtApps;
+            if (dtApps.Rows.Count == 0 && click ==1)
+            {
+                MessageBox.Show("No Appointments Scheduled for the Chosen Date and Doctor");
+            }
         }
         
 

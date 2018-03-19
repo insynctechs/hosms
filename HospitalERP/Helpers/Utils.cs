@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 using System.Collections.Specialized;
 
 namespace HospitalERP.Helpers
@@ -46,6 +47,11 @@ namespace HospitalERP.Helpers
             return String.Format(format, d);
         }
 
+        public static string FormatZeroSearch()
+        {
+            return "No records Found for the Searched Criteria!";
+        }
+
         public static string FormatDoctorName(string name, bool caps=false)
         {
             if(name.StartsWith("Dr."))
@@ -66,6 +72,36 @@ namespace HospitalERP.Helpers
             string zip1 = !string.IsNullOrEmpty(zip) ? (" - " + zip) : zip;
             return string.Format("{0}{1}{2}{3}", address1, city1, state, zip1);
 
+        }
+
+        public static int getChildFormCount(Form frmParent)
+        {
+            int childCount = 0;
+            foreach (Form frm in frmParent.MdiChildren)
+            {
+                if (frm.GetType() != typeof(frmDashboard) && frm.GetType() != typeof(frmMain) && frm.GetType() != typeof(frmLogin))
+                {
+                    childCount++;
+                }
+            }
+            return childCount;
+        }
+
+        public static void toggleChildCloseButton(Form frmParent, int fromChild)
+        {
+            int cnt = getChildFormCount(frmParent);
+            Control[] c = frmParent.Controls.Find("btnChildClose", true);
+            Button b = (Button)c[0];
+            if (cnt == fromChild)
+            {
+                
+                b.Visible = false;
+            }
+            else
+            {
+               
+                b.Visible = true;
+            }
         }
     }
 }

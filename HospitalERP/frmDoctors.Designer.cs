@@ -94,9 +94,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPgListDocs = new System.Windows.Forms.TabPage();
-            this.dgvDept = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dgvList = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,13 +106,15 @@
             this.pathaka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.consultation_fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBtnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colBtnResetPwd = new System.Windows.Forms.DataGridViewButtonColumn();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.tabDoctors.SuspendLayout();
             this.tabPgAddDocs.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -122,7 +125,7 @@
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             this.tabPgListDocs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -204,9 +207,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtDesignation, 3, 6);
             this.tableLayoutPanel2.Controls.Add(this.lblActive, 2, 17);
             this.tableLayoutPanel2.Controls.Add(this.chkActive, 3, 17);
-            this.tableLayoutPanel2.Controls.Add(this.txtID, 0, 20);
             this.tableLayoutPanel2.Controls.Add(this.label10, 2, 13);
-            this.tableLayoutPanel2.Controls.Add(this.txtUSERID, 1, 20);
             this.tableLayoutPanel2.Controls.Add(this.lblStatus, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label12, 2, 10);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel4, 0, 4);
@@ -421,10 +422,13 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel1, 2);
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
+            this.flowLayoutPanel1.Controls.Add(this.btnClear);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
+            this.flowLayoutPanel1.Controls.Add(this.txtID);
+            this.flowLayoutPanel1.Controls.Add(this.txtUSERID);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(491, 560);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 39);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(408, 39);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
             // btnSave
@@ -442,14 +446,15 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCancel.BackColor = System.Drawing.Color.LightCoral;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(84, 3);
+            this.btnCancel.Location = new System.Drawing.Point(182, 3);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Text = "CLOSE";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -629,9 +634,9 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(28, 605);
+            this.txtID.Location = new System.Drawing.Point(263, 3);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 25);
+            this.txtID.Size = new System.Drawing.Size(53, 25);
             this.txtID.TabIndex = 60;
             this.txtID.Visible = false;
             // 
@@ -646,9 +651,9 @@
             // 
             // txtUSERID
             // 
-            this.txtUSERID.Location = new System.Drawing.Point(181, 605);
+            this.txtUSERID.Location = new System.Drawing.Point(322, 3);
             this.txtUSERID.Name = "txtUSERID";
-            this.txtUSERID.Size = new System.Drawing.Size(100, 25);
+            this.txtUSERID.Size = new System.Drawing.Size(48, 25);
             this.txtUSERID.TabIndex = 63;
             this.txtUSERID.Visible = false;
             // 
@@ -803,7 +808,7 @@
             // 
             this.tabPgListDocs.BackColor = System.Drawing.Color.White;
             this.tabPgListDocs.Controls.Add(this.flowLayoutPanel8);
-            this.tabPgListDocs.Controls.Add(this.dgvDept);
+            this.tabPgListDocs.Controls.Add(this.dgvList);
             this.tabPgListDocs.Controls.Add(this.flowLayoutPanel3);
             this.tabPgListDocs.Location = new System.Drawing.Point(4, 45);
             this.tabPgListDocs.Name = "tabPgListDocs";
@@ -813,16 +818,24 @@
             this.tabPgListDocs.Text = "Search/List Doctors";
             this.tabPgListDocs.UseVisualStyleBackColor = true;
             // 
-            // dgvDept
+            // flowLayoutPanel8
             // 
-            this.dgvDept.AllowUserToAddRows = false;
-            this.dgvDept.AllowUserToDeleteRows = false;
-            this.dgvDept.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDept.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvDept.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDept.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvDept.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgvDept.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.flowLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 529);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(994, 46);
+            this.flowLayoutPanel8.TabIndex = 13;
+            // 
+            // dgvList
+            // 
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -830,11 +843,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDept.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDept.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
-            this.EmpID,
+            this.colEmpID,
             this.colName,
             this.dept,
             this.designation,
@@ -842,7 +855,9 @@
             this.gender,
             this.pathaka,
             this.consultation_fee,
-            this.colActive});
+            this.colActive,
+            this.colBtnEdit,
+            this.colBtnResetPwd});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -850,17 +865,18 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightCyan;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDept.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDept.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDept.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvDept.Location = new System.Drawing.Point(3, 83);
-            this.dgvDept.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.dgvDept.Name = "dgvDept";
-            this.dgvDept.ReadOnly = true;
-            this.dgvDept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDept.Size = new System.Drawing.Size(994, 492);
-            this.dgvDept.TabIndex = 12;
-            this.dgvDept.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvList.Location = new System.Drawing.Point(3, 83);
+            this.dgvList.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.ReadOnly = true;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvList.Size = new System.Drawing.Size(994, 492);
+            this.dgvList.TabIndex = 12;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
+            this.dgvList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDept_RowHeaderMouseClick);
             // 
             // colID
             // 
@@ -870,12 +886,12 @@
             this.colID.ReadOnly = true;
             this.colID.Visible = false;
             // 
-            // EmpID
+            // colEmpID
             // 
-            this.EmpID.DataPropertyName = "emp_id";
-            this.EmpID.HeaderText = "Employee ID";
-            this.EmpID.Name = "EmpID";
-            this.EmpID.ReadOnly = true;
+            this.colEmpID.DataPropertyName = "emp_id";
+            this.colEmpID.HeaderText = "Employee ID";
+            this.colEmpID.Name = "colEmpID";
+            this.colEmpID.ReadOnly = true;
             // 
             // colName
             // 
@@ -934,6 +950,22 @@
             this.colActive.ReadOnly = true;
             this.colActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colBtnEdit
+            // 
+            this.colBtnEdit.HeaderText = "";
+            this.colBtnEdit.Name = "colBtnEdit";
+            this.colBtnEdit.ReadOnly = true;
+            this.colBtnEdit.Text = "Edit";
+            this.colBtnEdit.UseColumnTextForButtonValue = true;
+            // 
+            // colBtnResetPwd
+            // 
+            this.colBtnResetPwd.HeaderText = "";
+            this.colBtnResetPwd.Name = "colBtnResetPwd";
+            this.colBtnResetPwd.ReadOnly = true;
+            this.colBtnResetPwd.Text = "Reset Password";
+            this.colBtnResetPwd.UseColumnTextForButtonValue = true;
             // 
             // flowLayoutPanel3
             // 
@@ -994,13 +1026,18 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // flowLayoutPanel8
+            // btnClear
             // 
-            this.flowLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 529);
-            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(994, 46);
-            this.flowLayoutPanel8.TabIndex = 13;
+            this.btnClear.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(84, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 33);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmDoctors
             // 
@@ -1015,6 +1052,7 @@
             this.Name = "frmDoctors";
             this.Text = "Manage Doctors";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDoctors_FormClosed);
             this.Load += new System.EventHandler(this.frmDoctors_Load);
             this.tabDoctors.ResumeLayout(false);
             this.tabPgAddDocs.ResumeLayout(false);
@@ -1022,6 +1060,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
@@ -1033,7 +1072,7 @@
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel7.PerformLayout();
             this.tabPgListDocs.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
@@ -1093,7 +1132,7 @@
         private System.Windows.Forms.ComboBox cmbSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dgvDept;
+        private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.Label lblActive;
         private System.Windows.Forms.CheckBox chkActive;
         private System.Windows.Forms.ErrorProvider errorProvider;
@@ -1109,8 +1148,12 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmpID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dept;
         private System.Windows.Forms.DataGridViewTextBoxColumn designation;
@@ -1119,9 +1162,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pathaka;
         private System.Windows.Forms.DataGridViewTextBoxColumn consultation_fee;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
+        private System.Windows.Forms.DataGridViewButtonColumn colBtnEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn colBtnResetPwd;
+        private System.Windows.Forms.Button btnClear;
     }
 }

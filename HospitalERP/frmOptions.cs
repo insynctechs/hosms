@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 namespace HospitalERP
 {
     public partial class frmOptions : Form
@@ -100,7 +101,12 @@ namespace HospitalERP
 
         private void ShowRecords()
         {
-            dgvList.DataSource = opt.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            DataTable dtRecords = opt.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+            dgvList.DataSource = dtRecords;
+            if (dtRecords.Rows.Count == 0)
+            {
+                MessageBox.Show(Utils.FormatZeroSearch());
+            }
         }
 
         private void PopulateSearch()
@@ -202,11 +208,46 @@ namespace HospitalERP
 
         private void dgvList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtName.Text = dgvList.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtID.Text = dgvList.Rows[e.RowIndex].Cells[0].Value.ToString();            
-            txtDesc.Text = dgvList.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtVal.Text = dgvList.Rows[e.RowIndex].Cells[3].Value.ToString();
+            setFormFields(e.RowIndex);
             tabSub.SelectedIndex = 0;
+        }
+
+        private void setFormFields(int index)
+        {
+            txtName.Text = dgvList.Rows[index].Cells["colName"].Value.ToString();
+            txtID.Text = dgvList.Rows[index].Cells["colID"].Value.ToString();
+            txtDesc.Text = dgvList.Rows[index].Cells["colDesc"].Value.ToString();
+            txtVal.Text = dgvList.Rows[index].Cells["colVal"].Value.ToString();
+        }
+
+
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFormFields();
+        }
+
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dgvList.Columns[e.ColumnIndex].Name)
+            {
+                case "colBtnEdit":
+                    setFormFields(e.RowIndex);
+                    tabSub.SelectedIndex = 0;
+                    break;
+            }
+        }
+
+        private void frmOptions_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmOptions_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            ilog = null;
+            opt.Dispose();
         }
     }
 }

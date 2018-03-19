@@ -6,7 +6,7 @@ using System.Data.Common;
 
 namespace HospitalERP.Procedures
 {
-    class Appointments
+    class Appointments : IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
         log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
@@ -122,6 +122,12 @@ namespace HospitalERP.Procedures
 
         }
 
+        public void Dispose()
+        {
+            conn = null;
+            log = null;
+
+        }
 
 
     }
