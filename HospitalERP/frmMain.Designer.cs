@@ -7,6 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -51,6 +52,9 @@
             this.miPatientRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.miSickLeaveRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.miLicensingKey = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendErrorLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -63,9 +67,6 @@
             this.lnkChangePwd = new System.Windows.Forms.LinkLabel();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.btnChildClose = new System.Windows.Forms.Button();
-            this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.miLicensingKey = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendErrorLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -157,14 +158,14 @@
             // menuItemDocs
             // 
             this.menuItemDocs.Name = "menuItemDocs";
-            this.menuItemDocs.Size = new System.Drawing.Size(125, 22);
-            this.menuItemDocs.Text = "Doctors";
+            this.menuItemDocs.Size = new System.Drawing.Size(180, 22);
+            this.menuItemDocs.Text = "Doctors ";
             this.menuItemDocs.Click += new System.EventHandler(this.menuItemDocs_Click);
             // 
             // menuItemStaffGen
             // 
             this.menuItemStaffGen.Name = "menuItemStaffGen";
-            this.menuItemStaffGen.Size = new System.Drawing.Size(125, 22);
+            this.menuItemStaffGen.Size = new System.Drawing.Size(180, 22);
             this.menuItemStaffGen.Text = "General";
             this.menuItemStaffGen.Click += new System.EventHandler(this.menuItemStaffOthers_Click);
             // 
@@ -265,6 +266,25 @@
             this.menuItemHelp.Text = "Help";
             this.menuItemHelp.Visible = false;
             // 
+            // miAbout
+            // 
+            this.miAbout.Name = "miAbout";
+            this.miAbout.Size = new System.Drawing.Size(164, 22);
+            this.miAbout.Text = "About";
+            this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
+            // 
+            // miLicensingKey
+            // 
+            this.miLicensingKey.Name = "miLicensingKey";
+            this.miLicensingKey.Size = new System.Drawing.Size(164, 22);
+            this.miLicensingKey.Text = "Licensing Key";
+            // 
+            // sendErrorLogToolStripMenuItem
+            // 
+            this.sendErrorLogToolStripMenuItem.Name = "sendErrorLogToolStripMenuItem";
+            this.sendErrorLogToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.sendErrorLogToolStripMenuItem.Text = "Send Error Log";
+            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
@@ -283,7 +303,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.09406F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.90594F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 208F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tblLoginPanel, 2, 0);
@@ -304,7 +324,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(227, 20);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(569, 73);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 73);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnDashboard
@@ -374,7 +394,7 @@
             this.tblLoginPanel.Controls.Add(this.lnkChangePwd);
             this.tblLoginPanel.Controls.Add(this.linkLogout);
             this.tblLoginPanel.Controls.Add(this.btnChildClose);
-            this.tblLoginPanel.Location = new System.Drawing.Point(802, 3);
+            this.tblLoginPanel.Location = new System.Drawing.Point(801, 3);
             this.tblLoginPanel.Name = "tblLoginPanel";
             this.tblLoginPanel.Size = new System.Drawing.Size(196, 131);
             this.tblLoginPanel.TabIndex = 8;
@@ -451,25 +471,6 @@
             this.btnChildClose.UseVisualStyleBackColor = false;
             this.btnChildClose.Visible = false;
             this.btnChildClose.Click += new System.EventHandler(this.btnChildClose_Click);
-            // 
-            // miAbout
-            // 
-            this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(164, 22);
-            this.miAbout.Text = "About";
-            this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
-            // 
-            // miLicensingKey
-            // 
-            this.miLicensingKey.Name = "miLicensingKey";
-            this.miLicensingKey.Size = new System.Drawing.Size(164, 22);
-            this.miLicensingKey.Text = "Licensing Key";
-            // 
-            // sendErrorLogToolStripMenuItem
-            // 
-            this.sendErrorLogToolStripMenuItem.Name = "sendErrorLogToolStripMenuItem";
-            this.sendErrorLogToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.sendErrorLogToolStripMenuItem.Text = "Send Error Log";
             // 
             // frmMain
             // 

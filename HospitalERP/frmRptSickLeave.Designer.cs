@@ -313,9 +313,9 @@
             this.lblFromTime.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFromTime.Location = new System.Drawing.Point(430, 153);
             this.lblFromTime.Name = "lblFromTime";
-            this.lblFromTime.Size = new System.Drawing.Size(50, 17);
+            this.lblFromTime.Size = new System.Drawing.Size(56, 17);
             this.lblFromTime.TabIndex = 44;
-            this.lblFromTime.Text = "label24";
+            this.lblFromTime.Text = "label24  ";
             this.lblFromTime.Visible = false;
             // 
             // lblSickDetails

@@ -7,6 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -35,19 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lblRegNo = new System.Windows.Forms.Label();
-            this.lblAge = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblNationality = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblProcedures = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -55,13 +49,20 @@
             this.lblSignature = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblNationality = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.lblToday = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblToday = new System.Windows.Forms.Label();
             this.panelContent.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -130,9 +131,9 @@
             this.lblName.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(177, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(138, 27);
+            this.lblName.Size = new System.Drawing.Size(150, 27);
             this.lblName.TabIndex = 12;
-            this.lblName.Text = ".....................";
+            this.lblName.Text = ".......................";
             // 
             // label2
             // 
@@ -164,26 +165,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Reg No:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(412, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 27);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Consultation Date:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 82);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 27);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Gender:";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -193,16 +174,6 @@
             this.label9.Size = new System.Drawing.Size(92, 27);
             this.label9.TabIndex = 7;
             this.label9.Text = "Address:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(412, 82);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 27);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Nationality:";
             // 
             // label10
             // 
@@ -253,46 +224,6 @@
             this.lblRegNo.Size = new System.Drawing.Size(138, 27);
             this.lblRegNo.TabIndex = 13;
             this.lblRegNo.Text = ".....................";
-            // 
-            // lblAge
-            // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(177, 40);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(138, 27);
-            this.lblAge.TabIndex = 14;
-            this.lblAge.Text = ".....................";
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(177, 82);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(138, 27);
-            this.lblGender.TabIndex = 15;
-            this.lblGender.Text = ".....................";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(600, 40);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(138, 27);
-            this.lblDate.TabIndex = 16;
-            this.lblDate.Text = ".....................";
-            // 
-            // lblNationality
-            // 
-            this.lblNationality.AutoSize = true;
-            this.lblNationality.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNationality.Location = new System.Drawing.Point(600, 82);
-            this.lblNationality.Name = "lblNationality";
-            this.lblNationality.Size = new System.Drawing.Size(138, 27);
-            this.lblNationality.TabIndex = 17;
-            this.lblNationality.Text = ".....................";
             // 
             // lblAddress
             // 
@@ -370,6 +301,96 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(412, 82);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 27);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Nationality:";
+            // 
+            // lblNationality
+            // 
+            this.lblNationality.AutoSize = true;
+            this.lblNationality.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationality.Location = new System.Drawing.Point(600, 82);
+            this.lblNationality.Name = "lblNationality";
+            this.lblNationality.Size = new System.Drawing.Size(138, 27);
+            this.lblNationality.TabIndex = 17;
+            this.lblNationality.Text = ".....................";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(412, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(182, 27);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Consultation Date:";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(600, 40);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(138, 27);
+            this.lblDate.TabIndex = 16;
+            this.lblDate.Text = ".....................";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 82);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 27);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Gender:";
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(177, 82);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(138, 27);
+            this.lblGender.TabIndex = 15;
+            this.lblGender.Text = ".....................";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(412, 326);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 27);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Date:";
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAge.Location = new System.Drawing.Point(177, 40);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(138, 27);
+            this.lblAge.TabIndex = 14;
+            this.lblAge.Text = ".....................";
+            // 
+            // lblToday
+            // 
+            this.lblToday.AutoSize = true;
+            this.lblToday.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToday.Location = new System.Drawing.Point(600, 326);
+            this.lblToday.Name = "lblToday";
+            this.lblToday.Size = new System.Drawing.Size(138, 27);
+            this.lblToday.TabIndex = 27;
+            this.lblToday.Text = ".....................";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -406,26 +427,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(412, 326);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 27);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Date:";
-            // 
-            // lblToday
-            // 
-            this.lblToday.AutoSize = true;
-            this.lblToday.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToday.Location = new System.Drawing.Point(600, 326);
-            this.lblToday.Name = "lblToday";
-            this.lblToday.Size = new System.Drawing.Size(138, 27);
-            this.lblToday.TabIndex = 27;
-            this.lblToday.Text = ".....................";
             // 
             // frmRptMedical
             // 

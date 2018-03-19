@@ -25,6 +25,7 @@ namespace HospitalERP
             InitializeComponent();
         }
 
+
         public frmRptSickLeave(int aptid, int patid)
         {
             InitializeComponent();

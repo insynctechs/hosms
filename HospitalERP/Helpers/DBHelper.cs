@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using Microsoft.Win32;
-
 namespace HospitalERP.Helpers
 {
     internal class DBHelper

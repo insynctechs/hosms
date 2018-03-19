@@ -5,6 +5,7 @@ using Microsoft.ApplicationBlocks.Data;
 using System.Data.Common;
 
 
+
 namespace HospitalERP.Procedures
 {
     class ConsultationDetails

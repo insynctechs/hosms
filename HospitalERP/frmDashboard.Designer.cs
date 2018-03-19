@@ -7,6 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -53,11 +54,15 @@
             this.lblUDob = new System.Windows.Forms.Label();
             this.lblUGender = new System.Windows.Forms.Label();
             this.lblUNationality = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblURole = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.lblUPhone = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblUDept = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblURole = new System.Windows.Forms.Label();
+            this.lblULastLog = new System.Windows.Forms.Label();
             this.panelDashMain = new System.Windows.Forms.Panel();
             this.flowPanelDashMain = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,10 +80,6 @@
             this.btnDashUserRoles = new System.Windows.Forms.Button();
             this.btnDashOpt = new System.Windows.Forms.Button();
             this.btnDashReports = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblUDept = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblULastLog = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -164,14 +165,14 @@
             this.lblClinic.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblClinic.Location = new System.Drawing.Point(3, 0);
             this.lblClinic.Name = "lblClinic";
-            this.lblClinic.Size = new System.Drawing.Size(280, 74);
+            this.lblClinic.Size = new System.Drawing.Size(278, 74);
             this.lblClinic.TabIndex = 1;
-            this.lblClinic.Text = "EXCELLENCE DENTAL CLINIC";
+            this.lblClinic.Text = "EXCELLENCE DENTAL CLINIC  ";
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(289, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(287, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel2.TabIndex = 0;
@@ -280,7 +281,7 @@
             this.label7.Location = new System.Drawing.Point(3, 51);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.Size = new System.Drawing.Size(72, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Staff Type: ";
             // 
@@ -417,6 +418,52 @@
             this.lblUNationality.TabIndex = 0;
             this.lblUNationality.Text = "Name: ";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 186);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 17);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Nationality: ";
+            // 
+            // lblUPhone
+            // 
+            this.lblUPhone.AutoSize = true;
+            this.lblUPhone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUPhone.Location = new System.Drawing.Point(103, 213);
+            this.lblUPhone.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUPhone.Name = "lblUPhone";
+            this.lblUPhone.Size = new System.Drawing.Size(50, 17);
+            this.lblUPhone.TabIndex = 0;
+            this.lblUPhone.Text = "Name: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 105);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Department: ";
+            // 
+            // lblUDept
+            // 
+            this.lblUDept.AutoSize = true;
+            this.lblUDept.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUDept.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUDept.Location = new System.Drawing.Point(103, 105);
+            this.lblUDept.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblUDept.Name = "lblUDept";
+            this.lblUDept.Size = new System.Drawing.Size(50, 17);
+            this.lblUDept.TabIndex = 0;
+            this.lblUDept.Text = "Name: ";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -427,6 +474,28 @@
             this.label12.Size = new System.Drawing.Size(72, 17);
             this.label12.TabIndex = 0;
             this.label12.Text = "User Role: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 213);
+            this.label14.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 17);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Phone: ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 267);
+            this.label15.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 17);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Last Logged: ";
             // 
             // lblURole
             // 
@@ -440,39 +509,17 @@
             this.lblURole.TabIndex = 0;
             this.lblURole.Text = "Name: ";
             // 
-            // label11
+            // lblULastLog
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 186);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Nationality: ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 213);
-            this.label14.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 17);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Phone: ";
-            // 
-            // lblUPhone
-            // 
-            this.lblUPhone.AutoSize = true;
-            this.lblUPhone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUPhone.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUPhone.Location = new System.Drawing.Point(103, 213);
-            this.lblUPhone.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUPhone.Name = "lblUPhone";
-            this.lblUPhone.Size = new System.Drawing.Size(50, 17);
-            this.lblUPhone.TabIndex = 0;
-            this.lblUPhone.Text = "Name: ";
+            this.lblULastLog.AutoSize = true;
+            this.lblULastLog.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblULastLog.ForeColor = System.Drawing.Color.DimGray;
+            this.lblULastLog.Location = new System.Drawing.Point(103, 267);
+            this.lblULastLog.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lblULastLog.Name = "lblULastLog";
+            this.lblULastLog.Size = new System.Drawing.Size(50, 17);
+            this.lblULastLog.TabIndex = 0;
+            this.lblULastLog.Text = "Name: ";
             // 
             // panelDashMain
             // 
@@ -799,52 +846,6 @@
             this.btnDashReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashReports.UseVisualStyleBackColor = true;
             this.btnDashReports.Click += new System.EventHandler(this.btnDashReports_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 105);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Department: ";
-            // 
-            // lblUDept
-            // 
-            this.lblUDept.AutoSize = true;
-            this.lblUDept.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUDept.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUDept.Location = new System.Drawing.Point(103, 105);
-            this.lblUDept.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblUDept.Name = "lblUDept";
-            this.lblUDept.Size = new System.Drawing.Size(50, 17);
-            this.lblUDept.TabIndex = 0;
-            this.lblUDept.Text = "Name: ";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(3, 267);
-            this.label15.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 17);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Last Logged: ";
-            // 
-            // lblULastLog
-            // 
-            this.lblULastLog.AutoSize = true;
-            this.lblULastLog.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblULastLog.ForeColor = System.Drawing.Color.DimGray;
-            this.lblULastLog.Location = new System.Drawing.Point(103, 267);
-            this.lblULastLog.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lblULastLog.Name = "lblULastLog";
-            this.lblULastLog.Size = new System.Drawing.Size(50, 17);
-            this.lblULastLog.TabIndex = 0;
-            this.lblULastLog.Text = "Name: ";
             // 
             // frmDashboard
             // 
