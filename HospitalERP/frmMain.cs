@@ -432,5 +432,10 @@ namespace HospitalERP
             frmRptSickLeave rsl = new frmRptSickLeave();
             rsl.ShowDialog(this);
         }
+
+        private void miAbout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
