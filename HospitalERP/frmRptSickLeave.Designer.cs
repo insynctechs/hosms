@@ -210,7 +210,7 @@
             // txtFromTime
             // 
             this.txtFromTime.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFromTime.Location = new System.Drawing.Point(423, 147);
+            this.txtFromTime.Location = new System.Drawing.Point(419, 147);
             this.txtFromTime.Name = "txtFromTime";
             this.txtFromTime.Size = new System.Drawing.Size(65, 24);
             this.txtFromTime.TabIndex = 7;
@@ -300,7 +300,7 @@
             // 
             this.lblToTime.AutoSize = true;
             this.lblToTime.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToTime.Location = new System.Drawing.Point(549, 154);
+            this.lblToTime.Location = new System.Drawing.Point(546, 151);
             this.lblToTime.Name = "lblToTime";
             this.lblToTime.Size = new System.Drawing.Size(50, 17);
             this.lblToTime.TabIndex = 45;
@@ -311,7 +311,7 @@
             // 
             this.lblFromTime.AutoSize = true;
             this.lblFromTime.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFromTime.Location = new System.Drawing.Point(430, 153);
+            this.lblFromTime.Location = new System.Drawing.Point(423, 153);
             this.lblFromTime.Name = "lblFromTime";
             this.lblFromTime.Size = new System.Drawing.Size(56, 17);
             this.lblFromTime.TabIndex = 44;
@@ -497,7 +497,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(494, 153);
+            this.label13.Location = new System.Drawing.Point(490, 153);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 17);
             this.label13.TabIndex = 25;
@@ -507,7 +507,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(360, 153);
+            this.label12.Location = new System.Drawing.Point(349, 153);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(64, 17);
             this.label12.TabIndex = 24;

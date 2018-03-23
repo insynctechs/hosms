@@ -59,7 +59,7 @@ namespace HospitalERP
 
         private void txtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text))
+            if (string.IsNullOrEmpty(txtName.Text.Trim()))
             {
                 e.Cancel = true;
                 txtName.Focus();
@@ -75,36 +75,39 @@ namespace HospitalERP
         private void btnSave_Click(object sender, EventArgs e)
         {
             int rtn = -1;
-            if (txtID.Text.Trim() == "") //add data
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                rtn = dt.addTypes(txtName.Text, txtDesc.Text, chkActive.Checked);
-                if (rtn == 0)
-                    ShowStatus(0,"Type name should be unique");
-                else if (rtn == 1)
+                if (txtID.Text.Trim() == "") //add data
                 {
-                    ShowStatus(1,"Record succesfully added");
-                    clearFormFields();
+                    rtn = dt.addTypes(txtName.Text, txtDesc.Text, chkActive.Checked);
+                    if (rtn == 0)
+                        ShowStatus(0, "Type name should be unique");
+                    else if (rtn == 1)
+                    {
+                        ShowStatus(1, "Record succesfully added");
+                        clearFormFields();
 
+                    }
+                    else if (rtn == -1)
+                    {
+                        ShowStatus(0, "Some error occurred... Record cannot be added.");
+                    }
                 }
-                else if (rtn == -1)
+                else //edit record
                 {
-                    ShowStatus(0,"Some error occurred... Record cannot be added.");
-                }
-            }
-            else //edit record
-            {
-                rtn = dt.editTypes(Int32.Parse(txtID.Text.Trim()),txtName.Text, txtDesc.Text, chkActive.Checked);
-                if (rtn == 0)
-                    ShowStatus(0,"This name already exists. Please provide unique name.");
-                else if (rtn == 1)
-                {
-                    ShowStatus(1,"Record succesfully updated");
-                    clearFormFields();
+                    rtn = dt.editTypes(Int32.Parse(txtID.Text.Trim()), txtName.Text, txtDesc.Text, chkActive.Checked);
+                    if (rtn == 0)
+                        ShowStatus(0, "This name already exists. Please provide unique name.");
+                    else if (rtn == 1)
+                    {
+                        ShowStatus(1, "Record succesfully updated");
+                        clearFormFields();
 
-                }
-                else if (rtn == -1)
-                {
-                    ShowStatus(0,"Some error occurred... Record cannot be added.");
+                    }
+                    else if (rtn == -1)
+                    {
+                        ShowStatus(0, "Some error occurred... Record cannot be added.");
+                    }
                 }
             }
             

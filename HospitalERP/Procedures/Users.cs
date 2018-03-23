@@ -24,7 +24,7 @@ namespace HospitalERP.Procedures
                 SqlParameter[] sqlParam = new SqlParameter[2];
                 sqlParam[0] = new SqlParameter("@empid", empid);
                 sqlParam[1] = new SqlParameter("@pass", pwd);
-                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUsers_ValidateLogin", sqlParam));
+                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(HospitalERP.Helpers.DBHelper.Constr, CommandType.StoredProcedure, "uspUsers_ValidateLogin", sqlParam));
                 return ret;
             }
             catch (Exception ex)
@@ -40,7 +40,7 @@ namespace HospitalERP.Procedures
             {
                 SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@empid", empid);                
-                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspUsers_LoggedUser", sqlParam);
+                DataSet dt = SqlHelper.ExecuteDataset(HospitalERP.Helpers.DBHelper.Constr, CommandType.StoredProcedure, "uspUsers_LoggedUser", sqlParam);
                 return dt.Tables[0];
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace HospitalERP.Procedures
             {
                 SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@empid", empid);
-                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUsers_SetLogDate", sqlParam));
+                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(HospitalERP.Helpers.DBHelper.Constr, CommandType.StoredProcedure, "uspUsers_SetLogDate", sqlParam));
                 return ret;
             }
             catch (Exception ex)
@@ -74,7 +74,7 @@ namespace HospitalERP.Procedures
                 sqlParam[0] = new SqlParameter("@empid", empid);
                 sqlParam[1] = new SqlParameter("@pass", pass);
                 sqlParam[2] = new SqlParameter("@utype", utype);
-                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspUsers_SetPwdHash", sqlParam));
+                int ret = Convert.ToInt32(SqlHelper.ExecuteScalar(HospitalERP.Helpers.DBHelper.Constr, CommandType.StoredProcedure, "uspUsers_SetPwdHash", sqlParam));
                 return ret;
             }
             catch (Exception ex)

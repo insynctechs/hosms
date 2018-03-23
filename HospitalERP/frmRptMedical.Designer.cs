@@ -74,7 +74,7 @@
             this.panelContent.Controls.Add(this.tableLayoutPanel1);
             this.panelContent.Location = new System.Drawing.Point(0, 56);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(763, 456);
+            this.panelContent.Size = new System.Drawing.Size(763, 436);
             this.panelContent.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -99,8 +99,6 @@
             this.tableLayoutPanel1.Controls.Add(this.lblDescription, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblDoctor, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.lblSignature, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.btnPrint, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.btnClose, 3, 8);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblNationality, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 1);
@@ -122,7 +120,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(760, 430);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(760, 433);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // lblName
@@ -149,7 +147,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 40);
+            this.label4.Location = new System.Drawing.Point(3, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 27);
             this.label4.TabIndex = 2;
@@ -169,7 +167,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 127);
+            this.label9.Location = new System.Drawing.Point(3, 130);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 27);
             this.label9.TabIndex = 7;
@@ -179,7 +177,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 167);
+            this.label10.Location = new System.Drawing.Point(3, 170);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 39);
             this.label10.TabIndex = 8;
@@ -189,7 +187,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 206);
+            this.label11.Location = new System.Drawing.Point(3, 209);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 54);
             this.label11.TabIndex = 9;
@@ -199,7 +197,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 274);
+            this.label12.Location = new System.Drawing.Point(3, 277);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(153, 27);
             this.label12.TabIndex = 10;
@@ -209,7 +207,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 326);
+            this.label13.Location = new System.Drawing.Point(3, 329);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(104, 27);
             this.label13.TabIndex = 11;
@@ -229,7 +227,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(177, 127);
+            this.lblAddress.Location = new System.Drawing.Point(177, 130);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(138, 27);
             this.lblAddress.TabIndex = 18;
@@ -239,7 +237,7 @@
             // 
             this.lblProcedures.AutoSize = true;
             this.lblProcedures.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProcedures.Location = new System.Drawing.Point(177, 167);
+            this.lblProcedures.Location = new System.Drawing.Point(177, 170);
             this.lblProcedures.Name = "lblProcedures";
             this.lblProcedures.Size = new System.Drawing.Size(138, 27);
             this.lblProcedures.TabIndex = 19;
@@ -249,7 +247,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(177, 206);
+            this.lblDescription.Location = new System.Drawing.Point(177, 209);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(138, 27);
             this.lblDescription.TabIndex = 20;
@@ -259,7 +257,7 @@
             // 
             this.lblDoctor.AutoSize = true;
             this.lblDoctor.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoctor.Location = new System.Drawing.Point(177, 274);
+            this.lblDoctor.Location = new System.Drawing.Point(177, 277);
             this.lblDoctor.Name = "lblDoctor";
             this.lblDoctor.Size = new System.Drawing.Size(138, 27);
             this.lblDoctor.TabIndex = 21;
@@ -269,7 +267,7 @@
             // 
             this.lblSignature.AutoSize = true;
             this.lblSignature.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignature.Location = new System.Drawing.Point(177, 326);
+            this.lblSignature.Location = new System.Drawing.Point(177, 329);
             this.lblSignature.Name = "lblSignature";
             this.lblSignature.Size = new System.Drawing.Size(138, 27);
             this.lblSignature.TabIndex = 22;
@@ -280,7 +278,7 @@
             this.btnPrint.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPrint.Location = new System.Drawing.Point(412, 389);
+            this.btnPrint.Location = new System.Drawing.Point(460, 495);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(182, 36);
             this.btnPrint.TabIndex = 23;
@@ -293,7 +291,7 @@
             this.btnClose.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnClose.Location = new System.Drawing.Point(600, 389);
+            this.btnClose.Location = new System.Drawing.Point(650, 495);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(83, 36);
             this.btnClose.TabIndex = 24;
@@ -305,7 +303,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(412, 82);
+            this.label8.Location = new System.Drawing.Point(412, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 27);
             this.label8.TabIndex = 6;
@@ -315,7 +313,7 @@
             // 
             this.lblNationality.AutoSize = true;
             this.lblNationality.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNationality.Location = new System.Drawing.Point(600, 82);
+            this.lblNationality.Location = new System.Drawing.Point(600, 85);
             this.lblNationality.Name = "lblNationality";
             this.lblNationality.Size = new System.Drawing.Size(138, 27);
             this.lblNationality.TabIndex = 17;
@@ -325,7 +323,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(412, 40);
+            this.label6.Location = new System.Drawing.Point(412, 41);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(182, 27);
             this.label6.TabIndex = 4;
@@ -335,7 +333,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(600, 40);
+            this.lblDate.Location = new System.Drawing.Point(600, 41);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(138, 27);
             this.lblDate.TabIndex = 16;
@@ -345,7 +343,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 82);
+            this.label7.Location = new System.Drawing.Point(3, 85);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 27);
             this.label7.TabIndex = 5;
@@ -355,7 +353,7 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(177, 82);
+            this.lblGender.Location = new System.Drawing.Point(177, 85);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(138, 27);
             this.lblGender.TabIndex = 15;
@@ -365,7 +363,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(412, 326);
+            this.label3.Location = new System.Drawing.Point(412, 329);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 27);
             this.label3.TabIndex = 26;
@@ -375,7 +373,7 @@
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(177, 40);
+            this.lblAge.Location = new System.Drawing.Point(177, 41);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(138, 27);
             this.lblAge.TabIndex = 14;
@@ -385,7 +383,7 @@
             // 
             this.lblToday.AutoSize = true;
             this.lblToday.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToday.Location = new System.Drawing.Point(600, 326);
+            this.lblToday.Location = new System.Drawing.Point(600, 329);
             this.lblToday.Name = "lblToday";
             this.lblToday.Size = new System.Drawing.Size(138, 27);
             this.lblToday.TabIndex = 27;
@@ -432,9 +430,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 525);
+            this.ClientSize = new System.Drawing.Size(766, 534);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnClose);
             this.Name = "frmRptMedical";
             this.Text = "Medical Report";
             this.Shown += new System.EventHandler(this.frmRptMedical_Shown);

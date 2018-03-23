@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
-
+using Microsoft.Win32;
 
 namespace HospitalERP
 {
@@ -18,7 +18,41 @@ namespace HospitalERP
         public frmLogin()
         {
             InitializeComponent();
-            
+
+            //opening the subkey  
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP");
+
+            //if it does exist, retrieve the stored values  
+            if (key != null)
+            {
+                var frun = key.GetValue("first_run");
+                //MessageBox.Show(frun.ToString());
+                key.Close();
+                if (frun.ToString() == "true")
+                {
+                    //show frmDbConfig
+                    frmDbConfig fdc = new frmDbConfig();
+                    fdc.ShowDialog();
+
+                    //after closing server check tem has changed. 
+                    //If not don't show the login form
+                    key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP\dset\", true);
+
+                    //if it does exist, retrieve the stored values  
+                    if (key != null)
+                    {
+                        frun = key.GetValue("reset");
+                        if (frun.ToString() == "false")
+                        {
+                            Environment.Exit(1);
+                            //Application.Exit();
+                        }
+                            
+                    }
+                }
+
+
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)

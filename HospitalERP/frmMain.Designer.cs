@@ -65,6 +65,7 @@
             this.lnkChangePwd = new System.Windows.Forms.LinkLabel();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.btnChildClose = new System.Windows.Forms.Button();
+            this.miServerDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -235,34 +236,35 @@
             // menuitemBillingReport
             // 
             this.menuitemBillingReport.Name = "menuitemBillingReport";
-            this.menuitemBillingReport.Size = new System.Drawing.Size(180, 22);
+            this.menuitemBillingReport.Size = new System.Drawing.Size(174, 22);
             this.menuitemBillingReport.Text = "Billing Report";
             this.menuitemBillingReport.Click += new System.EventHandler(this.menuitemBillingReport_Click);
             // 
             // miPatientRpt
             // 
             this.miPatientRpt.Name = "miPatientRpt";
-            this.miPatientRpt.Size = new System.Drawing.Size(180, 22);
+            this.miPatientRpt.Size = new System.Drawing.Size(174, 22);
             this.miPatientRpt.Text = "Patient Report";
             this.miPatientRpt.Click += new System.EventHandler(this.miPatientRpt_Click);
             // 
             // miSickLeaveRpt
             // 
             this.miSickLeaveRpt.Name = "miSickLeaveRpt";
-            this.miSickLeaveRpt.Size = new System.Drawing.Size(180, 22);
+            this.miSickLeaveRpt.Size = new System.Drawing.Size(174, 22);
             this.miSickLeaveRpt.Text = "Sick Leave Form";
+            this.miSickLeaveRpt.Visible = false;
             this.miSickLeaveRpt.Click += new System.EventHandler(this.miSickLeaveRpt_Click);
             // 
             // menuItemHelp
             // 
             this.menuItemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miAbout,
+            this.miServerDetails,
             this.miLicensingKey,
             this.sendErrorLogToolStripMenuItem});
             this.menuItemHelp.Name = "menuItemHelp";
             this.menuItemHelp.Size = new System.Drawing.Size(49, 22);
             this.menuItemHelp.Text = "Help";
-            this.menuItemHelp.Visible = false;
             // 
             // miAbout
             // 
@@ -301,7 +303,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.09406F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.90594F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tblLoginPanel, 2, 0);
@@ -319,10 +321,10 @@
             this.flowLayoutPanel1.Controls.Add(this.btnDashboard);
             this.flowLayoutPanel1.Controls.Add(this.btnApp);
             this.flowLayoutPanel1.Controls.Add(this.btnReg);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(227, 20);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(226, 20);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(567, 73);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(566, 73);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnDashboard
@@ -366,7 +368,7 @@
             this.btnReg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReg.Location = new System.Drawing.Point(315, 3);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(144, 58);
+            this.btnReg.Size = new System.Drawing.Size(200, 58);
             this.btnReg.TabIndex = 0;
             this.btnReg.Text = "PATIENT REGISTRATION";
             this.btnReg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -392,7 +394,7 @@
             this.tblLoginPanel.Controls.Add(this.lnkChangePwd);
             this.tblLoginPanel.Controls.Add(this.linkLogout);
             this.tblLoginPanel.Controls.Add(this.btnChildClose);
-            this.tblLoginPanel.Location = new System.Drawing.Point(800, 3);
+            this.tblLoginPanel.Location = new System.Drawing.Point(798, 3);
             this.tblLoginPanel.Name = "tblLoginPanel";
             this.tblLoginPanel.Size = new System.Drawing.Size(196, 131);
             this.tblLoginPanel.TabIndex = 8;
@@ -470,6 +472,13 @@
             this.btnChildClose.Visible = false;
             this.btnChildClose.Click += new System.EventHandler(this.btnChildClose_Click);
             // 
+            // miServerDetails
+            // 
+            this.miServerDetails.Name = "miServerDetails";
+            this.miServerDetails.Size = new System.Drawing.Size(180, 22);
+            this.miServerDetails.Text = "Server Details";
+            this.miServerDetails.Click += new System.EventHandler(this.miServerDetails_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,5 +553,6 @@
         private System.Windows.Forms.ToolStripMenuItem miAbout;
         private System.Windows.Forms.ToolStripMenuItem miLicensingKey;
         private System.Windows.Forms.ToolStripMenuItem sendErrorLogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miServerDetails;
     }
 }

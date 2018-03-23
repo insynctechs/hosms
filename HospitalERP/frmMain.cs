@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HospitalERP.Procedures;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace HospitalERP
 {
@@ -29,13 +30,48 @@ namespace HospitalERP
             LoggedUser.last_log_date = "";
             LoggedUser.name = "ADMIN";
             LoggedUser.staff_id = 0;
+
+            //opening the subkey  
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP");
+
+            //if it does exist, retrieve the stored values  
+            if (key != null)
+            {
+                var frun = key.GetValue("first_run");
+                //MessageBox.Show(frun.ToString());
+                key.Close();
+                if (frun.ToString() == "true")
+                {
+                    //show frmDbConfig
+                    frmDbConfig fdc = new frmDbConfig();
+                    fdc.ShowDialog();
+                }
+            }
         }
 
         public frmMain(string empid)
         {
             InitializeComponent();
             try
-            { 
+            {
+
+                //opening the subkey  
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP");
+
+                //if it does exist, retrieve the stored values  
+                if (key != null)
+                {
+                    var frun = key.GetValue("first_run");
+                    //MessageBox.Show(frun.ToString());
+                    key.Close();
+                    if (frun.ToString() == "true")
+                    {
+                        //show frmDbConfig
+                        frmDbConfig fdc = new frmDbConfig();
+                        fdc.ShowDialog();
+                    }
+                }
+
                 DataTable dtUser = usr.GetLoggedUser(empid);
                 lblEmpID.Text = empid;
                 if (dtUser.Rows.Count > 0)
@@ -53,6 +89,7 @@ namespace HospitalERP
                 {
                     
                 }
+
             }
             catch (Exception ex)
             {
@@ -435,7 +472,15 @@ namespace HospitalERP
 
         private void miAbout_Click(object sender, EventArgs e)
         {
+            frmAbout fab = new frmAbout();
+            fab.ShowDialog(this);
 
+        }
+
+        private void miServerDetails_Click(object sender, EventArgs e)
+        {
+            frmDbConfig fdc = new frmDbConfig();
+            fdc.ShowDialog();
         }
     }
 }
