@@ -200,11 +200,17 @@ namespace HospitalERP
 
         private void txtName_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text))
+            if (string.IsNullOrEmpty(txtName.Text.Trim()))
             {
                 e.Cancel = true;
                 //txtName.Focus();
                 errorProvider.SetError(txtName, "Required");
+            }
+            else if(procTest.GetRecords("p.name", txtName.Text.Trim()).Rows.Count>0)
+            {
+                e.Cancel = true;
+                //txtName.Focus();
+                errorProvider.SetError(txtName, "Name Already Exists!");
             }
             else
             {
@@ -275,7 +281,8 @@ namespace HospitalERP
 
         private void frmProcedures_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            if(this.IsMdiChild)
+               Utils.toggleChildCloseButton(this.MdiParent, 1);
             ilog = null;
             procTest.Dispose();
         }

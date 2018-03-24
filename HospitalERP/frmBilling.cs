@@ -89,5 +89,10 @@ namespace HospitalERP
                     break;
             }
         }
+
+        private void chkDate_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

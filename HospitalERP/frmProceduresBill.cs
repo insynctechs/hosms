@@ -80,7 +80,7 @@ namespace HospitalERP
             txtGender.Text = Utils.Gender[gender].ToString();
             txtAge.Text = dtPat.Rows[0]["age"].ToString();
             txtNationality.Text = dtPat.Rows[0]["nationality"].ToString();
-            txtAddress.Text = dtPat.Rows[0]["address"].ToString() + "\r\n" + dtPat.Rows[0]["city"].ToString() + ", " + dtPat.Rows[0]["state"].ToString() + " " + dtPat.Rows[0]["zip"].ToString();
+            txtAddress.Text = Utils.FormatAddress(dtPat.Rows[0]["address"].ToString(), dtPat.Rows[0]["city"].ToString(), dtPat.Rows[0]["state"].ToString(), dtPat.Rows[0]["zip"].ToString());
             //txtMeetDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
             txtDoctor.Text = dtPat.Rows[0]["doctor_name"].ToString();
             txtToken.Text = dtPat.Rows[0]["token"].ToString().PadLeft(3,'0');

@@ -90,11 +90,17 @@ namespace HospitalERP
 
         private void txtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if(string.IsNullOrEmpty(txtName.Text))
+            if(string.IsNullOrEmpty(txtName.Text.Trim()))
             {
                 e.Cancel = true;
                 txtName.Focus();
                 errorProvider.SetError(txtName, "Required");
+            }
+            else if (pt.GetRecords("type_name", txtName.Text.Trim()).Rows.Count > 0)
+            {
+                e.Cancel = true;
+                //txtName.Focus();
+                errorProvider.SetError(txtName, "Name Already Exists!");
             }
             else
             {

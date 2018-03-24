@@ -43,7 +43,7 @@ namespace HospitalERP
             int rtn = 0;
             if (txtPassword2.Text != txtPassword1.Text)
             {
-                MessageBox.Show("Please re-eneter the same password you entered!");
+                MessageBox.Show("Please re-enter the same password you entered!");
                 txtPassword2.Focus();
             }
             if (ValidateChildren(ValidationConstraints.Enabled))

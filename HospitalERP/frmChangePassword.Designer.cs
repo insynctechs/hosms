@@ -49,7 +49,7 @@
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.PasswordChar = '*';
             this.txtPassword2.Size = new System.Drawing.Size(257, 26);
-            this.txtPassword2.TabIndex = 0;
+            this.txtPassword2.TabIndex = 1;
             this.txtPassword2.TextChanged += new System.EventHandler(this.txtPassword2_TextChanged);
             this.txtPassword2.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword2_Validating);
             // 
@@ -136,7 +136,7 @@
             this.btnClose.Location = new System.Drawing.Point(434, 242);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(151, 46);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 3;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);

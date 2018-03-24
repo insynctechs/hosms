@@ -458,7 +458,7 @@
             // 
             // cmbDoc
             // 
-            this.cmbDoc.FormattingEnabled = true;
+            this.cmbDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.cmbDoc, "cmbDoc");
             this.cmbDoc.Name = "cmbDoc";
             this.cmbDoc.SelectedIndexChanged += new System.EventHandler(this.cmbDoc_SelectedIndexChanged);

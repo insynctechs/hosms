@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,10 +41,10 @@
             this.txtPatNum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPatName = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnGenerateBill = new System.Windows.Forms.Button();
             this.btnListBills = new System.Windows.Forms.Button();
@@ -59,12 +59,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtDues = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDoctor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMeetDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtDues = new System.Windows.Forms.TextBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.bID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bAppID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,6 +138,7 @@
             // 
             // cmbBillType
             // 
+            this.cmbBillType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBillType.FormattingEnabled = true;
             this.cmbBillType.Location = new System.Drawing.Point(119, 3);
             this.cmbBillType.Name = "cmbBillType";
@@ -223,6 +224,26 @@
             this.txtPatName.TabIndex = 1;
             this.txtPatName.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(3, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 18);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Contact Phone    :";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtPhone.Location = new System.Drawing.Point(129, 51);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
+            this.txtPhone.Size = new System.Drawing.Size(150, 18);
+            this.txtPhone.TabIndex = 1;
+            this.txtPhone.TabStop = false;
+            // 
             // label10
             // 
             this.label10.Location = new System.Drawing.Point(3, 72);
@@ -244,26 +265,6 @@
             this.txtAddress.TabIndex = 1;
             this.txtAddress.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(3, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Contact Phone    :";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BackColor = System.Drawing.Color.White;
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPhone.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txtPhone.Location = new System.Drawing.Point(129, 51);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.ReadOnly = true;
-            this.txtPhone.Size = new System.Drawing.Size(150, 18);
-            this.txtPhone.TabIndex = 1;
-            this.txtPhone.TabStop = false;
-            // 
             // flowLayoutPanel15
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel15, 2);
@@ -272,7 +273,7 @@
             this.flowLayoutPanel15.Controls.Add(this.txtAppID);
             this.flowLayoutPanel15.Location = new System.Drawing.Point(360, 187);
             this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(393, 43);
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(492, 43);
             this.flowLayoutPanel15.TabIndex = 35;
             // 
             // btnGenerateBill
@@ -295,15 +296,15 @@
             this.btnListBills.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnListBills.Location = new System.Drawing.Point(209, 3);
             this.btnListBills.Name = "btnListBills";
-            this.btnListBills.Size = new System.Drawing.Size(100, 36);
+            this.btnListBills.Size = new System.Drawing.Size(197, 36);
             this.btnListBills.TabIndex = 3;
-            this.btnListBills.Text = "LIST";
+            this.btnListBills.Text = "REFRESH BILLS";
             this.btnListBills.UseVisualStyleBackColor = false;
             this.btnListBills.Click += new System.EventHandler(this.btnListBills_Click);
             // 
             // txtAppID
             // 
-            this.txtAppID.Location = new System.Drawing.Point(315, 3);
+            this.txtAppID.Location = new System.Drawing.Point(412, 3);
             this.txtAppID.Name = "txtAppID";
             this.txtAppID.Size = new System.Drawing.Size(51, 25);
             this.txtAppID.TabIndex = 36;
@@ -421,20 +422,6 @@
             this.flowLayoutPanel9.Size = new System.Drawing.Size(310, 122);
             this.flowLayoutPanel9.TabIndex = 33;
             // 
-            // txtDues
-            // 
-            this.txtDues.BackColor = System.Drawing.Color.White;
-            this.txtDues.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.flowLayoutPanel9.SetFlowBreak(this.txtDues, true);
-            this.txtDues.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDues.ForeColor = System.Drawing.Color.Red;
-            this.txtDues.Location = new System.Drawing.Point(99, 51);
-            this.txtDues.Name = "txtDues";
-            this.txtDues.ReadOnly = true;
-            this.txtDues.Size = new System.Drawing.Size(100, 18);
-            this.txtDues.TabIndex = 1;
-            this.txtDues.TabStop = false;
-            // 
             // label11
             // 
             this.label11.Location = new System.Drawing.Point(3, 0);
@@ -485,28 +472,42 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Billed Dues  : ";
             // 
+            // txtDues
+            // 
+            this.txtDues.BackColor = System.Drawing.Color.White;
+            this.txtDues.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.flowLayoutPanel9.SetFlowBreak(this.txtDues, true);
+            this.txtDues.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDues.ForeColor = System.Drawing.Color.Red;
+            this.txtDues.Location = new System.Drawing.Point(99, 51);
+            this.txtDues.Name = "txtDues";
+            this.txtDues.ReadOnly = true;
+            this.txtDues.Size = new System.Drawing.Size(100, 18);
+            this.txtDues.TabIndex = 1;
+            this.txtDues.TabStop = false;
+            // 
             // dgvList
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bID,
@@ -524,14 +525,14 @@
             this.bType,
             this.bStatus,
             this.bBtnBill});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.GridColor = System.Drawing.Color.LightCyan;
             this.dgvList.Location = new System.Drawing.Point(0, 243);

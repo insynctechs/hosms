@@ -87,6 +87,7 @@ namespace HospitalERP
             txtDoctor.Text = dtPat.Rows[0]["doctor_name"].ToString();
             txtDues.Text = dtPat.Rows[0]["dues"].ToString();
             txtAppID.Text = dtPat.Rows[0]["appointment_id"].ToString();
+            lblHead1.Text = "PATIENT [" + txtPatNum.Text + "] BILLS FOR APPOINTMENT WITH " + txtDoctor.Text + " ON " + txtMeetDate.Text;
             return;
         }
 

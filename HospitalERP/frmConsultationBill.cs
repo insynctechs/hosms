@@ -124,7 +124,7 @@ namespace HospitalERP
             DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
             if (dtOpt.Rows.Count > 0)
                 lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();
-            dgvInv.Rows.Add(new object[] { "1", "Consulation Fees and Charges", Utils.FormatAmount(Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString()))});
+            dgvInv.Rows.Add(new object[] { "1", "Consultation Fees and Charges", Utils.FormatAmount(Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString()))});
             if (bill_id == 0)
             {
                 dtBill = bill.GetAppointmentBill(appointment_id, patient_id, 1);
@@ -219,7 +219,7 @@ namespace HospitalERP
             txtGender.Text = Utils.Gender[gender].ToString();
             txtAge.Text = dtPat.Rows[0]["age"].ToString();
             txtNationality.Text = dtPat.Rows[0]["nationality"].ToString();
-            txtAddress.Text = dtPat.Rows[0]["address"].ToString() + "\r\n" + dtPat.Rows[0]["city"].ToString() + ", " + dtPat.Rows[0]["state"].ToString() + " " + dtPat.Rows[0]["zip"].ToString();
+            txtAddress.Text = Utils.FormatAddress(dtPat.Rows[0]["address"].ToString(), dtPat.Rows[0]["city"].ToString() , dtPat.Rows[0]["state"].ToString() , dtPat.Rows[0]["zip"].ToString());
             //txtMeetDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
             txtDoctor.Text = dtPat.Rows[0]["doctor_name"].ToString();
             txtToken.Text = dtPat.Rows[0]["token"].ToString().PadLeft(3,'0');

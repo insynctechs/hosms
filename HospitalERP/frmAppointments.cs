@@ -80,14 +80,7 @@ namespace HospitalERP
 
         private void txtPatNum_TextChanged(object sender, EventArgs e)
         {
-            if (txtPatNum.Text.Trim() != "" && cmbDoc.SelectedValue.ToString() != Convert.ToString(0))
-            {
-                btnSave.Enabled = true;
-            }
-            else
-            {
-                btnSave.Enabled = false;
-            }
+            enableSaveButton();
         }
 
         private void txtPatientID_TextChanged(object sender, EventArgs e)
@@ -172,7 +165,23 @@ namespace HospitalERP
 
         private void cmbDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtPatNum.Text.Trim() != "" && cmbDoc.SelectedValue.ToString() != Convert.ToString(0))
+            
+            getAppointmentList();
+            enableSaveButton();
+
+        }
+
+        private void dtpAppDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (startload == 1)
+                getAppointmentList();
+            enableSaveButton();
+        }
+
+        private void enableSaveButton()
+        {
+            TimeSpan difference = DateTime.Now - dtpAppDate.Value;
+            if (txtPatNum.Text.Trim() != "" && cmbDoc.SelectedValue.ToString() != Convert.ToString(0) && Convert.ToInt32(difference.TotalDays) <= 0)
             {
                 btnSave.Enabled = true;
             }
@@ -180,14 +189,6 @@ namespace HospitalERP
             {
                 btnSave.Enabled = false;
             }
-            getAppointmentList();
-            
-        }
-
-        private void dtpAppDate_ValueChanged(object sender, EventArgs e)
-        {
-            if (startload == 1)
-                getAppointmentList();
         }
 
         private void dgvApp_CellContentClick(object sender, DataGridViewCellEventArgs e)

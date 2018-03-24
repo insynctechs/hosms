@@ -262,7 +262,7 @@ namespace HospitalERP
         private void btnAddNewProcedure_Click(object sender, EventArgs e)
         {
             frmProcedures fp = new frmProcedures(600,500);
-            //fp.Parent = this;
+            //fp.MdiParent = this.MdiParent;
             fp.ShowDialog(this);
             cmbProcedure.DataSource = objCD.ProceduresCombo(0);
 
@@ -330,5 +330,7 @@ namespace HospitalERP
             frmRptMedical fm = new frmRptMedical(Int32.Parse(txtAppID.Text.Trim()));
             fm.ShowDialog(this);
         }
+
+        
     }
 }
