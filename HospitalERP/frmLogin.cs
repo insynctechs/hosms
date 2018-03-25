@@ -18,7 +18,7 @@ namespace HospitalERP
         public frmLogin()
         {
             InitializeComponent();
-
+            MessageBox.Show("checking registry value");
             //opening the subkey  
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP");
 
@@ -26,8 +26,9 @@ namespace HospitalERP
             if (key != null)
             {
                 var frun = key.GetValue("first_run");
-                //MessageBox.Show(frun.ToString());
+                
                 key.Close();
+
                 if (frun.ToString() == "true")
                 {
                     //show frmDbConfig
@@ -51,7 +52,7 @@ namespace HospitalERP
                     }
                 }
 
-
+                MessageBox.Show("Registry fn finished");
             }
         }
 
@@ -109,10 +110,10 @@ namespace HospitalERP
                 lblStatus.Text = msg + "!";
             }
             else
-            {
-                this.Hide();
+            {                
                 frmMain main = new frmMain(txtEmpId.Text);
                 main.Show();
+                this.Close();
             }
         }
 
