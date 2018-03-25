@@ -63,6 +63,7 @@ namespace HospitalERP
                             key1.SetValue("first_run", false);
                             key1.Close();
                             this.Close();
+                            MessageBox.Show("Finished dbconfig");
                         }
                         catch (Exception ex)
                         {
