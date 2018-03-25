@@ -415,12 +415,10 @@
             // flowLayoutPanel9
             // 
             this.flowLayoutPanel9.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel9.Controls.Add(this.txtPatientID);
-            this.flowLayoutPanel9.Controls.Add(this.txtAppID);
-            this.flowLayoutPanel9.Controls.Add(this.txtDoctorID);
+            this.flowLayoutPanel9.Controls.Add(this.panel1);
             this.flowLayoutPanel9.Location = new System.Drawing.Point(653, 41);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(332, 133);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(332, 148);
             this.flowLayoutPanel9.TabIndex = 35;
             // 
             // flowLayoutPanel2
@@ -436,7 +434,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 5);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(310, 104);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(310, 96);
             this.flowLayoutPanel2.TabIndex = 42;
             // 
             // label6
@@ -527,27 +525,27 @@
             // txtPatientID
             // 
             this.txtPatientID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPatientID.Location = new System.Drawing.Point(3, 115);
+            this.txtPatientID.Location = new System.Drawing.Point(331, 14);
             this.txtPatientID.Name = "txtPatientID";
-            this.txtPatientID.Size = new System.Drawing.Size(100, 22);
+            this.txtPatientID.Size = new System.Drawing.Size(17, 22);
             this.txtPatientID.TabIndex = 0;
             this.txtPatientID.Visible = false;
             // 
             // txtAppID
             // 
             this.txtAppID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAppID.Location = new System.Drawing.Point(109, 115);
+            this.txtAppID.Location = new System.Drawing.Point(303, 14);
             this.txtAppID.Name = "txtAppID";
-            this.txtAppID.Size = new System.Drawing.Size(100, 22);
+            this.txtAppID.Size = new System.Drawing.Size(15, 22);
             this.txtAppID.TabIndex = 36;
             this.txtAppID.Visible = false;
             // 
             // txtDoctorID
             // 
             this.txtDoctorID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoctorID.Location = new System.Drawing.Point(215, 115);
+            this.txtDoctorID.Location = new System.Drawing.Point(354, 14);
             this.txtDoctorID.Name = "txtDoctorID";
-            this.txtDoctorID.Size = new System.Drawing.Size(100, 22);
+            this.txtDoctorID.Size = new System.Drawing.Size(20, 22);
             this.txtDoctorID.TabIndex = 37;
             this.txtDoctorID.Visible = false;
             // 
@@ -562,7 +560,7 @@
             this.tabConsult.Location = new System.Drawing.Point(0, 195);
             this.tabConsult.Name = "tabConsult";
             this.tabConsult.SelectedIndex = 0;
-            this.tabConsult.Size = new System.Drawing.Size(1008, 498);
+            this.tabConsult.Size = new System.Drawing.Size(1008, 364);
             this.tabConsult.TabIndex = 1;
             this.tabConsult.SelectedIndexChanged += new System.EventHandler(this.tabConsult_SelectedIndexChanged);
             // 
@@ -570,23 +568,25 @@
             // 
             this.tbPgDiag.AutoScroll = true;
             this.tbPgDiag.BackColor = System.Drawing.Color.White;
-            this.tbPgDiag.Controls.Add(this.panel1);
             this.tbPgDiag.Controls.Add(this.tableLayoutPanel2);
             this.tbPgDiag.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPgDiag.Location = new System.Drawing.Point(4, 32);
             this.tbPgDiag.Name = "tbPgDiag";
             this.tbPgDiag.Padding = new System.Windows.Forms.Padding(3);
-            this.tbPgDiag.Size = new System.Drawing.Size(1000, 462);
+            this.tbPgDiag.Size = new System.Drawing.Size(1000, 328);
             this.tbPgDiag.TabIndex = 0;
             this.tbPgDiag.Text = "Diagnosis";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnMedicalReport);
+            this.panel1.Controls.Add(this.txtDoctorID);
+            this.panel1.Controls.Add(this.txtAppID);
+            this.panel1.Controls.Add(this.txtPatientID);
             this.panel1.Controls.Add(this.btnGenerateBill);
-            this.panel1.Location = new System.Drawing.Point(8, 326);
+            this.panel1.Location = new System.Drawing.Point(3, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(476, 43);
+            this.panel1.Size = new System.Drawing.Size(382, 46);
             this.panel1.TabIndex = 1;
             // 
             // btnMedicalReport
@@ -594,9 +594,9 @@
             this.btnMedicalReport.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnMedicalReport.ForeColor = System.Drawing.Color.White;
             this.btnMedicalReport.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnMedicalReport.Location = new System.Drawing.Point(26, 3);
+            this.btnMedicalReport.Location = new System.Drawing.Point(3, 5);
             this.btnMedicalReport.Name = "btnMedicalReport";
-            this.btnMedicalReport.Size = new System.Drawing.Size(200, 36);
+            this.btnMedicalReport.Size = new System.Drawing.Size(138, 36);
             this.btnMedicalReport.TabIndex = 23;
             this.btnMedicalReport.Text = "MEDICAL REPORT";
             this.btnMedicalReport.UseVisualStyleBackColor = false;
@@ -607,9 +607,9 @@
             this.btnGenerateBill.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnGenerateBill.ForeColor = System.Drawing.Color.White;
             this.btnGenerateBill.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGenerateBill.Location = new System.Drawing.Point(232, 4);
+            this.btnGenerateBill.Location = new System.Drawing.Point(144, 5);
             this.btnGenerateBill.Name = "btnGenerateBill";
-            this.btnGenerateBill.Size = new System.Drawing.Size(200, 36);
+            this.btnGenerateBill.Size = new System.Drawing.Size(155, 36);
             this.btnGenerateBill.TabIndex = 22;
             this.btnGenerateBill.Text = "SICK LEAVE REPORT";
             this.btnGenerateBill.UseVisualStyleBackColor = false;
@@ -635,7 +635,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 456);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 322);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // flowLayoutPanel10
@@ -682,6 +682,7 @@
             // 
             // cmbAppStatus
             // 
+            this.cmbAppStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAppStatus.FormattingEnabled = true;
             this.cmbAppStatus.Location = new System.Drawing.Point(3, 8);
             this.cmbAppStatus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
@@ -1388,7 +1389,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1008, 693);
+            this.ClientSize = new System.Drawing.Size(1008, 559);
             this.ControlBox = false;
             this.Controls.Add(this.tabConsult);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -1406,12 +1407,12 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel9.ResumeLayout(false);
-            this.flowLayoutPanel9.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.tabConsult.ResumeLayout(false);
             this.tbPgDiag.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel10.ResumeLayout(false);
