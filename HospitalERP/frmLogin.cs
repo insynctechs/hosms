@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using Microsoft.Win32;
@@ -18,7 +11,7 @@ namespace HospitalERP
         public frmLogin()
         {
             InitializeComponent();
-            MessageBox.Show("checking registry value");
+            //MessageBox.Show("checking registry value");
             //opening the subkey  
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP");
 
@@ -52,7 +45,7 @@ namespace HospitalERP
                     }
                 }
 
-                MessageBox.Show("Registry fn finished");
+                //MessageBox.Show("Registry fn finished");
             }
         }
 
@@ -113,7 +106,7 @@ namespace HospitalERP
             {                
                 frmMain main = new frmMain(txtEmpId.Text);
                 main.Show();
-                this.Close();
+                this.Hide();
             }
         }
 

@@ -89,7 +89,7 @@
             // btnReport
             // 
             this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnReport.Location = new System.Drawing.Point(698, 1);
+            this.btnReport.Location = new System.Drawing.Point(710, 1);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(75, 23);
             this.btnReport.TabIndex = 3;
@@ -108,9 +108,10 @@
             this.panel1.Controls.Add(this.dtFromDate);
             this.panel1.Controls.Add(this.dtToDate);
             this.panel1.Controls.Add(this.btnReport);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 45);
+            this.panel1.Size = new System.Drawing.Size(818, 45);
             this.panel1.TabIndex = 4;
             // 
             // cmbType
@@ -144,6 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(818, 310);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

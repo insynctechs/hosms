@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.menuItemMain = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemDept = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,7 @@
             this.miSickLeaveRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.miServerDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.miLicensingKey = new System.Windows.Forms.ToolStripMenuItem();
             this.sendErrorLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,7 +67,6 @@
             this.lnkChangePwd = new System.Windows.Forms.LinkLabel();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.btnChildClose = new System.Windows.Forms.Button();
-            this.miServerDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -269,20 +270,27 @@
             // miAbout
             // 
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(180, 22);
+            this.miAbout.Size = new System.Drawing.Size(164, 22);
             this.miAbout.Text = "About";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
+            // 
+            // miServerDetails
+            // 
+            this.miServerDetails.Name = "miServerDetails";
+            this.miServerDetails.Size = new System.Drawing.Size(164, 22);
+            this.miServerDetails.Text = "Server Details";
+            this.miServerDetails.Click += new System.EventHandler(this.miServerDetails_Click);
             // 
             // miLicensingKey
             // 
             this.miLicensingKey.Name = "miLicensingKey";
-            this.miLicensingKey.Size = new System.Drawing.Size(180, 22);
+            this.miLicensingKey.Size = new System.Drawing.Size(164, 22);
             this.miLicensingKey.Text = "Licensing Key";
             // 
             // sendErrorLogToolStripMenuItem
             // 
             this.sendErrorLogToolStripMenuItem.Name = "sendErrorLogToolStripMenuItem";
-            this.sendErrorLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sendErrorLogToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.sendErrorLogToolStripMenuItem.Text = "Send Error Log";
             // 
             // panel1
@@ -303,7 +311,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.09406F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.90594F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tblLoginPanel, 2, 0);
@@ -324,7 +332,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(226, 20);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(566, 73);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(565, 73);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnDashboard
@@ -383,9 +391,9 @@
             this.lblAppName.Location = new System.Drawing.Point(3, 0);
             this.lblAppName.Name = "lblAppName";
             this.lblAppName.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
-            this.lblAppName.Size = new System.Drawing.Size(211, 62);
+            this.lblAppName.Size = new System.Drawing.Size(174, 62);
             this.lblAppName.TabIndex = 0;
-            this.lblAppName.Text = "HEALTHSYNC";
+            this.lblAppName.Text = "INTAB ERP";
             // 
             // tblLoginPanel
             // 
@@ -394,7 +402,7 @@
             this.tblLoginPanel.Controls.Add(this.lnkChangePwd);
             this.tblLoginPanel.Controls.Add(this.linkLogout);
             this.tblLoginPanel.Controls.Add(this.btnChildClose);
-            this.tblLoginPanel.Location = new System.Drawing.Point(798, 3);
+            this.tblLoginPanel.Location = new System.Drawing.Point(797, 3);
             this.tblLoginPanel.Name = "tblLoginPanel";
             this.tblLoginPanel.Size = new System.Drawing.Size(196, 131);
             this.tblLoginPanel.TabIndex = 8;
@@ -472,13 +480,6 @@
             this.btnChildClose.Visible = false;
             this.btnChildClose.Click += new System.EventHandler(this.btnChildClose_Click);
             // 
-            // miServerDetails
-            // 
-            this.miServerDetails.Name = "miServerDetails";
-            this.miServerDetails.Size = new System.Drawing.Size(180, 22);
-            this.miServerDetails.Text = "Server Details";
-            this.miServerDetails.Click += new System.EventHandler(this.miServerDetails_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,10 +490,11 @@
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.MainMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MainMenu;
             this.Name = "frmMain";
-            this.Text = " EEZCLINIC";
+            this.Text = "INTAB ERP";
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);

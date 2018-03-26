@@ -411,17 +411,17 @@ namespace HospitalERP
 
         private void menuitemBillingReport_Click(object sender, EventArgs e)
         {
-            /*frmRptBilling rep = new frmRptBilling();
+            frmRptBilling rep = new frmRptBilling();
             rep.MdiParent = this;
-            rep.Show();*/
+            rep.Show();
             
         }
 
         private void miPatientRpt_Click(object sender, EventArgs e)
         {
-            /*frmRptPatient fmPat = new frmRptPatient();
+            frmRptPatient fmPat = new frmRptPatient();
             fmPat.MdiParent = this;
-            fmPat.Show();*/
+            fmPat.Show();
         }
 
         private void miSickLeaveRpt_Click(object sender, EventArgs e)

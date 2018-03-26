@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 
@@ -27,6 +21,9 @@ namespace HospitalERP
 
             this.reportViewer.RefreshReport();
             PopulateSearch();
+            this.uspReport_PatientTableAdapter.Connection.Close();
+            this.uspReport_PatientTableAdapter.Connection.ConnectionString = Helpers.DBHelper.Constr;
+            this.uspReport_PatientTableAdapter.Connection.Open();
         }
         private void PopulateSearch()
         {
@@ -45,6 +42,7 @@ namespace HospitalERP
         {
             try
             {
+                MessageBox.Show(this.uspReport_PatientTableAdapter.Connection.ConnectionString);
                 this.uspReport_PatientTableAdapter.ClearBeforeFill = true;
 
                 Microsoft.Reporting.WinForms.ReportParameter[] rparams = new Microsoft.Reporting.WinForms.ReportParameter[]

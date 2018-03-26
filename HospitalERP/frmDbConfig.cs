@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using System.Data.SqlClient;
+
 namespace HospitalERP
 {
     public partial class frmDbConfig : Form
@@ -63,7 +57,7 @@ namespace HospitalERP
                             key1.SetValue("first_run", false);
                             key1.Close();
                             this.Close();
-                            MessageBox.Show("Finished dbconfig");
+                           // MessageBox.Show("Finished dbconfig");
                         }
                         catch (Exception ex)
                         {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmpId = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
@@ -125,9 +126,9 @@
             this.label3.ForeColor = System.Drawing.Color.Bisque;
             this.label3.Location = new System.Drawing.Point(162, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(318, 65);
+            this.label3.Size = new System.Drawing.Size(254, 65);
             this.label3.TabIndex = 60;
-            this.label3.Text = "HEALTHSYNC";
+            this.label3.Text = "INTAB ERP";
             // 
             // frmLogin
             // 
@@ -145,6 +146,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";

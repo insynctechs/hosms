@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Reporting.WinForms;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 
@@ -25,19 +20,22 @@ namespace HospitalERP
             {
                 PopulateStatusCombo();
                 PopulateTypesCombo();
-             /*
-                  Microsoft.Reporting.WinForms.ReportParameter[] rparams = new Microsoft.Reporting.WinForms.ReportParameter[]
-                {
-                new Microsoft.Reporting.WinForms.ReportParameter("fromDate", dtFromDate.Value.Date.ToShortDateString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString())
-                };
-                reportViewer.LocalReport.SetParameters(rparams);
+                this.uspReport_BillingTableAdapter.Connection.Close();
+                this.uspReport_BillingTableAdapter.Connection.ConnectionString = Helpers.DBHelper.Constr;
+                this.uspReport_BillingTableAdapter.Connection.Open();
+                /*
+                     Microsoft.Reporting.WinForms.ReportParameter[] rparams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                   {
+                   new Microsoft.Reporting.WinForms.ReportParameter("fromDate", dtFromDate.Value.Date.ToShortDateString()),
+                   new Microsoft.Reporting.WinForms.ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString())
+                   };
+                   reportViewer.LocalReport.SetParameters(rparams);
 
-                // TODO: This line of code loads data into the 'DataSetBilling.uspReport_Billing' table. You can move, or remove it, as needed.
-                this.uspReport_BillingTableAdapter.Fill(this.DataSetBilling.uspReport_Billing, Convert.ToDateTime(dtFromDate.Value), Convert.ToDateTime(dtToDate.Value), Int32.Parse(cmbType.SelectedValue.ToString()),Int32.Parse(cmbStatus.SelectedValue.ToString()));
-                this.reportViewer.RefreshReport();
-                */
-                   
+                   // TODO: This line of code loads data into the 'DataSetBilling.uspReport_Billing' table. You can move, or remove it, as needed.
+                   this.uspReport_BillingTableAdapter.Fill(this.DataSetBilling.uspReport_Billing, Convert.ToDateTime(dtFromDate.Value), Convert.ToDateTime(dtToDate.Value), Int32.Parse(cmbType.SelectedValue.ToString()),Int32.Parse(cmbStatus.SelectedValue.ToString()));
+                   this.reportViewer.RefreshReport();
+                   */
+
             }
             catch(Exception ex)
             {
@@ -49,14 +47,21 @@ namespace HospitalERP
         {
             try
             {
+                MessageBox.Show(this.uspReport_BillingTableAdapter.Connection.ConnectionString);
                 this.uspReport_BillingTableAdapter.ClearBeforeFill = true;
-
+                /*reportViewer.LocalReport.DataSources.Clear();
+                reportViewer.LocalReport.DataSources.Add(new ReportDataSource("dsname", uspReport_BillingBindingSource));
+                */ReportParameter[] rparams = new ReportParameter[2]; 
+                rparams[0] = new ReportParameter("fromDate", dtFromDate.Value.Date.ToShortDateString()); 
+                rparams[1] = new ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString()); 
+                this.reportViewer.LocalReport.SetParameters(rparams);
+                /*
                 Microsoft.Reporting.WinForms.ReportParameter[] rparams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
                 new Microsoft.Reporting.WinForms.ReportParameter("fromDate", dtFromDate.Value.Date.ToShortDateString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString())
                 };
-                reportViewer.LocalReport.SetParameters(rparams);
+                reportViewer.LocalReport.se.SetParameters(rparams);*/
                 this.DataSetBilling.Clear();
                 this.uspReport_BillingTableAdapter.Fill(this.DataSetBilling.uspReport_Billing, Convert.ToDateTime(dtFromDate.Value), Convert.ToDateTime(dtToDate.Value), Int32.Parse(cmbType.SelectedValue.ToString()), Int32.Parse(cmbStatus.SelectedValue.ToString()));
                 this.reportViewer.RefreshReport();
