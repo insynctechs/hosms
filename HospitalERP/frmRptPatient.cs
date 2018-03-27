@@ -42,7 +42,7 @@ namespace HospitalERP
         {
             try
             {
-                MessageBox.Show(this.uspReport_PatientTableAdapter.Connection.ConnectionString);
+                //MessageBox.Show(this.uspReport_PatientTableAdapter.Connection.ConnectionString);
                 this.uspReport_PatientTableAdapter.ClearBeforeFill = true;
 
                 Microsoft.Reporting.WinForms.ReportParameter[] rparams = new Microsoft.Reporting.WinForms.ReportParameter[]

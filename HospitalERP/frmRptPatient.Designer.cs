@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.uspReport_PatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetPatient = new HospitalERP.DataSetPatient();
             this.dtFromDate = new System.Windows.Forms.DateTimePicker();
@@ -59,17 +59,19 @@
             // 
             // dtFromDate
             // 
-            this.dtFromDate.Location = new System.Drawing.Point(15, 12);
+            this.dtFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFromDate.Location = new System.Drawing.Point(94, 13);
             this.dtFromDate.Name = "dtFromDate";
-            this.dtFromDate.Size = new System.Drawing.Size(173, 20);
+            this.dtFromDate.Size = new System.Drawing.Size(118, 20);
             this.dtFromDate.TabIndex = 10;
             this.dtFromDate.Value = new System.DateTime(2018, 2, 5, 0, 0, 0, 0);
             // 
             // dtToDate
             // 
-            this.dtToDate.Location = new System.Drawing.Point(218, 12);
+            this.dtToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtToDate.Location = new System.Drawing.Point(218, 13);
             this.dtToDate.Name = "dtToDate";
-            this.dtToDate.Size = new System.Drawing.Size(153, 20);
+            this.dtToDate.Size = new System.Drawing.Size(124, 20);
             this.dtToDate.TabIndex = 11;
             // 
             // cmbSearch
@@ -77,7 +79,7 @@
             this.cmbSearch.BackColor = System.Drawing.Color.LightCyan;
             this.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSearch.FormattingEnabled = true;
-            this.cmbSearch.Location = new System.Drawing.Point(400, 12);
+            this.cmbSearch.Location = new System.Drawing.Point(376, 12);
             this.cmbSearch.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.cmbSearch.Name = "cmbSearch";
             this.cmbSearch.Size = new System.Drawing.Size(191, 21);
@@ -85,7 +87,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(629, 13);
+            this.txtSearch.Location = new System.Drawing.Point(586, 13);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 20);
@@ -94,9 +96,10 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSearch.Location = new System.Drawing.Point(852, 10);
+            this.btnSearch.Location = new System.Drawing.Point(799, 10);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(59, 29);
@@ -108,9 +111,9 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsPatient";
-            reportDataSource1.Value = this.uspReport_PatientBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "dsPatient";
+            reportDataSource3.Value = this.uspReport_PatientBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "HospitalERP.ReportPatient.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";

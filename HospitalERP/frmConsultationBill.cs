@@ -268,9 +268,10 @@ namespace HospitalERP
             {
                 MessageBox.Show("Please change the status to 'Paid'");
             }
-            else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 4 && bill_paid != 0 && bill_balance != 0)
+            else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 2 && Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 3 && bill_balance != 0)
             {
-                MessageBox.Show("Please change the status to 'Partial-Paid' or 'Pending'");
+                if (bill_balance != bill_total)
+                    MessageBox.Show("Please change the status to 'Partial-Paid'");
             }
             else
             {

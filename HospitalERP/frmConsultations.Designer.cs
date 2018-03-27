@@ -142,6 +142,7 @@
             // 
             // cmbDoc
             // 
+            this.cmbDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDoc.FormattingEnabled = true;
             this.cmbDoc.Location = new System.Drawing.Point(228, 3);
             this.cmbDoc.Name = "cmbDoc";

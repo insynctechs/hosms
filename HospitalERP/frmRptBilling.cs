@@ -47,7 +47,7 @@ namespace HospitalERP
         {
             try
             {
-                MessageBox.Show(this.uspReport_BillingTableAdapter.Connection.ConnectionString);
+                
                 this.uspReport_BillingTableAdapter.ClearBeforeFill = true;
                 /*reportViewer.LocalReport.DataSources.Clear();
                 reportViewer.LocalReport.DataSources.Add(new ReportDataSource("dsname", uspReport_BillingBindingSource));

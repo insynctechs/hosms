@@ -189,6 +189,7 @@
             // 
             // cmbBillStatus
             // 
+            this.cmbBillStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBillStatus.FormattingEnabled = true;
             this.cmbBillStatus.Location = new System.Drawing.Point(127, 3);
             this.cmbBillStatus.Name = "cmbBillStatus";

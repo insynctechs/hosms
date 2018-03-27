@@ -64,7 +64,7 @@ namespace HospitalERP
                 int rtn = -1;
                 if (txtID.Text.Trim() == "") //add data
                 {
-                    rtn = UR.addTypes(txtName.Text, txtDesc.Text, chkActive.Checked);
+                    rtn = UR.addTypes(txtName.Text.Trim(), txtDesc.Text.Trim(), chkActive.Checked);
                     if (rtn == 0)
                         ShowStatus(0, "Type name should be unique");
                     else if (rtn == 1)

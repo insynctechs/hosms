@@ -48,7 +48,7 @@ namespace HospitalERP
                     ShowStatus(0, "Error in changing password");
                 else if (rtn == 1)
                 {
-                    ShowStatus(1, "Password succesfully updated");
+                    ShowStatus(1, "Password successfully updated");
                     txtPassword1.Text = "";
                     txtPassword2.Text = "";
 

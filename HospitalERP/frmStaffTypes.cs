@@ -50,7 +50,7 @@ namespace HospitalERP
 
         private void txtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text))
+            if (string.IsNullOrEmpty(txtName.Text.Trim()))
             {
                 e.Cancel = true;
                 txtName.Focus();
@@ -71,7 +71,7 @@ namespace HospitalERP
             {
                 if (txtID.Text.Trim() == "") //add data
                 {
-                    rtn = st.addStaffs(txtName.Text, txtDesc.Text, chkActive.Checked);
+                    rtn = st.addStaffs(txtName.Text.Trim(), txtDesc.Text.Trim(), chkActive.Checked);
                     if (rtn == 0)
                         ShowStatus(0,"Type name should be unique!");
                     else if (rtn == 1)

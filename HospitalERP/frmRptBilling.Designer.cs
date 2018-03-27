@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.uspReport_BillingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetBilling = new HospitalERP.DataSetBilling();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -60,9 +60,9 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsBilling";
-            reportDataSource1.Value = this.uspReport_BillingBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource13.Name = "dsBilling";
+            reportDataSource13.Value = this.uspReport_BillingBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource13);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "HospitalERP.ReportBilling.rdlc";
             this.reportViewer.LocalReport.ReportPath = "";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
@@ -73,28 +73,33 @@
             // 
             // dtFromDate
             // 
-            this.dtFromDate.Location = new System.Drawing.Point(3, 3);
+            this.dtFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFromDate.Location = new System.Drawing.Point(90, 14);
             this.dtFromDate.Name = "dtFromDate";
-            this.dtFromDate.Size = new System.Drawing.Size(200, 20);
+            this.dtFromDate.Size = new System.Drawing.Size(114, 20);
             this.dtFromDate.TabIndex = 1;
             this.dtFromDate.Value = new System.DateTime(2018, 2, 5, 0, 0, 0, 0);
             // 
             // dtToDate
             // 
-            this.dtToDate.Location = new System.Drawing.Point(210, 3);
+            this.dtToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtToDate.Location = new System.Drawing.Point(215, 13);
             this.dtToDate.Name = "dtToDate";
-            this.dtToDate.Size = new System.Drawing.Size(200, 20);
+            this.dtToDate.Size = new System.Drawing.Size(118, 20);
             this.dtToDate.TabIndex = 2;
             // 
             // btnReport
             // 
             this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnReport.Location = new System.Drawing.Point(710, 1);
+            this.btnReport.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnReport.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.White;
+            this.btnReport.Location = new System.Drawing.Point(648, 5);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.Size = new System.Drawing.Size(71, 29);
             this.btnReport.TabIndex = 3;
-            this.btnReport.Text = "Get report";
-            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Text = "GO";
+            this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // uspReport_BillingTableAdapter
@@ -116,16 +121,18 @@
             // 
             // cmbType
             // 
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(543, 1);
+            this.cmbType.Location = new System.Drawing.Point(502, 9);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(121, 21);
             this.cmbType.TabIndex = 5;
             // 
             // cmbStatus
             // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(416, 3);
+            this.cmbStatus.Location = new System.Drawing.Point(354, 10);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 21);
             this.cmbStatus.TabIndex = 4;

@@ -142,7 +142,7 @@ namespace HospitalERP
                     //else
                     if (rtn == 1)
                     {
-                        ShowStatus(1, "Record succesfully updated");
+                        ShowStatus(1, "Record successfully updated");
                         clearControls();
                        
                     }
@@ -162,7 +162,7 @@ namespace HospitalERP
 
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtFirstName.Text))
+            if (string.IsNullOrEmpty(txtFirstName.Text.Trim()))
             {
                 e.Cancel = true;
                 txtFirstName.Focus();
