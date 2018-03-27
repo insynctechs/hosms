@@ -292,7 +292,7 @@
     <value>59, 13</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>893, 41</value>
+    <value>909, 41</value>
   </data>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -322,7 +322,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>991, 60</value>
+    <value>1008, 60</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -397,7 +397,7 @@
     <value>Bottom</value>
   </data>
   <data name="dgvPatient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 60</value>
+    <value>0, 72</value>
   </data>
   <data name="dgvPatient.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>20, 3, 20, 3</value>
@@ -406,7 +406,7 @@
     <value>Vertical</value>
   </data>
   <data name="dgvPatient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>991, 218</value>
+    <value>1008, 118</value>
   </data>
   <data name="dgvPatient.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
