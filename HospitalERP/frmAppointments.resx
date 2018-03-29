@@ -504,6 +504,15 @@
   <data name="AStatus.HeaderText" xml:space="preserve">
     <value>Status</value>
   </data>
+  <metadata name="AStatusID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="AStatusID.HeaderText" xml:space="preserve">
+    <value>Status ID</value>
+  </data>
+  <data name="AStatusID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <metadata name="ABtnStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -527,6 +536,15 @@
   </metadata>
   <data name="ABtnDetails.HeaderText" xml:space="preserve">
     <value />
+  </data>
+  <metadata name="ABtnDelete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ABtnDelete.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ABtnDelete.ToolTipText" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="dgvApp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1152,6 +1170,12 @@
   <data name="&gt;&gt;AStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;AStatusID.Name" xml:space="preserve">
+    <value>AStatusID</value>
+  </data>
+  <data name="&gt;&gt;AStatusID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ABtnStatus.Name" xml:space="preserve">
     <value>ABtnStatus</value>
   </data>
@@ -1168,6 +1192,12 @@
     <value>ABtnDetails</value>
   </data>
   <data name="&gt;&gt;ABtnDetails.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ABtnDelete.Name" xml:space="preserve">
+    <value>ABtnDelete</value>
+  </data>
+  <data name="&gt;&gt;ABtnDelete.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

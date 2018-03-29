@@ -197,8 +197,17 @@ namespace HospitalERP
                 case "ABtnDetails":
                     ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
                     break;
+                case "ABtnDelete":
+                    DeleteAppointments(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AStatusID"].Value.ToString()));
+                    break;
+
             }
             
+        }
+
+        private void DeleteAppointments(int id, int patient_id, int status)
+        {
+
         }
 
         private void dgvApp_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

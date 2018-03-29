@@ -102,7 +102,24 @@ namespace HospitalERP.Procedures
 
         }
 
-
+        public int DeleteAppointment(int id, int pid, int status)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[3];
+                sqlParam[0] = new SqlParameter("@id", pid);
+                sqlParam[1] = new SqlParameter("@patient_id", pid);
+                sqlParam[2] = new SqlParameter("@status", status);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspAppointments_Delete", sqlParam).ToString());
+            }
+            catch (DbException ex)
+            {
+                ret = -1;
+                log.Error(ex.Message, ex);
+            }
+            return ret;
+        }
 
         public DataTable getAppointmentDetailsForBilling(int aid)
         {
