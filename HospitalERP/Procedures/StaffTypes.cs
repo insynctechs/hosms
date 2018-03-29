@@ -9,7 +9,7 @@ namespace HospitalERP.Procedures
     public class StaffTypes : IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
-        log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
+        
         
         public int addStaffs(string type_title, string type_description, bool active)
         {
@@ -25,7 +25,7 @@ namespace HospitalERP.Procedures
             catch (DbException ex)
             {
                 ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
         }
@@ -45,7 +45,7 @@ namespace HospitalERP.Procedures
             catch (DbException ex)
             {
                 ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
         }
@@ -61,7 +61,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -82,7 +82,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -91,8 +91,7 @@ namespace HospitalERP.Procedures
         public void Dispose()
         {
             conn = null;
-            log = null;
-            
+                        
         }
 
     }

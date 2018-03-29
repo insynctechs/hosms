@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
+using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
@@ -18,18 +19,33 @@ namespace HospitalERP
         {
             // TODO: This line of code loads data into the 'DataSetPatient.uspReport_Patient' table. You can move, or remove it, as needed.
             //this.uspReport_PatientTableAdapter.Fill(this.DataSetPatient.uspReport_Patient);
+            try
+            {
+                this.reportViewer.RefreshReport();
+                PopulateSearch();
+                this.uspReport_PatientTableAdapter.Connection.Close();
+                this.uspReport_PatientTableAdapter.Connection.ConnectionString = Helpers.DBHelper.Constr;
+                this.uspReport_PatientTableAdapter.Connection.Open();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
 
-            this.reportViewer.RefreshReport();
-            PopulateSearch();
-            this.uspReport_PatientTableAdapter.Connection.Close();
-            this.uspReport_PatientTableAdapter.Connection.ConnectionString = Helpers.DBHelper.Constr;
-            this.uspReport_PatientTableAdapter.Connection.Open();
         }
         private void PopulateSearch()
         {
-            cmbSearch.DataSource = pat.SearchValues(1);
-            cmbSearch.ValueMember = "Value";
-            cmbSearch.DisplayMember = "Display";
+            try
+            {
+                cmbSearch.DataSource = pat.SearchValues(1);
+                cmbSearch.ValueMember = "Value";
+                cmbSearch.DisplayMember = "Display";
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -55,24 +71,9 @@ namespace HospitalERP
                 this.uspReport_PatientTableAdapter.Fill(this.DataSetPatient.uspReport_Patient, Convert.ToDateTime(dtFromDate.Value), Convert.ToDateTime(dtToDate.Value), cmbSearch.SelectedValue.ToString(), txtSearch.Text);
                 this.reportViewer.RefreshReport();
             }
-            catch (ConstraintException)
+            catch (Exception ex)
             {
-                DataRow[] rowErrors = this.DataSetPatient.uspReport_Patient.GetErrors();
-
-                System.Diagnostics.Debug.WriteLine("YourDataTable Errors:"
-                    + rowErrors.Length);
-
-                for (int i = 0; i < rowErrors.Length; i++)
-                {
-                    System.Diagnostics.Debug.WriteLine(rowErrors[i].RowError);
-
-                    foreach (DataColumn col in rowErrors[i].GetColumnsInError())
-                    {
-                        System.Diagnostics.Debug.WriteLine(col.ColumnName
-                            + ":" + rowErrors[i].GetColumnError(col));
-                        //MessageBox.Show(col.ColumnName + ":" + rowErrors[i].GetColumnError(col));
-                    }
-                }
+                CommonLogger.Info(ex.ToString());
             }
         }
 

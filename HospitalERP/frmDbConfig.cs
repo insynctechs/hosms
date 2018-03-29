@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using Microsoft.Win32;
-
+using HospitalERP.Helpers;
 namespace HospitalERP
 {
     public partial class frmDbConfig : Form
@@ -83,56 +83,84 @@ namespace HospitalERP
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you Sure?", "Confirmation", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                this.Close();
+                DialogResult dialogResult = MessageBox.Show("Are you Sure?", "Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.Close();
+                }
             }
-            
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void txtServer_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtServer.Text.Trim()))
+            try
             {
-                e.Cancel = true;
-                txtServer.Focus();
-                errorProvider.SetError(txtServer, "Required");
+                if (string.IsNullOrEmpty(txtServer.Text.Trim()))
+                {
+                    e.Cancel = true;
+                    txtServer.Focus();
+                    errorProvider.SetError(txtServer, "Required");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtServer, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(txtServer, null);
+                CommonLogger.Info(ex.ToString());
             }
         }
 
         private void txtUserName_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtUserName.Text.Trim()))
+            try
             {
-                e.Cancel = true;
-                txtUserName.Focus();
-                errorProvider.SetError(txtUserName, "Required");
+                if (string.IsNullOrEmpty(txtUserName.Text.Trim()))
+                {
+                    e.Cancel = true;
+                    txtUserName.Focus();
+                    errorProvider.SetError(txtUserName, "Required");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtUserName, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(txtUserName, null);
+                CommonLogger.Info(ex.ToString());
             }
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            try
             {
-                e.Cancel = true;
-                txtPassword.Focus();
-                errorProvider.SetError(txtPassword, "Required");
+                if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+                {
+                    e.Cancel = true;
+                    txtPassword.Focus();
+                    errorProvider.SetError(txtPassword, "Required");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtPassword, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(txtPassword, null);
+                CommonLogger.Info(ex.ToString());
             }
         }
     }

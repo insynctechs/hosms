@@ -3,7 +3,7 @@ using System.Data;
 using Microsoft.Reporting.WinForms;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
-
+using HospitalERP.Helpers;
 namespace HospitalERP
 {
     public partial class frmRptBilling : Form
@@ -37,10 +37,11 @@ namespace HospitalERP
                    */
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                CommonLogger.Info(ex.ToString());
             }
+
         }
 
         private void populateReport()
@@ -66,38 +67,39 @@ namespace HospitalERP
                 this.uspReport_BillingTableAdapter.Fill(this.DataSetBilling.uspReport_Billing, Convert.ToDateTime(dtFromDate.Value), Convert.ToDateTime(dtToDate.Value), Int32.Parse(cmbType.SelectedValue.ToString()), Int32.Parse(cmbStatus.SelectedValue.ToString()));
                 this.reportViewer.RefreshReport();
             }
-            catch (ConstraintException)
+            catch (Exception ex)
             {
-                DataRow[] rowErrors = this.DataSetBilling.uspReport_Billing.GetErrors();
-
-                System.Diagnostics.Debug.WriteLine("YourDataTable Errors:"
-                    + rowErrors.Length);
-
-                for (int i = 0; i < rowErrors.Length; i++)
-                {
-                    System.Diagnostics.Debug.WriteLine(rowErrors[i].RowError);
-
-                    foreach (DataColumn col in rowErrors[i].GetColumnsInError())
-                    {
-                        System.Diagnostics.Debug.WriteLine(col.ColumnName
-                            + ":" + rowErrors[i].GetColumnError(col));
-                        //MessageBox.Show(col.ColumnName + ":" + rowErrors[i].GetColumnError(col));
-                    }
-                }
+                CommonLogger.Info(ex.ToString());
             }
         }
         private void PopulateStatusCombo()
         {
-            cmbStatus.DataSource = bill.GetBillStatus(1);
-            cmbStatus.DisplayMember = "name";
-            cmbStatus.ValueMember = "id";
+            try
+            {
+                cmbStatus.DataSource = bill.GetBillStatus(1);
+                cmbStatus.DisplayMember = "name";
+                cmbStatus.ValueMember = "id";
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void PopulateTypesCombo()
         {
-            cmbType.DataSource = bill.GetBillTypes(1);
-            cmbType.DisplayMember = "name";
-            cmbType.ValueMember = "id";
+            try
+            {
+                cmbType.DataSource = bill.GetBillTypes(1);
+                cmbType.DisplayMember = "name";
+                cmbType.ValueMember = "id";
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
 

@@ -17,31 +17,61 @@ namespace HospitalERP
         //SqlCommandBuilder scb;
         public frmConsultationDetails()
         {
-            InitializeComponent();
-            log4net.Config.XmlConfigurator.Configure();
-            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            try
+            {
+                InitializeComponent();
+                log4net.Config.XmlConfigurator.Configure();
+                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
 
         }
 
         public frmConsultationDetails(int aptid, int patid)
         {
-            InitializeComponent();
-            log4net.Config.XmlConfigurator.Configure();
-            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            txtAppID.Text = aptid.ToString();
-            txtPatientID.Text = patid.ToString();
+            try
+            {
+                InitializeComponent();
+                log4net.Config.XmlConfigurator.Configure();
+                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                txtAppID.Text = aptid.ToString();
+                txtPatientID.Text = patid.ToString();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void frmConsultationDetails_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;                      
+            try
+            {
+                this.WindowState = FormWindowState.Maximized;
+                this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
 
         }
 
         private void getProcedureList()
         {
-            dgvProc.DataSource = objCD.getProceduresFromApptID(Convert.ToInt32(txtAppID.Text));
+            try
+            {
+                dgvProc.DataSource = objCD.getProceduresFromApptID(Convert.ToInt32(txtAppID.Text));
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void setGridViews()
@@ -60,206 +90,315 @@ namespace HospitalERP
 
         private void ShowProceduresHistory(int index)
         {
-            dgvApptHistory.Rows[index].Selected = true;
-            int app_id = Convert.ToInt32(dgvApptHistory.Rows[index].Cells["colHistID"].Value);
-            lblHeadProcHist.Text = "PROCEDURES DONE ON APPT. DATE " + Utils.FormatDateShort(dgvApptHistory.Rows[index].Cells["colHistDate"].Value.ToString());
-            dgvHistoryProcedures.DataSource = objCD.getProceduresFromApptID(app_id);
+            try
+            {
+                dgvApptHistory.Rows[index].Selected = true;
+                int app_id = Convert.ToInt32(dgvApptHistory.Rows[index].Cells["colHistID"].Value);
+                lblHeadProcHist.Text = "PROCEDURES DONE ON APPT. DATE " + Utils.FormatDateShort(dgvApptHistory.Rows[index].Cells["colHistDate"].Value.ToString());
+                dgvHistoryProcedures.DataSource = objCD.getProceduresFromApptID(app_id);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
 
         private void getConsultationDetails()
-        {            
-            DataTable dt = objCD.getRecordFromID(Convert.ToInt32(txtAppID.Text));
-            txtPatientID.Text = dt.Rows[0]["patient_id"].ToString();
-            txtPatientNo.Text = dt.Rows[0]["patient_number"].ToString();
-            txtPatientName.Text = dt.Rows[0]["patient_name"].ToString();
-            txtGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
-            txtDob.Text = Utils.FormatDateShort(dt.Rows[0]["dob"].ToString());
-            txtAge.Text =  dt.Rows[0]["age"].ToString();
-            txtPhone.Text  = dt.Rows[0]["phone"].ToString();
-            txtNationality.Text = dt.Rows[0]["nationality"].ToString();
-            
-            if (dt.Rows[0]["prev_date"].ToString() != "")
+        {
+            try
             {
-                txtLastVisitDate.Text = Utils.FormatDateShort(dt.Rows[0]["prev_date"].ToString());
+                DataTable dt = objCD.getRecordFromID(Convert.ToInt32(txtAppID.Text));
+                txtPatientID.Text = dt.Rows[0]["patient_id"].ToString();
+                txtPatientNo.Text = dt.Rows[0]["patient_number"].ToString();
+                txtPatientName.Text = dt.Rows[0]["patient_name"].ToString();
+                txtGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
+                txtDob.Text = Utils.FormatDateShort(dt.Rows[0]["dob"].ToString());
+                txtAge.Text = dt.Rows[0]["age"].ToString();
+                txtPhone.Text = dt.Rows[0]["phone"].ToString();
+                txtNationality.Text = dt.Rows[0]["nationality"].ToString();
+
+                if (dt.Rows[0]["prev_date"].ToString() != "")
+                {
+                    txtLastVisitDate.Text = Utils.FormatDateShort(dt.Rows[0]["prev_date"].ToString());
+                }
+                txtMeetDate.Text = Utils.FormatDateShort(dt.Rows[0]["appointment_date"].ToString());
+                txtDues.Text = dt.Rows[0]["dues"].ToString();
+                txtMedicalNotes.Text = dt.Rows[0]["history"].ToString();
+                txtAllergies.Text = dt.Rows[0]["allergies"].ToString();
+                txtApptNotes.Text = dt.Rows[0]["notes"].ToString();
+                txtDoctor.Text = Utils.FormatDoctorName(dt.Rows[0]["doctor_name"].ToString());
+                txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
+                cmbAppStatus.SelectedValue = dt.Rows[0]["status"];
+                if (Convert.ToInt16(dt.Rows[0]["status_edit_lock"].ToString()) == 1)
+                    EnableEditableButtons(false);
+                else
+                    EnableEditableButtons(true);
             }
-            txtMeetDate.Text = Utils.FormatDateShort(dt.Rows[0]["appointment_date"].ToString());
-            txtDues.Text = dt.Rows[0]["dues"].ToString();
-            txtMedicalNotes.Text = dt.Rows[0]["history"].ToString();
-            txtAllergies.Text   = dt.Rows[0]["allergies"].ToString();
-            txtApptNotes.Text = dt.Rows[0]["notes"].ToString();
-            txtDoctor.Text = Utils.FormatDoctorName(dt.Rows[0]["doctor_name"].ToString());            
-            txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
-            cmbAppStatus.SelectedValue = dt.Rows[0]["status"];
-            if (Convert.ToInt16(dt.Rows[0]["status_edit_lock"].ToString()) == 1)
-                EnableEditableButtons(false);
-            else
-                EnableEditableButtons(true);
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void EnableEditableButtons(bool val)
         {
-            btnSave.Enabled = val;
-            btnSaveProcedure.Enabled = val;
-            btnAddNew.Enabled = val;
+            try
+            {
+                btnSave.Enabled = val;
+                btnSaveProcedure.Enabled = val;
+                btnAddNew.Enabled = val;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void btnSaveProcedure_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            try
             {
-                int rtn = -1;                
-                if (txtApptProcID.Text.Trim() == "") //add data
+                if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    rtn = objCD.addProcedures(Convert.ToInt32(txtPatientID.Text), Convert.ToInt32(txtDoctorID.Text), Convert.ToInt32(txtAppID.Text), Convert.ToInt32(cmbProcedure.SelectedValue.ToString()),txtProcNotes.Text.Trim(), Convert.ToDecimal(txtFee.Text), Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
-                    if (rtn == -1)
+                    int rtn = -1;
+                    if (txtApptProcID.Text.Trim() == "") //add data
                     {
-                        ShowStatus(0, "Some error occurred... Record cannot be added!");
-                    }
-                    else if (rtn == 0)
-                        ShowStatus(0, "Name must be unique!");
-                    else if (rtn == 1)
-                    {
+                        rtn = objCD.addProcedures(Convert.ToInt32(txtPatientID.Text), Convert.ToInt32(txtDoctorID.Text), Convert.ToInt32(txtAppID.Text), Convert.ToInt32(cmbProcedure.SelectedValue.ToString()), txtProcNotes.Text.Trim(), Convert.ToDecimal(txtFee.Text), Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
+                        if (rtn == -1)
+                        {
+                            ShowStatus(0, "Some error occurred... Record cannot be added!");
+                        }
+                        else if (rtn == 0)
+                            ShowStatus(0, "Name must be unique!");
+                        else if (rtn == 1)
+                        {
 
-                        ShowStatus(1, "Record succesfully added!");
-                        clearFormFields();
-                        getProcedureList();
+                            ShowStatus(1, "Record succesfully added!");
+                            clearFormFields();
+                            getProcedureList();
+                        }
                     }
-                }
-                else //edit record
-                {
-                    rtn = objCD.editProcedures(Convert.ToInt32(txtApptProcID.Text.Trim()), Convert.ToInt32(txtPatientID.Text), Convert.ToInt32(txtDoctorID.Text), Convert.ToInt32(txtAppID.Text), Convert.ToInt32(cmbProcedure.SelectedValue.ToString()), txtProcNotes.Text.Trim(), Convert.ToDecimal(txtFee.Text), Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
-                    if (rtn == 0)
-                        ShowStatus(0, "This name already exists. Please provide unique name!");
-                    else if (rtn == 1)
+                    else //edit record
                     {
-                        ShowStatus(1, "Record succesfully updated!");
-                        clearFormFields();
-                        getProcedureList();
+                        rtn = objCD.editProcedures(Convert.ToInt32(txtApptProcID.Text.Trim()), Convert.ToInt32(txtPatientID.Text), Convert.ToInt32(txtDoctorID.Text), Convert.ToInt32(txtAppID.Text), Convert.ToInt32(cmbProcedure.SelectedValue.ToString()), txtProcNotes.Text.Trim(), Convert.ToDecimal(txtFee.Text), Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
+                        if (rtn == 0)
+                            ShowStatus(0, "This name already exists. Please provide unique name!");
+                        else if (rtn == 1)
+                        {
+                            ShowStatus(1, "Record succesfully updated!");
+                            clearFormFields();
+                            getProcedureList();
+                        }
+                        else if (rtn == -1)
+                        {
+                            ShowStatus(0, "Some error occurred... Record cannot be added!");
+                        }
                     }
-                    else if (rtn == -1)
-                    {
-                        ShowStatus(0, "Some error occurred... Record cannot be added!");
-                    }
+
                 }
-                
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void clearFormFields()
         {
-            txtApptProcID.Text = "";
-            txtFee.Text = "";
-            cmbProcedure.SelectedValue = 0;
-            cmbStatus.SelectedValue = 0;
-            txtProcNotes.Text = "";
+            try
+            {
+                txtApptProcID.Text = "";
+                txtFee.Text = "";
+                cmbProcedure.SelectedValue = 0;
+                cmbStatus.SelectedValue = 0;
+                txtProcNotes.Text = "";
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
         private void dgvProc_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtApptProcID.Text = dgvProc.Rows[e.RowIndex].Cells["cid"].Value.ToString();
-            DataTable dt = objCD.getProceduresFromProcID(Convert.ToInt32(txtApptProcID.Text));
-            txtFee.Text = dt.Rows[0]["fee"].ToString();
-            cmbProcedure.SelectedValue = dt.Rows[0]["procedure_id"].ToString();
-            cmbStatus.SelectedValue = dt.Rows[0]["status"].ToString();
-            txtProcNotes.Text = dt.Rows[0]["notes"].ToString();
+            try
+            {
+                txtApptProcID.Text = dgvProc.Rows[e.RowIndex].Cells["cid"].Value.ToString();
+                DataTable dt = objCD.getProceduresFromProcID(Convert.ToInt32(txtApptProcID.Text));
+                txtFee.Text = dt.Rows[0]["fee"].ToString();
+                cmbProcedure.SelectedValue = dt.Rows[0]["procedure_id"].ToString();
+                cmbStatus.SelectedValue = dt.Rows[0]["status"].ToString();
+                txtProcNotes.Text = dt.Rows[0]["notes"].ToString();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void cmbProcedure_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(txtApptProcID.Text=="") //load fees from procedure table
+            try
             {
-                txtFee.Text = objCD.getProcedureFees(Convert.ToInt32(cmbProcedure.SelectedValue.ToString()));
+                if (txtApptProcID.Text == "") //load fees from procedure table
+                {
+                    txtFee.Text = objCD.getProcedureFees(Convert.ToInt32(cmbProcedure.SelectedValue.ToString()));
+                }
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //to save medical notes and known allergies in patient table and
-            //to save appointment notes in appointment table
-            int rtn = objCD.saveDiagnosis(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()),txtMedicalNotes.Text.Trim(),txtAllergies.Text.Trim(),txtApptNotes.Text.Trim(), Convert.ToInt16(cmbAppStatus.SelectedValue));
-            
-            if (rtn == 1)
+            try
             {
-                ShowStatus(1, "Record succesfully updated");
-                
+                //to save medical notes and known allergies in patient table and
+                //to save appointment notes in appointment table
+                int rtn = objCD.saveDiagnosis(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()), txtMedicalNotes.Text.Trim(), txtAllergies.Text.Trim(), txtApptNotes.Text.Trim(), Convert.ToInt16(cmbAppStatus.SelectedValue));
+
+                if (rtn == 1)
+                {
+                    ShowStatus(1, "Record succesfully updated");
+
+                }
+                else if (rtn == -1)
+                {
+                    ShowStatus(0, "Some error occurred... Record cannot be added.");
+                }
+                getConsultationDetails();
             }
-            else if (rtn == -1)
+            catch (Exception ex)
             {
-                ShowStatus(0, "Some error occurred... Record cannot be added.");
+                CommonLogger.Info(ex.ToString());
             }
-            getConsultationDetails();
+
         }
 
         private void ShowStatus(int success, string msg)
         {
-            MessageBox.Show(msg, "Information", MessageBoxButtons.OK);
-           
+            try
+            {
+                MessageBox.Show(msg, "Information", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void dgvApptHistory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ShowProceduresHistory(e.RowIndex);       
+            try
+            {
+                ShowProceduresHistory(e.RowIndex);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
 
         }
 
         private void cmbProcedure_Validating(object sender, CancelEventArgs e)
         {
-            if (cmbProcedure.SelectedIndex == 0)
+            try
             {
-                e.Cancel = true;
-                //cmbProcType.Focus();
-                errorProvider.SetError(cmbProcedure, "Required");
+                if (cmbProcedure.SelectedIndex == 0)
+                {
+                    e.Cancel = true;
+                    //cmbProcType.Focus();
+                    errorProvider.SetError(cmbProcedure, "Required");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(cmbProcedure, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(cmbProcedure, null);
+                CommonLogger.Info(ex.ToString());
             }
+
         }
 
         private void txtFee_Validating(object sender, CancelEventArgs e)
         {
-            decimal d;
-            if (string.IsNullOrEmpty(txtFee.Text))
+            try
             {
-                e.Cancel = true;
-                //txtFee.Focus();
-                errorProvider.SetError(txtFee, "Required");
+                decimal d;
+                if (string.IsNullOrEmpty(txtFee.Text))
+                {
+                    e.Cancel = true;
+                    //txtFee.Focus();
+                    errorProvider.SetError(txtFee, "Required");
+                }
+                else if (!decimal.TryParse(txtFee.Text, out d))
+                {
+                    e.Cancel = true;
+                    //txtFee.Focus();
+                    errorProvider.SetError(txtFee, "Invalid Decimal Number");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtFee, null);
+                }
             }
-            else if (!decimal.TryParse(txtFee.Text, out d))
+            catch (Exception ex)
             {
-                e.Cancel = true;
-                //txtFee.Focus();
-                errorProvider.SetError(txtFee, "Invalid Decimal Number");
+                CommonLogger.Info(ex.ToString());
             }
-            else
-            {
-                e.Cancel = false;
-                errorProvider.SetError(txtFee, null);
-            }
+
         }
 
         private void cmbStatus_Validating(object sender, CancelEventArgs e)
         {
-            if (cmbStatus.SelectedIndex == 0)
+            try
             {
-                e.Cancel = true;
-                //cmbProcType.Focus();
-                errorProvider.SetError(cmbStatus, "Required");
+                if (cmbStatus.SelectedIndex == 0)
+                {
+                    e.Cancel = true;
+                    //cmbProcType.Focus();
+                    errorProvider.SetError(cmbStatus, "Required");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(cmbStatus, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(cmbStatus, null);
+                CommonLogger.Info(ex.ToString());
             }
+
         }
 
         private void btnAddNewProcedure_Click(object sender, EventArgs e)
         {
-            frmProcedures fp = new frmProcedures(600,500);
-            //fp.MdiParent = this.MdiParent;
-            fp.ShowDialog(this);
-            cmbProcedure.DataSource = objCD.ProceduresCombo(0);
+            try
+            {
+                frmProcedures fp = new frmProcedures(600, 500);
+                //fp.MdiParent = this.MdiParent;
+                fp.ShowDialog(this);
+                cmbProcedure.DataSource = objCD.ProceduresCombo(0);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
 
         }
 
@@ -270,60 +409,104 @@ namespace HospitalERP
 
         private void frmConsultationDetails_Shown(object sender, EventArgs e)
         {
-            //cmbProcedure.DataSource = objCD.ProceduresCombo(0);
-            //cmbStatus.DataSource = objCD.StatusCombo(0);
-            PopulateAppointmentStatusCombo();
-            getConsultationDetails();           
-           
+            try
+            {
+                //cmbProcedure.DataSource = objCD.ProceduresCombo(0);
+                //cmbStatus.DataSource = objCD.StatusCombo(0);
+                PopulateAppointmentStatusCombo();
+                getConsultationDetails();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+
         }
 
         private void tabConsult_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (tabConsult.SelectedIndex)
+            try
             {
-                case 0:
+                switch (tabConsult.SelectedIndex)
+                {
+                    case 0:
 
-                    break;
-                case 1:
-                    cmbProcedure.DataSource = objCD.ProceduresCombo(0);
-                    cmbStatus.DataSource = objCD.StatusCombo(0);
-                    getProcedureList();
-                    break;
-                case 2:
-                    dgvHistoryProcedures.AutoGenerateColumns = false;
-                    setGridViews();
-                    break;
+                        break;
+                    case 1:
+                        cmbProcedure.DataSource = objCD.ProceduresCombo(0);
+                        cmbStatus.DataSource = objCD.StatusCombo(0);
+                        getProcedureList();
+                        break;
+                    case 2:
+                        dgvHistoryProcedures.AutoGenerateColumns = false;
+                        setGridViews();
+                        break;
+                }
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void dgvApptHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            switch (dgvApptHistory.Columns[e.ColumnIndex].Name)
+            try
             {
-                case "btnHistSelect":
-                    ShowProceduresHistory(e.RowIndex);
-                    break;
+                switch (dgvApptHistory.Columns[e.ColumnIndex].Name)
+                {
+                    case "btnHistSelect":
+                        ShowProceduresHistory(e.RowIndex);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
             }
         }
 
         private void PopulateAppointmentStatusCombo()
         {
-            cmbAppStatus.DataSource = objApp.getAppointmentStatus();
-            cmbAppStatus.DisplayMember = "name";
-            cmbAppStatus.ValueMember = "id";
-            
+            try
+            {
+                cmbAppStatus.DataSource = objApp.getAppointmentStatus();
+                cmbAppStatus.DisplayMember = "name";
+                cmbAppStatus.ValueMember = "id";
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void btnGenerateBill_Click(object sender, EventArgs e)
         {
-            frmRptSickLeave rsl = new frmRptSickLeave(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()));
-            rsl.ShowDialog(this);
+            try
+            {
+                frmRptSickLeave rsl = new frmRptSickLeave(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()));
+                rsl.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
         }
 
         private void btnMedicalReport_Click(object sender, EventArgs e)
         {
-            frmRptMedical fm = new frmRptMedical(Int32.Parse(txtAppID.Text.Trim()));
-            fm.ShowDialog(this);
+            try
+            {
+                frmRptMedical fm = new frmRptMedical(Int32.Parse(txtAppID.Text.Trim()));
+                fm.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
         }
 
         

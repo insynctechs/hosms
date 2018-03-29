@@ -4,18 +4,13 @@ using System.Data;
 using Microsoft.ApplicationBlocks.Data;
 using System.Data.Common;
 
+
 namespace HospitalERP.Procedures
 {
     class Appointments : IDisposable
     {
-        string conn = HospitalERP.Helpers.DBHelper.Constr;
-        log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
+        string conn = HospitalERP.Helpers.DBHelper.Constr;       
 
-        public void Appointments_init()
-        {
-            log4net.Config.XmlConfigurator.Configure();
-            log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
         public int addAppointment(int patient_id, int doctor_id, DateTime meet_date, int status)
         {
             int ret = -1;
@@ -31,7 +26,7 @@ namespace HospitalERP.Procedures
             catch (DbException ex)
             {
                 ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
         }
@@ -52,7 +47,7 @@ namespace HospitalERP.Procedures
             catch (DbException ex)
             {
                 ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
         }
@@ -72,7 +67,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
             
@@ -96,7 +91,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -116,7 +111,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -125,7 +120,7 @@ namespace HospitalERP.Procedures
         public void Dispose()
         {
             conn = null;
-            log = null;
+            
 
         }
 

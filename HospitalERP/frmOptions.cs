@@ -11,74 +11,97 @@ namespace HospitalERP
     public partial class frmOptions : Form
     {
         OptionVals opt = new OptionVals();
-        log4net.ILog ilog;
+        
         private bool errorfocus = false;
         public frmOptions()
         {
             InitializeComponent();
-            
-            
         }
 
         private void tabSub_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (tabSub.SelectedIndex)
+            try
             {
-                case 0:
+                switch (tabSub.SelectedIndex)
+                {
+                    case 0:
 
-                    break;
-                case 1:
-                    clearFormFields();
-                    ShowRecords();
-                    break;
+                        break;
+                    case 1:
+                        clearFormFields();
+                        ShowRecords();
+                        break;
+                }
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            ShowRecords();
+            try
+            {
+
+                ShowRecords();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            try
             {
-
-                int rtn = -1;
-                if (txtID.Text.Trim() == "") //add data
+                if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    rtn = opt.InsertOption(txtName.Text.Trim().ToUpper(), txtDesc.Text.Trim(), txtVal.Text.Trim());
-                    if (rtn == 0)
-                        ShowStatus(0, "Name should be unique");
-                    else if (rtn == 1)
-                    {
-                        ShowStatus(1, "Record succesfully added");
-                        clearFormFields();
 
-                    }
-                    else if (rtn == -1)
+                    int rtn = -1;
+                    if (txtID.Text.Trim() == "") //add data
                     {
-                        ShowStatus(0, "Some error occurred... Record cannot be added.");
+                        rtn = opt.InsertOption(txtName.Text.Trim().ToUpper(), txtDesc.Text.Trim(), txtVal.Text.Trim());
+                        if (rtn == 0)
+                            ShowStatus(0, "Name should be unique");
+                        else if (rtn == 1)
+                        {
+                            ShowStatus(1, "Record succesfully added");
+                            clearFormFields();
+
+                        }
+                        else if (rtn == -1)
+                        {
+                            ShowStatus(0, "Some error occurred... Record cannot be added.");
+                        }
                     }
+                    else //edit record
+                    {
+                        rtn = opt.editOptions(Int32.Parse(txtID.Text.Trim()), txtName.Text.Trim().ToUpper(), txtDesc.Text.Trim(), txtVal.Text.Trim());
+                        if (rtn == 0)
+                            ShowStatus(0, "This name already exists. Please provide unique name.");
+                        else if (rtn == 1)
+                        {
+                            ShowStatus(1, "Record succesfully updated");
+                            clearFormFields();
+
+                        }
+                        else if (rtn == -1)
+                        {
+                            ShowStatus(0, "Some error occurred... Record cannot be added.");
+                        }
+                    }
+
                 }
-                else //edit record
-                {
-                    rtn = opt.editOptions(Int32.Parse(txtID.Text.Trim()), txtName.Text.Trim().ToUpper(), txtDesc.Text.Trim(), txtVal.Text.Trim());
-                    if (rtn == 0)
-                        ShowStatus(0, "This name already exists. Please provide unique name.");
-                    else if (rtn == 1)
-                    {
-                        ShowStatus(1, "Record succesfully updated");
-                        clearFormFields();
-
-                    }
-                    else if (rtn == -1)
-                    {
-                        ShowStatus(0, "Some error occurred... Record cannot be added.");
-                    }
-                }
-
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -88,132 +111,211 @@ namespace HospitalERP
 
         private void frmOptions_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            PopulateSearch();
-            log4net.Config.XmlConfigurator.Configure();
-            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            try
+            {
+                this.WindowState = FormWindowState.Maximized;
+                PopulateSearch();
+                this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void ShowRecords()
         {
-            DataTable dtRecords = opt.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
-            dgvList.DataSource = dtRecords;
-            if (dtRecords.Rows.Count == 0)
+            try
             {
-                MessageBox.Show(Utils.FormatZeroSearch());
+                DataTable dtRecords = opt.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+                dgvList.DataSource = dtRecords;
+                if (dtRecords.Rows.Count == 0)
+                {
+                    MessageBox.Show(Utils.FormatZeroSearch());
+                }
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void PopulateSearch()
         {
-            cmbSearch.DataSource = opt.SearchValues();
-            cmbSearch.ValueMember = "Value";
-            cmbSearch.DisplayMember = "Display";
+            try
+            {
+                cmbSearch.DataSource = opt.SearchValues();
+                cmbSearch.ValueMember = "Value";
+                cmbSearch.DisplayMember = "Display";
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void ShowStatus(int success, string msg)
         {
-            lblStatus.Visible = true;
-            if (success == 1)
+            try
             {
-                lblStatus.BackColor = Color.YellowGreen;
-                lblStatus.ForeColor = Color.DarkGreen;
+                lblStatus.Visible = true;
+                if (success == 1)
+                {
+                    lblStatus.BackColor = Color.YellowGreen;
+                    lblStatus.ForeColor = Color.DarkGreen;
+                }
+                else
+                {
+                    lblStatus.BackColor = Color.Salmon;
+                    lblStatus.ForeColor = Color.DarkRed;
+                }
+                lblStatus.Text = msg;
+                var t = new Timer();
+                t.Interval = 5000; // it will Tick in 3 seconds
+                t.Tick += (s, e) =>
+                {
+                    lblStatus.Hide();
+                    t.Stop();
+                };
+                t.Start();
             }
-            else
+            catch (Exception ex)
             {
-                lblStatus.BackColor = Color.Salmon;
-                lblStatus.ForeColor = Color.DarkRed;
+                CommonLogger.Info(ex.ToString());
             }
-            lblStatus.Text = msg;
-            var t = new Timer();
-            t.Interval = 5000; // it will Tick in 3 seconds
-            t.Tick += (s, e) =>
-            {
-                lblStatus.Hide();
-                t.Stop();
-            };
-            t.Start();
+
         }
 
         private void clearFormFields()
         {
+            try
+            {
 
-            txtName.Text = "";
-            txtDesc.Text = "";
-            txtVal.Text = "";
-            txtID.Text = "";
+                txtName.Text = "";
+                txtDesc.Text = "";
+                txtVal.Text = "";
+                txtID.Text = "";
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
             //PopulateProcTypeCombo(0);
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            if (txtID.Text.Trim() != "")
-                txtName.ReadOnly = true;
-            else
-                txtName.ReadOnly = false;
+            try
+            {
+                if (txtID.Text.Trim() != "")
+                    txtName.ReadOnly = true;
+                else
+                    txtName.ReadOnly = false;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void txtName_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text))
+            try
             {
-                e.Cancel = true;
-                if (errorfocus == false)
+                if (string.IsNullOrEmpty(txtName.Text))
                 {
-                    txtName.Focus();
-                    errorfocus = true;
+                    e.Cancel = true;
+                    if (errorfocus == false)
+                    {
+                        txtName.Focus();
+                        errorfocus = true;
+                    }
+                    errorProvider.SetError(txtName, "Required");
                 }
-                errorProvider.SetError(txtName, "Required");
-            }
-            else if(Regex.IsMatch(txtName.Text, @"[^\w\-]"))
-            {
-                e.Cancel = true;
-                if (errorfocus == false) {
-                    txtName.Focus();
-                    errorfocus = true;
-                }
+                else if (Regex.IsMatch(txtName.Text, @"[^\w\-]"))
+                {
+                    e.Cancel = true;
+                    if (errorfocus == false)
+                    {
+                        txtName.Focus();
+                        errorfocus = true;
+                    }
 
-                errorProvider.SetError(txtName, "Allowed characters are alphabets, digits, hyphen and underscore.");
+                    errorProvider.SetError(txtName, "Allowed characters are alphabets, digits, hyphen and underscore.");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtName, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(txtName, null);
+                CommonLogger.Info(ex.ToString());
             }
+
         }
 
         private void txtVal_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtVal.Text))
+            try
             {
-                e.Cancel = true;
-                if (errorfocus == false)
+                if (string.IsNullOrEmpty(txtVal.Text))
                 {
-                    txtVal.Focus();
-                    errorfocus = true;
+                    e.Cancel = true;
+                    if (errorfocus == false)
+                    {
+                        txtVal.Focus();
+                        errorfocus = true;
+                    }
+                    errorProvider.SetError(txtVal, "Required");
                 }
-                errorProvider.SetError(txtVal, "Required");
-            }           
-            else
-            {
-                e.Cancel = false;
-                errorProvider.SetError(txtVal, null);
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtVal, null);
+                }
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void dgvList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            setFormFields(e.RowIndex);
-            tabSub.SelectedIndex = 0;
+            try
+            {
+                setFormFields(e.RowIndex);
+                tabSub.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void setFormFields(int index)
         {
-            txtName.Text = dgvList.Rows[index].Cells["colName"].Value.ToString();
-            txtID.Text = dgvList.Rows[index].Cells["colID"].Value.ToString();
-            txtDesc.Text = dgvList.Rows[index].Cells["colDesc"].Value.ToString();
-            txtVal.Text = dgvList.Rows[index].Cells["colVal"].Value.ToString();
+            try
+            {
+                txtName.Text = dgvList.Rows[index].Cells["colName"].Value.ToString();
+                txtID.Text = dgvList.Rows[index].Cells["colID"].Value.ToString();
+                txtDesc.Text = dgvList.Rows[index].Cells["colDesc"].Value.ToString();
+                txtVal.Text = dgvList.Rows[index].Cells["colVal"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
 
@@ -225,13 +327,21 @@ namespace HospitalERP
 
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            switch (dgvList.Columns[e.ColumnIndex].Name)
+            try
             {
-                case "colBtnEdit":
-                    setFormFields(e.RowIndex);
-                    tabSub.SelectedIndex = 0;
-                    break;
+                switch (dgvList.Columns[e.ColumnIndex].Name)
+                {
+                    case "colBtnEdit":
+                        setFormFields(e.RowIndex);
+                        tabSub.SelectedIndex = 0;
+                        break;
+                }
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void frmOptions_Shown(object sender, EventArgs e)
@@ -242,7 +352,6 @@ namespace HospitalERP
         private void frmOptions_FormClosed(object sender, FormClosedEventArgs e)
         {
             Utils.toggleChildCloseButton(this.MdiParent, 1);
-            ilog = null;
             opt.Dispose();
         }
     }

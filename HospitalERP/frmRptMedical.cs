@@ -10,7 +10,7 @@ namespace HospitalERP
 {
     public partial class frmRptMedical : Form
     {
-        log4net.ILog ilog;
+      
         ConsultationDetails objCD = new ConsultationDetails();
         private static int appointment_id = 0;
         OptionVals opt = new OptionVals();
@@ -22,8 +22,6 @@ namespace HospitalERP
         public frmRptMedical(int aptid)
         {
             InitializeComponent();
-            log4net.Config.XmlConfigurator.Configure();
-            ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             appointment_id = aptid;
             
         }
@@ -53,9 +51,9 @@ namespace HospitalERP
                 }
                 printDocument1.Dispose();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                ilog.Error(ex.Message, ex);
+                CommonLogger.Info(ex.ToString());
             }
         }
 
@@ -90,10 +88,11 @@ namespace HospitalERP
                 }
                 lblProcedures.Text = proc;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                ilog.Error(ex.Message, ex);
+                CommonLogger.Info(ex.ToString());
             }
+
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
@@ -106,9 +105,9 @@ namespace HospitalERP
                 float factor = ((float)bmp.Height / (float)bmp.Width);
                 e.Graphics.DrawImage(bmp, bounds.Left, bounds.Top, bounds.Width, factor * bounds.Width);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                ilog.Error(ex.Message, ex);
+                CommonLogger.Info(ex.ToString());
             }
         }
 

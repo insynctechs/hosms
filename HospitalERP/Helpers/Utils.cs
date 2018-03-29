@@ -89,19 +89,27 @@ namespace HospitalERP.Helpers
 
         public static void toggleChildCloseButton(Form frmParent, int fromChild)
         {
-            int cnt = getChildFormCount(frmParent);
-            Control[] c = frmParent.Controls.Find("btnChildClose", true);
-            Button b = (Button)c[0];
-            if (cnt == fromChild)
+            try
             {
-                
-                b.Visible = false;
+                int cnt = getChildFormCount(frmParent);
+                Control[] c = frmParent.Controls.Find("btnChildClose", true);
+                Button b = (Button)c[0];
+                if (cnt == fromChild)
+                {
+
+                    b.Visible = false;
+                }
+                else
+                {
+
+                    b.Visible = true;
+                }
             }
-            else
+            catch (Exception ex)
             {
-               
-                b.Visible = true;
+                CommonLogger.Info(ex.ToString());
             }
         }
+
     }
 }
