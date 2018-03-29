@@ -9,14 +9,7 @@ namespace HospitalERP.Procedures
     class Bill
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
-        log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
-
-        public void Bill_init()
-        {
-            log4net.Config.XmlConfigurator.Configure();
-            log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-
+        
         public int AddBill(int aid, int pid, decimal amount, int type, int userid)
         {
             int ret = -1;
@@ -33,7 +26,7 @@ namespace HospitalERP.Procedures
             catch (DbException ex)
             {
                 ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
         }
@@ -55,7 +48,7 @@ namespace HospitalERP.Procedures
             catch (DbException ex)
             {
                 ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
         }
@@ -74,7 +67,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
         }
@@ -92,7 +85,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
         }
@@ -109,7 +102,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
         }
@@ -126,7 +119,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
         }
@@ -149,7 +142,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
         }
@@ -179,7 +172,7 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
         }
@@ -202,7 +195,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -222,7 +215,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
         }

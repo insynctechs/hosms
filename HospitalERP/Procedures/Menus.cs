@@ -8,7 +8,7 @@ namespace HospitalERP.Procedures
     class Menus : IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
-        log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
+    
 
         public DataTable GetRecords(string SearchBy, string SearchValue)
         {
@@ -22,7 +22,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -39,7 +39,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -59,7 +59,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message+";"+ex.StackTrace+";"+ex.InnerException, ex);
+                Helpers.CommonLogger.Error(ex.Message+";"+ex.StackTrace+";"+ex.InnerException, ex);
                 return ret;
             }
 
@@ -77,7 +77,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -95,7 +95,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -113,7 +113,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -121,7 +121,7 @@ namespace HospitalERP.Procedures
         public void Dispose()
         {
             conn = null;
-            log = null;
+           
 
         }
 

@@ -24,27 +24,42 @@ namespace HospitalERP
 
         public frmRptSickLeave(int aptid, int patid)
         {
-            InitializeComponent();
-            appointment_id = aptid;            
-            patient_id = patid;
+            try
+            {
+                InitializeComponent();
+                appointment_id = aptid;
+                patient_id = patid;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
         private void frmRptSickLeave_Load(object sender, EventArgs e)
         {
             //reportViewer.Hide();
-            
-            DataTable dt = objCD.getRecordFromID(appointment_id);
-            txtPatientNo.Text = dt.Rows[0]["patient_number"].ToString();
-            txtPatientName.Text = dt.Rows[0]["patient_name"].ToString();
-            txtGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
-            //txtDob.Text = Utils.FormatDateShort(dt.Rows[0]["dob"].ToString());
-            txtAge.Text = dt.Rows[0]["age"].ToString();
-            txtAppDate.Text = Utils.FormatDateShort(dt.Rows[0]["appointment_date"].ToString());
-            txtDoctorName.Text = dt.Rows[0]["doctor_name"].ToString();
-            //txtNationality.Text = dt.Rows[0]["nationality"].ToString();
-            //this.reportViewer1.RefreshReport();
+            try
+            {
+                DataTable dt = objCD.getRecordFromID(appointment_id);
+                txtPatientNo.Text = dt.Rows[0]["patient_number"].ToString();
+                txtPatientName.Text = dt.Rows[0]["patient_name"].ToString();
+                txtGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
+                //txtDob.Text = Utils.FormatDateShort(dt.Rows[0]["dob"].ToString());
+                txtAge.Text = dt.Rows[0]["age"].ToString();
+                txtAppDate.Text = Utils.FormatDateShort(dt.Rows[0]["appointment_date"].ToString());
+                txtDoctorName.Text = dt.Rows[0]["doctor_name"].ToString();
+                //txtNationality.Text = dt.Rows[0]["nationality"].ToString();
+                //this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
-       
+
         private void btnReportViewer_Click(object sender, EventArgs e)
         {
             /*
@@ -76,72 +91,95 @@ namespace HospitalERP
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            try
             {
-                printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
-                printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
-
-                int top = 100; int bottom = 100;
-                DataTable dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_TOP");
-                if (dtOpt.Rows.Count > 0)
-                    top = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
-                dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_BOTTOM");
-                if (dtOpt.Rows.Count > 0)
-                    bottom = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
-                printDialog1.PrinterSettings.DefaultPageSettings.Margins.Top = top;
-                printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom = bottom;
-                if (printDialog1.ShowDialog() == DialogResult.OK)
+                if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    HideControls();
-                    PrinterSettings values = new PrinterSettings();
-                    printDialog1.Document = printDocument1;
-                    printDocument1.Print();
-                    ShowControls();
+                    printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
+                    printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
+
+                    int top = 100; int bottom = 100;
+                    DataTable dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_TOP");
+                    if (dtOpt.Rows.Count > 0)
+                        top = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
+                    dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_BOTTOM");
+                    if (dtOpt.Rows.Count > 0)
+                        bottom = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
+                    printDialog1.PrinterSettings.DefaultPageSettings.Margins.Top = top;
+                    printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom = bottom;
+                    if (printDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        HideControls();
+                        PrinterSettings values = new PrinterSettings();
+                        printDialog1.Document = printDocument1;
+                        printDocument1.Print();
+                        ShowControls();
+                    }
+                    printDocument1.Dispose();
                 }
-                printDocument1.Dispose();
             }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void HideControls()
         {
-            lblSickDetails.Text = txtSickDetails.Text;
-            txtSickDetails.Hide();
-            lblSickDetails.Show();
+            try
+            {
+                lblSickDetails.Text = txtSickDetails.Text;
+                txtSickDetails.Hide();
+                lblSickDetails.Show();
 
-            lblFrom.Text = dtFrom.Value.ToString("dd MMMM yyyy");
-            lblTo.Text = dtTo.Value.ToString("dd MMMM yyyy");
-            dtFrom.Hide();
-            lblFrom.Show();
-            dtTo.Hide();
-            lblTo.Show();
+                lblFrom.Text = dtFrom.Value.ToString("dd MMMM yyyy");
+                lblTo.Text = dtTo.Value.ToString("dd MMMM yyyy");
+                dtFrom.Hide();
+                lblFrom.Show();
+                dtTo.Hide();
+                lblTo.Show();
 
-            lblFromTime.Text = txtFromTime.Text;
-            lblToTime.Text = txtToTime.Text;
-            lblFromTime.Show();
-            txtFromTime.Hide();
-            lblToTime.Show();
-            txtToTime.Hide();
+                lblFromTime.Text = txtFromTime.Text;
+                lblToTime.Text = txtToTime.Text;
+                lblFromTime.Show();
+                txtFromTime.Hide();
+                lblToTime.Show();
+                txtToTime.Hide();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void ShowControls()
         {
-            lblSickDetails.Text = "";
-            txtSickDetails.Show();
-            lblSickDetails.Hide();
+            try
+            {
+                lblSickDetails.Text = "";
+                txtSickDetails.Show();
+                lblSickDetails.Hide();
 
-            lblFrom.Text ="";
-            lblTo.Text = "";
-            dtFrom.Show();
-            lblFrom.Hide();
-            dtTo.Show();
-            lblTo.Hide();
+                lblFrom.Text = "";
+                lblTo.Text = "";
+                dtFrom.Show();
+                lblFrom.Hide();
+                dtTo.Show();
+                lblTo.Hide();
 
-            lblFromTime.Text = "";
-            lblToTime.Text = "";
-            lblFromTime.Hide();
-            txtFromTime.Show();
-            lblToTime.Hide();
-            txtToTime.Show();
+                lblFromTime.Text = "";
+                lblToTime.Text = "";
+                lblFromTime.Hide();
+                txtFromTime.Show();
+                lblToTime.Hide();
+                txtToTime.Show();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
 
         }
 
@@ -173,11 +211,19 @@ namespace HospitalERP
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            Bitmap bmp = new Bitmap(panelContent.Width, panelContent.Height, panelContent.CreateGraphics());
-            panelContent.DrawToBitmap(bmp, new Rectangle(0, 0, panelContent.Width, panelContent.Height));
-            RectangleF bounds = e.PageSettings.PrintableArea;
-            float factor = ((float)bmp.Height / (float)bmp.Width);
-            e.Graphics.DrawImage(bmp, bounds.Left, bounds.Top, bounds.Width, factor * bounds.Width);
+            try
+            {
+                Bitmap bmp = new Bitmap(panelContent.Width, panelContent.Height, panelContent.CreateGraphics());
+                panelContent.DrawToBitmap(bmp, new Rectangle(0, 0, panelContent.Width, panelContent.Height));
+                RectangleF bounds = e.PageSettings.PrintableArea;
+                float factor = ((float)bmp.Height / (float)bmp.Width);
+                e.Graphics.DrawImage(bmp, bounds.Left, bounds.Top, bounds.Width, factor * bounds.Width);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -187,62 +233,86 @@ namespace HospitalERP
 
         private void txtFromTime_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtFromTime.Text.Trim()))
+            try
             {
-
-                e.Cancel = true;
-                if (errorfocus == false)
+                if (string.IsNullOrEmpty(txtFromTime.Text.Trim()))
                 {
-                    txtFromTime.Focus();
-                    errorfocus = true;
+
+                    e.Cancel = true;
+                    if (errorfocus == false)
+                    {
+                        txtFromTime.Focus();
+                        errorfocus = true;
+                    }
+                    errorProvider.SetError(txtFromTime, "Required");
                 }
-                errorProvider.SetError(txtFromTime, "Required");
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtFromTime, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(txtFromTime, null);
+                CommonLogger.Info(ex.ToString());
             }
+
         }
 
         private void txtSickDetails_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSickDetails.Text.Trim()))
+            try
             {
-
-                e.Cancel = true;
-                if (errorfocus == false)
+                if (string.IsNullOrEmpty(txtSickDetails.Text.Trim()))
                 {
-                    txtFromTime.Focus();
-                    errorfocus = true;
+
+                    e.Cancel = true;
+                    if (errorfocus == false)
+                    {
+                        txtFromTime.Focus();
+                        errorfocus = true;
+                    }
+                    errorProvider.SetError(txtSickDetails, "Required");
                 }
-                errorProvider.SetError(txtSickDetails, "Required");
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtSickDetails, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(txtSickDetails, null);
+                CommonLogger.Info(ex.ToString());
             }
+
         }
 
         private void txtToTime_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtToTime.Text.Trim()))
+            try
             {
-
-                e.Cancel = true;
-                if (errorfocus == false)
+                if (string.IsNullOrEmpty(txtToTime.Text.Trim()))
                 {
-                    txtFromTime.Focus();
-                    errorfocus = true;
+
+                    e.Cancel = true;
+                    if (errorfocus == false)
+                    {
+                        txtFromTime.Focus();
+                        errorfocus = true;
+                    }
+                    errorProvider.SetError(txtToTime, "Required");
                 }
-                errorProvider.SetError(txtToTime, "Required");
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtToTime, null);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.Cancel = false;
-                errorProvider.SetError(txtToTime, null);
+                CommonLogger.Info(ex.ToString());
             }
+
         }
 
         private void dtFrom_ValueChanged(object sender, EventArgs e)
@@ -257,11 +327,19 @@ namespace HospitalERP
 
         private void findDateDiff()
         {
-            DateTime tDate1 = dtFrom.Value;
-            DateTime tDate2 = dtTo.Value;
-            TimeSpan tspan = tDate2 - tDate1;
-            txtDays.Text = tspan.Days.ToString();
-            
+            try
+            {
+                DateTime tDate1 = dtFrom.Value;
+                DateTime tDate2 = dtTo.Value;
+                TimeSpan tspan = tDate2 - tDate1;
+                txtDays.Text = tspan.Days.ToString();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+
         }
     }
 }

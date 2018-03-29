@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Windows.Forms;
+using HospitalERP.Helpers;
 
 namespace HospitalERP
 {
@@ -8,19 +9,26 @@ namespace HospitalERP
     {
         public frmAbout()
         {
-            InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            try
+            {
+                InitializeComponent();
+                this.Text = String.Format("About {0}", AssemblyTitle);
+                this.labelProductName.Text = AssemblyProduct;
+                this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+                this.labelCopyright.Text = AssemblyCopyright;
+                this.labelCompanyName.Text = AssemblyCompany;
+                this.textBoxDescription.Text = AssemblyDescription;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
         }
 
         #region Assembly Attribute Accessors
 
         public string AssemblyTitle
-        {
+        {            
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);

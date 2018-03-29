@@ -7,7 +7,7 @@ namespace HospitalERP.Procedures
     class UserRoles: IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
-        log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
+       
         public int addTypes(string type_title, string type_description, bool active)
         {
             int ret = -1;
@@ -22,7 +22,7 @@ namespace HospitalERP.Procedures
             catch (Exception ex)
             {
                 ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
         }
@@ -42,7 +42,7 @@ namespace HospitalERP.Procedures
             catch (Exception ex)
             {
                 ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
         }
@@ -58,7 +58,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -79,7 +79,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
 
@@ -87,7 +87,7 @@ namespace HospitalERP.Procedures
         public void Dispose()
         {
             conn = null;
-            log = null;
+           
 
         }
 

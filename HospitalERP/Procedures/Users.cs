@@ -9,14 +9,7 @@ namespace HospitalERP.Procedures
     class Users : IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
-        log4net.ILog log = HospitalERP.Helpers.DBHelper.GetLogObject();
-
-        public void Users_init()
-        {
-            log4net.Config.XmlConfigurator.Configure();
-            log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-
+        
         public int ValidateLogin(string empid, string pwd)
         {
             try
@@ -29,7 +22,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return 0;
             }
         }
@@ -45,7 +38,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return null;
             }
         }
@@ -61,7 +54,7 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return 0;
             }
         }
@@ -79,15 +72,14 @@ namespace HospitalERP.Procedures
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
                 return 0;
             }
         }
 
         public void Dispose()
         {
-            conn = null;
-            log = null;
+            conn = null;            
             
         }
 
