@@ -245,7 +245,6 @@
             this.lblHead1.Size = new System.Drawing.Size(982, 28);
             this.lblHead1.TabIndex = 30;
             this.lblHead1.Text = "BILL SEARCH";
-            this.lblHead1.UseWaitCursor = true;
             // 
             // dgvList
             // 

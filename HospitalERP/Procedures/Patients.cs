@@ -99,6 +99,24 @@ namespace HospitalERP.Procedures
             }
         }
 
+        public DataTable GetRecordsDetailedSearch(string SearchBy, string SearchValue)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[2];
+                sqlParam[0] = new SqlParameter("@SearchBy", SearchBy);
+                sqlParam[1] = new SqlParameter("@SearchValue", SearchValue);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspPatients_GetDetailedSearch", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                Helpers.CommonLogger.Error(ex.Message, ex);
+                return null;
+            }
+        }
+
+
         public DataTable SearchValues(int hasall=1)
         {
             try

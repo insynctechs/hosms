@@ -22,6 +22,7 @@ namespace HospitalERP
                 InitializeComponent();
                 log4net.Config.XmlConfigurator.Configure();
                 ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                
             }
             catch (Exception ex)
             {
@@ -37,6 +38,7 @@ namespace HospitalERP
                 log4net.Config.XmlConfigurator.Configure();
                 ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 patient_id = patientid;
+                
             }
             catch (Exception ex)
             {
@@ -51,6 +53,7 @@ namespace HospitalERP
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+                dgvPatient.AutoGenerateColumns = false;
                 GetDoctorsCombo(0);
                 PopulateSearch();
                 if (patient_id > 0)
@@ -101,7 +104,7 @@ namespace HospitalERP
         {
             try
             {
-                cmbSearch.DataSource = pat.SearchValues(0);
+                cmbSearch.DataSource = pat.RptSearchValues(0);
                 cmbSearch.ValueMember = "Value";
                 cmbSearch.DisplayMember = "Display";
             }
@@ -115,7 +118,7 @@ namespace HospitalERP
         {
             try
             {
-                DataTable dtRecords = pat.GetRecords(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
+                DataTable dtRecords = pat.GetRecordsDetailedSearch(cmbSearch.SelectedValue.ToString(), txtSearch.Text);
                 dgvPatient.DataSource = dtRecords;
                 if (dtRecords.Rows.Count == 0)
                 {
@@ -268,10 +271,12 @@ namespace HospitalERP
                 if (txtPatNum.Text.Trim() != "" && cmbDoc.SelectedValue.ToString() != Convert.ToString(0) && Convert.ToInt32(difference.TotalDays) <= 0)
                 {
                     btnSave.Enabled = true;
+                    btnSave.Cursor = Cursors.Hand;
                 }
                 else
                 {
                     btnSave.Enabled = false;
+                    btnSave.Cursor = Cursors.No;
                 }
             }
             catch (Exception ex)
@@ -335,6 +340,11 @@ namespace HospitalERP
         {
             try
             {
+                /*if (Application.OpenForms.OfType<frmConsultationDetails>().Count() == 1)
+                    Application.OpenForms.OfType<frmConsultationDetails>().First().Close();
+                frmConsultationDetails frm = new frmConsultationDetails(app_id, pat_id);
+                frm.MdiParent = this.ParentForm;
+                frm.Show();*/
                 if (Application.OpenForms.OfType<frmConsultationDetails>().Count() == 1)
                     Application.OpenForms.OfType<frmConsultationDetails>().First().Close();
                 frmConsultationDetails frm = new frmConsultationDetails(app_id, pat_id);
@@ -371,6 +381,8 @@ namespace HospitalERP
             {
                 txtPatientID.Text = pid;
                 txtPatNum.Text = pnum;
+                MessageBox.Show("Please select the Doctor");
+                cmbDoc.Focus();
             }
             catch (Exception ex)
             {

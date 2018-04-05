@@ -135,13 +135,13 @@ namespace HospitalERP
                 DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
                 if (dtOpt.Rows.Count > 0)
                     lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();
-                dgvInv.Rows.Add(new object[] { "1", "Consultation Fees and Charges", Utils.FormatAmount(Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString())) });
                 if (bill_id == 0)
                 {
                     dtBill = bill.GetAppointmentBill(appointment_id, patient_id, 1);
                     if (dtBill.Rows.Count == 0)
                     {
                         bill_id = bill.AddBill(appointment_id, patient_id, Convert.ToDecimal(dtPat.Rows[0]["doctor_fee"].ToString()), 1, LoggedUser.id);
+
                         if (bill_id > 0)
                         {
                             dtBill = bill.GetBill(bill_id);
@@ -161,6 +161,8 @@ namespace HospitalERP
                     txtInvNum.Text = dtBill.Rows[0]["bill_number"].ToString();
                     txtDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
                     bill_total = Convert.ToDouble(dtBill.Rows[0]["bill_amount"].ToString());
+                    dgvInv.Rows.Add(new object[] { "1", "Consultation Fees and Charges", Utils.FormatAmount(bill_total) });
+
                     txtTotal.Text = Utils.FormatAmount(bill_total);
                     bill_paid = Convert.ToDouble(dtBill.Rows[0]["bill_paid"].ToString());
                     txtPaid.Text = Utils.FormatAmount(bill_paid);
@@ -270,7 +272,7 @@ namespace HospitalERP
             double sum = 0;
             try
             {
-                for (int i = 0; i < dgvInv.Rows.Count - 1; ++i)
+                for (int i = 0; i < dgvInv.Rows.Count; ++i)
                 {
                     double d = 0;
                     Double.TryParse(dgvInv.Rows[i].Cells[2].Value.ToString(), out d);
@@ -337,6 +339,7 @@ namespace HospitalERP
         {
             try
             {
+                int saveBill = 0;
                 if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) == 4 && bill_balance != 0)
                 {
                     MessageBox.Show("The entire bill needs to be paid fully for 'Paid' Status");
@@ -349,9 +352,14 @@ namespace HospitalERP
                 {
                     if (bill_balance != bill_total)
                         MessageBox.Show("Please change the status to 'Partial-Paid'");
+                    else
+                        saveBill = 1;
                 }
                 else
                 {
+                    saveBill = 1;
+                }
+                if(saveBill == 1) { 
                     if (!(LoggedUser.id > 0))
                         LoggedUser.id = 1;
                     int res = bill.editBill(bill_id, Convert.ToDecimal(bill_total), Convert.ToDecimal(bill_paid), Convert.ToDecimal(bill_balance), Int32.Parse(cmbBillStatus.SelectedValue.ToString()), LoggedUser.id);
@@ -373,6 +381,11 @@ namespace HospitalERP
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmConsultationBill_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

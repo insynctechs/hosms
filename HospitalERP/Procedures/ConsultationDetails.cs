@@ -8,7 +8,7 @@ using System.Data.Common;
 
 namespace HospitalERP.Procedures
 {
-    class ConsultationDetails
+    class ConsultationDetails : IDisposable
     {
         string conn = HospitalERP.Helpers.DBHelper.Constr;
        
@@ -325,6 +325,10 @@ namespace HospitalERP.Procedures
                 Helpers.CommonLogger.Error(ex.Message, ex);
             }
             return ret;
+        }
+        public void Dispose()
+        {
+            conn = null;
         }
 
     }

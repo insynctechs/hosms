@@ -35,13 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbSearch = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +44,28 @@
             this.PAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PBtnSelect = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.dgvApp = new System.Windows.Forms.DataGridView();
+            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -68,34 +82,22 @@
             this.txtAppID = new System.Windows.Forms.TextBox();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.lblHead1 = new System.Windows.Forms.Label();
-            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApp)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -106,66 +108,13 @@
             // splitContainer1.Panel1
             // 
             resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
-            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Panel1.Controls.Add(this.dgvPatient);
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel2);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvApp);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            // 
-            // tableLayoutPanel2
-            // 
-            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 1);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            // 
-            // flowLayoutPanel2
-            // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
-            this.flowLayoutPanel2.Controls.Add(this.label3);
-            this.flowLayoutPanel2.Controls.Add(this.cmbSearch);
-            this.flowLayoutPanel2.Controls.Add(this.txtSearch);
-            this.flowLayoutPanel2.Controls.Add(this.btnSearch);
-            this.flowLayoutPanel2.Controls.Add(this.btnRegister);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            // 
-            // cmbSearch
-            // 
-            this.cmbSearch.BackColor = System.Drawing.Color.LightCyan;
-            this.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSearch.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbSearch, "cmbSearch");
-            this.cmbSearch.Name = "cmbSearch";
-            // 
-            // txtSearch
-            // 
-            resources.ApplyResources(this.txtSearch, "txtSearch");
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.MediumTurquoise;
-            resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.MidnightBlue;
-            resources.ApplyResources(this.btnRegister, "btnRegister");
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // dgvPatient
             // 
@@ -205,9 +154,11 @@
             this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.dgvPatient, "dgvPatient");
             this.dgvPatient.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvPatient.MultiSelect = false;
             this.dgvPatient.Name = "dgvPatient";
             this.dgvPatient.ReadOnly = true;
             this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPatient.ShowEditingIcon = false;
             this.dgvPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPatient_CellContentClick);
             this.dgvPatient.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPatient_RowHeaderMouseClick);
             // 
@@ -268,6 +219,55 @@
             this.PBtnSelect.Text = "Select";
             this.PBtnSelect.UseColumnTextForButtonValue = true;
             // 
+            // flowLayoutPanel2
+            // 
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Controls.Add(this.label3);
+            this.flowLayoutPanel2.Controls.Add(this.cmbSearch);
+            this.flowLayoutPanel2.Controls.Add(this.txtSearch);
+            this.flowLayoutPanel2.Controls.Add(this.btnSearch);
+            this.flowLayoutPanel2.Controls.Add(this.btnRegister);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // cmbSearch
+            // 
+            this.cmbSearch.BackColor = System.Drawing.Color.LightCyan;
+            this.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSearch.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbSearch, "cmbSearch");
+            this.cmbSearch.Name = "cmbSearch";
+            // 
+            // txtSearch
+            // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnRegister, "btnRegister");
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // dgvApp
             // 
             this.dgvApp.AllowUserToAddRows = false;
@@ -324,119 +324,6 @@
             this.dgvApp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvApp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApp_CellContentClick);
             this.dgvApp.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApp_RowHeaderMouseClick);
-            // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblHead1, 0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
-            // flowLayoutPanel3
-            // 
-            resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
-            this.flowLayoutPanel3.Controls.Add(this.label6);
-            this.flowLayoutPanel3.Controls.Add(this.dtpAppDate);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
-            // dtpAppDate
-            // 
-            this.dtpAppDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            resources.ApplyResources(this.dtpAppDate, "dtpAppDate");
-            this.dtpAppDate.Name = "dtpAppDate";
-            this.dtpAppDate.ValueChanged += new System.EventHandler(this.dtpAppDate_ValueChanged);
-            // 
-            // flowLayoutPanel1
-            // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.cmbDoc);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // cmbDoc
-            // 
-            this.cmbDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cmbDoc, "cmbDoc");
-            this.cmbDoc.Name = "cmbDoc";
-            this.cmbDoc.SelectedIndexChanged += new System.EventHandler(this.cmbDoc_SelectedIndexChanged);
-            // 
-            // flowLayoutPanel4
-            // 
-            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
-            this.flowLayoutPanel4.Controls.Add(this.label1);
-            this.flowLayoutPanel4.Controls.Add(this.txtPatNum);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // txtPatNum
-            // 
-            resources.ApplyResources(this.txtPatNum, "txtPatNum");
-            this.txtPatNum.Name = "txtPatNum";
-            this.txtPatNum.TextChanged += new System.EventHandler(this.txtPatNum_TextChanged);
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.btnSave);
-            this.flowLayoutPanel5.Controls.Add(this.btnList);
-            this.flowLayoutPanel5.Controls.Add(this.txtAppID);
-            this.flowLayoutPanel5.Controls.Add(this.txtPatientID);
-            resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.MediumTurquoise;
-            resources.ApplyResources(this.btnSave, "btnSave");
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnList.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.btnList, "btnList");
-            this.btnList.Name = "btnList";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
-            // 
-            // txtAppID
-            // 
-            resources.ApplyResources(this.txtAppID, "txtAppID");
-            this.txtAppID.Name = "txtAppID";
-            // 
-            // txtPatientID
-            // 
-            resources.ApplyResources(this.txtPatientID, "txtPatientID");
-            this.txtPatientID.Name = "txtPatientID";
-            this.txtPatientID.TextChanged += new System.EventHandler(this.txtPatientID_TextChanged);
-            // 
-            // lblHead1
-            // 
-            resources.ApplyResources(this.lblHead1, "lblHead1");
-            this.lblHead1.BackColor = System.Drawing.Color.LightCyan;
-            this.tableLayoutPanel1.SetColumnSpan(this.lblHead1, 5);
-            this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHead1.Name = "lblHead1";
-            this.lblHead1.UseWaitCursor = true;
             // 
             // AID
             // 
@@ -548,6 +435,131 @@
             this.ABtnDelete.Text = "Delete";
             this.ABtnDelete.UseColumnTextForButtonValue = true;
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.lblHead1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel6, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // flowLayoutPanel3
+            // 
+            resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
+            this.flowLayoutPanel3.Controls.Add(this.label6);
+            this.flowLayoutPanel3.Controls.Add(this.dtpAppDate);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // dtpAppDate
+            // 
+            this.dtpAppDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.dtpAppDate, "dtpAppDate");
+            this.dtpAppDate.Name = "dtpAppDate";
+            this.dtpAppDate.ValueChanged += new System.EventHandler(this.dtpAppDate_ValueChanged);
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.cmbDoc);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // cmbDoc
+            // 
+            this.cmbDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cmbDoc, "cmbDoc");
+            this.cmbDoc.Name = "cmbDoc";
+            this.cmbDoc.SelectedIndexChanged += new System.EventHandler(this.cmbDoc_SelectedIndexChanged);
+            // 
+            // flowLayoutPanel4
+            // 
+            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
+            this.flowLayoutPanel4.Controls.Add(this.label1);
+            this.flowLayoutPanel4.Controls.Add(this.txtPatNum);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // txtPatNum
+            // 
+            resources.ApplyResources(this.txtPatNum, "txtPatNum");
+            this.txtPatNum.Name = "txtPatNum";
+            this.txtPatNum.TextChanged += new System.EventHandler(this.txtPatNum_TextChanged);
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.btnSave);
+            this.flowLayoutPanel5.Controls.Add(this.btnList);
+            this.flowLayoutPanel5.Controls.Add(this.txtAppID);
+            this.flowLayoutPanel5.Controls.Add(this.txtPatientID);
+            resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnList
+            // 
+            this.btnList.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnList.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnList, "btnList");
+            this.btnList.ForeColor = System.Drawing.Color.White;
+            this.btnList.Name = "btnList";
+            this.btnList.UseVisualStyleBackColor = false;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            // 
+            // txtAppID
+            // 
+            resources.ApplyResources(this.txtAppID, "txtAppID");
+            this.txtAppID.Name = "txtAppID";
+            // 
+            // txtPatientID
+            // 
+            resources.ApplyResources(this.txtPatientID, "txtPatientID");
+            this.txtPatientID.Name = "txtPatientID";
+            this.txtPatientID.TextChanged += new System.EventHandler(this.txtPatientID_TextChanged);
+            // 
+            // lblHead1
+            // 
+            resources.ApplyResources(this.lblHead1, "lblHead1");
+            this.lblHead1.BackColor = System.Drawing.Color.LightCyan;
+            this.lblHead1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHead1.Name = "lblHead1";
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 0, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // flowLayoutPanel6
+            // 
+            resources.ApplyResources(this.flowLayoutPanel6, "flowLayoutPanel6");
+            this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel3);
+            this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel1);
+            this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel4);
+            this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel5);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            // 
             // frmAppointments
             // 
             resources.ApplyResources(this, "$this");
@@ -562,10 +574,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApp)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -577,6 +588,8 @@
             this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -589,7 +602,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvApp;
         private System.Windows.Forms.Label lblHead1;
-        private System.Windows.Forms.DataGridView dgvPatient;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpAppDate;
@@ -602,7 +614,6 @@
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.TextBox txtAppID;
         private System.Windows.Forms.ComboBox cmbDoc;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSearch;
@@ -632,5 +643,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn ABtnBill;
         private System.Windows.Forms.DataGridViewButtonColumn ABtnDetails;
         private System.Windows.Forms.DataGridViewButtonColumn ABtnDelete;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.DataGridView dgvPatient;
     }
 }

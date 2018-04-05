@@ -60,6 +60,18 @@ namespace HospitalERP
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
                 loadPatientAppInfo();
+                if(this.txtMeetDate.Text != DateTime.Now.ToShortDateString())
+                {
+                    btnGenerateBill.Enabled = false;
+                    btnGenerateBill.ForeColor = System.Drawing.Color.LightGray;                    
+                }
+                else
+                {
+                    btnGenerateBill.Enabled = true;
+                    btnGenerateBill.ForeColor = System.Drawing.Color.White;
+                    btnGenerateBill.Cursor = Cursors.Hand;
+                }
+                
 
             }
             catch (Exception ex)
@@ -79,12 +91,31 @@ namespace HospitalERP
                         MessageBox.Show("Please choose a bill type!");
                         break;
                     case "1":
+                        
                         frmConsultationBill frm = new frmConsultationBill(appointment_id, patient_id);
                         frm.ShowDialog();
+                        ListBills();
+
+
                         break;
                     case "2":
-                        frmProceduresBill frm1 = new frmProceduresBill(appointment_id, patient_id);
-                        frm1.ShowDialog();
+                        int count = 0;
+                        using (ConsultationDetails cdet = new ConsultationDetails())
+                        {
+                            DataTable dtProcedures = cdet.getProceduresFromApptID(appointment_id);
+                            count = dtProcedures.Rows.Count;
+                        }
+                        if (count > 0)
+                        {
+
+                            frmProceduresBill frm1 = new frmProceduresBill(appointment_id, patient_id);
+                            frm1.ShowDialog();
+                            ListBills();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cannot Generate Bill as Procedures have not been added to this appointment!");
+                        }
                         break;
                 }
             }

@@ -69,9 +69,6 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtInvNum = new System.Windows.Forms.TextBox();
             this.dgvInv = new System.Windows.Forms.DataGridView();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -89,6 +86,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtLoggedUser = new System.Windows.Forms.Label();
             this.lblClinic = new System.Windows.Forms.Label();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelBottom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,9 +108,9 @@
             this.PanelBottom.Controls.Add(this.panel2);
             this.PanelBottom.Controls.Add(this.panel3);
             this.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelBottom.Location = new System.Drawing.Point(0, 532);
+            this.PanelBottom.Location = new System.Drawing.Point(0, 538);
             this.PanelBottom.Name = "PanelBottom";
-            this.PanelBottom.Size = new System.Drawing.Size(1008, 120);
+            this.PanelBottom.Size = new System.Drawing.Size(1008, 114);
             this.PanelBottom.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -481,6 +481,7 @@
             // 
             // dgvInv
             // 
+            this.dgvInv.AllowUserToAddRows = false;
             this.dgvInv.AllowUserToResizeRows = false;
             this.dgvInv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInv.BackgroundColor = System.Drawing.Color.White;
@@ -529,30 +530,11 @@
             this.dgvInv.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
             this.dgvInv.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvInv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInv.Size = new System.Drawing.Size(908, 130);
+            this.dgvInv.Size = new System.Drawing.Size(908, 105);
             this.dgvInv.TabIndex = 3;
             this.dgvInv.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInv_CellEnter);
             this.dgvInv.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvInv_CellPainting);
             this.dgvInv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInv_CellValueChanged);
-            // 
-            // Num
-            // 
-            this.Num.HeaderText = "Item#";
-            this.Num.Name = "Num";
-            this.Num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Item Description";
-            this.Description.Name = "Description";
-            this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Description.Width = 600;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 200;
             // 
             // printPreviewDialog1
             // 
@@ -581,7 +563,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1008, 532);
+            this.panelContent.Size = new System.Drawing.Size(1008, 538);
             this.panelContent.TabIndex = 4;
             // 
             // tblPanelFinal
@@ -601,7 +583,7 @@
             this.tblPanelFinal.Controls.Add(this.flpBillHR, 2, 2);
             this.tblPanelFinal.Controls.Add(this.flowLayoutPanel2, 0, 3);
             this.tblPanelFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblPanelFinal.Location = new System.Drawing.Point(52, 412);
+            this.tblPanelFinal.Location = new System.Drawing.Point(52, 404);
             this.tblPanelFinal.Name = "tblPanelFinal";
             this.tblPanelFinal.RowCount = 5;
             this.tblPanelFinal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
@@ -730,6 +712,27 @@
             this.lblClinic.Text = "EXCELLENCE DENTAL CLINIC";
             this.lblClinic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // Num
+            // 
+            this.Num.HeaderText = "Item#";
+            this.Num.Name = "Num";
+            this.Num.ReadOnly = true;
+            this.Num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Item Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Description.Width = 600;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 200;
+            // 
             // frmConsultationBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,6 +744,7 @@
             this.Name = "frmConsultationBill";
             this.Text = "Consultation Bill";
             this.Load += new System.EventHandler(this.frmConsultationBill_Load);
+            this.Shown += new System.EventHandler(this.frmConsultationBill_Shown);
             this.PanelBottom.ResumeLayout(false);
             this.PanelBottom.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -815,10 +819,10 @@
         private System.Windows.Forms.TextBox txtToken;
         private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.TextBox txtInvNum;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnClose;
     }
 }

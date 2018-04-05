@@ -110,8 +110,8 @@ namespace HospitalERP.Procedures
             }
             catch (DbException ex)
             {
-                ret = -1;
-                log.Error(ex.Message, ex);
+                Helpers.CommonLogger.Error(ex.Message, ex);
+                return -1;
             }
             return ret;
         }
@@ -136,8 +136,7 @@ namespace HospitalERP.Procedures
 
         public void Dispose()
         {
-            conn = null;
-            
+            conn = null;           
 
         }
 

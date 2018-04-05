@@ -135,11 +135,92 @@
   <data name="splitContainer1.Panel1.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <metadata name="PID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PID.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="PID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="PNum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PNum.HeaderText" xml:space="preserve">
+    <value>Patient Number</value>
+  </data>
+  <metadata name="Pname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Pname.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <metadata name="PGender.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PGender.HeaderText" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <metadata name="PAge.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PAge.HeaderText" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <metadata name="PAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PAddress.HeaderText" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <metadata name="PPhone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PPhone.HeaderText" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <metadata name="PBtnSelect.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PBtnSelect.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgvPatient.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dgvPatient.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 52</value>
+  </data>
+  <data name="dgvPatient.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 3, 20, 3</value>
+  </data>
+  <data name="dgvPatient.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="dgvPatient.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1008, 178</value>
+  </data>
+  <data name="dgvPatient.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;dgvPatient.Name" xml:space="preserve">
+    <value>dgvPatient</value>
+  </data>
+  <data name="&gt;&gt;dgvPatient.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvPatient.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;dgvPatient.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="flowLayoutPanel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>None</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -151,7 +232,10 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>3, 5</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 19</value>
@@ -225,6 +309,9 @@
   <data name="btnSearch.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
   <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -258,17 +345,20 @@
   <data name="btnRegister.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="btnRegister.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
   <data name="btnRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 38</value>
+    <value>730, 3</value>
   </data>
   <data name="btnRegister.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>30, 3, 3, 3</value>
   </data>
   <data name="btnRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 0</value>
+    <value>200, 29</value>
   </data>
   <data name="btnRegister.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -289,10 +379,10 @@
     <value>4</value>
   </data>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 13</value>
+    <value>33, 13</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>909, 41</value>
+    <value>941, 32</value>
   </data>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -322,7 +412,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 60</value>
+    <value>1008, 52</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -337,91 +427,10 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="flowLayoutPanel2" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,4.757085,Percent,92.68795,Percent,2.574665" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <metadata name="PID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PID.HeaderText" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="PID.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="PNum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PNum.HeaderText" xml:space="preserve">
-    <value>Patient Number</value>
-  </data>
-  <metadata name="Pname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Pname.HeaderText" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <metadata name="PGender.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PGender.HeaderText" xml:space="preserve">
-    <value>Gender</value>
-  </data>
-  <metadata name="PAge.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PAge.HeaderText" xml:space="preserve">
-    <value>Age</value>
-  </data>
-  <metadata name="PAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PAddress.HeaderText" xml:space="preserve">
-    <value>Address</value>
-  </data>
-  <metadata name="PPhone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PPhone.HeaderText" xml:space="preserve">
-    <value>Phone</value>
-  </data>
-  <metadata name="PBtnSelect.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PBtnSelect.HeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="dgvPatient.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="dgvPatient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 72</value>
-  </data>
-  <data name="dgvPatient.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 3, 20, 3</value>
-  </data>
-  <data name="dgvPatient.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="dgvPatient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 118</value>
-  </data>
-  <data name="dgvPatient.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="&gt;&gt;dgvPatient.Name" xml:space="preserve">
-    <value>dgvPatient</value>
-  </data>
-  <data name="&gt;&gt;dgvPatient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvPatient.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;dgvPatient.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="flowLayoutPanel2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,92.68795" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -550,13 +559,13 @@
     <value>Fill</value>
   </data>
   <data name="dgvApp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 125</value>
+    <value>0, 119</value>
   </data>
   <data name="dgvApp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>20, 3, 20, 3</value>
   </data>
   <data name="dgvApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 411</value>
+    <value>1008, 377</value>
   </data>
   <data name="dgvApp.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -574,7 +583,49 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
+  </data>
+  <data name="lblHead1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblHead1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblHead1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 13pt, style=Bold</value>
+  </data>
+  <data name="lblHead1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 15</value>
+  </data>
+  <data name="lblHead1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 15, 3, 0</value>
+  </data>
+  <data name="lblHead1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="lblHead1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>982, 28</value>
+  </data>
+  <data name="lblHead1.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="lblHead1.Text" xml:space="preserve">
+    <value>APPOINTMENTS SCHEDULE AND LIST</value>
+  </data>
+  <data name="&gt;&gt;lblHead1.Name" xml:space="preserve">
+    <value>lblHead1</value>
+  </data>
+  <data name="&gt;&gt;lblHead1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHead1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;lblHead1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flowLayoutPanel6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="flowLayoutPanel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -637,7 +688,7 @@
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 61</value>
+    <value>3, 6</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 61</value>
@@ -652,7 +703,7 @@
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>flowLayoutPanel6</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -718,10 +769,10 @@
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 61</value>
+    <value>129, 6</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 61</value>
+    <value>217, 61</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -733,7 +784,7 @@
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>flowLayoutPanel6</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -799,7 +850,7 @@
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>513, 61</value>
+    <value>352, 6</value>
   </data>
   <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 61</value>
@@ -814,13 +865,16 @@
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>flowLayoutPanel6</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="btnSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -846,6 +900,9 @@
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
   <data name="btnList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -853,13 +910,13 @@
     <value>99, 3</value>
   </data>
   <data name="btnList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 29</value>
+    <value>88, 29</value>
   </data>
   <data name="btnList.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="btnList.Text" xml:space="preserve">
-    <value>LIST</value>
+    <value>REFRESH</value>
   </data>
   <data name="&gt;&gt;btnList.Name" xml:space="preserve">
     <value>btnList</value>
@@ -874,7 +931,7 @@
     <value>1</value>
   </data>
   <data name="txtAppID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 3</value>
+    <value>3, 38</value>
   </data>
   <data name="txtAppID.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 26</value>
@@ -898,7 +955,7 @@
     <value>2</value>
   </data>
   <data name="txtPatientID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 3</value>
+    <value>29, 38</value>
   </data>
   <data name="txtPatientID.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 26</value>
@@ -922,13 +979,13 @@
     <value>3</value>
   </data>
   <data name="flowLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>691, 71</value>
+    <value>528, 23</value>
   </data>
   <data name="flowLayoutPanel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 23, 3, 3</value>
   </data>
   <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 37</value>
+    <value>192, 44</value>
   </data>
   <data name="flowLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -940,49 +997,31 @@
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel5.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>flowLayoutPanel6</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lblHead1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="flowLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 47</value>
   </data>
-  <data name="lblHead1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>735, 68</value>
   </data>
-  <data name="lblHead1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 13pt, style=Bold</value>
+  <data name="flowLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
   </data>
-  <data name="lblHead1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 20</value>
+  <data name="&gt;&gt;flowLayoutPanel6.Name" xml:space="preserve">
+    <value>flowLayoutPanel6</value>
   </data>
-  <data name="lblHead1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 20, 3, 0</value>
+  <data name="&gt;&gt;flowLayoutPanel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblHead1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="lblHead1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 28</value>
-  </data>
-  <data name="lblHead1.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="lblHead1.Text" xml:space="preserve">
-    <value>APPOINTMENTS SCHEDULE AND LIST</value>
-  </data>
-  <data name="&gt;&gt;lblHead1.Name" xml:space="preserve">
-    <value>lblHead1</value>
-  </data>
-  <data name="&gt;&gt;lblHead1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHead1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;flowLayoutPanel6.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;lblHead1.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;flowLayoutPanel6.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -997,7 +1036,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 125</value>
+    <value>1008, 119</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1015,7 +1054,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="flowLayoutPanel3" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel4" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel5" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="lblHead1" Row="0" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,144,AutoSize,0,AutoSize,250,Absolute,178,Absolute,310" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblHead1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel6" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,751" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -1033,7 +1072,7 @@
     <value>1008, 730</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>190</value>
+    <value>230</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

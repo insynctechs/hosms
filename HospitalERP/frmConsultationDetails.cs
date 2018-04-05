@@ -53,6 +53,7 @@ namespace HospitalERP
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+                //txtAddress.
             }
             catch (Exception ex)
             {
@@ -131,6 +132,7 @@ namespace HospitalERP
                 txtDoctor.Text = Utils.FormatDoctorName(dt.Rows[0]["doctor_name"].ToString());
                 txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
                 cmbAppStatus.SelectedValue = dt.Rows[0]["status"];
+                txtAddress.Text = Utils.FormatAddress(dt.Rows[0]["address"].ToString(), dt.Rows[0]["city"].ToString(), dt.Rows[0]["state"].ToString(), dt.Rows[0]["zip"].ToString());
                 if (Convert.ToInt16(dt.Rows[0]["status_edit_lock"].ToString()) == 1)
                     EnableEditableButtons(false);
                 else
