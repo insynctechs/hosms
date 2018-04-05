@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
+using System.Collections.Generic;
 
 namespace HospitalERP
 {
@@ -31,6 +32,15 @@ namespace HospitalERP
                 cmbSearch.DataSource = objStaffs.SearchValues();
                 cmbSearch.ValueMember = "Value";
                 cmbSearch.DisplayMember = "Display";
+
+                //populate cmbactive
+                Dictionary<int, string> activeDictionary = new Dictionary<int, string>();
+                activeDictionary.Add(1, "True");
+                activeDictionary.Add(0, "False");
+
+                cmbActive.DataSource = new BindingSource(activeDictionary, null);
+                cmbActive.DisplayMember = "Value";
+                cmbActive.ValueMember = "Key";
             }
             catch (Exception ex)
             {
@@ -143,7 +153,7 @@ namespace HospitalERP
                     if (txtID.Text.Trim() == "") //add data
                     {
 
-                        rtn = objStaffs.addStaffs(txtFirstName.Text, txtLastName.Text, Convert.ToInt32(cmbStaffType.SelectedValue.ToString()), txtDesignation.Text, txtQualification.Text, cmbStaffType.SelectedIndex, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Int32.Parse(cmbUserRole.SelectedValue.ToString()));
+                        rtn = objStaffs.addStaffs(txtFirstName.Text, txtLastName.Text, Convert.ToInt32(cmbDept.SelectedValue.ToString()), txtDesignation.Text, txtQualification.Text, Convert.ToInt32(cmbStaffType.SelectedValue.ToString()), gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Int32.Parse(cmbUserRole.SelectedValue.ToString()));
 
                         if (rtn == 0)
                             ShowStatus(0, "Type name should be unique");
@@ -160,7 +170,7 @@ namespace HospitalERP
                     }
                     else //edit record
                     {
-                        rtn = objStaffs.editStaffs(Int32.Parse(txtID.Text.Trim()), Int32.Parse(txtUSERID.Text.Trim()), txtFirstName.Text, txtLastName.Text, cmbDept.SelectedIndex, txtDesignation.Text, txtQualification.Text, Convert.ToInt32(cmbStaffType.SelectedValue.ToString()), gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Int32.Parse(cmbUserRole.SelectedValue.ToString()));
+                        rtn = objStaffs.editStaffs(Int32.Parse(txtID.Text.Trim()), Int32.Parse(txtUSERID.Text.Trim()), txtFirstName.Text, txtLastName.Text, Convert.ToInt32(cmbDept.SelectedValue.ToString()), txtDesignation.Text, txtQualification.Text, Convert.ToInt32(cmbStaffType.SelectedValue.ToString()), gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, chkActive.Checked, Int32.Parse(cmbUserRole.SelectedValue.ToString()));
                         //if (rtn == 0)
                         //  lblStatus.Text = "This name already exists. Please provide unique name.";
                         //else
@@ -186,7 +196,10 @@ namespace HospitalERP
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            ShowStaffs();
+            if (txtSearch.Text.Trim() == "" && (cmbSearch.SelectedValue.ToString() != "All" && cmbSearch.SelectedValue.ToString() != "active") )
+                MessageBox.Show("Please input search value");
+            else
+                ShowStaffs();
         }
 
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
@@ -537,6 +550,47 @@ namespace HospitalERP
             catch (Exception ex)
             {
                 CommonLogger.Info("frmStaffs\r\n" + ex.ToString());
+            }
+        }
+
+        private void cmbActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbActive.Visible == true)
+                    txtSearch.Text = cmbActive.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void cmbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSearch.Text = "";
+                if (cmbSearch.SelectedValue.ToString() == "ALL")
+                {
+                    txtSearch.Visible = false;
+                    cmbActive.Visible = false;
+                }
+                else if (cmbSearch.SelectedValue.ToString() == "active")
+                {
+                    txtSearch.Visible = false;
+                    cmbActive.Visible = true;
+                    txtSearch.Text = cmbActive.SelectedValue.ToString();
+                }
+                else
+                {
+                    txtSearch.Visible = true;
+                    cmbActive.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
             }
         }
     }

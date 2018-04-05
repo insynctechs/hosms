@@ -72,6 +72,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.cmbActive = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -567,6 +568,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.cmbSearch);
+            this.flowLayoutPanel1.Controls.Add(this.cmbActive);
             this.flowLayoutPanel1.Controls.Add(this.txtSearch);
             this.flowLayoutPanel1.Controls.Add(this.btnSearch);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -597,21 +599,33 @@
             this.cmbSearch.Name = "cmbSearch";
             this.cmbSearch.Size = new System.Drawing.Size(150, 27);
             this.cmbSearch.TabIndex = 9;
+            this.cmbSearch.SelectedIndexChanged += new System.EventHandler(this.cmbSearch_SelectedIndexChanged);
+            // 
+            // cmbActive
+            // 
+            this.cmbActive.FormattingEnabled = true;
+            this.cmbActive.Location = new System.Drawing.Point(271, 23);
+            this.cmbActive.Name = "cmbActive";
+            this.cmbActive.Size = new System.Drawing.Size(121, 27);
+            this.cmbActive.TabIndex = 12;
+            this.cmbActive.Visible = false;
+            this.cmbActive.SelectedIndexChanged += new System.EventHandler(this.cmbActive_SelectedIndexChanged);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(271, 23);
+            this.txtSearch.Location = new System.Drawing.Point(398, 23);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 27);
             this.txtSearch.TabIndex = 10;
+            this.txtSearch.Visible = false;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(494, 23);
+            this.btnSearch.Location = new System.Drawing.Point(621, 23);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(59, 29);
             this.btnSearch.TabIndex = 11;
@@ -703,5 +717,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFee;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colActive;
         private System.Windows.Forms.DataGridViewButtonColumn colBtnEdit;
+        private System.Windows.Forms.ComboBox cmbActive;
     }
 }

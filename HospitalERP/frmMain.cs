@@ -65,12 +65,13 @@ namespace HospitalERP
         {
             try
             {
+                MdiClient CtlMdi;
                 foreach (Control ctl in this.Controls)
                 {
                     try
                     {
-                        System.Windows.Forms.Control Mdi = (MdiClient)ctl;
-                        Mdi.BackColor = System.Drawing.Color.White;
+                        CtlMdi = (MdiClient)ctl;
+                        CtlMdi.BackColor = System.Drawing.Color.White;
                     }
                     catch (Exception a)
                     {
