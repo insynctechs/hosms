@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
+
 namespace HospitalERP
 {
     public partial class frmOptions : Form
@@ -44,8 +45,10 @@ namespace HospitalERP
         {
             try
             {
-
-                ShowRecords();
+                if (txtSearch.Text.Trim() == "" && cmbSearch.SelectedValue.ToString() != "All" )
+                    MessageBox.Show("Please input search value");
+                else
+                    ShowRecords();
             }
             catch (Exception ex)
             {
@@ -149,6 +152,7 @@ namespace HospitalERP
                 cmbSearch.DataSource = opt.SearchValues();
                 cmbSearch.ValueMember = "Value";
                 cmbSearch.DisplayMember = "Display";
+                
             }
             catch (Exception ex)
             {
@@ -354,5 +358,6 @@ namespace HospitalERP
             Utils.toggleChildCloseButton(this.MdiParent, 1);
             opt.Dispose();
         }
+
     }
 }

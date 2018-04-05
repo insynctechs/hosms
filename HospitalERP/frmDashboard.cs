@@ -279,12 +279,12 @@ namespace HospitalERP
 
         private void btnDashReports_Click(object sender, EventArgs e)
         {
-            /*if (Application.OpenForms.OfType<frmOptions>().Count() == 1)
-                Application.OpenForms.OfType<frmOptions>().First().BringToFront();
+            if (Application.OpenForms.OfType<frmReports>().Count() == 1)
+                Application.OpenForms.OfType<frmReports>().First().BringToFront();
                 else {
-            frmOptions frm = new frmOptions();
+            frmReports frm = new frmReports();
             frm.MdiParent = this.MdiParent;
-            frm.Show();}*/
+            frm.Show();}
         }
 
         private void btnDashProcType_Click(object sender, EventArgs e)

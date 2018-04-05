@@ -5,12 +5,13 @@ using System.Drawing;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
+using System.Collections.Generic;
 
 namespace HospitalERP
 {
     public partial class frmDoctors : Form
     {
-        log4net.ILog ilog;
+        
         Doctors doc = new Doctors();
 
         public frmDoctors()
@@ -18,8 +19,6 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             }
             catch (Exception ex)
             {
@@ -60,6 +59,16 @@ namespace HospitalERP
                 cmbSearch.DataSource = doc.SearchValues();
                 cmbSearch.ValueMember = "Value";
                 cmbSearch.DisplayMember = "Display";
+
+                //populate cmbactive
+                Dictionary<int, string> activeDictionary = new Dictionary<int, string>();
+                activeDictionary.Add(1, "True");
+                activeDictionary.Add(0, "False");
+
+                cmbActive.DataSource = new BindingSource(activeDictionary, null);
+                cmbActive.DisplayMember = "Value";
+                cmbActive.ValueMember = "Key";
+
             }
             catch (Exception ex)
             {
@@ -213,7 +222,10 @@ namespace HospitalERP
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            ShowDoctors();
+            if (txtSearch.Text.Trim() == "" && (cmbSearch.SelectedValue.ToString() != "All" && cmbSearch.SelectedValue.ToString() != "D.active"))
+                MessageBox.Show("Please input search value");
+            else
+                ShowDoctors();
         }
 
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
@@ -459,7 +471,7 @@ namespace HospitalERP
                             }
                             catch (Exception ex)
                             {
-                                ilog.Error(ex.Message, ex);
+                                CommonLogger.Info(ex.ToString());
                             }
                             finally
                             {
@@ -498,6 +510,47 @@ namespace HospitalERP
             {
                 Utils.toggleChildCloseButton(this.MdiParent, 1);
                 doc.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void cmbActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbActive.Visible == true && cmbSearch.SelectedValue.ToString() == "D.active")
+                    txtSearch.Text = cmbActive.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void cmbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSearch.Text = "";
+                if (cmbSearch.SelectedValue.ToString().ToUpper() == "ALL")
+                {
+                    txtSearch.Visible = false;
+                    cmbActive.Visible = false;
+                }
+                else if (cmbSearch.SelectedValue.ToString() == "D.active")
+                {
+                    txtSearch.Visible = false;
+                    cmbActive.Visible = true;
+                    txtSearch.Text = cmbActive.SelectedValue.ToString();
+                }
+                else
+                {
+                    txtSearch.Visible = true;
+                    cmbActive.Visible = false;
+                }
             }
             catch (Exception ex)
             {

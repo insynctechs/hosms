@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
+using System.Collections.Generic;
 
 namespace HospitalERP
 {
@@ -31,6 +32,16 @@ namespace HospitalERP
                 cmbSearch.DataSource = pt.SearchValues();
                 cmbSearch.ValueMember = "Value";
                 cmbSearch.DisplayMember = "Display";
+                
+                //populate cmbactive
+                Dictionary<int, string> activeDictionary = new Dictionary<int, string>();
+                activeDictionary.Add(1, "True");
+                activeDictionary.Add(0, "False");
+
+                cmbActive.DataSource = new BindingSource(activeDictionary, null);
+                cmbActive.DisplayMember = "Value";
+                cmbActive.ValueMember = "Key";
+
             }
             catch (Exception ex)
             {
@@ -240,7 +251,10 @@ namespace HospitalERP
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            ShowRecords();
+            if (txtSearch.Text.Trim() == "" && (cmbSearch.SelectedValue.ToString() != "All" && cmbSearch.SelectedValue.ToString() != "active"))
+                MessageBox.Show("Please input search value");
+            else
+                ShowRecords();
         }
 
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -285,6 +299,47 @@ namespace HospitalERP
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearFormFields();
+        }
+
+        private void cmbActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbActive.Visible == true && cmbSearch.SelectedValue.ToString() == "active")
+                    txtSearch.Text = cmbActive.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void cmbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSearch.Text = "";
+                if (cmbSearch.SelectedValue.ToString().ToUpper() == "ALL")
+                {
+                    txtSearch.Visible = false;
+                    cmbActive.Visible = false;
+                }
+                else if (cmbSearch.SelectedValue.ToString() == "active")
+                {
+                    txtSearch.Visible = false;
+                    cmbActive.Visible = true;
+                    txtSearch.Text = cmbActive.SelectedValue.ToString();
+                }
+                else
+                {
+                    txtSearch.Visible = true;
+                    cmbActive.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
         }
     }
 }
