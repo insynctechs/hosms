@@ -126,7 +126,6 @@
             this.lblHead1.Size = new System.Drawing.Size(1002, 28);
             this.lblHead1.TabIndex = 31;
             this.lblHead1.Text = "DASHBOARD";
-            this.lblHead1.UseWaitCursor = true;
             // 
             // panel3
             // 
@@ -165,14 +164,14 @@
             this.lblClinic.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblClinic.Location = new System.Drawing.Point(3, 0);
             this.lblClinic.Name = "lblClinic";
-            this.lblClinic.Size = new System.Drawing.Size(278, 74);
+            this.lblClinic.Size = new System.Drawing.Size(280, 74);
             this.lblClinic.TabIndex = 1;
             this.lblClinic.Text = "EXCELLENCE DENTAL CLINIC  ";
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(287, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(289, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel2.TabIndex = 0;
@@ -281,7 +280,7 @@
             this.label7.Location = new System.Drawing.Point(3, 51);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Staff Type: ";
             // 
