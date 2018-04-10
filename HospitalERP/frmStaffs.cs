@@ -285,7 +285,7 @@ namespace HospitalERP
                 txtDesignation.Text = dt.Rows[0]["designation"].ToString();
                 txtQualification.Text = dt.Rows[0]["qualification"].ToString();
 
-                if (dt.Rows[0]["gender"].ToString() == "M")
+                if (dt.Rows[0]["gender"].ToString().Trim() == "M")
                     rbGender1.Checked = true;
                 else
                     rbGender2.Checked = true;
@@ -370,6 +370,7 @@ namespace HospitalERP
                         {
                             panelEmpID.Visible = true;
                             txtempid.Visible = true;
+                            txtSearch.Visible = false;
                         }
                         break;
                     case 1:
@@ -571,22 +572,24 @@ namespace HospitalERP
             try
             {
                 txtSearch.Text = "";
-                if (cmbSearch.SelectedValue.ToString() == "ALL")
+                txtSearch.Visible = false;
+                if (cmbSearch.SelectedValue.ToString().ToUpper() == "ALL")
                 {
                     txtSearch.Visible = false;
                     cmbActive.Visible = false;
                 }
-                else if (cmbSearch.SelectedValue.ToString() == "active")
+                else if (cmbSearch.SelectedValue.ToString() == "D.active")
                 {
                     txtSearch.Visible = false;
                     cmbActive.Visible = true;
                     txtSearch.Text = cmbActive.SelectedValue.ToString();
                 }
-                else
+                else if (cmbSearch.SelectedIndex > 0)
                 {
                     txtSearch.Visible = true;
                     cmbActive.Visible = false;
                 }
+
             }
             catch (Exception ex)
             {

@@ -9,9 +9,7 @@ using HospitalERP.Helpers;
 namespace HospitalERP
 {
     public partial class frmPatient : Form
-    {
-
-       
+    {       
         Patients pat = new Patients();
         private bool errorfocus = false;
         private int default_tab = 0;
@@ -40,6 +38,7 @@ namespace HospitalERP
 
                     int logged_in_user = LoggedUser.id;
                     int rtn = -1;
+                    int exists = -1;
                     char gender;
                     if (rbGender1.Checked == true)
                         gender = 'M';
@@ -47,24 +46,30 @@ namespace HospitalERP
                         gender = 'F';
                     if (txtID.Text.Trim() == "") //add data
                     {
-                        rtn = pat.addPatients(txtFirstName.Text, txtLastName.Text, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, txtHistory.Text, txtAllergies.Text, logged_in_user);
-
-                        if (rtn >= 1)
+                        exists = pat.existPatients(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text.Trim(), txtPhone.Text.Trim());
+                        if (exists <= 0)
                         {
-                            ShowStatus(1, "Record succesfully added. ");
-                            clearFormFields();
-                            if (chkAppointment.Checked == true)
+                            rtn = pat.addPatients(txtFirstName.Text, txtLastName.Text, gender, Convert.ToDateTime(dtpDob.Text), txtNationality.Text, txtPathaka.Text, Convert.ToDateTime(dtpPathakaExpiry.Text), txtAddress.Text, txtCity.Text, txtDistrict.Text, txtZip.Text, txtPhone.Text, txtEmail.Text, txtHistory.Text, txtAllergies.Text, logged_in_user);
+
+                            if (rtn >= 1)
                             {
-                                frmAppointments app = new frmAppointments(rtn);
-                                app.MdiParent = this.ParentForm;
-                                app.Show();
-                            }
+                                ShowStatus(1, "Record succesfully added. ");
+                                clearFormFields();
+                                if (chkAppointment.Checked == true)
+                                {
+                                    frmAppointments app = new frmAppointments(rtn);
+                                    app.MdiParent = this.ParentForm;
+                                    app.Show();
+                                }
 
+                            }
+                            else if (rtn == -1)
+                            {
+                                ShowStatus(0, "Some error occurred... Record cannot be added.");
+                            }
                         }
-                        else if (rtn == -1)
-                        {
-                            ShowStatus(0, "Some error occurred... Record cannot be added.");
-                        }
+                        else
+                            ShowStatus(0, "Patient already exists, cannot be added.");
                     }
                     else //edit record
                     {
@@ -120,8 +125,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
-
         }
 
         private void ShowStatus(int success, string msg)
@@ -238,6 +241,7 @@ namespace HospitalERP
         {
             try
             {
+                DateTime check;
                 if (string.IsNullOrEmpty(dtpDob.Text))
                 {
                     e.Cancel = true;
@@ -247,6 +251,13 @@ namespace HospitalERP
                         errorfocus = true;
                     }
                     errorProvider.SetError(dtpDob, "Required");
+                }
+                else if(DateTime.TryParse(dtpDob.Text, out check) && check > DateTime.Now)
+                {
+                    e.Cancel = true;
+                    errorfocus = true;
+                    dtpDob.Focus();
+                    errorProvider.SetError(dtpDob, "DoB should be less than current date");
                 }
                 else
                 {

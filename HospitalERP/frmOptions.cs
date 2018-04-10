@@ -102,6 +102,7 @@ namespace HospitalERP
             }
             catch (Exception ex)
             {
+                ShowStatus(0, "Duplicate Entry... Record cannot be added.");
                 CommonLogger.Info(ex.ToString());
             }
 
@@ -359,5 +360,24 @@ namespace HospitalERP
             opt.Dispose();
         }
 
+        private void cmbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            try
+            {
+                if (cmbSearch.SelectedValue.ToString().ToUpper() == "ALL")
+                {
+                    txtSearch.Visible = false;                  
+                }               
+                else if (cmbSearch.SelectedIndex > 0)
+                {
+                    txtSearch.Visible = true;                 
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
     }
 }

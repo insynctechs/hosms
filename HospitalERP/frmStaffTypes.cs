@@ -235,6 +235,7 @@ namespace HospitalERP
                         break;
                     case 1:
                         ShowRecords();
+                        txtSearch.Visible = false;
                         break;
                 }
             }
@@ -301,7 +302,7 @@ namespace HospitalERP
         {
             try
             {
-                if (cmbActive.Visible == true && cmbSearch.SelectedValue.ToString() == "p.active")
+                if (cmbActive.Visible == true && cmbSearch.SelectedValue.ToString() == "active")
                     txtSearch.Text = cmbActive.SelectedValue.ToString();
             }
             catch (Exception ex)
@@ -326,7 +327,7 @@ namespace HospitalERP
                     cmbActive.Visible = true;
                     txtSearch.Text = cmbActive.SelectedValue.ToString();
                 }
-                else
+                else if(cmbSearch.SelectedIndex > 0)
                 {
                     txtSearch.Visible = true;
                     cmbActive.Visible = false;
