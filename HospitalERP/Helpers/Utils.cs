@@ -87,6 +87,20 @@ namespace HospitalERP.Helpers
             return childCount;
         }
 
+        public static int DaysBetweenDates(DateTime d1, DateTime d2)
+        {
+            TimeSpan span = d2.Subtract(d1);
+            return (int)span.TotalDays;
+        }
+
+        public static int DaysBetweenDates(string d1, string d2)
+        {
+            System.DateTime firstDate = Convert.ToDateTime(d1);
+            System.DateTime secondDate = Convert.ToDateTime(d2);
+            System.TimeSpan diff = secondDate.Subtract(firstDate);           
+            return (int)diff.TotalDays;
+        }
+
         public static void toggleChildCloseButton(Form frmParent, int fromChild)
         {
             try

@@ -585,16 +585,16 @@
   <data name="ABtnStatus.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <metadata name="ABtnBill.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="ABtnBill.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <metadata name="ABtnDetails.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="ABtnDetails.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <metadata name="ABtnBill.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ABtnBill.HeaderText" xml:space="preserve">
     <value />
   </data>
   <metadata name="ABtnDelete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -604,7 +604,7 @@
     <value />
   </data>
   <data name="ABtnDelete.ToolTipText" xml:space="preserve">
-    <value>Delete</value>
+    <value>Cancel Appointment</value>
   </data>
   <data name="dgvApp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1152,6 +1152,72 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Appointments</value>
   </data>
+  <data name="&gt;&gt;PID.Name" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="&gt;&gt;PID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PNum.Name" xml:space="preserve">
+    <value>PNum</value>
+  </data>
+  <data name="&gt;&gt;PNum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Pname.Name" xml:space="preserve">
+    <value>Pname</value>
+  </data>
+  <data name="&gt;&gt;Pname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PGender.Name" xml:space="preserve">
+    <value>PGender</value>
+  </data>
+  <data name="&gt;&gt;PGender.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PAge.Name" xml:space="preserve">
+    <value>PAge</value>
+  </data>
+  <data name="&gt;&gt;PAge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PAddress.Name" xml:space="preserve">
+    <value>PAddress</value>
+  </data>
+  <data name="&gt;&gt;PAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PPhone.Name" xml:space="preserve">
+    <value>PPhone</value>
+  </data>
+  <data name="&gt;&gt;PPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PDoctor.Name" xml:space="preserve">
+    <value>PDoctor</value>
+  </data>
+  <data name="&gt;&gt;PDoctor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PVisitDate.Name" xml:space="preserve">
+    <value>PVisitDate</value>
+  </data>
+  <data name="&gt;&gt;PVisitDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PBtnSelect.Name" xml:space="preserve">
+    <value>PBtnSelect</value>
+  </data>
+  <data name="&gt;&gt;PBtnSelect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PBtnHistory.Name" xml:space="preserve">
+    <value>PBtnHistory</value>
+  </data>
+  <data name="&gt;&gt;PBtnHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;AID.Name" xml:space="preserve">
     <value>AID</value>
   </data>
@@ -1224,88 +1290,22 @@
   <data name="&gt;&gt;ABtnStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ABtnBill.Name" xml:space="preserve">
-    <value>ABtnBill</value>
-  </data>
-  <data name="&gt;&gt;ABtnBill.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ABtnDetails.Name" xml:space="preserve">
     <value>ABtnDetails</value>
   </data>
   <data name="&gt;&gt;ABtnDetails.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ABtnBill.Name" xml:space="preserve">
+    <value>ABtnBill</value>
+  </data>
+  <data name="&gt;&gt;ABtnBill.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ABtnDelete.Name" xml:space="preserve">
     <value>ABtnDelete</value>
   </data>
   <data name="&gt;&gt;ABtnDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PID.Name" xml:space="preserve">
-    <value>PID</value>
-  </data>
-  <data name="&gt;&gt;PID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PNum.Name" xml:space="preserve">
-    <value>PNum</value>
-  </data>
-  <data name="&gt;&gt;PNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Pname.Name" xml:space="preserve">
-    <value>Pname</value>
-  </data>
-  <data name="&gt;&gt;Pname.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PGender.Name" xml:space="preserve">
-    <value>PGender</value>
-  </data>
-  <data name="&gt;&gt;PGender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PAge.Name" xml:space="preserve">
-    <value>PAge</value>
-  </data>
-  <data name="&gt;&gt;PAge.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PAddress.Name" xml:space="preserve">
-    <value>PAddress</value>
-  </data>
-  <data name="&gt;&gt;PAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PPhone.Name" xml:space="preserve">
-    <value>PPhone</value>
-  </data>
-  <data name="&gt;&gt;PPhone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PDoctor.Name" xml:space="preserve">
-    <value>PDoctor</value>
-  </data>
-  <data name="&gt;&gt;PDoctor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PVisitDate.Name" xml:space="preserve">
-    <value>PVisitDate</value>
-  </data>
-  <data name="&gt;&gt;PVisitDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PBtnSelect.Name" xml:space="preserve">
-    <value>PBtnSelect</value>
-  </data>
-  <data name="&gt;&gt;PBtnSelect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PBtnHistory.Name" xml:space="preserve">
-    <value>PBtnHistory</value>
-  </data>
-  <data name="&gt;&gt;PBtnHistory.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -53,7 +53,14 @@ namespace HospitalERP
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-                //txtAddress.
+                if(Utils.DaysBetweenDates(txtMeetDate.Text,DateTime.Now.ToShortDateString())>0)
+                {
+                    EnableEditableButtons(false);
+                }
+                else
+                {
+                    EnableEditableButtons(false);
+                }
             }
             catch (Exception ex)
             {
