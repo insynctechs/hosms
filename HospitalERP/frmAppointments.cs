@@ -15,6 +15,7 @@ namespace HospitalERP
         Patients pat = new Patients();
         int startload = 0;
         int patient_id = 0;
+        
         public frmAppointments()
         {
             try
@@ -23,6 +24,8 @@ namespace HospitalERP
                 log4net.Config.XmlConfigurator.Configure();
                 ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 
+
+
             }
             catch (Exception ex)
             {
@@ -299,6 +302,9 @@ namespace HospitalERP
                     case "ABtnDetails":
                         ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
                         break;
+                    case "ABtnDelete":
+                        DeletePatient(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AStatusID"].Value.ToString()));
+                        break;
                 }
             }
             catch (Exception ex)
@@ -375,6 +381,46 @@ namespace HospitalERP
 
         }
 
+        private void DeletePatient(int app_id, int pat_id, int status_id)
+        {
+            try
+            {
+                if (Utils.DaysBetweenDates(dtpAppDate.Text, DateTime.Now.ToShortDateString()) <= 0)
+                {
+                    int ret = app.DeleteAppointment(app_id, pat_id, status_id);
+                    string msg = "";
+                    if (ret >= 0)
+                    {
+                        MessageBox.Show("Appointment Deleted");
+                        getAppointmentList(0);
+
+                    }
+                    else
+                    {
+                        switch (ret)
+                        {
+                            case -1: msg = "Error in deleting. Please try again"; break;
+                            case -2: msg = "Appointment cannot be cancelled."; break;
+                            case -3: msg = "Appointment cannot be cancelled as Procedures and Tests are added for the appointment"; break;
+                            case -4: msg = "Appointment cannot be cancelled as Bill has been generated"; break;
+
+
+                        }
+                        MessageBox.Show(msg);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cannot Cancel Past Appointments!");
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+        }
+
         private void SelectPatient(string pid, string pnum)
         {
             try
@@ -401,6 +447,11 @@ namespace HospitalERP
                         SelectPatient(dgvPatient.Rows[e.RowIndex].Cells["PID"].Value.ToString(), dgvPatient.Rows[e.RowIndex].Cells["PNum"].Value.ToString());
 
                         break;
+
+                    case "PBtnHistory":
+                        //SelectPatient(dgvPatient.Rows[e.RowIndex].Cells["PID"].Value.ToString(), dgvPatient.Rows[e.RowIndex].Cells["PNum"].Value.ToString());
+
+                        break;
                 }
             }
             catch (Exception ex)
@@ -409,5 +460,7 @@ namespace HospitalERP
             }
 
         }
+
+        
     }
 }

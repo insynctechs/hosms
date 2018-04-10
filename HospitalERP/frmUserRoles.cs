@@ -88,9 +88,10 @@ namespace HospitalERP
                     int rtn = -1;
                     //check tree nodes are checked
                     TreeNode tn = trvMenu.SelectedNode;
-                    if (tn == null)
+                    /*if (tn == null)
                         ShowStatus(0, "Please select atleast one accessible menu item.");
-                    else if (txtID.Text.Trim() == "") //add data
+                    else */
+                    if (txtID.Text.Trim() == "") //add data
                     {
 
                     
