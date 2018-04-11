@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHead1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,9 +45,11 @@
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -128,11 +131,12 @@
             // lblActive
             // 
             this.lblActive.AutoSize = true;
-            this.lblActive.Location = new System.Drawing.Point(28, 191);
+            this.lblActive.Location = new System.Drawing.Point(28, 196);
             this.lblActive.Name = "lblActive";
             this.lblActive.Size = new System.Drawing.Size(49, 18);
             this.lblActive.TabIndex = 4;
             this.lblActive.Text = "Notes:";
+            this.lblActive.Visible = false;
             // 
             // flowLayoutPanel3
             // 
@@ -141,7 +145,7 @@
             this.flowLayoutPanel3.Controls.Add(this.btnClear);
             this.flowLayoutPanel3.Controls.Add(this.btnCancel);
             this.flowLayoutPanel3.Controls.Add(this.txtID);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(198, 294);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(198, 299);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(449, 39);
             this.flowLayoutPanel3.TabIndex = 57;
@@ -158,6 +162,7 @@
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
@@ -171,6 +176,7 @@
             this.btnClear.TabIndex = 21;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCancel
             // 
@@ -185,6 +191,7 @@
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "CLOSE";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtID
             // 
@@ -218,7 +225,6 @@
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(164, 26);
             this.flowLayoutPanel6.TabIndex = 68;
-            this.flowLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel6_Paint);
             // 
             // label6
             // 
@@ -241,11 +247,12 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(198, 194);
+            this.txtNotes.Location = new System.Drawing.Point(198, 199);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(281, 74);
             this.txtNotes.TabIndex = 69;
+            this.txtNotes.Visible = false;
             // 
             // dtpDate
             // 
@@ -254,6 +261,7 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(108, 25);
             this.dtpDate.TabIndex = 70;
+            this.dtpDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpDate_Validating);
             // 
             // cmbDoctor
             // 
@@ -262,6 +270,11 @@
             this.cmbDoctor.Name = "cmbDoctor";
             this.cmbDoctor.Size = new System.Drawing.Size(121, 26);
             this.cmbDoctor.TabIndex = 71;
+            this.cmbDoctor.Validating += new System.ComponentModel.CancelEventHandler(this.cmbDoctor_Validating);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // frmReferToDoctor
             // 
@@ -274,12 +287,14 @@
             this.MinimizeBox = false;
             this.Name = "frmReferToDoctor";
             this.Text = "Refer Patient to Doctor";
+            this.Shown += new System.EventHandler(this.frmReferToDoctor_Shown);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +318,6 @@
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox cmbDoctor;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -46,6 +46,29 @@ namespace HospitalERP.Procedures
             return ret;
         }
 
+        public int existPatients(string first_name, string last_name, char gender, DateTime dob, string nationality, string phone)
+        {
+            int ret = 0;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[6];
+                sqlParam[0] = new SqlParameter("@first_name", first_name);
+                sqlParam[1] = new SqlParameter("@last_name", last_name);
+                sqlParam[2] = new SqlParameter("@gender", gender);
+                sqlParam[3] = new SqlParameter("@dob", dob);
+                sqlParam[4] = new SqlParameter("@nationality", nationality);
+                sqlParam[5] = new SqlParameter("@phone", phone);
+                
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspPatients_Exists", sqlParam).ToString());
+            }
+            catch (DbException ex)
+            {
+                ret = -1;
+                Helpers.CommonLogger.Error(ex.Message, ex);
+            }
+            return ret;
+        }
+
         public int editPatients(int id, string first_name, string last_name, char gender, DateTime dob, string nationality, string legal_id,
             DateTime legal_id_expiry, string address, string city, string state, string zip,
             string phone, string email, string history, string allergies, int loggedid)
