@@ -130,12 +130,12 @@ namespace HospitalERP
                     txtName.Focus();
                     errorProvider.SetError(txtName, "Required");
                 }
-                else if (pt.GetRecords("type_name", txtName.Text.Trim()).Rows.Count > 0)
+                /*else if (pt.GetRecords("type_name", txtName.Text.Trim()).Rows.Count > 0)
                 {
                     e.Cancel = true;
                     //txtName.Focus();
                     errorProvider.SetError(txtName, "Name Already Exists!");
-                }
+                }*/
                 else
                 {
                     e.Cancel = false;
@@ -330,7 +330,7 @@ namespace HospitalERP
                     cmbActive.Visible = true;
                     txtSearch.Text = cmbActive.SelectedValue.ToString();
                 }
-                else
+                else if(cmbSearch.SelectedIndex > 0)
                 {
                     txtSearch.Visible = true;
                     cmbActive.Visible = false;

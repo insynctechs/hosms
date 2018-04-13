@@ -31,6 +31,27 @@ namespace HospitalERP.Procedures
             return ret;
         }
 
+        public int ReferAppointment(int patient_id, int doctor_id, DateTime meet_date, int status, int refer_by, int prev_appt)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[6];
+                sqlParam[0] = new SqlParameter("@patient_id", patient_id);
+                sqlParam[1] = new SqlParameter("@doctor_id", doctor_id);
+                sqlParam[2] = new SqlParameter("@meet_date", meet_date);
+                sqlParam[3] = new SqlParameter("@status", status);
+                sqlParam[4] = new SqlParameter("@refer_by", refer_by);
+                sqlParam[5] = new SqlParameter("@prev_appt", prev_appt);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspAppointments_Refer", sqlParam).ToString());
+            }
+            catch (DbException ex)
+            {
+                ret = -1;
+                Helpers.CommonLogger.Error(ex.Message, ex);
+            }
+            return ret;
+        }
         public int editAppointment(int app_id, string notes, string history, string allergies, int status)
         {
             int ret = -1;

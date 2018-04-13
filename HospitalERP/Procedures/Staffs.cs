@@ -121,7 +121,7 @@ namespace HospitalERP.Procedures
                 dt.Rows.Add(new object[] { "D.phone", "Phone No" });
                 dt.Rows.Add(new object[] { "De.name", "Department" });
                 dt.Rows.Add(new object[] { "ST.type_title", "Staff Type" });
-                dt.Rows.Add(new object[] { "active", "Active" });
+                dt.Rows.Add(new object[] { "D.active", "Active" });
                 return dt;
             }
             catch (Exception ex)

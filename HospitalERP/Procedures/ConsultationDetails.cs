@@ -330,6 +330,47 @@ namespace HospitalERP.Procedures
         {
             conn = null;
         }
+        public DataTable DocCombo(int id)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("id");
+                dt.Columns.Add("name");
+                dt.Rows.Add(new object[] { "0", "Select Doctors" });
+                DataTable dt1 = new DataTable();
+                dt1 = GetDocsIDName(id);
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    dt.Rows.Add(dr.ItemArray);
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Helpers.CommonLogger.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+        public DataTable GetDocsIDName(int id)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet dt = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspDoctorsRef_Combo", sqlParam);
+                return dt.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                Helpers.CommonLogger.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
 
     }
 }

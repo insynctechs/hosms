@@ -518,9 +518,17 @@ namespace HospitalERP
             }
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        private void btnRefer_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                frmReferToDoctor frt = new frmReferToDoctor(Int32.Parse(txtDoctorID.Text.Trim()), Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()));
+                frt.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
         }
     }
 }

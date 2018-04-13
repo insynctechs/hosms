@@ -320,11 +320,12 @@ namespace HospitalERP
                     cmbActive.Visible = true;
                     txtSearch.Text = cmbActive.SelectedValue.ToString();
                 }
-                else
+                else if (cmbSearch.SelectedIndex > 0)
                 {
                     txtSearch.Visible = true;
                     cmbActive.Visible = false;
                 }
+
             }
             catch (Exception ex)
             {

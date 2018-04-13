@@ -24,7 +24,7 @@ namespace HospitalERP
         {
             this.WindowState = FormWindowState.Maximized;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-                        
+            txtSearch.Visible = false;     
 
         }
         private void PopulateSearch()
@@ -86,11 +86,16 @@ namespace HospitalERP
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
                     int rtn = -1;
+                    // int nodeCount = trvMenu.SelectedNode.GetNodeCount(true);
                     //check tree nodes are checked
-                    TreeNode tn = trvMenu.SelectedNode;
-                    /*if (tn == null)
+                    /*TreeNode tn = trvMenu.SelectedNode;
+                    if (tn == null)
+                    */
+                    /*int nodeCount = trvMenu.SelectedNode.Nodes.Count;
+                      
+                    if(nodeCount<=0)
                         ShowStatus(0, "Please select atleast one accessible menu item.");
-                    else */
+                    else*/
                     if (txtID.Text.Trim() == "") //add data
                     {
 
@@ -671,8 +676,9 @@ namespace HospitalERP
                     cmbActive.Visible = true;
                     txtSearch.Text = cmbActive.SelectedValue.ToString();
                 }
-                else
+                else if(cmbSearch.SelectedIndex >0)
                 {
+                    
                     txtSearch.Visible = true;
                     cmbActive.Visible = false;
                 }
