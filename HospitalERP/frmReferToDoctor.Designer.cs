@@ -143,7 +143,7 @@
             this.flowLayoutPanel3.Controls.Add(this.txtID);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(198, 294);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(449, 39);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(380, 39);
             this.flowLayoutPanel3.TabIndex = 57;
             // 
             // btnSave
