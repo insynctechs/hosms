@@ -90,14 +90,12 @@ namespace HospitalERP
                     case "0":
                         MessageBox.Show("Please choose a bill type!");
                         break;
-                    case "1":
-                        
+                    case "1":                        
                         frmConsultationBill frm = new frmConsultationBill(appointment_id, patient_id);
                         frm.ShowDialog();
                         ListBills();
-
-
                         break;
+
                     case "2":
                         int count = 0;
                         using (ConsultationDetails cdet = new ConsultationDetails())
@@ -117,6 +115,13 @@ namespace HospitalERP
                             MessageBox.Show("Cannot Generate Bill as Procedures have not been added to this appointment!");
                         }
                         break;
+
+                    case "3":
+                        frmOneTimeBill frm2 = new frmOneTimeBill(appointment_id, patient_id);
+                        frm2.ShowDialog();
+                        ListBills();
+                        break;
+
                 }
             }
             catch (Exception ex)
@@ -208,6 +213,11 @@ namespace HospitalERP
                         else if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "2")
                         {
                             frmProceduresBill frm = new frmProceduresBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                            frm.ShowDialog();
+                        }
+                        else if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "3")
+                        {
+                            frmOneTimeBill frm = new frmOneTimeBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
                             frm.ShowDialog();
                         }
                         break;

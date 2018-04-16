@@ -146,6 +146,8 @@
             this.lblHeadProcHist = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtReferredBy = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
@@ -308,7 +310,6 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.81633F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.18367F));
-            this.tableLayoutPanel3.Controls.Add(this.txtLastVisitDate, 3, 12);
             this.tableLayoutPanel3.Controls.Add(this.label9, 1, 12);
             this.tableLayoutPanel3.Controls.Add(this.txtDues, 3, 11);
             this.tableLayoutPanel3.Controls.Add(this.label23, 1, 11);
@@ -345,11 +346,14 @@
             this.tableLayoutPanel3.Controls.Add(this.label36, 2, 11);
             this.tableLayoutPanel3.Controls.Add(this.label37, 2, 12);
             this.tableLayoutPanel3.Controls.Add(this.txtAddress, 3, 4);
+            this.tableLayoutPanel3.Controls.Add(this.label38, 1, 13);
+            this.tableLayoutPanel3.Controls.Add(this.txtLastVisitDate, 3, 12);
+            this.tableLayoutPanel3.Controls.Add(this.txtReferredBy, 3, 13);
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
-            this.tableLayoutPanel3.RowCount = 13;
+            this.tableLayoutPanel3.RowCount = 14;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -363,6 +367,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(315, 390);
             this.tableLayoutPanel3.TabIndex = 43;
             // 
@@ -373,7 +378,7 @@
             this.txtLastVisitDate.Location = new System.Drawing.Point(146, 307);
             this.txtLastVisitDate.Margin = new System.Windows.Forms.Padding(3);
             this.txtLastVisitDate.Name = "txtLastVisitDate";
-            this.txtLastVisitDate.Size = new System.Drawing.Size(100, 19);
+            this.txtLastVisitDate.Size = new System.Drawing.Size(81, 19);
             this.txtLastVisitDate.TabIndex = 0;
             // 
             // label9
@@ -1496,6 +1501,24 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(13, 329);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(85, 18);
+            this.label38.TabIndex = 35;
+            this.label38.Text = "Referred By:";
+            // 
+            // txtReferredBy
+            // 
+            this.txtReferredBy.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtReferredBy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReferredBy.Location = new System.Drawing.Point(146, 332);
+            this.txtReferredBy.Name = "txtReferredBy";
+            this.txtReferredBy.Size = new System.Drawing.Size(110, 19);
+            this.txtReferredBy.TabIndex = 36;
+            // 
             // frmConsultationDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1655,5 +1678,7 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label txtAddress;
         private System.Windows.Forms.Button btnRefer;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txtReferredBy;
     }
 }

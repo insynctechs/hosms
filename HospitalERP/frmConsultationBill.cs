@@ -82,10 +82,7 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
         }
-
-
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -124,7 +121,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
         }
 
         private void frmConsultationBill_Load(object sender, EventArgs e)
@@ -179,10 +175,7 @@ namespace HospitalERP
                         dgvInv.ReadOnly = true;
                         btnSave.Enabled = false;
                     }
-
-
                 }
-
             }
             catch (Exception ex)
             {
@@ -207,7 +200,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
         }
 
         private void dgvInv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -226,12 +218,9 @@ namespace HospitalERP
                         rect.Height -= 2;
                         //p.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
                         e.Graphics.DrawLine(p, new Point(0, e.CellBounds.Bottom - 1), new Point(e.CellBounds.Right, e.CellBounds.Bottom - 1));
-
                         //e.Graphics.DrawRectangle(p, rect);
-
                     }
                     e.Handled = true;
-
                     // }
                 }
             }
@@ -239,7 +228,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
         }
 
         private void loadPatientAppInfo()
@@ -263,7 +251,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
             return;
         }
 
@@ -316,8 +303,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
-
         }
 
         private void txtPaid_TextChanged(object sender, EventArgs e)
@@ -332,7 +317,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
