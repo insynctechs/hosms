@@ -448,6 +448,20 @@ namespace HospitalERP
 
         }
 
+        private void ViewPatientHistory(string pid, string pnum)
+        {
+            try
+            {
+                frmConsultationHistory frm = new frmConsultationHistory(Int32.Parse(pid));
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+        }
+
         private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -460,7 +474,7 @@ namespace HospitalERP
                         break;
 
                     case "PBtnHistory":
-                        //SelectPatient(dgvPatient.Rows[e.RowIndex].Cells["PID"].Value.ToString(), dgvPatient.Rows[e.RowIndex].Cells["PNum"].Value.ToString());
+                        ViewPatientHistory(dgvPatient.Rows[e.RowIndex].Cells["PID"].Value.ToString(), dgvPatient.Rows[e.RowIndex].Cells["PNum"].Value.ToString());
 
                         break;
                 }
