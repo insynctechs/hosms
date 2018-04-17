@@ -9,8 +9,6 @@ namespace HospitalERP
     {
         public int appointment_id=0;
         public int patient_id=0;
-
-        log4net.ILog ilog;
        
         Appointments app = new Appointments();
         Patients pat = new Patients();
@@ -21,8 +19,7 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+               
             }
             catch (Exception ex)
             {
@@ -38,8 +35,7 @@ namespace HospitalERP
                 InitializeComponent();
                 appointment_id = app_id;
                 patient_id = pat_id;
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                
             }
             catch (Exception ex)
             {
@@ -119,6 +115,11 @@ namespace HospitalERP
                         else if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "2")
                         {
                             frmProceduresBill frm = new frmProceduresBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
+                            frm.ShowDialog();
+                        }
+                        else if (dgvList.Rows[e.RowIndex].Cells["bTypeID"].Value.ToString() == "3")
+                        {
+                            frmOneTimeBill frm = new frmOneTimeBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
                             frm.ShowDialog();
                         }
                         break;

@@ -220,7 +220,45 @@ namespace HospitalERP.Procedures
             }
         }
 
-     
+        public int UpdateBillDetails(DataTable dtBill, int appId)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[2];
+                sqlParam[0] = new SqlParameter("@List", dtBill);
+                sqlParam[1] = new SqlParameter("@appId", appId);
+                sqlParam[0].SqlDbType = SqlDbType.Structured;
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspBillDetails_Add", sqlParam).ToString());
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                Helpers.CommonLogger.Error(ex.Message + ";" + ex.StackTrace + ";" + ex.InnerException, ex);
+                return ret;
+            }
+
+        }
+
+        public DataTable getBillDetails(int id)
+        {
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", id);
+                DataSet ds = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "uspBillingDetails_Get", sqlParam);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                Helpers.CommonLogger.Error(ex.Message, ex);
+                return null;
+            }
+
+        }
+
+
+
 
     }
 }

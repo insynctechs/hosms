@@ -126,7 +126,7 @@ namespace HospitalERP
                 txtAge.Text = dt.Rows[0]["age"].ToString();
                 txtPhone.Text = dt.Rows[0]["phone"].ToString();
                 txtNationality.Text = dt.Rows[0]["nationality"].ToString();
-
+                txtReferredBy.Text = dt.Rows[0]["referred_doctor_name"].ToString();
                 if (dt.Rows[0]["prev_date"].ToString() != "")
                 {
                     txtLastVisitDate.Text = Utils.FormatDateShort(dt.Rows[0]["prev_date"].ToString());
@@ -530,5 +530,5 @@ namespace HospitalERP
                 CommonLogger.Info(ex.ToString());
             }
         }
-    }
+}
 }
