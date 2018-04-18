@@ -140,7 +140,7 @@
             this.dtTo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtTo.Location = new System.Drawing.Point(49, 285);
             this.dtTo.Name = "dtTo";
-            this.dtTo.Size = new System.Drawing.Size(162, 24);
+            this.dtTo.Size = new System.Drawing.Size(189, 24);
             this.dtTo.TabIndex = 20;
             this.dtTo.ValueChanged += new System.EventHandler(this.dtTo_ValueChanged);
             // 
@@ -149,7 +149,7 @@
             this.dtFrom.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFrom.Location = new System.Drawing.Point(507, 258);
             this.dtFrom.Name = "dtFrom";
-            this.dtFrom.Size = new System.Drawing.Size(163, 24);
+            this.dtFrom.Size = new System.Drawing.Size(175, 24);
             this.dtFrom.TabIndex = 19;
             this.dtFrom.ValueChanged += new System.EventHandler(this.dtFrom_ValueChanged);
             // 

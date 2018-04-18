@@ -8,10 +8,10 @@ using HospitalERP.Helpers;
 namespace HospitalERP
 {
     public partial class frmConsultationHistory : Form
-    {
-        log4net.ILog ilog;
+    {        
         ConsultationDetails objCD = new ConsultationDetails();
         Appointments objApp = new Appointments();
+        Patients pat = new Patients();
         //DataSet ds;
         //SqlDataAdapter adap;
         //SqlCommandBuilder scb;
@@ -20,8 +20,7 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+              
             }
             catch (Exception ex)
             {
@@ -35,9 +34,6 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-               
                 txtPatientID.Text = patid.ToString();
             }
             catch (Exception ex)
@@ -51,9 +47,7 @@ namespace HospitalERP
         {
             try
             {
-                
-                
-                
+                setGridViews();
             }
             catch (Exception ex)
             {
@@ -66,8 +60,8 @@ namespace HospitalERP
         {
             try
             {                
-                dgvApptHistory.DataSource = objCD.getApptHistory(Convert.ToInt32(txtAppID.Text),Convert.ToInt32(txtPatientID.Text));                
-                ShowProceduresHistory(0);
+                dgvApptHistory.DataSource = objCD.getApptHistory(0,Convert.ToInt32(txtPatientID.Text));                
+                //ShowProceduresHistory(0);
 
             }
             catch (Exception ex)
@@ -97,21 +91,22 @@ namespace HospitalERP
         {
             try
             {
-                DataTable dt = objCD.getRecordFromID(Convert.ToInt32(txtAppID.Text));
-                txtPatientID.Text = dt.Rows[0]["patient_id"].ToString();
+                DataTable dt = pat.getRecordFromID(Convert.ToInt32(txtPatientID.Text));
+                txtPatientID.Text = dt.Rows[0]["id"].ToString();
                 txtPatientNo.Text = dt.Rows[0]["patient_number"].ToString();
-                txtPatientName.Text = dt.Rows[0]["patient_name"].ToString();
+                txtPatientName.Text = dt.Rows[0]["name"].ToString().Trim();
                 txtGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
                 txtDob.Text = Utils.FormatDateShort(dt.Rows[0]["dob"].ToString());
                 txtAge.Text = dt.Rows[0]["age"].ToString();
                 txtPhone.Text = dt.Rows[0]["phone"].ToString();
                 txtNationality.Text = dt.Rows[0]["nationality"].ToString();
 
-                if (dt.Rows[0]["prev_date"].ToString() != "")
+                /*if (dt.Rows[0]["prev_date"].ToString() != "")
                 {
                     txtLastVisitDate.Text = Utils.FormatDateShort(dt.Rows[0]["prev_date"].ToString());
                 }
                 txtMeetDate.Text = Utils.FormatDateShort(dt.Rows[0]["appointment_date"].ToString());
+
                 txtDues.Text = dt.Rows[0]["dues"].ToString();
                 //txtMedicalNotes.Text = dt.Rows[0]["history"].ToString();
                 //txtAllergies.Text = dt.Rows[0]["allergies"].ToString();
@@ -119,6 +114,7 @@ namespace HospitalERP
                 txtDoctor.Text = Utils.FormatDoctorName(dt.Rows[0]["doctor_name"].ToString());
                 txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
                 //cmbAppStatus.SelectedValue = dt.Rows[0]["status"];
+                */
                 txtAddress.Text = Utils.FormatAddress(dt.Rows[0]["address"].ToString(), dt.Rows[0]["city"].ToString(), dt.Rows[0]["state"].ToString(), dt.Rows[0]["zip"].ToString());
                 
             }

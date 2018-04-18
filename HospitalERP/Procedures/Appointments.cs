@@ -124,7 +124,7 @@ namespace HospitalERP.Procedures
             try
             {
                 SqlParameter[] sqlParam = new SqlParameter[3];
-                sqlParam[0] = new SqlParameter("@id", pid);
+                sqlParam[0] = new SqlParameter("@id", id);
                 sqlParam[1] = new SqlParameter("@patient_id", pid);
                 sqlParam[2] = new SqlParameter("@status", status);
                 ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspAppointments_Delete", sqlParam).ToString());

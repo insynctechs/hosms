@@ -9,7 +9,7 @@ namespace HospitalERP
 
     public partial class frmAppointments : Form
     {        
-        log4net.ILog ilog;
+        
         Doctors doc = new Doctors();
         Appointments app = new Appointments();
         Patients pat = new Patients();
@@ -21,11 +21,7 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-                
-
-
+        
             }
             catch (Exception ex)
             {
@@ -38,8 +34,6 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 patient_id = patientid;
                 
             }
@@ -66,6 +60,11 @@ namespace HospitalERP
                 }
                 getAppointmentList();
                 startload = 1;
+
+                Timer timer = new Timer();
+                timer.Interval = (30 * 1000); // 30 secs
+                timer.Tick += new EventHandler(timer_Tick);
+                timer.Start();
             }
             catch (Exception ex)
             {
@@ -74,6 +73,11 @@ namespace HospitalERP
 
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            //refresh here...
+            getAppointmentList();
+        }
         private void btnRegister_Click(object sender, EventArgs e)
         {
             try
@@ -313,8 +317,10 @@ namespace HospitalERP
                         break;
                     case "ABtnDelete":
                         DeletePatient(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AStatusID"].Value.ToString()));
+                        getAppointmentList();
                         break;
                 }
+                
             }
             catch (Exception ex)
             {

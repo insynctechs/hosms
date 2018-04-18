@@ -243,15 +243,16 @@ namespace HospitalERP
             decimal fee_total = 0;
             try
             {
-                if (e.ColumnIndex == 2)
+                if (e.ColumnIndex == 2 && e.RowIndex!=-1 )
                 {
                     for (int m = 0; m < dgvInv.RowCount - 1; m++)
                         fee_total += Convert.ToDecimal(dgvInv.Rows[m].Cells["Amount"].Value.ToString());
 
                     fee_total += Convert.ToDecimal(txtPrevDues.Text.ToString());
                     txtTotal.Text = fee_total.ToString();
-                    cell_modified = 1;
+                   
                 }
+                cell_modified = 1;
             }
             catch (Exception ex)
             {
@@ -431,7 +432,7 @@ namespace HospitalERP
 
         private void cmbBillStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbBillStatus.SelectedValue.ToString() == "3" || cmbBillStatus.SelectedValue.ToString() == "4")
+            if (cmbBillStatus.SelectedValue.ToString() == "4")
             {
                 foreach (DataGridViewRow row in dgvInv.Rows)
                 {

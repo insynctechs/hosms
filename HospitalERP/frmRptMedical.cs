@@ -73,7 +73,7 @@ namespace HospitalERP
                 lblRegNo.Text = dt.Rows[0]["patient_number"].ToString();
                 lblAge.Text = dt.Rows[0]["age"].ToString();
                 lblGender.Text = Utils.Gender[dt.Rows[0]["gender"].ToString()];
-                lblDate.Text = Utils.FormatDateShort(dt.Rows[0]["dob"].ToString());
+                lblDate.Text = Utils.FormatDateShort(dt.Rows[0]["appointment_date"].ToString());
                 lblAddress.Text = dt.Rows[0]["address"].ToString();
                 lblNationality.Text = dt.Rows[0]["nationality"].ToString();
                 lblDescription.Text = dt.Rows[0]["history"].ToString();

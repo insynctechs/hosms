@@ -9,7 +9,7 @@ namespace HospitalERP
 {
     public partial class frmConsultationDetails : Form
     {
-        log4net.ILog ilog;
+
         ConsultationDetails objCD = new ConsultationDetails();
         Appointments objApp = new Appointments();
         //DataSet ds;
@@ -20,8 +20,6 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             }
             catch (Exception ex)
             {
@@ -35,8 +33,6 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 txtAppID.Text = aptid.ToString();
                 txtPatientID.Text = patid.ToString();
             }

@@ -122,6 +122,7 @@ namespace HospitalERP
                             frmOneTimeBill frm = new frmOneTimeBill(Int32.Parse(dgvList.Rows[e.RowIndex].Cells["bID"].Value.ToString()));
                             frm.ShowDialog();
                         }
+                        GetBills();
                         break;
                 }
             }

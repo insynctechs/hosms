@@ -28,11 +28,23 @@ namespace HospitalERP
                 PopulateStatus();
                 getAppointmentList();
                 startload = 1;
+
+
+                Timer timer = new Timer();
+                timer.Interval = (30 * 1000); // 30 secs
+                timer.Tick += new EventHandler(timer_Tick);
+                timer.Start();
             }
             catch (Exception ex)
             {
                 CommonLogger.Info(ex.ToString());
             }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            //refresh here...
+            getAppointmentList();
         }
 
         private void dgvApp_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -47,6 +59,10 @@ namespace HospitalERP
                     case "ABtnDetails":
                         ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
                         break;
+                    case "ABtnHistory":
+                        ViewPatientHistory(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString(), dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString());
+
+                        break;
                 }
             }
             catch (Exception ex)
@@ -54,6 +70,20 @@ namespace HospitalERP
                 CommonLogger.Info(ex.ToString());
             }
         }
+
+        private void ViewPatientHistory(string pid, string pnum)
+        {
+            try
+            {
+                frmConsultationHistory frm = new frmConsultationHistory(Int32.Parse(pid));
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
         private void GetDoctorsCombo(int tid)
         {
             try

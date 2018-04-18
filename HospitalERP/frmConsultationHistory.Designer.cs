@@ -47,14 +47,6 @@
             this.txtNationality = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtLastVisitDate = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtDues = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtMeetDate = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtDoctor = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.Label();
@@ -70,10 +62,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.Label();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtDoctorID = new System.Windows.Forms.TextBox();
@@ -251,14 +239,6 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.81633F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.18367F));
-            this.tableLayoutPanel3.Controls.Add(this.txtLastVisitDate, 3, 12);
-            this.tableLayoutPanel3.Controls.Add(this.label9, 1, 12);
-            this.tableLayoutPanel3.Controls.Add(this.txtDues, 3, 11);
-            this.tableLayoutPanel3.Controls.Add(this.label23, 1, 11);
-            this.tableLayoutPanel3.Controls.Add(this.txtMeetDate, 3, 10);
-            this.tableLayoutPanel3.Controls.Add(this.label22, 1, 10);
-            this.tableLayoutPanel3.Controls.Add(this.txtDoctor, 3, 9);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 1, 9);
             this.tableLayoutPanel3.Controls.Add(this.txtNationality, 3, 8);
             this.tableLayoutPanel3.Controls.Add(this.label5, 1, 8);
             this.tableLayoutPanel3.Controls.Add(this.txtAge, 3, 7);
@@ -283,10 +263,6 @@
             this.tableLayoutPanel3.Controls.Add(this.label31, 2, 6);
             this.tableLayoutPanel3.Controls.Add(this.label32, 2, 7);
             this.tableLayoutPanel3.Controls.Add(this.label33, 2, 8);
-            this.tableLayoutPanel3.Controls.Add(this.label34, 2, 9);
-            this.tableLayoutPanel3.Controls.Add(this.label35, 2, 10);
-            this.tableLayoutPanel3.Controls.Add(this.label36, 2, 11);
-            this.tableLayoutPanel3.Controls.Add(this.label37, 2, 12);
             this.tableLayoutPanel3.Controls.Add(this.txtAddress, 3, 4);
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -308,89 +284,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.Size = new System.Drawing.Size(315, 390);
             this.tableLayoutPanel3.TabIndex = 43;
-            // 
-            // txtLastVisitDate
-            // 
-            this.txtLastVisitDate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastVisitDate.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtLastVisitDate.Location = new System.Drawing.Point(146, 307);
-            this.txtLastVisitDate.Margin = new System.Windows.Forms.Padding(3);
-            this.txtLastVisitDate.Name = "txtLastVisitDate";
-            this.txtLastVisitDate.Size = new System.Drawing.Size(100, 19);
-            this.txtLastVisitDate.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 307);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 18);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Last Visit Date";
-            // 
-            // txtDues
-            // 
-            this.txtDues.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDues.ForeColor = System.Drawing.Color.Red;
-            this.txtDues.Location = new System.Drawing.Point(146, 282);
-            this.txtDues.Margin = new System.Windows.Forms.Padding(3);
-            this.txtDues.Name = "txtDues";
-            this.txtDues.Size = new System.Drawing.Size(100, 19);
-            this.txtDues.TabIndex = 0;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(13, 282);
-            this.label23.Margin = new System.Windows.Forms.Padding(3);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(102, 18);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Billed Dues";
-            // 
-            // txtMeetDate
-            // 
-            this.txtMeetDate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMeetDate.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtMeetDate.Location = new System.Drawing.Point(146, 257);
-            this.txtMeetDate.Margin = new System.Windows.Forms.Padding(3);
-            this.txtMeetDate.Name = "txtMeetDate";
-            this.txtMeetDate.Size = new System.Drawing.Size(100, 19);
-            this.txtMeetDate.TabIndex = 0;
-            this.txtMeetDate.Text = " ";
-            // 
-            // label22
-            // 
-            this.label22.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(13, 257);
-            this.label22.Margin = new System.Windows.Forms.Padding(3);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(102, 18);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Visit Date";
-            // 
-            // txtDoctor
-            // 
-            this.txtDoctor.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoctor.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtDoctor.Location = new System.Drawing.Point(146, 232);
-            this.txtDoctor.Margin = new System.Windows.Forms.Padding(3);
-            this.txtDoctor.Name = "txtDoctor";
-            this.txtDoctor.Size = new System.Drawing.Size(166, 19);
-            this.txtDoctor.TabIndex = 0;
-            this.txtDoctor.Text = " ";
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 232);
-            this.label6.Margin = new System.Windows.Forms.Padding(3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Doctor";
             // 
             // label1
             // 
@@ -538,42 +431,6 @@
             this.label33.Size = new System.Drawing.Size(9, 18);
             this.label33.TabIndex = 33;
             this.label33.Text = ":";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(131, 229);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(9, 18);
-            this.label34.TabIndex = 33;
-            this.label34.Text = ":";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(131, 254);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(9, 18);
-            this.label35.TabIndex = 33;
-            this.label35.Text = ":";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(131, 279);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(9, 18);
-            this.label36.TabIndex = 33;
-            this.label36.Text = ":";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(131, 304);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(9, 18);
-            this.label37.TabIndex = 33;
-            this.label37.Text = ":";
             // 
             // txtAddress
             // 
@@ -923,7 +780,6 @@
 
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.TextBox txtAppID;
         private System.Windows.Forms.TextBox txtPatientID;
@@ -945,13 +801,6 @@
         private System.Windows.Forms.Label txtAge;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label txtNationality;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label txtDoctor;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label txtMeetDate;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label txtDues;
-        private System.Windows.Forms.Label txtLastVisitDate;
         private System.Windows.Forms.Label lblHead1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label26;
@@ -962,10 +811,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label txtAddress;
         private System.Windows.Forms.TabControl tabConsult;
         private System.Windows.Forms.TabPage tbPgHistory;

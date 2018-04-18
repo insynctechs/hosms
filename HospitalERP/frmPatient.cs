@@ -418,6 +418,19 @@ namespace HospitalERP
 
         }
 
+        private void ViewPatientHistory(string pid, string pnum)
+        {
+            try
+            {
+                frmConsultationHistory frm = new frmConsultationHistory(Int32.Parse(pid));
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -428,6 +441,10 @@ namespace HospitalERP
                         txtID.Text = dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString();
                         setFormFields(Convert.ToInt32(txtID.Text));
                         tabSub.SelectedIndex = 0;
+                        break;
+                    case "PBtnHistory":
+                        ViewPatientHistory(dgvList.Rows[e.RowIndex].Cells["colID"].Value.ToString(), dgvList.Rows[e.RowIndex].Cells["PatNum"].Value.ToString());
+
                         break;
                 }
             }
