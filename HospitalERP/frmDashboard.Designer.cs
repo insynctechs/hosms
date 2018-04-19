@@ -65,19 +65,19 @@
             this.lblULastLog = new System.Windows.Forms.Label();
             this.panelDashMain = new System.Windows.Forms.Panel();
             this.flowPanelDashMain = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPatientServices = new System.Windows.Forms.Label();
             this.btnDashReg = new System.Windows.Forms.Button();
             this.btnDashApp = new System.Windows.Forms.Button();
-            this.btnDashBillSearch = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnDashBill = new System.Windows.Forms.Button();
+            this.lblPatientConsole = new System.Windows.Forms.Label();
             this.btnDashDocs = new System.Windows.Forms.Button();
-            this.btnDashStffGen = new System.Windows.Forms.Button();
+            this.btnDashStaffGen = new System.Windows.Forms.Button();
             this.btnDashStaffType = new System.Windows.Forms.Button();
             this.btnDashDept = new System.Windows.Forms.Button();
             this.btnDashProc = new System.Windows.Forms.Button();
             this.btnDashProcType = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDashUserRoles = new System.Windows.Forms.Button();
+            this.lblAdminServices = new System.Windows.Forms.Label();
+            this.btnDashUserRole = new System.Windows.Forms.Button();
             this.btnDashOpt = new System.Windows.Forms.Button();
             this.btnDashReports = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -532,19 +532,19 @@
             // flowPanelDashMain
             // 
             this.flowPanelDashMain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowPanelDashMain.Controls.Add(this.label1);
+            this.flowPanelDashMain.Controls.Add(this.lblPatientServices);
             this.flowPanelDashMain.Controls.Add(this.btnDashReg);
             this.flowPanelDashMain.Controls.Add(this.btnDashApp);
-            this.flowPanelDashMain.Controls.Add(this.btnDashBillSearch);
-            this.flowPanelDashMain.Controls.Add(this.label3);
+            this.flowPanelDashMain.Controls.Add(this.btnDashBill);
+            this.flowPanelDashMain.Controls.Add(this.lblPatientConsole);
             this.flowPanelDashMain.Controls.Add(this.btnDashDocs);
-            this.flowPanelDashMain.Controls.Add(this.btnDashStffGen);
+            this.flowPanelDashMain.Controls.Add(this.btnDashStaffGen);
             this.flowPanelDashMain.Controls.Add(this.btnDashStaffType);
             this.flowPanelDashMain.Controls.Add(this.btnDashDept);
             this.flowPanelDashMain.Controls.Add(this.btnDashProc);
             this.flowPanelDashMain.Controls.Add(this.btnDashProcType);
-            this.flowPanelDashMain.Controls.Add(this.label2);
-            this.flowPanelDashMain.Controls.Add(this.btnDashUserRoles);
+            this.flowPanelDashMain.Controls.Add(this.lblAdminServices);
+            this.flowPanelDashMain.Controls.Add(this.btnDashUserRole);
             this.flowPanelDashMain.Controls.Add(this.btnDashOpt);
             this.flowPanelDashMain.Controls.Add(this.btnDashReports);
             this.flowPanelDashMain.Location = new System.Drawing.Point(0, 6);
@@ -552,19 +552,19 @@
             this.flowPanelDashMain.Size = new System.Drawing.Size(614, 453);
             this.flowPanelDashMain.TabIndex = 0;
             // 
-            // label1
+            // lblPatientServices
             // 
-            this.label1.AllowDrop = true;
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPatientServices.AllowDrop = true;
+            this.lblPatientServices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 50, 0);
-            this.label1.Size = new System.Drawing.Size(647, 27);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Patient Services";
+            this.lblPatientServices.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientServices.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblPatientServices.Location = new System.Drawing.Point(3, 0);
+            this.lblPatientServices.Name = "lblPatientServices";
+            this.lblPatientServices.Padding = new System.Windows.Forms.Padding(0, 0, 50, 0);
+            this.lblPatientServices.Size = new System.Drawing.Size(647, 27);
+            this.lblPatientServices.TabIndex = 2;
+            this.lblPatientServices.Text = "Patient Services";
             // 
             // btnDashReg
             // 
@@ -609,38 +609,38 @@
             this.btnDashApp.UseVisualStyleBackColor = true;
             this.btnDashApp.Click += new System.EventHandler(this.btnDashApp_Click);
             // 
-            // btnDashBillSearch
+            // btnDashBill
             // 
-            this.btnDashBillSearch.BackColor = System.Drawing.Color.White;
-            this.btnDashBillSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashBillSearch.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDashBillSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Honeydew;
-            this.btnDashBillSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
-            this.btnDashBillSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashBillSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashBillSearch.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnDashBillSearch.Image = global::HospitalERP.Properties.Resources.billing;
-            this.btnDashBillSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashBillSearch.Location = new System.Drawing.Point(399, 30);
-            this.btnDashBillSearch.Name = "btnDashBillSearch";
-            this.btnDashBillSearch.Size = new System.Drawing.Size(202, 72);
-            this.btnDashBillSearch.TabIndex = 5;
-            this.btnDashBillSearch.Text = "Billing";
-            this.btnDashBillSearch.UseVisualStyleBackColor = true;
-            this.btnDashBillSearch.Click += new System.EventHandler(this.btnDashBillSearch_Click);
+            this.btnDashBill.BackColor = System.Drawing.Color.White;
+            this.btnDashBill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashBill.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDashBill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Honeydew;
+            this.btnDashBill.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
+            this.btnDashBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashBill.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashBill.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnDashBill.Image = global::HospitalERP.Properties.Resources.billing;
+            this.btnDashBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashBill.Location = new System.Drawing.Point(399, 30);
+            this.btnDashBill.Name = "btnDashBill";
+            this.btnDashBill.Size = new System.Drawing.Size(202, 72);
+            this.btnDashBill.TabIndex = 5;
+            this.btnDashBill.Text = "Billing";
+            this.btnDashBill.UseVisualStyleBackColor = true;
+            this.btnDashBill.Click += new System.EventHandler(this.btnDashBillSearch_Click);
             // 
-            // label3
+            // lblPatientConsole
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowPanelDashMain.SetFlowBreak(this.label3, true);
-            this.label3.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(3, 115);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(647, 33);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Patient Console";
+            this.lblPatientConsole.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowPanelDashMain.SetFlowBreak(this.lblPatientConsole, true);
+            this.lblPatientConsole.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientConsole.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblPatientConsole.Location = new System.Drawing.Point(3, 115);
+            this.lblPatientConsole.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lblPatientConsole.Name = "lblPatientConsole";
+            this.lblPatientConsole.Size = new System.Drawing.Size(647, 33);
+            this.lblPatientConsole.TabIndex = 6;
+            this.lblPatientConsole.Text = "Patient Console";
             // 
             // btnDashDocs
             // 
@@ -663,26 +663,26 @@
             this.btnDashDocs.UseVisualStyleBackColor = true;
             this.btnDashDocs.Click += new System.EventHandler(this.btnDashDocs_Click);
             // 
-            // btnDashStffGen
+            // btnDashStaffGen
             // 
-            this.btnDashStffGen.BackColor = System.Drawing.Color.White;
-            this.btnDashStffGen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashStffGen.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDashStffGen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Honeydew;
-            this.btnDashStffGen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
-            this.btnDashStffGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashStffGen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashStffGen.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnDashStffGen.Image = global::HospitalERP.Properties.Resources.staffs;
-            this.btnDashStffGen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashStffGen.Location = new System.Drawing.Point(203, 151);
-            this.btnDashStffGen.Name = "btnDashStffGen";
-            this.btnDashStffGen.Size = new System.Drawing.Size(190, 72);
-            this.btnDashStffGen.TabIndex = 8;
-            this.btnDashStffGen.Text = "Staffs";
-            this.btnDashStffGen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDashStffGen.UseVisualStyleBackColor = true;
-            this.btnDashStffGen.Click += new System.EventHandler(this.btnDashStffGen_Click);
+            this.btnDashStaffGen.BackColor = System.Drawing.Color.White;
+            this.btnDashStaffGen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashStaffGen.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDashStaffGen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Honeydew;
+            this.btnDashStaffGen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
+            this.btnDashStaffGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashStaffGen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashStaffGen.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnDashStaffGen.Image = global::HospitalERP.Properties.Resources.staffs;
+            this.btnDashStaffGen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashStaffGen.Location = new System.Drawing.Point(203, 151);
+            this.btnDashStaffGen.Name = "btnDashStaffGen";
+            this.btnDashStaffGen.Size = new System.Drawing.Size(190, 72);
+            this.btnDashStaffGen.TabIndex = 8;
+            this.btnDashStaffGen.Text = "Staffs";
+            this.btnDashStaffGen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashStaffGen.UseVisualStyleBackColor = true;
+            this.btnDashStaffGen.Click += new System.EventHandler(this.btnDashStffGen_Click);
             // 
             // btnDashStaffType
             // 
@@ -768,41 +768,41 @@
             this.btnDashProcType.UseVisualStyleBackColor = true;
             this.btnDashProcType.Click += new System.EventHandler(this.btnDashProcType_Click);
             // 
-            // label2
+            // lblAdminServices
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblAdminServices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowPanelDashMain.SetFlowBreak(this.label2, true);
-            this.label2.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(3, 319);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(647, 30);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Admin Services";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.flowPanelDashMain.SetFlowBreak(this.lblAdminServices, true);
+            this.lblAdminServices.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminServices.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblAdminServices.Location = new System.Drawing.Point(3, 319);
+            this.lblAdminServices.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
+            this.lblAdminServices.Name = "lblAdminServices";
+            this.lblAdminServices.Size = new System.Drawing.Size(647, 30);
+            this.lblAdminServices.TabIndex = 13;
+            this.lblAdminServices.Text = "Admin Services";
+            this.lblAdminServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnDashUserRoles
+            // btnDashUserRole
             // 
-            this.btnDashUserRoles.BackColor = System.Drawing.Color.White;
-            this.btnDashUserRoles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashUserRoles.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDashUserRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Honeydew;
-            this.btnDashUserRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
-            this.btnDashUserRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashUserRoles.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashUserRoles.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnDashUserRoles.Image = global::HospitalERP.Properties.Resources.user_roles;
-            this.btnDashUserRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashUserRoles.Location = new System.Drawing.Point(3, 352);
-            this.btnDashUserRoles.Name = "btnDashUserRoles";
-            this.btnDashUserRoles.Size = new System.Drawing.Size(194, 72);
-            this.btnDashUserRoles.TabIndex = 14;
-            this.btnDashUserRoles.Text = "User Roles";
-            this.btnDashUserRoles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDashUserRoles.UseVisualStyleBackColor = true;
-            this.btnDashUserRoles.Click += new System.EventHandler(this.btnDashUserRoles_Click);
+            this.btnDashUserRole.BackColor = System.Drawing.Color.White;
+            this.btnDashUserRole.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashUserRole.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDashUserRole.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Honeydew;
+            this.btnDashUserRole.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
+            this.btnDashUserRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashUserRole.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashUserRole.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnDashUserRole.Image = global::HospitalERP.Properties.Resources.user_roles;
+            this.btnDashUserRole.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashUserRole.Location = new System.Drawing.Point(3, 352);
+            this.btnDashUserRole.Name = "btnDashUserRole";
+            this.btnDashUserRole.Size = new System.Drawing.Size(194, 72);
+            this.btnDashUserRole.TabIndex = 14;
+            this.btnDashUserRole.Text = "User Roles";
+            this.btnDashUserRole.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashUserRole.UseVisualStyleBackColor = true;
+            this.btnDashUserRole.Click += new System.EventHandler(this.btnDashUserRoles_Click);
             // 
             // btnDashOpt
             // 
@@ -888,19 +888,19 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lblHead1;
         private System.Windows.Forms.FlowLayoutPanel flowPanelDashMain;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPatientServices;
         private System.Windows.Forms.Button btnDashReg;
         private System.Windows.Forms.Button btnDashApp;
-        private System.Windows.Forms.Button btnDashBillSearch;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnDashBill;
+        private System.Windows.Forms.Label lblPatientConsole;
         private System.Windows.Forms.Button btnDashDocs;
-        private System.Windows.Forms.Button btnDashStffGen;
+        private System.Windows.Forms.Button btnDashStaffGen;
         private System.Windows.Forms.Button btnDashStaffType;
         private System.Windows.Forms.Button btnDashDept;
         private System.Windows.Forms.Button btnDashProc;
         private System.Windows.Forms.Button btnDashProcType;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDashUserRoles;
+        private System.Windows.Forms.Label lblAdminServices;
+        private System.Windows.Forms.Button btnDashUserRole;
         private System.Windows.Forms.Button btnDashOpt;
         private System.Windows.Forms.Button btnDashReports;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

@@ -51,13 +51,35 @@ namespace HospitalERP
             try
             {
                 DataTable dtMenu = mn.GetUserTypeMenusRemoveList(LoggedUser.type_id);
+               
+                string[] console1 = new string[] {"btnDashReg","btnDashApp","btnDashBill" };
+                string[] console2 = new string[] { "btnDashDocs", "btnDashStaffGen", "btnDashStaffType", "btnDashDept", "btnDashProc", "btnDashProcType" };
+                string[] console3 = new string[] { "btnDashUserRole", "btnDashOpt", "btnDashReports"};
                 foreach (DataRow dr in dtMenu.Rows)
                 {
                     string menu_name = dr["menu_name"].ToString();
                     string btn_name = menu_name.Replace("menuItem", "btnDash");
                     if (flowPanelDashMain.Controls.ContainsKey(btn_name))
+                    {
                         flowPanelDashMain.Controls.RemoveByKey(btn_name);
+                        console1 = console1.Where(val => val != btn_name).ToArray();
+                        console2 = console2.Where(val => val != btn_name).ToArray();
+                        console3 = console3.Where(val => val != btn_name).ToArray();
+                    }
                 }
+                if(console1.Length==0)
+                {
+                    lblPatientServices.Visible = false;
+                }
+                if (console2.Length == 0)
+                {
+                    lblPatientConsole.Visible = false;
+                }
+                if (console3.Length == 0)
+                {
+                    lblAdminServices.Visible = false;
+                }
+
             }
             catch (Exception ex)
             {
