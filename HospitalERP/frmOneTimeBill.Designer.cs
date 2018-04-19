@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOneTimeBill));
             this.PanelBottom = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -417,41 +417,41 @@
             this.dgvInv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvInv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Num,
             this.Description,
             this.Amount});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInv.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvInv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInv.EnableHeadersVisualStyles = false;
             this.dgvInv.GridColor = System.Drawing.Color.White;
             this.dgvInv.Location = new System.Drawing.Point(52, 279);
             this.dgvInv.Name = "dgvInv";
             this.dgvInv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvInv.RowHeadersVisible = false;
             this.dgvInv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvInv.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -652,90 +652,113 @@
             // 
             // txtPatNum
             // 
+            this.txtPatNum.BackColor = System.Drawing.Color.White;
             this.txtPatNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPatNum.Location = new System.Drawing.Point(123, 97);
             this.txtPatNum.Name = "txtPatNum";
+            this.txtPatNum.ReadOnly = true;
             this.txtPatNum.Size = new System.Drawing.Size(217, 14);
             this.txtPatNum.TabIndex = 2;
             // 
             // txtPatName
             // 
+            this.txtPatName.BackColor = System.Drawing.Color.White;
             this.txtPatName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPatName.Location = new System.Drawing.Point(123, 126);
             this.txtPatName.Name = "txtPatName";
+            this.txtPatName.ReadOnly = true;
             this.txtPatName.Size = new System.Drawing.Size(217, 14);
             this.txtPatName.TabIndex = 2;
             // 
             // txtAddress
             // 
+            this.txtAddress.BackColor = System.Drawing.Color.White;
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAddress.Location = new System.Drawing.Point(123, 155);
+            this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(217, 14);
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(217, 52);
             this.txtAddress.TabIndex = 2;
             // 
             // txtAppId
             // 
+            this.txtAppId.BackColor = System.Drawing.Color.White;
             this.txtAppId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAppId.Location = new System.Drawing.Point(513, 30);
             this.txtAppId.Name = "txtAppId";
+            this.txtAppId.ReadOnly = true;
             this.txtAppId.Size = new System.Drawing.Size(194, 14);
             this.txtAppId.TabIndex = 3;
             // 
             // txtDoctor
             // 
+            this.txtDoctor.BackColor = System.Drawing.Color.White;
             this.txtDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableLayoutPanel1.SetColumnSpan(this.txtDoctor, 3);
             this.txtDoctor.Location = new System.Drawing.Point(513, 57);
             this.txtDoctor.Name = "txtDoctor";
+            this.txtDoctor.ReadOnly = true;
             this.txtDoctor.Size = new System.Drawing.Size(392, 14);
             this.txtDoctor.TabIndex = 3;
             // 
             // txtNationality
             // 
+            this.txtNationality.BackColor = System.Drawing.Color.White;
             this.txtNationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNationality.Location = new System.Drawing.Point(513, 97);
             this.txtNationality.Name = "txtNationality";
+            this.txtNationality.ReadOnly = true;
             this.txtNationality.Size = new System.Drawing.Size(194, 14);
             this.txtNationality.TabIndex = 3;
             // 
             // txtAge
             // 
+            this.txtAge.BackColor = System.Drawing.Color.White;
             this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAge.Location = new System.Drawing.Point(513, 126);
             this.txtAge.Name = "txtAge";
+            this.txtAge.ReadOnly = true;
             this.txtAge.Size = new System.Drawing.Size(194, 14);
             this.txtAge.TabIndex = 3;
             // 
             // txtToken
             // 
+            this.txtToken.BackColor = System.Drawing.Color.White;
             this.txtToken.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtToken.Location = new System.Drawing.Point(819, 30);
             this.txtToken.Name = "txtToken";
+            this.txtToken.ReadOnly = true;
             this.txtToken.Size = new System.Drawing.Size(86, 14);
             this.txtToken.TabIndex = 4;
             // 
             // txtGender
             // 
+            this.txtGender.BackColor = System.Drawing.Color.White;
             this.txtGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGender.Location = new System.Drawing.Point(819, 126);
             this.txtGender.Name = "txtGender";
+            this.txtGender.ReadOnly = true;
             this.txtGender.Size = new System.Drawing.Size(86, 14);
             this.txtGender.TabIndex = 4;
             // 
             // txtDate
             // 
+            this.txtDate.BackColor = System.Drawing.Color.White;
             this.txtDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDate.Location = new System.Drawing.Point(123, 57);
             this.txtDate.Name = "txtDate";
+            this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(217, 14);
             this.txtDate.TabIndex = 2;
             // 
             // txtInvNum
             // 
+            this.txtInvNum.BackColor = System.Drawing.Color.White;
             this.txtInvNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInvNum.Location = new System.Drawing.Point(123, 30);
             this.txtInvNum.Name = "txtInvNum";
+            this.txtInvNum.ReadOnly = true;
             this.txtInvNum.Size = new System.Drawing.Size(217, 14);
             this.txtInvNum.TabIndex = 2;
             // 

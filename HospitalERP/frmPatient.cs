@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
@@ -57,9 +58,30 @@ namespace HospitalERP
                                 clearFormFields();
                                 if (chkAppointment.Checked == true)
                                 {
-                                    frmAppointments app = new frmAppointments(rtn);
-                                    app.MdiParent = this.ParentForm;
-                                    app.Show();
+                                    if (LoggedUser.type_name.ToUpper() == "DOCTOR")
+                                    {
+                                        if (Application.OpenForms.OfType<frmConsultations>().Count() == 1)
+                                            Application.OpenForms.OfType<frmConsultations>().First().BringToFront();
+                                        else
+                                        {
+                                            frmConsultations frm = new frmConsultations();
+                                            frm.MdiParent = this.ParentForm;
+                                            frm.Show();
+                                        }
+                                    }
+                                    else
+                                    {
+
+                                        if (Application.OpenForms.OfType<frmAppointments>().Count() == 1)
+                                            Application.OpenForms.OfType<frmAppointments>().First().BringToFront();
+                                        else
+                                        {
+                                            frmAppointments app = new frmAppointments(rtn);
+                                            app.MdiParent = this.ParentForm;
+                                            app.Show();
+                                        }
+                                    }
+                                    
                                 }
 
                             }

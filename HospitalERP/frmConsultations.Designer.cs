@@ -324,16 +324,15 @@
             this.ABtnBill.HeaderText = "";
             this.ABtnBill.Name = "ABtnBill";
             this.ABtnBill.ReadOnly = true;
-            this.ABtnBill.Text = "Generate/View Bill";
+            this.ABtnBill.Text = "Generate Bill";
             this.ABtnBill.UseColumnTextForButtonValue = true;
-            this.ABtnBill.Visible = false;
             // 
             // ABtnDetails
             // 
             this.ABtnDetails.HeaderText = "";
             this.ABtnDetails.Name = "ABtnDetails";
             this.ABtnDetails.ReadOnly = true;
-            this.ABtnDetails.Text = "Select / View Details";
+            this.ABtnDetails.Text = "View Details";
             this.ABtnDetails.UseColumnTextForButtonValue = true;
             // 
             // ABtnHistory

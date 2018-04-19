@@ -24,10 +24,12 @@ namespace HospitalERP
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+                dgvApp.AutoGenerateColumns = false;
                 GetDoctorsCombo(0);
                 PopulateStatus();
                 getAppointmentList();
                 startload = 1;
+                
 
 
                 Timer timer = new Timer();
@@ -214,11 +216,8 @@ namespace HospitalERP
         {
             try
             {
-                if (Application.OpenForms.OfType<frmBilling>().Count() == 1)
-                    Application.OpenForms.OfType<frmBilling>().First().Close();
-                frmBilling frm = new frmBilling(app_id, pat_id);
-                frm.MdiParent = this.ParentForm;
-                frm.Show();
+                frmOneTimeBill frm = new frmOneTimeBill(app_id, pat_id);
+                frm.ShowDialog();
             }
             catch (Exception ex)
             {

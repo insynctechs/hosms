@@ -383,12 +383,12 @@ namespace HospitalERP
         {
             try
             {
-                if (Application.OpenForms.OfType<frmAppointmentBill>().Count() == 1)
+                /*if (Application.OpenForms.OfType<frmAppointmentBill>().Count() == 1)
                     Application.OpenForms.OfType<frmAppointmentBill>().First().Close();
-                //frmAppointmentBill frm = new frmAppointmentBill(app_id, pat_id);
+                frmAppointmentBill frm = new frmAppointmentBill(app_id, pat_id);
+                                frm.MdiParent = this.ParentForm;
+                frm.Show();*/
                 frmOneTimeBill frm = new frmOneTimeBill(app_id, pat_id);
-                //frm.MdiParent = this.ParentForm;
-                //frm.Show();
                 frm.ShowDialog();
             }
             catch (Exception ex)
