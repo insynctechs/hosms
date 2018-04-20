@@ -49,14 +49,7 @@ namespace HospitalERP
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-                if(Utils.DaysBetweenDates(txtMeetDate.Text,DateTime.Now.ToShortDateString())>0)
-                {
-                    EnableEditableButtons(false);
-                }
-                else
-                {
-                    EnableEditableButtons(false);
-                }
+                
             }
             catch (Exception ex)
             {
@@ -155,6 +148,7 @@ namespace HospitalERP
                 btnSave.Enabled = val;
                 btnSaveProcedure.Enabled = val;
                 btnAddNew.Enabled = val;
+                cmbAppStatus.Enabled = val;
             }
             catch (Exception ex)
             {
@@ -420,6 +414,16 @@ namespace HospitalERP
                 //cmbStatus.DataSource = objCD.StatusCombo(0);
                 PopulateAppointmentStatusCombo();
                 getConsultationDetails();
+                //Buttons are disabled when
+                //prev dates , completed status and users not doctors and super admin 
+                if (Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) > 0 || (cmbAppStatus.SelectedValue.ToString() =="2") || (LoggedUser.type_id !=1 && LoggedUser.type_id != 3))
+                {
+                    EnableEditableButtons(false);
+                }
+                else
+                {
+                    EnableEditableButtons(true);
+                }
             }
             catch (Exception ex)
             {
@@ -490,15 +494,7 @@ namespace HospitalERP
 
         private void btnGenerateBill_Click(object sender, EventArgs e)
         {
-            try
-            {
-                frmRptSickLeave rsl = new frmRptSickLeave(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()));
-                rsl.ShowDialog(this);
-            }
-            catch (Exception ex)
-            {
-                CommonLogger.Info(ex.ToString());
-            }
+           
         }
 
         private void btnMedicalReport_Click(object sender, EventArgs e)
@@ -526,5 +522,37 @@ namespace HospitalERP
                 CommonLogger.Info(ex.ToString());
             }
         }
-}
+
+        private void btnSickLeave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmRptSickLeave rsl = new frmRptSickLeave(Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim()));
+                rsl.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void btnGenBill_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbAppStatus.SelectedValue.ToString() == "2")
+                {
+                    frmOneTimeBill frm = new frmOneTimeBill(Int32.Parse(txtAppID.Text.ToString()), Int32.Parse(txtPatientID.Text));
+                    frm.ShowDialog();
+                }
+                else
+                    MessageBox.Show("Bill can be generated only for completed appointments. \n Please change the status to completed before generating the bill.");
+               
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+    }
 }

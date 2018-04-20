@@ -56,7 +56,6 @@ namespace HospitalERP
                 if (patient_id > 0)
                 {
                     txtPatientID.Text = patient_id.ToString();
-
                 }
                 getAppointmentList();
                 startload = 1;
@@ -301,17 +300,8 @@ namespace HospitalERP
                 switch (dgvApp.Columns[e.ColumnIndex].Name)
                 {
                     case "ABtnBill":
-                        
-                        if (this.dtpAppDate.Text != DateTime.Now.ToShortDateString())
-                        {
-                            MessageBox.Show("Sorry! Bill can generate only on today's date.");
-                        }
-                        else
-                        {
                             ViewBill(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
-                            ///this.ABtnBill.Visible = true;                            
-                        }
-                        break;
+                            break;
                     case "ABtnDetails":
                         ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
                         break;
@@ -388,8 +378,17 @@ namespace HospitalERP
                 frmAppointmentBill frm = new frmAppointmentBill(app_id, pat_id);
                                 frm.MdiParent = this.ParentForm;
                 frm.Show();*/
-                frmOneTimeBill frm = new frmOneTimeBill(app_id, pat_id);
-                frm.ShowDialog();
+                /*
+                if (this.dtpAppDate.Text != DateTime.Now.ToShortDateString())
+                {
+                    MessageBox.Show("Sorry! Only today's bill can be generated.","Information",MessageBoxButtons.OK);
+                }
+                else
+                {
+                */
+                    frmOneTimeBill frm = new frmOneTimeBill(app_id, pat_id);
+                    frm.ShowDialog();
+                //}
             }
             catch (Exception ex)
             {

@@ -144,11 +144,13 @@ namespace HospitalERP
             try
             {
                 DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
+               
                 DataTable dtRec = new DataTable();
                 dtRec.Columns.Add("appointment_id", typeof(int));
                 dtRec.Columns.Add("item_no", typeof(int));
                 dtRec.Columns.Add("item_name", typeof(string));
                 dtRec.Columns.Add("item_amount", typeof(float));
+               
                 if (dtOpt.Rows.Count > 0)
                     lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();
 
@@ -160,7 +162,7 @@ namespace HospitalERP
                 //if this appointment has bill details then get records from details table
                 //else for initial loading take from appt procedures
                 dtProc = bill.getBillDetails(appointment_id);
-                if (dtProc == null || dtProc.Rows.Count==0)
+                if (dtProc == null || dtProc.Rows.Count<=0)
                 {
                     dtProc = objCD.getProceduresInvoiceFromApptID(appointment_id);
                     bill_total += Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString());
@@ -325,19 +327,7 @@ namespace HospitalERP
                     { 
                         res = objCD.editProceduresFees(dtProc);
                         //edit bill details table
-                        DataTable dtRec = new DataTable();
-                        dtRec.Columns.Add("appointment_id", typeof(int));
-                        dtRec.Columns.Add("item_no", typeof(int));
-                        dtRec.Columns.Add("item_name", typeof(string));
-                        dtRec.Columns.Add("item_amount", typeof(float));
-
-                        foreach (DataGridViewRow row in dgvInv.Rows)
-                        {      
-                            if(row.Cells[0].Value!=null)
-                                dtRec.Rows.Add(appointment_id, Convert.ToInt32(row.Cells[0].Value.ToString()), row.Cells[1].Value.ToString(), Convert.ToDouble(row.Cells[2].Value.ToString()));
-                          
-                        }
-                        res = bill.UpdateBillDetails(dtRec, appointment_id);
+                        editBillDetails();
                     }
                 }
             }
@@ -346,6 +336,31 @@ namespace HospitalERP
                 CommonLogger.Info(ex.ToString());
             }
 
+        }
+
+        private void editBillDetails()
+        {
+            try
+            {
+                //edit bill details table
+                DataTable dtRec = new DataTable();
+                dtRec.Columns.Add("appointment_id", typeof(int));
+                dtRec.Columns.Add("item_no", typeof(int));
+                dtRec.Columns.Add("item_name", typeof(string));
+                dtRec.Columns.Add("item_amount", typeof(float));
+
+                foreach (DataGridViewRow row in dgvInv.Rows)
+                {
+                    if (row.Cells[0].Value != null)
+                        dtRec.Rows.Add(appointment_id, Convert.ToInt32(row.Cells[0].Value.ToString()), row.Cells[1].Value.ToString(), Convert.ToDouble(row.Cells[2].Value.ToString()));
+
+                }
+                int res = bill.UpdateBillDetails(dtRec, appointment_id);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -420,7 +435,7 @@ namespace HospitalERP
             // Confirm that the cell is not empty.
             if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
             {
-                dgvInv.Rows[e.RowIndex].ErrorText = "Amount must not be empty";
+                MessageBox.Show( "Amount must not be empty");
                 e.Cancel = true;
             }
         }
@@ -447,6 +462,24 @@ namespace HospitalERP
                     row.Cells[1].ReadOnly = false;
                     row.Cells[2].ReadOnly = false;
                 }
+            }
+        }
+
+        private void dgvInv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if(dgvInv.Columns[e.ColumnIndex].Name == "btnDel")
+                {
+                    dgvInv.Rows.RemoveAt(e.RowIndex);
+                    editBillDetails();
+                    MessageBox.Show("Record Deleted ");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
             }
         }
     }
