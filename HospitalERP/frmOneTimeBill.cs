@@ -144,13 +144,6 @@ namespace HospitalERP
             try
             {
                 DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
-               
-                DataTable dtRec = new DataTable();
-                dtRec.Columns.Add("appointment_id", typeof(int));
-                dtRec.Columns.Add("item_no", typeof(int));
-                dtRec.Columns.Add("item_name", typeof(string));
-                dtRec.Columns.Add("item_amount", typeof(float));
-               
                 if (dtOpt.Rows.Count > 0)
                     lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();
 
@@ -162,20 +155,18 @@ namespace HospitalERP
                 //if this appointment has bill details then get records from details table
                 //else for initial loading take from appt procedures
                 dtProc = bill.getBillDetails(appointment_id);
-                if (dtProc == null || dtProc.Rows.Count<=0)
+                if (dtProc == null || dtProc.Rows.Count<=0) //no recs in billing details
                 {
                     dtProc = objCD.getProceduresInvoiceFromApptID(appointment_id);
                     bill_total += Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString());
-                    k = 2;
-                    dtRec.Rows.Add(appointment_id, 1, "Consultation Fees and Charges", Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString()));
+                    k = 2;                  
                     dgvInv.Rows.Add(new object[] { "1", "Consultation Fees and Charges", Utils.FormatAmount(Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString())) });
                 }
                 
 
                 foreach (DataRow row in dtProc.Rows)
                 {
-                    dgvInv.Rows.Add(new object[] { k, row["name"].ToString(), row["fee"].ToString() });
-                    dtRec.Rows.Add(appointment_id, k, row["name"].ToString(), Convert.ToDouble(row["fee"].ToString()));
+                    dgvInv.Rows.Add(new object[] { k, row["name"].ToString(), row["fee"].ToString() });                    
                     bill_total += Convert.ToDouble(row["fee"].ToString());
                     k++;                    
                 }
@@ -190,11 +181,10 @@ namespace HospitalERP
                     {
                         if (!(LoggedUser.id > 0))
                             LoggedUser.id = 1;
-                        //sj bill_id = bill.AddBill(appointment_id, patient_id, Convert.ToDecimal(dtPat.Rows[0]["doctor_fee"].ToString()), 1, LoggedUser.id);
+       
                         bill_id = bill.AddBill(appointment_id, patient_id, Convert.ToDecimal(bill_total), 3, LoggedUser.id);
 
-                        //add details to bill_details table
-                        bill.UpdateBillDetails(dtRec, appointment_id);
+                        
                         if (bill_id > 0)
                         {
                             dtBill = bill.GetBill(bill_id);
@@ -226,12 +216,6 @@ namespace HospitalERP
                     if (dtUser != null)
                         txtLoggedUser.Text = dtUser.Rows[0]["staff_name"].ToString();
                     cmbBillStatus.SelectedValue = dtBill.Rows[0]["bill_status"].ToString();
-                    if (dtBill.Rows[0]["bill_status"].ToString() == "4")
-                    {
-                        txtPaid.ReadOnly = true;
-                        dgvInv.ReadOnly = true;
-                        btnSave.Enabled = false;
-                    }
                 }
             }
             catch (Exception ex)
@@ -241,20 +225,33 @@ namespace HospitalERP
         }
 
         private void dgvInv_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            decimal fee_total = 0;
+        {            
             try
             {
                 if (e.ColumnIndex == 2 && e.RowIndex!=-1 )
                 {
-                    for (int m = 0; m < dgvInv.RowCount - 1; m++)
-                        fee_total += Convert.ToDecimal(dgvInv.Rows[m].Cells["Amount"].Value.ToString());
-
-                    fee_total += Convert.ToDecimal(txtPrevDues.Text.ToString());
-                    txtTotal.Text = fee_total.ToString();
+                    setTotalAmount();
                    
                 }
                 cell_modified = 1;
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+        }
+
+        private void setTotalAmount()
+        {
+            decimal fee_total = 0;
+            try
+            {
+                for (int m = 0; m < dgvInv.RowCount - 1; m++)
+                   fee_total += Convert.ToDecimal(dgvInv.Rows[m].Cells["Amount"].Value.ToString());
+
+                fee_total += Convert.ToDecimal(txtPrevDues.Text.ToString());
+                txtTotal.Text = fee_total.ToString();
             }
             catch (Exception ex)
             {
@@ -316,18 +313,27 @@ namespace HospitalERP
                     if (!(LoggedUser.id > 0))
                         LoggedUser.id = 1;
                     int res = bill.editBill(bill_id, Convert.ToDecimal(bill_total), Convert.ToDecimal(bill_paid), Convert.ToDecimal(bill_balance), Int32.Parse(cmbBillStatus.SelectedValue.ToString()), LoggedUser.id);
-                    if (cmbBillStatus.SelectedValue.ToString() == "4")
+                    if (res > 0)
                     {
-                        txtPaid.ReadOnly = true;
-                        dgvInv.ReadOnly = true;
-                        btnSave.Enabled = false;
+                        MessageBox.Show("Bill Saved Succesfully", "Information", MessageBoxButtons.OK);
+                        if (cmbBillStatus.SelectedValue.ToString() == "4" || cmbBillStatus.SelectedValue.ToString() == "5")
+                        {
+                            //if paid or cancelled
+                            txtPaid.ReadOnly = true;
+                            dgvInv.ReadOnly = true;
+                            btnSave.Enabled = false;
+                        }
                     }
 
-                    if (cell_modified == 1) //edit in patient_procedures table
-                    { 
-                        res = objCD.editProceduresFees(dtProc);
+                    if (cell_modified == 1)                     
+                    {
+                        //SJ commented. 
+                        //edit in patient_procedures table
+                        //res = objCD.editProceduresFees(dtProc);
+
                         //edit bill details table
                         editBillDetails();
+                        cell_modified = 0;
                     }
                 }
             }
@@ -367,6 +373,7 @@ namespace HospitalERP
         {
             try
             {
+                dgvInv.Columns["btnDel"].Visible = false;
                 printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
                 printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
                 if (chkLetterHead.Checked == true)
@@ -390,6 +397,7 @@ namespace HospitalERP
                     printDocument1.Print();
                 }
                 printDocument1.Dispose();
+                dgvInv.Columns["btnDel"].Visible = true;
             }
             catch (Exception ex)
             {
@@ -426,16 +434,15 @@ namespace HospitalERP
 
         private void dgvInv_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            string headerText =
-            dgvInv.Columns[e.ColumnIndex].HeaderText;
+            string headerText =  dgvInv.Columns[e.ColumnIndex].HeaderText;
 
             // Abort validation if cell is not in the CompanyName column.
-            if (!headerText.Equals("Amount")) return;
-
+            //if (!headerText.Equals("Amount")) return;
+            int cnt = dgvInv.Rows.Count;
             // Confirm that the cell is not empty.
-            if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
+            if (string.IsNullOrEmpty(e.FormattedValue.ToString()) && e.RowIndex!=cnt-1)
             {
-                MessageBox.Show( "Amount must not be empty");
+                MessageBox.Show( "Please input value","Information",MessageBoxButtons.OK);
                 e.Cancel = true;
             }
         }
@@ -453,14 +460,16 @@ namespace HospitalERP
                 {
                     row.Cells[2].ReadOnly = true;
                     row.Cells[1].ReadOnly = true;
+                    row.Cells[0].ReadOnly = true;
                 }
             }
             else 
             {
                 foreach (DataGridViewRow row in dgvInv.Rows)
                 {
+                    row.Cells[0].ReadOnly = false;
                     row.Cells[1].ReadOnly = false;
-                    row.Cells[2].ReadOnly = false;
+                    row.Cells[2].ReadOnly = false;                    
                 }
             }
         }
@@ -469,11 +478,53 @@ namespace HospitalERP
         {
             try
             {
-                if(dgvInv.Columns[e.ColumnIndex].Name == "btnDel")
+                
+                 if (dgvInv.Columns[e.ColumnIndex].Name == "btnDel")
+                 { 
+                    if (dgvInv.Rows.Count > 2)
+                    {
+                        dgvInv.Rows.RemoveAt(e.RowIndex);
+                        setTotalAmount();
+
+                        //editBillDetails();
+                        MessageBox.Show("Record Deleted ", "Information", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot delete this item. Bill needs atleast one item.", "Information", MessageBoxButtons.OK);
+                    }
+                }
+               
+
+
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void frmOneTimeBill_Shown(object sender, EventArgs e)
+        {
+            enableOrDisableButtons();
+        }
+
+        private void enableOrDisableButtons()
+        {
+            try
+            {
+                if (dtBill.Rows[0]["bill_status"].ToString() == "4" || dtBill.Rows[0]["bill_status"].ToString() == "5")
                 {
-                    dgvInv.Rows.RemoveAt(e.RowIndex);
-                    editBillDetails();
-                    MessageBox.Show("Record Deleted ");
+                    // if bill status is paid/cancelled
+                    txtPaid.ReadOnly = true;
+                    dgvInv.ReadOnly = true;
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    txtPaid.ReadOnly = false;
+                    dgvInv.ReadOnly = false;
+                    btnSave.Enabled = true;
                 }
 
             }
@@ -481,6 +532,11 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
+        }
+
+        private void dgvInv_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            e.Row.Cells[0].Value = dgvInv.RowCount;
         }
     }
 }

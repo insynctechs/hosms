@@ -413,7 +413,6 @@
             // 
             // dgvInv
             // 
-            this.dgvInv.AllowUserToAddRows = false;
             this.dgvInv.AllowUserToResizeRows = false;
             this.dgvInv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInv.BackgroundColor = System.Drawing.Color.White;
@@ -472,6 +471,7 @@
             this.dgvInv.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvInv_CellPainting);
             this.dgvInv.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvInv_CellValidating);
             this.dgvInv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInv_CellValueChanged);
+            this.dgvInv.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvInv_DefaultValuesNeeded);
             // 
             // tableLayoutPanel1
             // 
@@ -769,7 +769,6 @@
             // 
             this.Num.HeaderText = "Item#";
             this.Num.Name = "Num";
-            this.Num.ReadOnly = true;
             this.Num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Description
@@ -809,6 +808,7 @@
             this.Name = "frmOneTimeBill";
             this.Text = "OneTime Bill";
             this.Load += new System.EventHandler(this.frmOneTimeBill_Load);
+            this.Shown += new System.EventHandler(this.frmOneTimeBill_Shown);
             this.PanelBottom.ResumeLayout(false);
             this.PanelBottom.PerformLayout();
             this.panel1.ResumeLayout(false);

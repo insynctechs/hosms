@@ -56,7 +56,11 @@ namespace HospitalERP
                 switch (dgvApp.Columns[e.ColumnIndex].Name)
                 {
                     case "ABtnBill":
-                        ViewBill(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
+                        if (dgvApp.Rows[e.RowIndex].Cells["AStatus"].Value.ToString() == "Completed")
+                                ViewBill(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
+                        else
+                            MessageBox.Show("Bills can be generated/view for completed appointments only", "Information", MessageBoxButtons.OK);
+
                         break;
                     case "ABtnDetails":
                         ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
