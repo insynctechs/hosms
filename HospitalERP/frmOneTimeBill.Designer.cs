@@ -774,13 +774,15 @@
             // Description
             // 
             this.Description.HeaderText = "Item Description";
+            this.Description.MinimumWidth = 500;
             this.Description.Name = "Description";
             this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Description.Width = 600;
+            this.Description.Width = 500;
             // 
             // Amount
             // 
             this.Amount.HeaderText = "Amount";
+            this.Amount.MinimumWidth = 150;
             this.Amount.Name = "Amount";
             this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Amount.Width = 150;
@@ -791,6 +793,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this.btnDel.DefaultCellStyle = dataGridViewCellStyle2;
             this.btnDel.HeaderText = "";
+            this.btnDel.MinimumWidth = 50;
             this.btnDel.Name = "btnDel";
             this.btnDel.Text = "X";
             this.btnDel.ToolTipText = "Delete";
@@ -855,7 +858,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblClinic;
-        private System.Windows.Forms.DataGridView dgvInv;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
@@ -892,5 +894,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewButtonColumn btnDel;
+        private System.Windows.Forms.DataGridView dgvInv;
     }
 }

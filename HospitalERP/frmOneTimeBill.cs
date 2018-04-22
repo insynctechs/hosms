@@ -128,7 +128,7 @@ namespace HospitalERP
 
                     }
                     e.Handled = true;
-
+                    
                     // }
                 }
             }
@@ -303,10 +303,10 @@ namespace HospitalERP
                 {
                     MessageBox.Show("Please change the status to 'Paid'");
                 }
-                else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 2 && Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 3 && bill_balance != 0)
+                //else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 2 && Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 3 && bill_balance != 0)
+                else if (bill_balance != bill_total && Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 3 && bill_balance != 0)
                 {
-                    if (bill_balance != bill_total)
-                        MessageBox.Show("Please change the status to 'Partial-Paid'");
+                    MessageBox.Show("Please change the status to 'Partial-Paid'");
                 }
                 else
                 {
@@ -316,13 +316,7 @@ namespace HospitalERP
                     if (res > 0)
                     {
                         MessageBox.Show("Bill Saved Succesfully", "Information", MessageBoxButtons.OK);
-                        if (cmbBillStatus.SelectedValue.ToString() == "4" || cmbBillStatus.SelectedValue.ToString() == "5")
-                        {
-                            //if paid or cancelled
-                            txtPaid.ReadOnly = true;
-                            dgvInv.ReadOnly = true;
-                            btnSave.Enabled = false;
-                        }
+                        enableOrDisableButtons();
                     }
 
                     if (cell_modified == 1)                     
@@ -483,11 +477,22 @@ namespace HospitalERP
                  { 
                     if (dgvInv.Rows.Count > 2)
                     {
-                        dgvInv.Rows.RemoveAt(e.RowIndex);
-                        setTotalAmount();
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this item?", "Delete Bill Item", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            //do something
+                            dgvInv.Rows.RemoveAt(e.RowIndex);
+                            setTotalAmount();
+                            resetSerialNumbers(e.RowIndex);
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            //do something else
+                        }
+                       
 
                         //editBillDetails();
-                        MessageBox.Show("Record Deleted ", "Information", MessageBoxButtons.OK);
+                        //MessageBox.Show("Record Deleted ", "Information", MessageBoxButtons.OK);
                     }
                     else
                     {
@@ -519,12 +524,14 @@ namespace HospitalERP
                     txtPaid.ReadOnly = true;
                     dgvInv.ReadOnly = true;
                     btnSave.Enabled = false;
+                    dgvInv.Columns["btnDel"].Visible = false;
                 }
                 else
                 {
                     txtPaid.ReadOnly = false;
                     dgvInv.ReadOnly = false;
                     btnSave.Enabled = true;
+                    dgvInv.Columns["btnDel"].Visible = true;
                 }
 
             }
@@ -537,6 +544,14 @@ namespace HospitalERP
         private void dgvInv_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells[0].Value = dgvInv.RowCount;
+        }
+
+        private void resetSerialNumbers(int index)
+        {
+            for(int i=index; i< dgvInv.Rows.Count-1; i++)
+            {
+                dgvInv.Rows[i].Cells[0].Value = (i+1).ToString();
+            }
         }
     }
 }
