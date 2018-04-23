@@ -307,6 +307,7 @@ namespace HospitalERP
                             break;
                     case "ABtnDetails":
                         ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
+                        getAppointmentList();
                         break;
                     case "ABtnDelete":
                         DeletePatient(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AStatusID"].Value.ToString()));
@@ -411,7 +412,7 @@ namespace HospitalERP
                     string msg = "";
                     if (ret >= 0)
                     {
-                        MessageBox.Show("Appointment Deleted");
+                        MessageBox.Show("Appointment Cancelled.","Information",MessageBoxButtons.OK);
                         getAppointmentList(0);
 
                     }
@@ -419,19 +420,19 @@ namespace HospitalERP
                     {
                         switch (ret)
                         {
-                            case -1: msg = "Error in deleting. Please try again"; break;
+                            case -1: msg = "Error in cancelling. Please try again"; break;
                             case -2: msg = "Appointment cannot be cancelled."; break;
                             case -3: msg = "Appointment cannot be cancelled as Procedures and Tests are added for the appointment"; break;
                             case -4: msg = "Appointment cannot be cancelled as Bill has been generated"; break;
 
 
                         }
-                        MessageBox.Show(msg);
+                        MessageBox.Show(msg,"Information",MessageBoxButtons.OK);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Cannot Cancel Past Appointments!");
+                    MessageBox.Show("Cannot Cancel Past Appointments!", "Information", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)

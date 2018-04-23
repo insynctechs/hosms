@@ -672,8 +672,8 @@
             this.flowLayoutPanel9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanel9.Controls.Add(this.btnMedicalReport);
             this.flowLayoutPanel9.Controls.Add(this.btnSickLeave);
-            this.flowLayoutPanel9.Controls.Add(this.btnGenBill);
             this.flowLayoutPanel9.Controls.Add(this.btnRefer);
+            this.flowLayoutPanel9.Controls.Add(this.btnGenBill);
             this.flowLayoutPanel9.Controls.Add(this.txtDoctorID);
             this.flowLayoutPanel9.Controls.Add(this.txtPatientID);
             this.flowLayoutPanel9.Controls.Add(this.txtAppID);
@@ -716,7 +716,7 @@
             this.btnGenBill.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenBill.ForeColor = System.Drawing.Color.White;
             this.btnGenBill.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGenBill.Location = new System.Drawing.Point(80, 45);
+            this.btnGenBill.Location = new System.Drawing.Point(80, 87);
             this.btnGenBill.Margin = new System.Windows.Forms.Padding(80, 3, 3, 3);
             this.btnGenBill.Name = "btnGenBill";
             this.btnGenBill.Size = new System.Drawing.Size(137, 36);
@@ -731,7 +731,7 @@
             this.btnRefer.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefer.ForeColor = System.Drawing.Color.White;
             this.btnRefer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRefer.Location = new System.Drawing.Point(3, 87);
+            this.btnRefer.Location = new System.Drawing.Point(3, 45);
             this.btnRefer.Name = "btnRefer";
             this.btnRefer.Size = new System.Drawing.Size(300, 36);
             this.btnRefer.TabIndex = 22;
@@ -742,7 +742,7 @@
             // txtDoctorID
             // 
             this.txtDoctorID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoctorID.Location = new System.Drawing.Point(3, 129);
+            this.txtDoctorID.Location = new System.Drawing.Point(223, 87);
             this.txtDoctorID.Name = "txtDoctorID";
             this.txtDoctorID.Size = new System.Drawing.Size(20, 22);
             this.txtDoctorID.TabIndex = 37;
@@ -751,7 +751,7 @@
             // txtPatientID
             // 
             this.txtPatientID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPatientID.Location = new System.Drawing.Point(29, 129);
+            this.txtPatientID.Location = new System.Drawing.Point(249, 87);
             this.txtPatientID.Name = "txtPatientID";
             this.txtPatientID.Size = new System.Drawing.Size(17, 22);
             this.txtPatientID.TabIndex = 0;
@@ -760,7 +760,7 @@
             // txtAppID
             // 
             this.txtAppID.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAppID.Location = new System.Drawing.Point(52, 129);
+            this.txtAppID.Location = new System.Drawing.Point(272, 87);
             this.txtAppID.Name = "txtAppID";
             this.txtAppID.Size = new System.Drawing.Size(15, 22);
             this.txtAppID.TabIndex = 36;
