@@ -128,7 +128,7 @@ namespace HospitalERP
 
                     }
                     e.Handled = true;
-                    
+                    dgvInv.Rows[dgvInv.Rows.Count-1].Cells[3].ReadOnly = true;
                     // }
                 }
             }
