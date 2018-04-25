@@ -553,5 +553,16 @@ namespace HospitalERP
                 dgvInv.Rows[i].Cells[0].Value = (i+1).ToString();
             }
         }
+
+        private void frmOneTimeBill_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            bill.Dispose();
+            objCD.Dispose();
+            opt.Dispose();
+            pat.Dispose();
+            opt.Dispose();
+            
+        }
     }
 }

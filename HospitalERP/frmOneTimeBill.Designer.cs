@@ -236,7 +236,7 @@
             // 
             // txtLoggedUser
             // 
-            this.txtLoggedUser.Location = new System.Drawing.Point(311, 90);
+            this.txtLoggedUser.Location = new System.Drawing.Point(310, 90);
             this.txtLoggedUser.Name = "txtLoggedUser";
             this.txtLoggedUser.Size = new System.Drawing.Size(100, 21);
             this.txtLoggedUser.TabIndex = 2;
@@ -260,7 +260,7 @@
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.41026F));
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.58974F));
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
+            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.tblPanelFinal.Controls.Add(this.label17, 2, 4);
             this.tblPanelFinal.Controls.Add(this.lblTime, 0, 4);
             this.tblPanelFinal.Controls.Add(this.label16, 2, 3);
@@ -290,7 +290,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(685, 87);
+            this.label17.Location = new System.Drawing.Point(684, 87);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(67, 15);
             this.label17.TabIndex = 0;
@@ -310,7 +310,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(708, 60);
+            this.label16.Location = new System.Drawing.Point(707, 60);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(44, 15);
             this.label16.TabIndex = 0;
@@ -321,7 +321,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(679, 22);
+            this.label14.Location = new System.Drawing.Point(678, 22);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(73, 15);
             this.label14.TabIndex = 0;
@@ -330,7 +330,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(758, 25);
+            this.txtTotal.Location = new System.Drawing.Point(757, 25);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 21);
             this.txtTotal.TabIndex = 1;
@@ -338,7 +338,7 @@
             // 
             // txtPaid
             // 
-            this.txtPaid.Location = new System.Drawing.Point(758, 63);
+            this.txtPaid.Location = new System.Drawing.Point(757, 63);
             this.txtPaid.Name = "txtPaid";
             this.txtPaid.Size = new System.Drawing.Size(100, 21);
             this.txtPaid.TabIndex = 1;
@@ -346,7 +346,7 @@
             // 
             // txtBalance
             // 
-            this.txtBalance.Location = new System.Drawing.Point(758, 90);
+            this.txtBalance.Location = new System.Drawing.Point(757, 90);
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.Size = new System.Drawing.Size(100, 21);
             this.txtBalance.TabIndex = 1;
@@ -357,9 +357,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpBillHR.BackColor = System.Drawing.Color.Black;
             this.tblPanelFinal.SetColumnSpan(this.flpBillHR, 2);
-            this.flpBillHR.Location = new System.Drawing.Point(548, 53);
+            this.flpBillHR.Location = new System.Drawing.Point(547, 53);
             this.flpBillHR.Name = "flpBillHR";
-            this.flpBillHR.Size = new System.Drawing.Size(357, 1);
+            this.flpBillHR.Size = new System.Drawing.Size(358, 1);
             this.flpBillHR.TabIndex = 2;
             // 
             // flowLayoutPanel2
@@ -385,7 +385,7 @@
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(672, 0);
+            this.label19.Location = new System.Drawing.Point(671, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(80, 15);
             this.label19.TabIndex = 0;
@@ -394,7 +394,7 @@
             // 
             // txtPrevDues
             // 
-            this.txtPrevDues.Location = new System.Drawing.Point(758, 3);
+            this.txtPrevDues.Location = new System.Drawing.Point(757, 3);
             this.txtPrevDues.Name = "txtPrevDues";
             this.txtPrevDues.ReadOnly = true;
             this.txtPrevDues.Size = new System.Drawing.Size(100, 21);
@@ -813,6 +813,7 @@
             this.Controls.Add(this.PanelBottom);
             this.Name = "frmOneTimeBill";
             this.Text = "OneTime Bill";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOneTimeBill_FormClosed);
             this.Load += new System.EventHandler(this.frmOneTimeBill_Load);
             this.Shown += new System.EventHandler(this.frmOneTimeBill_Shown);
             this.PanelBottom.ResumeLayout(false);

@@ -597,6 +597,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmAppointments";
             this.Activated += new System.EventHandler(this.frmAppointments_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAppointments_FormClosed);
             this.Load += new System.EventHandler(this.frmAppointments_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

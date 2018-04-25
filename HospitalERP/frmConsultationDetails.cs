@@ -554,5 +554,12 @@ namespace HospitalERP
                 CommonLogger.Info(ex.ToString());
             }
         }
+
+        private void frmConsultationDetails_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            objCD.Dispose();
+            objApp.Dispose();
+        }
     }
 }

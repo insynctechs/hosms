@@ -83,8 +83,8 @@
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnMedicalReport = new System.Windows.Forms.Button();
             this.btnSickLeave = new System.Windows.Forms.Button();
-            this.btnGenBill = new System.Windows.Forms.Button();
             this.btnRefer = new System.Windows.Forms.Button();
+            this.btnGenBill = new System.Windows.Forms.Button();
             this.txtDoctorID = new System.Windows.Forms.TextBox();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.txtAppID = new System.Windows.Forms.TextBox();
@@ -710,6 +710,20 @@
             this.btnSickLeave.UseVisualStyleBackColor = false;
             this.btnSickLeave.Click += new System.EventHandler(this.btnSickLeave_Click);
             // 
+            // btnRefer
+            // 
+            this.btnRefer.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRefer.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefer.ForeColor = System.Drawing.Color.White;
+            this.btnRefer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRefer.Location = new System.Drawing.Point(3, 45);
+            this.btnRefer.Name = "btnRefer";
+            this.btnRefer.Size = new System.Drawing.Size(300, 36);
+            this.btnRefer.TabIndex = 22;
+            this.btnRefer.Text = "REFER PATIENT TO ANOTHER DOCTOR";
+            this.btnRefer.UseVisualStyleBackColor = false;
+            this.btnRefer.Click += new System.EventHandler(this.btnRefer_Click);
+            // 
             // btnGenBill
             // 
             this.btnGenBill.BackColor = System.Drawing.Color.MidnightBlue;
@@ -724,20 +738,6 @@
             this.btnGenBill.Text = "GENERATE BILL";
             this.btnGenBill.UseVisualStyleBackColor = false;
             this.btnGenBill.Click += new System.EventHandler(this.btnGenBill_Click);
-            // 
-            // btnRefer
-            // 
-            this.btnRefer.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnRefer.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefer.ForeColor = System.Drawing.Color.White;
-            this.btnRefer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRefer.Location = new System.Drawing.Point(3, 45);
-            this.btnRefer.Name = "btnRefer";
-            this.btnRefer.Size = new System.Drawing.Size(300, 36);
-            this.btnRefer.TabIndex = 22;
-            this.btnRefer.Text = "REFER PATIENT TO ANOTHER DOCTOR";
-            this.btnRefer.UseVisualStyleBackColor = false;
-            this.btnRefer.Click += new System.EventHandler(this.btnRefer_Click);
             // 
             // txtDoctorID
             // 
@@ -1551,6 +1551,7 @@
             this.Name = "frmConsultationDetails";
             this.Text = "Consultation Details";
             this.Activated += new System.EventHandler(this.frmConsultationDetails_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmConsultationDetails_FormClosed);
             this.Load += new System.EventHandler(this.frmConsultationDetails_Load);
             this.Shown += new System.EventHandler(this.frmConsultationDetails_Shown);
             this.flowLayoutPanel1.ResumeLayout(false);

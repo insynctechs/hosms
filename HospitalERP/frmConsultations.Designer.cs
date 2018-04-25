@@ -356,6 +356,7 @@
             this.Name = "frmConsultations";
             this.Text = "Consultations";
             this.Activated += new System.EventHandler(this.frmConsultations_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmConsultations_FormClosed);
             this.Load += new System.EventHandler(this.frmConsultations_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
