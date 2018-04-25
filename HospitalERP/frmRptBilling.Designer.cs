@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.uspReport_BillingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetBilling = new HospitalERP.DataSetBilling();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -60,15 +60,15 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsBilling";
-            reportDataSource1.Value = this.uspReport_BillingBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "dsBilling";
+            reportDataSource2.Value = this.uspReport_BillingBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "HospitalERP.ReportBilling.rdlc";
             this.reportViewer.LocalReport.ReportPath = "";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(686, 373);
+            this.reportViewer.Size = new System.Drawing.Size(947, 381);
             this.reportViewer.TabIndex = 0;
             // 
             // dtFromDate
@@ -94,7 +94,7 @@
             this.btnReport.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnReport.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Location = new System.Drawing.Point(533, 13);
+            this.btnReport.Location = new System.Drawing.Point(700, 13);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(71, 25);
             this.btnReport.TabIndex = 3;
@@ -113,9 +113,10 @@
             this.panel1.Controls.Add(this.dtFromDate);
             this.panel1.Controls.Add(this.dtToDate);
             this.panel1.Controls.Add(this.btnReport);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 45);
+            this.panel1.Size = new System.Drawing.Size(947, 45);
             this.panel1.TabIndex = 4;
             // 
             // cmbType
@@ -139,9 +140,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.reportViewer);
-            this.panel2.Location = new System.Drawing.Point(3, 49);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(686, 373);
+            this.panel2.Size = new System.Drawing.Size(947, 381);
             this.panel2.TabIndex = 5;
             // 
             // frmRptBilling
@@ -149,12 +151,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(701, 426);
+            this.ClientSize = new System.Drawing.Size(947, 426);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRptBilling";
-            this.Text = "frmRptBilling";
+            this.Text = "Billing Report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmRptBilling_FormClosed);
             this.Load += new System.EventHandler(this.frmRptBilling_Load);
             this.Shown += new System.EventHandler(this.frmRptBilling_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.uspReport_BillingBindingSource)).EndInit();

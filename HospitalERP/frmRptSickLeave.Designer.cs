@@ -612,6 +612,8 @@
             this.ClientSize = new System.Drawing.Size(748, 596);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRptSickLeave";
             this.Text = "Sick Leave Form";
             this.Load += new System.EventHandler(this.frmRptSickLeave_Load);

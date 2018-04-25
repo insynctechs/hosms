@@ -87,5 +87,12 @@ namespace HospitalERP
         {
             populateReport();
         }
+
+        private void frmRptPatient_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            pat.Dispose();
+            opt.Dispose();
+        }
     }
 }

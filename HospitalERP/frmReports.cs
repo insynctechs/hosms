@@ -51,5 +51,10 @@ namespace HospitalERP
                 CommonLogger.Info(ex.ToString());
             }
         }
+
+        private void frmReports_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+        }
     }
 }

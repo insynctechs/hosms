@@ -118,7 +118,7 @@
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(950, 270);
+            this.reportViewer.Size = new System.Drawing.Size(953, 290);
             this.reportViewer.TabIndex = 0;
             // 
             // uspReport_PatientTableAdapter
@@ -127,13 +127,11 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.reportViewer);
-            this.panel1.Location = new System.Drawing.Point(12, 65);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 270);
+            this.panel1.Size = new System.Drawing.Size(953, 290);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -143,9 +141,10 @@
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.dtFromDate);
             this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(950, 47);
+            this.panel2.Size = new System.Drawing.Size(953, 47);
             this.panel2.TabIndex = 5;
             // 
             // frmRptPatient
@@ -153,10 +152,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 337);
-            this.Controls.Add(this.panel2);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRptPatient";
-            this.Text = "frmRptPatient";
+            this.Text = "Patient Report";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmRptPatient_FormClosed);
             this.Load += new System.EventHandler(this.frmRptPatient_Load);
             this.Shown += new System.EventHandler(this.frmRptPatient_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.uspReport_PatientBindingSource)).EndInit();

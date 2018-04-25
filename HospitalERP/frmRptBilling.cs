@@ -120,5 +120,13 @@ namespace HospitalERP
         {
             populateReport();
         }
+
+        private void frmRptBilling_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utils.toggleChildCloseButton(this.MdiParent, 1);
+            opt.Dispose();
+            bill.Dispose();
+
+        }
     }
 }

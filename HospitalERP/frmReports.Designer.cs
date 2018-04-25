@@ -98,6 +98,7 @@
             this.ShowIcon = false;
             this.Text = "Reports";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmReports_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
