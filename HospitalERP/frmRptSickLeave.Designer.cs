@@ -177,7 +177,7 @@
             this.txtAppDate.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAppDate.Location = new System.Drawing.Point(217, 154);
             this.txtAppDate.Name = "txtAppDate";
-            this.txtAppDate.Size = new System.Drawing.Size(141, 17);
+            this.txtAppDate.Size = new System.Drawing.Size(126, 17);
             this.txtAppDate.TabIndex = 14;
             // 
             // txtPatientNo

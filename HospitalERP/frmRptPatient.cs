@@ -9,6 +9,7 @@ namespace HospitalERP
     public partial class frmRptPatient : Form
     {
         Patients pat = new Patients();
+        OptionVals opt = new OptionVals();
 
         public frmRptPatient()
         {
@@ -60,11 +61,16 @@ namespace HospitalERP
             {
                 //MessageBox.Show(this.uspReport_PatientTableAdapter.Connection.ConnectionString);
                 this.uspReport_PatientTableAdapter.ClearBeforeFill = true;
+                string rpt = "";
+                DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
+                if (dtOpt.Rows.Count > 0)
+                    rpt = dtOpt.Rows[0]["op_value"].ToString();
 
                 Microsoft.Reporting.WinForms.ReportParameter[] rparams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
                 new Microsoft.Reporting.WinForms.ReportParameter("fromDate", dtFromDate.Value.Date.ToShortDateString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString())
+                new Microsoft.Reporting.WinForms.ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("clientTitle", rpt)
                 };
                 reportViewer.LocalReport.SetParameters(rparams);
                 this.DataSetPatient.Clear();

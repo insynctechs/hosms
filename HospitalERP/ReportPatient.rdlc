@@ -76,28 +76,28 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>5.04472cm</Width>
+                  <Width>2.72994cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.94438cm</Width>
+                  <Width>1.44167cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.36856cm</Width>
+                  <Width>0.86585cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.97896cm</Width>
+                  <Width>3.70354cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.03458cm</Width>
+                  <Width>2.72521cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.39416cm</Width>
+                  <Width>1.89145cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.79646cm</Width>
+                  <Width>2.76459cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>8.45312cm</Width>
+                  <Width>3.61124cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -115,7 +115,8 @@
                                 <TextRun>
                                   <Value>Patient Name</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -147,7 +148,8 @@
                                 <TextRun>
                                   <Value>Gender</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -179,7 +181,8 @@
                                 <TextRun>
                                   <Value>Age</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -211,7 +214,8 @@
                                 <TextRun>
                                   <Value>Address</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -243,7 +247,8 @@
                                 <TextRun>
                                   <Value>Phone</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -275,7 +280,8 @@
                                 <TextRun>
                                   <Value>Date</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -307,7 +313,8 @@
                                 <TextRun>
                                   <Value>Doctor Name</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -339,7 +346,8 @@
                                 <TextRun>
                                   <Value>Appointment Notes</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -376,7 +384,8 @@
                                 <TextRun>
                                   <Value>=Fields!name.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -408,7 +417,8 @@
                                 <TextRun>
                                   <Value>=Fields!gender.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -440,7 +450,8 @@
                                 <TextRun>
                                   <Value>=Fields!age.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -472,7 +483,8 @@
                                 <TextRun>
                                   <Value>=Fields!address1.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -504,7 +516,8 @@
                                 <TextRun>
                                   <Value>=Fields!phone.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -536,7 +549,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -568,7 +582,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -600,7 +615,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -787,8 +803,9 @@
                                 <TextRun>
                                   <Value>=Fields!appt_date.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
-                                    <Format>dd MMM yyyy</Format>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>dd-MM-yyyy</Format>
                                     <Color>Teal</Color>
                                   </Style>
                                 </TextRun>
@@ -821,7 +838,8 @@
                                 <TextRun>
                                   <Value>=Fields!doctor_name.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -853,7 +871,8 @@
                                 <TextRun>
                                   <Value>=Fields!notes.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -894,7 +913,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.59671cm</Size>
+                    <Size>1.90879cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox40">
                         <CanGrow>true</CanGrow>
@@ -903,9 +922,10 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Patient Number</Value>
+                                <Value>Patient# </Value>
                                 <Style>
-                                  <FontSize>14pt</FontSize>
+                                  <FontFamily>Calibri</FontFamily>
+                                  <FontSize>12pt</FontSize>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -947,7 +967,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.59671cm</Size>
+                    <Size>1.90879cm</Size>
                     <CellContents>
                       <Textbox Name="patient_number1">
                         <CanGrow>true</CanGrow>
@@ -958,7 +978,8 @@
                               <TextRun>
                                 <Value>=Fields!patient_number.Value</Value>
                                 <Style>
-                                  <FontWeight>SemiBold</FontWeight>
+                                  <FontFamily>Calibri</FontFamily>
+                                  <FontWeight>Normal</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -996,10 +1017,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>dsPatient</DataSetName>
             <Top>0.35822cm</Top>
             <Height>1.8cm</Height>
-            <Width>35.61165cm</Width>
+            <Width>21.64229cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1024,9 +1046,10 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>EEZCLINIC</Value>
+                      <Value>=Parameters!clientTitle.Value</Value>
                       <Style>
-                        <FontSize>36pt</FontSize>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>20pt</FontSize>
                         <Color>Teal</Color>
                       </Style>
                     </TextRun>
@@ -1059,6 +1082,7 @@
                     <TextRun>
                       <Value>PATIENT REPORT</Value>
                       <Style>
+                        <FontFamily>Calibri</FontFamily>
                         <FontSize>16pt</FontSize>
                       </Style>
                     </TextRun>
@@ -1137,12 +1161,12 @@
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageHeight>21cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
@@ -1155,6 +1179,10 @@
     </ReportParameter>
     <ReportParameter Name="toDate">
       <DataType>DateTime</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="clientTitle">
+      <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -1173,9 +1201,15 @@
           <RowIndex>0</RowIndex>
           <ParameterName>toDate</ParameterName>
         </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>clientTitle</ParameterName>
+        </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>f6b3f2ba-5284-4300-8562-a645a809296c</rd:ReportID>
 </Report>

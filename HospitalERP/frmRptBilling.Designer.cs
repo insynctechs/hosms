@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.uspReport_BillingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetBilling = new HospitalERP.DataSetBilling();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -60,21 +60,21 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource13.Name = "dsBilling";
-            reportDataSource13.Value = this.uspReport_BillingBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource13);
+            reportDataSource1.Name = "dsBilling";
+            reportDataSource1.Value = this.uspReport_BillingBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "HospitalERP.ReportBilling.rdlc";
             this.reportViewer.LocalReport.ReportPath = "";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(794, 294);
+            this.reportViewer.Size = new System.Drawing.Size(686, 373);
             this.reportViewer.TabIndex = 0;
             // 
             // dtFromDate
             // 
             this.dtFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFromDate.Location = new System.Drawing.Point(90, 14);
+            this.dtFromDate.Location = new System.Drawing.Point(13, 16);
             this.dtFromDate.Name = "dtFromDate";
             this.dtFromDate.Size = new System.Drawing.Size(114, 20);
             this.dtFromDate.TabIndex = 1;
@@ -83,7 +83,7 @@
             // dtToDate
             // 
             this.dtToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtToDate.Location = new System.Drawing.Point(215, 13);
+            this.dtToDate.Location = new System.Drawing.Point(138, 15);
             this.dtToDate.Name = "dtToDate";
             this.dtToDate.Size = new System.Drawing.Size(118, 20);
             this.dtToDate.TabIndex = 2;
@@ -94,9 +94,9 @@
             this.btnReport.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnReport.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Location = new System.Drawing.Point(648, 5);
+            this.btnReport.Location = new System.Drawing.Point(533, 13);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(71, 29);
+            this.btnReport.Size = new System.Drawing.Size(71, 25);
             this.btnReport.TabIndex = 3;
             this.btnReport.Text = "GO";
             this.btnReport.UseVisualStyleBackColor = false;
@@ -113,17 +113,16 @@
             this.panel1.Controls.Add(this.dtFromDate);
             this.panel1.Controls.Add(this.dtToDate);
             this.panel1.Controls.Add(this.btnReport);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(818, 45);
+            this.panel1.Size = new System.Drawing.Size(613, 45);
             this.panel1.TabIndex = 4;
             // 
             // cmbType
             // 
             this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(502, 9);
+            this.cmbType.Location = new System.Drawing.Point(401, 14);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(121, 21);
             this.cmbType.TabIndex = 5;
@@ -132,20 +131,17 @@
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(354, 10);
+            this.cmbStatus.Location = new System.Drawing.Point(267, 15);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 21);
             this.cmbStatus.TabIndex = 4;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.reportViewer);
-            this.panel2.Location = new System.Drawing.Point(12, 63);
+            this.panel2.Location = new System.Drawing.Point(3, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(794, 294);
+            this.panel2.Size = new System.Drawing.Size(686, 373);
             this.panel2.TabIndex = 5;
             // 
             // frmRptBilling
@@ -153,7 +149,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(818, 310);
+            this.ClientSize = new System.Drawing.Size(701, 426);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmRptBilling";

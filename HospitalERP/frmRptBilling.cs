@@ -9,6 +9,8 @@ namespace HospitalERP
     public partial class frmRptBilling : Form
     {
         Bill bill = new Bill();
+        OptionVals opt = new OptionVals();
+
         public frmRptBilling()
         {
             InitializeComponent();
@@ -52,9 +54,15 @@ namespace HospitalERP
                 this.uspReport_BillingTableAdapter.ClearBeforeFill = true;
                 /*reportViewer.LocalReport.DataSources.Clear();
                 reportViewer.LocalReport.DataSources.Add(new ReportDataSource("dsname", uspReport_BillingBindingSource));
-                */ReportParameter[] rparams = new ReportParameter[2]; 
+                */ReportParameter[] rparams = new ReportParameter[3]; 
                 rparams[0] = new ReportParameter("fromDate", dtFromDate.Value.Date.ToShortDateString()); 
-                rparams[1] = new ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString()); 
+                rparams[1] = new ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString());
+                string rpt = "";
+                DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
+                if (dtOpt.Rows.Count > 0)
+                    rpt = dtOpt.Rows[0]["op_value"].ToString();
+
+                rparams[2] = new ReportParameter("clientTitle", rpt);
                 this.reportViewer.LocalReport.SetParameters(rparams);
                 /*
                 Microsoft.Reporting.WinForms.ReportParameter[] rparams = new Microsoft.Reporting.WinForms.ReportParameter[]
