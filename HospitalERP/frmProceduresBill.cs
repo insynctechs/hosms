@@ -324,6 +324,8 @@ namespace HospitalERP
                         bottom = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
                     printDialog1.PrinterSettings.DefaultPageSettings.Margins.Top = top;
                     printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom = bottom;
+                    printDocument1.DefaultPageSettings.Margins.Top = top;
+                    printDocument1.DefaultPageSettings.Margins.Bottom = bottom;
 
                 }
 

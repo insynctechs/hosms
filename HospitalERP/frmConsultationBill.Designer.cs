@@ -69,6 +69,9 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtInvNum = new System.Windows.Forms.TextBox();
             this.dgvInv = new System.Windows.Forms.DataGridView();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -86,9 +89,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtLoggedUser = new System.Windows.Forms.Label();
             this.lblClinic = new System.Windows.Forms.Label();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelBottom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -536,6 +536,27 @@
             this.dgvInv.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvInv_CellPainting);
             this.dgvInv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInv_CellValueChanged);
             // 
+            // Num
+            // 
+            this.Num.HeaderText = "Item#";
+            this.Num.Name = "Num";
+            this.Num.ReadOnly = true;
+            this.Num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Item Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Description.Width = 600;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 200;
+            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -552,6 +573,7 @@
             // 
             // printDocument1
             // 
+            this.printDocument1.OriginAtMargins = true;
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // panelContent
@@ -711,27 +733,6 @@
             this.lblClinic.TabIndex = 4;
             this.lblClinic.Text = "EXCELLENCE DENTAL CLINIC";
             this.lblClinic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Num
-            // 
-            this.Num.HeaderText = "Item#";
-            this.Num.Name = "Num";
-            this.Num.ReadOnly = true;
-            this.Num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Item Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Description.Width = 600;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 200;
             // 
             // frmConsultationBill
             // 

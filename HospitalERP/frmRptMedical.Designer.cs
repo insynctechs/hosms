@@ -425,6 +425,7 @@
             // 
             // printDocument1
             // 
+            this.printDocument1.OriginAtMargins = true;
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // frmRptMedical
