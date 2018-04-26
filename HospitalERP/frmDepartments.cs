@@ -10,7 +10,7 @@ namespace HospitalERP
     
     public partial class frmDepartments : Form
     {
-        log4net.ILog ilog;
+        
         Departments dt = new Departments();
         public frmDepartments()
         {
@@ -23,9 +23,8 @@ namespace HospitalERP
             try
             {
                 this.WindowState = FormWindowState.Maximized;
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+                dgvDept.AutoGenerateColumns = false;
             }
             catch (Exception ex)
             {

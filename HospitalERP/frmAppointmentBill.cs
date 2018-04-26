@@ -12,7 +12,7 @@ namespace HospitalERP
         public int appointment_id = 0;
         public int patient_id = 0;
 
-        log4net.ILog ilog;
+        
         Bill bill = new Bill();
         Appointments app = new Appointments();
         Patients pat = new Patients();
@@ -22,8 +22,6 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 PopulateBillTypes();
             }
             catch (Exception ex)
@@ -40,8 +38,6 @@ namespace HospitalERP
                 InitializeComponent();
                 appointment_id = app_id;
                 patient_id = pat_id;
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 PopulateBillTypes();
             }
             catch (Exception ex)
@@ -59,6 +55,7 @@ namespace HospitalERP
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+                dgvList.AutoGenerateColumns = false;
                 loadPatientAppInfo();
                 if(this.txtMeetDate.Text != DateTime.Now.ToShortDateString())
                 {

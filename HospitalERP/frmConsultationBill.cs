@@ -128,6 +128,7 @@ namespace HospitalERP
             try
             {
                 dgvInv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                dgvInv.AutoGenerateColumns = false;
                 DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
                 if (dtOpt.Rows.Count > 0)
                     lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();

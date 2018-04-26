@@ -24,8 +24,8 @@ namespace HospitalERP
         {
             this.WindowState = FormWindowState.Maximized;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            txtSearch.Visible = false;     
-
+            txtSearch.Visible = false;
+            dgvList.AutoGenerateColumns = false;
         }
         private void PopulateSearch()
         {

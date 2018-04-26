@@ -9,7 +9,7 @@ namespace HospitalERP
 {
     public partial class frmChangePassword : Form
     {
-        log4net.ILog ilog;
+        
         private bool errorfocus = false;
         Users user = new Users();
         public frmChangePassword()
@@ -160,8 +160,6 @@ namespace HospitalERP
         {
             try
             {
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
                 txtPassword1.Focus();
             }

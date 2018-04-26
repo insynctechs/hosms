@@ -9,8 +9,6 @@ namespace HospitalERP
 {
     public partial class frmDashboard : Form
     {
-        log4net.ILog ilog;
-
         Users usr = new Users();
         Menus mn = new Menus();
 
@@ -19,8 +17,6 @@ namespace HospitalERP
             try
             {
                 InitializeComponent();
-                log4net.Config.XmlConfigurator.Configure();
-                ilog = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             }
             catch (Exception ex)
             {

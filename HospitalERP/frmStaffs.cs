@@ -22,7 +22,8 @@ namespace HospitalERP
         private void frmStaffs_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;                        
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            dgvList.AutoGenerateColumns = false;
         }
 
         private void PopulateSearch()

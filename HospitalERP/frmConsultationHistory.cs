@@ -47,6 +47,7 @@ namespace HospitalERP
         {
             try
             {
+                dgvApptHistory.AutoGenerateColumns = false;
                 dgvHistoryProcedures.AutoGenerateColumns = false;
                 setGridViews();
             }

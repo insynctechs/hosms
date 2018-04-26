@@ -51,6 +51,7 @@ namespace HospitalERP
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
                 dgvPatient.AutoGenerateColumns = false;
+                dgvApp.AutoGenerateColumns = false;
                 GetDoctorsCombo(0);
                 PopulateSearch();
                 if (patient_id > 0)

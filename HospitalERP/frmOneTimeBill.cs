@@ -143,6 +143,7 @@ namespace HospitalERP
         {
             try
             {
+                dgvInv.AutoGenerateColumns = false;
                 DataTable dtOpt = opt.GetOptionFromName("CLINIC_NAME");
                 if (dtOpt.Rows.Count > 0)
                     lblClinic.Text = dtOpt.Rows[0]["op_value"].ToString();
@@ -381,6 +382,10 @@ namespace HospitalERP
                         bottom = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
                     printDialog1.PrinterSettings.DefaultPageSettings.Margins.Top = top;
                     printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom = bottom;
+                    // Create a new instance of Margins with 1-inch margins.
+                    //Margins margins = new Margins(300, 300, 300, 300);
+                    printDocument1.DefaultPageSettings.Margins.Top = top;
+                    printDocument1.DefaultPageSettings.Margins.Bottom = bottom;
 
                 }
 

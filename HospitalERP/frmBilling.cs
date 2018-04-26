@@ -50,6 +50,7 @@ namespace HospitalERP
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+                dgvList.AutoGenerateColumns = false;
                 PopulateSearchCombo();
                 GetBills();
             }

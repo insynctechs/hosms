@@ -185,6 +185,7 @@ namespace HospitalERP
         {
             try
             {
+                dgvList.AutoGenerateColumns = false;
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
                 PopulateSearch();

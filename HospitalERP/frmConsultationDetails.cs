@@ -49,7 +49,9 @@ namespace HospitalERP
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-                
+                dgvProc.AutoGenerateColumns = false;
+                dgvApptHistory.AutoGenerateColumns = false;
+                dgvHistoryProcedures.AutoGenerateColumns = false;
             }
             catch (Exception ex)
             {
@@ -416,7 +418,7 @@ namespace HospitalERP
                 getConsultationDetails();
                 //Buttons are disabled when
                 //prev dates , completed status and users not doctors and super admin 
-                if (Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) > 0 || (cmbAppStatus.SelectedValue.ToString() =="2") || (LoggedUser.type_id !=1 && LoggedUser.type_id != 3))
+                if (Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) > 0 || (cmbAppStatus.SelectedValue.ToString() =="2")) /*|| (LoggedUser.type_id !=1 && LoggedUser.type_id != 3)*/
                 {
                     EnableEditableButtons(false);
                 }
