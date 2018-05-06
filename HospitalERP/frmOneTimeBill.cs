@@ -211,7 +211,8 @@ namespace HospitalERP
                     txtBalance.Text = Utils.FormatAmount(bill_balance);
                     lblTime.Text = dtBill.Rows[0]["bill_date"].ToString();
                     int creator = Int32.Parse(dtBill.Rows[0]["bill_created_userid"].ToString());
-                    txtPrevDues.Text = dtPat.Rows[0]["dues"].ToString();
+                    //txtPrevDues.Text = dtPat.Rows[0]["dues"].ToString();
+                    txtPrevDues.Text = Utils.FormatAmount(Convert.ToDouble(dtBill.Rows[0]["bill_due"].ToString()));
                     txtTotal.Text = Utils.FormatAmount(bill_total + Convert.ToDouble(txtPrevDues.Text));
                     DataTable dtUser = bill.GetBillCreatedUser(creator);
                     if (dtUser != null)
@@ -349,11 +350,11 @@ namespace HospitalERP
                 dtRec.Columns.Add("item_no", typeof(int));
                 dtRec.Columns.Add("item_name", typeof(string));
                 dtRec.Columns.Add("item_amount", typeof(float));
-
+                dtRec.Columns.Add("billing_id", typeof(int));
                 foreach (DataGridViewRow row in dgvInv.Rows)
                 {
                     if (row.Cells[0].Value != null)
-                        dtRec.Rows.Add(appointment_id, Convert.ToInt32(row.Cells[0].Value.ToString()), row.Cells[1].Value.ToString(), Convert.ToDouble(row.Cells[2].Value.ToString()));
+                        dtRec.Rows.Add(appointment_id, Convert.ToInt32(row.Cells[0].Value.ToString()), row.Cells[1].Value.ToString(), Convert.ToDouble(row.Cells[2].Value.ToString()), bill_id);
 
                 }
                 int res = bill.UpdateBillDetails(dtRec, appointment_id);
