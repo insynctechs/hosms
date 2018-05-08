@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
+using System.Text.RegularExpressions;
 namespace HospitalERP
 {
     public partial class frmOneTimeBill : Form
@@ -14,6 +15,7 @@ namespace HospitalERP
         public int bill_id = 0;
         public double bill_total = 0;
         public double bill_paid = 0;
+        public double bill_paid_load = 0;
         public double bill_balance = 0;
         public DataTable dtProc;
 
@@ -206,6 +208,7 @@ namespace HospitalERP
                     txtDate.Text = Convert.ToDateTime(dtPat.Rows[0]["meet_date"].ToString()).ToShortDateString();
                     bill_total = Convert.ToDouble(dtBill.Rows[0]["bill_amount"].ToString());
                     bill_paid = Convert.ToDouble(dtBill.Rows[0]["bill_paid"].ToString());
+                    bill_paid_load = bill_paid;
                     txtPaid.Text = Utils.FormatAmount(bill_paid);
                     bill_balance = Convert.ToDouble(dtBill.Rows[0]["bill_balance"].ToString());
                     txtBalance.Text = Utils.FormatAmount(bill_balance);
@@ -282,9 +285,17 @@ namespace HospitalERP
         {
             try
             {
+                if (Regex.IsMatch(txtPaid.Text, @"[^0-9\.]"))
+                {
+                    MessageBox.Show("Bill Paid Amount should be numeric.");
+                    txtPaid.Text = "0.000";
+                }
                 bill_paid = Convert.ToDouble(txtPaid.Text);
                 bill_balance = bill_total - bill_paid;
-                txtBalance.Text = Utils.FormatAmount(bill_balance);
+                if (bill_balance < 0)
+                    MessageBox.Show("Bill Paid Amount should not be greater than Bill Total.", "Information", MessageBoxButtons.OK);
+                else
+                    txtBalance.Text = Utils.FormatAmount(bill_balance);
             }
             catch (Exception ex)
             {
@@ -297,7 +308,11 @@ namespace HospitalERP
         {
             try
             {
-                if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) == 4 && bill_balance != 0)
+                if(txtPaid.Text.Trim()=="")
+                {
+                    MessageBox.Show("Bill Paid Amount should not be empty.");
+                }
+                else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) == 4 && bill_balance != 0)
                 {
                     MessageBox.Show("The entire bill needs to be paid fully for 'Paid' Status");
                 }
@@ -310,6 +325,10 @@ namespace HospitalERP
                 {
                     MessageBox.Show("Please change the status to 'Partial-Paid'");
                 }
+                else if(bill_balance<0)
+                {
+                    MessageBox.Show("Bill Paid should not be greater than Bill Total");
+                }
                 else
                 {
                     if (!(LoggedUser.id > 0))
@@ -317,6 +336,7 @@ namespace HospitalERP
                     int res = bill.editBill(bill_id, Convert.ToDecimal(bill_total), Convert.ToDecimal(bill_paid), Convert.ToDecimal(bill_balance), Int32.Parse(cmbBillStatus.SelectedValue.ToString()), LoggedUser.id);
                     if (res > 0)
                     {
+                        bill_paid_load = bill_paid;
                         MessageBox.Show("Bill Saved Succesfully", "Information", MessageBoxButtons.OK);
                         enableOrDisableButtons();
                     }
@@ -369,39 +389,48 @@ namespace HospitalERP
         {
             try
             {
-                dgvInv.Columns["btnDel"].Visible = false;
-                dgvInv.CellBorderStyle = DataGridViewCellBorderStyle.None;
-                txtPaid.BorderStyle = BorderStyle.None;
-                printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
-                printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
-                if (chkLetterHead.Checked == true)
+                if (cell_modified == 1 || bill_paid_load != bill_paid)
                 {
-                    int top = 100; int bottom = 100;
-                    DataTable dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_TOP");
-                    if (dtOpt.Rows.Count > 0)
-                        top = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
-                    dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_BOTTOM");
-                    if (dtOpt.Rows.Count > 0)
-                        bottom = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
-                    printDialog1.PrinterSettings.DefaultPageSettings.Margins.Top = top;
-                    printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom = bottom;
-                    // Create a new instance of Margins with 1-inch margins.
-                    //Margins margins = new Margins(300, 300, 300, 300);
-                    printDocument1.DefaultPageSettings.Margins.Top = top;
-                    printDocument1.DefaultPageSettings.Margins.Bottom = bottom;
-
+                    MessageBox.Show("Please save the bill before printing.");
                 }
-
-                if (printDialog1.ShowDialog() == DialogResult.OK)
+                else
                 {
-                    PrinterSettings values = new PrinterSettings();
-                    printDialog1.Document = printDocument1;
-                    printDocument1.Print();
+                    printDocument1.DefaultPageSettings.Margins.Left = 0;
+                    printDocument1.DefaultPageSettings.Margins.Right = 0;
+                    dgvInv.Columns["btnDel"].Visible = false;
+                    dgvInv.CellBorderStyle = DataGridViewCellBorderStyle.None;
+                    txtPaid.BorderStyle = BorderStyle.None;
+                    printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
+                    printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
+                    if (chkLetterHead.Checked == true)
+                    {
+                        int top = 100; int bottom = 100;
+                        DataTable dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_TOP");
+                        if (dtOpt.Rows.Count > 0)
+                            top = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
+                        dtOpt = opt.GetOptionFromName("PRINT_LETTERHEAD_MARGIN_BOTTOM");
+                        if (dtOpt.Rows.Count > 0)
+                            bottom = Int32.Parse(dtOpt.Rows[0]["op_value"].ToString());
+                        printDialog1.PrinterSettings.DefaultPageSettings.Margins.Top = top;
+                        printDialog1.PrinterSettings.DefaultPageSettings.Margins.Bottom = bottom;
+                        // Create a new instance of Margins with 1-inch margins.
+                        //Margins margins = new Margins(300, 300, 300, 300);
+                        printDocument1.DefaultPageSettings.Margins.Top = top;
+                        printDocument1.DefaultPageSettings.Margins.Bottom = bottom;
+
+                    }
+
+                    if (printDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        PrinterSettings values = new PrinterSettings();
+                        printDialog1.Document = printDocument1;
+                        printDocument1.Print();
+                    }
+                    printDocument1.Dispose();
+                    dgvInv.Columns["btnDel"].Visible = true;
+                    dgvInv.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+                    txtPaid.BorderStyle = BorderStyle.Fixed3D;
                 }
-                printDocument1.Dispose();
-                dgvInv.Columns["btnDel"].Visible = true;
-                dgvInv.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
-                txtPaid.BorderStyle = BorderStyle.Fixed3D;
             }
             catch (Exception ex)
             {
@@ -572,6 +601,11 @@ namespace HospitalERP
             opt.Dispose();
             pat.Dispose();
             opt.Dispose();
+            
+        }
+
+        private void txtPaid_KeyPress(object sender, KeyPressEventArgs e)
+        {
             
         }
     }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOneTimeBill));
             this.PanelBottom = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -113,9 +113,9 @@
             this.PanelBottom.Controls.Add(this.panel2);
             this.PanelBottom.Controls.Add(this.panel3);
             this.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelBottom.Location = new System.Drawing.Point(0, 548);
+            this.PanelBottom.Location = new System.Drawing.Point(0, 557);
             this.PanelBottom.Name = "PanelBottom";
-            this.PanelBottom.Size = new System.Drawing.Size(1008, 114);
+            this.PanelBottom.Size = new System.Drawing.Size(1008, 105);
             this.PanelBottom.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -255,7 +255,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1008, 548);
+            this.panelContent.Size = new System.Drawing.Size(1008, 557);
             this.panelContent.TabIndex = 5;
             // 
             // tblPanelFinal
@@ -264,7 +264,7 @@
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.41026F));
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.58974F));
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
+            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tblPanelFinal.Controls.Add(this.label17, 2, 4);
             this.tblPanelFinal.Controls.Add(this.lblTime, 0, 4);
             this.tblPanelFinal.Controls.Add(this.label16, 2, 3);
@@ -294,7 +294,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(684, 104);
+            this.label17.Location = new System.Drawing.Point(682, 104);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 18);
             this.label17.TabIndex = 0;
@@ -317,7 +317,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(705, 68);
+            this.label16.Location = new System.Drawing.Point(703, 68);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 18);
             this.label16.TabIndex = 0;
@@ -329,7 +329,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(676, 30);
+            this.label14.Location = new System.Drawing.Point(674, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(71, 18);
             this.label14.TabIndex = 0;
@@ -338,29 +338,37 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.BackColor = System.Drawing.Color.White;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(753, 33);
+            this.txtTotal.ForeColor = System.Drawing.Color.Black;
+            this.txtTotal.Location = new System.Drawing.Point(751, 33);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 19);
             this.txtTotal.TabIndex = 1;
             this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
             // txtPaid
             // 
+            this.txtPaid.BackColor = System.Drawing.Color.White;
             this.txtPaid.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaid.Location = new System.Drawing.Point(753, 71);
+            this.txtPaid.Location = new System.Drawing.Point(751, 71);
             this.txtPaid.Name = "txtPaid";
             this.txtPaid.Size = new System.Drawing.Size(100, 26);
             this.txtPaid.TabIndex = 1;
             this.txtPaid.TextChanged += new System.EventHandler(this.txtPaid_TextChanged);
+            this.txtPaid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaid_KeyPress);
             // 
             // txtBalance
             // 
+            this.txtBalance.BackColor = System.Drawing.Color.White;
             this.txtBalance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBalance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalance.Location = new System.Drawing.Point(753, 107);
+            this.txtBalance.ForeColor = System.Drawing.Color.Black;
+            this.txtBalance.Location = new System.Drawing.Point(751, 107);
             this.txtBalance.Name = "txtBalance";
+            this.txtBalance.ReadOnly = true;
             this.txtBalance.Size = new System.Drawing.Size(100, 19);
             this.txtBalance.TabIndex = 1;
             // 
@@ -370,9 +378,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpBillHR.BackColor = System.Drawing.Color.Black;
             this.tblPanelFinal.SetColumnSpan(this.flpBillHR, 2);
-            this.flpBillHR.Location = new System.Drawing.Point(543, 63);
+            this.flpBillHR.Location = new System.Drawing.Point(541, 63);
             this.flpBillHR.Name = "flpBillHR";
-            this.flpBillHR.Size = new System.Drawing.Size(362, 1);
+            this.flpBillHR.Size = new System.Drawing.Size(364, 1);
             this.flpBillHR.TabIndex = 2;
             // 
             // flowLayoutPanel2
@@ -403,7 +411,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(670, 0);
+            this.label19.Location = new System.Drawing.Point(668, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(77, 18);
             this.label19.TabIndex = 0;
@@ -415,7 +423,7 @@
             this.txtPrevDues.BackColor = System.Drawing.Color.White;
             this.txtPrevDues.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrevDues.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrevDues.Location = new System.Drawing.Point(753, 3);
+            this.txtPrevDues.Location = new System.Drawing.Point(751, 3);
             this.txtPrevDues.Name = "txtPrevDues";
             this.txtPrevDues.ReadOnly = true;
             this.txtPrevDues.Size = new System.Drawing.Size(100, 19);
@@ -441,42 +449,42 @@
             this.dgvInv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvInv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Num,
             this.Description,
             this.Amount,
             this.btnDel});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInv.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInv.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvInv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInv.EnableHeadersVisualStyles = false;
             this.dgvInv.GridColor = System.Drawing.Color.White;
             this.dgvInv.Location = new System.Drawing.Point(52, 279);
             this.dgvInv.Name = "dgvInv";
             this.dgvInv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvInv.RowHeadersVisible = false;
             this.dgvInv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvInv.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -511,8 +519,8 @@
             // 
             // Amount
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle7;
             this.Amount.HeaderText = "Item Amount";
             this.Amount.MinimumWidth = 100;
             this.Amount.Name = "Amount";
@@ -521,9 +529,9 @@
             // 
             // btnDel
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.btnDel.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.btnDel.DefaultCellStyle = dataGridViewCellStyle8;
             this.btnDel.HeaderText = "";
             this.btnDel.MinimumWidth = 50;
             this.btnDel.Name = "btnDel";
@@ -536,12 +544,12 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 7;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
@@ -577,7 +585,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(908, 210);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(905, 210);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label2
@@ -629,7 +637,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(393, 27);
+            this.label9.Location = new System.Drawing.Point(368, 27);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 18);
             this.label9.TabIndex = 0;
@@ -640,7 +648,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(393, 54);
+            this.label4.Location = new System.Drawing.Point(368, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 0;
@@ -651,7 +659,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(393, 94);
+            this.label8.Location = new System.Drawing.Point(368, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 18);
             this.label8.TabIndex = 0;
@@ -662,7 +670,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(393, 123);
+            this.label10.Location = new System.Drawing.Point(368, 123);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 18);
             this.label10.TabIndex = 0;
@@ -673,7 +681,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(719, 123);
+            this.label3.Location = new System.Drawing.Point(648, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 18);
             this.label3.TabIndex = 0;
@@ -684,7 +692,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(719, 27);
+            this.label11.Location = new System.Drawing.Point(648, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 18);
             this.label11.TabIndex = 0;
@@ -724,7 +732,7 @@
             this.txtPatNum.Location = new System.Drawing.Point(123, 97);
             this.txtPatNum.Name = "txtPatNum";
             this.txtPatNum.ReadOnly = true;
-            this.txtPatNum.Size = new System.Drawing.Size(217, 19);
+            this.txtPatNum.Size = new System.Drawing.Size(214, 19);
             this.txtPatNum.TabIndex = 2;
             // 
             // txtPatName
@@ -736,7 +744,7 @@
             this.txtPatName.Location = new System.Drawing.Point(123, 126);
             this.txtPatName.Name = "txtPatName";
             this.txtPatName.ReadOnly = true;
-            this.txtPatName.Size = new System.Drawing.Size(217, 19);
+            this.txtPatName.Size = new System.Drawing.Size(214, 19);
             this.txtPatName.TabIndex = 2;
             // 
             // txtAddress
@@ -749,7 +757,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ReadOnly = true;
-            this.txtAddress.Size = new System.Drawing.Size(217, 52);
+            this.txtAddress.Size = new System.Drawing.Size(214, 52);
             this.txtAddress.TabIndex = 2;
             // 
             // txtAppId
@@ -758,10 +766,10 @@
             this.txtAppId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAppId.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAppId.ForeColor = System.Drawing.Color.Black;
-            this.txtAppId.Location = new System.Drawing.Point(513, 30);
+            this.txtAppId.Location = new System.Drawing.Point(467, 30);
             this.txtAppId.Name = "txtAppId";
             this.txtAppId.ReadOnly = true;
-            this.txtAppId.Size = new System.Drawing.Size(194, 19);
+            this.txtAppId.Size = new System.Drawing.Size(175, 19);
             this.txtAppId.TabIndex = 3;
             // 
             // txtDoctor
@@ -771,7 +779,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.txtDoctor, 3);
             this.txtDoctor.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDoctor.ForeColor = System.Drawing.Color.Black;
-            this.txtDoctor.Location = new System.Drawing.Point(513, 57);
+            this.txtDoctor.Location = new System.Drawing.Point(467, 57);
             this.txtDoctor.Name = "txtDoctor";
             this.txtDoctor.ReadOnly = true;
             this.txtDoctor.Size = new System.Drawing.Size(392, 19);
@@ -783,10 +791,10 @@
             this.txtNationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNationality.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNationality.ForeColor = System.Drawing.Color.Black;
-            this.txtNationality.Location = new System.Drawing.Point(513, 97);
+            this.txtNationality.Location = new System.Drawing.Point(467, 97);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.ReadOnly = true;
-            this.txtNationality.Size = new System.Drawing.Size(194, 19);
+            this.txtNationality.Size = new System.Drawing.Size(175, 19);
             this.txtNationality.TabIndex = 3;
             // 
             // txtAge
@@ -795,10 +803,10 @@
             this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAge.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAge.ForeColor = System.Drawing.Color.Black;
-            this.txtAge.Location = new System.Drawing.Point(513, 126);
+            this.txtAge.Location = new System.Drawing.Point(467, 126);
             this.txtAge.Name = "txtAge";
             this.txtAge.ReadOnly = true;
-            this.txtAge.Size = new System.Drawing.Size(194, 19);
+            this.txtAge.Size = new System.Drawing.Size(175, 19);
             this.txtAge.TabIndex = 3;
             // 
             // txtToken
@@ -807,7 +815,7 @@
             this.txtToken.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtToken.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtToken.ForeColor = System.Drawing.Color.Black;
-            this.txtToken.Location = new System.Drawing.Point(819, 30);
+            this.txtToken.Location = new System.Drawing.Point(720, 30);
             this.txtToken.Name = "txtToken";
             this.txtToken.ReadOnly = true;
             this.txtToken.Size = new System.Drawing.Size(86, 19);
@@ -819,7 +827,7 @@
             this.txtGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGender.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGender.ForeColor = System.Drawing.Color.Black;
-            this.txtGender.Location = new System.Drawing.Point(819, 126);
+            this.txtGender.Location = new System.Drawing.Point(720, 126);
             this.txtGender.Name = "txtGender";
             this.txtGender.ReadOnly = true;
             this.txtGender.Size = new System.Drawing.Size(86, 19);
@@ -834,7 +842,7 @@
             this.txtDate.Location = new System.Drawing.Point(123, 57);
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
-            this.txtDate.Size = new System.Drawing.Size(217, 19);
+            this.txtDate.Size = new System.Drawing.Size(214, 19);
             this.txtDate.TabIndex = 2;
             // 
             // txtInvNum
@@ -846,7 +854,7 @@
             this.txtInvNum.Location = new System.Drawing.Point(123, 30);
             this.txtInvNum.Name = "txtInvNum";
             this.txtInvNum.ReadOnly = true;
-            this.txtInvNum.Size = new System.Drawing.Size(217, 19);
+            this.txtInvNum.Size = new System.Drawing.Size(214, 19);
             this.txtInvNum.TabIndex = 2;
             // 
             // printDialog1
