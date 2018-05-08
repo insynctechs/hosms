@@ -167,7 +167,7 @@ namespace HospitalERP
 
                 foreach (DataRow row in dtProc.Rows)
                 {
-                    dgvInv.Rows.Add(new object[] { k, row["name"].ToString(), row["fee"].ToString() });                    
+                    dgvInv.Rows.Add(new object[] { k, row["name"].ToString(), Utils.FormatAmount(Convert.ToDouble(row["fee"].ToString())) });                    
                     bill_total += Convert.ToDouble(row["fee"].ToString());
                     k++;                    
                 }
@@ -251,8 +251,8 @@ namespace HospitalERP
             {
                 for (int m = 0; m < dgvInv.RowCount - 1; m++)
                    fee_total += Convert.ToDecimal(dgvInv.Rows[m].Cells["Amount"].Value.ToString());
-
-                fee_total += Convert.ToDecimal(txtPrevDues.Text.ToString());
+                if(txtPrevDues.Text.Trim() != "")
+                    fee_total += Convert.ToDecimal(txtPrevDues.Text.ToString());
                 txtTotal.Text = fee_total.ToString();
             }
             catch (Exception ex)
@@ -370,6 +370,8 @@ namespace HospitalERP
             try
             {
                 dgvInv.Columns["btnDel"].Visible = false;
+                dgvInv.CellBorderStyle = DataGridViewCellBorderStyle.None;
+                txtPaid.BorderStyle = BorderStyle.None;
                 printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
                 printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
                 if (chkLetterHead.Checked == true)
@@ -398,6 +400,8 @@ namespace HospitalERP
                 }
                 printDocument1.Dispose();
                 dgvInv.Columns["btnDel"].Visible = true;
+                dgvInv.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+                txtPaid.BorderStyle = BorderStyle.Fixed3D;
             }
             catch (Exception ex)
             {
