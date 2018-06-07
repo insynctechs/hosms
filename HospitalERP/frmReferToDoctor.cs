@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
+using System.Data;
 
 namespace HospitalERP
 {
@@ -10,6 +11,10 @@ namespace HospitalERP
         int doctor_id;
         int appointment_id;
         int patient_id;
+
+        Bill bill = new Bill();
+        DataTable dtPat;
+        DataTable dtBill;
 
         private bool errorfocus = false;
         ConsultationDetails CD = new ConsultationDetails();
@@ -37,6 +42,7 @@ namespace HospitalERP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Double bill_total=0;
             try
             {
                 if (ValidateChildren(ValidationConstraints.Enabled))
@@ -44,7 +50,29 @@ namespace HospitalERP
                     int ret = app.ReferAppointment(patient_id, Int32.Parse(cmbDoctor.SelectedValue.ToString()), Convert.ToDateTime(dtpDate.Text), Int32.Parse(Utils.ProcedureStatus["Scheduled"]),doctor_id,appointment_id);
                     if (ret >= 1)
                     {
-                        
+                        DataTable dtBill = bill.GetAppointmentBill(appointment_id, patient_id, 3);
+                        if (dtBill.Rows.Count == 0)
+                        {
+                            ConsultationDetails objCD = new ConsultationDetails();
+                            DataTable dtProc = bill.getBillDetails(appointment_id);
+
+                            if (dtProc == null || dtProc.Rows.Count <= 0) //no recs in billing details
+                            {
+                                Patients pat = new Patients();
+                                DataTable dtPat = pat.getDetailedPatientRecordFromID(patient_id, appointment_id);
+                                dtProc = objCD.getProceduresInvoiceFromApptID(appointment_id);
+                                bill_total += Convert.ToDouble(dtPat.Rows[0]["doctor_fee"].ToString());                                          
+                            }
+
+
+                            foreach (DataRow row in dtProc.Rows)
+                            {                               
+                                bill_total += Convert.ToDouble(row["fee"].ToString());                                
+                            }
+
+
+                            int bill_id = bill.AddBill(appointment_id, patient_id, Convert.ToDecimal(bill_total), 3, LoggedUser.id);
+                        }
                         MessageBox.Show("Appointment scheduled successfully!");
                     }
                     else if (ret == 0)
@@ -88,8 +116,9 @@ namespace HospitalERP
                     }
                     errorProvider.SetError(dtpDate, "Required");
                 }
-                else if (DateTime.TryParse(dtpDate.Text, out check) && check < DateTime.Now)
+                else if (Utils.DaysBetweenDates(dtpDate.Text, DateTime.Now.ToShortDateString()) < 0)
                 {
+                    
                     e.Cancel = true;
                     errorfocus = true;
                     dtpDate.Focus();

@@ -304,7 +304,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.09406F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.90594F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tblLoginPanel, 2, 0);
@@ -325,7 +325,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(225, 20);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(564, 73);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(563, 73);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnDashboard
@@ -395,7 +395,7 @@
             this.tblLoginPanel.Controls.Add(this.lnkChangePwd);
             this.tblLoginPanel.Controls.Add(this.linkLogout);
             this.tblLoginPanel.Controls.Add(this.btnChildClose);
-            this.tblLoginPanel.Location = new System.Drawing.Point(795, 3);
+            this.tblLoginPanel.Location = new System.Drawing.Point(794, 3);
             this.tblLoginPanel.Name = "tblLoginPanel";
             this.tblLoginPanel.Size = new System.Drawing.Size(196, 131);
             this.tblLoginPanel.TabIndex = 8;

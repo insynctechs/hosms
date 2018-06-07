@@ -131,10 +131,13 @@ namespace HospitalERP
                 txtDoctorID.Text = dt.Rows[0]["doctor_id"].ToString();
                 cmbAppStatus.SelectedValue = dt.Rows[0]["status"];
                 txtAddress.Text = Utils.FormatAddress(dt.Rows[0]["address"].ToString(), dt.Rows[0]["city"].ToString(), dt.Rows[0]["state"].ToString(), dt.Rows[0]["zip"].ToString());
-                if (Convert.ToInt16(dt.Rows[0]["status_edit_lock"].ToString()) == 1)
-                    EnableEditableButtons(false);
-                else
-                    EnableEditableButtons(true);
+                if (dt.Rows[0]["status_edit_lock"].ToString() != "")
+                {                    
+                    if (dt.Rows[0]["status_edit_lock"].ToString() == "True")
+                        EnableEditableButtons(false);
+                    else
+                        EnableEditableButtons(true);
+                }
             }
             catch (Exception ex)
             {
@@ -418,7 +421,7 @@ namespace HospitalERP
                 getConsultationDetails();
                 //Buttons are disabled when
                 //prev dates , completed status and users not doctors and super admin 
-                if (Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) > 0 || (cmbAppStatus.SelectedValue.ToString() =="2")) /*|| (LoggedUser.type_id !=1 && LoggedUser.type_id != 3)*/
+                if (Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) > 0 || (cmbAppStatus.SelectedValue.ToString() =="2") || (cmbAppStatus.SelectedValue.ToString() == "7")) /*|| (LoggedUser.type_id !=1 && LoggedUser.type_id != 3)*/
                 {
                     EnableEditableButtons(false);
                 }
@@ -542,13 +545,13 @@ namespace HospitalERP
         {
             try
             {
-                if (cmbAppStatus.SelectedValue.ToString() == "2")
+                if (cmbAppStatus.SelectedValue.ToString() == "2" && Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) >= 0)
                 {
                     frmOneTimeBill frm = new frmOneTimeBill(Int32.Parse(txtAppID.Text.ToString()), Int32.Parse(txtPatientID.Text));
                     frm.ShowDialog();
                 }
                 else
-                    MessageBox.Show("Bill can be generated only for completed appointments. \n Please change the status to completed before generating the bill.");
+                    MessageBox.Show("Bills can be generated/viewed for today's/past completed appointments only. \n Please change the status to completed before generating the bill.");
                
             }
             catch (Exception ex)
@@ -562,6 +565,19 @@ namespace HospitalERP
             Utils.toggleChildCloseButton(this.MdiParent, 1);
             objCD.Dispose();
             objApp.Dispose();
+        }
+
+        private void btnConsent_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmConsentForm fcf = new frmConsentForm(Int32.Parse(txtDoctorID.Text.Trim()), Int32.Parse(txtAppID.Text.Trim()), Int32.Parse(txtPatientID.Text.Trim())); //
+                fcf.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
         }
     }
 }

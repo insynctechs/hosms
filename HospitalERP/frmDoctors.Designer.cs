@@ -836,10 +836,11 @@
             // flowLayoutPanel8
             // 
             this.flowLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 529);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 469);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(994, 46);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(994, 106);
             this.flowLayoutPanel8.TabIndex = 13;
+            this.flowLayoutPanel8.Visible = false;
             // 
             // dgvList
             // 

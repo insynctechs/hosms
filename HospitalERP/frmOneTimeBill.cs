@@ -214,10 +214,18 @@ namespace HospitalERP
                     txtBalance.Text = Utils.FormatAmount(bill_balance);
                     lblTime.Text = dtBill.Rows[0]["bill_date"].ToString();
                     int creator = Int32.Parse(dtBill.Rows[0]["bill_created_userid"].ToString());
-                    //txtPrevDues.Text = dtPat.Rows[0]["dues"].ToString();
-                    txtPrevDues.Text = Utils.FormatAmount(Convert.ToDouble(dtBill.Rows[0]["bill_due"].ToString()));
-                    txtTotal.Text = Utils.FormatAmount(bill_total + Convert.ToDouble(txtPrevDues.Text));
-                    DataTable dtUser = bill.GetBillCreatedUser(creator);
+                    //txtPrevDues.Text = dtBill.Rows[0]["bill_due"].ToString();
+                    if (dtBill.Rows[0]["bill_due"].ToString() != "")
+                    {
+                        txtPrevDues.Text = Utils.FormatAmount(Convert.ToDouble(dtBill.Rows[0]["bill_due"].ToString()));
+                        txtTotal.Text = Utils.FormatAmount(bill_total + Convert.ToDouble(txtPrevDues.Text));
+                    }
+                    else
+                    {
+                        txtPrevDues.Text = "0.000";
+                        txtTotal.Text = Utils.FormatAmount(bill_total);
+                    }
+                        DataTable dtUser = bill.GetBillCreatedUser(creator);
                     if (dtUser != null)
                         txtLoggedUser.Text = dtUser.Rows[0]["staff_name"].ToString();
                     cmbBillStatus.SelectedValue = dtBill.Rows[0]["bill_status"].ToString();

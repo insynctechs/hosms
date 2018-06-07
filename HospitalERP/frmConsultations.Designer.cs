@@ -307,7 +307,7 @@
             // ADues
             // 
             this.ADues.DataPropertyName = "dues";
-            this.ADues.HeaderText = "Dues";
+            this.ADues.HeaderText = "Prev. Dues";
             this.ADues.Name = "ADues";
             this.ADues.ReadOnly = true;
             // 

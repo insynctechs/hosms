@@ -55,21 +55,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.dgvApp = new System.Windows.Forms.DataGridView();
-            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ABtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHead1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -87,6 +72,21 @@
             this.btnList = new System.Windows.Forms.Button();
             this.txtAppID = new System.Windows.Forms.TextBox();
             this.txtPatientID = new System.Windows.Forms.TextBox();
+            this.AID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APatName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADocName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APrevDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ABtnStatus = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnBill = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ABtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -359,116 +359,6 @@
             this.dgvApp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApp_CellContentClick);
             this.dgvApp.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApp_RowHeaderMouseClick);
             // 
-            // AID
-            // 
-            this.AID.DataPropertyName = "id";
-            resources.ApplyResources(this.AID, "AID");
-            this.AID.Name = "AID";
-            this.AID.ReadOnly = true;
-            // 
-            // APatID
-            // 
-            this.APatID.DataPropertyName = "patient_id";
-            resources.ApplyResources(this.APatID, "APatID");
-            this.APatID.Name = "APatID";
-            this.APatID.ReadOnly = true;
-            // 
-            // ADocID
-            // 
-            this.ADocID.DataPropertyName = "doctor_id";
-            resources.ApplyResources(this.ADocID, "ADocID");
-            this.ADocID.Name = "ADocID";
-            this.ADocID.ReadOnly = true;
-            // 
-            // APatNum
-            // 
-            this.APatNum.DataPropertyName = "patient_number";
-            resources.ApplyResources(this.APatNum, "APatNum");
-            this.APatNum.Name = "APatNum";
-            this.APatNum.ReadOnly = true;
-            // 
-            // APatName
-            // 
-            this.APatName.DataPropertyName = "patient_name";
-            resources.ApplyResources(this.APatName, "APatName");
-            this.APatName.Name = "APatName";
-            this.APatName.ReadOnly = true;
-            // 
-            // ADocName
-            // 
-            this.ADocName.DataPropertyName = "doctor_name";
-            resources.ApplyResources(this.ADocName, "ADocName");
-            this.ADocName.Name = "ADocName";
-            this.ADocName.ReadOnly = true;
-            // 
-            // AToken
-            // 
-            this.AToken.DataPropertyName = "token";
-            resources.ApplyResources(this.AToken, "AToken");
-            this.AToken.Name = "AToken";
-            this.AToken.ReadOnly = true;
-            // 
-            // APrevDate
-            // 
-            this.APrevDate.DataPropertyName = "prev_date";
-            resources.ApplyResources(this.APrevDate, "APrevDate");
-            this.APrevDate.Name = "APrevDate";
-            this.APrevDate.ReadOnly = true;
-            // 
-            // ADues
-            // 
-            this.ADues.DataPropertyName = "dues";
-            resources.ApplyResources(this.ADues, "ADues");
-            this.ADues.Name = "ADues";
-            this.ADues.ReadOnly = true;
-            // 
-            // AStatus
-            // 
-            this.AStatus.DataPropertyName = "status";
-            resources.ApplyResources(this.AStatus, "AStatus");
-            this.AStatus.Name = "AStatus";
-            this.AStatus.ReadOnly = true;
-            this.AStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // AStatusID
-            // 
-            this.AStatusID.DataPropertyName = "status_id";
-            resources.ApplyResources(this.AStatusID, "AStatusID");
-            this.AStatusID.Name = "AStatusID";
-            this.AStatusID.ReadOnly = true;
-            // 
-            // ABtnStatus
-            // 
-            resources.ApplyResources(this.ABtnStatus, "ABtnStatus");
-            this.ABtnStatus.Name = "ABtnStatus";
-            this.ABtnStatus.ReadOnly = true;
-            this.ABtnStatus.Text = "Change Status";
-            this.ABtnStatus.UseColumnTextForButtonValue = true;
-            // 
-            // ABtnDetails
-            // 
-            resources.ApplyResources(this.ABtnDetails, "ABtnDetails");
-            this.ABtnDetails.Name = "ABtnDetails";
-            this.ABtnDetails.ReadOnly = true;
-            this.ABtnDetails.Text = "View Details";
-            this.ABtnDetails.UseColumnTextForButtonValue = true;
-            // 
-            // ABtnBill
-            // 
-            resources.ApplyResources(this.ABtnBill, "ABtnBill");
-            this.ABtnBill.Name = "ABtnBill";
-            this.ABtnBill.ReadOnly = true;
-            this.ABtnBill.Text = "Generate Bills";
-            this.ABtnBill.UseColumnTextForButtonValue = true;
-            // 
-            // ABtnDelete
-            // 
-            resources.ApplyResources(this.ABtnDelete, "ABtnDelete");
-            this.ABtnDelete.Name = "ABtnDelete";
-            this.ABtnDelete.ReadOnly = true;
-            this.ABtnDelete.Text = "Cancel";
-            this.ABtnDelete.UseColumnTextForButtonValue = true;
-            // 
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
@@ -587,6 +477,116 @@
             resources.ApplyResources(this.txtPatientID, "txtPatientID");
             this.txtPatientID.Name = "txtPatientID";
             this.txtPatientID.TextChanged += new System.EventHandler(this.txtPatientID_TextChanged);
+            // 
+            // AID
+            // 
+            this.AID.DataPropertyName = "id";
+            resources.ApplyResources(this.AID, "AID");
+            this.AID.Name = "AID";
+            this.AID.ReadOnly = true;
+            // 
+            // APatID
+            // 
+            this.APatID.DataPropertyName = "patient_id";
+            resources.ApplyResources(this.APatID, "APatID");
+            this.APatID.Name = "APatID";
+            this.APatID.ReadOnly = true;
+            // 
+            // ADocID
+            // 
+            this.ADocID.DataPropertyName = "doctor_id";
+            resources.ApplyResources(this.ADocID, "ADocID");
+            this.ADocID.Name = "ADocID";
+            this.ADocID.ReadOnly = true;
+            // 
+            // APatNum
+            // 
+            this.APatNum.DataPropertyName = "patient_number";
+            resources.ApplyResources(this.APatNum, "APatNum");
+            this.APatNum.Name = "APatNum";
+            this.APatNum.ReadOnly = true;
+            // 
+            // APatName
+            // 
+            this.APatName.DataPropertyName = "patient_name";
+            resources.ApplyResources(this.APatName, "APatName");
+            this.APatName.Name = "APatName";
+            this.APatName.ReadOnly = true;
+            // 
+            // ADocName
+            // 
+            this.ADocName.DataPropertyName = "doctor_name";
+            resources.ApplyResources(this.ADocName, "ADocName");
+            this.ADocName.Name = "ADocName";
+            this.ADocName.ReadOnly = true;
+            // 
+            // AToken
+            // 
+            this.AToken.DataPropertyName = "token";
+            resources.ApplyResources(this.AToken, "AToken");
+            this.AToken.Name = "AToken";
+            this.AToken.ReadOnly = true;
+            // 
+            // APrevDate
+            // 
+            this.APrevDate.DataPropertyName = "prev_date";
+            resources.ApplyResources(this.APrevDate, "APrevDate");
+            this.APrevDate.Name = "APrevDate";
+            this.APrevDate.ReadOnly = true;
+            // 
+            // ADues
+            // 
+            this.ADues.DataPropertyName = "dues";
+            resources.ApplyResources(this.ADues, "ADues");
+            this.ADues.Name = "ADues";
+            this.ADues.ReadOnly = true;
+            // 
+            // AStatus
+            // 
+            this.AStatus.DataPropertyName = "status";
+            resources.ApplyResources(this.AStatus, "AStatus");
+            this.AStatus.Name = "AStatus";
+            this.AStatus.ReadOnly = true;
+            this.AStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // AStatusID
+            // 
+            this.AStatusID.DataPropertyName = "status_id";
+            resources.ApplyResources(this.AStatusID, "AStatusID");
+            this.AStatusID.Name = "AStatusID";
+            this.AStatusID.ReadOnly = true;
+            // 
+            // ABtnStatus
+            // 
+            resources.ApplyResources(this.ABtnStatus, "ABtnStatus");
+            this.ABtnStatus.Name = "ABtnStatus";
+            this.ABtnStatus.ReadOnly = true;
+            this.ABtnStatus.Text = "Change Status";
+            this.ABtnStatus.UseColumnTextForButtonValue = true;
+            // 
+            // ABtnDetails
+            // 
+            resources.ApplyResources(this.ABtnDetails, "ABtnDetails");
+            this.ABtnDetails.Name = "ABtnDetails";
+            this.ABtnDetails.ReadOnly = true;
+            this.ABtnDetails.Text = "View Details";
+            this.ABtnDetails.UseColumnTextForButtonValue = true;
+            // 
+            // ABtnBill
+            // 
+            resources.ApplyResources(this.ABtnBill, "ABtnBill");
+            this.ABtnBill.Name = "ABtnBill";
+            this.ABtnBill.ReadOnly = true;
+            this.ABtnBill.Text = "Generate Bills";
+            this.ABtnBill.UseColumnTextForButtonValue = true;
+            // 
+            // ABtnDelete
+            // 
+            resources.ApplyResources(this.ABtnDelete, "ABtnDelete");
+            this.ABtnDelete.Name = "ABtnDelete";
+            this.ABtnDelete.ReadOnly = true;
+            this.ABtnDelete.Text = "Cancel";
+            this.ABtnDelete.UseColumnTextForButtonValue = true;
             // 
             // frmAppointments
             // 

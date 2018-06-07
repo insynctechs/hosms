@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOneTimeBill));
             this.PanelBottom = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -264,7 +264,7 @@
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.41026F));
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.58974F));
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tblPanelFinal.Controls.Add(this.label17, 2, 4);
             this.tblPanelFinal.Controls.Add(this.lblTime, 0, 4);
             this.tblPanelFinal.Controls.Add(this.label16, 2, 3);
@@ -294,7 +294,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(682, 104);
+            this.label17.Location = new System.Drawing.Point(681, 104);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 18);
             this.label17.TabIndex = 0;
@@ -317,7 +317,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(703, 68);
+            this.label16.Location = new System.Drawing.Point(702, 68);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 18);
             this.label16.TabIndex = 0;
@@ -329,7 +329,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(674, 30);
+            this.label14.Location = new System.Drawing.Point(673, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(71, 18);
             this.label14.TabIndex = 0;
@@ -342,7 +342,7 @@
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Black;
-            this.txtTotal.Location = new System.Drawing.Point(751, 33);
+            this.txtTotal.Location = new System.Drawing.Point(750, 33);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 19);
@@ -353,7 +353,7 @@
             // 
             this.txtPaid.BackColor = System.Drawing.Color.White;
             this.txtPaid.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaid.Location = new System.Drawing.Point(751, 71);
+            this.txtPaid.Location = new System.Drawing.Point(750, 71);
             this.txtPaid.Name = "txtPaid";
             this.txtPaid.Size = new System.Drawing.Size(100, 26);
             this.txtPaid.TabIndex = 1;
@@ -366,7 +366,7 @@
             this.txtBalance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBalance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalance.ForeColor = System.Drawing.Color.Black;
-            this.txtBalance.Location = new System.Drawing.Point(751, 107);
+            this.txtBalance.Location = new System.Drawing.Point(750, 107);
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.ReadOnly = true;
             this.txtBalance.Size = new System.Drawing.Size(100, 19);
@@ -378,9 +378,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpBillHR.BackColor = System.Drawing.Color.Black;
             this.tblPanelFinal.SetColumnSpan(this.flpBillHR, 2);
-            this.flpBillHR.Location = new System.Drawing.Point(541, 63);
+            this.flpBillHR.Location = new System.Drawing.Point(540, 63);
             this.flpBillHR.Name = "flpBillHR";
-            this.flpBillHR.Size = new System.Drawing.Size(364, 1);
+            this.flpBillHR.Size = new System.Drawing.Size(365, 1);
             this.flpBillHR.TabIndex = 2;
             // 
             // flowLayoutPanel2
@@ -411,7 +411,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(668, 0);
+            this.label19.Location = new System.Drawing.Point(667, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(77, 18);
             this.label19.TabIndex = 0;
@@ -423,7 +423,7 @@
             this.txtPrevDues.BackColor = System.Drawing.Color.White;
             this.txtPrevDues.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrevDues.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrevDues.Location = new System.Drawing.Point(751, 3);
+            this.txtPrevDues.Location = new System.Drawing.Point(750, 3);
             this.txtPrevDues.Name = "txtPrevDues";
             this.txtPrevDues.ReadOnly = true;
             this.txtPrevDues.Size = new System.Drawing.Size(100, 19);
@@ -449,42 +449,42 @@
             this.dgvInv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvInv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Num,
             this.Description,
             this.Amount,
             this.btnDel});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInv.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInv.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInv.EnableHeadersVisualStyles = false;
             this.dgvInv.GridColor = System.Drawing.Color.White;
             this.dgvInv.Location = new System.Drawing.Point(52, 279);
             this.dgvInv.Name = "dgvInv";
             this.dgvInv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInv.RowHeadersVisible = false;
             this.dgvInv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvInv.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -519,8 +519,8 @@
             // 
             // Amount
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle2;
             this.Amount.HeaderText = "Item Amount";
             this.Amount.MinimumWidth = 100;
             this.Amount.Name = "Amount";
@@ -529,9 +529,9 @@
             // 
             // btnDel
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.btnDel.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.btnDel.DefaultCellStyle = dataGridViewCellStyle3;
             this.btnDel.HeaderText = "";
             this.btnDel.MinimumWidth = 50;
             this.btnDel.Name = "btnDel";
@@ -886,7 +886,6 @@
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.PanelBottom);
             this.Name = "frmOneTimeBill";
-            this.Text = "OneTime Bill";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOneTimeBill_FormClosed);
             this.Load += new System.EventHandler(this.frmOneTimeBill_Load);
             this.Shown += new System.EventHandler(this.frmOneTimeBill_Shown);

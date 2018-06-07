@@ -3,10 +3,13 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using HospitalERP.Helpers;
+using HospitalERP.Procedures;
+
 namespace HospitalERP
 {
     public partial class frmDbConfig : Form
     {
+        Users usr = new Users();
         public frmDbConfig()
         {
             InitializeComponent();
@@ -52,16 +55,21 @@ namespace HospitalERP
                             key.SetValue("reset", "true");
                             key.Close();
 
-                            //opening the subkey  
-                            RegistryKey key1 = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP", true);
-                            key1.SetValue("first_run", false);
-                            key1.Close();
-                            this.Close();
-                           // MessageBox.Show("Finished dbconfig");
+                            int ret = usr.ValidateLogin("admin", "12345");
+                            if (ret > 0)
+                            {
+                                //opening the subkey  
+                                RegistryKey key1 = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HospitalERP", true);
+                                key1.SetValue("first_run", false);
+                                key1.Close();
+                                this.Close();
+                            }
+                            else
+                             MessageBox.Show("Connection cannot be established!!! Please check the server details.","Warning",MessageBoxButtons.OK);
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Connection cannot be established.");
+                            CommonLogger.Info(ex.ToString());
                         }
 
                     }

@@ -186,7 +186,7 @@ namespace HospitalERP
                             ShowStatus(0, "Type name should be unique");
                         else if (rtn == 1)
                         {
-                            ShowStatus(1, "Record succesfully added");
+                            ShowStatus(1, "Record successfully added");
                             clearControls();
                         }
                         else if (rtn == -1)
@@ -202,7 +202,7 @@ namespace HospitalERP
                         //else
                         if (rtn == 1)
                         {
-                            ShowStatus(1, "Record succesfully updated");
+                            ShowStatus(1, "Record successfully updated");
                             clearControls();
 
                         }
@@ -463,7 +463,7 @@ namespace HospitalERP
                                         MessageBox.Show("Error in changing password", "Reset Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     else if (rtn == 1)
                                     {
-                                        MessageBox.Show("Password succesfully reset to default value - " + def_pwd, "Reset Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        MessageBox.Show("Password successfully reset to default value - " + def_pwd, "Reset Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                                     }

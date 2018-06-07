@@ -301,21 +301,19 @@ namespace HospitalERP
                 switch (dgvApp.Columns[e.ColumnIndex].Name)
                 {
                     case "ABtnBill":
-                        if (dgvApp.Rows[e.RowIndex].Cells["AStatus"].Value.ToString() == "Completed")
+                        if (dgvApp.Rows[e.RowIndex].Cells["AStatus"].Value.ToString() == "Completed" && Utils.DaysBetweenDates(dtpAppDate.Text, DateTime.Now.ToShortDateString()) >= 0)
                             ViewBill(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
-                        else
-                            MessageBox.Show("Bills can be generated/view for completed appointments only", "Information", MessageBoxButtons.OK);
+                        else                            
+                            MessageBox.Show("Bills can be generated/viewed for today's/past completed appointments only", "Information", MessageBoxButtons.OK);
                             break;
                     case "ABtnDetails":
-                        ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
-                        getAppointmentList();
+                        ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));                        
                         break;
                     case "ABtnDelete":
-                        DeletePatient(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AStatusID"].Value.ToString()));
-                        getAppointmentList();
+                        DeletePatient(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AStatusID"].Value.ToString()));                        
                         break;
                 }
-                
+                getAppointmentList();
             }
             catch (Exception ex)
             {
