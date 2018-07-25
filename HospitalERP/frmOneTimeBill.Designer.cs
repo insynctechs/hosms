@@ -264,7 +264,7 @@
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.41026F));
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.58974F));
             this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tblPanelFinal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tblPanelFinal.Controls.Add(this.label17, 2, 4);
             this.tblPanelFinal.Controls.Add(this.lblTime, 0, 4);
             this.tblPanelFinal.Controls.Add(this.label16, 2, 3);
@@ -294,7 +294,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(681, 104);
+            this.label17.Location = new System.Drawing.Point(680, 104);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 18);
             this.label17.TabIndex = 0;
@@ -317,7 +317,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(702, 68);
+            this.label16.Location = new System.Drawing.Point(701, 68);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 18);
             this.label16.TabIndex = 0;
@@ -329,7 +329,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(673, 30);
+            this.label14.Location = new System.Drawing.Point(672, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(71, 18);
             this.label14.TabIndex = 0;
@@ -342,7 +342,7 @@
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Black;
-            this.txtTotal.Location = new System.Drawing.Point(750, 33);
+            this.txtTotal.Location = new System.Drawing.Point(749, 33);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 19);
@@ -353,7 +353,7 @@
             // 
             this.txtPaid.BackColor = System.Drawing.Color.White;
             this.txtPaid.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaid.Location = new System.Drawing.Point(750, 71);
+            this.txtPaid.Location = new System.Drawing.Point(749, 71);
             this.txtPaid.Name = "txtPaid";
             this.txtPaid.Size = new System.Drawing.Size(100, 26);
             this.txtPaid.TabIndex = 1;
@@ -366,7 +366,7 @@
             this.txtBalance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBalance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalance.ForeColor = System.Drawing.Color.Black;
-            this.txtBalance.Location = new System.Drawing.Point(750, 107);
+            this.txtBalance.Location = new System.Drawing.Point(749, 107);
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.ReadOnly = true;
             this.txtBalance.Size = new System.Drawing.Size(100, 19);
@@ -378,9 +378,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpBillHR.BackColor = System.Drawing.Color.Black;
             this.tblPanelFinal.SetColumnSpan(this.flpBillHR, 2);
-            this.flpBillHR.Location = new System.Drawing.Point(540, 63);
+            this.flpBillHR.Location = new System.Drawing.Point(539, 63);
             this.flpBillHR.Name = "flpBillHR";
-            this.flpBillHR.Size = new System.Drawing.Size(365, 1);
+            this.flpBillHR.Size = new System.Drawing.Size(366, 1);
             this.flpBillHR.TabIndex = 2;
             // 
             // flowLayoutPanel2
@@ -411,7 +411,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(667, 0);
+            this.label19.Location = new System.Drawing.Point(666, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(77, 18);
             this.label19.TabIndex = 0;
@@ -423,7 +423,7 @@
             this.txtPrevDues.BackColor = System.Drawing.Color.White;
             this.txtPrevDues.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrevDues.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrevDues.Location = new System.Drawing.Point(750, 3);
+            this.txtPrevDues.Location = new System.Drawing.Point(749, 3);
             this.txtPrevDues.Name = "txtPrevDues";
             this.txtPrevDues.ReadOnly = true;
             this.txtPrevDues.Size = new System.Drawing.Size(100, 19);
@@ -886,6 +886,7 @@
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.PanelBottom);
             this.Name = "frmOneTimeBill";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOneTimeBill_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOneTimeBill_FormClosed);
             this.Load += new System.EventHandler(this.frmOneTimeBill_Load);
             this.Shown += new System.EventHandler(this.frmOneTimeBill_Shown);

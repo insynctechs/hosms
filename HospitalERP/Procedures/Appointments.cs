@@ -30,6 +30,26 @@ namespace HospitalERP.Procedures
             }
             return ret;
         }
+        public int editAppointmentSignature(int id, string signature,string consent_details, DateTime consent_date)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[4];
+                sqlParam[0] = new SqlParameter("@id", id);
+                sqlParam[1] = new SqlParameter("@signature", signature);
+                sqlParam[2] = new SqlParameter("@consent_details", consent_details);
+                sqlParam[3] = new SqlParameter("@consent_date", consent_date);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspAppointments_EditSignature", sqlParam).ToString());
+            }
+            catch (DbException ex)
+            {
+                ret = -1;
+                Helpers.CommonLogger.Error(ex.Message, ex);
+            }
+            return ret;
+        }
+
 
         public int ReferAppointment(int patient_id, int doctor_id, DateTime meet_date, int status, int refer_by, int prev_appt)
         {
@@ -155,12 +175,26 @@ namespace HospitalERP.Procedures
 
         }
 
+        public int GetBillLockStatus(int app_id)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@app_id", app_id);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspGetBillLock", sqlParam).ToString());
+            }
+            catch (DbException ex)
+            {
+                Helpers.CommonLogger.Error(ex.Message, ex);
+                return -1;
+            }
+            return ret;
+        }
+
         public void Dispose()
         {
             conn = null;           
-
         }
-
-
     }
 }

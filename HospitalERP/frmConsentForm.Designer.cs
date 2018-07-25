@@ -64,7 +64,6 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.chkLetterHead = new System.Windows.Forms.CheckBox();
-            this.sigPlusNET2 = new Topaz.SigPlusNET();
             this.panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +106,6 @@
             this.panelContent.Controls.Add(this.label1);
             this.panelContent.Controls.Add(this.cmdClear);
             this.panelContent.Controls.Add(this.cmdSign);
-            this.panelContent.Controls.Add(this.sigPlusNET2);
             this.panelContent.Controls.Add(this.sigPlusNET1);
             this.panelContent.Location = new System.Drawing.Point(12, 12);
             this.panelContent.Name = "panelContent";
@@ -471,16 +469,6 @@
             this.chkLetterHead.Text = "Letterhead Print";
             this.chkLetterHead.UseVisualStyleBackColor = true;
             // 
-            // sigPlusNET2
-            // 
-            this.sigPlusNET2.BackColor = System.Drawing.Color.White;
-            this.sigPlusNET2.ForeColor = System.Drawing.Color.Black;
-            this.sigPlusNET2.Location = new System.Drawing.Point(333, 460);
-            this.sigPlusNET2.Name = "sigPlusNET2";
-            this.sigPlusNET2.Size = new System.Drawing.Size(266, 66);
-            this.sigPlusNET2.TabIndex = 12;
-            this.sigPlusNET2.Text = "sigPlusNET1";
-            // 
             // frmConsentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,6 +526,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chkLetterHead;
         private System.Windows.Forms.TextBox lblTreatmentDetails;
-        private Topaz.SigPlusNET sigPlusNET2;
     }
 }

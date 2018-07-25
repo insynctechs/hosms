@@ -260,9 +260,6 @@ namespace HospitalERP.Procedures
         public void Dispose()
         {
             conn = null;
-
         }
-
-
     }
 }

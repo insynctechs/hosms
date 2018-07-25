@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHead1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,23 +86,58 @@
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnMedicalReport = new System.Windows.Forms.Button();
             this.btnSickLeave = new System.Windows.Forms.Button();
+            this.btnConsent = new System.Windows.Forms.Button();
             this.btnRefer = new System.Windows.Forms.Button();
             this.btnGenBill = new System.Windows.Forms.Button();
             this.txtDoctorID = new System.Windows.Forms.TextBox();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.txtAppID = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.tabConsult = new System.Windows.Forms.TabControl();
-            this.tbPgDiag = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbAppStatus = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMedicalNotes = new System.Windows.Forms.TextBox();
-            this.txtAllergies = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtApptNotes = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabPgMedicine = new System.Windows.Forms.TabPage();
+            this.dgvMedicine = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBtnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colMedId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label40 = new System.Windows.Forms.Label();
+            this.txtAppMedId = new System.Windows.Forms.TextBox();
+            this.cmbMedicine = new HospitalERP.Helpers.CustomComboBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label39 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSaveMedicine = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnAddMed = new System.Windows.Forms.Button();
+            this.txtPrescription = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.TextBox();
+            this.tbPgHistory = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dgvApptHistory = new System.Windows.Forms.DataGridView();
+            this.colHistID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnHistSelect = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvHistoryProcedures = new System.Windows.Forms.DataGridView();
+            this.colHistProcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistProcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistProcType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistProcFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHistProcStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHeadProcHist = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.tbPgProc = new System.Windows.Forms.TabPage();
             this.dgvProc = new System.Windows.Forms.DataGridView();
             this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,10 +149,12 @@
             this.cstatus_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnProcEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnProcDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.txtApptProcID = new System.Windows.Forms.TextBox();
-            this.cmbProcedure = new System.Windows.Forms.ComboBox();
+            this.cmbProcedure = new HospitalERP.Helpers.CustomComboBox();
             this.txtFee = new System.Windows.Forms.TextBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -131,38 +171,29 @@
             this.flowLayoutPanel23 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSaveProcedure = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
-            this.tbPgHistory = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dgvApptHistory = new System.Windows.Forms.DataGridView();
-            this.colHistID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnHistSelect = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgvHistoryProcedures = new System.Windows.Forms.DataGridView();
-            this.colHistProcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistProcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistProcType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistProcFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHistProcStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblHeadProcHist = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnConsent = new System.Windows.Forms.Button();
+            this.tbPgDiag = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbAppStatus = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtMedicalNotes = new System.Windows.Forms.TextBox();
+            this.txtAllergies = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtApptNotes = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.tabConsult = new System.Windows.Forms.TabControl();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
-            this.tabConsult.SuspendLayout();
-            this.tbPgDiag.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tbPgProc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel21.SuspendLayout();
-            this.flowLayoutPanel20.SuspendLayout();
-            this.flowLayoutPanel22.SuspendLayout();
-            this.flowLayoutPanel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.tabPgMedicine.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             this.tbPgHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -170,7 +201,16 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.tbPgProc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel21.SuspendLayout();
+            this.flowLayoutPanel20.SuspendLayout();
+            this.flowLayoutPanel22.SuspendLayout();
+            this.flowLayoutPanel23.SuspendLayout();
+            this.tbPgDiag.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tabConsult.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -712,6 +752,21 @@
             this.btnSickLeave.UseVisualStyleBackColor = false;
             this.btnSickLeave.Click += new System.EventHandler(this.btnSickLeave_Click);
             // 
+            // btnConsent
+            // 
+            this.btnConsent.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnConsent.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsent.ForeColor = System.Drawing.Color.White;
+            this.btnConsent.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnConsent.Location = new System.Drawing.Point(80, 45);
+            this.btnConsent.Margin = new System.Windows.Forms.Padding(80, 3, 3, 3);
+            this.btnConsent.Name = "btnConsent";
+            this.btnConsent.Size = new System.Drawing.Size(147, 36);
+            this.btnConsent.TabIndex = 22;
+            this.btnConsent.Text = "GET CONSENT FORM";
+            this.btnConsent.UseVisualStyleBackColor = false;
+            this.btnConsent.Click += new System.EventHandler(this.btnConsent_Click);
+            // 
             // btnRefer
             // 
             this.btnRefer.BackColor = System.Drawing.Color.MidnightBlue;
@@ -768,169 +823,587 @@
             this.txtAppID.TabIndex = 36;
             this.txtAppID.Visible = false;
             // 
-            // label24
+            // errorProvider
             // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(109, 362);
-            this.label24.Name = "label24";
-            this.label24.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.label24.Size = new System.Drawing.Size(218, 26);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "Choose Appointment Status : ";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.errorProvider.ContainerControl = this;
             // 
-            // tabConsult
+            // tabPgMedicine
             // 
-            this.tabConsult.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabConsult.Controls.Add(this.tbPgDiag);
-            this.tabConsult.Controls.Add(this.tbPgProc);
-            this.tabConsult.Controls.Add(this.tbPgHistory);
-            this.tabConsult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabConsult.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabConsult.Location = new System.Drawing.Point(320, 18);
-            this.tabConsult.Name = "tabConsult";
-            this.tabConsult.SelectedIndex = 0;
-            this.tabConsult.Size = new System.Drawing.Size(688, 541);
-            this.tabConsult.TabIndex = 1;
-            this.tabConsult.SelectedIndexChanged += new System.EventHandler(this.tabConsult_SelectedIndexChanged);
+            this.tabPgMedicine.BackColor = System.Drawing.Color.White;
+            this.tabPgMedicine.Controls.Add(this.dgvMedicine);
+            this.tabPgMedicine.Controls.Add(this.tableLayoutPanel5);
+            this.tabPgMedicine.Location = new System.Drawing.Point(4, 32);
+            this.tabPgMedicine.Name = "tabPgMedicine";
+            this.tabPgMedicine.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPgMedicine.Size = new System.Drawing.Size(680, 505);
+            this.tabPgMedicine.TabIndex = 4;
+            this.tabPgMedicine.Text = "Medicines";
             // 
-            // tbPgDiag
+            // dgvMedicine
             // 
-            this.tbPgDiag.AutoScroll = true;
-            this.tbPgDiag.BackColor = System.Drawing.Color.White;
-            this.tbPgDiag.Controls.Add(this.tableLayoutPanel2);
-            this.tbPgDiag.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPgDiag.Location = new System.Drawing.Point(4, 32);
-            this.tbPgDiag.Name = "tbPgDiag";
-            this.tbPgDiag.Padding = new System.Windows.Forms.Padding(3);
-            this.tbPgDiag.Size = new System.Drawing.Size(680, 505);
-            this.tbPgDiag.TabIndex = 0;
-            this.tbPgDiag.Text = "Diagnosis";
+            this.dgvMedicine.AllowUserToAddRows = false;
+            this.dgvMedicine.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvMedicine.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMedicine.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvMedicine.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMedicine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvMedicine.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvMedicine.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn3,
+            this.colBtnEdit,
+            this.colDel,
+            this.colMedId});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicine.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvMedicine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMedicine.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvMedicine.Location = new System.Drawing.Point(3, 268);
+            this.dgvMedicine.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.dgvMedicine.Name = "dgvMedicine";
+            this.dgvMedicine.ReadOnly = true;
+            this.dgvMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMedicine.Size = new System.Drawing.Size(674, 234);
+            this.dgvMedicine.TabIndex = 15;
+            this.dgvMedicine.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicine_CellContentClick);
             // 
-            // tableLayoutPanel2
+            // colID
             // 
-            this.tableLayoutPanel2.AutoScroll = true;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.07597F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.92403F));
-            this.tableLayoutPanel2.Controls.Add(this.cmbAppStatus, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtMedicalNotes, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtAllergies, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label11, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label24, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtApptNotes, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 4);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(10);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(10);
-            this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(674, 499);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Visible = false;
             // 
-            // cmbAppStatus
+            // dataGridViewTextBoxColumn2
             // 
-            this.cmbAppStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbAppStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAppStatus.Font = new System.Drawing.Font("Segoe UI", 11.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAppStatus.FormattingEnabled = true;
-            this.cmbAppStatus.Location = new System.Drawing.Point(109, 398);
-            this.cmbAppStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.cmbAppStatus.Name = "cmbAppStatus";
-            this.cmbAppStatus.Size = new System.Drawing.Size(218, 29);
-            this.cmbAppStatus.TabIndex = 8;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "medicine_name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Medicine Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // label7
+            // dataGridViewTextBoxColumn4
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "medicine_type";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Medicine Type";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "prescription";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Prescription";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // colBtnEdit
+            // 
+            this.colBtnEdit.FillWeight = 101.5228F;
+            this.colBtnEdit.HeaderText = "";
+            this.colBtnEdit.Name = "colBtnEdit";
+            this.colBtnEdit.ReadOnly = true;
+            this.colBtnEdit.Text = "Edit";
+            this.colBtnEdit.UseColumnTextForButtonValue = true;
+            // 
+            // colDel
+            // 
+            this.colDel.HeaderText = "";
+            this.colDel.Name = "colDel";
+            this.colDel.ReadOnly = true;
+            this.colDel.Text = "Delete";
+            this.colDel.UseColumnTextForButtonValue = true;
+            // 
+            // colMedId
+            // 
+            this.colMedId.DataPropertyName = "medicine_id";
+            this.colMedId.HeaderText = "medicine_id";
+            this.colMedId.Name = "colMedId";
+            this.colMedId.ReadOnly = true;
+            this.colMedId.Visible = false;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.88889F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.11111F));
+            this.tableLayoutPanel5.Controls.Add(this.label40, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtAppMedId, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.cmbMedicine, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel2, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel3, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel4, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel5, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.txtPrescription, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.txtType, 1, 2);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(23, 3, 3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 6;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(674, 265);
+            this.tableLayoutPanel5.TabIndex = 14;
+            // 
+            // label40
+            // 
+            this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(314, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Medical Notes";
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.LightCyan;
+            this.tableLayoutPanel5.SetColumnSpan(this.label40, 5);
+            this.label40.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.DimGray;
+            this.label40.Location = new System.Drawing.Point(3, 10);
+            this.label40.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label40.Name = "label40";
+            this.label40.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.label40.Size = new System.Drawing.Size(668, 28);
+            this.label40.TabIndex = 30;
+            this.label40.Text = "MEDICINE DETAILS";
             // 
-            // txtMedicalNotes
+            // txtAppMedId
             // 
-            this.txtMedicalNotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMedicalNotes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicalNotes.Location = new System.Drawing.Point(13, 37);
-            this.txtMedicalNotes.Multiline = true;
-            this.txtMedicalNotes.Name = "txtMedicalNotes";
-            this.txtMedicalNotes.Size = new System.Drawing.Size(314, 144);
-            this.txtMedicalNotes.TabIndex = 1;
+            this.txtAppMedId.Location = new System.Drawing.Point(3, 176);
+            this.txtAppMedId.Name = "txtAppMedId";
+            this.txtAppMedId.Size = new System.Drawing.Size(100, 27);
+            this.txtAppMedId.TabIndex = 76;
+            this.txtAppMedId.Visible = false;
             // 
-            // txtAllergies
+            // cmbMedicine
             // 
-            this.txtAllergies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAllergies.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAllergies.Location = new System.Drawing.Point(13, 215);
-            this.txtAllergies.Multiline = true;
-            this.txtAllergies.Name = "txtAllergies";
-            this.txtAllergies.Size = new System.Drawing.Size(314, 144);
-            this.txtAllergies.TabIndex = 1;
+            this.cmbMedicine.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbMedicine.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbMedicine.DisplayMember = "name";
+            this.cmbMedicine.FormattingEnabled = true;
+            this.cmbMedicine.Location = new System.Drawing.Point(265, 43);
+            this.cmbMedicine.Name = "cmbMedicine";
+            this.cmbMedicine.Size = new System.Drawing.Size(201, 28);
+            this.cmbMedicine.TabIndex = 0;
+            this.cmbMedicine.ValueMember = "id";
+            this.cmbMedicine.SelectedIndexChanged += new System.EventHandler(this.cmbMedicine_SelectedIndexChanged);
+            this.cmbMedicine.DropDownClosed += new System.EventHandler(this.cmbMedicine_DropDownClosed);
+            this.cmbMedicine.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMedicine_KeyDown);
+            this.cmbMedicine.Leave += new System.EventHandler(this.cmbMedicine_Leave);
+            this.cmbMedicine.Validating += new System.ComponentModel.CancelEventHandler(this.cmbMedicine_Validating);
             // 
-            // label11
+            // flowLayoutPanel2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(333, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(146, 20);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Diagnosis and Notes";
+            this.flowLayoutPanel2.Controls.Add(this.label39);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 80);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(210, 28);
+            this.flowLayoutPanel2.TabIndex = 77;
             // 
-            // label13
+            // label39
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(3, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(105, 20);
+            this.label39.TabIndex = 73;
+            this.label39.Text = "Medicine Type";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label43);
+            this.flowLayoutPanel3.Controls.Add(this.label44);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 43);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(136, 31);
+            this.flowLayoutPanel3.TabIndex = 77;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.Color.Red;
+            this.label43.Location = new System.Drawing.Point(3, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(15, 20);
+            this.label43.TabIndex = 1;
+            this.label43.Text = "*";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(24, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(70, 20);
+            this.label44.TabIndex = 66;
+            this.label44.Text = "Medicine";
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.label45);
+            this.flowLayoutPanel4.Controls.Add(this.label46);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 114);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(136, 28);
+            this.flowLayoutPanel4.TabIndex = 77;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.ForeColor = System.Drawing.Color.Red;
+            this.label45.Location = new System.Drawing.Point(3, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(15, 20);
+            this.label45.TabIndex = 1;
+            this.label45.Text = "*";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(24, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(87, 20);
+            this.label46.TabIndex = 66;
+            this.label46.Text = "Prescription";
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.btnSaveMedicine);
+            this.flowLayoutPanel5.Controls.Add(this.btnPrint);
+            this.flowLayoutPanel5.Controls.Add(this.btnAddMed);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(265, 176);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(363, 37);
+            this.flowLayoutPanel5.TabIndex = 78;
+            // 
+            // btnSaveMedicine
+            // 
+            this.btnSaveMedicine.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSaveMedicine.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveMedicine.ForeColor = System.Drawing.Color.White;
+            this.btnSaveMedicine.Location = new System.Drawing.Point(3, 3);
+            this.btnSaveMedicine.Name = "btnSaveMedicine";
+            this.btnSaveMedicine.Size = new System.Drawing.Size(75, 33);
+            this.btnSaveMedicine.TabIndex = 3;
+            this.btnSaveMedicine.Text = "SAVE";
+            this.btnSaveMedicine.UseVisualStyleBackColor = false;
+            this.btnSaveMedicine.Click += new System.EventHandler(this.btnSaveMedicine_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnPrint.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(84, 3);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(103, 33);
+            this.btnPrint.TabIndex = 4;
+            this.btnPrint.Text = "PRINT";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnAddMed
+            // 
+            this.btnAddMed.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAddMed.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMed.ForeColor = System.Drawing.Color.White;
+            this.btnAddMed.Location = new System.Drawing.Point(193, 3);
+            this.btnAddMed.Name = "btnAddMed";
+            this.btnAddMed.Size = new System.Drawing.Size(108, 33);
+            this.btnAddMed.TabIndex = 5;
+            this.btnAddMed.Text = "ADD NEW";
+            this.btnAddMed.UseVisualStyleBackColor = false;
+            this.btnAddMed.Click += new System.EventHandler(this.btnAddMed_Click);
+            // 
+            // txtPrescription
+            // 
+            this.txtPrescription.Location = new System.Drawing.Point(265, 114);
+            this.txtPrescription.Multiline = true;
+            this.txtPrescription.Name = "txtPrescription";
+            this.txtPrescription.Size = new System.Drawing.Size(327, 54);
+            this.txtPrescription.TabIndex = 2;
+            this.txtPrescription.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrescription_Validating);
+            // 
+            // txtType
+            // 
+            this.txtType.Location = new System.Drawing.Point(265, 80);
+            this.txtType.Name = "txtType";
+            this.txtType.ReadOnly = true;
+            this.txtType.Size = new System.Drawing.Size(100, 27);
+            this.txtType.TabIndex = 1;
+            // 
+            // tbPgHistory
+            // 
+            this.tbPgHistory.BackColor = System.Drawing.Color.White;
+            this.tbPgHistory.Controls.Add(this.splitContainer1);
+            this.tbPgHistory.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPgHistory.Location = new System.Drawing.Point(4, 32);
+            this.tbPgHistory.Name = "tbPgHistory";
+            this.tbPgHistory.Size = new System.Drawing.Size(680, 505);
+            this.tbPgHistory.TabIndex = 2;
+            this.tbPgHistory.Text = "Appointment History";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dgvApptHistory);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgvHistoryProcedures);
+            this.splitContainer1.Panel2.Controls.Add(this.lblHeadProcHist);
+            this.splitContainer1.Panel2.Controls.Add(this.label25);
+            this.splitContainer1.Size = new System.Drawing.Size(680, 505);
+            this.splitContainer1.SplitterDistance = 259;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // dgvApptHistory
+            // 
+            this.dgvApptHistory.AllowUserToAddRows = false;
+            this.dgvApptHistory.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvApptHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvApptHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvApptHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvApptHistory.BackgroundColor = System.Drawing.Color.White;
+            this.dgvApptHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvApptHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApptHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvApptHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvApptHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colHistID,
+            this.colHistDate,
+            this.colHistDoc,
+            this.colHistNotes,
+            this.colPrescription,
+            this.colHistStatus,
+            this.btnHistSelect});
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApptHistory.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvApptHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvApptHistory.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvApptHistory.Location = new System.Drawing.Point(0, 0);
+            this.dgvApptHistory.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.dgvApptHistory.Name = "dgvApptHistory";
+            this.dgvApptHistory.ReadOnly = true;
+            this.dgvApptHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvApptHistory.Size = new System.Drawing.Size(680, 235);
+            this.dgvApptHistory.TabIndex = 13;
+            this.dgvApptHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApptHistory_CellContentClick);
+            this.dgvApptHistory.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApptHistory_RowHeaderMouseClick);
+            // 
+            // colHistID
+            // 
+            this.colHistID.DataPropertyName = "id";
+            this.colHistID.HeaderText = "ID";
+            this.colHistID.Name = "colHistID";
+            this.colHistID.ReadOnly = true;
+            this.colHistID.Visible = false;
+            // 
+            // colHistDate
+            // 
+            this.colHistDate.DataPropertyName = "meet_date";
+            this.colHistDate.FillWeight = 96.83284F;
+            this.colHistDate.HeaderText = "Date";
+            this.colHistDate.Name = "colHistDate";
+            this.colHistDate.ReadOnly = true;
+            // 
+            // colHistDoc
+            // 
+            this.colHistDoc.DataPropertyName = "doctor_name";
+            this.colHistDoc.FillWeight = 126.9036F;
+            this.colHistDoc.HeaderText = "Consulted Doctor";
+            this.colHistDoc.Name = "colHistDoc";
+            this.colHistDoc.ReadOnly = true;
+            // 
+            // colHistNotes
+            // 
+            this.colHistNotes.DataPropertyName = "notes";
+            this.colHistNotes.FillWeight = 158.5987F;
+            this.colHistNotes.HeaderText = "Diagnosis";
+            this.colHistNotes.Name = "colHistNotes";
+            this.colHistNotes.ReadOnly = true;
+            // 
+            // colPrescription
+            // 
+            this.colPrescription.DataPropertyName = "Prescription";
+            this.colPrescription.HeaderText = "Prescription";
+            this.colPrescription.Name = "colPrescription";
+            this.colPrescription.ReadOnly = true;
+            // 
+            // colHistStatus
+            // 
+            this.colHistStatus.DataPropertyName = "status_name";
+            this.colHistStatus.FillWeight = 59.07952F;
+            this.colHistStatus.HeaderText = "Status";
+            this.colHistStatus.Name = "colHistStatus";
+            this.colHistStatus.ReadOnly = true;
+            // 
+            // btnHistSelect
+            // 
+            this.btnHistSelect.FillWeight = 58.58538F;
+            this.btnHistSelect.HeaderText = "Procedures";
+            this.btnHistSelect.Name = "btnHistSelect";
+            this.btnHistSelect.ReadOnly = true;
+            this.btnHistSelect.Text = "View";
+            this.btnHistSelect.UseColumnTextForButtonValue = true;
+            // 
+            // dgvHistoryProcedures
+            // 
+            this.dgvHistoryProcedures.AllowUserToAddRows = false;
+            this.dgvHistoryProcedures.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvHistoryProcedures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvHistoryProcedures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistoryProcedures.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvHistoryProcedures.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHistoryProcedures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvHistoryProcedures.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryProcedures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvHistoryProcedures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistoryProcedures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colHistProcID,
+            this.colHistProcName,
+            this.colHistProcType,
+            this.colHistProcFee,
+            this.colHistProcStatus});
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryProcedures.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvHistoryProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHistoryProcedures.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvHistoryProcedures.Location = new System.Drawing.Point(0, 28);
+            this.dgvHistoryProcedures.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.dgvHistoryProcedures.Name = "dgvHistoryProcedures";
+            this.dgvHistoryProcedures.ReadOnly = true;
+            this.dgvHistoryProcedures.RowHeadersVisible = false;
+            this.dgvHistoryProcedures.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistoryProcedures.Size = new System.Drawing.Size(680, 214);
+            this.dgvHistoryProcedures.TabIndex = 35;
+            // 
+            // colHistProcID
+            // 
+            this.colHistProcID.DataPropertyName = "id";
+            this.colHistProcID.HeaderText = "ID";
+            this.colHistProcID.Name = "colHistProcID";
+            this.colHistProcID.ReadOnly = true;
+            this.colHistProcID.Visible = false;
+            // 
+            // colHistProcName
+            // 
+            this.colHistProcName.DataPropertyName = "name";
+            this.colHistProcName.HeaderText = "Name";
+            this.colHistProcName.Name = "colHistProcName";
+            this.colHistProcName.ReadOnly = true;
+            // 
+            // colHistProcType
+            // 
+            this.colHistProcType.DataPropertyName = "type_name";
+            this.colHistProcType.HeaderText = "Type";
+            this.colHistProcType.Name = "colHistProcType";
+            this.colHistProcType.ReadOnly = true;
+            // 
+            // colHistProcFee
+            // 
+            this.colHistProcFee.DataPropertyName = "fee";
+            this.colHistProcFee.HeaderText = "Fee";
+            this.colHistProcFee.Name = "colHistProcFee";
+            this.colHistProcFee.ReadOnly = true;
+            // 
+            // colHistProcStatus
+            // 
+            this.colHistProcStatus.DataPropertyName = "status_name";
+            this.colHistProcStatus.HeaderText = "Status";
+            this.colHistProcStatus.Name = "colHistProcStatus";
+            this.colHistProcStatus.ReadOnly = true;
+            // 
+            // lblHeadProcHist
+            // 
+            this.lblHeadProcHist.BackColor = System.Drawing.Color.LightCyan;
+            this.lblHeadProcHist.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHeadProcHist.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
+            this.lblHeadProcHist.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHeadProcHist.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHeadProcHist.Location = new System.Drawing.Point(0, 0);
+            this.lblHeadProcHist.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lblHeadProcHist.Name = "lblHeadProcHist";
+            this.lblHeadProcHist.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblHeadProcHist.Size = new System.Drawing.Size(680, 28);
+            this.lblHeadProcHist.TabIndex = 34;
+            this.lblHeadProcHist.Text = "PROCEDURES DONE ON APPT. DATE ";
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 184);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(314, 20);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Known Allergies";
-            // 
-            // txtApptNotes
-            // 
-            this.txtApptNotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtApptNotes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApptNotes.Location = new System.Drawing.Point(333, 37);
-            this.txtApptNotes.Multiline = true;
-            this.txtApptNotes.Name = "txtApptNotes";
-            this.tableLayoutPanel2.SetRowSpan(this.txtApptNotes, 3);
-            this.txtApptNotes.Size = new System.Drawing.Size(328, 322);
-            this.txtApptNotes.TabIndex = 1;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSave.Location = new System.Drawing.Point(333, 365);
-            this.btnSave.Name = "btnSave";
-            this.tableLayoutPanel2.SetRowSpan(this.btnSave, 2);
-            this.btnSave.Size = new System.Drawing.Size(183, 62);
-            this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.LightCyan;
+            this.label25.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.Color.DimGray;
+            this.label25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label25.Location = new System.Drawing.Point(101, 224);
+            this.label25.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label25.Name = "label25";
+            this.label25.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.label25.Size = new System.Drawing.Size(138, 28);
+            this.label25.TabIndex = 33;
+            this.label25.Text = "PATIENT DETAILS";
+            this.label25.UseWaitCursor = true;
             // 
             // tbPgProc
             // 
@@ -943,29 +1416,30 @@
             this.tbPgProc.Size = new System.Drawing.Size(680, 505);
             this.tbPgProc.TabIndex = 1;
             this.tbPgProc.Text = "Procedures";
+            this.tbPgProc.Click += new System.EventHandler(this.tbPgProc_Click);
             // 
             // dgvProc
             // 
             this.dgvProc.AllowUserToAddRows = false;
             this.dgvProc.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvProc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            this.dgvProc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvProc.BackgroundColor = System.Drawing.Color.White;
             this.dgvProc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvProc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvProc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cid,
@@ -976,15 +1450,17 @@
             this.cfee,
             this.cstatus_id,
             this.notes,
-            this.Status});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProc.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Status,
+            this.btnProcEdit,
+            this.btnProcDelete});
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProc.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvProc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProc.GridColor = System.Drawing.Color.LightCyan;
             this.dgvProc.Location = new System.Drawing.Point(3, 268);
@@ -994,6 +1470,7 @@
             this.dgvProc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProc.Size = new System.Drawing.Size(674, 234);
             this.dgvProc.TabIndex = 15;
+            this.dgvProc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProc_CellContentClick);
             // 
             // cid
             // 
@@ -1062,6 +1539,22 @@
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 
+            // btnProcEdit
+            // 
+            this.btnProcEdit.HeaderText = "";
+            this.btnProcEdit.Name = "btnProcEdit";
+            this.btnProcEdit.ReadOnly = true;
+            this.btnProcEdit.Text = "Edit";
+            this.btnProcEdit.UseColumnTextForButtonValue = true;
+            // 
+            // btnProcDelete
+            // 
+            this.btnProcDelete.HeaderText = "";
+            this.btnProcDelete.Name = "btnProcDelete";
+            this.btnProcDelete.ReadOnly = true;
+            this.btnProcDelete.Text = "Delete";
+            this.btnProcDelete.UseColumnTextForButtonValue = true;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
@@ -1109,7 +1602,6 @@
             this.label12.Size = new System.Drawing.Size(668, 28);
             this.label12.TabIndex = 30;
             this.label12.Text = "PROCEDURE DETAILS";
-            this.label12.UseWaitCursor = true;
             // 
             // txtApptProcID
             // 
@@ -1121,15 +1613,17 @@
             // 
             // cmbProcedure
             // 
+            this.cmbProcedure.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbProcedure.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbProcedure.DisplayMember = "name";
-            this.cmbProcedure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProcedure.FormattingEnabled = true;
             this.cmbProcedure.Location = new System.Drawing.Point(265, 43);
             this.cmbProcedure.Name = "cmbProcedure";
             this.cmbProcedure.Size = new System.Drawing.Size(201, 28);
-            this.cmbProcedure.TabIndex = 75;
+            this.cmbProcedure.TabIndex = 0;
             this.cmbProcedure.ValueMember = "id";
             this.cmbProcedure.SelectedIndexChanged += new System.EventHandler(this.cmbProcedure_SelectedIndexChanged);
+            this.cmbProcedure.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProcedure_KeyDown);
             this.cmbProcedure.Validating += new System.ComponentModel.CancelEventHandler(this.cmbProcedure_Validating);
             // 
             // txtFee
@@ -1137,7 +1631,7 @@
             this.txtFee.Location = new System.Drawing.Point(265, 80);
             this.txtFee.Name = "txtFee";
             this.txtFee.Size = new System.Drawing.Size(100, 27);
-            this.txtFee.TabIndex = 69;
+            this.txtFee.TabIndex = 1;
             this.txtFee.Validating += new System.ComponentModel.CancelEventHandler(this.txtFee_Validating);
             // 
             // cmbStatus
@@ -1148,8 +1642,9 @@
             this.cmbStatus.Location = new System.Drawing.Point(265, 114);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(200, 28);
-            this.cmbStatus.TabIndex = 74;
+            this.cmbStatus.TabIndex = 2;
             this.cmbStatus.ValueMember = "id";
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             this.cmbStatus.Validating += new System.ComponentModel.CancelEventHandler(this.cmbStatus_Validating);
             // 
             // label16
@@ -1167,7 +1662,7 @@
             this.txtProcNotes.Multiline = true;
             this.txtProcNotes.Name = "txtProcNotes";
             this.txtProcNotes.Size = new System.Drawing.Size(327, 58);
-            this.txtProcNotes.TabIndex = 69;
+            this.txtProcNotes.TabIndex = 3;
             // 
             // flowLayoutPanel21
             // 
@@ -1270,7 +1765,7 @@
             this.btnSaveProcedure.Location = new System.Drawing.Point(3, 3);
             this.btnSaveProcedure.Name = "btnSaveProcedure";
             this.btnSaveProcedure.Size = new System.Drawing.Size(75, 33);
-            this.btnSaveProcedure.TabIndex = 72;
+            this.btnSaveProcedure.TabIndex = 4;
             this.btnSaveProcedure.Text = "SAVE";
             this.btnSaveProcedure.UseVisualStyleBackColor = false;
             this.btnSaveProcedure.Click += new System.EventHandler(this.btnSaveProcedure_Click);
@@ -1283,275 +1778,175 @@
             this.btnAddNew.Location = new System.Drawing.Point(84, 3);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(103, 33);
-            this.btnAddNew.TabIndex = 72;
+            this.btnAddNew.TabIndex = 5;
             this.btnAddNew.Text = "ADD NEW";
             this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNewProcedure_Click);
             // 
-            // tbPgHistory
+            // tbPgDiag
             // 
-            this.tbPgHistory.BackColor = System.Drawing.Color.White;
-            this.tbPgHistory.Controls.Add(this.splitContainer1);
-            this.tbPgHistory.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPgHistory.Location = new System.Drawing.Point(4, 32);
-            this.tbPgHistory.Name = "tbPgHistory";
-            this.tbPgHistory.Size = new System.Drawing.Size(680, 505);
-            this.tbPgHistory.TabIndex = 2;
-            this.tbPgHistory.Text = "Appointment History";
+            this.tbPgDiag.AutoScroll = true;
+            this.tbPgDiag.BackColor = System.Drawing.Color.White;
+            this.tbPgDiag.Controls.Add(this.tableLayoutPanel2);
+            this.tbPgDiag.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPgDiag.Location = new System.Drawing.Point(4, 32);
+            this.tbPgDiag.Name = "tbPgDiag";
+            this.tbPgDiag.Padding = new System.Windows.Forms.Padding(3);
+            this.tbPgDiag.Size = new System.Drawing.Size(680, 505);
+            this.tbPgDiag.TabIndex = 0;
+            this.tbPgDiag.Text = "Diagnosis";
             // 
-            // splitContainer1
+            // tableLayoutPanel2
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.tableLayoutPanel2.AutoScroll = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.07597F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.92403F));
+            this.tableLayoutPanel2.Controls.Add(this.cmbAppStatus, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtMedicalNotes, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtAllergies, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label11, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label24, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtApptNotes, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 4);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(10);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(10);
+            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(674, 499);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // splitContainer1.Panel1
+            // cmbAppStatus
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dgvApptHistory);
+            this.cmbAppStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbAppStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAppStatus.Font = new System.Drawing.Font("Segoe UI", 11.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAppStatus.FormattingEnabled = true;
+            this.cmbAppStatus.Location = new System.Drawing.Point(109, 398);
+            this.cmbAppStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
+            this.cmbAppStatus.Name = "cmbAppStatus";
+            this.cmbAppStatus.Size = new System.Drawing.Size(218, 29);
+            this.cmbAppStatus.TabIndex = 8;
             // 
-            // splitContainer1.Panel2
+            // label7
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvHistoryProcedures);
-            this.splitContainer1.Panel2.Controls.Add(this.lblHeadProcHist);
-            this.splitContainer1.Panel2.Controls.Add(this.label25);
-            this.splitContainer1.Size = new System.Drawing.Size(680, 505);
-            this.splitContainer1.SplitterDistance = 259;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // dgvApptHistory
-            // 
-            this.dgvApptHistory.AllowUserToAddRows = false;
-            this.dgvApptHistory.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvApptHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvApptHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvApptHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvApptHistory.BackgroundColor = System.Drawing.Color.White;
-            this.dgvApptHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvApptHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApptHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvApptHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvApptHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colHistID,
-            this.colHistDate,
-            this.colHistDoc,
-            this.colHistNotes,
-            this.colHistStatus,
-            this.btnHistSelect});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApptHistory.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvApptHistory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvApptHistory.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvApptHistory.Location = new System.Drawing.Point(0, 0);
-            this.dgvApptHistory.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.dgvApptHistory.Name = "dgvApptHistory";
-            this.dgvApptHistory.ReadOnly = true;
-            this.dgvApptHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvApptHistory.Size = new System.Drawing.Size(680, 235);
-            this.dgvApptHistory.TabIndex = 13;
-            this.dgvApptHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApptHistory_CellContentClick);
-            this.dgvApptHistory.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvApptHistory_RowHeaderMouseClick);
-            // 
-            // colHistID
-            // 
-            this.colHistID.DataPropertyName = "id";
-            this.colHistID.HeaderText = "ID";
-            this.colHistID.Name = "colHistID";
-            this.colHistID.ReadOnly = true;
-            this.colHistID.Visible = false;
-            // 
-            // colHistDate
-            // 
-            this.colHistDate.DataPropertyName = "meet_date";
-            this.colHistDate.FillWeight = 96.83284F;
-            this.colHistDate.HeaderText = "Date";
-            this.colHistDate.Name = "colHistDate";
-            this.colHistDate.ReadOnly = true;
-            // 
-            // colHistDoc
-            // 
-            this.colHistDoc.DataPropertyName = "doctor_name";
-            this.colHistDoc.FillWeight = 126.9036F;
-            this.colHistDoc.HeaderText = "Consulted Doctor";
-            this.colHistDoc.Name = "colHistDoc";
-            this.colHistDoc.ReadOnly = true;
-            // 
-            // colHistNotes
-            // 
-            this.colHistNotes.DataPropertyName = "notes";
-            this.colHistNotes.FillWeight = 158.5987F;
-            this.colHistNotes.HeaderText = "Diagnosis";
-            this.colHistNotes.Name = "colHistNotes";
-            this.colHistNotes.ReadOnly = true;
-            // 
-            // colHistStatus
-            // 
-            this.colHistStatus.DataPropertyName = "status_name";
-            this.colHistStatus.FillWeight = 59.07952F;
-            this.colHistStatus.HeaderText = "Status";
-            this.colHistStatus.Name = "colHistStatus";
-            this.colHistStatus.ReadOnly = true;
-            // 
-            // btnHistSelect
-            // 
-            this.btnHistSelect.FillWeight = 58.58538F;
-            this.btnHistSelect.HeaderText = "";
-            this.btnHistSelect.Name = "btnHistSelect";
-            this.btnHistSelect.ReadOnly = true;
-            this.btnHistSelect.Text = "Select";
-            this.btnHistSelect.UseColumnTextForButtonValue = true;
-            // 
-            // dgvHistoryProcedures
-            // 
-            this.dgvHistoryProcedures.AllowUserToAddRows = false;
-            this.dgvHistoryProcedures.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            this.dgvHistoryProcedures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgvHistoryProcedures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHistoryProcedures.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvHistoryProcedures.BackgroundColor = System.Drawing.Color.White;
-            this.dgvHistoryProcedures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvHistoryProcedures.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryProcedures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvHistoryProcedures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistoryProcedures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colHistProcID,
-            this.colHistProcName,
-            this.colHistProcType,
-            this.colHistProcFee,
-            this.colHistProcStatus});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryProcedures.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvHistoryProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHistoryProcedures.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvHistoryProcedures.Location = new System.Drawing.Point(0, 28);
-            this.dgvHistoryProcedures.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.dgvHistoryProcedures.Name = "dgvHistoryProcedures";
-            this.dgvHistoryProcedures.ReadOnly = true;
-            this.dgvHistoryProcedures.RowHeadersVisible = false;
-            this.dgvHistoryProcedures.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistoryProcedures.Size = new System.Drawing.Size(680, 214);
-            this.dgvHistoryProcedures.TabIndex = 35;
-            // 
-            // colHistProcID
-            // 
-            this.colHistProcID.DataPropertyName = "id";
-            this.colHistProcID.HeaderText = "ID";
-            this.colHistProcID.Name = "colHistProcID";
-            this.colHistProcID.ReadOnly = true;
-            this.colHistProcID.Visible = false;
-            // 
-            // colHistProcName
-            // 
-            this.colHistProcName.DataPropertyName = "name";
-            this.colHistProcName.HeaderText = "Name";
-            this.colHistProcName.Name = "colHistProcName";
-            this.colHistProcName.ReadOnly = true;
-            // 
-            // colHistProcType
-            // 
-            this.colHistProcType.DataPropertyName = "type_name";
-            this.colHistProcType.HeaderText = "Type";
-            this.colHistProcType.Name = "colHistProcType";
-            this.colHistProcType.ReadOnly = true;
-            // 
-            // colHistProcFee
-            // 
-            this.colHistProcFee.DataPropertyName = "fee";
-            this.colHistProcFee.HeaderText = "Fee";
-            this.colHistProcFee.Name = "colHistProcFee";
-            this.colHistProcFee.ReadOnly = true;
-            // 
-            // colHistProcStatus
-            // 
-            this.colHistProcStatus.DataPropertyName = "status_name";
-            this.colHistProcStatus.HeaderText = "Status";
-            this.colHistProcStatus.Name = "colHistProcStatus";
-            this.colHistProcStatus.ReadOnly = true;
-            // 
-            // lblHeadProcHist
-            // 
-            this.lblHeadProcHist.BackColor = System.Drawing.Color.LightCyan;
-            this.lblHeadProcHist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeadProcHist.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
-            this.lblHeadProcHist.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHeadProcHist.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeadProcHist.Location = new System.Drawing.Point(0, 0);
-            this.lblHeadProcHist.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.lblHeadProcHist.Name = "lblHeadProcHist";
-            this.lblHeadProcHist.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.lblHeadProcHist.Size = new System.Drawing.Size(680, 28);
-            this.lblHeadProcHist.TabIndex = 34;
-            this.lblHeadProcHist.Text = "PROCEDURES DONE ON APPT. DATE ";
-            this.lblHeadProcHist.UseWaitCursor = true;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.LightCyan;
-            this.label25.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.Color.DimGray;
-            this.label25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label25.Location = new System.Drawing.Point(101, 224);
-            this.label25.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label25.Name = "label25";
-            this.label25.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.label25.Size = new System.Drawing.Size(138, 28);
-            this.label25.TabIndex = 33;
-            this.label25.Text = "PATIENT DETAILS";
-            this.label25.UseWaitCursor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(13, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(314, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Medical Notes";
             // 
-            // errorProvider
+            // txtMedicalNotes
             // 
-            this.errorProvider.ContainerControl = this;
+            this.txtMedicalNotes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMedicalNotes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedicalNotes.Location = new System.Drawing.Point(13, 37);
+            this.txtMedicalNotes.Multiline = true;
+            this.txtMedicalNotes.Name = "txtMedicalNotes";
+            this.txtMedicalNotes.Size = new System.Drawing.Size(314, 144);
+            this.txtMedicalNotes.TabIndex = 1;
             // 
-            // btnConsent
+            // txtAllergies
             // 
-            this.btnConsent.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnConsent.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsent.ForeColor = System.Drawing.Color.White;
-            this.btnConsent.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnConsent.Location = new System.Drawing.Point(80, 45);
-            this.btnConsent.Margin = new System.Windows.Forms.Padding(80, 3, 3, 3);
-            this.btnConsent.Name = "btnConsent";
-            this.btnConsent.Size = new System.Drawing.Size(147, 36);
-            this.btnConsent.TabIndex = 22;
-            this.btnConsent.Text = "GET CONSENT FORM";
-            this.btnConsent.UseVisualStyleBackColor = false;
-            this.btnConsent.Click += new System.EventHandler(this.btnConsent_Click);
+            this.txtAllergies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAllergies.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAllergies.Location = new System.Drawing.Point(13, 215);
+            this.txtAllergies.Multiline = true;
+            this.txtAllergies.Name = "txtAllergies";
+            this.txtAllergies.Size = new System.Drawing.Size(314, 144);
+            this.txtAllergies.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(333, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 20);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Diagnosis and Notes";
+            // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(109, 362);
+            this.label24.Name = "label24";
+            this.label24.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.label24.Size = new System.Drawing.Size(218, 26);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "Choose Appointment Status : ";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(13, 184);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(314, 20);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Known Allergies";
+            // 
+            // txtApptNotes
+            // 
+            this.txtApptNotes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtApptNotes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApptNotes.Location = new System.Drawing.Point(333, 37);
+            this.txtApptNotes.Multiline = true;
+            this.txtApptNotes.Name = "txtApptNotes";
+            this.tableLayoutPanel2.SetRowSpan(this.txtApptNotes, 3);
+            this.txtApptNotes.Size = new System.Drawing.Size(328, 322);
+            this.txtApptNotes.TabIndex = 1;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSave.Location = new System.Drawing.Point(333, 365);
+            this.btnSave.Name = "btnSave";
+            this.tableLayoutPanel2.SetRowSpan(this.btnSave, 2);
+            this.btnSave.Size = new System.Drawing.Size(183, 62);
+            this.btnSave.TabIndex = 19;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // tabConsult
+            // 
+            this.tabConsult.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabConsult.Controls.Add(this.tbPgDiag);
+            this.tabConsult.Controls.Add(this.tbPgProc);
+            this.tabConsult.Controls.Add(this.tabPgMedicine);
+            this.tabConsult.Controls.Add(this.tbPgHistory);
+            this.tabConsult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabConsult.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabConsult.Location = new System.Drawing.Point(320, 18);
+            this.tabConsult.Name = "tabConsult";
+            this.tabConsult.SelectedIndex = 0;
+            this.tabConsult.Size = new System.Drawing.Size(688, 541);
+            this.tabConsult.TabIndex = 1;
+            this.tabConsult.SelectedIndexChanged += new System.EventHandler(this.tabConsult_SelectedIndexChanged);
             // 
             // frmConsultationDetails
             // 
@@ -1576,10 +1971,26 @@
             this.tableLayoutPanel3.PerformLayout();
             this.flowLayoutPanel9.ResumeLayout(false);
             this.flowLayoutPanel9.PerformLayout();
-            this.tabConsult.ResumeLayout(false);
-            this.tbPgDiag.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.tabPgMedicine.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.tbPgHistory.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).EndInit();
             this.tbPgProc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProc)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -1591,15 +2002,10 @@
             this.flowLayoutPanel22.ResumeLayout(false);
             this.flowLayoutPanel22.PerformLayout();
             this.flowLayoutPanel23.ResumeLayout(false);
-            this.tbPgHistory.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApptHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryProcedures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.tbPgDiag.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tabConsult.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1608,20 +2014,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
-        private System.Windows.Forms.TabControl tabConsult;
-        private System.Windows.Forms.TabPage tbPgDiag;
-        private System.Windows.Forms.TabPage tbPgProc;
-        private System.Windows.Forms.TabPage tbPgHistory;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtMedicalNotes;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox txtAppID;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtAllergies;
-        private System.Windows.Forms.TextBox txtApptNotes;
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.TextBox txtDoctorID;
@@ -1648,53 +2041,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label txtDues;
         private System.Windows.Forms.Label txtLastVisitDate;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox cmbAppStatus;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtApptProcID;
-        private System.Windows.Forms.ComboBox cmbProcedure;
-        private System.Windows.Forms.TextBox txtFee;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtProcNotes;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel21;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel22;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel23;
-        private System.Windows.Forms.Button btnSaveProcedure;
-        private System.Windows.Forms.Button btnAddNew;
-        private System.Windows.Forms.DataGridView dgvProc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cdesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ctypename;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnotes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cfee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cstatus_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridView dgvApptHistory;
-        private System.Windows.Forms.Label lblHeadProcHist;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcFee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcStatus;
-        private System.Windows.Forms.DataGridView dgvHistoryProcedures;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistNotes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHistStatus;
-        private System.Windows.Forms.DataGridViewButtonColumn btnHistSelect;
         private System.Windows.Forms.Button btnSickLeave;
         private System.Windows.Forms.Button btnMedicalReport;
         private System.Windows.Forms.Label lblHead1;
@@ -1717,5 +2063,95 @@
         private System.Windows.Forms.TextBox txtReferredBy;
         private System.Windows.Forms.Button btnGenBill;
         private System.Windows.Forms.Button btnConsent;
+        private System.Windows.Forms.TabControl tabConsult;
+        private System.Windows.Forms.TabPage tbPgDiag;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.ComboBox cmbAppStatus;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMedicalNotes;
+        private System.Windows.Forms.TextBox txtAllergies;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtApptNotes;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TabPage tbPgProc;
+        private System.Windows.Forms.DataGridView dgvProc;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtApptProcID;
+        private System.Windows.Forms.ComboBox cmbProcedure;
+        private System.Windows.Forms.TextBox txtFee;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtProcNotes;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel21;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel22;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel23;
+        private System.Windows.Forms.Button btnSaveProcedure;
+        private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.TabPage tbPgHistory;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataGridView dgvApptHistory;
+        private System.Windows.Forms.DataGridView dgvHistoryProcedures;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcFee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistProcStatus;
+        private System.Windows.Forms.Label lblHeadProcHist;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TabPage tabPgMedicine;
+        private System.Windows.Forms.DataGridView dgvMedicine;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox txtAppMedId;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Button btnSaveMedicine;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.TextBox txtPrescription;
+        private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.Button btnAddMed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistNotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHistStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn btnHistSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewButtonColumn colBtnEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn colDel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMedId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ctypename;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cfee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cstatus_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewButtonColumn btnProcEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn btnProcDelete;
+        private Helpers.CustomComboBox cmbMedicine;
     }
 }

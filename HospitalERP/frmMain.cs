@@ -70,8 +70,12 @@ namespace HospitalERP
                 {
                     try
                     {
-                        CtlMdi = (MdiClient)ctl;
-                        CtlMdi.BackColor = System.Drawing.Color.White;
+                        string type = ctl.GetType().ToString();
+                        if (type.Equals("System.Windows.Forms.MdiClient"))
+                        {
+                            CtlMdi = (MdiClient)ctl;
+                            CtlMdi.BackColor = System.Drawing.Color.White;
+                        }
                     }
                     catch (Exception a)
                     {
@@ -649,6 +653,36 @@ namespace HospitalERP
             {
                 frmDbConfig fdc = new frmDbConfig();
                 fdc.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+        }
+
+        private void menuItemMedType_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmMedicineTypes fdc = new frmMedicineTypes();
+                fdc.MdiParent = this;
+                fdc.Show();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+        }
+
+        private void menuItemMedicine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmMedicine fm = new frmMedicine();
+                fm.MdiParent = this;
+                fm.Show();
             }
             catch (Exception ex)
             {

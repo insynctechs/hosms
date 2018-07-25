@@ -290,7 +290,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
         }
 
         private void dgvApp_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -307,7 +306,7 @@ namespace HospitalERP
                             MessageBox.Show("Bills can be generated/viewed for today's/past completed appointments only", "Information", MessageBoxButtons.OK);
                             break;
                     case "ABtnDetails":
-                        ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));                        
+                        ViewDetails(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()));
                         break;
                     case "ABtnDelete":
                         DeletePatient(Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["APatID"].Value.ToString()), Int32.Parse(dgvApp.Rows[e.RowIndex].Cells["AStatusID"].Value.ToString()));                        
@@ -332,8 +331,6 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
-
         }
 
         private void frmAppointments_Activated(object sender, EventArgs e)
@@ -376,6 +373,23 @@ namespace HospitalERP
         {
             try
             {
+                //check whether same day another bill generated. if, so block it
+                /*
+                int ret = app.GetBillLockStatus(app_id);
+                if (ret > 0)
+                {
+                    MessageBox.Show("Bills can be generated/viewed only for latest appointments for a patient.", "Information", MessageBoxButtons.OK);
+                    getAppointmentList(0);
+
+                }
+                else
+                {
+                    
+                }
+                */
+                frmOneTimeBill frm = new frmOneTimeBill(app_id, pat_id);
+                frm.ShowDialog();
+
                 /*if (Application.OpenForms.OfType<frmAppointmentBill>().Count() == 1)
                     Application.OpenForms.OfType<frmAppointmentBill>().First().Close();
                 frmAppointmentBill frm = new frmAppointmentBill(app_id, pat_id);
@@ -389,9 +403,8 @@ namespace HospitalERP
                 else
                 {
                 */
-                
-                    frmOneTimeBill frm = new frmOneTimeBill(app_id, pat_id);
-                    frm.ShowDialog();
+
+
                 //}
             }
             catch (Exception ex)
@@ -423,7 +436,7 @@ namespace HospitalERP
                             case -2: msg = "Appointment cannot be cancelled."; break;
                             case -3: msg = "Appointment cannot be cancelled as Procedures and Tests are added for the appointment"; break;
                             case -4: msg = "Appointment cannot be cancelled as Bill has been generated"; break;
-
+                            case -5: msg = "Appointment cannot be cancelled as Medicines have been prescribed for the appointment"; break;
 
                         }
                         MessageBox.Show(msg,"Information",MessageBoxButtons.OK);

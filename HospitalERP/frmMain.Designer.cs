@@ -32,8 +32,10 @@
             this.menuItemMain = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemDept = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemProc = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemMedicine = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemProcType = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemMedType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemUserRoles = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemOpt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemStaffs = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,8 +97,10 @@
             this.menuItemMain.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemDept,
             this.menuItemProc,
+            this.menuItemMedicine,
             this.menuItemStaffType,
             this.menuItemProcType,
+            this.menuItemMedType,
             this.menuItemUserRoles,
             this.menuItemOpt});
             this.menuItemMain.Name = "menuItemMain";
@@ -106,42 +110,56 @@
             // menuItemDept
             // 
             this.menuItemDept.Name = "menuItemDept";
-            this.menuItemDept.Size = new System.Drawing.Size(178, 22);
+            this.menuItemDept.Size = new System.Drawing.Size(180, 22);
             this.menuItemDept.Text = "Departments";
             this.menuItemDept.Click += new System.EventHandler(this.menuItemDept_Click);
             // 
             // menuItemProc
             // 
             this.menuItemProc.Name = "menuItemProc";
-            this.menuItemProc.Size = new System.Drawing.Size(178, 22);
+            this.menuItemProc.Size = new System.Drawing.Size(180, 22);
             this.menuItemProc.Text = "Procedures";
             this.menuItemProc.Click += new System.EventHandler(this.menuItemProc_Click);
+            // 
+            // menuItemMedicine
+            // 
+            this.menuItemMedicine.Name = "menuItemMedicine";
+            this.menuItemMedicine.Size = new System.Drawing.Size(180, 22);
+            this.menuItemMedicine.Text = "Medicines";
+            this.menuItemMedicine.Click += new System.EventHandler(this.menuItemMedicine_Click);
             // 
             // menuItemStaffType
             // 
             this.menuItemStaffType.Name = "menuItemStaffType";
-            this.menuItemStaffType.Size = new System.Drawing.Size(178, 22);
+            this.menuItemStaffType.Size = new System.Drawing.Size(180, 22);
             this.menuItemStaffType.Text = "Staff Types";
             this.menuItemStaffType.Click += new System.EventHandler(this.menuItemStaffType_Click);
             // 
             // menuItemProcType
             // 
             this.menuItemProcType.Name = "menuItemProcType";
-            this.menuItemProcType.Size = new System.Drawing.Size(178, 22);
+            this.menuItemProcType.Size = new System.Drawing.Size(180, 22);
             this.menuItemProcType.Text = "Procedure Types";
             this.menuItemProcType.Click += new System.EventHandler(this.menuItemProcType_Click);
+            // 
+            // menuItemMedType
+            // 
+            this.menuItemMedType.Name = "menuItemMedType";
+            this.menuItemMedType.Size = new System.Drawing.Size(180, 22);
+            this.menuItemMedType.Text = "Medicine Types";
+            this.menuItemMedType.Click += new System.EventHandler(this.menuItemMedType_Click);
             // 
             // menuItemUserRoles
             // 
             this.menuItemUserRoles.Name = "menuItemUserRoles";
-            this.menuItemUserRoles.Size = new System.Drawing.Size(178, 22);
+            this.menuItemUserRoles.Size = new System.Drawing.Size(180, 22);
             this.menuItemUserRoles.Text = "User Roles";
             this.menuItemUserRoles.Click += new System.EventHandler(this.menuItemUserRoles_Click);
             // 
             // menuItemOpt
             // 
             this.menuItemOpt.Name = "menuItemOpt";
-            this.menuItemOpt.Size = new System.Drawing.Size(178, 22);
+            this.menuItemOpt.Size = new System.Drawing.Size(180, 22);
             this.menuItemOpt.Text = "Options";
             this.menuItemOpt.Click += new System.EventHandler(this.menuItemOpt_Click);
             // 
@@ -260,14 +278,14 @@
             // miAbout
             // 
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(180, 22);
+            this.miAbout.Size = new System.Drawing.Size(164, 22);
             this.miAbout.Text = "About";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
             // 
             // miServerDetails
             // 
             this.miServerDetails.Name = "miServerDetails";
-            this.miServerDetails.Size = new System.Drawing.Size(180, 22);
+            this.miServerDetails.Size = new System.Drawing.Size(164, 22);
             this.miServerDetails.Text = "Server Details";
             this.miServerDetails.Visible = false;
             this.miServerDetails.Click += new System.EventHandler(this.miServerDetails_Click);
@@ -275,14 +293,14 @@
             // miLicensingKey
             // 
             this.miLicensingKey.Name = "miLicensingKey";
-            this.miLicensingKey.Size = new System.Drawing.Size(180, 22);
+            this.miLicensingKey.Size = new System.Drawing.Size(164, 22);
             this.miLicensingKey.Text = "Licensing Key";
             this.miLicensingKey.Visible = false;
             // 
             // sendErrorLogToolStripMenuItem
             // 
             this.sendErrorLogToolStripMenuItem.Name = "sendErrorLogToolStripMenuItem";
-            this.sendErrorLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sendErrorLogToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.sendErrorLogToolStripMenuItem.Text = "Send Error Log";
             this.sendErrorLogToolStripMenuItem.Visible = false;
             // 
@@ -304,7 +322,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.09406F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.90594F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblAppName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tblLoginPanel, 2, 0);
@@ -322,10 +340,10 @@
             this.flowLayoutPanel1.Controls.Add(this.btnDashboard);
             this.flowLayoutPanel1.Controls.Add(this.btnApp);
             this.flowLayoutPanel1.Controls.Add(this.btnReg);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(225, 20);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(224, 20);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(563, 73);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(559, 73);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnDashboard
@@ -395,7 +413,7 @@
             this.tblLoginPanel.Controls.Add(this.lnkChangePwd);
             this.tblLoginPanel.Controls.Add(this.linkLogout);
             this.tblLoginPanel.Controls.Add(this.btnChildClose);
-            this.tblLoginPanel.Location = new System.Drawing.Point(794, 3);
+            this.tblLoginPanel.Location = new System.Drawing.Point(789, 3);
             this.tblLoginPanel.Name = "tblLoginPanel";
             this.tblLoginPanel.Size = new System.Drawing.Size(196, 131);
             this.tblLoginPanel.TabIndex = 8;
@@ -548,5 +566,7 @@
         private System.Windows.Forms.ToolStripMenuItem miLicensingKey;
         private System.Windows.Forms.ToolStripMenuItem sendErrorLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miServerDetails;
+        private System.Windows.Forms.ToolStripMenuItem menuItemMedicine;
+        private System.Windows.Forms.ToolStripMenuItem menuItemMedType;
     }
 }

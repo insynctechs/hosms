@@ -371,6 +371,21 @@ namespace HospitalERP.Procedures
 
         }
 
-
+        public int DeletePatientProcedure(int pat_proc_id)
+        {
+            int ret = -1;
+            try
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@id", pat_proc_id);
+                ret = Convert.ToInt32(SqlHelper.ExecuteScalar(conn, CommandType.StoredProcedure, "uspProcedures_DeletePatientProcedures", sqlParam).ToString());
+            }
+            catch (Exception ex)
+            {
+                Helpers.CommonLogger.Error(ex.Message, ex);
+                return -1;
+            }
+            return ret;
+        }
     }
 }

@@ -383,5 +383,44 @@ namespace HospitalERP
         {
             this.MdiParent.Close();
         }
+
+        private void btnDashMedicine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms.OfType<frmMedicine>().Count() == 1)
+                    Application.OpenForms.OfType<frmMedicine>().First().BringToFront();
+                else
+                {
+                    frmMedicine frm = new frmMedicine();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+        }
+
+        private void btnDashMedType_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms.OfType<frmMedicineTypes>().Count() == 1)
+                    Application.OpenForms.OfType<frmMedicineTypes>().First().BringToFront();
+                else
+                {
+                    frmMedicineTypes frm = new frmMedicineTypes();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
     }
 }

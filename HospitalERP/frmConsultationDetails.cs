@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
@@ -12,6 +14,9 @@ namespace HospitalERP
 
         ConsultationDetails objCD = new ConsultationDetails();
         Appointments objApp = new Appointments();
+        Medicines objMed = new Medicines();
+        OptionVals opt = new OptionVals();
+
         //DataSet ds;
         //SqlDataAdapter adap;
         //SqlCommandBuilder scb;
@@ -52,6 +57,7 @@ namespace HospitalERP
                 dgvProc.AutoGenerateColumns = false;
                 dgvApptHistory.AutoGenerateColumns = false;
                 dgvHistoryProcedures.AutoGenerateColumns = false;
+                dgvMedicine.AutoGenerateColumns = false;
             }
             catch (Exception ex)
             {
@@ -65,6 +71,19 @@ namespace HospitalERP
             try
             {
                 dgvProc.DataSource = objCD.getProceduresFromApptID(Convert.ToInt32(txtAppID.Text));
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+
+        }
+
+        private void getMedicineList()
+        {
+            try
+            {
+                dgvMedicine.DataSource = objMed.getMedicinesFromApptID(Convert.ToInt32(txtAppID.Text));
             }
             catch (Exception ex)
             {
@@ -154,6 +173,22 @@ namespace HospitalERP
                 btnSaveProcedure.Enabled = val;
                 btnAddNew.Enabled = val;
                 cmbAppStatus.Enabled = val;
+                btnSaveMedicine.Enabled = val;
+                btnPrint.Enabled = val;
+                btnAddMed.Enabled = val;
+                colBtnEdit.Visible = val;
+                colDel.Visible = val;
+                btnProcEdit.Visible = val;
+                btnProcDelete.Visible = val;
+
+                if(cmbAppStatus.SelectedValue.ToString() == "7") //cancel
+                {
+                    btnRefer.Enabled = false;
+                    btnConsent.Enabled = false;
+                    btnGenBill.Enabled = false;
+                    btnMedicalReport.Enabled = false;
+                    btnSickLeave.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -226,8 +261,24 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
+        }
+
+        private void clearMedFormFields()
+        {
+            try
+            {
+                txtAppMedId.Text = "";
+                cmbMedicine.SelectedIndex = 0;
+                txtPrescription.Text = "";
+                txtType.Text = "";
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
 
         }
+
         private void dgvProc_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
@@ -318,7 +369,7 @@ namespace HospitalERP
         {
             try
             {
-                if (cmbProcedure.SelectedIndex == 0)
+                if (cmbProcedure.SelectedIndex == 0 && tabConsult.SelectedIndex == 1)
                 {
                     e.Cancel = true;
                     //cmbProcType.Focus();
@@ -342,22 +393,25 @@ namespace HospitalERP
             try
             {
                 decimal d;
-                if (string.IsNullOrEmpty(txtFee.Text))
+                if (tabConsult.SelectedIndex == 1)
                 {
-                    e.Cancel = true;
-                    //txtFee.Focus();
-                    errorProvider.SetError(txtFee, "Required");
-                }
-                else if (!decimal.TryParse(txtFee.Text, out d))
-                {
-                    e.Cancel = true;
-                    //txtFee.Focus();
-                    errorProvider.SetError(txtFee, "Invalid Decimal Number");
-                }
-                else
-                {
-                    e.Cancel = false;
-                    errorProvider.SetError(txtFee, null);
+                    if (string.IsNullOrEmpty(txtFee.Text))
+                    {
+                        e.Cancel = true;
+                        //txtFee.Focus();
+                        errorProvider.SetError(txtFee, "Required");
+                    }
+                    else if (!decimal.TryParse(txtFee.Text, out d))
+                    {
+                        e.Cancel = true;
+                        //txtFee.Focus();
+                        errorProvider.SetError(txtFee, "Invalid Decimal Number");
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider.SetError(txtFee, null);
+                    }
                 }
             }
             catch (Exception ex)
@@ -371,7 +425,7 @@ namespace HospitalERP
         {
             try
             {
-                if (cmbStatus.SelectedIndex == 0)
+                if (cmbStatus.SelectedIndex == 0 && tabConsult.SelectedIndex == 1)
                 {
                     e.Cancel = true;
                     //cmbProcType.Focus();
@@ -420,7 +474,7 @@ namespace HospitalERP
                 PopulateAppointmentStatusCombo();
                 getConsultationDetails();
                 //Buttons are disabled when
-                //prev dates , completed status and users not doctors and super admin 
+                //prev dates , completed status and users not doctors and super admin  and for cancelled appontments
                 if (Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) > 0 || (cmbAppStatus.SelectedValue.ToString() =="2") || (cmbAppStatus.SelectedValue.ToString() == "7")) /*|| (LoggedUser.type_id !=1 && LoggedUser.type_id != 3)*/
                 {
                     EnableEditableButtons(false);
@@ -452,7 +506,13 @@ namespace HospitalERP
                         cmbStatus.DataSource = objCD.StatusCombo(0);
                         getProcedureList();
                         break;
+
                     case 2:
+                        cmbMedicine.DataSource = objMed.MedicinesCombo(0);                        
+                        getMedicineList();
+                        break;
+
+                    case 3:
                         dgvHistoryProcedures.AutoGenerateColumns = false;
                         setGridViews();
                         break;
@@ -545,7 +605,9 @@ namespace HospitalERP
         {
             try
             {
-                if (cmbAppStatus.SelectedValue.ToString() == "2" && Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) >= 0)
+                DataTable dt = objCD.getRecordFromID(Convert.ToInt32(txtAppID.Text));
+                string status = dt.Rows[0]["status"].ToString();
+                if (status == "2" && Utils.DaysBetweenDates(txtMeetDate.Text, DateTime.Now.ToShortDateString()) >= 0)
                 {
                     frmOneTimeBill frm = new frmOneTimeBill(Int32.Parse(txtAppID.Text.ToString()), Int32.Parse(txtPatientID.Text));
                     frm.ShowDialog();
@@ -577,6 +639,273 @@ namespace HospitalERP
             catch (Exception ex)
             {
                 CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void tbPgProc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMedicine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sdet = "";
+            string[] strArr = null;
+
+            try
+            {
+                    sdet = objMed.getMedicinePrescription(Convert.ToInt32(cmbMedicine.SelectedValue.ToString()));
+                    strArr =sdet.Split(new string[] { "^>$<" }, StringSplitOptions.None);
+                    txtPrescription.Text = strArr[0];
+                    txtType.Text = strArr[1];
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString()+sdet+"\n"+strArr);
+            }
+        }
+
+        
+        private void btnSaveMedicine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ValidateChildren(ValidationConstraints.Enabled))
+                {
+                    int rtn = -1;
+                    if (txtAppMedId.Text.Trim() == "") //add data
+                    {
+                        rtn = objMed.addMedicines(Convert.ToInt32(txtPatientID.Text), Convert.ToInt32(txtDoctorID.Text), Convert.ToInt32(txtAppID.Text), Convert.ToInt32(cmbMedicine.SelectedValue.ToString()), txtPrescription.Text.Trim());
+                        if (rtn == -1)
+                        {
+                            ShowStatus(0, "Some error occurred... Record cannot be added!");
+                        }
+                        else if (rtn == 0)
+                            ShowStatus(0, "Name must be unique!");
+                        else if (rtn == 1)
+                        {
+
+                            //ShowStatus(1, "Record successfully added!");
+                            clearMedFormFields();
+                            getMedicineList();
+                        }
+                    }
+                    else //edit record
+                    {
+                        rtn = objMed.editMedicines(Convert.ToInt32(txtAppMedId.Text.Trim()), Convert.ToInt32(txtPatientID.Text), Convert.ToInt32(txtDoctorID.Text), Convert.ToInt32(txtAppID.Text), Convert.ToInt32(cmbMedicine.SelectedValue.ToString()), txtPrescription.Text.Trim());
+                        if (rtn == 0)
+                            ShowStatus(0, "This name already exists. Please provide unique name!");
+                        else if (rtn == 1)
+                        {
+                            //ShowStatus(1, "Record successfully updated!");
+                            clearMedFormFields();
+                            getMedicineList();
+                        }
+                        else if (rtn == -1)
+                        {
+                            ShowStatus(0, "Some error occurred... Record cannot be added!");
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void cmbMedicine_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                if (cmbMedicine.SelectedIndex == 0 && tabConsult.SelectedIndex == 2)
+                {
+                    e.Cancel = true;
+                    //cmbProcType.Focus();
+                    errorProvider.SetError(cmbMedicine, "Required");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(cmbMedicine, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+
+        private void txtPrescription_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                if (txtPrescription.Text.Trim()=="" && tabConsult.SelectedIndex==2)
+                {
+                    e.Cancel = true;
+                    //cmbProcType.Focus();
+                    errorProvider.SetError(txtPrescription, "Required");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(txtPrescription, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void dgvMedicine_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                switch (dgvMedicine.Columns[e.ColumnIndex].Name)
+                {
+                    case "colBtnEdit":
+                        txtAppMedId.Text = dgvMedicine.Rows[e.RowIndex].Cells["colID"].Value.ToString();
+                        cmbMedicine.SelectedValue = dgvMedicine.Rows[e.RowIndex].Cells[6].Value.ToString();
+                        txtPrescription.Text = dgvMedicine.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        txtType.Text = dgvMedicine.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        break;
+                    case "colDel":
+                        DeletePatientMedicine(Int32.Parse(dgvMedicine.Rows[e.RowIndex].Cells["colID"].Value.ToString()));
+                        getMedicineList();
+                        break;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info("frmConsultationDetails\r\n" + ex.ToString());
+            }
+        }
+
+        private void DeletePatientMedicine(int pat_med_id)
+        {
+            try
+            {
+                int ret = objMed.DeletePatientMedicine(pat_med_id);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+
+        private void DeletePatientProcedure(int pat_proc_id)
+        {
+            try
+            {
+                int ret = objCD.DeletePatientProcedure(pat_proc_id);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmMedicinePrint fm = new frmMedicinePrint(Int32.Parse(txtAppID.Text.Trim()));
+                fm.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+        }
+
+        private void btnAddMed_Click(object sender, EventArgs e)
+        {
+            frmMedicine fmed = new frmMedicine(600, 500);
+            fmed.ShowDialog(this);                        
+            cmbMedicine.DataSource = objMed.MedicinesCombo(0);
+        }
+
+        private void cmbMedicine_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                this.ActiveControl = btnSaveMedicine;
+            }
+        }
+
+        private void dgvProc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                switch (dgvProc.Columns[e.ColumnIndex].Name)
+                {
+                    case "btnProcEdit":
+                        txtApptProcID.Text = dgvProc.Rows[e.RowIndex].Cells["cid"].Value.ToString();
+                        DataTable dt = objCD.getProceduresFromProcID(Convert.ToInt32(txtApptProcID.Text));
+                        txtFee.Text = dt.Rows[0]["fee"].ToString();
+                        cmbProcedure.SelectedValue = dt.Rows[0]["procedure_id"].ToString();
+                        cmbStatus.SelectedValue = dt.Rows[0]["status"].ToString();
+                        txtProcNotes.Text = dt.Rows[0]["notes"].ToString();
+                        break;
+
+                    case "btnProcDelete":
+                        DeletePatientProcedure(Int32.Parse(dgvProc.Rows[e.RowIndex].Cells["cid"].Value.ToString()));
+                        getProcedureList();
+                        break;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info("frmConsultationDetails\r\n" + ex.ToString());
+            }
+        }
+
+        private void cmbProcedure_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                this.ActiveControl = txtFee;
+            }
+        }
+
+        private void cmbMedicine_Leave(object sender, EventArgs e)
+        {
+           
+                this.ActiveControl = btnSaveMedicine;
+           
+        }
+
+        
+
+        private void cmbMedicine_DropDownClosed(object sender, EventArgs e)
+        {
+            string sdet = "";
+            string[] strArr = null;
+
+            try
+            {
+                sdet = objMed.getMedicinePrescription(Convert.ToInt32(cmbMedicine.SelectedValue.ToString()));
+                strArr = sdet.Split(new string[] { "^>$<" }, StringSplitOptions.None);
+                txtPrescription.Text = strArr[0];
+                txtType.Text = strArr[1];
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString() + sdet + "\n" + strArr);
             }
         }
     }

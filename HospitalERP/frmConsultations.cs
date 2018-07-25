@@ -3,7 +3,6 @@ using System.Linq;
 using System.Windows.Forms;
 using HospitalERP.Procedures;
 using HospitalERP.Helpers;
-
 namespace HospitalERP
 {
     public partial class frmConsultations : Form
@@ -117,7 +116,7 @@ namespace HospitalERP
         {
             try
             {
-                cmbStatus.DataSource = app.getAppointmentStatus(0);
+                cmbStatus.DataSource = app.getAppointmentStatus(1);
                 cmbStatus.ValueMember = "id";
                 cmbStatus.DisplayMember = "name";
             }

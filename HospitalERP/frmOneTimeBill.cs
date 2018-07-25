@@ -18,6 +18,7 @@ namespace HospitalERP
         public double bill_paid_load = 0;
         public double bill_balance = 0;
         public DataTable dtProc;
+        public int bill_status = 0;
 
         
         Bill bill = new Bill();
@@ -229,7 +230,10 @@ namespace HospitalERP
                     if (dtUser != null)
                         txtLoggedUser.Text = dtUser.Rows[0]["staff_name"].ToString();
                     cmbBillStatus.SelectedValue = dtBill.Rows[0]["bill_status"].ToString();
+                    bill_status = Int32.Parse(dtBill.Rows[0]["bill_status"].ToString()) ;
                 }
+
+                editBillDetails();
             }
             catch (Exception ex)
             {
@@ -309,16 +313,15 @@ namespace HospitalERP
             {
                 CommonLogger.Info(ex.ToString());
             }
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                if(txtPaid.Text.Trim()=="")
+                if((txtPaid.Text.Trim()=="" || Convert.ToDouble(txtPaid.Text) == 0.000 ) && Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 5 && Int32.Parse(cmbBillStatus.SelectedValue.ToString()) != 2) //not cancelled AND pending
                 {
-                    MessageBox.Show("Bill Paid Amount should not be empty.");
+                    MessageBox.Show("Bill Paid Amount should be greater than 0.");
                 }
                 else if (Int32.Parse(cmbBillStatus.SelectedValue.ToString()) == 4 && bill_balance != 0)
                 {
@@ -345,6 +348,7 @@ namespace HospitalERP
                     if (res > 0)
                     {
                         bill_paid_load = bill_paid;
+                        bill_status = Int32.Parse(cmbBillStatus.SelectedValue.ToString());
                         MessageBox.Show("Bill Saved Succesfully", "Information", MessageBoxButtons.OK);
                         enableOrDisableButtons();
                     }
@@ -358,6 +362,7 @@ namespace HospitalERP
                         //edit bill details table
                         editBillDetails();
                         cell_modified = 0;
+                        
                     }
                 }
             }
@@ -381,7 +386,7 @@ namespace HospitalERP
                 dtRec.Columns.Add("billing_id", typeof(int));
                 foreach (DataGridViewRow row in dgvInv.Rows)
                 {
-                    if (row.Cells[0].Value != null)
+                    if (row.Cells[0].Value != null && row.Cells[1].Value != null)
                         dtRec.Rows.Add(appointment_id, Convert.ToInt32(row.Cells[0].Value.ToString()), row.Cells[1].Value.ToString(), Convert.ToDouble(row.Cells[2].Value.ToString()), bill_id);
 
                 }
@@ -397,7 +402,7 @@ namespace HospitalERP
         {
             try
             {
-                if (cell_modified == 1 || bill_paid_load != bill_paid)
+                if ((cell_modified == 1 || bill_paid_load != bill_paid) && btnSave.Enabled==true)
                 {
                     MessageBox.Show("Please save the bill before printing.");
                 }
@@ -449,7 +454,21 @@ namespace HospitalERP
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                if ((cell_modified == 1 || bill_paid_load != bill_paid || bill_status == 1) && btnSave.Enabled == true)
+                {
+                    MessageBox.Show("Please save the bill before closing.");
+
+                }
+                else
+                    this.Close();
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
+            
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
@@ -485,6 +504,15 @@ namespace HospitalERP
             {
                 MessageBox.Show( "Please input value","Information",MessageBoxButtons.OK);
                 e.Cancel = true;
+            }
+
+            if (headerText== "Item Amount" && Regex.IsMatch(e.FormattedValue.ToString(), @"[^0-9\.]"))
+            {
+                dgvInv.EditingControl.Text = "0.000";
+                MessageBox.Show("Amount should be numeric.");
+                
+                
+
             }
         }
 
@@ -559,6 +587,7 @@ namespace HospitalERP
         private void frmOneTimeBill_Shown(object sender, EventArgs e)
         {
             enableOrDisableButtons();
+            cell_modified = 0;
         }
 
         private void enableOrDisableButtons()
@@ -572,6 +601,7 @@ namespace HospitalERP
                     dgvInv.ReadOnly = true;
                     btnSave.Enabled = false;
                     dgvInv.Columns["btnDel"].Visible = false;
+                    txtPaid.Enabled = false;
                 }
                 else
                 {
@@ -579,8 +609,14 @@ namespace HospitalERP
                     dgvInv.ReadOnly = false;
                     btnSave.Enabled = true;
                     dgvInv.Columns["btnDel"].Visible = true;
+                    txtPaid.Enabled = true;
                 }
-
+                int ret = app.GetBillLockStatus(appointment_id);
+                if (ret > 0)
+                {
+                    btnSave.Enabled = false;
+                    
+                }
             }
             catch (Exception ex)
             {
@@ -615,6 +651,22 @@ namespace HospitalERP
         private void txtPaid_KeyPress(object sender, KeyPressEventArgs e)
         {
             
+        }
+
+        private void frmOneTimeBill_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                if ((cell_modified == 1 || bill_paid_load != bill_paid || bill_status==1 ) && btnSave.Enabled == true)
+                {
+                    MessageBox.Show("Please save the bill before closing.");
+                    e.Cancel = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonLogger.Info(ex.ToString());
+            }
         }
     }
 }

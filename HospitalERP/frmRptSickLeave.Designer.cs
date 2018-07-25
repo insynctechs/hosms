@@ -45,6 +45,7 @@
             this.txtFromTime = new System.Windows.Forms.TextBox();
             this.txtDoctorName = new System.Windows.Forms.TextBox();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblToTime = new System.Windows.Forms.Label();
@@ -78,7 +79,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label24 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -277,6 +277,17 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(742, 552);
             this.panelContent.TabIndex = 1;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(23, 458);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(147, 17);
+            this.label24.TabIndex = 48;
+            this.label24.Text = "/Head of Health Center))";
             // 
             // lblTo
             // 
@@ -618,17 +629,6 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(23, 458);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(147, 17);
-            this.label24.TabIndex = 48;
-            this.label24.Text = "/Head of Health Center))";
             // 
             // frmRptSickLeave
             // 
